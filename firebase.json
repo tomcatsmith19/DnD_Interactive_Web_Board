@@ -17,7 +17,7 @@
   },
   "functions": [
     {
-      "runtime": "python311",
+      "runtime": "python311", 
       "source": "functions",
       "codebase": "default",
       "ignore": [
