@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <div id="error-message"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyDeUJ3781n8fi4QhVWvHAfeW7ueRqaw87E",
+        authDomain: "dnd-interactive-web-board.firebaseapp.com",
+        projectId: "dnd-interactive-web-board",
+        storageBucket: "dnd-interactive-web-board.firebasestorage.app",
+        messagingSenderId: "474147936717",
+        appId: "1:474147936717:web:5a4101401f5bde9a368c84",
+        measurementId: "G-G9KT6WQ5F4"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const loginForm = document.getElementById('login-form');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const errorMessage = document.getElementById('error-message');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    console.log('User signed in:', user);
+                    // Redirect to the main app page after successful login
+                    window.location.href = '/app.html';
+                })
+                .catch((error) => {
+                    // Handle errors
+                    console.error('Login error:', error.code, error.message);
+                    errorMessage.textContent = 'Invalid email or password.';
+                });
+        });
+    </script>
+</body>
+</html>
