@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creature Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1b1b1b;
+      color: #fff;
+      text-align: center;
+      padding-top: 50px;
+      display: none;
+    }
+    #counter {
+      font-size: 4rem;
+      margin: 20px;
+    }
+    button {
+      font-size: 2rem;
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #FFD700;
+      color: #000;
+      cursor: pointer;
+    }
+    #userDisplay {
+      margin-top: 30px;
+      font-size: 1.1rem;
+    }
+    #logoutBtn {
+      margin-top: 20px;
+      font-size: 1rem;
+      padding: 6px 12px;
+      background-color: #ff4d4d;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Creature Counter</h1>
+
+  <div>
+    <button id="decrementBtn">−</button>
+    <span id="counter">Loading...</span>
+    <button id="incrementBtn">+</button>
+  </div>
+
+  <p>Last updated by: <strong id="updatedBy">N/A</strong></p>
+
+  <div id="userDisplay"></div>
+  <button id="logoutBtn">Log Out</button>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyDeUJ3781n8fi4QhVWvHAfeW7ueRqaw87E",
+        authDomain: "dnd-interactive-web-board.firebaseapp.com",
+        projectId: "dnd-interactive-web-board",
+        storageBucket: "dnd-interactive-web-board.firebasestorage.app",
+        messagingSenderId: "474147936717",
+        appId: "1:474147936717:web:5a4101401f5bde9a368c84",
+        measurementId: "G-G9KT6WQ5F4"
+        };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const counterRef = db.collection("shared").doc("counter");
+
+    const counterEl = document.getElementById("counter");
+    const updatedByEl = document.getElementById("updatedBy");
+    const userDisplayEl = document.getElementById("userDisplay");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const incrementBtn = document.getElementById("incrementBtn");
+    const decrementBtn = document.getElementById("decrementBtn");
+
+    // Wait for authentication state
+    auth.onAuthStateChanged(user => {
+      if (!user) {
+        window.location.href = "index.html";
+        return;
+      }
+
+      document.body.style.display = "block";
+      const username = user.email.split("@")[0];
+      userDisplayEl.textContent = `Logged in as: ${user.email}`;
+
+      // Live Firestore listener
+      counterRef.onSnapshot(doc => {
+        if (doc.exists) {
+          const data = doc.data();
+          counterEl.textContent = data.value ?? 0;
+          updatedByEl.textContent = data.updatedBy ?? "Unknown";
+        } else {
+          counterEl.textContent = "0";
+          updatedByEl.textContent = "N/A";
+        }
+      });
+
+      // Increment button logic
+      incrementBtn.addEventListener("click", () => {
+        db.runTransaction(async (transaction) => {
+          const doc = await transaction.get(counterRef);
+          const current = doc.exists ? doc.data().value || 0 : 0;
+          transaction.set(counterRef, {
+            value: current + 1,
+            updatedBy: username
+          });
+        });
+      });
+
+      // Decrement button logic
+      decrementBtn.addEventListener("click", () => {
+        db.runTransaction(async (transaction) => {
+          const doc = await transaction.get(counterRef);
+          const current = doc.exists ? doc.data().value || 0 : 0;
+          transaction.set(counterRef, {
+            value: current - 1,
+            updatedBy: username
+          });
+        });
+      });
+
+      // Log out
+      logoutBtn.addEventListener("click", () => {
+        auth.signOut().then(() => {
+          window.location.href = "index.html";
+        });
+      });
+    });
+  </script>
+
+<img src="image.jpg" alt="TESTING MY IMAGE" width="300" />
+</body>
+</html>
