@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu</title>
+  <!-- Fantasy Font -->
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: url("data/images/tavern.png") no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .menu-image {
+     width: 200px;
+     height: auto;
+     object-fit: contain;
+     border: 4px solid #FFD700; /* Gold border */
+     border-radius: 10px; /* Rounded corners */
+     padding: 5px; /* Little padding inside the border */
+     background-color: rgba(0, 0, 0, 0.5); /* Optional dark background inside border */
+    }
+
+    .menu-button {
+      width: 250px;
+      padding: 20px;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 2.5rem;
+      background-color: #FFD700;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .menu-button:hover {
+      background-color: #FFC300;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="data/images/players.png" alt="Player Icon" class="menu-image">
+    <button class="menu-button" onclick="location.href='app.html'">Player</button>
+
+    <img src="data/images/dm.png" alt="Dungeon Master Icon" class="menu-image">
+    <button class="menu-button" onclick="location.href='dm.html'">Dungeon Master</button>
+  </div>
+</body>
+</html>

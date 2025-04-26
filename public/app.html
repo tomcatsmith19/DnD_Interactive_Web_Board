@@ -15,7 +15,7 @@
     }
 
     body {
-      background-image: url("/data/images/underdark_map.webp");
+      background-image: url("/data/maps/underdark.webp");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -145,7 +145,11 @@
           <button id="executeBtn" style="width: 100%; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #32CD32; color: white; border: none; border-radius: 5px; cursor: pointer;">Execute</button>
         </div>
       
-        <button id="logoutBtn" style="margin-top: 30px; width: 90%; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #FF4C4C; color: white; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
+        <div style="margin-top: 30px; width: 90%; display: flex; justify-content: space-between; gap: 10px;">
+          <button id="logoutBtn" style="flex: 1; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #FF4C4C; color: white; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
+        
+          <button id="menuBtn" style="flex: 1; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Menu</button>
+        </div>
       
       </div>
     </div>
@@ -186,6 +190,11 @@
           window.location.href = "index.html";
         });
       });
+    });
+
+    const menuBtn = document.getElementById("menuBtn");
+    menuBtn.addEventListener("click", () => {
+      window.location.href = "menu.html";
     });
 
     // Menu Logic

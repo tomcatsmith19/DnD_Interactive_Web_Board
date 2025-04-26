@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dungeon Master - World and Town View</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #121212;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tab-bar {
+      display: flex;
+      background-color: #333;
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 15px;
+      background-color: #444;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .tab-button:hover {
+      background-color: #555;
+    }
+
+    .tab-button.active {
+      background-color: #FFD700;
+      color: black;
+    }
+
+    .tab-content {
+      flex: 1;
+      padding: 0;
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+    }
+
+    .tab-content.active {
+      display: flex;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .town-container {
+      display: flex;
+      flex: 1;
+      gap: 10px;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .town-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .town-label {
+      background-color: #FFD700;
+      color: black;
+      padding: 8px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .town-frame {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tab-bar">
+    <button class="tab-button active" onclick="openTab('campaignTab')">Campaign</button>
+    <button class="tab-button" onclick="openTab('worldTab')">World</button>
+    <button class="tab-button" onclick="openTab('townTab')">Town</button>
+    <button class="tab-button" onclick="openTab('mapTab')">Map</button>
+  </div>
+
+  <!-- Campaign Tab -->
+  <div class="tab-content active" id="campaignTab">
+    <div style="padding: 20px; display: flex; flex: 1; height: 100%; gap: 20px;">
+  
+      <!-- Left: Book Viewer -->
+      <div style="flex: 2; display: flex; flex-direction: column; gap: 10px;">
+        <select id="bookSelect" style="padding: 10px; background-color: #333; color: white; border: 1px solid #555; border-radius: 5px; font-size: 1rem;">
+          <option value="">-- Select a Book --</option>
+          <option value="player_handbook.pdf">Player Handbook</option>
+          <!-- Add more books here -->
+        </select>
+  
+        <iframe id="bookViewer" style="flex: 1; width: 100%; border: none; background-color: black;"></iframe>
+      </div>
+  
+      <!-- Right: Maps and Notes -->
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <label style="font-weight: bold;">Maps</label>
+          <select id="mapSelect" style="padding: 10px; background-color: #333; color: white; border: 1px solid #555; border-radius: 5px; font-size: 1rem;">
+            <option value="">-- Select a Map --</option>
+            <option value="underdark.webp">Underdark</option>
+            <option value="forest.jpg">Forest</option>
+            <!-- Add more maps here -->
+          </select>
+        </div>
+  
+        <div style="display: flex; flex-direction: column; flex: 1; gap: 10px;">
+          <label style="font-weight: bold;">Notes</label>
+          <textarea id="notesArea" placeholder="Write campaign notes here..." style="flex: 1; padding: 10px; background-color: #333; color: white; border: 1px solid #555; border-radius: 5px; font-size: 1rem; resize: none;"></textarea>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <!-- World Tab -->
+  <div class="tab-content" id="worldTab">
+    <iframe src="https://www.kassoon.com/dnd/wilderness-travel/"></iframe>
+  </div>
+  
+  <!-- Town Tab -->
+  <div class="tab-content" id="townTab">
+    <div class="town-container">
+      <div class="town-column">
+        <div class="town-label">Magic Shop</div>
+        <a href="https://donjon.bin.sh/5e/magic/shop.html" target="_blank" style="flex: 1; display: flex; justify-content: center; align-items: center; color: #FFD700; text-decoration: underline;">Open Magic Shop</a>
+      </div>
+      <div class="town-column">
+        <div class="town-label">Carousing</div>
+        <a href="https://donjon.bin.sh/5e/random/#type=carousing" target="_blank" style="flex: 1; display: flex; justify-content: center; align-items: center; color: #FFD700; text-decoration: underline;">Open Carousing</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map Tab -->
+  <div class="tab-content" id="mapTab">
+    <img id="mapImage" src="" alt="Map Image" style="width: 100%; height: 100%; object-fit: cover; border: none;">
+  </div>
+
+  <script>
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
+  
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  
+    // Book dropdown behavior
+    const bookSelect = document.getElementById('bookSelect');
+    const bookViewer = document.getElementById('bookViewer');
+  
+    bookSelect?.addEventListener('change', () => {
+      const selected = bookSelect.value;
+      if (selected) {
+        bookViewer.src = `data/books/${selected}`;
+      } else {
+        bookViewer.src = '';
+      }
+    });
+  
+    // Map dropdown behavior (updates map image in Map tab)
+    const mapSelect = document.getElementById('mapSelect');
+    const mapImage = document.getElementById('mapImage');  // NEW: reference the map image
+  
+    mapSelect?.addEventListener('change', () => {
+      const selectedMap = mapSelect.value;
+      if (selectedMap) {
+        mapImage.src = `data/maps/${selectedMap}`;
+      } else {
+        mapImage.src = '';
+      }
+    });
+  </script>
+</body>
+</html>
