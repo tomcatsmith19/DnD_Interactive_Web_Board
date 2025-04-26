@@ -3,57 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Creature Counter</title>
+  <title>Map Viewer</title>
+  <!-- Fantasy Font -->
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+
     body {
+      background-image: url("/data/images/underdark_map.webp");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       font-family: Arial, sans-serif;
-      background: #1b1b1b;
-      color: #fff;
-      text-align: center;
-      padding-top: 50px;
+    }
+
+    #menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      transition: width 0.3s ease, opacity 0.3s ease;
+      overflow-y: auto;
+    }
+
+    #menu.fullscreen {
+      width: 100%;
+      padding: 0;
+    }
+
+    #menu.third {
+      width: 33.33%;
+      padding: 20px;
+    }
+
+    #toggleMenu {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #FFD700;
+      border: none;
+      color: black;
+      padding: 8px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      z-index: 1000;
+    }
+
+    #toggleMenuStandalone {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #FFD700;
+      border: none;
+      color: black;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.4rem;
+      z-index: 2000;
       display: none;
     }
-    #counter {
-      font-size: 4rem;
-      margin: 20px;
-    }
-    button {
-      font-size: 2rem;
-      margin: 10px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background-color: #FFD700;
-      color: #000;
-      cursor: pointer;
-    }
-    #userDisplay {
-      margin-top: 30px;
-      font-size: 1.1rem;
-    }
-    #logoutBtn {
-      margin-top: 20px;
-      font-size: 1rem;
-      padding: 6px 12px;
-      background-color: #ff4d4d;
-      color: white;
+
+    #menuContent {
+      margin-top: 50px;
     }
   </style>
 </head>
+
 <body>
+  <!-- Menu -->
+  <div id="menu" class="fullscreen">
+    <button id="toggleMenu">⇨</button>
+    <div id="menuContent">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
 
-  <h1>Creature Counter</h1>
+      
+        <!-- Player Stats Container -->
+        <div style="width: 90%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+          <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">Player Name</h1>
 
-  <div>
-    <button id="decrementBtn">−</button>
-    <span id="counter">Loading...</span>
-    <button id="incrementBtn">+</button>
+          <label for="levelInput">Level:</label>
+          <input type="number" id="levelInput" min="0" value="1" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+
+          <label for="initiativeInput">Initiative:</label>
+          <input type="number" id="initiativeInput" min="0" value="0" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+
+          <label>HP:</label>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <input type="number" id="currentHP" min="0" value="0" style="flex: 1; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+            <span style="color: white;">/</span>
+            <input type="number" id="maxHP" min="0" value="0" style="flex: 1; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+          </div>
+        </div>
+        
+        <div style="width: 90%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+          <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">Action Interface</h1>
+      
+          <label for="actionSelect">Action:</label>
+          <select id="actionSelect" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+            <option value="heal">Heal</option>
+            <option value="damage">Damage</option>
+            <option value="apply">Apply Condition</option>
+            <option value="remove">Remove Condition</option>
+          </select>
+      
+          <label for="targetIndex">Target Index:</label>
+          <input type="number" id="targetIndex" min="0" value="0" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+      
+          <label for="conditionSelect">Condition (if applicable):</label>
+          <select id="conditionSelect" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+            <option>-- None --</option>
+            <option>Blinded</option>
+            <option>Charmed</option>
+            <option>Deafened</option>
+            <option>Frightened</option>
+            <option>Grappled</option>
+            <option>Incapacitated</option>
+            <option>Invisible</option>
+            <option>Paralyzed</option>
+            <option>Petrified</option>
+            <option>Poisoned</option>
+            <option>Prone</option>
+            <option>Restrained</option>
+            <option>Stunned</option>
+            <option>Unconscious</option>
+            <option>Exhaustion</option>
+          </select>
+      
+          <label for="amountTurns">Amount / Turns:</label>
+          <input type="number" id="amountTurns" min="0" value="0" style="width: 100%; padding: 8px; margin-bottom: 20px;  background-color: #333; color: #fff;">
+      
+          <button id="executeBtn" style="width: 100%; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #32CD32; color: white; border: none; border-radius: 5px; cursor: pointer;">Execute</button>
+        </div>
+      
+        <button id="logoutBtn" style="margin-top: 30px; width: 90%; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #FF4C4C; color: white; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
+      
+      </div>
+    </div>
   </div>
 
-  <p>Last updated by: <strong id="updatedBy">N/A</strong></p>
-
-  <div id="userDisplay"></div>
-  <button id="logoutBtn">Log Out</button>
+  <!-- Floating button when menu is hidden -->
+  <button id="toggleMenuStandalone">⇦</button>
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
@@ -61,85 +160,58 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
 
   <script>
-    // Firebase configuration
     const firebaseConfig = {
-        apiKey: "AIzaSyDeUJ3781n8fi4QhVWvHAfeW7ueRqaw87E",
-        authDomain: "dnd-interactive-web-board.firebaseapp.com",
-        projectId: "dnd-interactive-web-board",
-        storageBucket: "dnd-interactive-web-board.firebasestorage.app",
-        messagingSenderId: "474147936717",
-        appId: "1:474147936717:web:5a4101401f5bde9a368c84",
-        measurementId: "G-G9KT6WQ5F4"
-        };
+      apiKey: "AIzaSyDeUJ3781n8fi4QhVWvHAfeW7ueRqaw87E",
+      authDomain: "dnd-interactive-web-board.firebaseapp.com",
+      projectId: "dnd-interactive-web-board",
+      storageBucket: "dnd-interactive-web-board.firebasestorage.app",
+      messagingSenderId: "474147936717",
+      appId: "1:474147936717:web:5a4101401f5bde9a368c84",
+      measurementId: "G-G9KT6WQ5F4"
+    };
 
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
-    const db = firebase.firestore();
-    const counterRef = db.collection("shared").doc("counter");
 
-    const counterEl = document.getElementById("counter");
-    const updatedByEl = document.getElementById("updatedBy");
-    const userDisplayEl = document.getElementById("userDisplay");
-    const logoutBtn = document.getElementById("logoutBtn");
-    const incrementBtn = document.getElementById("incrementBtn");
-    const decrementBtn = document.getElementById("decrementBtn");
-
-    // Wait for authentication state
     auth.onAuthStateChanged(user => {
       if (!user) {
         window.location.href = "index.html";
-        return;
+      }
+    });
+
+    // Menu Logic
+    const menu = document.getElementById("menu");
+    const toggleBtn = document.getElementById("toggleMenu");
+    const toggleBtnStandalone = document.getElementById("toggleMenuStandalone");
+
+    let menuState = "fullscreen"; // 'fullscreen', 'third', 'hidden'
+
+    const setMenuState = (state) => {
+      menu.classList.remove("fullscreen", "third");
+      menu.style.display = (state === "hidden") ? "none" : "block";
+      toggleBtnStandalone.style.display = (state === "hidden") ? "block" : "none";
+
+      if (state === "fullscreen") {
+        menu.classList.add("fullscreen");
+      } else if (state === "third") {
+        menu.classList.add("third");
       }
 
-      document.body.style.display = "block";
-      const username = user.email.split("@")[0];
-      userDisplayEl.textContent = `Logged in as: ${user.email}`;
+      menuState = state;
+    };
 
-      // Live Firestore listener
-      counterRef.onSnapshot(doc => {
-        if (doc.exists) {
-          const data = doc.data();
-          counterEl.textContent = data.value ?? 0;
-          updatedByEl.textContent = data.updatedBy ?? "Unknown";
-        } else {
-          counterEl.textContent = "0";
-          updatedByEl.textContent = "N/A";
-        }
-      });
+    const cycleMenuState = () => {
+      if (menuState === "fullscreen") {
+        setMenuState("third");
+      } else if (menuState === "third") {
+        setMenuState("hidden");
+      } else if (menuState === "hidden") {
+        setMenuState("fullscreen");
+      }
+    };
 
-      // Increment button logic
-      incrementBtn.addEventListener("click", () => {
-        db.runTransaction(async (transaction) => {
-          const doc = await transaction.get(counterRef);
-          const current = doc.exists ? doc.data().value || 0 : 0;
-          transaction.set(counterRef, {
-            value: current + 1,
-            updatedBy: username
-          });
-        });
-      });
-
-      // Decrement button logic
-      decrementBtn.addEventListener("click", () => {
-        db.runTransaction(async (transaction) => {
-          const doc = await transaction.get(counterRef);
-          const current = doc.exists ? doc.data().value || 0 : 0;
-          transaction.set(counterRef, {
-            value: current - 1,
-            updatedBy: username
-          });
-        });
-      });
-
-      // Log out
-      logoutBtn.addEventListener("click", () => {
-        auth.signOut().then(() => {
-          window.location.href = "index.html";
-        });
-      });
-    });
+    toggleBtn.addEventListener("click", cycleMenuState);
+    toggleBtnStandalone.addEventListener("click", cycleMenuState);
   </script>
-
-<img src="image.jpg" alt="TESTING MY IMAGE" width="300" />
 </body>
 </html>
