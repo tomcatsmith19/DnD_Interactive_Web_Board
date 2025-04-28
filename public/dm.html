@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dungeon Master - World and Town View</title>
+    <!-- Fantasy Font -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <style>
         html,
         body {
@@ -90,6 +92,39 @@
         .town-frame {
             flex: 1;
         }
+
+        .dungeon-tab-content {
+            display: none;
+            flex: 1;
+        }
+
+        .dungeon-tab-content.active {
+            display: flex;
+        }
+
+        .dungeon-tab-btn {
+            flex: 1;
+            padding: 10px;
+            background-color: #444;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dungeon-tab-btn.active {
+            background-color: #FFD700;
+            color: black;
+        }
+
+        .monster-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -98,10 +133,11 @@
         <button class="tab-button active" onclick="openTab('campaignTab')">Campaign</button>
         <button class="tab-button" onclick="openTab('worldTab')">World</button>
         <button class="tab-button" onclick="openTab('townTab')">Town</button>
+        <button class="tab-button" onclick="openTab('dungeonTab')">Dungeon</button>
         <button class="tab-button" onclick="openTab('mapTab')">Map</button>
     </div>
 
-    <!-- Campaign Tab -->
+    <!-- Campaign Tab ############################################################################################-->
     <div class="tab-content active" id="campaignTab">
         <div style="padding: 20px; display: flex; flex: 1; height: 100%; gap: 20px;">
 
@@ -123,7 +159,7 @@
                     <label style="font-weight: bold;">Maps</label>
                     <select id="mapSelect"
                         style="padding: 10px; background-color: #333; color: white; border: 1px solid #555; border-radius: 5px; font-size: 1rem;">
-                        <option value="">-- Select a Map --</option>
+                        <option value="default.jpg">Blank</option>
                         <option value="underdark.webp">Underdark</option>
                         <option value="forest.jpg">Forest</option>
                         <!-- Add more maps here -->
@@ -147,12 +183,12 @@
         </div>
     </div>
 
-    <!-- World Tab -->
+    <!-- World Tab ###############################################################################################-->
     <div class="tab-content" id="worldTab">
         <iframe src="https://www.kassoon.com/dnd/wilderness-travel/"></iframe>
     </div>
 
-    <!-- Town Tab -->
+    <!-- Town Tab ################################################################################################-->
     <div class="tab-content" id="townTab">
         <div class="town-container">
             <div class="town-column">
@@ -170,11 +206,252 @@
         </div>
     </div>
 
-    <!-- Map Tab -->
-    <div class="tab-content" id="mapTab">
-        <img id="mapImage" src="" alt="Map Image" style="width: 100%; height: 100%; object-fit: cover; border: none;">
+
+    <!-- Dungeon Tab ############################################################################################-->
+    <div class="tab-content" id="dungeonTab">
+        <div style="padding: 20px; display: flex; flex: 1; height: 100%; gap: 20px;">
+
+            <!-- Left Column: Monster Table -->
+            <div
+                style="flex: 1; display: flex; flex-direction: column; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px; gap: 10px;">
+
+                <table style="width: 100%; border-collapse: collapse; background-color: #333; color: white;">
+                    <thead>
+                        <tr style="background-color: #444;">
+                            <th style="padding: 10px; border: 1px solid #555;">#</th> <!-- NEW Index column -->
+                            <th style="padding: 10px; border: 1px solid #555;">INIT</th>
+                            <th style="padding: 10px; border: 1px solid #555;">NAME</th>
+                            <th style="padding: 10px; border: 1px solid #555;">HP</th>
+                        </tr>
+                    </thead>
+                    <tbody id="monsterTableBody">
+                        <!-- Monsters will be added here -->
+                    </tbody>
+                </table>
+
+                <button id="addMonsterBtn"
+                    style="margin-top: 10px; padding: 10px; background-color: #FFD700; border: none; color: black; font-weight: bold; border-radius: 5px; cursor: pointer;">Add
+                    Monster</button>
+            </div>
+
+            <!-- Right Column: Tab Widget -->
+            <div style="flex: 2; display: flex; flex-direction: column; gap: 10px;">
+
+                <!-- Tabs Header -->
+                <div style="display: flex; background-color: #333;">
+                    <button class="dungeon-tab-btn active" onclick="openDungeonTab('actionContent')">Action</button>
+                    <button class="dungeon-tab-btn" onclick="openDungeonTab('monsterContent')">Monster</button>
+                    <button class="dungeon-tab-btn" onclick="openDungeonTab('lootContent')">Loot</button>
+                    <button class="dungeon-tab-btn" onclick="openDungeonTab('encounterContent')">Encounter
+                        Builder</button>
+                    <button class="dungeon-tab-btn" onclick="openDungeonTab('creatorContent')">Monster Creator</button>
+                </div>
+
+                <!-- Action tab ------------------------------------------------------------------------------------ -->
+                <div id="actionContent" class="dungeon-tab-content active"
+                    style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
+                    <div
+                        style="width: 100%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                        <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">Action
+                            Interface</h1>
+
+                        <label for="actionSelect">Action:</label>
+                        <select id="actionSelect"
+                            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+                            <option value="heal">Heal</option>
+                            <option value="damage">Damage</option>
+                            <option value="apply">Apply Condition</option>
+                            <option value="remove">Remove Condition</option>
+                        </select>
+
+                        <label for="targetIndex">Target Index:</label>
+                        <input type="number" id="targetIndex" min="0" value="0"
+                            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+
+                        <label for="conditionSelect">Condition (if applicable):</label>
+                        <select id="conditionSelect"
+                            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+                            <option>-- None --</option>
+                            <option>Blinded</option>
+                            <option>Charmed</option>
+                            <option>Deafened</option>
+                            <option>Frightened</option>
+                            <option>Grappled</option>
+                            <option>Incapacitated</option>
+                            <option>Invisible</option>
+                            <option>Paralyzed</option>
+                            <option>Petrified</option>
+                            <option>Poisoned</option>
+                            <option>Prone</option>
+                            <option>Restrained</option>
+                            <option>Stunned</option>
+                            <option>Unconscious</option>
+                            <option>Exhaustion</option>
+                        </select>
+
+                        <label for="amountTurns">Amount / Turns:</label>
+                        <input type="number" id="amountTurns" min="0" value="0"
+                            style="width: 100%; padding: 8px; margin-bottom: 20px; background-color: #333; color: #fff;">
+
+                        <button id="executeBtn"
+                            style="width: 100%; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #32CD32; color: white; border: none; border-radius: 5px; cursor: pointer;">Execute</button>
+                    </div>
+                </div>
+
+                <!-- monster tab---------------------------------------------------------------------------------------->
+
+                <!-- Monster Tab -->
+                <div id="monsterContent" class="dungeon-tab-content monster-scroll"
+                    style="background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px; overflow-y: auto;">
+                    <div style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+
+                        <!-- Header Row: Image + Name -->
+                        <div style="display: flex; align-items: center; gap: 20px;">
+
+                            <!-- Monster Image -->
+                            <img src="data/monster_tokens/Acolyte.webp" alt="Acolyte Token"
+                                style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #FFD700;">
+
+                            <!-- Monster Name -->
+                            <div>
+                                <h1
+                                    style="font-family: 'MedievalSharp', cursive; margin: 0; font-size: 2rem; color: #FFD700;">
+                                    Acolyte</h1>
+                                <p style="margin: 0; font-style: italic;">Medium humanoid (any race), any alignment
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!-- Monster Info Block -->
+                        <div class="info-block"
+                            style="width: 100%; background-color: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; font-size: 1rem;">
+
+                            <p><strong>Armor Class</strong>: 10</p>
+                            <p><strong>Hit Points</strong>: 9 (2d8)</p>
+                            <p><strong>Speed</strong>: 30 ft.</p>
+
+                            <hr style="border: 1px solid #555; margin: 10px 0;">
+
+                            <!-- Ability Scores -->
+                            <div style="display: flex; justify-content: space-between; text-align: center;">
+                                <div><strong>STR</strong><br>10</div>
+                                <div><strong>DEX</strong><br>10</div>
+                                <div><strong>CON</strong><br>10</div>
+                                <div><strong>INT</strong><br>10</div>
+                                <div><strong>WIS</strong><br>14</div>
+                                <div><strong>CHA</strong><br>11</div>
+                            </div>
+
+                            <hr style="border: 1px solid #555; margin: 10px 0;">
+
+                            <p><strong>Skills</strong>: Medicine +4, Religion +2</p>
+                            <p><strong>Passive Perception</strong>: 12</p>
+                            <p><strong>Languages</strong>: Any one language (usually Common)</p>
+                            <p><strong>Challenge</strong>: 1/4 (50 XP)</p>
+
+                            <hr style="border: 1px solid #555; margin: 10px 0;">
+
+                            <p><strong>Spellcasting</strong>:</p>
+                            <p>The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell
+                                save DC 12, +4 to hit with spell attacks). It has the following cleric spells
+                                prepared:</p>
+                            <ul style="padding-left: 20px;">
+                                <li><em>Cantrips (at will)</em>: Light, Sacred Flame, Thaumaturgy</li>
+                                <li><em>1st level (3 slots)</em>: Bless, Cure Wounds, Sanctuary</li>
+                            </ul>
+
+                            <hr style="border: 1px solid #555; margin: 10px 0;">
+
+                            <p><strong>Actions</strong>:</p>
+                            <p><strong>Club</strong>: Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit:
+                                2 (1d4) bludgeoning damage.</p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- loot tab---------------------------------------------------------------------------------------->
+                <div id="lootContent" class="dungeon-tab-content"
+                    style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
+                    <div
+                        style="display: flex; flex-direction: column; flex: 1; padding: 20px; align-items: center; justify-content: center; gap: 20px; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+
+                        <h2 style="font-family: 'MedievalSharp', cursive; color: #FFD700;">Loot Generator</h2>
+
+                        <a href="https://donjon.bin.sh/5e/random/#type=treasure" target="_blank"
+                            style="padding: 15px 30px; background-color: #FFD700; color: black; font-size: 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s ease;">
+                            Open Loot Generator
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- encounter tab---------------------------------------------------------------------------------------->
+                <div id="encounterContent" class="dungeon-tab-content"
+                    style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
+                    <p>Encounter builder content here...</p>
+                </div>
+
+                <!-- creator tab---------------------------------------------------------------------------------------->
+                <div id="creatorContent" class="dungeon-tab-content"
+                    style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
+                    <p>Monster creator content here...</p>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
+
+
+
+    <!-- Map Tab ##################################################################################################-->
+    <div class="tab-content" id="mapTab">
+        <img id="mapImage" src="data/maps/default.jpg" alt="Map Image"
+            style="width: 100%; height: 100%; object-fit: cover; border: none;">
+    </div>
+
+
+    <!-- Monster Selection Modal ######################################################################################-->
+    <div id="monsterModal"
+        style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 3000;">
+        <div
+            style="background: #222; padding: 30px; border-radius: 10px; width: 400px; display: flex; flex-direction: column; gap: 20px;">
+
+            <h2 style="text-align: center; color: #FFD700;">Add Monsters</h2>
+
+            <!-- Search Bar -->
+            <input id="monsterSearch" type="text" placeholder="Search monsters..."
+                style="padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 5px;">
+
+            <!-- List of Monster Names -->
+            <div id="monsterList"
+                style="max-height: 200px; overflow-y: auto; background: #333; padding: 10px; border-radius: 5px; border: 1px solid #555;">
+                <!-- Filled dynamically -->
+            </div>
+
+            <!-- Number of Monsters -->
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <label for="monsterCount" style="font-weight: bold;">Number of Monsters to Add:</label>
+                <input id="monsterCount" type="number" min="1" value="1"
+                    style="padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 5px;">
+            </div>
+
+            <!-- Enter Button -->
+            <button id="confirmMonsterBtn"
+                style="padding: 10px; background: #32CD32; color: white; border: none; border-radius: 5px; font-size: 1.2rem; cursor: pointer;">Enter</button>
+
+            <!-- Close Modal Button -->
+            <button id="closeMonsterModal"
+                style="padding: 8px; background: #FF4C4C; color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">Cancel</button>
+
+        </div>
+    </div>
+
+    <!-- SCRIPT###################################################################################################-->
     <script>
         function openTab(tabId) {
             document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
@@ -222,6 +499,232 @@
         menuBtn?.addEventListener('click', () => {
             window.location.href = "menu.html";
         });
+
+        // Dungeon tab functionality
+        function openDungeonTab(tabId) {
+            document.querySelectorAll('.dungeon-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[onclick="openDungeonTab('${tabId}')"]`).classList.add('active');
+
+            document.querySelectorAll('.dungeon-tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        const addMonsterBtn = document.getElementById('addMonsterBtn');
+        const monsterTableBody = document.getElementById('monsterTableBody');
+
+        addMonsterBtn?.addEventListener('click', () => {
+            monsterModal.style.display = 'flex';
+            refreshMonsterList();
+        });
+
+        // Elements
+        const monsterModal = document.getElementById('monsterModal');
+        const monsterSearch = document.getElementById('monsterSearch');
+        const monsterList = document.getElementById('monsterList');
+        const monsterCount = document.getElementById('monsterCount');
+        const confirmMonsterBtn = document.getElementById('confirmMonsterBtn');
+        const closeMonsterModal = document.getElementById('closeMonsterModal');
+
+        // Dummy Monster List (replace with real data later)
+        const allMonsters = [
+            "Aboleth",
+            "Acolyte",
+        ];
+
+        // Show Modal on "Add Monster" button
+        addMonsterBtn.addEventListener('click', () => {
+            monsterModal.style.display = 'flex';
+            refreshMonsterList();
+        });
+
+        // Close Modal
+        closeMonsterModal.addEventListener('click', () => {
+            monsterModal.style.display = 'none';
+        });
+
+        // Refresh Monster List
+        function refreshMonsterList(filter = "") {
+            monsterList.innerHTML = "";
+            allMonsters.filter(name => name.toLowerCase().includes(filter.toLowerCase()))
+                .forEach(name => {
+                    const div = document.createElement('div');
+                    div.textContent = name;
+                    div.style.padding = "5px";
+                    div.style.cursor = "pointer";
+                    div.style.borderBottom = "1px solid #555";
+                    div.addEventListener('click', () => {
+                        monsterList.querySelectorAll('div').forEach(d => d.style.background = "");
+                        div.style.background = "#555";
+                        monsterList.dataset.selected = name;
+                    });
+                    monsterList.appendChild(div);
+                });
+        }
+
+        // Search Bar Filters List
+        monsterSearch.addEventListener('input', (e) => {
+            refreshMonsterList(e.target.value);
+        });
+
+        // Confirm Button
+        confirmMonsterBtn.addEventListener('click', () => {
+            const selectedMonster = monsterList.dataset.selected;
+            const number = parseInt(monsterCount.value) || 1;
+
+            if (!selectedMonster) {
+                alert("Please select a monster.");
+                return;
+            }
+
+            for (let i = 0; i < number; i++) {
+                const rowIndex = monsterTableBody.children.length; // Always get latest index
+
+                // Fetch the monster JSON
+                fetch(`data/monsters/${selectedMonster}.json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const dex = data.dex ?? 10;
+                        const dexMod = Math.floor((dex - 10) / 2);
+                        const initiative = Math.floor(Math.random() * 20) + 1 + dexMod;
+                        const avgHp = typeof data.hp === 'object' ? data.hp.average : data.hp;
+
+                        const newRow = document.createElement('tr');
+                        newRow.innerHTML = `
+                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">${rowIndex}</td>
+                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                        <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                    </td>
+                    <td style="padding: 8px; border: 1px solid #555;">${selectedMonster}</td>
+                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                        <input type="number" value="${avgHp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                    </td>
+                `;
+                        monsterTableBody.appendChild(newRow);
+
+                        newRow.addEventListener('click', () => {
+                            loadMonster(selectedMonster);
+                        });
+                    })
+                    .catch(err => {
+                        console.error("Error loading monster for table:", err);
+                        alert(`Could not load monster: ${selectedMonster}`);
+                    });
+            }
+
+            monsterModal.style.display = 'none';
+        });
+
+        // clean json text
+        function cleanText(entry) {
+            return entry
+                .replace(/\{@atk (mw|rw|mw,rw|rs)\}/g, m => {
+                    if (m.includes('mw,rw')) return "Melee/Ranged atk";
+                    if (m.includes('mw')) return "Melee atk";
+                    if (m.includes('rw')) return "Ranged atk";
+                    if (m.includes('rs')) return "Ranged Spell atk";
+                })
+                .replace(/\{@hit (\d+)\}/g, '+$1')
+                .replace(/\{@h\}/g, '')
+                .replace(/\{@dc (\d+)\}/g, 'DC $1')
+                .replace(/\{@damage ([^}]+)\}/g, '$1 damage')
+                .replace(/\{@condition ([^|}]+)\|?[^}]*\}/g, (_, p1) => p1.toUpperCase())
+                .replace(/\{@creature ([^}]+)\}/g, (_, p1) => p1.toUpperCase())
+                .replace(/\{@status ([^|}]+)\|?[^}]*\}/g, (_, p1) => p1.toUpperCase())
+                .replace(/\{@spell ([^|}]+)\|?[^}]*\}/g, (_, p1) => p1.toUpperCase())
+                .replace(/\{@skill ([^|}]+)\}/g, (_, p1) => p1.toUpperCase())
+                .replace(/\{@dice ([^}]+)\}/g, '$1')
+                .replace(/\{@chance (\d+)\|[^|}]+\|[^|}]+\}/g, '$1% ')
+                .replace(/<[^>]+>/g, '');
+        }
+
+        // Load Monster Data
+        function loadMonster(name) {
+            const path = `data/monsters/${name}.json`;
+
+            fetch(path)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Monster loaded:", data);
+
+                    // Set monster token image
+                    document.querySelector("#monsterContent img").src = `data/monster_tokens/${data.name}.webp`;
+
+                    // Name and Type
+                    const typeText = typeof data.type === "string" ? data.type : (data.type.type || "unknown");
+                    const tagsText = (data.type.tags || []).join(", ");
+                    document.querySelector("#monsterContent h1").textContent = data.name;
+                    document.querySelector("#monsterContent p").textContent = `${data.size[0]} ${typeText}${tagsText ? ` (${tagsText})` : ''}, ${data.alignment.join(' ')}`;
+
+                    // Armor Class
+                    let armorClass = "Unknown";
+                    if (typeof data.ac[0] === "number") {
+                        armorClass = data.ac[0];
+                    } else if (typeof data.ac[0] === "object") {
+                        armorClass = `${data.ac[0].ac} (${data.ac[0].from.join(', ')})`;
+                    }
+
+                    // Speed
+                    const speed = Object.entries(data.speed || {}).map(([k, v]) => `${k} ${v} ft.`).join(", ");
+
+                    // Abilities
+                    const abilityScores = `
+                <div style="display: flex; justify-content: space-between; text-align: center;">
+                    <div><strong>STR</strong><br>${data.str}</div>
+                    <div><strong>DEX</strong><br>${data.dex}</div>
+                    <div><strong>CON</strong><br>${data.con}</div>
+                    <div><strong>INT</strong><br>${data.int}</div>
+                    <div><strong>WIS</strong><br>${data.wis}</div>
+                    <div><strong>CHA</strong><br>${data.cha}</div>
+                </div>
+            `;
+
+                    // Skills
+                    const skills = Object.entries(data.skill || {}).map(([k, v]) => `${k.toUpperCase()} ${v}`).join(', ');
+
+                    // Actions
+                    const actions = (data.action || []).map(a =>
+                        `<strong>${a.name}</strong>: ${cleanText(a.entries.join(' '))}`
+                    ).join('<br><br>');
+
+                    // Spellcasting
+                    let spellcastingText = "";
+                    if (data.spellcasting) {
+                        const spells = data.spellcasting[0];
+                        spellcastingText = `<p><strong>${spells.name}</strong>:</p><p>${spells.headerEntries.map(cleanText).join(' ')}</p>`;
+                    }
+
+                    // Fill info block
+                    const infoBlock = document.querySelector("#monsterContent .info-block");
+                    infoBlock.innerHTML = `
+                <p><strong>Armor Class</strong>: ${armorClass}</p>
+                <p><strong>Hit Points</strong>: ${data.hp.average} (${data.hp.formula})</p>
+                <p><strong>Speed</strong>: ${speed}</p>
+
+                <hr style="border: 1px solid #555; margin: 10px 0;">
+                ${abilityScores}
+                <hr style="border: 1px solid #555; margin: 10px 0;">
+
+                <p><strong>Skills</strong>: ${skills}</p>
+                <p><strong>Passive Perception</strong>: ${data.passive || "-"}</p>
+                <p><strong>Languages</strong>: ${(data.languages || []).join(', ')}</p>
+                <p><strong>Challenge</strong>: ${data.cr}</p>
+
+                <hr style="border: 1px solid #555; margin: 10px 0;">
+                ${spellcastingText}
+                <hr style="border: 1px solid #555; margin: 10px 0;">
+                <p><strong>Actions</strong>:</p>
+                ${actions}
+            `;
+                })
+                .catch(err => {
+                    console.error("Could not load monster:", err);
+                    alert(`Could not load monster: ${name}`);
+                });
+        }
+
 
     </script>
 </body>

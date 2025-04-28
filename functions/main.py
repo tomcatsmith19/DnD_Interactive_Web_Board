@@ -18,7 +18,7 @@ def checkAuth(req: https_fn.Request) -> https_fn.Response:
         # Verify the session cookie
         decoded_claims = auth.verify_session_cookie(session_cookie, check_revoked=True)
         print(f"The user is: {decoded_claims['email']}")
-        return https_fn.Response('<script>window.location.href = "/app.html";</script>', status=302)
+        return https_fn.Response('<script>window.location.href = "/player.html";</script>', status=302)
     except Exception as e:
         print(f"Authentication error: {e}")
         return https_fn.Response('<script>window.location.href = "/";</script>', status=302)
