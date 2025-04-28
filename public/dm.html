@@ -577,11 +577,11 @@
                 return;
             }
 
-            for (let i = 0; i < number; i++) {
-                const rowIndex = monsterTableBody.children.length; // Always get latest index
+            let promises = []; // Track fetch promises
 
+            for (let i = 0; i < number; i++) {
                 // Fetch the monster JSON
-                fetch(`data/monsters/${selectedMonster}.json`)
+                const fetchPromise = fetch(`data/monsters/${selectedMonster}.json`)
                     .then(response => response.json())
                     .then(data => {
                         const dex = data.dex ?? 10;
@@ -591,16 +591,16 @@
 
                         const newRow = document.createElement('tr');
                         newRow.innerHTML = `
-                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">${rowIndex}</td>
-                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                                <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                            </td>
-                            <td style="padding: 8px; border: 1px solid #555;">${selectedMonster}</td>
-                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                                <input type="number" value="${avgHp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                            </td>
-                            <td style="padding: 8px; border: 1px solid #555;"> </td> <!-- EMPTY CONDITIONS CELL -->
-                        `;
+                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">?</td>
+                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                        <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                    </td>
+                    <td style="padding: 8px; border: 1px solid #555;">${selectedMonster}</td>
+                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                        <input type="number" value="${avgHp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                    </td>
+                    <td style="padding: 8px; border: 1px solid #555;"> </td> <!-- EMPTY CONDITIONS CELL -->
+                `;
                         monsterTableBody.appendChild(newRow);
 
                         newRow.addEventListener('click', () => {
@@ -611,9 +611,15 @@
                         console.error("Error loading monster for table:", err);
                         alert(`Could not load monster: ${selectedMonster}`);
                     });
+
+                promises.push(fetchPromise); //  Save promise
             }
 
-            monsterModal.style.display = 'none';
+            // After all monsters are added
+            Promise.all(promises).then(() => {
+                monsterModal.style.display = 'none';
+                updateMonsterTable(); //  Now called AFTER all monsters are actually added
+            });
         });
 
         // clean json text
@@ -743,17 +749,13 @@
             }
 
             const row = rows[index];
-            const hpInput = row.children[3].querySelector('input');  // HP input
-            const conditionsCell = row.children[4]; // Conditions cell (text)
+            const hpInput = row.children[3].querySelector('input');
+            const conditionsCell = row.children[4];
 
             if (action === 'heal') {
                 hpInput.value = parseInt(hpInput.value) + amount;
             } else if (action === 'damage') {
                 hpInput.value = Math.max(0, parseInt(hpInput.value) - amount);
-                if (parseInt(hpInput.value) === 0) {
-                    row.remove();
-                    return; // Stop after removing row
-                }
             } else if (action === 'apply') {
                 if (condition === "-- None --") return;
                 const current = conditionsCell.textContent.trim();
@@ -766,7 +768,51 @@
                 const updated = current.filter(c => c.toLowerCase() !== condition.toLowerCase());
                 conditionsCell.textContent = updated.join(", ");
             }
+
+            updateMonsterTable(); // <<< Always update table after actions
         });
+
+        function updateMonsterTable() {
+            const rows = Array.from(monsterTableBody.querySelectorAll('tr'));
+
+            // Remove dead monsters (hp = 0)
+            rows.forEach(row => {
+                const hpInput = row.children[3].querySelector('input');
+                if (parseInt(hpInput.value) <= 0) {
+                    row.remove();
+                }
+            });
+
+            // Re-get rows after removals
+            const updatedRows = Array.from(monsterTableBody.querySelectorAll('tr'));
+
+            // Sort by Initiative (Descending)
+            updatedRows.sort((a, b) => {
+                const initA = parseInt(a.children[1].querySelector('input').value) || 0;
+                const initB = parseInt(b.children[1].querySelector('input').value) || 0;
+                return initB - initA;
+            });
+
+            // Clear table and re-add sorted rows
+            monsterTableBody.innerHTML = '';
+            updatedRows.forEach((row, index) => {
+                row.children[0].textContent = index; // Update Index #
+                monsterTableBody.appendChild(row);
+            });
+
+            // Attach listeners so manual edits update table too
+            updatedRows.forEach(row => {
+                const initInput = row.children[1].querySelector('input');
+                const hpInput = row.children[3].querySelector('input');
+
+                initInput.addEventListener('input', () => {
+                    updateMonsterTable();
+                });
+                hpInput.addEventListener('input', () => {
+                    updateMonsterTable();
+                });
+            });
+        }
 
 
     </script>
