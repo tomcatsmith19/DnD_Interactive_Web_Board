@@ -218,10 +218,11 @@
                 <table style="width: 100%; border-collapse: collapse; background-color: #333; color: white;">
                     <thead>
                         <tr style="background-color: #444;">
-                            <th style="padding: 10px; border: 1px solid #555;">#</th> <!-- NEW Index column -->
+                            <th style="padding: 10px; border: 1px solid #555;">#</th>
                             <th style="padding: 10px; border: 1px solid #555;">INIT</th>
                             <th style="padding: 10px; border: 1px solid #555;">NAME</th>
                             <th style="padding: 10px; border: 1px solid #555;">HP</th>
+                            <th style="padding: 10px; border: 1px solid #555;">Conditions</th> <!-- NEW COLUMN -->
                         </tr>
                     </thead>
                     <tbody id="monsterTableBody">
@@ -590,15 +591,16 @@
 
                         const newRow = document.createElement('tr');
                         newRow.innerHTML = `
-                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">${rowIndex}</td>
-                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                        <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                    </td>
-                    <td style="padding: 8px; border: 1px solid #555;">${selectedMonster}</td>
-                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                        <input type="number" value="${avgHp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                    </td>
-                `;
+                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">${rowIndex}</td>
+                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                                <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #555;">${selectedMonster}</td>
+                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                                <input type="number" value="${avgHp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #555;"> </td> <!-- EMPTY CONDITIONS CELL -->
+                        `;
                         monsterTableBody.appendChild(newRow);
 
                         newRow.addEventListener('click', () => {
@@ -724,6 +726,47 @@
                     alert(`Could not load monster: ${name}`);
                 });
         }
+
+        // Execute Action Button
+        const executeBtn = document.getElementById('executeBtn');
+
+        executeBtn?.addEventListener('click', () => {
+            const action = document.getElementById('actionSelect').value;
+            const index = parseInt(document.getElementById('targetIndex').value);
+            const condition = document.getElementById('conditionSelect').value;
+            const amount = parseInt(document.getElementById('amountTurns').value);
+
+            const rows = monsterTableBody.querySelectorAll('tr');
+            if (index < 0 || index >= rows.length) {
+                alert("Invalid target index.");
+                return;
+            }
+
+            const row = rows[index];
+            const hpInput = row.children[3].querySelector('input');  // HP input
+            const conditionsCell = row.children[4]; // Conditions cell (text)
+
+            if (action === 'heal') {
+                hpInput.value = parseInt(hpInput.value) + amount;
+            } else if (action === 'damage') {
+                hpInput.value = Math.max(0, parseInt(hpInput.value) - amount);
+                if (parseInt(hpInput.value) === 0) {
+                    row.remove();
+                    return; // Stop after removing row
+                }
+            } else if (action === 'apply') {
+                if (condition === "-- None --") return;
+                const current = conditionsCell.textContent.trim();
+                if (!current.includes(condition)) {
+                    conditionsCell.textContent = current ? `${current}, ${condition}` : condition;
+                }
+            } else if (action === 'remove') {
+                if (condition === "-- None --") return;
+                const current = conditionsCell.textContent.split(",").map(s => s.trim());
+                const updated = current.filter(c => c.toLowerCase() !== condition.toLowerCase());
+                conditionsCell.textContent = updated.join(", ");
+            }
+        });
 
 
     </script>
