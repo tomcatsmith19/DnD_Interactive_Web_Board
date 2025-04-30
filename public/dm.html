@@ -807,6 +807,26 @@
                 monsterTableBody.appendChild(row);
             });
 
+            // Update token labels
+            updatedRows.forEach((row, index) => {
+                row.children[0].textContent = index;
+                monsterTableBody.appendChild(row);
+
+                const id = row.dataset.monsterId;
+                const token = document.getElementById(`token-${id}`);
+
+                if (token) {
+                    // Update index label
+                    const indexLabel = token.querySelector('.token-label');
+                    if (indexLabel) indexLabel.textContent = index;
+
+                    // Update condition label
+                    const conditionText = row.children[4].textContent.trim();
+                    const conditionLabel = token.querySelector('.condition-label');
+                    if (conditionLabel) conditionLabel.textContent = conditionText;
+                }
+            });
+
             // Attach listeners so manual edits update table too
             updatedRows.forEach(row => {
                 const initInput = row.children[1].querySelector('input');
@@ -823,20 +843,63 @@
 
         function addMonsterToken(name, id) {
             const layer = document.getElementById('mapTokenLayer');
+
+            const container = document.createElement('div');
+            container.id = `token-${id}`;
+            container.style.position = 'absolute';
+            container.style.top = '100px';
+            container.style.left = '100px';
+            container.style.width = '100px'; //60px;
+            container.style.height = '100px'; //60px;
+            container.style.borderRadius = '50%';
+            container.style.border = '2px solid gold';
+            container.style.pointerEvents = 'auto';
+            container.style.cursor = 'grab';
+            container.style.position = 'absolute';
+            container.style.display = 'flex';
+            container.style.alignItems = 'center';
+            container.style.justifyContent = 'center';
+
             const img = document.createElement('img');
             img.src = `data/monster_tokens/${name}.webp`;
-            img.id = `token-${id}`;
-            img.style.position = 'absolute';
-            img.style.top = '100px';
-            img.style.left = '100px';
-            img.style.width = '60px';
-            img.style.height = '60px';
+            img.style.width = '100%';
+            img.style.height = '100%';
             img.style.borderRadius = '50%';
-            img.style.border = '2px solid gold';
-            img.style.pointerEvents = 'auto';
-            img.style.cursor = 'grab';
-            makeDraggable(img);
-            layer.appendChild(img);
+            img.draggable = false;
+
+            const label = document.createElement('div');
+            label.className = 'token-label';
+            label.style.position = 'absolute';
+            label.style.top = '-5px';  // pull up slightly
+            label.style.right = '-5px'; // pull right slightly
+            label.style.fontSize = '20px';
+            label.style.backgroundColor = 'rgba(0,0,0,0.8)';
+            label.style.color = 'white';
+            label.style.padding = '2px 6px';
+            label.style.borderRadius = '6px';
+            label.style.zIndex = '10';
+            label.style.pointerEvents = 'none';
+            label.textContent = '?';
+
+            const conditionLabel = document.createElement('div');
+            conditionLabel.className = 'condition-label';
+            conditionLabel.style.position = 'absolute';
+            conditionLabel.style.bottom = '-5px';
+            conditionLabel.style.left = '50%';
+            conditionLabel.style.transform = 'translateX(-50%)';
+            conditionLabel.style.fontSize = '12px';
+            conditionLabel.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            conditionLabel.style.color = 'white';
+            conditionLabel.style.padding = '2px 4px';
+            conditionLabel.style.borderRadius = '4px';
+            conditionLabel.style.pointerEvents = 'none';
+            conditionLabel.textContent = '';  // initially empty
+
+            container.appendChild(img);
+            container.appendChild(label);
+            container.appendChild(conditionLabel);
+            makeDraggable(container);
+            layer.appendChild(container);
         }
 
         function makeDraggable(el) {
