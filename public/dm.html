@@ -407,12 +407,12 @@
     </div>
 
 
-
-
     <!-- Map Tab ##################################################################################################-->
-    <div class="tab-content" id="mapTab">
+    <div class="tab-content" id="mapTab" style="position: relative; overflow: hidden;">
         <img id="mapImage" src="data/maps/default.jpg" alt="Map Image"
             style="width: 100%; height: 100%; object-fit: cover; border: none;">
+        <div id="mapTokenLayer"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
     </div>
 
 
@@ -591,17 +591,21 @@
 
                         const newRow = document.createElement('tr');
                         newRow.innerHTML = `
-                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">?</td>
-                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                        <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                    </td>
-                    <td style="padding: 8px; border: 1px solid #555;">${selectedMonster}</td>
-                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                        <input type="number" value="${avgHp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                    </td>
-                    <td style="padding: 8px; border: 1px solid #555;"> </td> <!-- EMPTY CONDITIONS CELL -->
-                `;
+                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">?</td>
+                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                                <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #555;">${selectedMonster}</td>
+                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                                <input type="number" value="${avgHp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #555;"> </td> <!-- EMPTY CONDITIONS CELL -->
+                        `;
+                        const monsterId = generateID();
+                        newRow.dataset.monsterId = monsterId;
+
                         monsterTableBody.appendChild(newRow);
+                        addMonsterToken(selectedMonster, monsterId);
 
                         newRow.addEventListener('click', () => {
                             loadMonster(selectedMonster);
@@ -772,6 +776,7 @@
             updateMonsterTable(); // <<< Always update table after actions
         });
 
+        // Update Monster Table
         function updateMonsterTable() {
             const rows = Array.from(monsterTableBody.querySelectorAll('tr'));
 
@@ -779,6 +784,8 @@
             rows.forEach(row => {
                 const hpInput = row.children[3].querySelector('input');
                 if (parseInt(hpInput.value) <= 0) {
+                    const id = row.dataset.monsterId;
+                    document.getElementById(`token-${id}`)?.remove();
                     row.remove();
                 }
             });
@@ -814,6 +821,53 @@
             });
         }
 
+        function addMonsterToken(name, id) {
+            const layer = document.getElementById('mapTokenLayer');
+            const img = document.createElement('img');
+            img.src = `data/monster_tokens/${name}.webp`;
+            img.id = `token-${id}`;
+            img.style.position = 'absolute';
+            img.style.top = '100px';
+            img.style.left = '100px';
+            img.style.width = '60px';
+            img.style.height = '60px';
+            img.style.borderRadius = '50%';
+            img.style.border = '2px solid gold';
+            img.style.pointerEvents = 'auto';
+            img.style.cursor = 'grab';
+            makeDraggable(img);
+            layer.appendChild(img);
+        }
+
+        function makeDraggable(el) {
+            let isDragging = false;
+            let offsetX = 0, offsetY = 0;
+
+            el.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                isDragging = true;
+                offsetX = e.clientX - el.offsetLeft;
+                offsetY = e.clientY - el.offsetTop;
+                el.style.cursor = 'grabbing';
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                el.style.left = `${e.clientX - offsetX}px`;
+                el.style.top = `${e.clientY - offsetY}px`;
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    el.style.cursor = 'grab';
+                    isDragging = false;
+                }
+            });
+        }
+
+        function generateID() {
+            return '_' + Math.random().toString(36).substr(2, 9);
+        }
 
     </script>
 </body>
