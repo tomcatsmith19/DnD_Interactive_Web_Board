@@ -304,8 +304,6 @@
                 </div>
 
                 <!-- monster tab---------------------------------------------------------------------------------------->
-
-                <!-- Monster Tab -->
                 <div id="monsterContent" class="dungeon-tab-content monster-scroll"
                     style="background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px; overflow-y: auto;">
                     <div style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px;">
@@ -354,6 +352,10 @@
                             <p><strong>Passive Perception</strong>: 12</p>
                             <p><strong>Languages</strong>: Any one language (usually Common)</p>
                             <p><strong>Challenge</strong>: 1/4 (50 XP)</p>
+
+                            <p><strong>Vulnerabilities</strong>: ${vulnerabilities}</p>
+                            <p><strong>Resistances</strong>: ${resistances}</p>
+                            <p><strong>Immunities</strong>: ${immunities}</p>
 
                             <hr style="border: 1px solid #555; margin: 10px 0;">
 
@@ -536,6 +538,8 @@
         const allMonsters = [
             "Aboleth",
             "Acolyte",
+            "Adult Black Dragon",
+            "Archmage",
         ];
 
         // Show Modal on "Add Monster" button
@@ -655,6 +659,7 @@
                 .replace(/<[^>]+>/g, '');
         }
 
+
         // Load Monster Data
         function loadMonster(name) {
             const path = `data/monsters/${name}.json`;
@@ -667,22 +672,18 @@
                 .then(data => {
                     console.log("Monster loaded:", data);
 
-                    // Set monster token image
+                    // Set image
                     document.querySelector("#monsterContent img").src = `data/monster_tokens/${data.name}.webp`;
 
                     // Name and Type
                     const typeText = typeof data.type === "string" ? data.type : (data.type.type || "unknown");
                     const tagsText = (data.type.tags || []).join(", ");
                     document.querySelector("#monsterContent h1").textContent = data.name;
-                    document.querySelector("#monsterContent p").textContent = `${data.size[0]} ${typeText}${tagsText ? ` (${tagsText})` : ''}, ${data.alignment.join(' ')}`;
+                    document.querySelector("#monsterContent p").textContent =
+                        `${data.size[0]} ${typeText}${tagsText ? ` (${tagsText})` : ''}, ${data.alignment.join(' ')}`;
 
-                    // Armor Class
-                    let armorClass = "Unknown";
-                    if (typeof data.ac[0] === "number") {
-                        armorClass = data.ac[0];
-                    } else if (typeof data.ac[0] === "object") {
-                        armorClass = `${data.ac[0].ac} (${data.ac[0].from.join(', ')})`;
-                    }
+                    // AC
+                    const armorClass = Array.isArray(data.ac) ? data.ac.join(', ') : data.ac;
 
                     // Speed
                     const speed = Object.entries(data.speed || {}).map(([k, v]) => `${k} ${v} ft.`).join(", ");
@@ -696,29 +697,57 @@
                     <div><strong>INT</strong><br>${data.int}</div>
                     <div><strong>WIS</strong><br>${data.wis}</div>
                     <div><strong>CHA</strong><br>${data.cha}</div>
-                </div>
-            `;
+                </div>`;
 
                     // Skills
-                    const skills = Object.entries(data.skill || {}).map(([k, v]) => `${k.toUpperCase()} ${v}`).join(', ');
+                    const skills = Object.entries(data.skills || {}).map(([k, v]) => `${k.toUpperCase()} ${v}`).join(', ');
+
+                    // Traits
+                    const traits = (data.traits || []).map(t =>
+                        `<strong>${t.name}</strong>: ${cleanText(t.entries.join(' '))}`
+                    ).join('<br><br>');
 
                     // Actions
-                    const actions = (data.action || []).map(a =>
+                    const actions = (data.actions || []).map(a =>
                         `<strong>${a.name}</strong>: ${cleanText(a.entries.join(' '))}`
+                    ).join('<br><br>');
+
+                    // Legendary Actions
+                    const legendary = (data.legendary || []).map(l =>
+                        `<strong>${l.name}</strong>: ${cleanText(l.entries.join(' '))}`
                     ).join('<br><br>');
 
                     // Spellcasting
                     let spellcastingText = "";
-                    if (data.spellcasting) {
-                        const spells = data.spellcasting[0];
-                        spellcastingText = `<p><strong>${spells.name}</strong>:</p><p>${spells.headerEntries.map(cleanText).join(' ')}</p>`;
+                    if (data.spellcasting?.length) {
+                        const sc = data.spellcasting[0];
+                        spellcastingText += `<p><strong>${sc.name}</strong>:</p>`;
+                        spellcastingText += `<p>${(sc.headerEntries || []).map(cleanText).join(' ')}</p>`;
+
+                        if (sc.spells) {
+                            for (const level in sc.spells) {
+                                const levelData = sc.spells[level];
+                                const slotText = levelData.slots !== undefined ? ` (${levelData.slots} slot${levelData.slots > 1 ? 's' : ''})` : '';
+                                const spells = levelData.spells.map(cleanText).join(', ');
+                                const label = level === "0" ? "<em>Cantrips (at will)</em>" : `<em>${level}st-level${slotText}</em>`;
+                                spellcastingText += `<p>${label}: ${spells}</p>`;
+                            }
+                        }
                     }
+
+                    // Defenses
+                    const vulnerabilities = (data.vulnerable || []).join(', ') || 'None';
+                    const resistances = (data.resist || []).join(', ') || 'None';
+                    const immunities = [
+                        ...(data.immune || []),
+                        ...(data.conditionImmune || []).map(ci => typeof ci === 'string' ? ci : ci.name)
+                    ].join(', ') || 'None';
 
                     // Fill info block
                     const infoBlock = document.querySelector("#monsterContent .info-block");
                     infoBlock.innerHTML = `
                 <p><strong>Armor Class</strong>: ${armorClass}</p>
-                <p><strong>Hit Points</strong>: ${data.hp.average} (${data.hp.formula})</p>
+                <p><strong>Hit Points</strong>: ${data.hp} (${data.hp.formula || "—"})</p>
                 <p><strong>Speed</strong>: ${speed}</p>
 
                 <hr style="border: 1px solid #555; margin: 10px 0;">
@@ -726,15 +755,19 @@
                 <hr style="border: 1px solid #555; margin: 10px 0;">
 
                 <p><strong>Skills</strong>: ${skills}</p>
-                <p><strong>Passive Perception</strong>: ${data.passive || "-"}</p>
+                <p><strong>Passive Perception</strong>: ${data.passive || '-'}</p>
                 <p><strong>Languages</strong>: ${(data.languages || []).join(', ')}</p>
-                <p><strong>Challenge</strong>: ${data.cr}</p>
+                <p><strong>Challenge</strong>: ${data.cr} (Prof. Bonus +${data.prof_bonus || '-'})</p>
+
+                <p><strong>Vulnerabilities</strong>: ${vulnerabilities}</p>
+                <p><strong>Resistances</strong>: ${resistances}</p>
+                <p><strong>Immunities</strong>: ${immunities}</p>
 
                 <hr style="border: 1px solid #555; margin: 10px 0;">
                 ${spellcastingText}
-                <hr style="border: 1px solid #555; margin: 10px 0;">
-                <p><strong>Actions</strong>:</p>
-                ${actions}
+                ${traits ? `<hr style="border: 1px solid #555; margin: 10px 0;"><p><strong>Traits</strong>:</p>${traits}` : ''}
+                ${actions ? `<hr style="border: 1px solid #555; margin: 10px 0;"><p><strong>Actions</strong>:</p>${actions}` : ''}
+                ${legendary ? `<hr style="border: 1px solid #555; margin: 10px 0;"><p><strong>Legendary Actions</strong>:</p>${legendary}` : ''}
             `;
                 })
                 .catch(err => {
@@ -952,7 +985,7 @@
             mapContainer.style.transform = `scale(${scale})`;
         });
 
-        
+
 
 
     </script>
