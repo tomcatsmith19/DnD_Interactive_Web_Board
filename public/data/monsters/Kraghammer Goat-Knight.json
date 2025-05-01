@@ -1,0 +1,141 @@
+{
+  "name": "Kraghammer Goat-Knight",
+  "source": "TDCSR",
+  "page": 246,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [],
+  "ac": [
+    "20"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 25
+  },
+  "str": 17,
+  "dex": 8,
+  "con": 14,
+  "int": 10,
+  "wis": 11,
+  "cha": 16,
+  "skills": {
+    "nature": "+2",
+    "religion": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aura of Protection",
+      "entries": [
+        "Whenever the goat-knight or a creature friendly to it within 10 feet of it makes a {@quickref saving throws|PHB|2|1|saving throw}, that creature gains a +2 bonus (included in the goat-knight's {@quickref saving throws|PHB|2|1} above). The goat-knight must be conscious to grant and gain this bonus."
+      ]
+    },
+    {
+      "name": "Divine Health",
+      "entries": [
+        "The goat-knight is immune to disease."
+      ]
+    },
+    {
+      "name": "Dwarven Resilience",
+      "entries": [
+        "The goat-knight has resistance to poison damage and {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against poison."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The goat-knight makes two warhammer attacks."
+      ]
+    },
+    {
+      "name": "Warhammer",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) bludgeoning damage, or 8 (1d10 + 3 damage) bludgeoning damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The goat-knight is a 6th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It has the following paladin spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "cure wounds",
+            "protection from evil and good",
+            "sanctuary",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "branding smite",
+            "find steed",
+            "lesser restoration",
+            "zone of truth"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,85 @@
+{
+  "name": "Bugbear Gardener",
+  "source": "TftYP",
+  "page": 29,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 13,
+  "int": 8,
+  "wis": 11,
+  "cha": 9,
+  "skills": {
+    "stealth": "+6",
+    "survival": "+2"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Brute",
+      "entries": [
+        "A melee weapon deals one extra die of its damage when the bugbear hits with it (included in the attack)."
+      ]
+    },
+    {
+      "name": "Surprise Attack",
+      "entries": [
+        "If the bugbear surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 ({@dice 2d6}) damage from the attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 11 (2d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 30/120 ft., one target. 9 (2d6 + 2 damage) piercing damage in melee or 5 (1d6 + 2 damage) piercing damage at range."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "grassland",
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

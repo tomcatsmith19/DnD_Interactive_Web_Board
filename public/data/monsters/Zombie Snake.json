@@ -1,0 +1,68 @@
+{
+  "name": "Zombie Snake",
+  "source": "PSI",
+  "page": 17,
+  "size": [
+    "T"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 2,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 2,
+  "dex": 16,
+  "con": 11,
+  "int": 1,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the snake to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the snake drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 1 piercing damage, and the target must make a DC 10 Constitution saving throw, taking 5 (2d4 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft."
+  ],
+  "environment": [
+    "grassland",
+    "forest",
+    "swamp",
+    "hill",
+    "desert",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

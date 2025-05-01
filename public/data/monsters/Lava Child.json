@@ -1,0 +1,86 @@
+{
+  "name": "Lava Child",
+  "source": "WDMM",
+  "page": 313,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "lava child"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 25,
+    "climb": 20
+  },
+  "str": 18,
+  "dex": 13,
+  "con": 16,
+  "int": 11,
+  "wis": 10,
+  "cha": 10,
+  "skills": {
+    "athletics": "+6",
+    "survival": "+2"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Ignan"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Metal Immunity",
+      "entries": [
+        "The lava child can move through metal without hindrance, and it has advantage on attack rolls against any creature wearing metal armor or using a metal shield."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The lava child makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "bludgeoning (from metal weapons)",
+    "piercing (from metal weapons)",
+    "slashing (from metal weapons)"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

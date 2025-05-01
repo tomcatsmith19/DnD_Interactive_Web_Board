@@ -1,0 +1,73 @@
+{
+  "name": "Bone Whelk",
+  "source": "BGDIA",
+  "page": 119,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 15,
+    "climb": 15
+  },
+  "str": 10,
+  "dex": 5,
+  "con": 11,
+  "int": 6,
+  "wis": 9,
+  "cha": 3,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Adhesive",
+      "entries": [
+        "The bone whelk can cause Medium or smaller objects to adhere to it. A Medium or smaller creature that touches the bone whelk is {@condition grappled} by it (escape {@dc 10})."
+      ]
+    },
+    {
+      "name": "Death Scream",
+      "entries": [
+        "When the bone whelk dies, it emits a blood-curdling shriek than can be heard out to a range of 120 feet. This shriek causes nonmagical, organic material within 10 feet of the bone whelk to rot. Each creature within 10 feet of the bone whelk when it dies takes 9 ({@damage 2d8}) necrotic damage."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The bone whelk can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one creature. 4 (1d8 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

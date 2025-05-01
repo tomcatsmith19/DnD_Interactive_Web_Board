@@ -1,0 +1,126 @@
+{
+  "name": "Hjoldak Hollowhelm",
+  "source": "PaBTSO",
+  "page": 204,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 25
+  },
+  "str": 19,
+  "dex": 13,
+  "con": 15,
+  "int": 17,
+  "wis": 14,
+  "cha": 6,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "telepathy 120 ft.",
+    "understands the languages it knew in life but can't speak"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ashenwight makes two Necrotic Shard attacks. It also uses Psionic Crown if available."
+      ]
+    },
+    {
+      "name": "Necrotic Shard",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 60 ft., one target. 7 (1d6 + 4 damage) piercing damage plus 9 (2d8 damage) necrotic damage. If the target is a creature, it has disadvantage on the next attack roll it makes before the end of its next turn."
+      ]
+    },
+    {
+      "name": "Psionic Crown {@recharge 5}",
+      "entries": [
+        "The ashenwight wreathes the head of a creature it can see within 60 feet of itself with a crown of jagged, spectral crystals. The target must succeed on a DC 14 Wisdom saving throw or have the {@condition charmed} condition for 1 minute. While {@condition charmed} in this way, the target's thoughts are sluggish; it can't take reactions, its speed is halved, and it takes 9 (2d8 damage) psychic damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The ashenwight casts one of the following spells, requiring no spellcasting components and using Intelligence as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "mage hand"
+      ],
+      "daily": {
+        "1": [
+          "calm emotions"
+        ]
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [
+    "necrotic",
+    "poison",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

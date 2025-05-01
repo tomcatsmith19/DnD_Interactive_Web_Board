@@ -1,0 +1,66 @@
+{
+  "name": "Thopter (Hawk)",
+  "source": "PSK",
+  "page": 33,
+  "size": [
+    "T"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 10,
+    "fly": 60
+  },
+  "str": 5,
+  "dex": 16,
+  "con": 8,
+  "int": 2,
+  "wis": 14,
+  "cha": 6,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The thopter has advantage on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 1 slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

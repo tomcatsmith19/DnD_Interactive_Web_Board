@@ -1,0 +1,131 @@
+{
+  "name": "Kavil",
+  "source": "WDMM",
+  "page": 205,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 40,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 11,
+  "int": 17,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "arcana": "+6",
+    "history": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "Dwarvish",
+    "Common",
+    "Giant",
+    "Undercommon"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). The mage has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "misty step",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "fly"
+          ]
+        },
+        "4": {
+          "spells": [
+            "greater invisibility",
+            "ice storm"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cone of cold"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,111 @@
+{
+  "name": "Oculorb",
+  "source": "PaBTSO",
+  "page": 214,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 13,
+  "dex": 10,
+  "con": 17,
+  "int": 14,
+  "wis": 15,
+  "cha": 19,
+  "skills": {
+    "investigation": "+6",
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "Deep Speech",
+    "telepathy 120 ft."
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The oculorb has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Watchful Eyes",
+      "entries": [
+        "The oculorb has advantage on initiative rolls and can't be surprised."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The oculorb makes two Dreadful Contact attacks or four Eye Beam attacks."
+      ]
+    },
+    {
+      "name": "Dreadful Contact",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 14 (3d6 + 4 damage) psychic damage, or 25 (6d6 + 4 damage) psychic damage if the target has the {@condition frightened} condition."
+      ]
+    },
+    {
+      "name": "Eye Beam",
+      "entries": [
+        "Ranged Spell atk +8 to hit, range 120 ft., one creature. 14 (3d6 + 4 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Antipathic Flood {@recharge 5}",
+      "entries": [
+        "The oculorb releases a wave of negative emotions, choosing one of the following options:"
+      ]
+    },
+    {
+      "name": "Weeping Eyes",
+      "entries": [
+        "The oculorb weeps, releasing a wave of crushing despair. Each creature within 30 feet of the oculorb must make a DC 16 Constitution saving throw. On a failed save, a creature's speed is reduced to 0 feet until the end of the oculorb's next turn, and if the creature was {@status concentration||concentrating}, its {@status concentration} is broken."
+      ]
+    },
+    {
+      "name": "Withering Glare",
+      "entries": [
+        "The oculorb's eyes unleash furious scarlet energy in a 60-foot cone. Each creature in that area must make a DC 16 Wisdom saving throw. On a failed save, a creature takes 33 (6d10 damage) necrotic damage and has the {@condition frightened} condition for 1 minute. On a successful save, a creature takes half as much damage and isn't {@condition frightened}. A {@condition frightened} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

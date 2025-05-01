@@ -1,0 +1,76 @@
+{
+  "name": "Koalinth",
+  "source": "GoS",
+  "page": 239,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30,
+    "swim": 20
+  },
+  "str": 13,
+  "dex": 11,
+  "con": 12,
+  "int": 11,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "athletics": "+3",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The koalinth can breathe air and water."
+      ]
+    },
+    {
+      "name": "Martial Advantage",
+      "entries": [
+        "Once per turn, the koalinth can deal an extra 7 ({@dice 2d6}) damage to a creature it hits with a weapon attack if that creature is within 5 feet of an ally of the koalinth that isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d6 + 1 damage) piercing damage, or 5 (1d8 + 1 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

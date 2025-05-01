@@ -1,0 +1,79 @@
+{
+  "name": "Marfulb",
+  "source": "RoT",
+  "page": 35,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 13,
+  "dex": 10,
+  "con": 14,
+  "int": 13,
+  "wis": 10,
+  "cha": 6,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Ice Toad"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The toad can breathe air or water."
+      ]
+    },
+    {
+      "name": "Cold Aura",
+      "entries": [
+        "Any creature that starts its turn within 5 feet of the toad takes 3 ({@damage 1d6}) cold damage."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The toad's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d8 damage) cold damage. If the target is a Medium or smaller creature it is {@condition grappled} (escape DC 11). Until this grapple ends, the toad can't bite another target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

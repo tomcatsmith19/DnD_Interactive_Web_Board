@@ -1,0 +1,60 @@
+{
+  "name": "Undead Cockatrice",
+  "source": "OoW",
+  "page": 114,
+  "size": [
+    "S"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 20,
+    "fly": 40
+  },
+  "str": 6,
+  "dex": 12,
+  "con": 12,
+  "int": 2,
+  "wis": 13,
+  "cha": 5,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one creature. 3 (1d4 + 1 damage) piercing damage, and the target must succeed on a DC 11 Constitution saving throw against being magically {@condition petrified}. On a failed save, the creature begins to turn to stone and is {@condition restrained}. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is {@condition petrified} for 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

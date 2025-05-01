@@ -1,0 +1,107 @@
+{
+  "name": "Shadow Assassin",
+  "source": "WDMM",
+  "page": 316,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 40
+  },
+  "str": 6,
+  "dex": 19,
+  "con": 14,
+  "int": 13,
+  "wis": 12,
+  "cha": 14,
+  "skills": {
+    "perception": "+9",
+    "stealth": "+12"
+  },
+  "passive": 19,
+  "languages": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The assassin can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Shadow Stealth",
+      "entries": [
+        "While in dim light or darkness, the assassin can take the Hide action as a bonus action."
+      ]
+    },
+    {
+      "name": "Sunlight Weakness",
+      "entries": [
+        "While in sunlight, the assassin has disadvantage on attack rolls, ability checks, and saving throws."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The assassin makes two Shadow Blade attacks."
+      ]
+    },
+    {
+      "name": "Shadow Blade",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage plus 10 (3d6 damage) necrotic damage. Unless the target is immune to necrotic damage, the target's Strength score is reduced by {@dice 1d4} each time it is hit by this attack. The target dies if its Strength is reduced to 0. The reduction lasts until the target finishes a short or long rest. If a non-evil humanoid dies from this attack, a shadow (see the Monster Manual) rises from the corpse {@dice 1d4} hours later."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "radiant"
+  ],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

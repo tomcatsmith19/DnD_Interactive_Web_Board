@@ -1,0 +1,70 @@
+{
+  "name": "Worg",
+  "source": "MM",
+  "page": 341,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 50
+  },
+  "str": 16,
+  "dex": 13,
+  "con": 13,
+  "int": 7,
+  "wis": 11,
+  "cha": 8,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Goblin",
+    "Worg"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The worg has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

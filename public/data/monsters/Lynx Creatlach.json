@@ -1,0 +1,120 @@
+{
+  "name": "Lynx Creatlach",
+  "source": "IMR",
+  "page": 54,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [
+    "tiefling"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 18,
+  "int": 13,
+  "wis": 16,
+  "cha": 18,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Infernal"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Lynx's crystal eye is a magically shrunken crystal ball of true seeing. One of her teeth is a refashioned ring of mind shielding, while another has been magicked to place her under a permanent {@spell Nystul's magic aura} spell, concealing the magic of these items and hiding her true nature from magic or features that can detect undead."
+      ]
+    },
+    {
+      "name": "Aversion of Fire",
+      "entries": [
+        "If Lynx takes fire damage, she has disadvantage on attack rolls and ability checks until the end of her next turn."
+      ]
+    },
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "Lynx is immune to any spell or effect that would alter her form."
+      ]
+    },
+    {
+      "name": "Lightning Absorption",
+      "entries": [
+        "Whenever Lynx is subjected to lightning damage, she takes no damage and instead regains a number of hit points equal to the lightning damage dealt."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Lynx has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "Lynx regains 10 hit points at the start of her turn. If she takes fire or radiant damage, this trait doesn't function at the start of her next turn. Lynx's body is destroyed only if she starts her turn with 0 hit points and doesn't regenerate."
+      ]
+    },
+    {
+      "name": "Turn Immunity",
+      "entries": [
+        "Lynx is immune to effects that turn undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Lynx makes two shortsword attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "stunned"
+  ],
+  "resist": [
+    "necrotic",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

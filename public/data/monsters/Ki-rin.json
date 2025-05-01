@@ -1,0 +1,176 @@
+{
+  "name": "Ki-rin",
+  "source": "VGM",
+  "page": 163,
+  "size": [
+    "H"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 152,
+  "speed": {
+    "walk": 60,
+    "fly": {
+      "number": 120,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 21,
+  "dex": 16,
+  "con": 16,
+  "int": 19,
+  "wis": 20,
+  "cha": 20,
+  "skills": {
+    "insight": "+9",
+    "perception": "+9",
+    "religion": "+8"
+  },
+  "passive": 19,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the ki-rin fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The ki-rin has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The ki-rin's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ki-rin makes three attacks: two with its hooves and one with its horn."
+      ]
+    },
+    {
+      "name": "Hoof",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one target. 10 (2d4 + 5 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Horn",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Detect",
+      "entries": [
+        "The ki-rin makes a Wisdom ({@skill Perception}) check or a Wisdom ({@skill Insight}) check."
+      ]
+    },
+    {
+      "name": "Smite",
+      "entries": [
+        "The ki-rin makes a hoof attack or casts {@spell sacred flame}."
+      ]
+    },
+    {
+      "name": "Move",
+      "entries": [
+        "The ki-rin moves up to its half its speed without provoking opportunity attacks."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The ki-rin's innate spellcasting ability is Charisma (spell save {@dc 17}). The ki-rin can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "gaseous form",
+        "major image",
+        "wind walk"
+      ],
+      "daily": {
+        "1": [
+          "create food and water"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "mountain",
+    "grassland",
+    "desert",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

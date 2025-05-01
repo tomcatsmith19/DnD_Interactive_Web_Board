@@ -1,0 +1,94 @@
+{
+  "name": "Ancient Time Dragon",
+  "source": "MPP",
+  "page": 48,
+  "size": [
+    "G"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "22"
+  ],
+  "hp": 536,
+  "speed": {
+    "walk": 40,
+    "climb": 40,
+    "fly": 80
+  },
+  "str": 28,
+  "dex": 14,
+  "con": 26,
+  "int": 27,
+  "wis": 18,
+  "cha": 23,
+  "skills": {
+    "arcana": "+16",
+    "history": "+24",
+    "perception": "+20",
+    "stealth": "+18"
+  },
+  "passive": 30,
+  "languages": [
+    "all"
+  ],
+  "cr": "26",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Cycle of Rebirth",
+      "entries": [
+        "If the dragon dies, its soul coalesces into a steely egg and teleports to a random plane of existence. The egg is immune to all damage and hatches into a time dragon wyrmling after {@dice 1d100} years. The dragon retains all memories and knowledge it gained in its previous life."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (5/Day)",
+      "entries": [
+        "If the dragon fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes three Rend attacks."
+      ]
+    },
+    {
+      "name": "Rend",
+      "entries": [
+        "Melee atk +17 to hit, reach 15 ft., one target. 22 (3d8 + 9 damage) slashing damage plus 10 (3d6 damage) force damage."
+      ]
+    },
+    {
+      "name": "Time Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a wave of shimmering light in a 90-foot cone. Nonmagical objects and vegetation in that area that aren't being worn or carried crumble to dust. Each creature in that area must make a DC 24 Constitution saving throw. On a failed save, a creature takes 52 (8d12 damage) force damage and is magically weakened as it is desynchronized from the time stream. While the creature is in this state, attack rolls against it have advantage, it has the {@condition poisoned} condition, and other creatures have resistance to all damage it deals. On a successful save, the creature takes half as much damage only. A weakened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself after it succeeds on three of these saves."
+      ]
+    },
+    {
+      "name": "Time Gate (1/Day)",
+      "entries": [
+        "The dragon conjures a 20-foot-diameter, circular portal in the space between its horns or in an unoccupied space it can see within 30 feet of itself. The portal links to a precise location on any plane of existence at a point in time up to 8,000 years from the present, whether past or future. The portal lasts for 24 hours or until the dragon's {@status concentration} ends (as if {@status concentration||concentrating} on a spell). The portal has a front and a back on each plane where it appears. Travel through the portal is possible only by moving through its front. Anything that does so is transported to the destination, appearing in the unoccupied space nearest to the portal. Deities and other planar rulers can prevent portals created by the dragon from opening in the rulers' presence or anywhere within their domains."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

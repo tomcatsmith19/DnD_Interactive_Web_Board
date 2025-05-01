@@ -1,0 +1,92 @@
+{
+  "name": "Bronze Sable",
+  "source": "MOT",
+  "page": 210,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 13,
+  "dex": 16,
+  "con": 15,
+  "int": 3,
+  "wis": 14,
+  "cha": 1,
+  "skills": {
+    "stealth": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "understands one language of its creator but can't speak"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the sable remains motionless, it is indistinguishable from a normal statue."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The sable has advantage on an attack roll against a creature if at least one of the sable's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Surprise Attack",
+      "entries": [
+        "If the sable surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 10 ({@damage 3d6}) damage from the attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The sable makes two bite attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

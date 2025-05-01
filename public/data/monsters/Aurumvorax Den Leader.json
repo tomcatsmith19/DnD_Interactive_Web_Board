@@ -1,0 +1,96 @@
+{
+  "name": "Aurumvorax Den Leader",
+  "source": "JttRC",
+  "page": 105,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 40,
+    "burrow": 20
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 14,
+  "int": 3,
+  "wis": 13,
+  "cha": 8,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Pack Leader",
+      "entries": [
+        "The aurumvorax's allies have advantage on attack rolls while within 10 feet of the aurumvorax, provided it isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The aurumvorax can burrow through solid rock and metal at half its burrowing speed and leaves a 5-foot-diameter tunnel in its wake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The aurumvorax makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) piercing damage. If the target is a creature wearing armor of any type, the aurumvorax gains one of the following benefits of its choice:"
+      ]
+    },
+    {
+      "name": "Frenzy",
+      "entries": [
+        "The aurumvorax has advantage on attack rolls until start of its next turn."
+      ]
+    },
+    {
+      "name": "Invigorate",
+      "entries": [
+        "The aurumvorax regains 6 ({@dice 1d8 + 2}) hit points."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage. If the target is a Large or smaller creature, it is {@condition grappled} (escape DC 14). Until this grapple ends, the aurumvorax can't use its Claw attack on another target, and when it moves, it can drag the {@condition grappled} creature with it, without the aurumvorax's speed being halved."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "petrified"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

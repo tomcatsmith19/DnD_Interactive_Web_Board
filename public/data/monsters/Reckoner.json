@@ -1,0 +1,126 @@
+{
+  "name": "Reckoner",
+  "source": "GGR",
+  "page": 231,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 15,
+  "int": 15,
+  "wis": 12,
+  "cha": 10,
+  "skills": {
+    "arcana": "+4",
+    "intimidation": "+2",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "First Strike",
+      "entries": [
+        "The reckoner has advantage on initiative rolls."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The reckoner is a 5th-level Boros spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 12}, {@hit 4} to hit with spell attacks). The reckoner has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "blade ward",
+            "light",
+            "message",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "guiding bolt",
+            "shield",
+            "thunderwave",
+            "witch bolt"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blur",
+            "levitate"
+          ]
+        },
+        "3": {
+          "spells": [
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

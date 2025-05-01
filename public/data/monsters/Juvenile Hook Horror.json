@@ -1,0 +1,80 @@
+{
+  "name": "Juvenile Hook Horror",
+  "source": "OotA",
+  "page": 34,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 15,
+  "int": 6,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Hook Horror"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Echolocation",
+      "entries": [
+        "The hook horror can't use its blindsight while {@condition deafened}."
+      ]
+    },
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The hook horror has advantage on Wisdom ({@skill Perception}) checks that rely on hearing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hook horror makes two hook attacks."
+      ]
+    },
+    {
+      "name": "Hook",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 11 (2d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

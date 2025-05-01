@@ -1,0 +1,58 @@
+{
+  "name": "Ixitxachitl",
+  "source": "OotA",
+  "page": 225,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 0,
+    "swim": 30
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 13,
+  "int": 12,
+  "wis": 13,
+  "cha": 7,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Abyssal",
+    "Ixitxachitl"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

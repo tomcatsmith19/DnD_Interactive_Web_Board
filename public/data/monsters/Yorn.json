@@ -1,0 +1,86 @@
+{
+  "name": "Yorn",
+  "source": "WDH",
+  "page": 150,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-orc"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 11,
+  "con": 14,
+  "int": 10,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "intimidation": "+2"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The thug has advantage on an attack roll against a creature if at least one of the thug's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Relentless Endurance (1/Day)",
+      "entries": [
+        "When reduced to 0 hit points Yorn drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The thug makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Mace",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 5 (1d6 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +2 to hit, range 100/400 ft., one target. 5 (1d10 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

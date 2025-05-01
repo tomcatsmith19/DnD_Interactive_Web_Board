@@ -1,0 +1,92 @@
+{
+  "name": "Lightning Hulk",
+  "source": "BGG",
+  "page": 158,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 90,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 18,
+  "dex": 21,
+  "con": 16,
+  "int": 14,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Auran",
+    "Giant"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Illumination",
+      "entries": [
+        "The lightning hulk sheds bright light in a 20-foot radius and dim light for an additional 20 feet."
+      ]
+    },
+    {
+      "name": "Lightning Form",
+      "entries": [
+        "The lightning hulk can enter a hostile creature's space and stop there. The first time the lightning hulk enters a creature's space on a turn, or if it begins its turn in a creature's space, that creature takes 7 ({@damage 2d6}) lightning damage. The hulk can also move through a space as narrow as 1 inch without squeezing. A creature that touches the lightning hulk or hits it with a melee attack while within 5 feet of it takes 7 ({@damage 2d6}) lightning damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Arc Lightning",
+      "entries": [
+        "Melee/Ranged atk +9 to hit, reach 10 ft. or range 60 ft., one target. 18 (4d8 damage) lightning damage. If the target is a creature, it can't take reactions until the start of its next turn, and lightning jumps from the target to another creature of the lightning hulk's choice that it can see within 30 feet of the target. The second creature must succeed on a DC 18 Dexterity saving throw or take 18 (4d8 damage) lightning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "cold",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

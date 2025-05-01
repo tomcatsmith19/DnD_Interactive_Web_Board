@@ -1,0 +1,87 @@
+{
+  "name": "Goliath Warrior",
+  "source": "IDRotF",
+  "page": 292,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goliath"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 16,
+  "int": 10,
+  "wis": 15,
+  "cha": 10,
+  "skills": {
+    "athletics": "+6",
+    "perception": "+4",
+    "survival": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mountain Born",
+      "entries": [
+        "The goliath is acclimated to high altitude, including elevations above 20,000 feet."
+      ]
+    },
+    {
+      "name": "Powerful Build",
+      "entries": [
+        "The goliath counts as one size larger when determining its carrying capacity and the weight it can push, drag, or lift."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The goliath makes two attacks with its greataxe or hurls two javelins."
+      ]
+    },
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (1d12 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 30/120 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

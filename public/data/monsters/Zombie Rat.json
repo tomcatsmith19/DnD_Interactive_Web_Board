@@ -1,0 +1,63 @@
+{
+  "name": "Zombie Rat",
+  "source": "PSI",
+  "page": 17,
+  "size": [
+    "T"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 20
+  },
+  "str": 2,
+  "dex": 11,
+  "con": 9,
+  "int": 2,
+  "wis": 10,
+  "cha": 4,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the rat to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the rat drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one target. 1 piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [
+    "swamp",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

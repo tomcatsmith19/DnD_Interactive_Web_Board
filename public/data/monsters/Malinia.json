@@ -1,0 +1,84 @@
+{
+  "name": "Malinia",
+  "source": "PaBTSO",
+  "page": 212,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 12,
+  "dex": 18,
+  "con": 14,
+  "int": 11,
+  "wis": 13,
+  "cha": 15,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "telepathy 60 ft."
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, Malinia has disadvantage on attack rolls."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The mutate makes two Unarmed Strike or Nightmare Blast attacks."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) bludgeoning damage plus 10 (3d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Nightmare Blast",
+      "entries": [
+        "Ranged atk +6 to hit, range 60 ft., one creature. 7 (2d6 damage) psychic damage, and the target must succeed on a DC 12 Wisdom saving throw or have the {@condition frightened} condition until the start of Malinia's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

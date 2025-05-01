@@ -1,0 +1,145 @@
+{
+  "name": "Foresworn",
+  "source": "MCV2DC",
+  "page": 7,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 14,
+  "con": 17,
+  "int": 12,
+  "wis": 18,
+  "cha": 10,
+  "skills": {},
+  "passive": 14,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Duty-Bound",
+      "entries": [
+        "The foresworn is bound to enacting a singular duty it pledged itself to in life. While this duty is incomplete, whenever the foresworn is destroyed, it re-forms at its previous location after 3 ({@dice 1d6}) days, with all its hit points restored."
+      ]
+    },
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The foresworn can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The foresworn doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The foresworn makes three Spectral Polearm attacks."
+      ]
+    },
+    {
+      "name": "Spectral Polearm",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The foresworn casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "daily": {
+        "1": [
+          "wall of force"
+        ]
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Thri-kreen Hunter",
+  "source": "BAM",
+  "page": 61,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 16,
+  "con": 13,
+  "int": 10,
+  "wis": 14,
+  "cha": 9,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+5",
+    "survival": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "telepathy 60 ft.",
+    "Thri-kreen"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The thri-kreen makes two Gythka or Chatkcha attacks."
+      ]
+    },
+    {
+      "name": "Gythka",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Chatkcha",
+      "entries": [
+        "Ranged atk +5 to hit, range 30/120 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

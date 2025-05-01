@@ -1,0 +1,99 @@
+{
+  "name": "Zygfrek Belview",
+  "source": "CoS",
+  "page": 148,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "mongrelfolk"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 20
+  },
+  "str": 12,
+  "dex": 9,
+  "con": 15,
+  "int": 9,
+  "wis": 10,
+  "cha": 6,
+  "skills": {
+    "deception": "+2",
+    "perception": "+2",
+    "stealth": "+3"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Extraordinary Feature",
+      "entries": [
+        "The mongrelfolk has one of the following extraordinary features, determined randomly by rolling a {@dice d20} or chosen by the DM:",
+        "1\u00e2\u20ac\u201c3: Amphibious. The mongrelfolk can breathe air and water.",
+        "4\u00e2\u20ac\u201c9: Darkvision. The mongrelfolk has darkvision out to a range of 60 feet.",
+        "10: Flight. The mongrelfolk has leathery wings and a flying speed of 40 feet.",
+        "11\u00e2\u20ac\u201c15: Keen Hearing and Smell. The mongrelfolk has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell.",
+        "16\u00e2\u20ac\u201c17: Spider Climb. The mongrelfolk can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
+        "18\u00e2\u20ac\u201c19: Standing Leap. The mongrelfolk's long jump is up to 20 feet and its high jump up to 10 feet, with or without a running start.",
+        "20: Two-Headed. The mongrelfolk has advantage on Wisdom ({@skill Perception}) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, or knocked {@condition unconscious}."
+      ]
+    },
+    {
+      "name": "Mimicry",
+      "entries": [
+        "The mongrelfolk can mimic any sounds it has heard, including voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 12} Wisdom (Insight) check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The mongrelfolk makes two attacks: one with its bite and one with its claw or dagger."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

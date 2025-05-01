@@ -1,0 +1,66 @@
+{
+  "name": "Baloth",
+  "source": "PSZ",
+  "page": 33,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 95,
+  "speed": {
+    "walk": 50
+  },
+  "str": 22,
+  "dex": 9,
+  "con": 17,
+  "int": 2,
+  "wis": 11,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Trampling Charge",
+      "entries": [
+        "If the baloth moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a {@dc 13} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the baloth can make one stomp attack against it as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 24 (4d8 + 6 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Stomp",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one {@condition prone} creature. 22 (3d10 + 6 damage) bludgeoning damage"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

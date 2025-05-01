@@ -1,0 +1,126 @@
+{
+  "name": "Eldritch Priest",
+  "source": "GHLoE",
+  "page": 41,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "L",
+    "NX",
+    "C",
+    "NY",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 11,
+  "con": 13,
+  "int": 10,
+  "wis": 15,
+  "cha": 10,
+  "skills": {
+    "perception": "+4",
+    "religion": "+2"
+  },
+  "passive": 14,
+  "languages": [
+    "any two languages"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greatclub",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Prophecy of Doom (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The eldritch priest chooses a point it can see within 120 feet of it and rolls on the Eldritch Effects table. Each creature within 15 feet of that point must succeed on a DC 12 Wisdom saving throw or be subjected to an eldritch effect for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The eldritch priest is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). It has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "eldritch blast",
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bane",
+            "Tasha's hideous laughter",
+            "inflict wounds",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "see invisibility",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

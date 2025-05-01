@@ -1,0 +1,108 @@
+{
+  "name": "Silverquill Apprentice",
+  "source": "SCC",
+  "page": 214,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "bard"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 13,
+  "int": 12,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "deception": "+4",
+    "performance": "+6",
+    "persuasion": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Common plus any two languages"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Ink Blade",
+      "entries": [
+        "{@atk ms,rs} +4 to hit, reach 5 ft. or range 60 ft., one target. 5 (1d6 + 2 damage) piercing damage plus 9 (2d8 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The apprentice casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 12}):"
+      ],
+      "will": [
+        "dancing lights",
+        "friends"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

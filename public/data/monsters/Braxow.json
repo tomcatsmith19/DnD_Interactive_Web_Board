@@ -1,0 +1,81 @@
+{
+  "name": "Braxow",
+  "source": "SKT",
+  "page": 207,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 126,
+  "speed": {
+    "walk": 40
+  },
+  "str": 23,
+  "dex": 15,
+  "con": 20,
+  "int": 10,
+  "wis": 12,
+  "cha": 9,
+  "skills": {
+    "athletics": "+12",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Stone Camouflage",
+      "entries": [
+        "The giant has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two greatclub attacks."
+      ]
+    },
+    {
+      "name": "Greatclub",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one target. 19 (3d8 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +9 to hit, range 60/240 ft., one target. 28 (4d10 + 6 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Dwarf",
+  "source": "AWM",
+  "page": 32,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "Dwarf"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 25
+  },
+  "str": 16,
+  "dex": 13,
+  "con": 14,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {},
+  "passive": 0,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dwarven Resilience",
+      "entries": [
+        "They have advantage on saving throws against poison, and they have resistance to poison damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Melee atk +3 to hit, one target. 4 (1d6 + 1 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

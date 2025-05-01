@@ -1,0 +1,85 @@
+{
+  "name": "Meenlock",
+  "source": "VGM",
+  "page": 170,
+  "size": [
+    "S"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 31,
+  "speed": {
+    "walk": 30
+  },
+  "str": 7,
+  "dex": 15,
+  "con": 12,
+  "int": 11,
+  "wis": 10,
+  "cha": 8,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+6",
+    "survival": "+2"
+  },
+  "passive": 14,
+  "languages": [
+    "telepathy 120 ft."
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fear Aura",
+      "entries": [
+        "Any beast or humanoid that starts its turn within 10 feet of the meenlock must succeed on a {@dc 11} Wisdom saving throw or be {@condition frightened} until the start of the creature's next turn."
+      ]
+    },
+    {
+      "name": "Light Sensitivity",
+      "entries": [
+        "While in bright light, the meenlock has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Shadow Teleport {@recharge 5}",
+      "entries": [
+        "As a bonus action, the meenlock can teleport to an unoccupied space within 30 feet of it, provided that both the space it's teleporting from and its destination are in dim light or darkness. The destination need not be within line of sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (2d4 + 2 damage) slashing damage, and the target must succeed on a DC 11 Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "forest",
+    "swamp",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

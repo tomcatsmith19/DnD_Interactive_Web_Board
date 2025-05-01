@@ -1,0 +1,85 @@
+{
+  "name": "Astral Elf Warrior",
+  "source": "BAM",
+  "page": 13,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 10,
+  "int": 16,
+  "wis": 16,
+  "cha": 15,
+  "skills": {
+    "intimidation": "+4",
+    "survival": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The elf has advantage on saving throws it makes to avoid or end the {@condition charmed} condition on itself, and magic can't put it to sleep."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The elf doesn't require sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The elf makes two Longsword or Longbow attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) slashing damage, or 6 (1d10 + 1 damage) slashing damage when used with two hands, plus 10 (3d6 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 150/600 ft., one target. 6 (1d8 + 2 damage) piercing damage plus 10 (3d6 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

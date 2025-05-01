@@ -1,0 +1,111 @@
+{
+  "name": "Tomb Tapper",
+  "source": "IDRotF",
+  "page": 310,
+  "size": [
+    "H"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 207,
+  "speed": {
+    "walk": 30,
+    "burrow": 10
+  },
+  "str": 22,
+  "dex": 10,
+  "con": 21,
+  "int": 14,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "understands Common and Undercommon but doesn't speak",
+    "telepathy 60 ft."
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Petrified Death",
+      "entries": [
+        "A tomb tapper reduced to 0 hit points turns into a lifeless stone statue. Anything it's wearing or carrying is not transformed."
+      ]
+    },
+    {
+      "name": "Sense Magic",
+      "entries": [
+        "The tomb tapper senses magic within 30 feet of it and can use an action to pinpoint the location of any creature, object, or area in that range that bears magic. This sense penetrates barriers but is blocked by a thin sheet of lead."
+      ]
+    },
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The tomb tapper can burrow through solid rock at half its burrowing speed and leaves a 10-foot-wide, 20-foot-tall tunnel in its wake."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The tomb tapper doesn't require air or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The tomb tapper makes two melee attacks with its sledgehammer or with its claws. If it hits the same creature with both claws, it can pull that creature within 5 feet of its mouth and make a bite attack against it."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 22 (3d10 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +10 to hit, reach 10 ft., one target. 16 (3d6 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Sledgehammer",
+      "entries": [
+        "Melee/Ranged atk +10 to hit, reach 15 ft. or range 30/120 ft., one target. 27 (6d6 + 6 damage) bludgeoning or force damage (tomb tapper's choice). If thrown, the hammer returns to the tomb tapper at the end of its turn, landing at the tomb tapper's feet if it doesn't have a hand free to catch the weapon."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "fire"
+  ],
+  "senses": [
+    "blindsight 240 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

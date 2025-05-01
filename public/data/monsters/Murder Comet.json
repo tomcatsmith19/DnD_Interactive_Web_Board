@@ -1,0 +1,111 @@
+{
+  "name": "Murder Comet",
+  "source": "BAM",
+  "page": 38,
+  "size": [
+    "M"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 0,
+    "fly": 120
+  },
+  "str": 15,
+  "dex": 15,
+  "con": 20,
+  "int": 6,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Ignan",
+    "Terran"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Explode",
+      "entries": [
+        "When the comet drops to 0 hit points, it explodes in a 20-foot-radius sphere centered on itself. Each creature in the sphere must make a {@dc 16} Dexterity saving throw, taking 28 ({@damage 8d6}) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Flyby",
+      "entries": [
+        "The comet doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The comet sheds bright light in a 30-foot radius and dim light for an additional 30 feet."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The comet deals double damage to objects and structures."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The comet doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The comet makes one Slam attack and one Spit Fire attack."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) bludgeoning damage plus 7 (2d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Spit Fire",
+      "entries": [
+        "Ranged atk +5 to hit, range 60 ft., one target. 13 (2d10 + 2 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "unconscious"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 240 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

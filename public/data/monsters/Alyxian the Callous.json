@@ -1,0 +1,131 @@
+{
+  "name": "Alyxian the Callous",
+  "source": "CRCotN",
+  "page": 179,
+  "size": [
+    "L"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 157,
+  "speed": {
+    "walk": 30,
+    "fly": 90
+  },
+  "str": 23,
+  "dex": 18,
+  "con": 21,
+  "int": 15,
+  "wis": 16,
+  "cha": 20,
+  "skills": {
+    "deception": "+9",
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish",
+    "telepathy 120 ft."
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Apotheonic Rejuvenation",
+      "entries": [
+        "When Alyxian the Callous drops to 0 hit points, his body dies and sheds its wings, and he rises to his feet in his third form, Alyxian the Dispossessed. His initiative count doesn't change."
+      ]
+    },
+    {
+      "name": "Divinely Blessed",
+      "entries": [
+        "Alyxian can't be {@quickref Surprise|PHB|3|0|surprised} and can't be changed into another form against his will."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "If Alyxian fails a saving throw, he can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Alyxian makes two Radiant Spear attacks. He can replace one of these attacks with Blinding Teleport."
+      ]
+    },
+    {
+      "name": "Radiant Spear",
+      "entries": [
+        "Melee/Ranged atk +10 to hit, reach 5 ft. or range 120 ft., one target. 15 (2d8 + 6 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Blinding Teleport",
+      "entries": [
+        "Alyxian teleports, along with any equipment he is wearing or carrying, to an unoccupied space he can see within 120 feet of himself. Each creature within 5 feet of his new location must succeed on a DC 17 Constitution saving throw or be {@condition blinded} until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Heavenly Destruction (1/Day)",
+      "entries": [
+        "Alyxian releases divine energy in a 60-foot cone. Each creature of his choice in that area must make a DC 17 Constitution saving throw. On a failed saving throw, the creature takes 31 (7d8 damage) radiant damage and is knocked {@condition prone}. On a successful save, a creature takes half as much damage and isn't knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "Alyxian makes one Radiant Spear attack."
+      ]
+    },
+    {
+      "name": "Celestial Chains",
+      "entries": [
+        "Alyxian targets one creature he can see within 120 feet of himself. The target must succeed on a {@dc 17} Strength saving throw or be {@condition restrained} by magical chains for 1 minute. While {@condition restrained} in this way, the target can't leave the space by any means. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Flare (Costs 2 Actions)",
+      "entries": [
+        "Alyxian targets one creature he can see within 30 feet of himself. Light flares around the target, dealing 17 ({@damage 5d6}) radiant damage to it and creatures within 10 feet of it."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "radiant"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

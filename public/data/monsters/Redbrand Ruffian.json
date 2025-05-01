@@ -1,0 +1,56 @@
+{
+  "name": "Redbrand Ruffian",
+  "source": "PaBTSO",
+  "page": 216,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 12,
+  "int": 9,
+  "wis": 9,
+  "cha": 11,
+  "skills": {
+    "intimidation": "+2"
+  },
+  "passive": 9,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

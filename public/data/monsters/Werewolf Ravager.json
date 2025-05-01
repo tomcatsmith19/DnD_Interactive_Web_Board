@@ -1,0 +1,107 @@
+{
+  "name": "Werewolf Ravager",
+  "source": "GHLoE",
+  "page": 83,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any",
+    "shapechanger"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13",
+    "16"
+  ],
+  "hp": 91,
+  "speed": {
+    "walk": {
+      "number": 30,
+      "condition": "(50 ft. in hybrid form)"
+    }
+  },
+  "str": 17,
+  "dex": 16,
+  "con": 14,
+  "int": 9,
+  "wis": 15,
+  "cha": 10,
+  "skills": {
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "any two languages"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Grappler",
+      "entries": [
+        "While a creature is {@condition grappled} by the werewolf ravager, the werewolf has advantage on attack rolls against {@condition grappled} targets, and the target takes an additional 3 {@damage 1d6} damage whenever it is hit with the werewolf's bite or claw attack."
+      ]
+    },
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The werewolf can use its action to polymorph into a wolf-humanoid hybrid or back into its true form, which is humanoid. Any armor it is wearing merges into its hybrid form. It reverts to its true form if it dies."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The werewolf ravager makes two melee attacks. It can only make one bite attack per turn."
+      ]
+    },
+    {
+      "name": "Bite (Hybrid Form Only)",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 12 (2d8 + 3 damage) piercing damage. The target must succeed on a DC 14 Strength saving throw or be {@condition grappled}.",
+        "Additionally, if the target is a humanoid, it must succeed on a {@dc 13} Constitution saving throw or be cursed with werewolf lycanthropy."
+      ]
+    },
+    {
+      "name": "Claw (Hybrid Form Only)",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Short Sword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "immune": [
+    "bludgeoning (from nonmagical attacks that aren't silvered)",
+    "piercing (from nonmagical attacks that aren't silvered)",
+    "slashing (from nonmagical attacks that aren't silvered)"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

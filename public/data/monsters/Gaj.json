@@ -1,0 +1,78 @@
+{
+  "name": "Gaj",
+  "source": "BAM",
+  "page": 23,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 16,
+  "dex": 10,
+  "con": 15,
+  "int": 12,
+  "wis": 15,
+  "cha": 7,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+4"
+  },
+  "passive": 16,
+  "languages": [
+    "understands all languages but can't speak"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gaj makes one Mandibles attack and uses Mind-Probing Antennae or Paralyze (if available)."
+      ]
+    },
+    {
+      "name": "Mandibles",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 10 (2d6 + 3 damage) slashing damage, and the target is {@condition grappled} (escape DC 11). Until the grapple ends, the target takes 10 (2d6 + 3 damage) slashing damage at the start of each of the gaj's turns. While it is grappling a creature, the gaj can't use its mandibles to attack other creatures."
+      ]
+    },
+    {
+      "name": "Mind-Probing Antennae",
+      "entries": [
+        "The gaj targets one creature {@condition grappled} by it. The target must make a DC 12 Wisdom saving throw. On a failed save, the target takes 16 (3d10 damage) psychic damage, and the gaj magically pulls one piece of information from the target's mind that the gaj wants to know. On a successful save, the target takes half as much damage, and the gaj learns nothing."
+      ]
+    },
+    {
+      "name": "Paralyze {@recharge}",
+      "entries": [
+        "The gaj magically targets one creature it can see within 60 feet of itself. The target must succeed on a DC 12 Wisdom saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

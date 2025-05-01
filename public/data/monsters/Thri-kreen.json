@@ -1,0 +1,90 @@
+{
+  "name": "Thri-kreen",
+  "source": "MM",
+  "page": 288,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "thri-kreen"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 40
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 13,
+  "int": 8,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4",
+    "survival": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Thri-kreen"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Chameleon Carapace",
+      "entries": [
+        "The thri-kreen can change the color of its carapace to match the color and texture of its surroundings. As a result, it has advantage on Dexterity (Stealth) checks made to hide."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The thri-kreen's long jump is up to 30 feet and its high jump is up to 15 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The thri-kreen makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one creature. 4 (1d6 + 1 damage) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or be {@condition poisoned} for 1 minute. If the saving throw fails by 5 or more, the target is also {@condition paralyzed} while {@condition poisoned} in this way. The {@condition poisoned} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 6 (2d4 + 1 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

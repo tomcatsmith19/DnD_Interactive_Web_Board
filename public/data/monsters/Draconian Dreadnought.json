@@ -1,0 +1,76 @@
+{
+  "name": "Draconian Dreadnought",
+  "source": "FTD",
+  "page": 177,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 57,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 18,
+  "dex": 10,
+  "con": 18,
+  "int": 10,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Death Throes",
+      "entries": [
+        "When the draconian is reduced to 0 hit points, it bursts into flames and is reduced to ashes. Each creature in a 10-foot-radius sphere centered on the draconian must succeed on a {@dc 13} Dexterity saving throw or take 10 ({@damage 3d6}) fire damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The draconian makes two Serrated Sword attacks and one Tail attack."
+      ]
+    },
+    {
+      "name": "Serrated Sword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) bludgeoning damage. If the target is a Large or smaller creature, it must succeed on a DC 14 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

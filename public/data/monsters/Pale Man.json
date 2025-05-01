@@ -1,0 +1,191 @@
+{
+  "name": "Pale Man",
+  "source": "DoDk",
+  "page": 212,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 120,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 10,
+  "dex": 15,
+  "con": 17,
+  "int": 20,
+  "wis": 15,
+  "cha": 12,
+  "skills": {
+    "arcana": "+10",
+    "history": "+10",
+    "perception": "+7"
+  },
+  "passive": 15,
+  "languages": [
+    "Common and any 5 other languages"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the Pale Man fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Insect Body",
+      "entries": [
+        "The Pale Man can occupy another creature's space and vice versa, and the Pale Man can move through any opening large enough for a Tiny insect."
+      ]
+    },
+    {
+      "name": "Crawling Flesh",
+      "entries": [
+        "When the Pale Man is reduced to 0 hit points, it breaks apart into a swarm of insects in the same space. Unless the swarm is destroyed, the Pale Man swarm returns to its cocoon and reforms {@dice 1d6} days later."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Contaminating Touch",
+      "entries": [
+        "{@atk ms} +8 to hit, reach 10 ft., one target. 10 (3d6 damage) necrotic damage, and the target must succeed on a DC 16 Constitution saving throw or receive one {@adventure level of contamination|DoDk|12}."
+      ]
+    },
+    {
+      "name": "Infest the Flesh {@recharge}",
+      "entries": [
+        "Each creature within 30 feet of the Pale Man must succeed on a DC 16 Dexterity saving throw or take 22 (5d8 damage) necrotic damage and be {@condition restrained} by masses of swarming fleshy bugs. The affected creature takes 22 (5d8 damage) necrotic damage at the start of each of the Pale Man's turns. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Cantrip (Costs 1 Action)",
+      "entries": [
+        "The Pale Man casts one cantrip."
+      ]
+    },
+    {
+      "name": "Slither (Costs 2 Actions)",
+      "entries": [
+        "The Pale Man moves its speed without provoking opportunity attacks."
+      ]
+    },
+    {
+      "name": "Contaminate (Costs 3 Actions)",
+      "entries": [
+        "Each creature {@condition restrained} by the Pale Man's Infest the Flesh must succeed on a {@dc 16} Constitution saving throw or gain one {@adventure level of contamination|DoDk|12}."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The Pale Man is a 16th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 18}, {@hit 10} to hit with spell attacks). The Pale Man has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "delerium orb|DoDk",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "invisibility",
+            "warp bolt|DoDk"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "lightning bolt",
+            "purge contamination|DoDk"
+          ]
+        },
+        "4": {
+          "spells": [
+            "delerium blast|DoDk",
+            "forced evolution|DoDk"
+          ]
+        },
+        "5": {
+          "spells": [
+            "conjure the deep haze|DoDk",
+            "siphon contamination|DoDk"
+          ]
+        },
+        "6": {
+          "spells": [
+            "chain lightning"
+          ]
+        },
+        "7": {
+          "spells": [
+            "octarine spray|DoDk"
+          ]
+        },
+        "8": {
+          "spells": [
+            "antimagic field"
+          ]
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "footerEntries": [
+        "*These spells are from Appendix D of Dungeons of Drakkenheim."
+      ],
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "restrained"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

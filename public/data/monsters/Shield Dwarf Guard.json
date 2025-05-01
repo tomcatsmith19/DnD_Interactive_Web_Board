@@ -1,0 +1,66 @@
+{
+  "name": "Shield Dwarf Guard",
+  "source": "SKT",
+  "page": 78,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 12,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Warhammer",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) bludgeoning damage, or 6 (1d10 + 1 damage) bludgeoning damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "coastal",
+    "mountain",
+    "grassland",
+    "hill",
+    "urban",
+    "forest",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

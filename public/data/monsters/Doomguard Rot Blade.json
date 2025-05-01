@@ -1,0 +1,70 @@
+{
+  "name": "Doomguard Rot Blade",
+  "source": "MPP",
+  "page": 56,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 97,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 16,
+  "int": 12,
+  "wis": 10,
+  "cha": 15,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common plus two more languages"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The rot blade makes two Entropic Blade or Entropic Javelin attacks."
+      ]
+    },
+    {
+      "name": "Entropic Blade",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (1d10 + 4 damage) slashing damage plus 7 (2d6 damage) necrotic damage. A creature killed by this attack has its body and everything it is wearing or carrying, except for magic items, reduced to ash. Hit or Miss: The rot blade can cause the blade to emit a burst of entropic magic in a 10-foot-radius sphere centered on the weapon. Each creature in that area other than the rot blade must succeed on a DC 13 Constitution saving throw or take 6 (1d12 damage) necrotic damage. The blade can emit entropic magic in this way only once per turn."
+      ]
+    },
+    {
+      "name": "Entropic Javelin",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 30/120 ft., one target. 7 (1d6 + 4 damage) piercing damage plus 13 (2d12 damage) necrotic damage. A creature killed by this attack has its body and everything it is wearing or carrying, except for magic items, reduced to ash."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

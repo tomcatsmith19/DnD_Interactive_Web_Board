@@ -1,0 +1,159 @@
+{
+  "name": "Darien",
+  "source": "MaBJoV",
+  "page": 112,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [
+    "ogre"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 14,
+  "con": 16,
+  "int": 10,
+  "wis": 11,
+  "cha": 18,
+  "skills": {
+    "arcana": "+8",
+    "deception": "+8",
+    "persuasion": "+8"
+  },
+  "passive": 10,
+  "languages": [
+    "Aquan",
+    "Auran",
+    "Common",
+    "Elvish",
+    "Giant",
+    "telepathy 30 ft."
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Darien can see normally in darkness, both magical and nonmagical, to a distance of 120 feet"
+      ]
+    },
+    {
+      "name": "Eldritch Mind",
+      "entries": [
+        "Darien has advantage on Constitution saving throws that she makes to maintain {@status concentration} on a spell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Darien makes two attacks with her War Pick."
+      ]
+    },
+    {
+      "name": "War Pick",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft, one target. 10 (1d8 + 6 damage) piercing damage plus 4 necrotic damage."
+      ]
+    },
+    {
+      "name": "Eldritch Blast",
+      "entries": [
+        "Ranged atk +8 to hit, range 300 ft., three targets. 9 (1d10 + 4 damage) force damage."
+      ]
+    },
+    {
+      "name": "Create Thrall",
+      "entries": [
+        "Darien touches an {@condition incapacitated} humanoid. That creature is then {@condition charmed} by her until a {@spell remove curse} spell is cast on it, the {@condition charmed} condition is removed from it, or she uses this feature again. Darien can communicate telepathically with the {@condition charmed} creature as long as the two of them are on the same plane of existence."
+      ]
+    },
+    {
+      "name": "Summon War Pick",
+      "entries": [
+        "Darien creates a magical war pick in her empty hand. The war pick counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. The war pick has a +1 bonus to attack and damage (already factored into Darien's attacks)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Darien's innate spellcasting ability is Charisma. She can innately cast the following spells (spell save {@dc 16}, {@hit 8} to hit with spell attacks), requiring no material components:"
+      ],
+      "will": [
+        "alter self",
+        "disguise self",
+        "false life",
+        "invisibility",
+        "mage armor",
+        "silent image"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

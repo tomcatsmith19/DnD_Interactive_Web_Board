@@ -1,0 +1,87 @@
+{
+  "name": "Jarl Grugnur",
+  "source": "TftYP",
+  "page": 189,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    {
+      "alignment": [
+        "N",
+        "G"
+      ],
+      "chance": 50
+    },
+    {
+      "alignment": [
+        "N",
+        "E"
+      ],
+      "chance": 50
+    }
+  ],
+  "ac": [
+    "18",
+    "20"
+  ],
+  "hp": 200,
+  "speed": {
+    "walk": 40
+  },
+  "str": 27,
+  "dex": 10,
+  "con": 22,
+  "int": 12,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": null,
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two morningstar attacks."
+      ]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +12 to hit, reach 10 ft., one target. 21 (3d8 + 8 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +12 to hit, range 60/240 ft., one target. 30 (4d10 + 8 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": null,
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [],
+  "environment": [
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

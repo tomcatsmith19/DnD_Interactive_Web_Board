@@ -1,0 +1,76 @@
+{
+  "name": "Death Giant Reaper",
+  "source": "BGG",
+  "page": 126,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 172,
+  "speed": {
+    "walk": 40
+  },
+  "str": 27,
+  "dex": 14,
+  "con": 20,
+  "int": 18,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "arcana": "+8",
+    "history": "+8",
+    "perception": "+7",
+    "stealth": "+6"
+  },
+  "passive": 17,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two Scythe or Soul Bolt attacks."
+      ]
+    },
+    {
+      "name": "Scythe",
+      "entries": [
+        "Melee atk +12 to hit, reach 15 ft., one target. 21 (3d8 + 8 damage) slashing damage plus 11 (2d10 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Soul Bolt",
+      "entries": [
+        "Ranged Spell atk +8 to hit, range 120 ft., one creature. 26 (4d10 + 4 damage) necrotic damage. If the target has the {@condition frightened} condition, the giant gains temporary hit points equal to the damage dealt."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

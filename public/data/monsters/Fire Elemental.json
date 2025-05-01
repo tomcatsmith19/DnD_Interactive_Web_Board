@@ -1,0 +1,98 @@
+{
+  "name": "Fire Elemental",
+  "source": "MM",
+  "page": 125,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 50
+  },
+  "str": 10,
+  "dex": 17,
+  "con": 16,
+  "int": 6,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Ignan"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fire Form",
+      "entries": [
+        "The elemental can move through a space as narrow as 1 inch wide without squeezing. A creature that touches the elemental or hits it with a melee attack while within 5 feet of it takes 5 ({@damage 1d10}) fire damage. In addition, the elemental can enter a hostile creature's space and stop there. The first time it enters a creature's space on a turn, that creature takes 5 ({@damage 1d10}) fire damage and catches fire; until someone takes an action to douse the fire, the creature takes 5 ({@damage 1d10}) fire damage at the start of each of its turns."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The elemental sheds bright light in a 30-foot radius and dim light in an additional 30 feet."
+      ]
+    },
+    {
+      "name": "Water Susceptibility",
+      "entries": [
+        "For every 5 feet the elemental moves in water, or for every gallon of water splashed on it, it takes 1 cold damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The elemental makes two touch attacks."
+      ]
+    },
+    {
+      "name": "Touch",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 5 (1d10 damage) fire damage at the start of each of its turns."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

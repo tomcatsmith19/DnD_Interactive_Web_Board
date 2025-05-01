@@ -1,0 +1,121 @@
+{
+  "name": "Githyanki Buccaneer",
+  "source": "BAM",
+  "page": 27,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gith"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 14,
+  "int": 16,
+  "wis": 13,
+  "cha": 13,
+  "skills": {
+    "athletics": "+5",
+    "deception": "+3",
+    "perception": "+3",
+    "survival": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Gith"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The githyanki makes two Greatsword or Telekinetic Bolt attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage plus 3 (1d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Telekinetic Bolt",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 60 ft., one target. 13 (3d6 + 3 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The githyanki casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "light",
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

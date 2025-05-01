@@ -1,0 +1,76 @@
+{
+  "name": "Iron Defender",
+  "source": "ERLW",
+  "page": 293,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 40
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 16,
+  "int": 8,
+  "wis": 11,
+  "cha": 7,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Senses",
+      "entries": [
+        "The defender has advantage on Wisdom (Perception) checks."
+      ]
+    },
+    {
+      "name": "Telepathic Bond",
+      "entries": [
+        "While the defender is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or take an extra 3 (1d6 damage) piercing damage and be {@condition grappled} (escape DC 13). The defender can have only one creature {@condition grappled} in this way at a time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

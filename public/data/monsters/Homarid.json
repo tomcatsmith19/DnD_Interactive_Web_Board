@@ -1,0 +1,73 @@
+{
+  "name": "Homarid",
+  "source": "PSD",
+  "page": 15,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 20,
+    "swim": 30
+  },
+  "str": 13,
+  "dex": 8,
+  "con": 13,
+  "int": 9,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+3"
+  },
+  "passive": 14,
+  "languages": [
+    "Homarid"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The homarid can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The homarid makes two claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) slashing damage, and the target is {@condition grappled} (escape DC 11). The homarid has two claws, each of which can grapple only one target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

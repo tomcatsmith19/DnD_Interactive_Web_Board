@@ -1,0 +1,92 @@
+{
+  "name": "Skeletal Bloodfin",
+  "source": "CRCotN",
+  "page": 159,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 5,
+    "swim": 50
+  },
+  "str": 20,
+  "dex": 14,
+  "con": 16,
+  "int": 2,
+  "wis": 10,
+  "cha": 3,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the bloodfin dies, it explodes in a cloud of toxic blood. Each creature in a 10-foot-radius sphere centered on the exploding bloodfin, including any creature swallowed by the bloodfin, must succeed on a {@dc 15} Constitution saving throw or take 10 ({@damage 3d6}) poison damage. A creature inside the bloodfin when it explodes falls {@condition prone} in the space formerly occupied by the bloodfin and is no longer {@condition blinded} or {@condition restrained} by it."
+      ]
+    },
+    {
+      "name": "Water Breathing",
+      "entries": [
+        "The bloodfin can breathe only underwater."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The bloodfin makes one Bite attack and one Tail attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +9 to hit (with advantage if the target is a creature missing any hit points), reach 5 ft., one target. 14 (2d8 + 5 damage) piercing damage, and if the target is a creature, it is {@condition grappled} (escape DC 15). Until this grapple ends, the target is {@condition restrained}, and the bloodfin can't bite another target."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +9 to hit (with advantage if the target is a creature missing any hit points), reach 10 ft., one target. 19 (4d6 + 5 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 100 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

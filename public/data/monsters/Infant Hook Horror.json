@@ -1,0 +1,67 @@
+{
+  "name": "Infant Hook Horror",
+  "source": "OotA",
+  "page": 34,
+  "size": [
+    "T"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 4,
+  "speed": {
+    "walk": 10,
+    "climb": 10
+  },
+  "str": 9,
+  "dex": 10,
+  "con": 15,
+  "int": 6,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Hook Horror"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Echolocation",
+      "entries": [
+        "The hook horror can't use its blindsight while {@condition deafened}."
+      ]
+    },
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The hook horror has advantage on Wisdom ({@skill Perception}) checks that rely on hearing."
+      ]
+    }
+  ],
+  "actions": null,
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

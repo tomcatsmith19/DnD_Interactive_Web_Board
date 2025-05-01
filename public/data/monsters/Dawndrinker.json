@@ -1,0 +1,91 @@
+{
+  "name": "Dawndrinker",
+  "source": "GHLoE",
+  "page": 49,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 114,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 19,
+  "int": 3,
+  "wis": 11,
+  "cha": 7,
+  "skills": {
+    "stealth": "+5"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Drink Light",
+      "entries": [
+        "The dawndrinker can take a bonus action to drink light within 30 feet of it. If it does so, nonmagical light sources in this area go out, extinguishing any flames that are the source of the light. Provided the light comes from an effect of 3rd level or lower, or a creature of CR 7 or lower, magical bright light becomes dim light, and magical dim light goes out. If a magical effect's light is extinguished, the effect is dispelled. A creature's or object's inherent light returns to normal after 1 minute. The dawndrinker can dim or extinguish stronger effects by succeeding on a Constitution check with a DC of 10 + the effect's level or 5 + the creator's CR, whichever is lower."
+      ]
+    },
+    {
+      "name": "Light Sense",
+      "entries": [
+        "The dawndrinker can sense any light source within 120 feet of it. This sense penetrates most barriers, but it is blocked by 3 feet of wood or dirt, 1 foot of stone, or 1 inch of metal."
+      ]
+    },
+    {
+      "name": "Radiant Absorption",
+      "entries": [
+        "Whenever the dawndrinker is subjected to radiant damage, it takes no damage and instead regains hit points equal to the radiant damage dealt."
+      ]
+    },
+    {
+      "name": "Shadow Cunning",
+      "entries": [
+        "In dim light or darkness, the dawndrinker can take a bonus action to use the Disengage or Hide actions."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dawndrinker makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) bludgeoning damage and 7 (2d6 damage) cold damage. If the target is a creature, it must succeed on a DC 13 Constitution saving throw or be {@condition blinded} until the end of the dawndrinker's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "radiant"
+  ],
+  "senses": [
+    "blindsight 120 ft.",
+    "darkvision 240 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

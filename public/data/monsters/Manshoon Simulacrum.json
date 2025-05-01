@@ -1,0 +1,137 @@
+{
+  "name": "Manshoon Simulacrum",
+  "source": "WDH",
+  "page": 208,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 126,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 23,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "arcana": "+12",
+    "history": "+12"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Goblin",
+    "Infernal",
+    "Orc",
+    "Undercommon"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Metal Fist",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Manshoon is an 18th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 21}, {@hit 15} to hit with spell attacks). He has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "lightning bolt",
+            "sending"
+          ]
+        },
+        "4": {
+          "spells": [
+            "fire shield",
+            "greater invisibility",
+            "polymorph"
+          ]
+        },
+        "5": {
+          "spells": [
+            "Bigby's hand",
+            "scrying",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

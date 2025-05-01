@@ -1,0 +1,187 @@
+{
+  "name": "Vex'ahlia",
+  "source": "TDCSR",
+  "page": 267,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-elf"
+  ],
+  "alignment": [],
+  "ac": [
+    "21"
+  ],
+  "hp": 130,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 50,
+      "condition": "(with {@item broom of flying})"
+    }
+  },
+  "str": 7,
+  "dex": 20,
+  "con": 12,
+  "int": 14,
+  "wis": 16,
+  "cha": 17,
+  "skills": {
+    "acrobatics": "+17",
+    "athletics": "+4",
+    "deception": "+9",
+    "insight": "+9",
+    "investigation": "+8",
+    "perception": "+15",
+    "persuasion": "+9",
+    "stealth": "+17",
+    "survival": "+9"
+  },
+  "passive": 25,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic",
+    "Elvish",
+    "Thieves' Cant",
+    "Undercommon"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Assassinate",
+      "entries": [
+        "During her first turn, Vex has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on attack rolls against any creature that hasn't taken a turn. Any hit Vex scores against a surprised creature is a critical hit."
+      ]
+    },
+    {
+      "name": "Evasion",
+      "entries": [
+        "If Vex is subjected to an effect that allows her to make a Dexterity {@quickref saving throws|PHB|2|1|saving throw} to take only half damage, she instead takes no damage if she succeeds on the {@quickref saving throws|PHB|2|1|saving throw}, and only half damage if she fails."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Vex has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against being {@condition charmed}, and magic can't put her to sleep."
+      ]
+    },
+    {
+      "name": "Ranged Master",
+      "entries": [
+        "Vex's ranged weapon attacks have a +2 bonus to hit (included in attacks), and ignore {@quickref cover|PHB|3|0|half cover} and {@quickref cover|PHB|3|0|three-quarters cover}, and have no range penalty. Additionally, Vex can take a \u00e2\u02c6\u20195 penalty to any ranged attack roll to gain a +10 bonus to the damage roll."
+      ]
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "entries": [
+        "Vex deals an extra 14 ({@damage 4d6}) damage when she hits a target with a weapon attack and has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on the attack roll, or when the target is within 5 feet of an ally of Vex that isn't {@condition incapacitated} and she doesn't have {@quickref Advantage and Disadvantage|PHB|2|0|disadvantage} on the attack roll."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Vex wears {@item +2 Studded White Dragon Leather Armor of Cold Resistance|TDCSR} and a {@item +2 ring of protection|TDCSR|ring of protection with a +2 bonus}. She carries a {@item broom of flying} and a {@item raven's slumber|TDCSR}, and wields {@item Fenthras (Exalted)|TDCSR|Fenthras}."
+      ]
+    },
+    {
+      "name": "Trinket",
+      "entries": [
+        "{@creature Trinket|TDCSR} moves and acts on Vex's turn, and Vex can use a bonus action to command him to take the {@action Dash}, {@action Dodge}, {@action Disengage}, or {@action Attack} action. She can also command him to {@action Attack} as part of her Multiattack action (see below). {@creature Trinket|TDCSR} can take only one action on each of Vex's turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Vex makes two ranged attacks, and can command {@creature Trinket|TDCSR} to move up to his speed and use his Multiattack action."
+      ]
+    },
+    {
+      "name": "Fenthras",
+      "entries": [
+        "Ranged atk +16 to hit, range 600 ft., one target. 22 (1d8 + 18 damage) piercing damage and 3 (1d6 damage) lightning damage, and Vex can use the following ability:"
+      ]
+    },
+    {
+      "name": "Bramble Shot (2/{@quickref resting|PHB|2|0|Short Rest})",
+      "entries": [
+        "The attack deals an extra 18 (4d8 damage) piercing damage, and the target must succeed on a DC 17 Strength {@quickref saving throws|PHB|2|1|saving throw} or be {@condition restrained}. The target can repeat the {@quickref saving throws|PHB|2|1|saving throw} at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Vex is a 13th-level spellcaster. Her spell-casting ability is Wisdom (spell save {@dc 17}, {@hit 9} to hit with spell attacks). She has the following ranger spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "hunter's mark"
+          ]
+        },
+        "2": {
+          "spells": [
+            "pass without trace",
+            "protection from poison"
+          ]
+        },
+        "3": {
+          "spells": [
+            "lightning arrow",
+            "nondetection"
+          ]
+        },
+        "4": {
+          "spells": [
+            "freedom of movement",
+            "grasping vine"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Slurmy",
+  "source": "NRH-TCMC",
+  "page": 10,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 12,
+  "int": 8,
+  "wis": 14,
+  "cha": 8,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "Slurmy can take the Disengage or Hide action as a bonus action on each of their turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

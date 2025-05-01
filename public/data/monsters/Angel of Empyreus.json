@@ -1,0 +1,165 @@
+{
+  "name": "Angel of Empyreus",
+  "source": "GHLoE",
+  "page": 104,
+  "size": [
+    "L"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "21"
+  ],
+  "hp": 445,
+  "speed": {
+    "walk": 40,
+    "fly": 90
+  },
+  "str": 29,
+  "dex": 23,
+  "con": 26,
+  "int": 25,
+  "wis": 18,
+  "cha": 30,
+  "skills": {
+    "arcana": "+14",
+    "insight": "+11",
+    "intimidation": "+17",
+    "investigation": "+14",
+    "perception": "+11",
+    "religion": "+14"
+  },
+  "passive": 21,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "22",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Celestial Arsenal",
+      "entries": [
+        "The Angel of Empyreus' weapon attacks are magical. When it hits with any weapon, the weapon deals an extra 27 ({@damage 6d8}) radiant damage (included in the attack)."
+      ]
+    },
+    {
+      "name": "Authoritative Mien",
+      "entries": [
+        "The Angel of Empyreus can cast the {@spell command} spell at will (spell save {@dc 25})."
+      ]
+    },
+    {
+      "name": "Divine Awareness",
+      "entries": [
+        "The Angel of Empyreus knows if it hears a lie."
+      ]
+    },
+    {
+      "name": "Holy Aura",
+      "entries": [
+        "The Angel of Empyreus can project a 60-ft. aura of holiness as a bonus action. The aura affects all creatures within its area unless the Angel of Empyreus chooses to exclude a creature from the effect. A creature remains under the aura's effect until it leaves the area, dies, or when the Angel of Empyrean chooses a new aura effect. Only one effect may be active at a time:",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Judgement",
+              "entries": [
+                "Creatures who start their turn in the aura must succeed on a {@dc 25} Charisma saving throw. On a failure, the creature gains a level of {@condition exhaustion} as intensified feelings of guilt, doubt, remorse, and selfcriticism overwhelm the affected creature. Creatures who succeed on the saving throw are immune to the effect for one hour."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "Valor",
+              "entries": [
+                "Creatures who start their turn in the aura gain 15 temporary hit points, cannot be {@condition charmed} or {@condition frightened}, and have advantage on saving throws against spells and other magical effects"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Angel of Empyreus can make three attacks with its holy avenger."
+      ]
+    },
+    {
+      "name": "Holy Avenger",
+      "entries": [
+        "Melee atk +24 to hit, reach 10 ft., one target. 23 (4d6 + 9 damage) slashing damage plus 27 (6d8 damage) radiant damage. If the target is a fiend or undead, it takes an additional 22 (4d10 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Blazing Radiance {@recharge 5}",
+      "entries": [
+        "The Angel of Empyreus unleashes holy fire in a 60-foot cone. Each creature in that area must succeed on a DC 25 Dexterity saving throw or take 35 {@dice 10d6} fire and 35 (10d6 damage) radiant damage. Creatures take half damage on a success."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Fly",
+      "entries": [
+        "The Angel of Empyreus flies up to half its fly speed."
+      ]
+    },
+    {
+      "name": "Sword",
+      "entries": [
+        "The Angel of Empyreus makes a holy avenger attack."
+      ]
+    },
+    {
+      "name": "Hurl Sword (2 actions)",
+      "entries": [
+        "The Angel of Empyreus hurls its sword in a 30-foot line that is 5-feet wide. Each creature in that line must succeed on a {@dc 24} Dexterity saving throw or take 23 ({@damage 4d6 + 9}) slashing damage plus 27 ({@damage 6d8}) radiant damage. The sword immediately returns to its hand."
+      ]
+    },
+    {
+      "name": "Recharge",
+      "entries": [
+        "The Angel of Empyreus recharges its Blazing Radiance."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "fire",
+    "lightning",
+    "radiant",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

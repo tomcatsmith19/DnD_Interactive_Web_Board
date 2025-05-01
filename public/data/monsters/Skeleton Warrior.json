@@ -1,0 +1,90 @@
+{
+  "name": "Skeleton Warrior",
+  "source": "MaBJoV",
+  "page": 149,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 16,
+  "int": 16,
+  "wis": 12,
+  "cha": 12,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "all the languages it knew in life"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The skeleton warrior has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The skeleton warrior's weapon attacks are magical and have a +3 bonus to attack and damage rolls (included in the attack)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skeleton warrior makes two greatsword attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 13 (2d6 + 6 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "necrotic"
+  ],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

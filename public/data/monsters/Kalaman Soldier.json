@@ -1,0 +1,63 @@
+{
+  "name": "Kalaman Soldier",
+  "source": "DSotDQ",
+  "page": 202,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 12,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "athletics": "+3",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The soldier makes two Longsword attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage, or 7 (1d10 + 2 damage) slashing damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

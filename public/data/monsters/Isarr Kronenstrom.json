@@ -1,0 +1,95 @@
+{
+  "name": "Isarr Kronenstrom",
+  "source": "IDRotF",
+  "page": 307,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 117,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 15,
+  "int": 14,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "athletics": "+6",
+    "intimidation": "+6",
+    "perception": "+5",
+    "stealth": "+6",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "Isarr has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Indomitable (3/Day)",
+      "entries": [
+        "Isarr can reroll a saving throw he fails. He must use the new roll."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "Isarr has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Isarr makes three melee attacks."
+      ]
+    },
+    {
+      "name": "Sickle",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) piercing damage, plus 13 (2d12 damage) piercing damage if the target has no allies it can see within 10 feet of it."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +6 to hit, range 100/400 ft., one target. 8 (1d10 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

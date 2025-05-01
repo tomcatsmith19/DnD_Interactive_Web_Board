@@ -1,0 +1,115 @@
+{
+  "name": "Mjork Charger",
+  "source": "GHLoE",
+  "page": 70,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 18,
+  "int": 6,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Ignan",
+    "Terran"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the mjork charger moves at least 20 feet straight toward a target and then hits it with a slam attack on the same turn, the target takes an extra 4 ({@damage 1d8}) bludgeoning damage and 3 ({@damage 1d6}) fire damage. If the target is a creature, it must succeed on a {@dc 15} Strength saving throw or fall {@condition prone}."
+      ]
+    },
+    {
+      "name": "Fiery Body",
+      "entries": [
+        "A creature that touches the mjork charger or hits it with a melee attack while within 5 feet of it takes 7 ({@damage 2d6}) fire damage."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The mjork charger sheds dim light in a 10-foot radius."
+      ]
+    },
+    {
+      "name": "Momentum",
+      "entries": [
+        "If the mjork charger moves on its turn before attacking, creatures have disadvantage on attack rolls for opportunity attacks against it."
+      ]
+    },
+    {
+      "name": "Smoke Sense",
+      "entries": [
+        "A mjork charger in contact with smoke has blindsight in that smoke's area in a radius of up to 120 feet."
+      ]
+    },
+    {
+      "name": "Water Susceptibility",
+      "entries": [
+        "For every 5 feet the mjork charger moves in water, or for every gallon of water splashed on it, it takes 1 cold damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The mjork makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage and 7 (2d6 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "thunder"
+  ],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

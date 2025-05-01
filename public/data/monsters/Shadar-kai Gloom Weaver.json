@@ -1,0 +1,137 @@
+{
+  "name": "Shadar-kai Gloom Weaver",
+  "source": "MPMM",
+  "page": 213,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 18,
+  "con": 14,
+  "int": 15,
+  "wis": 12,
+  "cha": 18,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Burden of Time",
+      "entries": [
+        "Beasts and Humanoids (except elves) have disadvantage on saving throws while within 10 feet of the shadar-kai."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The shadar-kai has advantage on saving throws against being {@condition charmed}, and magic can't put it to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The shadar-kai makes three Shadow Spear attacks. It can replace one attack with a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Shadow Spear",
+      "entries": [
+        "Melee/Ranged atk +8 to hit, reach 5 ft. or range 30/120, one target. 7 (1d6 + 4 damage) piercing damage plus 26 (4d12 damage) necrotic damage. Hit or Miss: The spear magically returns to the shadar-kai's hand immediately after a ranged attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The shadar-kai casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "arcane eye",
+        "mage armor",
+        "minor illusion",
+        "prestidigitation",
+        "speak with dead"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

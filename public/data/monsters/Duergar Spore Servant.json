@@ -1,0 +1,60 @@
+{
+  "name": "Duergar Spore Servant",
+  "source": "OotA",
+  "page": 229,
+  "size": [
+    "M"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 15
+  },
+  "str": 14,
+  "dex": 11,
+  "con": 14,
+  "int": 2,
+  "wis": 6,
+  "cha": 1,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "War Pick",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "paralyzed"
+  ],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

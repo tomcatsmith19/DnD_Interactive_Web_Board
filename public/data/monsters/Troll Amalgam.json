@@ -1,0 +1,94 @@
+{
+  "name": "Troll Amalgam",
+  "source": "BGG",
+  "page": 186,
+  "size": [
+    "G"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 217,
+  "speed": {
+    "walk": 60,
+    "climb": 60
+  },
+  "str": 25,
+  "dex": 14,
+  "con": 21,
+  "int": 9,
+  "wis": 16,
+  "cha": 5,
+  "skills": {
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Giant",
+    "Undercommon"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the amalgam fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The amalgam has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The amalgam regains 15 hit points at the start of its turn. If the amalgam takes acid or fire damage, it regains only 5 hit points at the start of its next turn. The amalgam dies only if it takes 20 or more acid or fire damage while it has 0 hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The amalgam makes three Rend attacks."
+      ]
+    },
+    {
+      "name": "Rend",
+      "entries": [
+        "Melee atk +13 to hit, reach 15 ft., one target. 25 (4d8 + 7 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "poison",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

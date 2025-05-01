@@ -1,0 +1,78 @@
+{
+  "name": "Clockwork Mule",
+  "source": "SKT",
+  "page": 162,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 40
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 13,
+  "int": 2,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Beast of Burden",
+      "entries": [
+        "The mule is considered to be a Large animal for the purpose of determining its carrying capacity."
+      ]
+    },
+    {
+      "name": "Sure-Footed",
+      "entries": [
+        "The mule has advantage on Strength and Dexterity saving throws made against effects that would knock it {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [],
+  "environment": [
+    "hill",
+    "urban",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

@@ -1,0 +1,97 @@
+{
+  "name": "Riffler",
+  "source": "BMT",
+  "page": 181,
+  "size": [
+    "S"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30,
+    "burrow": 20
+  },
+  "str": 8,
+  "dex": 16,
+  "con": 12,
+  "int": 11,
+  "wis": 15,
+  "cha": 17,
+  "skills": {
+    "arcana": "+6",
+    "insight": "+5",
+    "sleight of hand": "+9",
+    "stealth": "+6"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Card Sense",
+      "entries": [
+        "The riffler can smell the presence of magical cards, including Decks of Many Things and other magical decks, within 1 mile of itself. It knows the direction to any such cards in that range. Effects that protect a target from divination magic block this sense."
+      ]
+    },
+    {
+      "name": "Riffling Step",
+      "entries": [
+        "The riffler can burrow through any nonmagical material that isn't iron, shuffling the substance through which the riffler moves aside like cards to form a tunnel that closes behind the riffler."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The riffler makes two Spectral Card attacks."
+      ]
+    },
+    {
+      "name": "Spectral Card",
+      "entries": [
+        "{@atk ms,rs} +6 to hit, reach 5 ft. or range 60 ft., one target. 8 (1d10 + 3 damage) force damage plus 5 (1d10 damage) damage that is radiant if the {@dice d10} roll is an even number and necrotic if it's odd."
+      ]
+    },
+    {
+      "name": "Card Spray {@recharge 5}",
+      "entries": [
+        "The riffler magically unleashes a spray of spectral cards in a 30-foot cone. Each creature in that area must make a DC 14 Dexterity saving throw. On a failed save, a creature takes 27 (5d10 damage) force damage and has the {@condition restrained} condition for 1 minute as cards bind it. On a successful save, a creature takes half as much damage only. A {@condition restrained} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Plane Shift",
+      "entries": [
+        "The riffler casts the {@spell Plane Shift} spell targeting only itself, requiring no material components and using Charisma as the spellcasting ability."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic",
+    "radiant"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

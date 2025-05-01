@@ -1,0 +1,68 @@
+{
+  "name": "Manes",
+  "source": "MM",
+  "page": 60,
+  "size": [
+    "S"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "9"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 20
+  },
+  "str": 10,
+  "dex": 9,
+  "con": 13,
+  "int": 3,
+  "wis": 8,
+  "cha": 4,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 5 (2d4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

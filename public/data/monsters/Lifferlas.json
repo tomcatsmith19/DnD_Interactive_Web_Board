@@ -1,0 +1,80 @@
+{
+  "name": "Lifferlas",
+  "source": "SKT",
+  "page": 250,
+  "size": [
+    "H"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 20
+  },
+  "str": 19,
+  "dex": 6,
+  "con": 15,
+  "int": 10,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While Lifferlas remains motionless, it is indistinguishable from a normal tree."
+      ]
+    },
+    {
+      "name": "Roleplaying Information",
+      "entries": [
+        "A druid of the Emerald Enclave awakened the tree Lifferlas with a spell. Goldenfields is his home, its people his friends. Children like to carve their name and initials into his body and hang from his boughs, and he's happy with that.",
+        "Ideal: \"I exist to protect the people and plants of Goldenfields.\"",
+        "Bond: \"Children are wonderful. I would do anything to make them feel happy and safe.\"",
+        "Flaw: \"I can't remember people's names and often get them mixed up.\""
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Lifferlas makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 14 (3d6 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

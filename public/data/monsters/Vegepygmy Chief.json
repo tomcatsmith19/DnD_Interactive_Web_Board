@@ -1,0 +1,95 @@
+{
+  "name": "Vegepygmy Chief",
+  "source": "VGM",
+  "page": 197,
+  "size": [
+    "S"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 14,
+  "con": 14,
+  "int": 7,
+  "wis": 12,
+  "cha": 9,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Vegepygmy"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Plant Camouflage",
+      "entries": [
+        "The vegepygmy has advantage on Dexterity ({@skill Stealth}) checks it makes in any terrain with ample obscuring plant life."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The vegepygmy regains 5 hit points at the start of its turn. If it takes cold, fire, or necrotic damage, this trait doesn't function at the start of the vegepygmy's next turn. The vegepygmy dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The vegepygmy makes two attacks with its claws or two melee attacks with its spear."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d6 + 2 damage) piercing damage, or 6 (1d8 + 2 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Spores (1/Day)",
+      "entries": [
+        "A 15-foot-radius cloud of toxic spores extends out from the vegepygmy. The spores spread around corners. Each creature in that area that isn't a plant must succeed on a DC 12 Constitution saving throw or be {@condition poisoned}. While {@condition poisoned} in this way, a target takes 9 (2d8 damage) poison damage at the start of each of its turns. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "lightning",
+    "piercing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

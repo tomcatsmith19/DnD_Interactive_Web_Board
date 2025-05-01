@@ -1,0 +1,134 @@
+{
+  "name": "Spirit Naga",
+  "source": "MM",
+  "page": 234,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 17,
+  "con": 14,
+  "int": 16,
+  "wis": 15,
+  "cha": 16,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If it dies, the naga returns to life in {@dice 1d6} days and regains all its hit points. Only a {@spell wish} spell can prevent this trait from functioning."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one creature. 7 (1d6 + 4 damage) piercing damage, and the target must make a DC 13 Constitution saving throw, taking 31 (7d8 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "minor illusion",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "detect magic",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "hold person"
+          ]
+        },
+        "3": {
+          "spells": [
+            "lightning bolt",
+            "water breathing"
+          ]
+        },
+        "4": {
+          "spells": [
+            "blight",
+            "dimension door"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dominate person"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

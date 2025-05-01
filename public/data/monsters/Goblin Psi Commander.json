@@ -1,0 +1,136 @@
+{
+  "name": "Goblin Psi Commander",
+  "source": "PaBTSO",
+  "page": 216,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 19,
+  "con": 13,
+  "int": 17,
+  "wis": 15,
+  "cha": 10,
+  "skills": {
+    "stealth": "+8"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Goblin",
+    "telepathy 60 ft."
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mental Burst",
+      "entries": [
+        "When the goblin dies, its pent-up mental energy explodes in a psychic blast. Each creature within 5 feet of it must succeed on a {@dc 13} Intelligence saving throw or take 10 ({@damage 4d4}) psychic damage."
+      ]
+    },
+    {
+      "name": "Mental Fortitude",
+      "entries": [
+        "The goblin has advantage on saving throws against effects that would make it have the {@condition charmed} or {@condition frightened} conditions."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The goblin makes three Psychic Blade attacks."
+      ]
+    },
+    {
+      "name": "Psychic Blade",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 60 ft., one creature. 11 (2d6 + 4 damage) psychic damage, and the target must subtract {@dice 1d4} from the next attack roll or saving throw it makes before the end of the goblin's next turn."
+      ]
+    },
+    {
+      "name": "Synaptic Rend {@recharge 5}",
+      "entries": [
+        "The goblin unleashes a 30-foot-radius sphere of psychic energy, centered on a point the goblin can see within 60 feet of itself. Each creature in that area must make a DC 13 Intelligence saving throw. On a failed save, a creature takes 14 (4d6 damage) psychic damage and has the {@condition incapacitated} condition until the end of the goblin's next turn. On a successful save, a creature takes half as much damage only."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The goblin casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "mage hand",
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

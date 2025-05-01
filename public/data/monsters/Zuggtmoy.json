@@ -1,0 +1,173 @@
+{
+  "name": "Zuggtmoy",
+  "source": "MTF",
+  "page": 157,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 304,
+  "speed": {
+    "walk": 30
+  },
+  "str": 22,
+  "dex": 15,
+  "con": 18,
+  "int": 20,
+  "wis": 19,
+  "cha": 24,
+  "skills": {
+    "perception": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "23",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Zuggtmoy fails a saving throw, she can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Zuggtmoy has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "Zuggtmoy's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Zuggtmoy makes three pseudopod attacks."
+      ]
+    },
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +13 to hit, reach 10 ft., one target. 15 (2d8 + 6 damage) bludgeoning damage plus 9 (2d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Infestation Spores (3/Day)",
+      "entries": [
+        "Zuggtmoy releases spores that burst out in a cloud that fills a 20-foot-radius sphere centered on her, and it lingers for 1 minute. Any flesh-and-blood creature in the cloud when it appears, or that enters it later, must make a DC 19 Constitution saving throw. On a successful save, the creature can't be infected by these spores for 24 hours. On a failed save, the creature is infected with a disease called the spores of Zuggtmoy and also gains a random form of madness (determined by rolling on the Madness of Zuggtmoy table) that lasts until the creature is cured of the disease or dies. While infected in this way, the creature can't be reinfected, and it must repeat the saving throw at the end of every 24 hours, ending the infection on a success. On a failure, the infected creature's body is slowly taken over by fungal growth, and after three such failed saves, the creature dies and is reanimated as a spore servant if it's a type of creature that can be (see the \"Myconids\" entry in the Monster Manual)."
+      ]
+    },
+    {
+      "name": "Mind Control Spores {@recharge 5}",
+      "entries": [
+        "Zuggtmoy releases spores that burst out in a cloud that fills a 20-foot-radius sphere centered on her, and it lingers for 1 minute. Humanoids and beasts in the cloud when it appears, or that enter it later, must make a DC 19 Wisdom saving throw. On a successful save, the creature can't be infected by these spores for 24 hours. On a failed save, the creature is infected with a disease called the influence of Zuggtmoy for 24 hours. While infected in this way, the creature is {@condition charmed} by her and can't be reinfected by these spores."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "Zuggtmoy makes one pseudopod attack."
+      ]
+    },
+    {
+      "name": "Exert Will",
+      "entries": [
+        "One creature {@condition charmed} by Zuggtmoy that she can see must use its reaction to move up to its speed as she directs or to make a weapon attack against a target that she designates."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Zuggtmoy's spellcasting ability is Charisma (spell save {@dc 22}). She can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect magic",
+        "locate animals or plants",
+        "ray of sickness"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "bludgeoning (that is nonmagical)",
+    "piercing (that is nonmagical)",
+    "slashing (that is nonmagical)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

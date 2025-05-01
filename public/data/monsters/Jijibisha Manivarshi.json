@@ -1,0 +1,163 @@
+{
+  "name": "Jijibisha Manivarshi",
+  "source": "JttRC",
+  "page": 128,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "yugoloth"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 153,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 18,
+  "int": 18,
+  "wis": 15,
+  "cha": 19,
+  "skills": {
+    "intimidation": "+9",
+    "perception": "+7",
+    "stealth": "+8"
+  },
+  "passive": 17,
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The ultroloth has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The ultroloth's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ultroloth can use its Hypnotic Gaze and makes three melee attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Hypnotic Gaze",
+      "entries": [
+        "The ultroloth's eyes sparkle with opalescent light as it targets one creature it can see within 30 feet of it. If the target can see Jijibisha, the target must succeed on a DC 17 Wisdom saving throw against this magic or be {@condition charmed} until the end of Jijibisha's next turn. The {@condition charmed} target is {@condition stunned}. If the target's saving throw is successful, the target is immune to Jijibisha's gaze for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The ultroloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The ultroloth's innate spellcasting ability is Charisma (spell save {@dc 17}). The ultroloth can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "alter self",
+        "clairvoyance",
+        "darkness",
+        "detect magic",
+        "detect thoughts",
+        "dispel magic",
+        "invisibility",
+        "suggestion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

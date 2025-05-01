@@ -1,0 +1,152 @@
+{
+  "name": "Archdruid",
+  "source": "VGM",
+  "page": 210,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 132,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 12,
+  "wis": 20,
+  "cha": 11,
+  "skills": {
+    "medicine": "+9",
+    "nature": "+5",
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Druidic plus any two languages"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Change Shape (2/Day)",
+      "entries": [
+        "The archdruid magically polymorphs into a beast or elemental with a challenge rating of 6 or less, and can remain in this form for up to 9 hours. The archdruid can choose whether its equipment falls to the ground, melds with its new form, or is worn by the new form. The archdruid reverts to its true form if it dies or falls {@condition unconscious}. The archdruid can revert to its true form using a bonus action on its turn.",
+        "While in a new form, the archdruid retains its game statistics and ability to speak, but its AC, movement modes, Strength, and Dexterity are replaced by those of the new form, and it gains any special senses, proficiencies, traits, actions, and reactions (except class features, legendary actions, and lair actions) that the new form has but that it lacks. It can cast its spells with verbal or somatic components in its new form.",
+        "The new form's attacks count as magical for the purpose of overcoming resistances and immunity to nonmagical attacks."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The archdruid is an 18th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 17}, {@hit 9} to hit with spell attacks). It has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "mending",
+            "poison spray",
+            "produce flame"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "entangle",
+            "faerie fire",
+            "speak with animals"
+          ]
+        },
+        "2": {
+          "spells": [
+            "animal messenger",
+            "beast sense",
+            "hold person"
+          ]
+        },
+        "3": {
+          "spells": [
+            "conjure animals",
+            "meld into stone",
+            "water breathing"
+          ]
+        },
+        "4": {
+          "spells": [
+            "dominate beast",
+            "locate creature",
+            "stoneskin",
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": [
+            "commune with nature",
+            "mass cure wounds",
+            "tree stride"
+          ]
+        },
+        "6": {
+          "spells": [
+            "heal",
+            "heroes' feast",
+            "sunbeam"
+          ]
+        },
+        "7": {
+          "spells": [
+            "fire storm"
+          ]
+        },
+        "8": {
+          "spells": [
+            "animal shapes"
+          ]
+        },
+        "9": {
+          "spells": [
+            "foresight"
+          ]
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest",
+    "mountain",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

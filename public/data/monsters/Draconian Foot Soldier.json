@@ -1,0 +1,75 @@
+{
+  "name": "Draconian Foot Soldier",
+  "source": "FTD",
+  "page": 178,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 11,
+  "con": 13,
+  "int": 8,
+  "wis": 8,
+  "cha": 10,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Controlled Fall",
+      "entries": [
+        "When the draconian falls and isn't {@condition incapacitated}, it subtracts up to 100 feet from the fall when calculating the fall's damage."
+      ]
+    },
+    {
+      "name": "Death Throes",
+      "entries": [
+        "When the draconian is reduced to 0 hit points, its body turns to stone and releases a petrifying gas. Each creature within 5 feet of the draconian must succeed on a {@dc 11} Constitution saving throw or be {@condition restrained} as it begins to turn to stone. The {@condition restrained} creature must repeat the saving throw at the end of its next turn. On a success, the effect ends; otherwise the creature is {@condition petrified} for 1 minute. After 1 minute, the body of the draconian crumbles to dust."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The draconian makes two Shortsword attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

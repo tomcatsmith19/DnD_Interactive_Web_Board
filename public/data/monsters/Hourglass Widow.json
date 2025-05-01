@@ -1,0 +1,198 @@
+{
+  "name": "Hourglass Widow",
+  "source": "GHLoE",
+  "page": 81,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14",
+    "18"
+  ],
+  "hp": 187,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 16,
+  "dex": 19,
+  "con": 18,
+  "int": 19,
+  "wis": 17,
+  "cha": 22,
+  "skills": {
+    "arcana": "+10",
+    "athletics": "+9",
+    "insight": "+9",
+    "investigation": "+10",
+    "perception": "+15"
+  },
+  "passive": 25,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "20",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Accelerate Through Time (2/Day)",
+      "entries": [
+        "The widow takes one additional action."
+      ]
+    },
+    {
+      "name": "Master of Time",
+      "entries": [
+        "The widow can choose to be unaffected by effects that modify time or change its speed. The widow can affect others frozen in a time stop or other stasis-like effects."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the widow fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The widow regains 25 hit points at the start of its turn. If it takes fire or radiant damage, this trait doesn't function at the start of the widow's next turn. The widow's body is destroyed only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    },
+    {
+      "name": "Turn Resistance",
+      "entries": [
+        "The widow has advantage on saving throws against any effect that turns undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The widow uses disintegrating touch and withering gaze."
+      ]
+    },
+    {
+      "name": "Disintegrating Touch",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 16 (3d6 + 6 damage) force damage and the target must succeed on a DC 20 Constitution saving throw or have their speed decreased by 15 feet for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The effects are cumulative."
+      ]
+    },
+    {
+      "name": "Withering Gaze",
+      "entries": [
+        "A creature within 30 feet that the widow can see suffers 21 (6d6 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Eldritch Blast",
+      "entries": [
+        "The widow casts {@spell eldritch blast}."
+      ]
+    },
+    {
+      "name": "Sudden Rush (2 Actions)",
+      "entries": [
+        "The widow teleports to a space it can see within 30 feet and uses disintegrating touch before or after it teleports."
+      ]
+    },
+    {
+      "name": "Frozen in Time (3 Actions)",
+      "entries": [
+        "All creatures within 20 ft. of the widow must succeed on a {@dc 20} Constitution saving throw or be {@condition paralyzed} until the end of the creature's next turn."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The widow's spellcasting ability is Charisma (spell save {@dc 20}, {@hit 12} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "eldritch blast",
+        "expeditious retreat",
+        "mage armor",
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "footerEntries": [
+        "*The widow casts these spells before combat."
+      ],
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "force",
+    "lightning",
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

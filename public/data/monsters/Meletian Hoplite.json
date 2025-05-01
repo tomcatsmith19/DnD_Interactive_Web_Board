@@ -1,0 +1,131 @@
+{
+  "name": "Meletian Hoplite",
+  "source": "MOT",
+  "page": 229,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 49,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 12,
+  "int": 16,
+  "wis": 13,
+  "cha": 11,
+  "skills": {
+    "arcana": "+5",
+    "history": "+5",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hoplite makes three weapon attacks. It can replace one weapon attack with ray of frost."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage, or 7 (1d8 + 3 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Shield Bash",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 5 (1d4 + 3 damage) bludgeoning damage. If the target is a Medium or smaller creature, it must succeed on a DC 13 Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Ray of Frost (Cantrip)",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 60 ft., one creature. 4 (1d8 damage) cold damage, and the target's speed is reduced by 10 feet until the start of the hoplite's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The hoplite is a 3rd-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "minor illusion",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "color spray",
+            "expeditious retreat",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blur",
+            "cloud of daggers",
+            "invisibility"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

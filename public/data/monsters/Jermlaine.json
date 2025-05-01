@@ -1,0 +1,91 @@
+{
+  "name": "Jermlaine",
+  "source": "MFF",
+  "page": 11,
+  "size": [
+    "T"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "jermlaine"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 3,
+  "speed": {
+    "walk": 30
+  },
+  "str": 4,
+  "dex": 12,
+  "con": 13,
+  "int": 10,
+  "wis": 11,
+  "cha": 7,
+  "skills": {
+    "stealth": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Undercommon"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Lurkers in Shadow",
+      "entries": [
+        "Jermlaine are {@condition invisible} to darkvision."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The jermlaine has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Vermin Friend",
+      "entries": [
+        "The jermlaine can speak to and understand rats and giant rats."
+      ]
+    },
+    {
+      "name": "Swarming Rush",
+      "entries": [
+        "A jermlaine adds {@dice 1d4} to its weapon damage rolls while within 5 feet of another, conscious jermlaine."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk {@hit -1} to hit, reach 5 ft., one target. 1 (1d4 - 3 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Dart",
+      "entries": [
+        "Ranged atk +3 to hit, range 20/60 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

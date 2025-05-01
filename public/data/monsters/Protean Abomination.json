@@ -1,0 +1,89 @@
+{
+  "name": "Protean Abomination",
+  "source": "DoDk",
+  "page": 201,
+  "size": [
+    "H"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 168,
+  "speed": {
+    "walk": 30,
+    "climb": 10
+  },
+  "str": 21,
+  "dex": 8,
+  "con": 18,
+  "int": 5,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Absorption",
+      "entries": [
+        "When the protean abomination kills a creature that is neither a construct nor undead, it absorbs the corpse into its body and regains 20 hit points."
+      ]
+    },
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The protean abomination can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The protean abomination can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The protean abomination makes two slam attacks. If both attacks hit a Large or smaller target, the target is {@condition grappled} (escape DC 15), and the protean abomination uses Engulf on it."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 19 (3d8 + 5 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Engulf",
+      "entries": [
+        "The protean abomination engulfs a Large or smaller creature {@condition grappled} by it. Until the grapple ends the target is {@condition blinded}, {@condition restrained}, and unable to breathe, and it must succeed on a DC 15 Constitution saving throw at the start of each of the abomination's turns or take 19 (3d8 + 5 damage) bludgeoning damage. If the abomination moves, the engulfed target moves with it. The abomination can have only one creature engulfed at a time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

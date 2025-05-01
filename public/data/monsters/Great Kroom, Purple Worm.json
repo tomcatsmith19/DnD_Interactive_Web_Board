@@ -1,0 +1,75 @@
+{
+  "name": "Great Kroom, Purple Worm",
+  "source": "AWM",
+  "page": 33,
+  "size": [
+    "G"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 50,
+    "burrow": 30
+  },
+  "str": 10,
+  "dex": 13,
+  "con": 12,
+  "int": 11,
+  "wis": 11,
+  "cha": 12,
+  "skills": {},
+  "passive": 0,
+  "languages": [],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The worm makes two attacks:"
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +14 to hit, one target. 22 (3d8 damage) piercing damage. Target must make a DC 19 Dexterity save, or be swallowed by the worm!"
+      ]
+    },
+    {
+      "name": "Tail Stinger",
+      "entries": [
+        "Melee atk +14 to hit, one creature. 19 (3d6 + 9 damage) piercing damage Target must make a DC 19 Constitution save, or take 42",
+        "({@dice 12d6}) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "desert",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

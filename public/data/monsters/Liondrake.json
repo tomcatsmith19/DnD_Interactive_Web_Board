@@ -1,0 +1,76 @@
+{
+  "name": "Liondrake",
+  "source": "FTD",
+  "page": 207,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 119,
+  "speed": {
+    "walk": 40,
+    "fly": 60
+  },
+  "str": 19,
+  "dex": 15,
+  "con": 17,
+  "int": 6,
+  "wis": 12,
+  "cha": 12,
+  "skills": {
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The liondrake makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 15 (2d10 + 4 damage) piercing damage. If the target is a Medium or smaller creature, it must succeed on a DC 15 Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Blood-Chilling Roar {@recharge 4}",
+      "entries": [
+        "The liondrake lets out a terrifying roar audible out to 300 feet. Any creature within 30 feet of the liondrake that can hear its roar must succeed on a DC 14 Wisdom saving throw or be {@condition frightened} of the liondrake for 1 minute. A creature that fails the save by 5 or more is also {@condition paralyzed} for the same duration. A creature can repeat the saving throw at the end of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to this liondrake's Blood-Chilling Roar for the next 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

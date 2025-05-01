@@ -1,0 +1,93 @@
+{
+  "name": "Living Blade of Disaster",
+  "source": "IDRotF",
+  "page": 299,
+  "size": [
+    "S"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 19,
+  "int": 6,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The living spell has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Unfettered",
+      "entries": [
+        "The living spell can move through any barrier, even a wall of magical force."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The living spell doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Force Blade",
+      "entries": [
+        "{@atk ms} +6 to hit, reach 5 ft., one target. 26 (4d12 damage) force damage, unless the living spell rolled an 18 or higher on the {@dice d20} for the attack, in which case the attack is a critical hit that deals 78 (12d12 damage) force damage instead."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened",
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

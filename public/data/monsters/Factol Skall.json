@@ -1,0 +1,182 @@
+{
+  "name": "Factol Skall",
+  "source": "AATM",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [
+    "wizard"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 210,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 16,
+  "int": 20,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "arcana": "+17",
+    "history": "+11",
+    "medicine": "+8",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "all"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Aura of Death",
+      "entries": [
+        "Creatures within 30 feet of Skall have disadvantage on death saving throws."
+      ]
+    },
+    {
+      "name": "Cosmic Annihilation",
+      "entries": [
+        "A creature killed by Skall can be restored to life only by means of a true resurrection or {@spell wish} spell."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (4/Day)",
+      "entries": [
+        "If Skall fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If Skall dies, he turns to dust. If his orrery of souls hasn't been destroyed, Skall re-forms within the Mortuary in {@dice 1d10} days. He appears within 5 feet of the orrery."
+      ]
+    },
+    {
+      "name": "Turn Resistance",
+      "entries": [
+        "Skall has advantage on saving throws against any effect that turns Undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Skall makes one Withering Touch attack or uses Spellcasting. He also uses Death Knell twice."
+      ]
+    },
+    {
+      "name": "Withering Touch",
+      "entries": [
+        "{@atk ms} +11 to hit, reach 5 ft., one target. 32 (6d8 + 5 damage) cold damage plus 31 (7d8 damage) necrotic damage, and if the target is a creature, it can't regain hit points until the start of Skall's next turn."
+      ]
+    },
+    {
+      "name": "Death Knell",
+      "entries": [
+        "Skall points his finger at a creature he can see within 120 feet of himself, filling the target's mind with visions of death and the plangent toll of an iron bell. The target must succeed on a DC 19 Wisdom saving throw or take 14 (4d6 damage) psychic damage and have the {@condition frightened} condition until the start of Skall's next turn."
+      ]
+    },
+    {
+      "name": "Fog of Death (1/Day)",
+      "entries": [
+        "Skall exudes a killing fog in a 30-foot-radius sphere centered on himself. The sphere spreads around corners, and its area is heavily obscured. The fog lasts until the start of Skall's next turn, and it can't be dispersed by wind. It does not move with him.",
+        "Each creature that enters the fog for the first time on a turn or starts its turn there must make a {@dc 19} Constitution saving throw, taking 28 ({@damage 8d6}) necrotic damage and 28 ({@damage 8d6}) poison damage on a failed save, or half as much damage on a successful one. A Medium or smaller Humanoid killed by this damage becomes a zombie under Skall's control. The zombie acts on Skall's initiative but immediately after his turn. Absent any other command, the zombie tries to kill any non-Undead creature it encounters."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Skall casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 19}):"
+      ],
+      "will": [
+        "detect magic",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "stunned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

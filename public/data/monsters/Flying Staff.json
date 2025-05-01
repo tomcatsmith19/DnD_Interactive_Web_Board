@@ -1,0 +1,82 @@
+{
+  "name": "Flying Staff",
+  "source": "WDH",
+  "page": 152,
+  "size": [
+    "S"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 17,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 50,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 11,
+  "int": 1,
+  "wis": 5,
+  "cha": 1,
+  "skills": {},
+  "passive": 7,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Antimagic Susceptibility",
+      "entries": [
+        "The staff is {@condition incapacitated} while in the area of an {@spell antimagic field}. If targeted by {@spell dispel magic}, the staff must succeed on a Constitution saving throw against the caster's spell save DC or fall {@condition unconscious} for 1 minute."
+      ]
+    },
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the staff remains motionless and isn't flying, it is indistinguishable from a normal staff."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Knife",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

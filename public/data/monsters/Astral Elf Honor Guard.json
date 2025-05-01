@@ -1,0 +1,86 @@
+{
+  "name": "Astral Elf Honor Guard",
+  "source": "BAM",
+  "page": 12,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 15,
+  "con": 12,
+  "int": 17,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "intimidation": "+6",
+    "perception": "+6",
+    "survival": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The elf has advantage on saving throws it makes to avoid or end the {@condition charmed} condition on itself, and magic can't put it to sleep."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The elf doesn't require sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The elf makes two Longsword or Radiant Ray attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 11 (2d8 + 2 damage) slashing damage, or 13 (2d10 + 2 damage) slashing damage when used with two hands, plus 10 (3d6 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Radiant Ray",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 120 ft., one target. 22 (4d10 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

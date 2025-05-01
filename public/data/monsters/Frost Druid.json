@@ -1,0 +1,162 @@
+{
+  "name": "Frost Druid",
+  "source": "IDRotF",
+  "page": 288,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": {
+      "number": 40,
+      "condition": "(wolf form only)"
+    },
+    "burrow": {
+      "number": 5,
+      "condition": "(fox form only)"
+    },
+    "climb": {
+      "number": 30,
+      "condition": "(goat form only)"
+    },
+    "fly": {
+      "number": 60,
+      "condition": "(owl form only)"
+    }
+  },
+  "str": 12,
+  "dex": 13,
+  "con": 16,
+  "int": 10,
+  "wis": 16,
+  "cha": 9,
+  "skills": {
+    "nature": "+3",
+    "perception": "+6",
+    "survival": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Druidic"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The druid makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Ice Sickle (Humanoid Form Only)",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) slashing damage plus 5 (2d4 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Maul (Beast Form Only)",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Change Shape",
+      "entries": [
+        "The druid magically polymorphs into a beast form\u00e2\u20ac\u201dfox, mountain goat, owl, or wolf\u00e2\u20ac\u201dor back into its humanoid form. Any equipment it is wearing or carrying is absorbed or borne by the beast form (the druid's choice). It reverts to its humanoid form when it dies. The druid's statistics are the same in each form, except where noted in this stat block."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Humanoid Form Only)",
+      "headerEntries": [
+        "The druid is a 9th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 14}; {@hit 6} to hit with spell attacks). It has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "guidance",
+            "resistance"
+          ]
+        },
+        "1": {
+          "spells": [
+            "animal friendship",
+            "fog cloud",
+            "speak with animals"
+          ]
+        },
+        "2": {
+          "spells": [
+            "animal messenger",
+            "moonbeam",
+            "pass without trace"
+          ]
+        },
+        "3": {
+          "spells": [
+            "conjure animals",
+            "sleet storm",
+            "wind wall"
+          ]
+        },
+        "4": {
+          "spells": [
+            "hallucinatory terrain",
+            "ice storm"
+          ]
+        },
+        "5": {
+          "spells": [
+            "awaken"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft. (beast form only)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

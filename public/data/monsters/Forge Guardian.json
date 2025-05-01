@@ -1,0 +1,127 @@
+{
+  "name": "Forge Guardian",
+  "source": "TDCSR",
+  "page": 241,
+  "size": [
+    "G"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "24"
+  ],
+  "hp": 420,
+  "speed": {
+    "walk": 50
+  },
+  "str": 30,
+  "dex": 10,
+  "con": 24,
+  "int": 3,
+  "wis": 11,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "27",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Fire Absorption",
+      "entries": [
+        "Whenever the guardian is subjected to fire damage, it takes no damage and instead regains a number of hit points equal to the fire damage dealt."
+      ]
+    },
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The guardian is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The guardian has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The guardian's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The guardian makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Runeblade",
+      "entries": [
+        "Melee atk +18 to hit, reach 15 ft., one target. 36 (4d12 + 10 damage) slashing damage, and the target must succeed on a DC 23 Constitution {@quickref saving throws|PHB|2|1|saving throw} or be {@condition blinded} until it deals damage to the guardian."
+      ]
+    },
+    {
+      "name": "Kick",
+      "entries": [
+        "Melee atk +18 to hit, reach 10 ft., one target. 23 (2d12 + 10 damage) bludgeoning damage, and the target is pushed up to 15 feet away from the guardian and knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Bladestorm {@recharge 5}",
+      "entries": [
+        "The guardian makes a Runeblade attack against every creature within 15 feet of it. On a hit, a target is also pushed up to 15 feet away from the guardian and knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Runeblade",
+      "entries": [
+        "The guardian makes one Runeblade attack."
+      ]
+    },
+    {
+      "name": "Kick",
+      "entries": [
+        "The guardian makes one Kick attack."
+      ]
+    },
+    {
+      "name": "Trample (Costs 2 Actions)",
+      "entries": [
+        "The guardian moves up to 50 feet without triggering {@action opportunity attack|PHB|opportunity attacks}, and can pass through other creature's spaces. Each creature whose space the guardian passes through must make a {@dc 23} Dexterity {@quickref saving throws|PHB|2|1|saving throw}. On a failure, the creature takes 23 ({@damage 2d12 + 10}) bludgeoning damage and is knocked {@condition prone}. On a success, the creature takes half as much damage and isn't knocked {@condition prone}. Any creature that shares the guardian's space when it stops this movement is pushed out of its space into the nearest unoccupied space."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison",
+    "psychic",
+    "bludgeoning (from nonmagical weapons that aren't adamantine)",
+    "piercing (from nonmagical weapons that aren't adamantine)",
+    "slashing (from nonmagical weapons that aren't adamantine)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

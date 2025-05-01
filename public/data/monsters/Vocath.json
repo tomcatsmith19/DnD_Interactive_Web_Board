@@ -1,0 +1,121 @@
+{
+  "name": "Vocath",
+  "source": "LoX",
+  "page": 42,
+  "size": [
+    "L"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 10,
+  "con": 15,
+  "int": 18,
+  "wis": 16,
+  "cha": 15,
+  "skills": {
+    "insight": "+9",
+    "perception": "+6",
+    "persuasion": "+5"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Giant",
+    "telepathy 60 ft. (see also Mercane telepathy)"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Mercane Telepathy",
+      "entries": [
+        "The mercane can communicate telepathically with any other mercane it knows, regardless of the distance between them."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The mercane makes three Psi-Imbued Blade attacks."
+      ]
+    },
+    {
+      "name": "Psi-Imbued Blade",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage, and if the target is a creature, it must succeed on a DC 15 Wisdom saving throw or be {@condition frightened} of Vocath until the end of the target's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The mercane casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "detect magic",
+        "light"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

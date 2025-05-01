@@ -1,0 +1,137 @@
+{
+  "name": "Dragonborn of Sardior",
+  "source": "FTD",
+  "page": 185,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 14,
+  "dex": 16,
+  "con": 17,
+  "int": 18,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "arcana": "+7",
+    "history": "+7",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Legendary Resistance (1/Day)",
+      "entries": [
+        "If the dragonborn fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Mental Defense",
+      "entries": [
+        "While the dragonborn is wearing no armor, its AC includes its Intelligence modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragonborn makes three Mind Blade attacks."
+      ]
+    },
+    {
+      "name": "Mind Blade",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d4 + 4 damage) piercing damage plus 10 (3d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Heat Breath {@recharge}",
+      "entries": [
+        "The dragonborn exhales a wave of intense heat in a 30-foot cone. Each creature in that area must make a DC 14 Constitution saving throw, taking 27 (6d8 damage) fire damage on a failed save, or half as much damage on a successful one. Metal objects in that area glow red-hot until the end of the dragonborn's next turn. Any creature in physical contact with a heated object at the start of its turn must make a DC 14 Constitution saving throw. On a failed save, the creature takes 9 (2d8 damage) fire damage and has disadvantage on attack rolls until the start of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The dragonborn casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 15}, {@hit 7} to hit with spell attacks):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

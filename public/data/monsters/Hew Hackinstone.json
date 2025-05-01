@@ -1,0 +1,75 @@
+{
+  "name": "Hew Hackinstone",
+  "source": "ToA",
+  "page": 33,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 17,
+  "int": 9,
+  "wis": 11,
+  "cha": 9,
+  "skills": {
+    "survival": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dwarven Resilience",
+      "entries": [
+        "Hew has resistance to poison damage and advantage on saving throws against being {@condition poisoned}."
+      ]
+    },
+    {
+      "name": "Reckless",
+      "entries": [
+        "At the start of his turn, Hew can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against him have advantage until the start of his next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Battleaxe",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

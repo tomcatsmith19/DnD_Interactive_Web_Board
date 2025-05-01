@@ -1,0 +1,80 @@
+{
+  "name": "Quaggoth",
+  "source": "MM",
+  "page": 256,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "quaggoth"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 17,
+  "dex": 12,
+  "con": 16,
+  "int": 6,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "athletics": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Undercommon"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Wounded Fury",
+      "entries": [
+        "While it has 10 hit points or fewer, the quaggoth has advantage on attack rolls. In addition, it deals an extra 7 ({@dice 2d6}) damage to any target it hits with a melee attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The quaggoth makes two claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

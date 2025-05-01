@@ -1,0 +1,69 @@
+{
+  "name": "Ape",
+  "source": "MM",
+  "page": 317,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 14,
+  "int": 6,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "athletics": "+5",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ape makes two fist attacks."
+      ]
+    },
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +5 to hit, range 25/50 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Shadow Spirit",
+  "source": "TCE",
+  "page": 114,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "0"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 40
+  },
+  "str": 13,
+  "dex": 16,
+  "con": 15,
+  "int": 4,
+  "wis": 10,
+  "cha": 16,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands the languages you speak"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Terror Frenzy (Fury Only)",
+      "entries": [
+        "The spirit has advantage on attack rolls against {@condition frightened} creatures."
+      ]
+    },
+    {
+      "name": "Weight of Sorrow (Despair Only)",
+      "entries": [
+        "Any creature, other than you, that starts its turn within 5 feet of the spirit has its speed reduced by 20 feet until the start of that creature's next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The spirit makes a number of attacks equal to half this spell's level (rounded down)."
+      ]
+    },
+    {
+      "name": "Chilling Rend",
+      "entries": [
+        "Melee atk {@hitYourSpellAttack} to hit, reach 5 ft., one target. 1d12 + 3 + summonSpellLevel damage cold damage."
+      ]
+    },
+    {
+      "name": "Dreadful Scream (1/Day)",
+      "entries": [
+        "The spirit screams. Each creature within 30 feet of it must succeed on a Wisdom saving throw against your spell save DC or be {@condition frightened} for 1 minute. The {@condition frightened} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

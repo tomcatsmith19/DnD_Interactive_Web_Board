@@ -1,0 +1,130 @@
+{
+  "name": "Xvart Warlock of Raxivort",
+  "source": "VGM",
+  "page": 200,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "xvart"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 12,
+  "int": 8,
+  "wis": 11,
+  "cha": 12,
+  "skills": {
+    "stealth": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Abyssal"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Low Cunning",
+      "entries": [
+        "The xvart can take the Disengage action as a bonus action on each of its turns."
+      ]
+    },
+    {
+      "name": "Overbearing Pack",
+      "entries": [
+        "The xvart has advantage on Strength (Athletics) checks to shove a creature if at least one of the xvart's allies is within 5 feet of the target and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Raxivort's Tongue",
+      "entries": [
+        "The xvart can communicate with ordinary bats and rats, as well as giant bats and giant rats."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The xvart's innate spellcasting ability is Charisma. it can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect magic",
+        "mage armor"
+      ],
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [
+    "underdark",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

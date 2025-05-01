@@ -1,0 +1,96 @@
+{
+  "name": "Neogi",
+  "source": "VGM",
+  "page": 180,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 6,
+  "dex": 16,
+  "con": 14,
+  "int": 13,
+  "wis": 12,
+  "cha": 15,
+  "skills": {
+    "intimidation": "+4",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "Undercommon"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mental Fortitude",
+      "entries": [
+        "The neogi has advantage on saving throws against being {@condition charmed} or {@condition frightened}, and magic can't put the neogi to sleep."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The neogi can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The neogi makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage plus 14 (4d6 damage) poison damage, and the target must succeed on a DC 12 Constitution saving throw or become {@condition poisoned} for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (2d4 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Enslave (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The neogi targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically {@condition charmed} by the neogi for 1 day, or until the neogi dies or is more than 1 mile from the target. The {@condition charmed} target obeys the neogi's commands and can't take reactions, and the neogi and the target can communicate telepathically with each other at a distance of up to 1 mile. Whenever the {@condition charmed} target takes damage, it can repeat the saving throw, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

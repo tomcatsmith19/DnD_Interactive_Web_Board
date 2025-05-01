@@ -1,0 +1,98 @@
+{
+  "name": "Monastery of the Distressed Body Grand Master",
+  "source": "LLK",
+  "page": 14,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "Grand Master"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 142,
+  "speed": {
+    "walk": 40,
+    "fly": 40
+  },
+  "str": 18,
+  "dex": 16,
+  "con": 18,
+  "int": 13,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "deception": "+7",
+    "insight": "+6"
+  },
+  "passive": 12,
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the Grand Master's darkvision."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The Grand Master has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Grand Master makes three attacks: two with its claws and one with its sting."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 8 (1d8 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Sting",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) piercing damage plus 17 (5d6 damage) poison damage, and the target must succeed on a DC 14 Constitution saving throw or become {@condition poisoned} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,162 @@
+{
+  "name": "Sahuagin High Priestess",
+  "source": "GoS",
+  "page": 251,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "sahuagin"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 71,
+  "speed": {
+    "walk": 30,
+    "swim": 40
+  },
+  "str": 14,
+  "dex": 12,
+  "con": 14,
+  "int": 12,
+  "wis": 16,
+  "cha": 10,
+  "skills": {
+    "insight": "+6",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Sahuagin"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "The high priestess has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Limited Amphibiousness",
+      "entries": [
+        "The high priestess can breathe air and water, but she needs to be submerged at least once every 4 hours to avoid suffocating."
+      ]
+    },
+    {
+      "name": "Shark Telepathy",
+      "entries": [
+        "The high priestess can magically command any shark within 120 feet of her, using a limited telepathy."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The high priestess makes two attacks with her toothsome staff, or one attack with her bite and one with her claws."
+      ]
+    },
+    {
+      "name": "Toothsome Staff",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 11 (2d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The high priestess is a 7th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks). She has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "mending",
+            "resistance",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "detect magic",
+            "guiding bolt"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "bestow curse",
+            "fear",
+            "mass healing word",
+            "tongues"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

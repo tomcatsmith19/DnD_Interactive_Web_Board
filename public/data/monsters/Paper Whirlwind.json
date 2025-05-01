@@ -1,0 +1,81 @@
+{
+  "name": "Paper Whirlwind",
+  "source": "RoT",
+  "page": 72,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 24,
+  "speed": {
+    "walk": 10,
+    "fly": 50
+  },
+  "str": 6,
+  "dex": 14,
+  "con": 8,
+  "int": 3,
+  "wis": 12,
+  "cha": 6,
+  "skills": {
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny raven. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beaks",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target in the swarm's space. 7 (2d6 damage) piercing damage, or 3 (1d6 damage) piercing damage if the swarm has half of its hit points or fewer."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest",
+    "swamp",
+    "hill",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

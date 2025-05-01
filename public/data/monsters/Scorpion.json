@@ -1,0 +1,55 @@
+{
+  "name": "Scorpion",
+  "source": "MM",
+  "page": 337,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 10
+  },
+  "str": 2,
+  "dex": 11,
+  "con": 8,
+  "int": 1,
+  "wis": 8,
+  "cha": 2,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Sting",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one creature. 1 piercing damage, and the target must make a DC 9 Constitution saving throw, taking 4 (1d8 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft."
+  ],
+  "environment": [
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

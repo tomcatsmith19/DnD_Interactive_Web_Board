@@ -1,0 +1,72 @@
+{
+  "name": "Cranium Rat",
+  "source": "VGM",
+  "page": 133,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 2,
+  "speed": {
+    "walk": 30
+  },
+  "str": 2,
+  "dex": 14,
+  "con": 10,
+  "int": 4,
+  "wis": 11,
+  "cha": 8,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "telepathy 30 ft."
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Illumination",
+      "entries": [
+        "As a bonus action, the cranium rat can shed dim light from its brain in a 5-foot radius or extinguish the light."
+      ]
+    },
+    {
+      "name": "Telepathic Shroud",
+      "entries": [
+        "The cranium rat is immune to any effect that would sense its emotions or read its thoughts, as well as to all divination spells."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 1 piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

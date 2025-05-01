@@ -1,0 +1,158 @@
+{
+  "name": "Voalsh",
+  "source": "PaBTSO",
+  "page": 209,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 156,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 15,
+  "int": 21,
+  "wis": 17,
+  "cha": 18,
+  "skills": {
+    "arcana": "+9",
+    "insight": "+7",
+    "perception": "+7",
+    "stealth": "+5"
+  },
+  "passive": 17,
+  "languages": [
+    "Deep Speech",
+    "telepathy 120 ft.",
+    "Undercommon"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Voalsh fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The mind flayer has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The mind flayer makes two Tentacle attacks."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one creature. 21 (3d10 + 5 damage) psychic damage. If the target is Medium or smaller, it has the {@condition grappled} condition (escape DC 17) and must succeed on a DC 17 Intelligence saving throw or have the {@condition incapacitated} condition until the grapple ends."
+      ]
+    },
+    {
+      "name": "Extract Brain",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one {@condition incapacitated} Humanoid {@condition grappled} by Voalsh. 55 (10d10 damage) piercing damage. If this damage reduces the target to 0 hit points, Voalsh kills it by extracting and devouring its brain."
+      ]
+    },
+    {
+      "name": "Unleash Void {@recharge 5}",
+      "entries": [
+        "The mind flayer opens a rift into the Far Realm, centered on a point Voalsh can see within 60 feet of itself, and a tentacle lashes across creatures near the rift. Each creature other than mind flayers within 30 feet of the rift must make a DC 17 Intelligence saving throw, after which the tentacle disappears and the rift closes. On a failed save, a creature takes 18 (4d8 damage) cold damage from the rift plus 18 (4d8 damage) psychic damage from the tentacle and has the {@condition stunned} condition for 1 minute. On a successful save, a creature takes half as much damage only. A {@condition stunned} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The mind flayer casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 17}):"
+      ],
+      "will": [
+        "detect magic",
+        "detect thoughts",
+        "mage hand"
+      ],
+      "daily": {
+        "1": [
+          "plane shift"
+        ]
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "prone"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft.",
+    "truesight 15 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

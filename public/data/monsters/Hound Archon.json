@@ -1,0 +1,137 @@
+{
+  "name": "Hound Archon",
+  "source": "MPP",
+  "page": 16,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 15,
+  "int": 11,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "insight": "+4",
+    "perception": "+6",
+    "stealth": "+3"
+  },
+  "passive": 16,
+  "languages": [
+    "all"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aura of Menace",
+      "entries": [
+        "As long as the archon doesn't have the {@condition incapacitated} condition, each creature of the archon's choice that starts its turn within 20 feet of the archon must make a {@dc 12} Wisdom saving throw. On a failed save, the creature has the {@condition frightened} condition until the start of its next turn. On a successful save, the creature is immune to all archons' Aura of Menace for 24 hours."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The archon makes two Bite attacks. It can replace one of the attacks with a Shining Blade attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage. If the target is a Large or smaller creature, it must succeed on a DC 14 Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Shining Blade (True Form Only)",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The archon teleports, along with any equipment it is wearing or carrying, to an unoccupied space it can see within 120 feet of itself."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The archon casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability:"
+      ],
+      "will": [
+        "detect evil and good"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,165 @@
+{
+  "name": "Knight-Captain Theodore Marshal",
+  "source": "DoDk",
+  "page": 215,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 255,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 10,
+  "con": 18,
+  "int": 13,
+  "wis": 15,
+  "cha": 19,
+  "skills": {
+    "animal handling": "+7",
+    "athletics": "+10",
+    "insight": "+7",
+    "persuasion": "+9"
+  },
+  "passive": 12,
+  "languages": [
+    "Celestial",
+    "Common"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Divine Strikes",
+      "entries": [
+        "Theodore Marshal's weapon attacks are magical. When he hits with any weapon, the weapon deals an extra {@damage 4d8} radiant damage (included in the attack)."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Theodore Marshal fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Theodore Marshal wields a holy avenger longsword."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Theodore Marshal makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Holy Avenger",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target. 12 (1d8 + 8 damage) slashing damage plus 18 (4d8 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "Theodore Marshal makes one weapon attack."
+      ]
+    },
+    {
+      "name": "Holy Bolt (Costs 2 actions)",
+      "entries": [
+        "Theodore Marshal casts {@spell guiding bolt} without expending a spell slot."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Theodore Marshal is a 20th-level spellcaster. His spellcasting ability is Charisma (spell save {@dc 17}, {@hit 9} to hit with spell attacks). He has the following paladin spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "command",
+            "cure wounds",
+            "guiding bolt"
+          ]
+        },
+        "2": {
+          "spells": [
+            "aid",
+            "branding smite",
+            "lesser restoration"
+          ]
+        },
+        "3": {
+          "spells": [
+            "beacon of hope",
+            "dispel magic"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "death ward"
+          ]
+        },
+        "5": {
+          "spells": [
+            "flame strike",
+            "hallow"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

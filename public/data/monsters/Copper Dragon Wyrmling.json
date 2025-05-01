@@ -1,0 +1,86 @@
+{
+  "name": "Copper Dragon Wyrmling",
+  "source": "MM",
+  "page": 111,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "climb": 30,
+    "fly": 60
+  },
+  "str": 15,
+  "dex": 12,
+  "con": 13,
+  "int": 14,
+  "wis": 11,
+  "cha": 13,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+3"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (1d10 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Breath Weapons {@recharge 5}",
+      "entries": [
+        "The dragon uses one of the following breath weapons.",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Acid Breath",
+              "entry": "The dragon exhales acid in a 20-foot line that is 5 feet wide. Each creature in that line must make a {@dc 11} Dexterity saving throw, taking 18 ({@damage 4d8}) acid damage on a failed save, or half as much damage on a successful one."
+            },
+            {
+              "type": "item",
+              "name": "Slowing Breath",
+              "entry": "The dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a {@dc 11} Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "acid"
+  ],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

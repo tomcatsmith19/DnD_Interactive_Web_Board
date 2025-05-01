@@ -1,0 +1,121 @@
+{
+  "name": "Skyweaver",
+  "source": "PotA",
+  "page": 191,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 12,
+  "int": 11,
+  "wis": 10,
+  "cha": 16,
+  "skills": {
+    "deception": "+5",
+    "persuasion": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Auran",
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The Skyweaver is a 6th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It knows the following sorcerer spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "blade ward",
+            "light",
+            "message",
+            "ray of frost",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "feather fall",
+            "mage armor",
+            "witch bolt"
+          ]
+        },
+        "2": {
+          "spells": [
+            "gust of wind",
+            "invisibility"
+          ]
+        },
+        "3": {
+          "spells": [
+            "fly",
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

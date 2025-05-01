@@ -1,0 +1,122 @@
+{
+  "name": "Barovian Witch",
+  "source": "CoS",
+  "page": 229,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30
+  },
+  "str": 7,
+  "dex": 11,
+  "con": 13,
+  "int": 14,
+  "wis": 11,
+  "cha": 12,
+  "skills": {
+    "arcana": "+4",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws (Requires Alter Self)",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) slashing damage. This attack is magical."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +2 to hit, reach 5 ft. or range 20/60 ft., one target. 2 (1d4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The witch is a 3rd-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 12}, {@hit 4} to hit with spell attacks). The witch has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "ray of sickness",
+            "sleep",
+            "Tasha's hideous laughter"
+          ]
+        },
+        "2": {
+          "spells": [
+            "alter self",
+            "invisibility"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

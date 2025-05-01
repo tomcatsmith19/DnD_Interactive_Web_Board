@@ -1,0 +1,87 @@
+{
+  "name": "Venomous Gnoll",
+  "source": "GHLoE",
+  "page": 60,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gnoll"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 13,
+  "int": 6,
+  "wis": 13,
+  "cha": 7,
+  "skills": {
+    "stealth": "+4"
+  },
+  "passive": 11,
+  "languages": [
+    "Gnoll"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Rampage",
+      "entries": [
+        "When the venomous gnoll reduces a creature to 0 hit points with a melee attack on its turn, the gnoll can take a bonus action to move up to half its speed and make a bite attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The venomous gnoll makes two attacks, only one of which can be a bite."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage and 2 (1d4 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage and 2 (1d4 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Spine Spike",
+      "entries": [
+        "Ranged atk +4 to hit, range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage and 2 (1d4 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

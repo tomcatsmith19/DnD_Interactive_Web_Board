@@ -1,0 +1,154 @@
+{
+  "name": "High Fae Noble",
+  "source": "MCV4EC",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 175,
+  "speed": {
+    "walk": 40,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 13,
+  "dex": 25,
+  "con": 15,
+  "int": 19,
+  "wis": 18,
+  "cha": 22,
+  "skills": {
+    "history": "+9",
+    "insight": "+14",
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Common",
+    "Sylvan",
+    "telepathy 120 ft."
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Aura of Overwhelming Splendor",
+      "entries": [
+        "The high fae radiates dazzling and mollifying magic. Each creature of the high fae's choice that starts its turn within 5 feet of the high fae must succeed on a {@dc 19} Wisdom saving throw or have the {@condition charmed} condition until the start of its next turn. While {@condition charmed}, the creature also has the {@condition incapacitated} condition."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the high fae fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The high fae has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The high fae makes two Fae Blade attacks. It can replace one of these attacks with Stunning Soliloquy if available."
+      ]
+    },
+    {
+      "name": "Fae Blade",
+      "entries": [
+        "Melee atk +12 to hit, reach 5 ft., one target. 20 (3d8 + 7 damage) force damage."
+      ]
+    },
+    {
+      "name": "Stunning Soliloquy {@recharge 5}",
+      "entries": [
+        "The high fae unleashes a string of magical words. Each creature of the high fae's choice within 30 feet of itself must succeed on a DC 19 Wisdom saving throw or have the {@condition stunned} condition for 1 minute. A {@condition stunned} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The high fae casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 19}):"
+      ],
+      "will": [
+        "detect magic",
+        "prestidigitation",
+        "suggestion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

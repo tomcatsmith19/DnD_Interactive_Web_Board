@@ -1,0 +1,85 @@
+{
+  "name": "Commodore Krux",
+  "source": "LoX",
+  "page": 22,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 17,
+  "int": 11,
+  "wis": 12,
+  "cha": 12,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Firearms Knowledge",
+      "entries": [
+        "The giff's mastery of its weapons enables it to ignore the loading property of any firearm."
+      ]
+    },
+    {
+      "name": "Steady as She Goes",
+      "entries": [
+        "On the deck of a ship, Krux has advantage on ability checks and saving throws made against effects that would knock it {@condition prone} or shove it overboard."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giff makes two Longsword or Musket attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage, or 9 (1d10 + 4 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Musket",
+      "entries": [
+        "Ranged atk +4 to hit, range 40/120 ft., one target. 8 (1d12 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Force Grenade",
+      "entries": [
+        "The giff throws a grenade up to 60 feet, and the grenade explodes in a 20-foot-radius sphere. Each creature in that area must make a DC 15 Dexterity saving throw, taking 17 (5d6 damage) force damage on a failed save, or half as much damage on a successful one. After Krux throws the grenade, roll a {@dice d6}; on a roll of 4 or lower, Krux has no more grenades to throw."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

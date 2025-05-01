@@ -1,0 +1,104 @@
+{
+  "name": "Sword Wraith Commander",
+  "source": "MTF",
+  "page": 241,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 18,
+  "int": 11,
+  "wis": 12,
+  "cha": 14,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Martial Fury",
+      "entries": [
+        "As a bonus action, the sword wraith can make one weapon attack, which deals an extra 9 ({@damage 2d8}) necrotic damage on a hit. If it does so, attack rolls against it have advantage until the start of its next turn."
+      ]
+    },
+    {
+      "name": "Turning Defiance",
+      "entries": [
+        "The sword wraith and any other sword wraiths within 30 feet of it have advantage on saving throws against effects that turn undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The sword wraith makes two weapon attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage, or 9 (1d10 + 4 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 150/600 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Call to Honor (1/Day)",
+      "entries": [
+        "To use this action, the sword wraith must have taken damage during the current combat. If the sword wraith can use this action, it gives itself advantage on attack rolls until the end of its next turn, and {@dice 1d4 + 1} {@creature sword wraith warrior|mtf|sword wraith warriors} appear in unoccupied spaces within 30 feet of it. The warriors last until they drop to 0 hit points, and they take their turns immediately after the commander's turn on the same initiative count."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "frightened",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

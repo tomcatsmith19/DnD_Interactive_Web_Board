@@ -1,0 +1,69 @@
+{
+  "name": "Zombie",
+  "source": "MM",
+  "page": 316,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "8"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 20
+  },
+  "str": 13,
+  "dex": 6,
+  "con": 16,
+  "int": 3,
+  "wis": 6,
+  "cha": 5,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "understands all languages it spoke in life but can't speak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

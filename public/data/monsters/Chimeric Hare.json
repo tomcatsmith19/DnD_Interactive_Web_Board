@@ -1,0 +1,56 @@
+{
+  "name": "Chimeric Hare",
+  "source": "IDRotF",
+  "page": 246,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 20,
+    "burrow": 5,
+    "fly": 30
+  },
+  "str": 1,
+  "dex": 17,
+  "con": 9,
+  "int": 2,
+  "wis": 11,
+  "cha": 4,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+5"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Escape",
+      "entries": [
+        "The hare can take the Dash, Disengage, or Hide action as a bonus action on each of its turns."
+      ]
+    }
+  ],
+  "actions": [],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,86 @@
+{
+  "name": "Mjork Sootling",
+  "source": "GHLoE",
+  "page": 72,
+  "size": [
+    "T"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 25
+  },
+  "str": 4,
+  "dex": 15,
+  "con": 12,
+  "int": 4,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Ignan and Terran but can't speak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Heated Body",
+      "entries": [
+        "A creature that ends its turn grappling the sootling takes 1 fire damage."
+      ]
+    },
+    {
+      "name": "Smoke Sense",
+      "entries": [
+        "A sootling in contact with smoke has blindsight in that smoke's area in a radius of up to 120 feet."
+      ]
+    },
+    {
+      "name": "Water Susceptibility",
+      "entries": [
+        "For every 5 feet the sootling moves in water, or for every gallon of water splashed on it, it takes 1 cold damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Burn",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "thunder"
+  ],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,105 @@
+{
+  "name": "Nosferatu",
+  "source": "VRGR",
+  "page": 239,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "17"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 18,
+  "con": 21,
+  "int": 6,
+  "wis": 17,
+  "cha": 14,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+10"
+  },
+  "passive": 16,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The nosferatu regains 10 hit points at the start of each of its turns if it has at least 1 hit point and isn't in sunlight. If the nosferatu takes radiant damage, this trait doesn't function until the start of the nosferatu's next turn."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The nosferatu can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Sunlight Hypersensitivity",
+      "entries": [
+        "The nosferatu takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The nosferatu doesn't require air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The nosferatu makes two Claw attacks followed by one Bite attack. If both Claw attacks hit the same creature, the Bite attack is made with advantage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one creature. 9 (1d8 + 5 damage) piercing damage plus 7 (2d6 damage) necrotic damage. If the target is missing any of its hit points, it instead takes 11 (2d10 damage) necrotic damage.",
+        "The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and the nosferatu regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if its hit point maximum is reduced to 0. A Humanoid slain in this way and then buried in the ground rises as a nosferatu after {@dice 1d10} days."
+      ]
+    },
+    {
+      "name": "Blood Disgorge {@recharge 5}",
+      "entries": [
+        "The nosferatu vomits blood in a 15-foot cone. Each creature in that area must make a DC 16 Constitution saving throw. On a failed save, a creature takes 18 (4d8 damage) necrotic damage, and it can't regain hit points for 1 minute. On a successful save, the creature takes half as much damage with no additional effects."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

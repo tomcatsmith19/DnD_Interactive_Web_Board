@@ -1,0 +1,72 @@
+{
+  "name": "Lycanthropickle",
+  "source": "RMBRE",
+  "page": 11,
+  "size": [
+    "S"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 4,
+  "speed": {
+    "walk": 20
+  },
+  "str": 6,
+  "dex": 13,
+  "con": 12,
+  "int": 4,
+  "wis": 8,
+  "cha": 3,
+  "skills": {
+    "stealth": "+3"
+  },
+  "passive": 9,
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the lycanthropickle remains motionless, it is indistinguishable from a pickle."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

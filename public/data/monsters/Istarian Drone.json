@@ -1,0 +1,90 @@
+{
+  "name": "Istarian Drone",
+  "source": "DSotDQ",
+  "page": 202,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 20,
+  "dex": 10,
+  "con": 18,
+  "int": 4,
+  "wis": 10,
+  "cha": 4,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands the languages spoken by its creator but can't speak"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The drone can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The drone doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The drone makes two Claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) piercing damage plus 4 (1d8 damage) lightning damage. If the target is a Medium or smaller creature, it is {@condition grappled} (escape DC 15). The drone has two claws, each of which can grapple only one target."
+      ]
+    },
+    {
+      "name": "Crystalline Spit {@recharge 5}",
+      "entries": [
+        "The drone spits crackling gel in a line 5 feet wide and 20 feet long. Each creature in the line must make a DC 15 Dexterity saving throw. On a failed save, the creature takes 14 (4d6 damage) lightning damage and is {@condition restrained} by the gel, which hardens into crystal. The creature is {@condition restrained} until the crystal is destroyed. The crystal has AC 15, 15 hit points, immunity to poison and psychic damage, and vulnerability to thunder damage. On a successful save, the creature takes half as much damage and isn't {@condition restrained}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

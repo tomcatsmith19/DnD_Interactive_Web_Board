@@ -1,0 +1,69 @@
+{
+  "name": "Sabrina Kilgore (Levels 1-4)",
+  "source": "KftGV",
+  "page": 8,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Light Crossbow",
+      "entries": [
+        "Ranged atk +3 to hit, range 80/320 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "coastal",
+    "hill",
+    "arctic",
+    "urban",
+    "forest",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

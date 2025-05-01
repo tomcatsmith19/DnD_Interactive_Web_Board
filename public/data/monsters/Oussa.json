@@ -1,0 +1,182 @@
+{
+  "name": "Oussa",
+  "source": "TftYP",
+  "page": 157,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "shapechanger",
+    "yuan-ti"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 13,
+  "int": 14,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "deception": "+5",
+    "stealth": "+4"
+  },
+  "passive": 11,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The yuan-ti can use its action to polymorph into a Medium snake, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It doesn't change form if it dies."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The yuan-ti has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Malison Type",
+      "entries": [
+        "The yuan-ti has one of the following types:",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Type 1:",
+              "entry": "Human body with snake head"
+            },
+            {
+              "type": "item",
+              "name": "Type 2:",
+              "entry": "Human head and body with snakes for arms"
+            },
+            {
+              "type": "item",
+              "name": "Type 3:",
+              "entry": "Human head and upper body with a serpentine lower body instead of legs"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Yuan-ti Form Only)",
+      "entries": [
+        "The yuan-ti makes two ranged attacks or two melee attacks, but can constrict only once."
+      ]
+    },
+    {
+      "name": "Bite (Snake Form Only)",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 5 (1d4 + 3 damage) piercing damage plus 7 (2d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Constrict",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage, and the target is {@condition grappled} (escape DC 13). Until this grapple ends, the target is {@condition restrained}, and Oussa can't constrict another target."
+      ]
+    },
+    {
+      "name": "Scimitar (Yuan-ti Form Only)",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Longbow (Yuan-ti Form Only)",
+      "entries": [
+        "Ranged atk +4 to hit, range 150/600 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Yuan-ti Form Only)",
+      "headerEntries": [
+        "The yuan-ti's innate spellcasting ability is Charisma (spell save {@dc 13}). The yuan-ti can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "animal friendship"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "swamp",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

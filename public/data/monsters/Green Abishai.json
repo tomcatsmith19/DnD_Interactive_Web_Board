@@ -1,0 +1,156 @@
+{
+  "name": "Green Abishai",
+  "source": "MTF",
+  "page": 162,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 187,
+  "speed": {
+    "walk": 30,
+    "fly": 40
+  },
+  "str": 12,
+  "dex": 17,
+  "con": 16,
+  "int": 17,
+  "wis": 12,
+  "cha": 19,
+  "skills": {
+    "deception": "+9",
+    "insight": "+6",
+    "perception": "+6",
+    "persuasion": "+9"
+  },
+  "passive": 16,
+  "languages": [
+    "Draconic",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the abishai's darkvision."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The abishai has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The abishai's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The abishai makes two attacks, one with its claws and one with its longsword, or it casts one spell from its Innate Spellcasting trait and makes one claw attack."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) slashing damage, or 6 (1d10 + 1 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 12 (2d8 + 3 damage) piercing damage. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or take 11 (2d10 damage) poison damage and become {@condition poisoned} for 1 minute. The {@condition poisoned} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The abishai's innate spellcasting ability is Charisma (spell save {@dc 17}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "alter self",
+        "major image"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

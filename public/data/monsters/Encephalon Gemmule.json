@@ -1,0 +1,70 @@
+{
+  "name": "Encephalon Gemmule",
+  "source": "PaBTSO",
+  "page": 206,
+  "size": [
+    "T"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 54,
+  "speed": {
+    "walk": 40
+  },
+  "str": 1,
+  "dex": 18,
+  "con": 14,
+  "int": 5,
+  "wis": 12,
+  "cha": 7,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Encephalon Progeny",
+      "entries": [
+        "The gemmule matures into an encephalon cluster if not killed within 30 ({@dice 4d12 + 4}) days of its creation."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The gemmule has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Psychic Slam",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 16 (3d10 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft. (can't see beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

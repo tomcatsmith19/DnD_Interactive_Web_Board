@@ -1,0 +1,65 @@
+{
+  "name": "Giant Hyena",
+  "source": "MM",
+  "page": 326,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 50
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 14,
+  "int": 2,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Rampage",
+      "entries": [
+        "When the hyena reduces a creature to 0 hit points with a melee attack on its turn, the hyena can take a bonus action to move up to half its speed and make a bite attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

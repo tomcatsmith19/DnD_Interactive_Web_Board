@@ -1,0 +1,181 @@
+{
+  "name": "Eldrick Runeweaver",
+  "source": "DoDk",
+  "page": 215,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 10,
+  "con": 16,
+  "int": 22,
+  "wis": 19,
+  "cha": 15,
+  "skills": {
+    "arcana": "+16",
+    "history": "+16",
+    "perception": "+16",
+    "persuasion": "+14"
+  },
+  "passive": 26,
+  "languages": [
+    "all"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Eldrick Runeweaver wears a robe of the archmagi, carries a staff of power, and wears a ring of spell storing. He carries {@dice 2d6} very rare spell scrolls and potions."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Eldrick Runeweaver fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Eldrick Runeweaver has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Staff of Power",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 10 (1d6 + 1 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Cantrip",
+      "entries": [
+        "Eldrick Runeweaver casts a cantrip."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "Eldrick Runeweaver teleports 60 feet to an unoccupied space he can see."
+      ]
+    },
+    {
+      "name": "Cast a Spell (Costs 3 actions)",
+      "entries": [
+        "Eldrick Runeweaver casts a spell using a spell slot."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Eldrick Runeweaver is a 20th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 19}, {@hit 11} to hit with spell attacks). He can cast shield and invisibility at will and has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "mage hand",
+            "minor illusion",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "mage armor",
+            "magic missile",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "levitate",
+            "shatter"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "dispel magic",
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "dimension door",
+            "ice storm"
+          ]
+        },
+        "5": {
+          "spells": [
+            "Bigby's hand",
+            "scrying",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": [
+            "chain lightning",
+            "globe of invulnerability"
+          ]
+        },
+        "7": {
+          "spells": [
+            "forcecage",
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": [
+            "maze"
+          ]
+        },
+        "9": {
+          "spells": [
+            "prismatic wall"
+          ]
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

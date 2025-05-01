@@ -1,0 +1,74 @@
+{
+  "name": "Frost Giant",
+  "source": "MM",
+  "page": 155,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 138,
+  "speed": {
+    "walk": 40
+  },
+  "str": 23,
+  "dex": 9,
+  "con": 21,
+  "int": 9,
+  "wis": 10,
+  "cha": 12,
+  "skills": {
+    "athletics": "+9",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two greataxe attacks."
+      ]
+    },
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 25 (3d12 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +9 to hit, range 60/240 ft., one target. 28 (4d10 + 6 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [],
+  "environment": [
+    "mountain",
+    "arctic"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

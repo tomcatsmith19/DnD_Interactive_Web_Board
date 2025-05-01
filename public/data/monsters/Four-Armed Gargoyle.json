@@ -1,0 +1,86 @@
+{
+  "name": "Four-Armed Gargoyle",
+  "source": "TftYP",
+  "page": 129,
+  "size": [
+    "M"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 63,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 15,
+  "dex": 11,
+  "con": 16,
+  "int": 6,
+  "wis": 11,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Terran"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the gargoyle remains motionless, it is indistinguishable from an inanimate statue."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gargoyle makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

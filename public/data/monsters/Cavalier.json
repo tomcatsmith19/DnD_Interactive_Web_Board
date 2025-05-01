@@ -1,0 +1,140 @@
+{
+  "name": "Cavalier",
+  "source": "DoDk",
+  "page": 218,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 10,
+  "con": 16,
+  "int": 10,
+  "wis": 12,
+  "cha": 15,
+  "skills": {
+    "animal handling": "+4",
+    "athletics": "+7",
+    "perception": "+4",
+    "persuasion": "+5"
+  },
+  "passive": 14,
+  "languages": [
+    "Any two"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Bravery",
+      "entries": [
+        "The cavalier has advantage on saving throws against being {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Light's Fury",
+      "entries": [
+        "The cavalier deals an extra 9 ({@damage 2d8}) radiant damage when it hits with a weapon attack."
+      ]
+    },
+    {
+      "name": "Skilled Rider",
+      "entries": [
+        "While mounted, the cavalier may force an attack targeted at their mount to target them instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cavalier makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Lance",
+      "entries": [
+        "Melee atk +7 to hit (with disadvantage against a target within 5 ft.), reach 10 ft., one target. 10 (1d12 + 4 damage) piercing damage plus 9 (2d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 30/120 ft., one target 7 (1d6 + 4 damage) piercing damage plus 9 (2d8 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The cavalier is an 8th-level spellcaster that uses Charisma as its spellcasting ability (spell save {@dc 13}; {@hit 5} to hit with spell attacks). They have the following paladin spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "command",
+            "cure wounds"
+          ]
+        },
+        "2": {
+          "spells": [
+            "branding smite",
+            "find steed"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

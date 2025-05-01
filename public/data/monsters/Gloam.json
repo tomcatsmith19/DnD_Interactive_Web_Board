@@ -1,0 +1,73 @@
+{
+  "name": "Gloam",
+  "source": "WBtW",
+  "page": 93,
+  "size": [
+    "T"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 2,
+  "speed": {
+    "walk": 40,
+    "climb": 30
+  },
+  "str": 3,
+  "dex": 15,
+  "con": 10,
+  "int": 3,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The cat has advantage on Wisdom (Perception) checks that rely on smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one target. 1 slashing damage."
+      ]
+    },
+    {
+      "name": "Cloud of Dust",
+      "entries": [
+        "On its first turn in combat or when it is reduced to 0 hit points, the cat expels a cloud of dust that acts as dust of sneezing and choking"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

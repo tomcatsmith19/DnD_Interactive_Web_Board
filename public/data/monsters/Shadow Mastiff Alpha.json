@@ -1,0 +1,84 @@
+{
+  "name": "Shadow Mastiff Alpha",
+  "source": "MPMM",
+  "page": 215,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 40
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 13,
+  "int": 6,
+  "wis": 12,
+  "cha": 5,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+6"
+  },
+  "passive": 15,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Ethereal Awareness",
+      "entries": [
+        "The shadow mastiff can see ethereal creatures and objects."
+      ]
+    },
+    {
+      "name": "Sunlight Weakness",
+      "entries": [
+        "While in bright light created by sunlight, the shadow mastiff has disadvantage on attack rolls, ability checks, and saving throws."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Terrifying Howl {@recharge}",
+      "entries": [
+        "The shadow mastiff howls. Any Beast or Humanoid within 300 feet of it must succeed on a DC 11 Wisdom saving throw or be {@condition frightened} of it for 1 minute. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's save is successful or the effect ends for it, the target is immune to any shadow mastiff's Terrifying Howl for the next 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "hill",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

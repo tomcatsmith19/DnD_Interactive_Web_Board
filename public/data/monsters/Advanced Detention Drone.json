@@ -1,0 +1,96 @@
+{
+  "name": "Advanced Detention Drone",
+  "source": "BMT",
+  "page": 135,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 142,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 18,
+  "dex": 8,
+  "con": 18,
+  "int": 7,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands commands given in any language but can't speak"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Bound",
+      "entries": [
+        "The drone is magically bound to an amulet. As long as the guardian and its amulet are on the same plane of existence, the amulet's wearer can telepathically call the guardian to travel to it, and the guardian knows the distance and direction to the amulet. If the guardian is within 60 feet of the amulet's wearer, half of any damage the wearer takes (rounded up) is transferred to the guardian."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The drone regains 10 hit points at the start of its turn if it has at least 1 hit point."
+      ]
+    },
+    {
+      "name": "Spell Storing",
+      "entries": [
+        "A spellcaster who wears the drone's amulet can cause the guardian to store one spell of 4th level or lower. To do so, the wearer must cast the spell on the guardian. The spell has no effect but is stored within the guardian. When commanded to do so by the wearer or when a situation arises that was predefined by the spellcaster, the guardian casts the stored spell with any parameters set by the original caster, requiring no components. When the spell is cast or a new spell is stored, any previously stored spell is lost."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The guardian makes two fist attacks."
+      ]
+    },
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

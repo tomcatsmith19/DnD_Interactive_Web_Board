@@ -1,0 +1,83 @@
+{
+  "name": "Vegepygmy",
+  "source": "VGM",
+  "page": 196,
+  "size": [
+    "S"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30
+  },
+  "str": 7,
+  "dex": 14,
+  "con": 13,
+  "int": 6,
+  "wis": 11,
+  "cha": 7,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "Vegepygmy"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Plant Camouflage",
+      "entries": [
+        "The vegepygmy has advantage on Dexterity ({@skill Stealth}) checks it makes in any terrain with ample obscuring plant life."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The vegepygmy regains 3 hit points at the start of its turn. If it takes cold, fire, or necrotic damage, this trait doesn't function at the start of the vegepygmy's next turn. The vegepygmy dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Sling",
+      "entries": [
+        "Ranged atk +4 to hit, range 30/120 ft., one target. 4 (1d4 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "lightning",
+    "piercing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

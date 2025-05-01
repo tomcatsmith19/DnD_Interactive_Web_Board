@@ -1,0 +1,128 @@
+{
+  "name": "Frulam Mondath",
+  "source": "HotDQ",
+  "page": 90,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 13,
+  "int": 11,
+  "wis": 18,
+  "cha": 15,
+  "skills": {
+    "deception": "+4",
+    "history": "+2",
+    "religion": "+2"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Infernal"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Frulam attacks twice with her halberd."
+      ]
+    },
+    {
+      "name": "Halberd",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one target. 7 (1d10 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Frulam is a 5th-level spellcaster that uses Wisdom as her spellcasting ability (spell save {@dc 14}, {@hit 6} to hit with spell attacks). Frulam has the following spells prepared from the cleric spell list:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "command",
+            "cure wounds",
+            "healing word",
+            "sanctuary"
+          ]
+        },
+        "2": {
+          "spells": [
+            "calm emotions",
+            "hold person",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "mass healing word",
+            "spirit guardians"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

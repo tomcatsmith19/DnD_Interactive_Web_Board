@@ -1,0 +1,75 @@
+{
+  "name": "Time Dragon Wyrmling",
+  "source": "MPP",
+  "page": 51,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30,
+    "climb": 30,
+    "fly": 60
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 17,
+  "int": 17,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "arcana": "+6",
+    "history": "+9",
+    "perception": "+7",
+    "stealth": "+6"
+  },
+  "passive": 17,
+  "languages": [
+    "Draconic plus any two languages"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes three Rend attacks."
+      ]
+    },
+    {
+      "name": "Rend",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 7 (1d6 + 4 damage) slashing damage plus 3 (1d6 damage) force damage."
+      ]
+    },
+    {
+      "name": "Time Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a wave of shimmering light in a 15-foot cone. Nonmagical objects and vegetation in that area that aren't being worn or carried crumble to dust. Each creature in that area must make a DC 14 Constitution saving throw. On a failed save, a creature takes 27 (6d8 damage) force damage and is magically weakened as it is desynchronized from the time stream. While the creature is in this state, attack rolls against it have advantage. On a successful save, a creature takes half as much damage only. A weakened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,85 @@
+{
+  "name": "Flaming Skeleton",
+  "source": "TDCSR",
+  "page": 256,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 15,
+  "int": 6,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands all languages it knew in life but can't speak"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Heated Weapons",
+      "entries": [
+        "When the skeleton hits with a metal melee weapon, the weapon deals an extra 3 ({@damage 1d6}) fire damage (included in the attack)."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The skeleton sheds bright light in a 10-foot radius and dim light for an additional 10 feet."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage and 3 (1d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Ignite",
+      "entries": [
+        "The skeleton flings itself at a Large or smaller creature within 5 feet of it. The target must succeed on a DC 12 Dexterity {@quickref saving throws|PHB|2|1|saving throw} or be {@condition grappled} (escape DC 12). On a failed save, the target also takes 3 (1d6 damage) fire damage at the start of each of its turns, even after the {@action grapple} ends. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as the target being submerged in water), the effect ends."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

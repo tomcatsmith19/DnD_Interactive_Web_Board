@@ -1,0 +1,160 @@
+{
+  "name": "Nintra Siotta",
+  "source": "CM",
+  "page": 197,
+  "size": [
+    "L"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 306,
+  "speed": {
+    "walk": 40,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 16,
+  "dex": 24,
+  "con": 16,
+  "int": 17,
+  "wis": 15,
+  "cha": 24,
+  "skills": {
+    "deception": "+12",
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "16",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Nintra fails a saving throw, she can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Nintra makes two attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +12 to hit, reach 5 ft., one target. 12 (2d4 + 7 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Shard of Shadow",
+      "entries": [
+        "Ranged Spell atk +12 to hit, range 120 ft., one target. 10 (1d6 + 7 damage) necrotic damage, and if the target is a creature, it must succeed on a DC 20 Constitution saving throw or be {@condition poisoned} until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Storm of Shattered Glass {@recharge}",
+      "entries": [
+        "Nintra targets a point she can see within 60 feet of her and creates a 20-foot-radius sphere of swirling glass shards centered on that point. Each creature in the sphere must make a DC 20 Dexterity saving throw, taking 28 (8d6 damage) slashing damage on a failed save, or half as much damage on a successful save. If Nintra is in the sphere, the shards deal no damage to her."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "Nintra makes one attack."
+      ]
+    },
+    {
+      "name": "Fey Step",
+      "entries": [
+        "Nintra teleports to an unoccupied space she can see within 30 feet of her."
+      ]
+    },
+    {
+      "name": "Shadow Strikes (Costs 2 Actions)",
+      "entries": [
+        "Provided she is in bright or dim light, Nintra causes her shadow to attack a creature within 10 feet of her. Her shadow makes two claw attacks, each attack identical to Nintra's claw attack except that it deals psychic damage instead of piercing damage."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Nintra casts one of the following spells, using Charisma as the spellcasting ability (save {@dc 20}) and requiring no material components:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "stunned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

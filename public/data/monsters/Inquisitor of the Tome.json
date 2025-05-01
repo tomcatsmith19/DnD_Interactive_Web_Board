@@ -1,0 +1,132 @@
+{
+  "name": "Inquisitor of the Tome",
+  "source": "VRGR",
+  "page": 249,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "11"
+  ],
+  "hp": 77,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 12,
+  "con": 12,
+  "int": 19,
+  "wis": 16,
+  "cha": 15,
+  "skills": {
+    "arcana": "+10",
+    "history": "+7",
+    "nature": "+7",
+    "religion": "+10"
+  },
+  "passive": 13,
+  "languages": [
+    "any four languages",
+    "telepathy 120 ft."
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The inquisitor attacks twice."
+      ]
+    },
+    {
+      "name": "Force Bolt",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 120 ft., one target. 22 (4d8 + 4 damage) force damage, and if the target is a Large or smaller creature, the inquisitor can push it up to 10 feet away."
+      ]
+    },
+    {
+      "name": "Silver Longsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage, or 9 ({@dice 1d10 + 4}) if used with two hands, plus 18 (4d8 damage) force damage."
+      ]
+    },
+    {
+      "name": "Implode {@recharge 4}",
+      "entries": [
+        "Each creature in a 20-foot-radius sphere centered on a point the inquisitor can see within 120 feet of it must succeed on a DC 15 Constitution saving throw or take 31 (6d8 + 4 damage) force damage and be knocked {@condition prone} and moved to the unoccupied space closest to the sphere's center. Large and smaller objects that aren't being worn or carried in the sphere automatically take the damage and are similarly moved."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The inquisitor casts one of the following spells, requiring no components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "detect magic",
+        "dispel magic",
+        "levitate",
+        "mage armor",
+        "mage hand",
+        "sending"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

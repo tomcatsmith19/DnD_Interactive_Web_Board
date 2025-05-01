@@ -1,0 +1,86 @@
+{
+  "name": "Hundred-Handed One",
+  "source": "MOT",
+  "page": 225,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 243,
+  "speed": {
+    "walk": 40
+  },
+  "str": 26,
+  "dex": 15,
+  "con": 25,
+  "int": 14,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "intimidation": "+8",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Reactive",
+      "entries": [
+        "The giant can take one reaction on every turn in a combat."
+      ]
+    },
+    {
+      "name": "Vigilant",
+      "entries": [
+        "The giant can't be {@quickref Surprise|PHB|3|0|surprised}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes four longsword attacks or two rock attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +13 to hit, reach 15 ft., one target. 21 (3d8 + 8 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +13 to hit, range 60/240 ft., one target. 30 (4d10 + 8 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 21 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

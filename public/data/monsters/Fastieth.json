@@ -1,0 +1,58 @@
+{
+  "name": "Fastieth",
+  "source": "ERLW",
+  "page": 289,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 50
+  },
+  "str": 12,
+  "dex": 18,
+  "con": 10,
+  "int": 4,
+  "wis": 11,
+  "cha": 4,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Quickness {@recharge 5}",
+      "entries": [
+        "The fastieth can take the Dodge action as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

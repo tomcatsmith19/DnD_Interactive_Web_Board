@@ -1,0 +1,83 @@
+{
+  "name": "Nine-Fingers Keene",
+  "source": "BGDIA",
+  "page": 170,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 18,
+  "con": 14,
+  "int": 13,
+  "wis": 17,
+  "cha": 14,
+  "skills": {
+    "acrobatics": "+10",
+    "deception": "+5",
+    "insight": "+6",
+    "intimidation": "+5",
+    "perception": "+6",
+    "sleight of hand": "+10",
+    "stealth": "+10"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Thieves' cant"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Cunning Action",
+      "entries": [
+        "On each of her turns in combat, Nine-Fingers can use a bonus action to take the Dash, Disengage, or Hide action."
+      ]
+    },
+    {
+      "name": "Dagger Thrower",
+      "entries": [
+        "Nine-Fingers adds double her proficiency bonus to the damage she deals on ranged attacks made with daggers (already factored into her attacks)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Nine-Fingers attacks three times with her daggers."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d4 + 4 damage) piercing damage, plus 6 piercing damage if it's a ranged attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

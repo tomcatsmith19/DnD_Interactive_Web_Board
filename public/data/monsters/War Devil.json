@@ -1,0 +1,107 @@
+{
+  "name": "War Devil",
+  "source": "CoA",
+  "page": 260,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 237,
+  "speed": {
+    "walk": 40,
+    "fly": 60
+  },
+  "str": 24,
+  "dex": 9,
+  "con": 23,
+  "int": 7,
+  "wis": 13,
+  "cha": 9,
+  "skills": {
+    "athletics": "+12",
+    "insight": "+6",
+    "intimidation": "+4",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "16",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the war devil's darkvision."
+      ]
+    },
+    {
+      "name": "Fear Aura",
+      "entries": [
+        "Any hostile creature that starts its turn within 20 feet of the war devil must succeed on a {@dc 18} Wisdom saving throw or have the {@condition frightened} condition until the start of the creature's next turn. If a creature's saving throw is successful, the creature is immune to the war devil's Fear Aura for the next 24 hours. This ability doesn't function if the war devil is {@condition unconscious}."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The war devil has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The war devil makes two attacks using its Cold- Iron Ranseur, Claws, or a combination of the two."
+      ]
+    },
+    {
+      "name": "Cold-Iron Ranseur",
+      "entries": [
+        "Melee atk +12 to hit, reach 10 ft., one target. 23 (3d10 + 7 damage) force damage plus 14 (4d6 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +12 to hit, reach 5 ft., one target. 20 (3d8 + 7 damage) slashing damage. If the target is a Large or smaller creature, it has the {@condition grappled} condition (escape DC 20). While a creature is {@condition grappled}, the war devil can't make Claws attacks."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison",
+    "bludgeoning (from nonmagical attacks that aren't silvered)",
+    "piercing (from nonmagical attacks that aren't silvered)",
+    "slashing (from nonmagical attacks that aren't silvered)"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

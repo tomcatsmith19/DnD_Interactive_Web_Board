@@ -1,0 +1,161 @@
+{
+  "name": "Werebear Ascetic",
+  "source": "GHLoE",
+  "page": 37,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any",
+    "shapechanger"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": {
+      "number": 30,
+      "condition": "(50 ft. and 30 ft. climb in hybrid and kindred form)"
+    }
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 17,
+  "int": 10,
+  "wis": 16,
+  "cha": 11,
+  "skills": {
+    "animal handling": "+7",
+    "nature": "+4",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "any three languages"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The werebear ascetic can use its action to polymorph into a bear-humanoid hybrid or into its kindred bear form, or back into its true form, which is humanoid. Its statistics, unless noted, are the same in each form. Any armor it is wearing merges into its alternate forms. It reverts to its true form if it dies."
+      ]
+    },
+    {
+      "name": "Kindred Form",
+      "entries": [
+        "The werebear's kindred form takes the shape of a Large bear. While in this form, it can speak to and understand bears, cannot take any actions requiring hands, adds its Constitution modifier to the result of any saving throw, and gains 25 temporary hit points the first time it takes this form each day."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The werebear makes three melee attacks, only one of which can be a bite."
+      ]
+    },
+    {
+      "name": "Bite (Hybrid or Kindred Form Only)",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 16 (3d8 + 3 damage) piercing damage. If the target is a humanoid, it must succeed on a DC 15 Constitution saving throw or be cursed with werebear lycanthropy."
+      ]
+    },
+    {
+      "name": "Claw (Hybrid or Kindred Form Only)",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The werebear is a 13th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 6} to hit with spell attacks). It can cast spells in any form, regardless of verbal, somatic, or material components provided they have no gold cost. It has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "guidance",
+            "mending",
+            "resistance"
+          ]
+        },
+        "1": {
+          "spells": [
+            "animal friendship",
+            "faerie fire",
+            "healing word"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "lesser restoration"
+          ]
+        },
+        "3": {
+          "spells": [
+            "conjure animals",
+            "dispel magic",
+            "plant growth"
+          ]
+        },
+        "4": {
+          "spells": [
+            "freedom of movement",
+            "ice storm"
+          ]
+        },
+        "5": {
+          "spells": [
+            "commune with nature",
+            "tree stride"
+          ]
+        },
+        "6": {
+          "spells": [
+            "wall of thorns"
+          ]
+        },
+        "7": {
+          "spells": [
+            "arboreal curse|GHLoE"
+          ]
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Eagle",
+  "source": "MM",
+  "page": 322,
+  "size": [
+    "S"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 3,
+  "speed": {
+    "walk": 10,
+    "fly": 60
+  },
+  "str": 6,
+  "dex": 15,
+  "con": 10,
+  "int": 2,
+  "wis": 14,
+  "cha": 7,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The eagle has advantage on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "mountain",
+    "grassland",
+    "hill",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

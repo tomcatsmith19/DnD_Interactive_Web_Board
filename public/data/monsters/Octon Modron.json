@@ -1,0 +1,147 @@
+{
+  "name": "Octon Modron",
+  "source": "MPP",
+  "page": 40,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 187,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "swim": 30,
+    "canHover": true
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 17,
+  "int": 17,
+  "wis": 16,
+  "cha": 14,
+  "skills": {
+    "perception": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "Modron",
+    "telepathy 120 ft."
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Axiomatic Mind",
+      "entries": [
+        "The octon can't be compelled to act in a manner contrary to its nature or its instructions."
+      ]
+    },
+    {
+      "name": "Combat Ready",
+      "entries": [
+        "The octon has advantage on initiative checks."
+      ]
+    },
+    {
+      "name": "Disintegration",
+      "entries": [
+        "If the octon dies, its body disintegrates into dust, leaving behind anything it was carrying."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The octon makes three Tentacle attacks."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 14 (3d6 + 4 damage) bludgeoning damage plus 9 (2d8 damage) lightning damage."
+      ]
+    },
+    {
+      "name": "Whirlwind of Tentacles {@recharge 5}",
+      "entries": [
+        "The octon rapidly extends and spins its ring of tentacles. Each creature within 20 feet of the octon must succeed on a DC 16 Strength saving throw or be pulled up to 10 feet in a straight line toward the octon. Then, the octon makes two Tentacle attacks against each creature within 10 feet of itself."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The octon casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "detect magic",
+        "dispel magic",
+        "mending"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

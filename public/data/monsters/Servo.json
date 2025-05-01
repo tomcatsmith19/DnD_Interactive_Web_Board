@@ -1,0 +1,56 @@
+{
+  "name": "Servo",
+  "source": "PSK",
+  "page": 32,
+  "size": [
+    "T"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 20
+  },
+  "str": 4,
+  "dex": 11,
+  "con": 12,
+  "int": 3,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one target. 1 slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

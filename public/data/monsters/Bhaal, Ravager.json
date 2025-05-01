@@ -1,0 +1,166 @@
+{
+  "name": "Bhaal, Ravager",
+  "source": "MaBJoV",
+  "page": 93,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 351,
+  "speed": {
+    "walk": 40
+  },
+  "str": 28,
+  "dex": 24,
+  "con": 24,
+  "int": 14,
+  "wis": 16,
+  "cha": 14,
+  "skills": {
+    "athletics": "+16",
+    "perception": "+10",
+    "stealth": "+14"
+  },
+  "passive": 20,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Primordial",
+    "Undercommon"
+  ],
+  "cr": "24",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Avatar of Bhaal",
+      "entries": [
+        "When the ravager drops to 0 hit points, its form fractures. Within the next 24 hours, it will reappear in its {@creature Bhaal, Slayer|MaBJoV|slayer form} within {@dice 2d6} miles of where the ravager form fell."
+      ]
+    },
+    {
+      "name": "Cull the Weak",
+      "entries": [
+        "When the ravager damages a creature with a melee attack and the target is left with 20 or fewer remaining hit points, the creature must make a {@dc 21} Constitution saving throw or be reduced to 0 hit points."
+      ]
+    },
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The ravager is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the ravager fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The ravager has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The ravager's claw, bite, and spine attacks are magical."
+      ]
+    },
+    {
+      "name": "Spiked Hide",
+      "entries": [
+        "At the start of each of its turns, the ravager deals 16 ({@damage 3d10}) piercing damage to any creature grappling it or being {@condition grappled} by it."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ravager uses its Fear aura (if available) and then makes one bite attack and two claw attacks or two spine attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +16 to hit, reach 5 ft., one target. 22 (3d8 + 9 damage) slashing damage plus 7 (2d6 damage) necrotic damage. If the target is a creature, it must succeed on a DC 21 Constitution saving throw or have its hit point maximum reduced by an amount equal to the damage taken. The target dies if this attack reduces its hit point maximum to 0. The reduction lasts until removed by the {@spell greater restoration} spell or other magic."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +16 to hit, reach 5 ft., one target. 25 (3d10 + 9 damage) piercing damage plus 7 (2d6 damage) necrotic damage. If the target is a creature, it must succeed on a DC 21 Constitution saving throw or have its hit point maximum reduced by an amount equal to the damage taken. The target dies if this attack reduces its hit point maximum to 0. The reduction lasts until removed by the {@spell greater restoration} spell or other magic. Large or smaller creatures damaged by this attack are {@condition grappled} (escape DC 20) and the ravager cannot make another Bite attack until this grapple ends."
+      ]
+    },
+    {
+      "name": "Spines",
+      "entries": [
+        "Ranged atk +14 to hit, range 60/120 ft., one target. 17 (3d6 + 7 damage) piercing damage. If the target fails a DC 19 Constitution saving throw, they are {@condition stunned} until the end of their next turn."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Detect",
+      "entries": [
+        "The ravager makes a Wisdom (Perception) check."
+      ]
+    },
+    {
+      "name": "Smash",
+      "entries": [
+        "The ravager smashes the ground and creates a thunderwave. Any creature in a 10-foot cube originating from the ravager must make a Constitution saving throw against {@dc 20}. On a failed save, the creature suffers 36 ({@dice 8d8}) thunder and is pushed 5 feet away from the ravager.",
+        "On a successful save, the creature takes half damage and is not pushed. The soundwave produced by this attack can be heard up to 100 feet away."
+      ]
+    },
+    {
+      "name": "Spiky Carapace (Costs 2 Actions)",
+      "entries": [
+        "The ravager flares its numerous spines and they elongate. Any creature that starts their turn within 5 feet of ravager must make a {@dc 21} Dexterity saving throw or suffer 44 ({@damage 8d10}) piercing damage. The damage is halved with a successful save."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "incapacitated",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "stunned",
+    "unconscious"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "poison",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "darkvision 120 ft.",
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

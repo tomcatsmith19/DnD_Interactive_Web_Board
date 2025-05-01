@@ -1,0 +1,119 @@
+{
+  "name": "Fated Shaker",
+  "source": "MPP",
+  "page": 56,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13",
+    "16"
+  ],
+  "hp": 76,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 10,
+  "int": 15,
+  "wis": 16,
+  "cha": 15,
+  "skills": {
+    "insight": "+6",
+    "investigation": "+5",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common plus two more languages"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The shaker makes two Golden Rod or Radiant Bolt attacks."
+      ]
+    },
+    {
+      "name": "Golden Rod",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage plus 9 (2d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Radiant Bolt",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 120 ft., one target. 14 (2d10 + 3 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The shaker casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "mage armor",
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

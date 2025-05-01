@@ -1,0 +1,183 @@
+{
+  "name": "Hydroloth",
+  "source": "MTF",
+  "page": 249,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "yugoloth"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 135,
+  "speed": {
+    "walk": 20,
+    "swim": 40
+  },
+  "str": 12,
+  "dex": 21,
+  "con": 16,
+  "int": 19,
+  "wis": 10,
+  "cha": 14,
+  "skills": {
+    "insight": "+4",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The hydroloth can breathe air and water."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The hydroloth has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The hydroloth's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Secure Memory",
+      "entries": [
+        "The hydroloth is immune to the waters of the River Styx as well as any effect that would steal or modify its memories or detect or read its thoughts."
+      ]
+    },
+    {
+      "name": "Watery Advantage",
+      "entries": [
+        "While submerged in liquid, the hydroloth has advantage on attack rolls."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hydroloth makes two melee attacks. In place of one of these attacks, it can cast one spell that takes 1 action to cast."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 16 (2d10 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Steal Memory (1/Day)",
+      "entries": [
+        "The hydroloth targets one creature it can see within 60 feet of it. The target takes {@dice 4d6} psychic damage, and it must make a DC 16 Intelligence saving throw. On a successful save, the target becomes immune to this hydroloth's Steal Memory for 24 hours. On a failed save, the target loses all proficiencies, it can't cast spells, it can't understand language, and if its Intelligence and Charisma scores are higher than 5, they become 5. Each time the target finishes a long rest, it can repeat the saving throw, ending the effect on itself on a success. A {@spell greater restoration} or {@spell remove curse} spell cast on the target ends this effect early."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The hydroloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The hydroloth's innate spellcasting ability is Intelligence (spell save {@dc 16}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "darkness",
+        "detect magic",
+        "dispel magic",
+        "invisibility",
+        "water walk"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

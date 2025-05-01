@@ -1,0 +1,116 @@
+{
+  "name": "Affliction Devil (Kocrachon)",
+  "source": "CoA",
+  "page": 236,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 16,
+  "dex": 19,
+  "con": 15,
+  "int": 17,
+  "wis": 12,
+  "cha": 14,
+  "skills": {
+    "deception": "+6",
+    "intimidation": "+6",
+    "perception": "+5",
+    "stealth": "+8"
+  },
+  "passive": 15,
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the kocrachon's darkvision."
+      ]
+    },
+    {
+      "name": "Infernal Rot",
+      "entries": [
+        "A creature afflicted with this disease has the {@condition poisoned} condition until the disease ends. While diseased, creatures gain no benefits from a long rest, gaining {@condition exhaustion} when necessary. If a creature dies while afflicted with Infernal Rot, its corpse transforms into a newborn kocrachon after 4 ({@dice 1d8}) days."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The kocrachon has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Sadism",
+      "entries": [
+        "The kocrachon gains a +1 bonus to attack and damage rolls for each different creature it damaged on its previous turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The kocrachon makes three Claw attacks. It can replace one of the attacks with a Proboscis attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Proboscis",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 10 (1d12 + 4 damage) piercing damage plus 14 (4d6 damage) poison damage. Creatures damaged by this attack must succeed on a DC 16 Constitution saving throw or suffer the Infernal Rot disease."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

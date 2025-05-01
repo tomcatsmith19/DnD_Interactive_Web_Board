@@ -1,0 +1,88 @@
+{
+  "name": "Demon Ichor",
+  "source": "CoA",
+  "page": 78,
+  "size": [
+    "L"
+  ],
+  "type": "ooze",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "7"
+  ],
+  "hp": 120,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 16,
+  "dex": 5,
+  "con": 16,
+  "int": 1,
+  "wis": 6,
+  "cha": 1,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The ichor can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Corrosive Form",
+      "entries": [
+        "A creature that touches the ichor or hits it with a melee attack while within 5 feet of it takes 4 ({@damage 1d8}) acid damage. Any nonmagical weapon made of metal or wood that hits the ichor corrodes. After dealing damage, the weapon takes a permanent and cumulative \u00e2\u02c6\u20191 penalty to damage rolls. If its penalty drops to \u00e2\u02c6\u20195, the weapon is destroyed. Nonmagical ammunition made of metal or wood that hits the ichor is destroyed after dealing damage. The ichor can eat through 2-inch-thick, nonmagical wood or metal in 1 round."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The ichor can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage plus 18 (4d8 damage) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative \u00e2\u02c6\u20191 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "slashing"
+  ],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

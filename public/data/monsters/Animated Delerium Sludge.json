@@ -1,0 +1,88 @@
+{
+  "name": "Animated Delerium Sludge",
+  "source": "DoDk",
+  "page": 203,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 114,
+  "speed": {
+    "walk": 30,
+    "swim": 90
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 18,
+  "int": 5,
+  "wis": 10,
+  "cha": 8,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Deep Speech"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Sludge Form",
+      "entries": [
+        "The animated sludge can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Contaminated Touch",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 10 (3d6 damage) necrotic damage. In addition, a target hit by this attack must succeed on a DC 15 Constitution saving throw or gain one {@adventure level of contamination|DoDk|12}."
+      ]
+    },
+    {
+      "name": "Engulf",
+      "entries": [
+        "Each creature in the animated sludge's space must succeed on a DC 15 Strength saving throw. On a failed save, a creature becomes {@condition grappled} by the sludge if it is Large or smaller (escape DC 14). Until this grapple ends, the target is {@condition restrained}. If the saving throw is successful, the target is pushed out of the sludge's space.",
+        "The sludge can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the sludge's turns, each target {@condition grappled} by it takes 28 ({@damage 8d6}) necrotic damage and must succeed on a {@dc 15} Constitution saving throw or gain one {@adventure level of contamination|DoDk|12}.",
+        "A creature within 5 feet of the sludge can attempt to pull a creature or object out of it. This takes an action and requires a successful {@dc 14} Strength check."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "acid",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

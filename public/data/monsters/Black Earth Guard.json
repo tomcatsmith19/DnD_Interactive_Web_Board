@@ -1,0 +1,65 @@
+{
+  "name": "Black Earth Guard",
+  "source": "PotA",
+  "page": 195,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 30
+  },
+  "str": 17,
+  "dex": 11,
+  "con": 14,
+  "int": 10,
+  "wis": 10,
+  "cha": 9,
+  "skills": {
+    "intimidation": "+1",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The guard makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

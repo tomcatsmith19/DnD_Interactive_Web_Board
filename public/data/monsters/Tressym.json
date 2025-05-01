@@ -1,0 +1,89 @@
+{
+  "name": "Tressym",
+  "source": "SKT",
+  "page": 242,
+  "size": [
+    "T"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 40,
+    "climb": 30,
+    "fly": 40
+  },
+  "str": 3,
+  "dex": 15,
+  "con": 10,
+  "int": 11,
+  "wis": 12,
+  "cha": 12,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+4"
+  },
+  "passive": 15,
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Detect Invisibility",
+      "entries": [
+        "Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The tressym has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Poison Sense",
+      "entries": [
+        "The tressym can detect whether a substance is poisonous by taste, touch, or smell."
+      ]
+    },
+    {
+      "name": "Familiar",
+      "entries": [
+        "With the DM's permission, a person who casts the {@spell find familiar} spell can choose to conjure a tressym in stead of a normal cat."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one target. 1 slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

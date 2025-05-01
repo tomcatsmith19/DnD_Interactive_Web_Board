@@ -1,0 +1,70 @@
+{
+  "name": "Blue Dragon Wyrmling",
+  "source": "MM",
+  "page": 91,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30,
+    "burrow": 15,
+    "fly": 60
+  },
+  "str": 17,
+  "dex": 10,
+  "con": 15,
+  "int": 12,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+2"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (1d10 + 3 damage) piercing damage plus 3 (1d6 damage) lightning damage."
+      ]
+    },
+    {
+      "name": "Lightning Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales lightning in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 22 (4d10 damage) lightning damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning"
+  ],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

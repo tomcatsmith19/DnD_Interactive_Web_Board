@@ -1,0 +1,97 @@
+{
+  "name": "Transcendent Order Conduit",
+  "source": "MPP",
+  "page": 62,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 97,
+  "speed": {
+    "walk": 50
+  },
+  "str": 10,
+  "dex": 19,
+  "con": 14,
+  "int": 10,
+  "wis": 18,
+  "cha": 12,
+  "skills": {
+    "acrobatics": "+7",
+    "perception": "+7",
+    "performance": "+4"
+  },
+  "passive": 17,
+  "languages": [
+    "Common plus one more language"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Instinctive Reflexes",
+      "entries": [
+        "The conduit has advantage on initiative rolls, and it can't have disadvantage on attack rolls."
+      ]
+    },
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the conduit is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The conduit makes three Unarmed Strike attacks."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage. If the target is a creature, the conduit can choose one of the following additional effects (up to once per turn each):",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Incapacitate",
+              "entries": [
+                "The target must succeed on a {@dc 15} Constitution saving throw or have the {@condition incapacitated} condition until the end of the conduit's next turn."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "Push",
+              "entries": [
+                "The target is pushed up to 10 feet horizontally away from the conduit."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

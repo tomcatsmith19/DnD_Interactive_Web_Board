@@ -1,0 +1,83 @@
+{
+  "name": "Quickling",
+  "source": "VGM",
+  "page": 187,
+  "size": [
+    "T"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 120
+  },
+  "str": 4,
+  "dex": 23,
+  "con": 13,
+  "int": 10,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "acrobatics": "+8",
+    "perception": "+5",
+    "sleight of hand": "+8",
+    "stealth": "+8"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Blurred Movement",
+      "entries": [
+        "Attack rolls against the quickling have disadvantage unless the quickling is {@condition incapacitated} or {@condition restrained}."
+      ]
+    },
+    {
+      "name": "Evasion",
+      "entries": [
+        "If the quickling is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The quickling makes three dagger attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +8 to hit, reach 5 ft. or range 20/60 ft., one target. 8 (1d4 + 6 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

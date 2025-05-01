@@ -1,0 +1,82 @@
+{
+  "name": "Lost Sorrowsworn",
+  "source": "MPMM",
+  "page": 224,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 17,
+  "dex": 12,
+  "con": 15,
+  "int": 6,
+  "wis": 7,
+  "cha": 5,
+  "skills": {
+    "athletics": "+6"
+  },
+  "passive": 8,
+  "languages": [
+    "Common"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The sorrowsworn makes two Arm Spike attacks."
+      ]
+    },
+    {
+      "name": "Arm Spike",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 14 (2d10 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Embrace {@recharge 4}",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 25 (4d10 + 3 damage) piercing damage, and the target is {@condition grappled} (escape DC 14) if it is a Medium or smaller creature. Until the grapple ends, the target is {@condition frightened}, and it takes 27 (6d8 damage) psychic damage at the end of each of its turns. The sorrowsworn can grapple only one creature at a time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "arctic",
+    "desert",
+    "forest",
+    "mountain",
+    "swamp",
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

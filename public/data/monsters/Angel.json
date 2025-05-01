@@ -1,0 +1,148 @@
+{
+  "name": "Angel",
+  "source": "PSZ",
+  "page": 21,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30,
+    "fly": 90
+  },
+  "str": 18,
+  "dex": 18,
+  "con": 18,
+  "int": 17,
+  "wis": 20,
+  "cha": 20,
+  "skills": {
+    "insight": "+9",
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Angelic Weapons",
+      "entries": [
+        "The angel's weapon attacks are magical. When the angel hits with any weapon, the weapon deals an extra {@dice 4d8} radiant damage (included in the attack)."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The angel has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The angel makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Mace",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) bludgeoning damage plus 18 (4d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Healing Touch (3/Day)",
+      "entries": [
+        "The angel touches another creature. The target magically regains 20 ({@dice 4d8 + 2}) hit points and is freed from any curse, disease, poison, blindness, or deafness."
+      ]
+    },
+    {
+      "name": "Change Shape",
+      "entries": [
+        "The angel magically polymorphs into a humanoid or beast that has a challenge rating equal to or less than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the angel's choice).",
+        "In a new form, the angel retains its game statistics and ability to speak, but its AC, movement modes, Strength, Dexterity, and special senses are replaced by those of the new form, and it gains any statistics and capabilities (except class features, legendary actions, and lair actions) that the new form has but that it lacks."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The angel's spellcasting ability is Charisma (spell save {@dc 17}). The angel can innately cast the following spells, requiring only verbal components:"
+      ],
+      "will": [
+        "detect evil and good"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened"
+  ],
+  "resist": [
+    "radiant",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

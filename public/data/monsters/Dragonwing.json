@@ -1,0 +1,97 @@
+{
+  "name": "Dragonwing",
+  "source": "HotDQ",
+  "page": 90,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 13,
+  "int": 11,
+  "wis": 11,
+  "cha": 13,
+  "skills": {
+    "deception": "+3",
+    "stealth": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dragon Fanatic",
+      "entries": [
+        "The dragonwing has advantage on saving throws against being {@condition charmed} or {@condition frightened}. While the dragonwing can see a dragon or higher-ranking Cult of the Dragon cultist friendly to it, the dragonwing ignores the effects of being {@condition charmed} or {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Fanatic Advantage",
+      "entries": [
+        "Once per turn, if the dragonwing makes a weapon attack with advantage on the attack roll and hits, the target takes an extra 7 ({@dice 2d6}) damage."
+      ]
+    },
+    {
+      "name": "Limited Flight",
+      "entries": [
+        "The dragonwing can use a bonus action to gain a flying speed of 30 feet until the end of its turn."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The dragonwing has advantage on an attack roll against a creature if at least one of the dragonwing's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragonwing attacks twice with its scimitar."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage plus 3 ({@dice 1d6}) damage of the type to which the cultist has resistance."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

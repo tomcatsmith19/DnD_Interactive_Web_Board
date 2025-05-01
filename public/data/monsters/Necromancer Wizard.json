@@ -1,0 +1,117 @@
+{
+  "name": "Necromancer Wizard",
+  "source": "MPMM",
+  "page": 264,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 12,
+  "int": 17,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "arcana": "+7",
+    "history": "+7"
+  },
+  "passive": 11,
+  "languages": [
+    "any four languages"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The necromancer makes three Arcane Burst attacks."
+      ]
+    },
+    {
+      "name": "Arcane Burst",
+      "entries": [
+        "{@atk ms,rs} +7 to hit, reach 5 ft. or range 120 ft., one target. 25 (4d10 + 3 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The necromancer casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "dancing lights",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "desert",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

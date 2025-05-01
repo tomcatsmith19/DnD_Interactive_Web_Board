@@ -1,0 +1,117 @@
+{
+  "name": "Alyxian the Tormented",
+  "source": "CRCotN",
+  "page": 178,
+  "size": [
+    "H"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 40,
+    "swim": 40
+  },
+  "str": 21,
+  "dex": 18,
+  "con": 22,
+  "int": 15,
+  "wis": 16,
+  "cha": 20,
+  "skills": {
+    "deception": "+9",
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish",
+    "telepathy 120 ft."
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Apotheonic Rejuvenation",
+      "entries": [
+        "When Alyxian drops to 0 hit points, his body dies and cracks open like a cocoon. Alyxian instantly emerges from the cocoon in his second form, Alyxian the Callous, in the space where his previous form died. His initiative count doesn't change."
+      ]
+    },
+    {
+      "name": "Divinely Blessed",
+      "entries": [
+        "Alyxian can't be {@quickref Surprise|PHB|3|0|surprised} and can't be changed into another form against his will."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "If Alyxian fails a saving throw, he can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Alyxian makes two Grasping Hand attacks."
+      ]
+    },
+    {
+      "name": "Grasping Hand",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 15 (3d6 + 5 damage) force damage, and if the target is a Medium or smaller creature, it is {@condition grappled} (escape DC 15). Alyxian has six hands, each of which can grapple one target."
+      ]
+    },
+    {
+      "name": "Void Eyes {@recharge 5}",
+      "entries": [
+        "Alyxian targets up to two creatures he can see within 120 feet of himself. Each target must make a DC 17 Constitution saving throw, taking 28 (8d6 damage) necrotic damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "Alyxian makes one Grasping Hand attack."
+      ]
+    },
+    {
+      "name": "Weapons of Yore (Costs 2 Actions)",
+      "entries": [
+        "Ancient weapons embedded in Alyxian's hide detach from Alyxian and fly about in a 10-foot-radius sphere centered on a point Alyxian can see within 60 feet of himself. A creature takes 18 ({@damage 4d8}) slashing damage when it enters that area for the first time on a turn or starts its turn there. The effect lasts until the end of Alyxian's next turn, when the weapons return to Alyxian and embed themselves in his hide once again (causing him no harm)."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "stunned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic"
+  ],
+  "senses": [
+    "blindsight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

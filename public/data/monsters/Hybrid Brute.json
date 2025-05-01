@@ -1,0 +1,69 @@
+{
+  "name": "Hybrid Brute",
+  "source": "GGR",
+  "page": 217,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "Simic hybrid"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 15,
+  "int": 8,
+  "wis": 11,
+  "cha": 9,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The hybrid can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hybrid makes two claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

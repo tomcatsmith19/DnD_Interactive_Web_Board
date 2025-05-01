@@ -1,0 +1,85 @@
+{
+  "name": "Ratling",
+  "source": "DoDk",
+  "page": 202,
+  "size": [
+    "S"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 30,
+    "swim": 30,
+    "climb": 30
+  },
+  "str": 7,
+  "dex": 15,
+  "con": 8,
+  "int": 8,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "stealth": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Skulker",
+      "entries": [
+        "The ratling can take the Hide action as a bonus action on each of its turns."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The ratling has advantage on Wisdom (Perception) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The ratling has advantage on an attack roll against a creature if at least one of the ratling's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Sling",
+      "entries": [
+        "Ranged atk +4 to hit, range 30/120 ft., one target. 4 (1d4 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

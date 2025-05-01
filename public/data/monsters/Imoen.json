@@ -1,0 +1,99 @@
+{
+  "name": "Imoen",
+  "source": "MaBJoV",
+  "page": 88,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 18,
+  "con": 14,
+  "int": 14,
+  "wis": 10,
+  "cha": 14,
+  "skills": {
+    "acrobatics": "+7",
+    "deception": "+5",
+    "perception": "+3",
+    "stealth": "+10"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Thieves' cant",
+    "Undercommon"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Evasion",
+      "entries": [
+        "If Imoen is subjected to an effect that allows her to make a Dexterity saving throw to take only half damage, Imoen instead takes no damage if she succeeds on the saving throw, and only half damage if she fails."
+      ]
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "entries": [
+        "Imoen deals an extra 14 ({@damage 4d6}) damage when she hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 ft. of an ally of Imoen that isn't {@condition incapacitated} and Imoen doesn't have disadvantage on the attack roll."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "Imoen can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, Imoen has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Imoen makes two shortsword attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

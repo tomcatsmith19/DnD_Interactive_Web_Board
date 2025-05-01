@@ -1,0 +1,134 @@
+{
+  "name": "Amethyst Dragon Wyrmling",
+  "source": "FTD",
+  "page": 162,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [
+    "gem"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "swim": 30,
+    "canHover": true
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 17,
+  "int": 16,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "arcana": "+7",
+    "perception": "+5",
+    "persuasion": "+5",
+    "stealth": "+2"
+  },
+  "passive": 15,
+  "languages": [
+    "Draconic",
+    "telepathy 120 ft."
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The dragon can breathe both air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 9 (1d10 + 4 damage) piercing damage plus 4 (1d8 damage) force damage."
+      ]
+    },
+    {
+      "name": "Singularity Breath {@recharge 5}",
+      "entries": [
+        "The dragon creates a shining bead of gravitational force in its mouth, then releases the energy in a 15-foot cone. Each creature in that area must make a DC 13 Strength saving throw. On a failed save, the creature takes 22 (5d8 damage) force damage, and its speed becomes 0 until the start of the dragon's next turn. On a successful save, the creature takes half as much damage, and its speed isn't reduced."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The dragon casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "frightened",
+    "prone"
+  ],
+  "resist": [
+    "force",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

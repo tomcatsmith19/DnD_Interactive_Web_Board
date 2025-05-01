@@ -1,0 +1,53 @@
+{
+  "name": "Gremishka",
+  "source": "VRGR",
+  "page": 235,
+  "size": [
+    "T"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "12"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 30
+  },
+  "str": 6,
+  "dex": 14,
+  "con": 10,
+  "int": 12,
+  "wis": 11,
+  "cha": 4,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 2 (1d4 + 2 damage) piercing damage plus 3 (1d6 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,101 @@
+{
+  "name": "Neronvain",
+  "source": "RoT",
+  "page": 91,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 117,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 17,
+  "con": 15,
+  "int": 16,
+  "wis": 13,
+  "cha": 18,
+  "skills": {
+    "arcana": "+6",
+    "perception": "+4"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Elvish",
+    "Infernal"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Draconic Majesty",
+      "entries": [
+        "Neronvain adds his Charisma bonus to his AC (included)."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Magic can't put Neronvain to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Neronvain makes two attacks, either with his shortsword or Eldritch Arrow."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage plus 13 (3d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Eldritch Arrow",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 120 ft., one target. 11 (2d10 damage) force damage plus 9 (2d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Poisonous Cloud (2/Day)",
+      "entries": [
+        "Poison gas fills a 20-foot-radius sphere centered on a point Neronvain can see within 50 feet of him. The gas spreads around corners and remains until the start of Neronvain's next turn. Each creature that starts its turn in the gas must succeed on a DC 16 Constitution saving throw or be {@condition poisoned} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Kraul Warrior",
+  "source": "GGR",
+  "page": 213,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "kraul"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 15,
+  "dex": 12,
+  "con": 13,
+  "int": 10,
+  "wis": 11,
+  "cha": 8,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Kraul",
+    "understands Common but can't speak it"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hive Mind",
+      "entries": [
+        "The kraul is immune to the {@condition charmed} and {@condition frightened} conditions while within 30 feet of at least one other kraul."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The kraul has advantage on an attack roll against a creature if at least one of the kraul's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The kraul can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d6 + 2 damage) piercing damage, or 6 (1d8 + 2 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

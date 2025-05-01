@@ -1,0 +1,88 @@
+{
+  "name": "Xvart",
+  "source": "VGM",
+  "page": 200,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "xvart"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 7,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 10,
+  "int": 8,
+  "wis": 7,
+  "cha": 7,
+  "skills": {
+    "stealth": "+4"
+  },
+  "passive": 8,
+  "languages": [
+    "Abyssal"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Low Cunning",
+      "entries": [
+        "The xvart can take the Disengage action as a bonus action on each of its turns."
+      ]
+    },
+    {
+      "name": "Overbearing Pack",
+      "entries": [
+        "The xvart has advantage on Strength (Athletics) checks to shove a creature if at least one of the xvart's allies is within 5 feet of the target and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Raxivort's Tongue",
+      "entries": [
+        "The xvart can communicate with ordinary bats and rats, as well as giant bats and giant rats."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Sling",
+      "entries": [
+        "Ranged atk +4 to hit, range 30/120 ft., one target. 4 (1d4 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [
+    "underdark",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Shieldhead",
+  "source": "GHLoE",
+  "page": 97,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 50
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 14,
+  "int": 2,
+  "wis": 12,
+  "cha": 7,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the shieldhead moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 ({@damage 2d6}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 13} Strength saving throw or fall {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Ram",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

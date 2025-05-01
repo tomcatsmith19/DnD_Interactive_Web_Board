@@ -1,0 +1,178 @@
+{
+  "name": "Archaic",
+  "source": "SCC",
+  "page": 184,
+  "size": [
+    "G"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 245,
+  "speed": {
+    "walk": 40
+  },
+  "str": 25,
+  "dex": 10,
+  "con": 24,
+  "int": 27,
+  "wis": 24,
+  "cha": 20,
+  "skills": {
+    "arcana": "+20",
+    "deception": "+11",
+    "history": "+20",
+    "perception": "+13"
+  },
+  "passive": 23,
+  "languages": [
+    "all"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Enigmatic Mind",
+      "entries": [
+        "The archaic's mind can't be read, creatures can communicate telepathically with the archaic only if it allows, and magic can't determine whether the archaic is lying."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the archaic fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The archaic doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The archaic makes two Force Strike attacks. It can also use Gravity Shift, if available."
+      ]
+    },
+    {
+      "name": "Force Strike",
+      "entries": [
+        "{@atk ms,rs} +14 to hit, reach 15 ft. or range 120 ft., one target. 19 (2d10 + 8 damage) force damage, and the target is pulled up to 10 feet toward the archaic or pushed 10 feet away from it, as the archaic chooses."
+      ]
+    },
+    {
+      "name": "Gravity Shift {@recharge 5}",
+      "entries": [
+        "The archaic reverses gravity for one creature it can see within 100 feet of itself. The creature must succeed on a DC 22 Wisdom saving throw or fall 100 feet upward. If the falling creature encounters a solid object (such as a ceiling) in this fall, it strikes the object just as it would during a downward fall. If the creature reaches the top of the area without striking anything, it hovers there until the start of the archaic's next turn, at which time gravity returns to normal and the creature falls."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The archaic teleports to an unoccupied space that it can see within 120 feet of itself."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Strike",
+      "entries": [
+        "The archaic makes one Force Strike attack."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The archaic uses Teleport."
+      ]
+    },
+    {
+      "name": "Unravel Magic (Costs 2 Actions)",
+      "entries": [
+        "The archaic targets one creature it can see within 120 feet of itself. The target must succeed on a {@dc 22} Constitution saving throw or take 35 ({@damage 10d6}) force damage, and each spell of 5th level or lower on the target ends."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The archaic casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 22}):"
+      ],
+      "will": [
+        "detect magic",
+        "divination",
+        "sending"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "stunned"
+  ],
+  "resist": [
+    "force"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

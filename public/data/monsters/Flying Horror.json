@@ -1,0 +1,81 @@
+{
+  "name": "Flying Horror",
+  "source": "GGR",
+  "page": 203,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 49,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 9,
+  "dex": 20,
+  "con": 12,
+  "int": 2,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+7"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fear Frenzy",
+      "entries": [
+        "The horror has advantage on attack rolls against {@condition frightened} creatures."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the horror has disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) slashing damage plus 14 (4d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Frightening Screech {@recharge 5}",
+      "entries": [
+        "The horror screeches. Each creature within 30 feet of it that can hear it must succeed on a DC 13 Wisdom saving throw or be {@condition frightened} of it for 1 minute. The {@condition frightened} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the horror's Frightening Screech for the next 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "radiant"
+  ],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

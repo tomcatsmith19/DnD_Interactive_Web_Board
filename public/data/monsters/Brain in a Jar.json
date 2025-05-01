@@ -1,0 +1,141 @@
+{
+  "name": "Brain in a Jar",
+  "source": "VRGR",
+  "page": 278,
+  "size": [
+    "S"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 55,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 10,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 1,
+  "dex": 3,
+  "con": 15,
+  "int": 19,
+  "wis": 10,
+  "cha": 15,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Detect Sentience",
+      "entries": [
+        "The brain can sense the presence and location of any creature within 300 feet of it that has an Intelligence of 3 or higher, regardless of interposing barriers, unless the creature is protected by a {@spell mind blank} spell."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The brain has advantage on saving throws against spells and other magic effects."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The brain doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Chill Touch (Cantrip)",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 120 ft., one creature. 13 (3d8 damage) necrotic damage, and the target can't regain hit points until the start of the brain's next turn. If the target is undead, it also has disadvantage on attack rolls against the brain until the end of the brain's next turn."
+      ]
+    },
+    {
+      "name": "Mind Blast {@recharge 5}",
+      "entries": [
+        "The brain magically emits psychic energy in a 60-foot cone. Each creature in that area must succeed on a DC 14 Intelligence saving throw or take 17 (3d8 + 4 damage) psychic damage and be {@condition stunned} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The brain's innate spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "chill touch",
+        "detect thoughts",
+        "mage hand",
+        "zone of truth"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed",
+    "poisoned",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 120 ft. (blind beyond this radius); see also \"detect sentience\" below"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

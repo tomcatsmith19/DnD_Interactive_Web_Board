@@ -1,0 +1,88 @@
+{
+  "name": "Lenore von Kessel",
+  "source": "DoDk",
+  "page": 134,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 15,
+  "con": 16,
+  "int": 12,
+  "wis": 13,
+  "cha": 15,
+  "skills": {
+    "deception": "+5",
+    "insight": "+4",
+    "perception": "+4",
+    "stealth": "+5"
+  },
+  "passive": 14,
+  "languages": [
+    "Common"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Radiant Gaze",
+      "entries": [
+        "When a creature that can see Lenore's eyes starts its turn within 30 feet of her, Lenore can force it to make a {@dc 14} Constitution saving throw if she isn't {@condition incapacitated} and can see the creature. The creature takes 22 ({@damage 4d10}) radiant damage on a failed save, or half as much on a successful one. In addition, creatures who fail this saving throw gain one {@adventure level of contamination|DoDk|12}.",
+        "Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see Lenore until the start of its next turn, when it can avert its eyes again. If the creature looks at Lenore in the meantime, it must immediately make the save.",
+        "If Lenore sees herself reflected on a polished surface within 30 feet of her and in an area of bright light, she becomes {@condition blinded} and {@condition incapacitated} for {@dice 1d6} hours."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The medusa makes either three melee attacks\u00e2\u20ac\u201done with its snake hair and two with its shortsword\u00e2\u20ac\u201dor two ranged attacks with its longbow."
+      ]
+    },
+    {
+      "name": "Tentacle Hair",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 4 (1d4 + 2 damage) piercing damage plus 14 (4d6 damage) necrotic damage. The target must succeed on a DC 14 Constitution saving throw or gain one {@adventure level of contamination|DoDk|12}."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 150/600 ft., one target. 6 (1d8 + 2 damage) piercing damage plus 7 (2d6 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,135 @@
+{
+  "name": "Kansaldi Fire-Eyes",
+  "source": "DSotDQ",
+  "page": 203,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "cleric",
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 172,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 17,
+  "int": 16,
+  "wis": 19,
+  "cha": 16,
+  "skills": {
+    "insight": "+12",
+    "perception": "+8",
+    "religion": "+7"
+  },
+  "passive": 18,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Kansaldi has a glowing ruby embedded in her left eye socket. The gem functions as her eye and grants her truesight (included above). The gem can't be removed while Kansaldi is alive. When she dies, a creature can remove the gem as an action. The gem then functions as a gem of seeing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Kansaldi makes two Pike attacks and uses Flame Burst."
+      ]
+    },
+    {
+      "name": "Pike",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 9 (1d10 + 4 damage) piercing damage plus 16 (3d10 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Flame Burst",
+      "entries": [
+        "Kansaldi hurls magical flames at a creature she can see within 60 feet of herself. The target must make a DC 16 Dexterity saving throw. On a failed save, the target takes 11 (2d10 damage) fire damage and catches fire; until a creature takes an action to put out the fire, the target takes 5 (1d10 damage) fire damage at the start of each of its turns. On a successful save, the target takes half as much damage and doesn't catch fire."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Kansaldi casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "light",
+        "spare the dying",
+        "thaumaturgy"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

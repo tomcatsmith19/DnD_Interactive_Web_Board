@@ -1,0 +1,88 @@
+{
+  "name": "Manticore",
+  "source": "MM",
+  "page": 213,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 68,
+  "speed": {
+    "walk": 30,
+    "fly": 50
+  },
+  "str": 17,
+  "dex": 16,
+  "con": 17,
+  "int": 7,
+  "wis": 12,
+  "cha": 8,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Tail Spike Regrowth",
+      "entries": [
+        "The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The manticore makes three attacks: one with its bite and two with its claws or three with its tail spikes."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail Spike",
+      "entries": [
+        "Ranged atk +5 to hit, range 100/200 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain",
+    "grassland",
+    "hill",
+    "coastal",
+    "arctic"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Faevlin",
+  "source": "GHLoE",
+  "page": 9,
+  "size": [
+    "S"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 10,
+  "int": 10,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "stealth": "+4"
+  },
+  "passive": 11,
+  "languages": [
+    "Goblin",
+    "Sylvan"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Touched",
+      "entries": [
+        "Magic can't put the faevlin to sleep. Only a creature of the fey type can cause the faevlin to become {@condition charmed}, and a faevlin always knows if a nonfey creature attempted to render it {@condition charmed}."
+      ]
+    },
+    {
+      "name": "Sneaky",
+      "entries": [
+        "The faevlin can use a bonus action to take the Hide action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 80/320 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Giant Subterranean Lizard",
+  "source": "TftYP",
+  "page": 236,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30,
+    "swim": 50
+  },
+  "str": 21,
+  "dex": 9,
+  "con": 17,
+  "int": 2,
+  "wis": 10,
+  "cha": 7,
+  "skills": {
+    "stealth": "+3"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The lizard makes two attacks: one with its bite and one with its tail. One attack can be replaced by Swallow."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 16 (2d10 + 5 damage) piercing damage and the target is {@condition grappled} (escape DC 15). Until this grapple ends, the target is {@condition restrained}, and the lizard can't bite another target."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 12 (2d6 + 5 damage) piercing damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Swallow",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one Medium or smaller creature the lizard is grappling. 16 (2d10 + 5 damage) piercing damage. The target is swallowed, and the grapple ends. The swallowed target is {@condition blinded} and {@condition restrained}, it has total cover against attacks and other effects outside the lizard, and it takes 10 (3d6 damage) acid damage at the start of each of the lizard's turns. The lizard can have only one target swallowed at a time.",
+        "If the lizard dies, a swallowed creature is no longer {@condition restrained} by it and can escape from the corpse using 10 feet of movement, exiting {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

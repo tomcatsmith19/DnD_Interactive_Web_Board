@@ -1,0 +1,155 @@
+{
+  "name": "Avarice",
+  "source": "IDRotF",
+  "page": 269,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "tiefling"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 16,
+  "con": 14,
+  "int": 17,
+  "wis": 10,
+  "cha": 9,
+  "skills": {
+    "arcana": "+6",
+    "history": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Infernal",
+    "Orc",
+    "Yeti"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Icy Doom",
+      "entries": [
+        "When Avarice dies, her corpse freezes for 9 days, during which time it can't be thawed, harmed by fire, animated, or raised from the dead."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Avarice wields a {@item staff of frost} with 10 charges (see \"Actions\" below)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fire Bolt (Cantrip)",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 120 ft., one target. 11 (2d10 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Staff of Frost",
+      "entries": [
+        "While holding this staff, Avarice can expend 1 or more of its charges to cast one of the following spells from it (spell save DC 14): {@spell cone of cold} (5 charges), {@spell fog cloud} (1 charge), {@spell ice storm} (4 charges), or {@spell wall of ice} (4 charges). The staff regains {@dice 1d6 + 4} charges daily at dawn. If its last charge is expended, roll a {@dice d20}; on a 1, the staff turns to water and is destroyed."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Avarice is a 10th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 14}; {@hit 6} to hit with spell attacks). She has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "mage hand",
+            "message",
+            "minor illusion",
+            "prestidigitation"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "mage armor",
+            "magic missile"
+          ]
+        },
+        "2": {
+          "spells": [
+            "flaming sphere",
+            "knock",
+            "scorching ray"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "fly"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "fire shield"
+          ]
+        },
+        "5": {
+          "spells": [
+            "Bigby's hand",
+            "Rary's telepathic bond"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

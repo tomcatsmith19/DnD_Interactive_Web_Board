@@ -1,0 +1,85 @@
+{
+  "name": "Grimlock",
+  "source": "MM",
+  "page": 175,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "grimlock"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 12,
+  "int": 9,
+  "wis": 8,
+  "cha": 6,
+  "skills": {
+    "athletics": "+5",
+    "perception": "+3",
+    "stealth": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Undercommon"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Blind Senses",
+      "entries": [
+        "The grimlock can't use its blindsight while {@condition deafened} and unable to smell."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The grimlock has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    },
+    {
+      "name": "Stone Camouflage",
+      "entries": [
+        "The grimlock has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spiked Bone Club",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) bludgeoning damage plus 2 (1d4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft. or 10 ft. while deafened (blind beyond this radius)"
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

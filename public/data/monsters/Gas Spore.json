@@ -1,0 +1,83 @@
+{
+  "name": "Gas Spore",
+  "source": "MM",
+  "page": 138,
+  "size": [
+    "L"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "5"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 10,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 5,
+  "dex": 1,
+  "con": 3,
+  "int": 1,
+  "wis": 1,
+  "cha": 1,
+  "skills": {},
+  "passive": 5,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "The gas spore explodes when it drops to 0 hit points. Each creature within 20 feet of it must succeed on a {@dc 15} Constitution saving throw or take 10 ({@damage 3d6}) poison damage and become infected with a disease on a failed save. Creatures immune to the {@condition poisoned} condition are immune to this disease.",
+        "Spores invade an infected creature's system, killing the creature in a number of hours equal to {@dice 1d12} + the creature's Constitution score, unless the disease is removed. In half that time, the creature becomes {@condition poisoned} for the rest of the duration. After the creature dies, it sprouts {@dice 2d4} Tiny gas spores that grow to full size in 7 days."
+      ]
+    },
+    {
+      "name": "Eerie Resemblance",
+      "entries": [
+        "The gas spore resembles a beholder. A creature that can see the gas spore can discern its true nature with a successful {@dc 15} Intelligence (Nature) check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Touch",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one creature. 1 poison damage, and the creature must succeed on a DC 10 Constitution saving throw or become infected with the disease described in the Death Burst trait."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 30 ft. (blind beyond this radius)"
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

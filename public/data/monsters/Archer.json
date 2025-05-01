@@ -1,0 +1,80 @@
+{
+  "name": "Archer",
+  "source": "VGM",
+  "page": 210,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 18,
+  "con": 16,
+  "int": 11,
+  "wis": 13,
+  "cha": 10,
+  "skills": {
+    "acrobatics": "+6",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Archer's Eye (3/Day)",
+      "entries": [
+        "As a bonus action, the archer can add {@dice 1d10} to its next attack or damage roll with a longbow or shortbow."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The archer makes two attacks with its longbow."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +6 to hit, range 150/600 ft., one target. 8 (1d8 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

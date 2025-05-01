@@ -1,0 +1,150 @@
+{
+  "name": "Vampirate Mage",
+  "source": "BAM",
+  "page": 63,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 68,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 18,
+  "int": 13,
+  "wis": 14,
+  "cha": 15,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Explode",
+      "entries": [
+        "When the mage is reduced to 0 hit points, it explodes in a cloud of ash. Any creature within 5 feet of it must succeed on a {@dc 14} Constitution saving throw or take 11 ({@damage 2d10}) necrotic damage."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The mage can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The mage doesn't require air or drink."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The mage makes two Ray of Cold attacks."
+      ]
+    },
+    {
+      "name": "Energy Drain",
+      "entries": [
+        "{@atk ms,rs} +5 to hit, reach 5 ft. or range 30 ft., one creature. 22 (4d10 damage) necrotic damage. A Humanoid reduced to 0 hit points by this attack dies and instantly transforms into a free-willed shadow under the DM's control."
+      ]
+    },
+    {
+      "name": "Ray of Cold",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 120 ft., one target. 11 (2d8 + 2 damage) cold damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The mage casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "mage hand",
+        "message"
+      ],
+      "daily": {
+        "1": [
+          "darkness",
+          "dimension door",
+          "fly",
+          "hypnotic pattern"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "radiant"
+  ],
+  "immune": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

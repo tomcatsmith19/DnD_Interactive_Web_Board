@@ -1,0 +1,73 @@
+{
+  "name": "Icewind Kobold Zombie",
+  "source": "IDRotF",
+  "page": 297,
+  "size": [
+    "S"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "9"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 20
+  },
+  "str": 8,
+  "dex": 6,
+  "con": 16,
+  "int": 3,
+  "wis": 6,
+  "cha": 3,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "understands Common and Draconic but can't speak"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The zombie doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee atk +1 to hit, reach 5 ft., one target. 2 (1d6 - 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

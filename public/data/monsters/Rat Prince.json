@@ -1,0 +1,106 @@
+{
+  "name": "Rat Prince",
+  "source": "DoDk",
+  "page": 213,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30,
+    "swim": 30,
+    "climb": 30
+  },
+  "str": 12,
+  "dex": 19,
+  "con": 13,
+  "int": 9,
+  "wis": 15,
+  "cha": 9,
+  "skills": {
+    "acrobatics": "+6",
+    "athletics": "+3",
+    "perception": "+6",
+    "stealth": "+8"
+  },
+  "passive": 15,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cunning Action",
+      "entries": [
+        "The Rat Prince can take the Dash, Disengage, or Hide action as a bonus action on each of its turns."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The Rat Prince has advantage on Wisdom (Perception) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The Rat Prince has advantage on an attack roll against a creature if at least one of his allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Contaminated Ammunition",
+      "entries": [
+        "The Rat Prince carries {@dice 2d6} pieces of ammunition laced with delerium fragments. These projectiles cause {@damage 1d6} extra damage on a hit, and the target must succeed on a {@dc 10} Constitution saving throw or gain one {@adventure level of contamination|DoDk|12}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Rat Prince makes three attacks: two with his short swords, and one with his contaminated bite."
+      ]
+    },
+    {
+      "name": "Short Sword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Contaminated Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 4 (1d4 + 4 damage) piercing damage, plus an extra 10 (3d6 damage) necrotic damage, and the creature must succeed on a DC 11 Constitution saving throw or gain one {@adventure level of contamination|DoDk|12}."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +6 to hit, range 30/120 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,94 @@
+{
+  "name": "Fzeglaich",
+  "source": "GHLoE",
+  "page": 79,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 40
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 16,
+  "int": 11,
+  "wis": 11,
+  "cha": 12,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "one language"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The fzeglaich has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+      ]
+    },
+    {
+      "name": "Rampage",
+      "entries": [
+        "When the fzeglaich reduces a creature to 0 hit points with a melee attack on its turn, the fzeglaich can take a bonus action to move up to half its speed and make a bite attack."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The fzeglaich regains 10 hit points at the start of its turn if it has at least 1 hit point. If the fzeglaich takes radiant damage, this trait doesn't function at the start of the fzeglaich's next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The fzeglaich makes two attacks, only one of which can be a bite."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 7 (1d8 + 3 damage) piercing damage plus 7 (2d6 damage) necrotic damage, and the target must succeed on a DC 14 Constitution saving throw or be {@condition incapacitated} until the end of its next turn. The fzeglaich regains hit points equal to the amount of necrotic damage dealt."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 8 (2d4 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

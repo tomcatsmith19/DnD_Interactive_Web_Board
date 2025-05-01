@@ -1,0 +1,164 @@
+{
+  "name": "Omin Dran",
+  "source": "AI",
+  "page": 196,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-elf"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 8,
+  "con": 14,
+  "int": 11,
+  "wis": 18,
+  "cha": 12,
+  "skills": {
+    "deception": "+4",
+    "insight": "+7",
+    "intimidation": "+4",
+    "medicine": "+7",
+    "perception": "+7",
+    "persuasion": "+4"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Dwarvish",
+    "Elvish",
+    "Goblin"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Divine Strike",
+      "entries": [
+        "Once on each of his turns when he hits a creature with a weapon attack, Omin can cause the attack to deal an extra 4 ({@dice 1d8}) damage of the same type dealt by the weapon."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Omin has advantage on saving throws against being {@condition charmed}, and magic can't put him to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Omin makes two attacks with his maul."
+      ]
+    },
+    {
+      "name": "Maul",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Omin is a 9th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). He has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "sacred flame",
+            "spare the dying",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "command",
+            "divine favor",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "enhance ability",
+            "hold person",
+            "magic weapon",
+            "silence",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "beacon of hope",
+            "crusader's mantle",
+            "dispel magic",
+            "mass healing word",
+            "spirit guardians"
+          ]
+        },
+        "4": {
+          "spells": [
+            "death ward",
+            "freedom of movement",
+            "locate creature",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dispel evil and good",
+            "flame strike",
+            "hold monster",
+            "greater restoration",
+            "legend lore"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

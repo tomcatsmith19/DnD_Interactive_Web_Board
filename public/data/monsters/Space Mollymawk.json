@@ -1,0 +1,67 @@
+{
+  "name": "Space Mollymawk",
+  "source": "BAM",
+  "page": 57,
+  "size": [
+    "S"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 3,
+  "speed": {
+    "walk": 10,
+    "fly": 50
+  },
+  "str": 6,
+  "dex": 14,
+  "con": 11,
+  "int": 3,
+  "wis": 12,
+  "cha": 3,
+  "skills": {
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The mollymawk doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The mollymawk can hold its breath for 15 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

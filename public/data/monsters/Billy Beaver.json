@@ -1,0 +1,76 @@
+{
+  "name": "Billy Beaver",
+  "source": "RMBRE",
+  "page": 27,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 34,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 12,
+  "con": 17,
+  "int": 3,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Sight and Smell",
+      "entries": [
+        "Billy Beaver has advantage on Wisdom (Perception) checks that rely on sight or smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 10 (1d10 + 5 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

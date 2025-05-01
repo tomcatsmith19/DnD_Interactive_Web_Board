@@ -1,0 +1,137 @@
+{
+  "name": "Dagryn",
+  "source": "MaBJoV",
+  "page": 110,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 20
+  },
+  "str": 12,
+  "dex": 8,
+  "con": 14,
+  "int": 14,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "deception": "+5",
+    "performance": "+5",
+    "persuasion": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dwarven Resilience",
+      "entries": [
+        "Dagryn has advantage on saving throws against poison, spells, and illusions, as well as to resist being {@condition charmed} or {@condition paralyzed}."
+      ]
+    },
+    {
+      "name": "Draconic Transformation",
+      "entries": [
+        "When Dagryn drops to 0 hit points, instead of falling {@condition unconscious}, he begins to transform into his dragon form. He immediately gains all the statistics of an {@creature adult black dragon} with the exception that his size is medium, and he is {@condition stunned}. At the start of his next turn, he grows to large size, but remains {@condition stunned}. At the start of his subsequent turn, Dagryn grows to huge size, takes the form of an {@creature adult black dragon} and is no longer considered {@condition stunned}. Dagryn remains in his dragon form for 24 hours whereupon he reverts to his dwarven form and stat block."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Invisibility (Recharges after a Short or Long Rest)",
+      "entries": [
+        "Dagryn magically turns {@condition invisible} until he attacks, casts a spell, or until its {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment Dagryn wears or carries is {@condition invisible} with it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Dagryn's innate spellcasting ability is Charisma (spell save {@dc 13}). Dagryn can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "alter self",
+        "disguise self",
+        "major image",
+        "levitate"
+      ],
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

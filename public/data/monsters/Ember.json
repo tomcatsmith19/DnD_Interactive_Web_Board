@@ -1,0 +1,119 @@
+{
+  "name": "Ember",
+  "source": "MCV2DC",
+  "page": 5,
+  "size": [
+    "H"
+  ],
+  "type": "dragon",
+  "tags": [
+    "adult chromatic"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 270,
+  "speed": {
+    "walk": 40,
+    "climb": 40,
+    "fly": 80
+  },
+  "str": 28,
+  "dex": 10,
+  "con": 25,
+  "int": 17,
+  "wis": 14,
+  "cha": 22,
+  "skills": {
+    "perception": "+16",
+    "religion": "+10",
+    "stealth": "+14"
+  },
+  "passive": 26,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "cr": "22",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Calescent Aura",
+      "entries": [
+        "At the start of Ember's turn, Ember can force any number of creatures of his choice within 10 feet of himself to make a {@dc 22} Constitution saving throw. On a failed save, a creature takes 7 ({@damage 2d6}) fire damage and is {@condition frightened} of Ember until the start of its next turn."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (5/Day)",
+      "entries": [
+        "If Ember fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "In battle, Ember dons magical plate armor custom-forged for his use. While wearing the armor, Ember adds his Charisma modifier to his weapon damage rolls (included in the attack descriptions), and his AC can't be lower than 20."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Ember makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +16 to hit, reach 10 ft., one target. 26 (2d10 + 15 damage) piercing damage plus 13 (2d6 + 6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +16 to hit, reach 5 ft., one target. 22 (2d6 + 15 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Firestorm Breath {@recharge 5}",
+      "entries": [
+        "Ember exhales roiling flames and ash in a 90-foot cone. Each creature in that area must make a DC 22 Dexterity saving throw. On a failed save, a creature takes 56 (16d6 damage) fire damage and is pushed up to 30 feet away from Ember and knocked {@condition prone}. On a successful save, a creature takes half as much damage with no other effects. If a creature is reduced to 0 hit points by this effect, the creature immediately dies, and its body is reduced to ash."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Pursuit",
+      "entries": [
+        "Ember moves up to 40 feet in a straight line toward one creature he can see. This movement ignores opportunity attacks."
+      ]
+    },
+    {
+      "name": "Searing Bite (Costs 2 Actions)",
+      "entries": [
+        "Ember makes one Bite attack. If the attack hits, it deals an additional 7 ({@damage 2d6}) fire damage."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

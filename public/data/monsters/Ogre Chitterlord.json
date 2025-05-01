@@ -1,0 +1,129 @@
+{
+  "name": "Ogre Chitterlord",
+  "source": "MCV4EC",
+  "page": null,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [
+    "druid"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 15,
+  "int": 5,
+  "wis": 12,
+  "cha": 9,
+  "skills": {
+    "animal handling": "+3",
+    "nature": "+1"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Speak with Rats",
+      "entries": [
+        "The ogre can verbally communicate simple concepts to ordinary rats and giant rats."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ogre makes two Club attacks, two Rat-Tail Whip attacks, or one of each."
+      ]
+    },
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 15 (2d10 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rat-Tail Whip",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) slashing damage, and if the target is Large or smaller, it is pulled 5 feet toward the ogre."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The ogre casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 11}):"
+      ],
+      "will": [
+        "beast sense",
+        "druidcraft",
+        "entangle"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

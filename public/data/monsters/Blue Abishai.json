@@ -1,0 +1,184 @@
+{
+  "name": "Blue Abishai",
+  "source": "MTF",
+  "page": 161,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 195,
+  "speed": {
+    "walk": 30,
+    "fly": 50
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 17,
+  "int": 22,
+  "wis": 23,
+  "cha": 18,
+  "skills": {
+    "arcana": "+12"
+  },
+  "passive": 16,
+  "languages": [
+    "Draconic",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the abishai's darkvision."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The abishai has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The abishai's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The abishai makes two attacks: one with its quarterstaff and one with its bite."
+      ]
+    },
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage, or 6 (1d8 + 2 damage) bludgeoning damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 13 (2d10 + 2 damage) piercing damage plus 14 (4d6 damage) lightning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The abishai is a 13th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 20}, {@hit 12} to hit with spell attacks). The abishai has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "friends",
+            "mage hand",
+            "message",
+            "minor illusion",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "chromatic orb",
+            "disguise self",
+            "expeditious retreat",
+            "magic missile",
+            "charm person",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "darkness",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "fear",
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": [
+            "dimension door",
+            "greater invisibility",
+            "ice storm"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cone of cold",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": [
+            "chain lightning"
+          ]
+        },
+        "7": {
+          "spells": [
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "lightning",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "coastal",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

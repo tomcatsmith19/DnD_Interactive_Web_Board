@@ -1,0 +1,127 @@
+{
+  "name": "Warlock of the Fiend",
+  "source": "VGM",
+  "page": 219,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 15,
+  "int": 12,
+  "wis": 12,
+  "cha": 18,
+  "skills": {
+    "arcana": "+4",
+    "deception": "+7",
+    "persuasion": "+7",
+    "religion": "+4"
+  },
+  "passive": 11,
+  "languages": [
+    "any two languages (usually Abyssal or Infernal)"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Dark One's Own Luck (Recharges after a Short or Long Rest)",
+      "entries": [
+        "When the warlock makes an ability check or saving throw, it can add a {@dice d10} to the roll. It can do this after the roll is made but before any of the roll's effects occur."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Mace",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d6 damage) bludgeoning damage plus 10 (3d6 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The warlock's innate spellcasting ability is Charisma. It can innately cast the following spells (spell save {@dc 15}), requiring no material components:"
+      ],
+      "will": [
+        "alter self",
+        "false life",
+        "levitate",
+        "mage armor",
+        "silent image"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "arctic",
+    "desert",
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

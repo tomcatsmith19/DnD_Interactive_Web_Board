@@ -1,0 +1,179 @@
+{
+  "name": "Drow Matron Mother",
+  "source": "MTF",
+  "page": 186,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 262,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 18,
+  "con": 16,
+  "int": 17,
+  "wis": 21,
+  "cha": 22,
+  "skills": {
+    "insight": "+11",
+    "perception": "+11",
+    "religion": "+9",
+    "stealth": "+10"
+  },
+  "passive": 21,
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "20",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The drow has advantage on saving throws against being {@condition charmed}, and magic can't put the drow to sleep."
+      ]
+    },
+    {
+      "name": "Lolth's Fickle Favor",
+      "entries": [
+        "As a bonus action, the matron can bestow the Spider Queen's blessing on one ally she can see within 30 feet of her. The ally takes 7 ({@damage 2d6}) psychic damage but has advantage on the next attack roll it makes until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The drow has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The matron mother makes two demon staff attacks or three tentacle rod attacks."
+      ]
+    },
+    {
+      "name": "Demon Staff",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) bludgeoning damage, or 8 (1d8 + 4 damage) bludgeoning damage if used with two hands, plus 14 (4d6 damage) psychic damage. In addition, the target must succeed on a DC19 Wisdom saving throw or become {@condition frightened} of the drow for 1 minute. The {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Tentacle Rod",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one target. 3 (1d6 damage) bludgeoning damage. If the target is hit three times by the rod on one turn, the target must succeed on a DC 15 Constitution saving throw or suffer the following effects for 1 minute: the target's speed is halved, it has disadvantage on Dexterity saving throws, and it can't use reactions. Moreover, on each of its turns, it can take either an action or a bonus action, but not both. At the end of each of its turns, it can repeat the saving throw, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Summon Servant (1/Day)",
+      "entries": [
+        "The drow magically summons a {@creature retriever|mtf} or a {@creature yochlol}. The summoned creature appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Demon Staff",
+      "entries": [
+        "The drow makes one attack with her demon staff."
+      ]
+    },
+    {
+      "name": "Compel Demon (Costs 2 Actions)",
+      "entries": [
+        "An allied demon within 30 feet of the drow uses its reaction to make one attack against a target of the drow's choice that she can see."
+      ]
+    },
+    {
+      "name": "Cast a Spell (Costs 1\u00e2\u20ac\u201c3 Actions)",
+      "entries": [
+        "The drow expends a spell slot to cast a 1st-, 2nd-, or 3rd-level spell that she has prepared. Doing so costs 1 legendary action per level of the spell."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The drow's innate spellcasting ability is Charisma (spell save {@dc 20}). She can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "dancing lights",
+        "detect magic"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

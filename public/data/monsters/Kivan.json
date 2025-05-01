@@ -1,0 +1,94 @@
+{
+  "name": "Kivan",
+  "source": "MaBJoV",
+  "page": 48,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 18,
+  "con": 12,
+  "int": 11,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "nature": "+6",
+    "perception": "+8",
+    "stealth": "+10",
+    "survival": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Keen Hearing and Sight",
+      "entries": [
+        "Kivan has advantage on Wisdom (Perception) checks that rely on hearing or sight."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Kivan has advantage on saving throws against being {@condition charmed}, and magic can't put Kivan to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Kivan makes two melee attacks or two ranged attacks."
+      ]
+    },
+    {
+      "name": "Long Sword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage or 8 (1d10 + 3 damage) slashing damage if wielded with two hands."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +7 to hit, ranged 150/600 ft., one target. 8 (1d8 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Volley",
+      "entries": [
+        "Kivan can use his action to make a ranged attack against any number of creatures with 10 feet of a point he can see within the range of his weapon. He must make a separate attack roll for each target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

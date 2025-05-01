@@ -1,0 +1,130 @@
+{
+  "name": "Witherbloom Professor of Decay",
+  "source": "SCC",
+  "page": 223,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "druid"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 105,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 16,
+  "int": 16,
+  "wis": 19,
+  "cha": 13,
+  "skills": {
+    "arcana": "+6",
+    "medicine": "+7",
+    "nature": "+6",
+    "survival": "+7"
+  },
+  "passive": 14,
+  "languages": [
+    "Common plus any four languages"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Essence Transfer (1/Day)",
+      "entries": [
+        "The professor can cast the {@spell animate dead} spell, using Wisdom as the spellcasting ability."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The professor makes two Mortality Spear attacks. It can replace one of the attacks with a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Mortality Spear",
+      "entries": [
+        "{@atk ms,rs} +7 to hit, reach 5 ft. or range 120 ft., one target. 17 (3d8 + 4 damage) necrotic damage, and the target can't regain hit points until the start of the professor's next turn."
+      ]
+    },
+    {
+      "name": "Essence Pulse {@recharge 5}",
+      "entries": [
+        "The professor creates a life-draining vortex in a 30-foot-radius sphere centered on itself. Each creature of the professor's choice that it can see within that area must make a DC 15 Constitution saving throw, taking 23 (5d8 damage) necrotic damage on a failed save, or half as much damage on a successful one. The professor then regains 10 hit points. An affected creature's hit point maximum is reduced by an amount equal to the necrotic damage taken. This reduction lasts until the creature finishes a long rest. The creature dies if its hit point maximum is reduced to 0."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The professor casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "druidcraft",
+        "spare the dying"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

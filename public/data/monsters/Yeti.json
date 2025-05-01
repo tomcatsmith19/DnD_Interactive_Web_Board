@@ -1,0 +1,95 @@
+{
+  "name": "Yeti",
+  "source": "MM",
+  "page": 305,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 51,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 18,
+  "dex": 13,
+  "con": 16,
+  "int": 8,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Yeti"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fear of Fire",
+      "entries": [
+        "If the yeti takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The yeti has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Snow Camouflage",
+      "entries": [
+        "The yeti has advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The yeti can use its Chilling Gaze and makes two claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) slashing damage plus 3 (1d6 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Chilling Gaze",
+      "entries": [
+        "The yeti targets one creature it can see within 30 feet of it. If the target can see the yeti, the target must succeed on a DC 13 Constitution saving throw against this magic or take 10 (3d6 damage) cold damage and then be {@condition paralyzed} for 1 minute, unless it is immune to cold damage. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If the target's saving throw is successful, or if the effect ends on it, the target is immune to the Chilling Gaze of all yetis (but not abominable yetis) for 1 hour."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "arctic"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

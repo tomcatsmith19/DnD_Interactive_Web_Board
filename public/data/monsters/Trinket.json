@@ -1,0 +1,93 @@
+{
+  "name": "Trinket",
+  "source": "TDCSR",
+  "page": 266,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [
+    "brown bear"
+  ],
+  "alignment": [],
+  "ac": [
+    "18"
+  ],
+  "hp": 61,
+  "speed": {
+    "walk": 40,
+    "climb": 30
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 16,
+  "int": 5,
+  "wis": 13,
+  "cha": 7,
+  "skills": {
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "understands Common but can't speak it"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Chosen Companion",
+      "entries": [
+        "Trinket has an additional 10 hit points, and has a +6 bonus to attack and damage rolls and to Wisdom ({@skill Perception}) checks."
+      ]
+    },
+    {
+      "name": "Empowered Attacks",
+      "entries": [
+        "Trinket's attacks are treated as magical for the purpose of overcoming resistance and immunity to damage from nonmagical attacks."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "Trinket has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Raven's Slumber",
+      "entries": [
+        "If Trinket is reduced to 0 hit points and is within 100 feet of Vex, he is immediately drawn into the demiplane within {@creature Vex'ahlia|TDCSR|Vex's} {@item raven's slumber|TDCSR} and stabilized."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Trinket makes two attacks: one with his bite and one with his claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target. 14 (1d8 + 10 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target. 17 (2d6 + 10 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

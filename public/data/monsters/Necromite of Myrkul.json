@@ -1,0 +1,67 @@
+{
+  "name": "Necromite of Myrkul",
+  "source": "BGDIA",
+  "page": 234,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 13,
+  "con": 15,
+  "int": 16,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "arcana": "+5",
+    "religion": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Infernal"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Skull Flail",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 4 (1d8 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Claws of the Grave",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 90 ft., one target. 8 (2d4 + 3 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

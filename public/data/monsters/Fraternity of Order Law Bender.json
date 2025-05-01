@@ -1,0 +1,121 @@
+{
+  "name": "Fraternity of Order Law Bender",
+  "source": "MPP",
+  "page": 57,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 137,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 15,
+  "con": 12,
+  "int": 19,
+  "wis": 16,
+  "cha": 14,
+  "skills": {
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Common plus three more languages"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The law bender makes three Arcane Burst attacks and uses Power of Authority or Spellcasting."
+      ]
+    },
+    {
+      "name": "Arcane Burst",
+      "entries": [
+        "{@atk ms,rs} +8 to hit, reach 5 ft. or range 90 ft., one target. 17 (2d12 + 4 damage) force damage."
+      ]
+    },
+    {
+      "name": "Power of Authority",
+      "entries": [
+        "The law bender targets a creature it can see within 60 feet of itself. The target must succeed on a DC 16 Intelligence saving throw or take 10 (3d6 damage) psychic damage and have the {@condition incapacitated} condition for 1 minute. At the end of each of the target's turns, it can repeat the saving throw, ending the {@condition incapacitated} condition on itself on a success. A target that succeeds on the saving throw becomes immune to this law bender's Power of Authority for 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The law bender casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability:"
+      ],
+      "will": [
+        "dispel magic",
+        "fly",
+        "mage armor",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,144 @@
+{
+  "name": "Drow Favored Consort",
+  "source": "MTF",
+  "page": 183,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15",
+    "18"
+  ],
+  "hp": 225,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 20,
+  "con": 16,
+  "int": 18,
+  "wis": 15,
+  "cha": 18,
+  "skills": {
+    "acrobatics": "+11",
+    "athletics": "+8",
+    "perception": "+8",
+    "stealth": "+11"
+  },
+  "passive": 18,
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The drow has advantage on saving throws against being {@condition charmed}, and magic can't put the drow to sleep."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "War Magic",
+      "entries": [
+        "When the drow uses its action to cast a spell, it can make one weapon attack as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The drow makes three scimitar attacks."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) slashing damage plus 18 (4d8 damage) poison damage. In addition, the target has disadvantage on the next saving throw it makes against a spell the drow casts before the end of the drow's next turn."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +11 to hit, range 30/120 ft., one target. 8 (1d6 + 5 damage) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be {@condition poisoned} for 1 hour. If the saving throw fails by 5 or more, the target is also {@condition unconscious} while {@condition poisoned} in this way. The target regains consciousness if it takes damage or if another creature takes an action to shake it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The drow's innate spellcasting ability is Charisma (spell save {@dc 18}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "dancing lights"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,95 @@
+{
+  "name": "Rowboat Mimic",
+  "source": "WDMM",
+  "page": 76,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "shapechanger"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 15
+  },
+  "str": 17,
+  "dex": 12,
+  "con": 15,
+  "int": 5,
+  "wis": 13,
+  "cha": 8,
+  "skills": {
+    "stealth": "+5"
+  },
+  "passive": 11,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The mimic can use its action to polymorph into an object or back into its true, amorphous form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      ]
+    },
+    {
+      "name": "Adhesive (Object Form Only)",
+      "entries": [
+        "The mimic adheres to anything that touches it. A Huge or smaller creature adhered to the mimic is also {@condition grappled} by it (escape {@dc 13}). Ability checks made to escape this grapple have disadvantage."
+      ]
+    },
+    {
+      "name": "False Appearance (Object Form Only)",
+      "entries": [
+        "While the mimic remains motionless, it is indistinguishable from an ordinary object."
+      ]
+    },
+    {
+      "name": "Grappler",
+      "entries": [
+        "The mimic has advantage on attack rolls against any creature {@condition grappled} by it."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) bludgeoning damage. If the mimic is in object form, the target is subjected to its Adhesive trait."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage plus 4 (1d8 damage) acid damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "acid"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

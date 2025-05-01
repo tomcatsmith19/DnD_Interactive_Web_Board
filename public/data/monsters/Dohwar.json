@@ -1,0 +1,112 @@
+{
+  "name": "Dohwar",
+  "source": "BAM",
+  "page": 19,
+  "size": [
+    "S"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 20,
+    "swim": 20
+  },
+  "str": 5,
+  "dex": 12,
+  "con": 11,
+  "int": 11,
+  "wis": 14,
+  "cha": 13,
+  "skills": {
+    "deception": "+3",
+    "insight": "+4",
+    "persuasion": "+3"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Dohwar",
+    "telepathy 30 ft. (see also Merging below)"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Merging",
+      "entries": [
+        "Two dohwars can have a telepathic conversation with each other and a third willing creature of their choice, provided all three are within 30 feet of one another."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The dohwar casts the following spell, requiring no spell components and using Charisma as the spellcasting ability (spell save {@dc 11}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

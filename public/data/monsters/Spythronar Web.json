@@ -1,0 +1,116 @@
+{
+  "name": "Spythronar Web",
+  "source": "GHLoE",
+  "page": 32,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 17,
+  "dex": 16,
+  "con": 13,
+  "int": 3,
+  "wis": 8,
+  "cha": 1,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Adhesive",
+      "entries": [
+        "The spythronar web adheres to anything that touches it. To avoid adhering when touching the web, a creature must succeed on a {@dc 13} Strength saving throw, but a creature hit by the web's crush attack doesn't receive a saving throw. A Huge or smaller creature adhered to the web is also {@condition grappled} by it (escape {@dc 13}). If adhered to a target larger than it can grapple, the web can release the adhesive or remain adhered and be dragged along as the target moves. Neither choice requires an action from the web. Removing an object adhered to the web or the web from anything it's adhered to requires a successful {@dc 13} Strength (Athletics) check as an action."
+      ]
+    },
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The spythronar web can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the spythronar web remains motionless and takes no action, it is indistinguishable from a large, thick spider web."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "A spythronar web can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Web Sense",
+      "entries": [
+        "While in contact with a web, the spythronar web knows the exact location of any other creature in contact with the same web."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": [
+        "The spythronar web ignores movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Crush",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 10 (2d6 + 3 damage) bludgeoning damage and Adhesive. The target is also {@condition restrained} while {@condition grappled} in this way, and the spythronar web can't crush another target."
+      ]
+    },
+    {
+      "name": "Lightning Surge",
+      "entries": [
+        "Melee atk +5 to hit, reach 30 ft., one target. 9 (2d8 damage) lightning damage. If the spythronar web has a creature {@condition grappled} and attacks another target, the {@condition grappled} creature also takes this damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [
+    "lightning"
+  ],
+  "senses": [
+    "tremorsense 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

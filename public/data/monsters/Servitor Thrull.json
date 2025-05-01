@@ -1,0 +1,60 @@
+{
+  "name": "Servitor Thrull",
+  "source": "GGR",
+  "page": 221,
+  "size": [
+    "S"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 13,
+  "con": 14,
+  "int": 6,
+  "wis": 6,
+  "cha": 3,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

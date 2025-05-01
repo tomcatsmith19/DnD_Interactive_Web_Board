@@ -1,0 +1,56 @@
+{
+  "name": "Hadrosaur",
+  "source": "PSX",
+  "page": 29,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 40
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 13,
+  "int": 2,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (1d10 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

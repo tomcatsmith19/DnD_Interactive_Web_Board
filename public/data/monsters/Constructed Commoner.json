@@ -1,0 +1,63 @@
+{
+  "name": "Constructed Commoner",
+  "source": "CM",
+  "page": 149,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "15"
+  ],
+  "hp": 6,
+  "speed": {
+    "walk": 25
+  },
+  "str": 10,
+  "dex": 10,
+  "con": 15,
+  "int": 10,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The commoner doesn't require air, food, drink, or sleep, and it gains no benefit from finishing a short or long rest. When it drops to 0 hit points, it becomes a lifeless object."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,111 @@
+{
+  "name": "Sage",
+  "source": "CM",
+  "page": 9,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [],
+  "ac": [
+    "10"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 10,
+  "con": 10,
+  "int": 18,
+  "wis": 15,
+  "cha": 11,
+  "skills": {
+    "arcana": "+8",
+    "history": "+8",
+    "insight": "+4",
+    "investigation": "+8",
+    "medicine": "+6",
+    "nature": "+8",
+    "religion": "+8"
+  },
+  "passive": 12,
+  "languages": [
+    "Common plus any four languages"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Shocking Grasp (Cantrip)",
+      "entries": [
+        "{@atk ms} +6 to hit (with advantage if the target is wearing armor made of metal), reach 5 ft., one creature. 9 (2d8 damage) lightning damage, and the target can't take reactions until the start of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The sage casts one of the following spells, using Intelligence as the spellcasting ability (save {@dc 14}, {@hit 6} to hit with spell attacks):"
+      ],
+      "will": [
+        "light",
+        "mage hand",
+        "mending",
+        "{'entry': '{@spell shocking grasp}', 'hidden': True}"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,130 @@
+{
+  "name": "Sephek Kaltro",
+  "source": "IDRotF",
+  "page": 23,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 16,
+  "int": 11,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "perception": "+5",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cold Regeneration",
+      "entries": [
+        "If the temperature around him is 0 degrees Fahrenheit or lower, Sephek regains 5 hit points at the start of his turn. If he takes fire damage, this trait doesn't function at the start of Sephek's next turn. Sephek dies only if he starts his turn with 0 hit points and doesn't regenerate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Sephek attacks twice with a weapon."
+      ]
+    },
+    {
+      "name": "Ice Longsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if Sephek uses the weapon with two hands, plus 5 (2d4 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Ice Dagger",
+      "entries": [
+        "Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage plus 5 (2d4 damage) cold damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Sephek can innately cast {@spell misty step} up to three times per day, requiring no components. His innate spellcasting ability is Charisma."
+      ],
+      "will": [
+        "misty step"
+      ],
+      "ability": "cha",
+      "hidden": [
+        "will"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

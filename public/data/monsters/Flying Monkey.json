@@ -1,0 +1,66 @@
+{
+  "name": "Flying Monkey",
+  "source": "ToA",
+  "page": 220,
+  "size": [
+    "S"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 3,
+  "speed": {
+    "walk": 30,
+    "climb": 20,
+    "fly": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 11,
+  "int": 5,
+  "wis": 12,
+  "cha": 6,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The flying monkey has advantage on an attack roll against a creature if at least one of the monkey's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Familiar",
+      "entries": [
+        "With the DM's permission, the {@spell find familiar} spell can summon a flying monkey."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +1 to hit, reach 5 ft., one target 1 (1d4 - 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

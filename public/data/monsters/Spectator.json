@@ -1,0 +1,111 @@
+{
+  "name": "Spectator",
+  "source": "MM",
+  "page": 30,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 14,
+  "int": 13,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Deep Speech",
+    "Undercommon",
+    "telepathy 120 ft."
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +1 to hit, reach 5 ft., one target. 2 (1d6 - 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Eye Rays",
+      "entries": [
+        "The spectator shoots up to two of the following magical eye rays at one or two creatures it can see within 90 feet of it. It can use each ray only once on a turn.",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "1. Confusion Ray",
+              "style": "italic",
+              "entry": "The target must succeed on a {@dc 13} Wisdom saving throw, or it can't take reactions until the end of its next turn. On its turn, the target can't move, and it uses its action to make a melee or ranged attack against a randomly determined creature within range. If the target can't attack, it does nothing on its turn."
+            },
+            {
+              "type": "item",
+              "name": "2. Paralyzing Ray",
+              "style": "italic",
+              "entry": "The target must succeed on a {@dc 13} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+            },
+            {
+              "type": "item",
+              "name": "3. Fear Ray",
+              "style": "italic",
+              "entry": "The target must succeed on a {@dc 13} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the spectator is visible to the target, ending the effect on itself on a success."
+            },
+            {
+              "type": "item",
+              "name": "4. Wounding Ray",
+              "style": "italic",
+              "entry": "The target must make a {@dc 13} Constitution saving throw, taking 16 ({@damage 3d10}) necrotic damage on a failed save, or half as much damage on a successful one."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Create Food and Water",
+      "entries": [
+        "The spectator magically creates enough food and water to sustain itself for 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

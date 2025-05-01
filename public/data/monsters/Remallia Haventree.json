@@ -1,0 +1,161 @@
+{
+  "name": "Remallia Haventree",
+  "source": "WDH",
+  "page": 214,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 13,
+  "int": 18,
+  "wis": 15,
+  "cha": 17,
+  "skills": {
+    "arcana": "+8",
+    "deception": "+7",
+    "history": "+8",
+    "persuasion": "+7"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Elvish",
+    "Halfling"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Remallia has a {@item Figurine of Wondrous Power, Silver Raven||figurine of wondrous power (silver raven)}."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Remallia has advantage on saving throws against being {@condition charmed}, and magic can't put her to sleep."
+      ]
+    },
+    {
+      "name": "Arcane Ward",
+      "entries": [
+        "Remallia has a magical ward that has 30 hit points. Whenever she takes damage, the ward takes the damage instead. If the ward is reduced to 0 hit points, Remallia takes any remaining damage. When Remallia casts an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell. This applies to any of the following spells she casts: {@spell alarm}, {@spell mage armor}, {@spell shield}, {@spell arcane lock}, {@spell counterspell}, {@spell dispel magic}, {@spell banishment}, {@spell stoneskin}, {@spell globe of invulnerability} and {@spell symbol}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Remallia is a 13th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). She has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "dancing lights",
+            "mage hand",
+            "mending",
+            "message",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "alarm",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "arcane lock",
+            "invisibility"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "dispel magic",
+            "fireball"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cone of cold",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": [
+            "flesh to stone",
+            "globe of invulnerability"
+          ]
+        },
+        "7": {
+          "spells": [
+            "symbol",
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

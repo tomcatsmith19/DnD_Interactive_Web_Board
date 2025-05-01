@@ -1,0 +1,129 @@
+{
+  "name": "Insight Acuere",
+  "source": "CRCotN",
+  "page": 126,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "wizard"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 13,
+  "int": 18,
+  "wis": 16,
+  "cha": 14,
+  "skills": {
+    "arcana": "+7",
+    "history": "+7",
+    "insight": "+6",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Aquan",
+    "Common",
+    "Infernal",
+    "Orc"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Insight makes two Arcane Shock or Dagger of the Poisoned Mind attacks."
+      ]
+    },
+    {
+      "name": "Arcane Shock",
+      "entries": [
+        "{@atk ms,rs} +7 to hit, reach 5 ft. or range 60 ft., one target. 26 (4d10 + 4 damage) lightning damage. If the target is a creature, it can't take reactions until the start of its next turn."
+      ]
+    },
+    {
+      "name": "Dagger of the Poisoned Mind",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d4 + 4 damage) piercing damage plus 10 (3d6 damage) psychic damage. If the target is a creature, it must succeed on a DC 15 Wisdom saving throw or be {@condition frightened} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Insight casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "alter self",
+        "light",
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

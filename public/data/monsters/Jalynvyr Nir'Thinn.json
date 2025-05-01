@@ -1,0 +1,130 @@
+{
+  "name": "Jalynvyr Nir'Thinn",
+  "source": "KftGV",
+  "page": 155,
+  "size": [
+    "S"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 6,
+  "dex": 14,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When Jalynvyr Nir'Thinn dies, it leaves behind a cloud of smoke that fills a 5-foot-radius sphere centered on its space. The sphere is heavily obscured. Wind disperses the cloud, which otherwise lasts for 1 minute."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Cinder Breath {@recharge}",
+      "entries": [
+        "The mephit exhales a 15-foot cone of smoldering ash. Each creature in that area must succeed on a DC 10 Dexterity saving throw or be {@condition blinded} until the end of Jalynvyr Nir'Thinn's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (1/Day)",
+      "headerEntries": [
+        "The mephit can innately cast {@spell dancing lights}, requiring no material components. Its innate spellcasting ability is Charisma."
+      ],
+      "will": [
+        "dancing lights"
+      ],
+      "ability": "cha",
+      "hidden": [
+        "will"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

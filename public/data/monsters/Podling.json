@@ -1,0 +1,70 @@
+{
+  "name": "Podling",
+  "source": "VRGR",
+  "page": 227,
+  "size": [
+    "M"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "10"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 20
+  },
+  "str": 15,
+  "dex": 11,
+  "con": 14,
+  "int": 10,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Deep Speech",
+    "the languages the creature knew in life"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Semblance of Life",
+      "entries": [
+        "The podling is a physical copy of a creature digested by a bodytaker plant. The podling has the digested creature's memories and behaves like that creature, but with occasional lapses. An observer familiar with the digested creature can recognize the discrepancies with a successful {@dc 20} Wisdom (Insight) check, or automatically if the podling does something in direct contradiction to the digested creature's established beliefs or behavior. The podling melts into a slurry when it dies, when the bodytaker plant that created it dies, or when the bodytaker plant dismisses it (no action required)."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The podling doesn't require sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

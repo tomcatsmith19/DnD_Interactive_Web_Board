@@ -1,0 +1,122 @@
+{
+  "name": "Thurstwell Vanthampur",
+  "source": "BGDIA",
+  "page": 34,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "9"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 30
+  },
+  "str": 7,
+  "dex": 8,
+  "con": 6,
+  "int": 15,
+  "wis": 17,
+  "cha": 12,
+  "skills": {
+    "deception": "+3",
+    "insight": "+5",
+    "perception": "+5",
+    "religion": "+4"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Infernal"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dark Devotion",
+      "entries": [
+        "Thurstwell has advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Sacred Flame (Cantrip)",
+      "entries": [
+        "Flame-like radiance descends on one creature Thurstwell can see within 60 feet of him. The target must succeed on a DC 13 Dexterity saving throw or take 4 (1d8 damage) radiant damage, gaining no benefit from cover."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Thurstwell is a 2nd-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 13}). He has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "command",
+            "detect evil and good",
+            "sanctuary"
+          ]
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

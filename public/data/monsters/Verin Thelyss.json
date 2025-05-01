@@ -1,0 +1,137 @@
+{
+  "name": "Verin Thelyss",
+  "source": "CRCotN",
+  "page": 51,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "drow",
+    "elf"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 14,
+  "int": 13,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "athletics": "+7",
+    "history": "+4",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Verin has advantage on saving throws against being {@condition charmed}, and magic can't put him to sleep."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, Verin has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Verin makes three Glaive attacks."
+      ]
+    },
+    {
+      "name": "Glaive",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 9 (1d10 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +7 to hit, range 30/120 ft., one target. 5 (1d6 + 2 damage) piercing damage plus 22 (4d10 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Verin casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "dancing lights"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

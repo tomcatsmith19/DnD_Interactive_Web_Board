@@ -1,0 +1,147 @@
+{
+  "name": "Azbara Jos",
+  "source": "HotDQ",
+  "page": 88,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13",
+    "16"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 16,
+  "con": 14,
+  "int": 16,
+  "wis": 13,
+  "cha": 11,
+  "skills": {
+    "arcana": "+5",
+    "deception": "+2",
+    "insight": "+3",
+    "stealth": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Infernal",
+    "Primordial",
+    "Thayan"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Azbara has two {@item spell scroll (1st level)||scrolls} of {@spell mage armor}."
+      ]
+    },
+    {
+      "name": "Potent Cantrips",
+      "entries": [
+        "When Azbara casts an evocation Cantrips and misses, or the target succeeds on its saving throw, the target still takes half the cantrip's damage but suffers no other effect."
+      ]
+    },
+    {
+      "name": "Sculpt Spells",
+      "entries": [
+        "When Azbara casts an evocation spell that affects other creatures that he can see, he can choose a number of them equal to 1+the spell's level to succeed on their saving throws against the spell. Those creatures take no damage if they would normally take half damage from the spell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or ranged 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Azbara is a 6th-level spellcaster that uses Intelligence as his spellcasting ability (spell save {@dc 13}, {@hit 5} to hit with spell attacks). Azbara has the following spells prepared from the wizard spell list:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "prestidigitation",
+            "ray of frost",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "fog cloud",
+            "magic missile",
+            "shield",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "invisibility",
+            "misty step",
+            "scorching ray"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "dispel magic",
+            "fireball"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

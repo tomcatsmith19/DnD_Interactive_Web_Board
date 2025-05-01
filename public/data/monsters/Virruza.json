@@ -1,0 +1,162 @@
+{
+  "name": "Virruza",
+  "source": "DSotDQ",
+  "page": 119,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [
+    "shapechanger"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 16,
+  "int": 11,
+  "wis": 8,
+  "cha": 12,
+  "skills": {
+    "arcana": "+3",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Slaad",
+    "telepathy 60 ft."
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The slaad can use its action to polymorph into a Small or Medium humanoid, or back into its true form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The slaad has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The slaad regains 10 hit points at the start of its turn if it has at least 1 hit point."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The slaad makes three attacks: one with its bite and two with its claws or staff. Alternatively, it uses its Hurl Flame twice."
+      ]
+    },
+    {
+      "name": "Bite (Slaad Form Only)",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw (Slaad Form Only)",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Staff",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Hurl Flame",
+      "entries": [
+        "Ranged Spell atk +4 to hit, range 60 ft., one target. 10 (3d6 damage) fire damage. The fire ignites flammable objects that aren't being worn or carried."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The slaad's innate spellcasting ability is Charisma (spell save {@dc 12}). The slaad can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect magic",
+        "detect thoughts",
+        "mage hand"
+      ],
+      "daily": {
+        "1": [
+          "fireball"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

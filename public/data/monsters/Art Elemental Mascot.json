@@ -1,0 +1,81 @@
+{
+  "name": "Art Elemental Mascot",
+  "source": "SCC",
+  "page": 185,
+  "size": [
+    "S"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 30
+  },
+  "str": 6,
+  "dex": 13,
+  "con": 12,
+  "int": 8,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "performance": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the elemental dies, it explodes in a burst of colored light. Each creature within 5 feet of the elemental must succeed on a {@dc 11} Constitution saving throw or be {@condition blinded} for 1 minute. A {@condition blinded} creature can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Joyful Flare",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 6 (2d4 + 1 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Melancholic Bolt",
+      "entries": [
+        "Ranged atk +3 to hit, range 30 ft., one target. 6 (2d4 + 1 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Captivating Artistry (1/Day)",
+      "entries": [
+        "The elemental targets one creature it can see within 30 feet of itself. The target must succeed on a DC 12 Charisma saving throw or be {@condition charmed} for 1 minute. The {@condition charmed} target can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

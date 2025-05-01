@@ -1,0 +1,94 @@
+{
+  "name": "Young Blightscale Dragon",
+  "source": "GHLoE",
+  "page": 82,
+  "size": [
+    "L"
+  ],
+  "type": "dragon",
+  "tags": [
+    "cursed"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 152,
+  "speed": {
+    "walk": 40,
+    "fly": 80
+  },
+  "str": 19,
+  "dex": 12,
+  "con": 19,
+  "int": 12,
+  "wis": 11,
+  "cha": 8,
+  "skills": {
+    "insight": "+3",
+    "perception": "+6",
+    "stealth": "+4"
+  },
+  "passive": 16,
+  "languages": [
+    "Draconic and one national language"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Accursed Death",
+      "entries": [
+        "When the dragon dies, it exudes a cloud of sickening, accursed gas. Each creature within 20 ft. of the dragon must succeed on a {@dc 15} Constitution saving throw or become {@condition poisoned} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. However, a creature that fails two of these saving throws becomes cursed. A creature cursed in this way takes 10 ({@damage 3d6}) necrotic damage and can't regain hit points, and the creature's hit point maximum is reduced by an amount equal to the necrotic damage taken. Every 24 hours, the cursed creature takes 10 ({@damage 3d6}) necrotic damage with similar reduction to the creature's hit point maximum. If the curse reduces the target's hit point maximum to 0, the target dies."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) piercing damage and 5 (2d4 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (2d4 + 4 damage) slashing damage and 2 (1d4 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Swarm Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a 30-foot cone of poisonous insects and vile gas. Each creature in that area must make a DC 15 Constitution saving throw, taking 14 (4d6 damage) piercing damage and 28 (8d6 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

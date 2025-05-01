@@ -1,0 +1,172 @@
+{
+  "name": "Scanlan Shorthalt",
+  "source": "TDCSR",
+  "page": 271,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gnome"
+  ],
+  "alignment": [],
+  "ac": [
+    "16"
+  ],
+  "hp": 190,
+  "speed": {
+    "walk": 25
+  },
+  "str": 13,
+  "dex": 11,
+  "con": 16,
+  "int": 16,
+  "wis": 7,
+  "cha": 22,
+  "skills": {
+    "acrobatics": "+5",
+    "arcana": "+8",
+    "athletics": "+6",
+    "deception": "+16",
+    "intimidation": "+11",
+    "investigation": "+13",
+    "performance": "+16",
+    "persuasion": "+16"
+  },
+  "passive": 8,
+  "languages": [
+    "Common",
+    "Gnomish",
+    "Marquesian"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Gnome Cunning",
+      "entries": [
+        "Scanlan has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on Intelligence, Wisdom, and Charisma {@quickref saving throws|PHB|2|1} against magic."
+      ]
+    },
+    {
+      "name": "Focused",
+      "entries": [
+        "Scanlan has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on Constitution {@quickref saving throws|PHB|2|1} made to maintain {@condition concentration} on spells."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Scanlan wields {@item Mythcarver (Exalted)|TDCSR|Mythcarver}, wears {@item +2 Studded Leather Armor of Acid Resistance|TDCSR} and a {@item +2 ring of protection|TDCSR|ring of protection with a +2 bonus}, and carries a {@item hat of disguise} and a {@item wand of magic missiles}."
+      ]
+    },
+    {
+      "name": "Toughness",
+      "entries": [
+        "Scanlan has an additional 40 hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Mythcarver",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage and 3 (1d6 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Scanlan is a 20th-level spellcaster. His spellcasting ability is Charisma (spell save {@dc 19}, {@hit 11} to hit with spell attacks). He has the following bard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "message",
+            "minor illusion",
+            "vicious mockery"
+          ]
+        },
+        "1": {
+          "spells": [
+            "healing word",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blindness/deafness",
+            "hold person",
+            "invisibility",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "lightning bolt",
+            "stinking cloud"
+          ]
+        },
+        "4": {
+          "spells": [
+            "dimension door",
+            "polymorph",
+            "Otiluke's Resilient Sphere||resilient sphere"
+          ]
+        },
+        "5": {
+          "spells": [
+            "bigby's hand||arcane hand",
+            "dominate person",
+            "modify memory",
+            "seeming"
+          ]
+        },
+        "6": {
+          "spells": [
+            "eyebite"
+          ]
+        },
+        "7": {
+          "spells": [
+            "Mordenkainen's Magnificent Mansion||magnificent mansion",
+            "reverse gravity"
+          ]
+        },
+        "8": {
+          "spells": [
+            "dominate monster"
+          ]
+        },
+        "9": {
+          "spells": [
+            "true polymorph"
+          ]
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "acid"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

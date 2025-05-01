@@ -1,0 +1,99 @@
+{
+  "name": "Cinderslag Elemental",
+  "source": "TDCSR",
+  "page": 231,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "15"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 20,
+    "burrow": 40
+  },
+  "str": 15,
+  "dex": 12,
+  "con": 17,
+  "int": 1,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Searing Presence",
+      "entries": [
+        "Any creature that starts its turn within 5 feet of the elemental takes 5 ({@damage 1d10}) fire damage."
+      ]
+    },
+    {
+      "name": "Molten Form",
+      "entries": [
+        "The elemental can move through a space as narrow as 1 inch wide without squeezing. In addition, the elemental can enter a hostile creature's space and stop there. The first time it enters a creature's space on a turn, that creature takes 5 ({@damage 1d10}) fire damage and must succeed on a {@dc 14} Strength {@quickref saving throws|PHB|2|1|saving throw} or be {@condition restrained}. A creature that starts its turn {@condition restrained} in this way takes 5 ({@damage 1d10}) fire damage. It can repeat the {@quickref saving throws|PHB|2|1|saving throw} at the end of each of its turns, freeing itself on a success."
+      ]
+    },
+    {
+      "name": "Water Susceptibility",
+      "entries": [
+        "For every 5 feet the elemental moves in water, or for every gallon of water splashed on it, it takes 1 cold damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The elemental makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 12 (3d6 + 2 damage) bludgeoning damage plus 5 (1d10 damage) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 5 (1d10 damage) fire damage at the start of each of its turns."
+      ]
+    },
+    {
+      "name": "Molten Gaze",
+      "entries": [
+        "Ranged Spell atk +8 to hit, range 30 ft., one target. 21 (6d6 damage) fire damage, and the target must succeed on a DC 14 Constitution {@quickref saving throws|PHB|2|1|saving throw} or have one nonmagical item of the elemental's choice that the target is carrying instantly melt or burn to cinders."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

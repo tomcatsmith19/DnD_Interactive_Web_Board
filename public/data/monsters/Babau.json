@@ -1,0 +1,143 @@
+{
+  "name": "Babau",
+  "source": "VGM",
+  "page": 136,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 16,
+  "con": 16,
+  "int": 11,
+  "wis": 12,
+  "cha": 13,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Abyssal"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The babau makes two melee attacks. It can also use Weakening Gaze before or after making these attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage, or 8 (1d8 + 4 damage) piercing damage when used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Weakening Gaze",
+      "entries": [
+        "The babau targets one creature that it can see within 20 feet of it. The target must make a DC 13 Constitution saving throw. On a failed save, the target deals only half damage with weapon attacks that use Strength for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The babau's innate spellcasting ability is Wisdom (spell save {@dc 11}). The babau can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "darkness",
+        "dispel magic",
+        "fear",
+        "heat metal",
+        "levitate"
+      ],
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

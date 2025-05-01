@@ -1,0 +1,67 @@
+{
+  "name": "Ogre Zombie",
+  "source": "MM",
+  "page": 316,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "8"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 6,
+  "con": 18,
+  "int": 3,
+  "wis": 6,
+  "cha": 5,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "understands Common and Giant but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

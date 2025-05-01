@@ -1,0 +1,85 @@
+{
+  "name": "Tiberius Inuus",
+  "source": "MaBJoV",
+  "page": 44,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 18,
+  "int": 11,
+  "wis": 11,
+  "cha": 16,
+  "skills": {
+    "persuasion": "+7",
+    "religion": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Celestial",
+    "Common"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Brave",
+      "entries": [
+        "Tiberius Inuus has advantage on saving throws against being {@condition frightened}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Tiberius Inuus makes three melee attacks."
+      ]
+    },
+    {
+      "name": "Flametongue",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage plus 7 (2d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 100/400 ft., one target. 6 (1d10 + 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Touch of Sune",
+      "entries": [
+        "Tiberius Inuus touches a creature. The target magically regains 40 Hit Points and is freed from any disease or poison."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

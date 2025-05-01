@@ -1,0 +1,101 @@
+{
+  "name": "Sahuagin Baron",
+  "source": "MM",
+  "page": 264,
+  "size": [
+    "L"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "sahuagin"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 76,
+  "speed": {
+    "walk": 30,
+    "swim": 50
+  },
+  "str": 19,
+  "dex": 15,
+  "con": 16,
+  "int": 14,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Sahuagin"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "The sahuagin has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Limited Amphibiousness",
+      "entries": [
+        "The sahuagin can breathe air and water, but it needs to be submerged at least once every 4 hours to avoid suffocating."
+      ]
+    },
+    {
+      "name": "Shark Telepathy",
+      "entries": [
+        "The sahuagin can magically command any shark within 120 feet of it, using a limited telepathy."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The sahuagin makes three attacks: one with his bite and two with his claws or trident."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (2d4 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 11 (2d6 + 4 damage) piercing damage, or 13 (2d8 + 4 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underwater",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

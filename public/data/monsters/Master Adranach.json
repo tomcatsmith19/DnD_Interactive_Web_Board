@@ -1,0 +1,149 @@
+{
+  "name": "Master Adranach",
+  "source": "TDCSR",
+  "page": 245,
+  "size": [
+    "G"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "19"
+  ],
+  "hp": 290,
+  "speed": {
+    "walk": 60,
+    "fly": 120
+  },
+  "str": 25,
+  "dex": 16,
+  "con": 19,
+  "int": 10,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "athletics": "+14",
+    "perception": "+16"
+  },
+  "passive": 26,
+  "languages": [
+    "the languages spoken by its creator"
+  ],
+  "cr": "21",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Arcane Leak",
+      "entries": [
+        "When the adranach is reduced to half its hit point maximum (145 hit points), its mithral mask cracks and its arcane form begins to waver, creating a field of unstable magic around it. Any creature that starts its turn within 20 feet of the adranach or enters that area for the first time on a turn takes 21 ({@damage 6d6}) radiant damage. Additionally, if a creature casts a spell within this area, it must make a {@dc 18} ability check using its spellcasting ability. On a failure, the spell backfires, consuming the spell slot and dealing 7 ({@damage 2d6}) force damage to the caster for each level of the spell slot that was consumed."
+      ]
+    },
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The adranach is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The adranach has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The adranach's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Colossal Build",
+      "entries": [
+        "The adranach's carrying capacity is doubled, as is the weight it can push, drag, or lift."
+      ]
+    },
+    {
+      "name": "Slipstream",
+      "entries": [
+        "The adranach can cast {@spell invisibility} on itself at will. While it is {@condition invisible}, its speed is doubled."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the adranach fails a {@quickref saving throws|PHB|2|1|saving throw}, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The adranach makes three attacks: two with its claws and one with its tail."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +14 to hit, one target, reach 5 ft. 33 (4d12 + 7 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +14 to hit, one target, reach 15 ft. 20 (2d12 + 7 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Force Bolts {@recharge 5}",
+      "entries": [
+        "The adranach targets up to six creatures it can see within 120 feet of it. Each target must succeed on a DC 22 Dexterity {@quickref saving throws|PHB|2|1|saving throw} or take 35 (10d6 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Claw Attack",
+      "entries": [
+        "The adranach makes one claw attack."
+      ]
+    },
+    {
+      "name": "Vanish (Costs 2 Actions)",
+      "entries": [
+        "The adranach casts {@spell invisibility} and moves up to its walking or flying speed. (This movement doesn't benefit from its Slipstream trait.)"
+      ]
+    },
+    {
+      "name": "Starry Burst (Costs 3 Actions)",
+      "entries": [
+        "A burst of astral energy flares from the adranach's body. Each creature within 60 feet of it must make a {@dc 22} Constitution {@quickref saving throws|PHB|2|1|saving throw}. On a failed save, a creature takes 27 ({@damage 5d10}) force damage and is {@condition blinded} until the end of its next turn. On a successful save, the creature takes half as much damage and is not {@condition blinded}. The adranach then turns {@condition invisible} until the start of its next turn or until it makes an attack."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "bludgeoning (from non-magical attacks)",
+    "piercing (from non-magical attacks)",
+    "slashing (from non-magical attacks)"
+  ],
+  "senses": [
+    "darkvision 360 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

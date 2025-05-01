@@ -1,0 +1,91 @@
+{
+  "name": "Lonely Sorrowsworn",
+  "source": "MPMM",
+  "page": 223,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 17,
+  "int": 6,
+  "wis": 11,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Psychic Leech",
+      "entries": [
+        "At the start of each of the sorrowsworn's turns, each creature within 5 feet of it must succeed on a {@dc 15} Wisdom saving throw or take 10 ({@damage 3d6}) psychic damage."
+      ]
+    },
+    {
+      "name": "Thrives on Company",
+      "entries": [
+        "The sorrowsworn has advantage on attack rolls while it is within 30 feet of at least two other creatures. It otherwise has disadvantage on attack rolls."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The sorrowsworn makes one Harpoon Arm attack, and it uses Sorrowful Embrace."
+      ]
+    },
+    {
+      "name": "Harpoon Arm",
+      "entries": [
+        "Melee atk +7 to hit, reach 60 ft., one target. 21 (4d8 + 3 damage) piercing damage, and the target is {@condition grappled} (escape DC 15) if it is a Large or smaller creature. The sorrowsworn has two harpoon arms and can grapple up to two creatures at once."
+      ]
+    },
+    {
+      "name": "Sorrowful Embrace",
+      "entries": [
+        "Each creature {@condition grappled} by the sorrowsworn must make a DC 15 Wisdom saving throw, taking 18 (4d8 damage) psychic damage on a failed save, or half as much damage on a successful one. In either case, the sorrowsworn pulls each of those creatures up to 30 feet straight toward it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "coastal",
+    "desert",
+    "mountain",
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

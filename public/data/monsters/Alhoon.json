@@ -1,0 +1,150 @@
+{
+  "name": "Alhoon",
+  "source": "VGM",
+  "page": 172,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "NX",
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 120,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 16,
+  "int": 19,
+  "wis": 17,
+  "cha": 17,
+  "skills": {
+    "arcana": "+8",
+    "deception": "+7",
+    "history": "+8",
+    "insight": "+7",
+    "perception": "+7",
+    "stealth": "+5"
+  },
+  "passive": 17,
+  "languages": [
+    "Deep Speech",
+    "Undercommon",
+    "telepathy 120 ft."
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The alhoon has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Turn Resistance",
+      "entries": [
+        "The alhoon has advantage on saving throws against any effect that turns undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Chilling Grasp",
+      "entries": [
+        "{@atk ms} +8 to hit, reach 5 ft., one target. 10 (3d6 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Mind Blast {@recharge 5}",
+      "entries": [
+        "The alhoon magically emits psychic energy in a 60-foot cone. Each creature in that area must succeed on a DC 16 Intelligence saving throw or take 22 (4d8 + 4 damage) psychic damage and be {@condition stunned} for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The alhoon's innate spellcasting ability is Intelligence (spell save {@dc 16}). It can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "detect thoughts",
+        "levitate"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "lightning",
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,95 @@
+{
+  "name": "Peryton",
+  "source": "MM",
+  "page": 251,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 20,
+    "fly": 60
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 13,
+  "int": 9,
+  "wis": 12,
+  "cha": 10,
+  "skills": {
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "understands Common and Elvish but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dive Attack",
+      "entries": [
+        "If the peryton is flying and dives at least 30 feet straight toward a target and then hits it with a melee weapon attack, the attack deals an extra 9 ({@dice 2d8}) damage to the target."
+      ]
+    },
+    {
+      "name": "Flyby",
+      "entries": [
+        "The peryton doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Keen Sight and Smell",
+      "entries": [
+        "The peryton has advantage on Wisdom ({@skill Perception}) checks that rely on sight or smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The peryton makes one gore attack and one talon attack."
+      ]
+    },
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (2d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "mountain",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

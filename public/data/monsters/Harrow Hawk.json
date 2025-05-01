@@ -1,0 +1,68 @@
+{
+  "name": "Harrow Hawk",
+  "source": "BMT",
+  "page": 177,
+  "size": [
+    "T"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 25,
+  "speed": {
+    "walk": 10,
+    "fly": 60
+  },
+  "str": 5,
+  "dex": 16,
+  "con": 10,
+  "int": 2,
+  "wis": 14,
+  "cha": 7,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+5"
+  },
+  "passive": 16,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (2d4 + 3 damage) slashing damage plus 3 (1d6 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Plane Shift (2/Day)",
+      "entries": [
+        "The hawk casts {@spell Plane Shift} on itself, requiring no spell components and using Wisdom as the spellcasting ability."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

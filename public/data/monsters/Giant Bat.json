@@ -1,0 +1,70 @@
+{
+  "name": "Giant Bat",
+  "source": "MM",
+  "page": 323,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 10,
+    "fly": 60
+  },
+  "str": 15,
+  "dex": 16,
+  "con": 11,
+  "int": 2,
+  "wis": 12,
+  "cha": 6,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Echolocation",
+      "entries": [
+        "The bat can't use its blindsight while {@condition deafened}."
+      ]
+    },
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The bat has advantage on Wisdom ({@skill Perception}) checks that rely on hearing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

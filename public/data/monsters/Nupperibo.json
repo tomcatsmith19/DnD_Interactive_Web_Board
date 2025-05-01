@@ -1,0 +1,87 @@
+{
+  "name": "Nupperibo",
+  "source": "MTF",
+  "page": 168,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 20
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 13,
+  "int": 3,
+  "wis": 8,
+  "cha": 1,
+  "skills": {
+    "perception": "+1"
+  },
+  "passive": 11,
+  "languages": [
+    "understands Infernal but can't speak"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cloud of Vermin",
+      "entries": [
+        "Any creature, other than a devil, that starts its turn within 20 feet of the nupperibo must make a {@dc 11} Constitution saving throw. A creature within the areas of two or more nupperibos makes the saving throw with disadvantage. On a failure, the creature takes 2 ({@damage 1d4}) piercing damage."
+      ]
+    },
+    {
+      "name": "Hunger-Driven",
+      "entries": [
+        "In the Nine Hells, the nupperibos can flawlessly track any creature that has taken damage from any nupperibo's Cloud of Vermin within the previous 24 hours."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 10 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

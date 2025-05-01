@@ -1,0 +1,65 @@
+{
+  "name": "Big Water Slurpent",
+  "source": "AWM",
+  "page": 29,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 0,
+    "swim": 60
+  },
+  "str": 17,
+  "dex": 16,
+  "con": 13,
+  "int": 11,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 0,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Invisible in Water",
+      "entries": [
+        "The big water slurpent is {@condition invisible} while fully immersed in water."
+      ]
+    },
+    {
+      "name": "Water Bound",
+      "entries": [
+        "The big water slurpent dies if it leaves the water to which it is bound or if that water is destroyed."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Constrict",
+      "entries": [
+        "Melee atk +5 to hit, one target. 13 (3d6+3 damage) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC 13) and pulled 5 feet toward the big water slurpent. Until this grapple ends, the target is {@condition restrained}, the big water slurpent tries to drown it, and the big water slurpent can't constrict another target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

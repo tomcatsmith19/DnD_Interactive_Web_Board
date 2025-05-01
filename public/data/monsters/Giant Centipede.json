@@ -1,0 +1,57 @@
+{
+  "name": "Giant Centipede",
+  "source": "MM",
+  "page": 323,
+  "size": [
+    "S"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 4,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 5,
+  "dex": 14,
+  "con": 12,
+  "int": 1,
+  "wis": 7,
+  "cha": 3,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 4 (1d4 + 2 damage) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or take 10 (3d6 damage) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but {@condition poisoned} for 1 hour, even after regaining hit points, and is {@condition paralyzed} while {@condition poisoned} in this way."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

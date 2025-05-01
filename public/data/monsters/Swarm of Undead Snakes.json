@@ -1,0 +1,79 @@
+{
+  "name": "Swarm of Undead Snakes",
+  "source": "EGW",
+  "page": 247,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 36,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 8,
+  "dex": 18,
+  "con": 11,
+  "int": 1,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny snake. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bites",
+      "entries": [
+        "Melee atk +6 to hit, reach 0 ft., one creature in the swarm's space. 7 (2d6 damage) piercing damage, or 3 (1d6 damage) piercing damage if the swarm has half of its hit points or fewer. The target must make a DC 10 Constitution saving throw, taking 14 (4d6 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 10 ft."
+  ],
+  "environment": [
+    "forest",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

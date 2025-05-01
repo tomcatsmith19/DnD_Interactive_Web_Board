@@ -1,0 +1,111 @@
+{
+  "name": "Drannin Splithelm",
+  "source": "PotA",
+  "page": 210,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    {
+      "tag": "dwarf",
+      "prefix": "Shield"
+    }
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 25
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 18,
+  "int": 11,
+  "wis": 8,
+  "cha": 12,
+  "skills": {
+    "athletics": "+7",
+    "intimidation": "+4"
+  },
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Action Surge (Recharges after a Short or Long Rest)",
+      "entries": [
+        "Drannin takes an additional action on his turn."
+      ]
+    },
+    {
+      "name": "Brute",
+      "entries": [
+        "A melee weapon deals one extra die of its damage when Drannin hits with it (included in the attack)."
+      ]
+    },
+    {
+      "name": "Dwarven Resilience",
+      "entries": [
+        "Drannin has advantage on saving throws against poison."
+      ]
+    },
+    {
+      "name": "Indomitable (Recharges after a Short or Long Rest)",
+      "entries": [
+        "Drannin can reroll a saving throw that he fails. He must use the new roll."
+      ]
+    },
+    {
+      "name": "Second Wind (Recharges after a Short or Long Rest)",
+      "entries": [
+        "Drannin can use a bonus action to regain 16 ({@dice 1d10 + 11}) hit points."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Drannin wears a control amulet for his {@creature shield guardian} (see the Monster Manual) and a {@item ring of cold resistance}. He also carries a {@item potion of frost giant strength}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Drannin makes three attacks with his greataxe."
+      ]
+    },
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 17 (2d12 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

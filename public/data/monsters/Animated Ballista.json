@@ -1,0 +1,63 @@
+{
+  "name": "Animated Ballista",
+  "source": "WDMM",
+  "page": 39,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 50,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 10,
+  "int": 3,
+  "wis": 3,
+  "cha": 1,
+  "skills": {},
+  "passive": 6,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Magic Bolt",
+      "entries": [
+        "Ranged atk +6 to hit, range 120 ft., one target. 16 (3d10 damage) fire damage"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 120 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

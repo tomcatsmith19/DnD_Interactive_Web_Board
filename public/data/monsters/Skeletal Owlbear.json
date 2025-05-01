@@ -1,0 +1,83 @@
+{
+  "name": "Skeletal Owlbear",
+  "source": "IMR",
+  "page": 36,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 12,
+  "con": 17,
+  "int": 3,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Sight and Smell",
+      "entries": [
+        "The owlbear has advantage on Wisdom ({@skill Perception}) checks that rely on sight or smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The owlbear makes two attacks: one with its beak and one with its claws."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 10 (1d10 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

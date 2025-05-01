@@ -1,0 +1,146 @@
+{
+  "name": "Conclave Dryad",
+  "source": "GGR",
+  "page": 194,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 143,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 19,
+  "con": 14,
+  "int": 19,
+  "wis": 20,
+  "cha": 21,
+  "skills": {
+    "arcana": "+8",
+    "nature": "+8",
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The dryad has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "type": "entries",
+      "name": "Speak with Beasts and Plants",
+      "entries": [
+        "The dryad can communicate with beasts and plants as if they and the dryad shared a language."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dryad makes three attacks, using its vine staff, its longbow, or both."
+      ]
+    },
+    {
+      "name": "Vine Staff",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 17 Dexterity saving throw or become {@condition restrained} by twisting vines for 1 minute. A target {@condition restrained} in this way can use an action to make a DC 17 Strength (Athletics) or Dexterity (Acrobatics) check, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +8 to hit, range 150/600 ft., one target. 8 (1d8 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Summon Mount (1/Day)",
+      "entries": [
+        "The dryad magically summons a mount, which appears in an unoccupied space within 60 feet of the dryad. The mount remains for 8 hours, until it or the dryad dies, or until the dryad dismisses it as an action. The mount uses the stat block of an {@creature elk} (see the Monster Manual) with these changes: it is a plant instead of a beast, it has an Intelligence of 6, and it understands Sylvan but can't speak. While within 1 mile of the mount, the dryad can communicate with it telepathically."
+      ]
+    },
+    {
+      "name": "Suppress Magic {@recharge 5}",
+      "entries": [
+        "The dryad targets one magic item it can see within 120 feet of it. If the magic item isn't an artifact, its magical properties are suppressed for 10 minutes, until the dryad is {@condition incapacitated} or dies, or until the dryad uses a bonus action to end the effect."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The dryad's innate spellcasting ability is Charisma (spell save {@dc 17}). The dryad can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "druidcraft"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

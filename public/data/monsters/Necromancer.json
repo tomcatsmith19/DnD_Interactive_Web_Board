@@ -1,0 +1,144 @@
+{
+  "name": "Necromancer",
+  "source": "VGM",
+  "page": 217,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 12,
+  "int": 17,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "arcana": "+7",
+    "history": "+7"
+  },
+  "passive": 11,
+  "languages": [
+    "any four languages"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Grim Harvest (1/Turn)",
+      "entries": [
+        "When necromancer kills a creature that is neither a construct nor undead with a spell of 1st level or higher, the necromancer regains hit points equal to twice the spell's level, or three times if it is a necromancy spell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Withering Touch",
+      "entries": [
+        "{@atk ms} +7 to hit, reach 5 ft., one creature. 5 (2d4 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The necromancer is a 12th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 15}, {@hit 7} to hit with spell attacks). The necromancer has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "dancing lights",
+            "mage hand",
+            "mending"
+          ]
+        },
+        "1": {
+          "spells": [
+            "false life",
+            "mage armor",
+            "ray of sickness"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blindness/deafness",
+            "ray of enfeeblement",
+            "web"
+          ]
+        },
+        "3": {
+          "spells": [
+            "animate dead",
+            "bestow curse",
+            "vampiric touch"
+          ]
+        },
+        "4": {
+          "spells": [
+            "blight",
+            "dimension door",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "Bigby's hand",
+            "cloudkill"
+          ]
+        },
+        "6": {
+          "spells": [
+            "circle of death"
+          ]
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "footerEntries": [
+        "*Necromancy spell of 1st level or higher"
+      ],
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "desert",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

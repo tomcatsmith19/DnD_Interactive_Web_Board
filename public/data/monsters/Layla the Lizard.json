@@ -1,0 +1,74 @@
+{
+  "name": "Layla the Lizard",
+  "source": "RMBRE",
+  "page": 28,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 15,
+  "con": 10,
+  "int": 7,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one creature. 9 (2d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (2d4 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

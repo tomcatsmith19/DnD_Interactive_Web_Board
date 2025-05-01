@@ -1,0 +1,121 @@
+{
+  "name": "Bone Naga (Spirit)",
+  "source": "MM",
+  "page": 233,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 16,
+  "con": 12,
+  "int": 15,
+  "wis": 15,
+  "cha": 16,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Common plus one other language"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one creature. 10 (2d6 + 3 damage) piercing damage plus 10 (3d6 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The naga is a 5th-level spellcaster (spell save {@dc 12}, {@hit 4} to hit with spell attacks) that needs only verbal components to cast its spells. Its spellcasting ability is Intelligence, and it has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "minor illusion",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "hold person"
+          ]
+        },
+        "3": {
+          "spells": [
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

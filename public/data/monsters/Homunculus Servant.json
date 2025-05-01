@@ -1,0 +1,69 @@
+{
+  "name": "Homunculus Servant",
+  "source": "TCE",
+  "page": 22,
+  "size": [
+    "T"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "13"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 20,
+    "fly": 30
+  },
+  "str": 4,
+  "dex": 15,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 7,
+  "skills": {
+    "perception": "+0 plus PB \u00c3\u2014 2",
+    "stealth": "+2 plus PB"
+  },
+  "passive": "10 + (PB \u00c3\u2014 2)",
+  "languages": [
+    "understands the languages you speak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Evasion",
+      "entries": [
+        "If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Force Strike",
+      "entries": [
+        "Ranged atk {@hitYourSpellAttack} to hit, range 30 ft., one target you can see. 1d4 + PB damage force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

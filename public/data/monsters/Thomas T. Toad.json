@@ -1,0 +1,68 @@
+{
+  "name": "Thomas T. Toad",
+  "source": "RMBRE",
+  "page": 28,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 8,
+  "con": 16,
+  "int": 5,
+  "wis": 7,
+  "cha": 7,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Webby Hands",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,87 @@
+{
+  "name": "Indentured Spirit",
+  "source": "GGR",
+  "page": 206,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 7,
+  "dex": 13,
+  "con": 10,
+  "int": 10,
+  "wis": 12,
+  "cha": 11,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The spirit can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Withering Touch",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 10 (3d6 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "acid",
+    "fire",
+    "lightning",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

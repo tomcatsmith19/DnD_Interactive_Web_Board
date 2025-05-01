@@ -1,0 +1,136 @@
+{
+  "name": "Fathomer",
+  "source": "PotA",
+  "page": 207,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "10",
+    "13"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 11,
+  "con": 14,
+  "int": 11,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "arcana": "+2",
+    "perception": "+4",
+    "stealth": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Aquan",
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shapechanger (2/Day)",
+      "entries": [
+        "The fathomer can use its action to polymorph into a Medium serpent composed of water, or back into its true form. Anything the fathomer is wearing or carrying is subsumed into the serpent form during the change, inaccessible until the fathomer returns to its true form. The fathomer reverts to its true form after 4 hours, unless it can expend another use of this trait. If the fathomer is knocked {@condition unconscious} or dies, it also reverts to its true form.",
+        "While in serpent form, the fathomer gains a swimming speed of 40 feet, the ability to breathe underwater, immunity to poison damage, as well as resistance to fire damage and bludgeoning, piercing, and slashing damage from nonmagical attacks. It also has immunity to the following conditions: {@condition exhaustion}, {@condition grappled}, {@condition paralyzed}, {@condition poisoned}, {@condition restrained}, {@condition prone}, {@condition unconscious}. The serpent form can enter a hostile creature's space and stop there. In addition, if water can pass through a space, the serpent can do so without squeezing."
+      ]
+    },
+    {
+      "name": "Olhydra's Armor (Human Form Only)",
+      "entries": [
+        "The fathomer can cast {@spell mage armor} at will, without expending material components."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Constrict (Serpent Form Only)",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 9 (2d6 + 2 damage) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC 12). Until the grapple ends, the target is {@condition restrained}, and the fathomer can't constrict another target."
+      ]
+    },
+    {
+      "name": "Dagger (Human Form Only)",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Human Form Only)",
+      "headerEntries": [
+        "The fathomer is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 12}, {@hit 4} to hit with spell attacks). It has two 3rd-level spell slots, which it regains after finishing a short or long rest, and knows the following warlock spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "eldritch blast",
+            "mage hand"
+          ]
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": [
+            "armor of Agathys",
+            "expeditious retreat",
+            "hex",
+            "invisibility",
+            "Vampiric touch"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

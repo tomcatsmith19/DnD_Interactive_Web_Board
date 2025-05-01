@@ -1,0 +1,70 @@
+{
+  "name": "Fragment of Krokulmar",
+  "source": "KftGV",
+  "page": 53,
+  "size": [
+    "T"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 0
+  },
+  "str": 4,
+  "dex": 16,
+  "con": 12,
+  "int": 16,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "arcana": "+7",
+    "history": "+7",
+    "persuasion": "+7",
+    "stealth": "+7"
+  },
+  "passive": 13,
+  "languages": [
+    "Deep Speech",
+    "telepathy 60 ft."
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Psionic Revitalization",
+      "entries": [
+        "The fragment touches one creature that has 0 hit points in the fragment's space. The target regains 10 hit points, and each creature within 10 feet of the healed creature takes 3 (1d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Squirming Dodge",
+      "entries": [
+        "Until the start of the fragment's next turn, any attack roll made against the fragment has disadvantage, and the fragment makes saving throws with advantage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "psychic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

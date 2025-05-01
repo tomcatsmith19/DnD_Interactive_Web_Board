@@ -1,0 +1,76 @@
+{
+  "name": "Ravager Stabby-Stabber",
+  "source": "TDCSR",
+  "page": 250,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 36,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 12,
+  "int": 10,
+  "wis": 8,
+  "cha": 7,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "Common",
+    "one other language"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Stabby Frenzy",
+      "entries": [
+        "When the stabby-stabber hits with a melee attack, it can attack again and continue making additional attacks until it misses. The stabby-stabber cannot move between the attacks made with this trait."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft., range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Bone Trader",
+  "source": "GHLoE",
+  "page": 13,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 11,
+  "int": 14,
+  "wis": 15,
+  "cha": 18,
+  "skills": {
+    "animal handling": "+4",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Sylvan",
+    "two other languages"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Bone Armor (1/Day)",
+      "entries": [
+        "A bone trader in its lair can use a bonus action to summon a temporary suit of bone armor that lasts for ten minutes or until dismissed by the bone trader. While wearing its bone armor, a bone trader has advantage on Wisdom saving throws and Charisma (Intimidation) checks."
+      ]
+    },
+    {
+      "name": "Speak with Beasts",
+      "entries": [
+        "The bone trader can communicate with beasts as if they shared a language."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bone Club",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 6 (1d8 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Skelesuck",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 4 (1d4 + 2 damage) piercing damage. The target must succeed on a DC 10 Constitution saving throw or have one of its bones sucked out, resulting in the piercing damage becoming a reduction in maximum hit points until magical healing is applied."
+      ]
+    },
+    {
+      "name": "Fey Charm",
+      "entries": [
+        "The bone trader targets one humanoid, goblinoid, fey, or beast it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically {@condition charmed}. The {@condition charmed} creature regards the bone trader as a trusted friend to be heeded and protected. Although the target isn't under the bone trader's control, it takes the bone trader's requests or actions in the most favorable way . Each time the bone trader or its allies do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the bone trader dies, is on a different plane of existence from the target, or ends the effect as a bonus action. If a target's saving throw is successful, the target is immune to the bone trader's fey charm for the next 24 hours.",
+        "The bone trader can have no more than one humanoid {@condition charmed} at a time, along with up to three beasts."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Horned Frog",
+  "source": "PSX",
+  "page": 39,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 12,
+  "dex": 13,
+  "con": 11,
+  "int": 2,
+  "wis": 10,
+  "cha": 3,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+3"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The frog can breathe air and water."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The frog's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) piercing damage, and the target is {@condition grappled} (escape DC 11). Until this grapple ends, the target is {@condition restrained}, and the frog can't bite another target."
+      ]
+    },
+    {
+      "name": "Swallow",
+      "entries": [
+        "The frog makes one bite attack against a Small or smaller target it is grappling. If the attack hits, the target is swallowed, and the grapple ends. The swallowed target is {@condition blinded} and {@condition restrained}, it has total cover against attacks and other effects outside the frog, and it takes 5 (2d4 damage) acid damage at the start of each of the frog's turns. The frog can have only one target swallowed at a time. If the frog dies, a swallowed creature is no longer {@condition restrained} by it and can escape from the corpse using 5 feet of movement, exiting {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [
+    "forest",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

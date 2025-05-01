@@ -1,0 +1,64 @@
+{
+  "name": "Haungharassk",
+  "source": "WDMM",
+  "page": 258,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "6"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 10,
+    "climb": 10
+  },
+  "str": 20,
+  "dex": 3,
+  "con": 13,
+  "int": 3,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Salt Sensitivity",
+      "entries": [
+        "A pound of salt thrown onto the snail's skin deals {@dice 1d6} acid damage to the creature."
+      ]
+    },
+    {
+      "name": "Magical Properties",
+      "entries": [
+        "A creature that uses an action to touch the living snail gains 6 temporary hit points that last for 24 hours. Any creature or object that touches the living snail also gains the benefit of a {@spell remove curse} spell. The snail loses these magical properties if it dies."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The snail can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

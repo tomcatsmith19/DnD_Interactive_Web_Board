@@ -1,0 +1,124 @@
+{
+  "name": "Pirate Deck Wizard",
+  "source": "GoS",
+  "page": 248,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 14,
+  "int": 16,
+  "wis": 13,
+  "cha": 11,
+  "skills": {
+    "arcana": "+5",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Sea Legs",
+      "entries": [
+        "The deck wizard has advantage on ability checks and saving throws to resist being knocked {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 3 (1d6 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The deck wizard is a 4th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "friends",
+            "mage hand",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "disguise self",
+            "fog cloud",
+            "mage armor",
+            "witch bolt"
+          ]
+        },
+        "2": {
+          "spells": [
+            "gust of wind",
+            "Melf's acid arrow",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

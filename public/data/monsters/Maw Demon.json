@@ -1,0 +1,77 @@
+{
+  "name": "Maw Demon",
+  "source": "VGM",
+  "page": 137,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 8,
+  "con": 13,
+  "int": 5,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Rampage",
+      "entries": [
+        "When it reduces a creature to 0 hit points with a melee attack on its turn, the maw demon can take a bonus action to move up to half its speed and make a bite attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 11 (2d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

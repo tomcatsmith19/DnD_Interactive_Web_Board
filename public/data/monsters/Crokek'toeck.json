@@ -1,0 +1,109 @@
+{
+  "name": "Crokek'toeck",
+  "source": "BGDIA",
+  "page": 231,
+  "size": [
+    "G"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 297,
+  "speed": {
+    "walk": 60,
+    "swim": 60
+  },
+  "str": 28,
+  "dex": 10,
+  "con": 24,
+  "int": 6,
+  "wis": 10,
+  "cha": 13,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "Crokek'toeck can breathe air and water."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Crokek'toeck has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "Crokek'toeck's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Secure Memory",
+      "entries": [
+        "Crokek'toeck is immune to the waters of the River Styx as well as any effect that would steal or modify its memories or detect or read its thoughts."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "Crokek'toeck's long jump is up to 60 feet and its high jump is up to 30 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +14 to hit, reach 15 ft., one target. 44 (10d6 + 9 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Disgorge Allies {@recharge}",
+      "entries": [
+        "Crokek'toeck opens its mouth and disgorges {@dice 1d4} {@creature barlgura||barlguras}, {@dice 3d6} {@creature gnoll||gnolls} led by 1 {@creature gnoll fang of Yeenoghu}, {@dice 6d6} {@creature dretch||dretches}, or {@dice 1d3} {@creature vrock||vrocks}. Each creature it disgorges appears in an unoccupied space within 30 feet of Crokek'toeck's mouth, or the next closest unoccupied space."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

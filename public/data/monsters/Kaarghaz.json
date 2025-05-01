@@ -1,0 +1,149 @@
+{
+  "name": "Kaarghaz",
+  "source": "TftYP",
+  "page": 45,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "troglodyte"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 14,
+  "int": 6,
+  "wis": 10,
+  "cha": 15,
+  "skills": {
+    "stealth": "+2"
+  },
+  "passive": 10,
+  "languages": [
+    "Draconic",
+    "Troglodyte"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Chameleon Skin",
+      "entries": [
+        "The troglodyte has advantage on Dexterity (Stealth) checks made to hide."
+      ]
+    },
+    {
+      "name": "Stench",
+      "entries": [
+        "Any creature other than a troglodyte that starts its turn within 5 feet of the troglodyte must succeed on a {@dc 12} Constitution saving throw or be {@condition poisoned} until the start of the creature's next turn. On a successful saving throw, the creature is immune to the stench of all troglodytes for 1 hour."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the troglodyte has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The troglodyte makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Kaarghaz is a 4th-level spellcaster. His spellcasting ability is Charisma (spell save {@dc 12}, {@hit 4} to hit with spell attacks). He knows the following sorcerer spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "mage hand",
+            "poison spray",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "burning hands",
+            "shield",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": [
+            "invisibility",
+            "scorching ray"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,141 @@
+{
+  "name": "Dao",
+  "source": "MM",
+  "page": 143,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 187,
+  "speed": {
+    "walk": 30,
+    "burrow": 30,
+    "fly": 30
+  },
+  "str": 23,
+  "dex": 12,
+  "con": 24,
+  "int": 12,
+  "wis": 13,
+  "cha": 14,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Terran"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Earth Glide",
+      "entries": [
+        "The dao can burrow through nonmagical, unworked earth and stone. While doing so, the dao doesn't disturb the material it moves through."
+      ]
+    },
+    {
+      "name": "Elemental Demise",
+      "entries": [
+        "If the dao dies, its body disintegrates into crystalline powder, leaving behind only equipment the dao was wearing or carrying."
+      ]
+    },
+    {
+      "name": "Sure-Footed",
+      "entries": [
+        "The dao has advantage on Strength and Dexterity saving throws made against effects that would knock it {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Dao makes two fist attacks or two maul attacks."
+      ]
+    },
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 15 (2d8 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Maul",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 20 (4d6 + 6 damage) bludgeoning damage. If the target is a Huge or smaller creature, it must succeed on a DC 18 Strength check or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The dao's innate spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect evil and good",
+        "detect magic",
+        "stone shape"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "petrified"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

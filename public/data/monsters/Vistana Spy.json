@@ -1,0 +1,90 @@
+{
+  "name": "Vistana Spy",
+  "source": "CoS",
+  "page": 28,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 15,
+  "con": 10,
+  "int": 12,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "deception": "+5",
+    "insight": "+4",
+    "investigation": "+5",
+    "perception": "+6",
+    "persuasion": "+5",
+    "sleight of hand": "+4",
+    "stealth": "+4"
+  },
+  "passive": 16,
+  "languages": [
+    "any two languages"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cunning Action",
+      "entries": [
+        "On each of its turns, the spy can use a bonus action to take the Dash, Disengage, or Hide action."
+      ]
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "entries": [
+        "The spy deals an extra 7 ({@dice 2d6}) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the spy that isn't {@condition incapacitated} and the spy doesn't have disadvantage on the attack roll."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The spy makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 30/120 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

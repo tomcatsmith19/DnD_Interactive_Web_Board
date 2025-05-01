@@ -1,0 +1,71 @@
+{
+  "name": "Transcendent Order Instinct",
+  "source": "MPP",
+  "page": 62,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 49,
+  "speed": {
+    "walk": 40
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 12,
+  "int": 10,
+  "wis": 16,
+  "cha": 12,
+  "skills": {
+    "acrobatics": "+5",
+    "perception": "+5",
+    "performance": "+3"
+  },
+  "passive": 15,
+  "languages": [
+    "Common plus one more language"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the instinct is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The instinct makes three Unarmed Strike attacks."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

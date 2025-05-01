@@ -1,0 +1,68 @@
+{
+  "name": "Giant Boar",
+  "source": "MM",
+  "page": 323,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 42,
+  "speed": {
+    "walk": 40
+  },
+  "str": 17,
+  "dex": 10,
+  "con": 16,
+  "int": 2,
+  "wis": 7,
+  "cha": 5,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 7 ({@damage 2d6}) slashing damage. If the target is a creature, it must succeed on a {@dc 13} Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Relentless (Recharges after a Short or Long Rest)",
+      "entries": [
+        "If the boar takes 10 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tusk",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

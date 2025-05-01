@@ -1,0 +1,136 @@
+{
+  "name": "Ziraj the Hunter",
+  "source": "WDH",
+  "page": 201,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-orc"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 153,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 18,
+  "con": 18,
+  "int": 11,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "athletics": "+7",
+    "intimidation": "+5",
+    "stealth": "+7",
+    "survival": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Ziraj makes three attacks with his glaive or with his oversized longbow."
+      ]
+    },
+    {
+      "name": "Glaive",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (1d10 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Oversized Longbow",
+      "entries": [
+        "Ranged atk +7 to hit, range 150/600 ft., one target. 11 (2d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Dreadful Aspect (Recharges after a Short or Long Rest)",
+      "entries": [
+        "Ziraj exudes magical menace. Each enemy within 30 feet of him must succeed on a DC 13 Wisdom saving throw or be {@condition frightened} for 1 minute of Ziraj. If a {@condition frightened} enemy ends its turn more than 30 feet away from Ziraj, the enemy can repeat the saving throw, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Ziraj is a 10th-level spellcaster. His spellcasting ability is Charisma. He has the following paladin spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "command",
+            "protection from evil and good",
+            "thunderous smite"
+          ]
+        },
+        "2": {
+          "spells": [
+            "branding smite",
+            "find steed"
+          ]
+        },
+        "3": {
+          "spells": [
+            "blinding smite",
+            "dispel magic"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

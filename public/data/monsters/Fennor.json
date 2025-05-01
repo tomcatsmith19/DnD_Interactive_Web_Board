@@ -1,0 +1,78 @@
+{
+  "name": "Fennor",
+  "source": "PotA",
+  "page": 170,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "G",
+    "NY",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 17,
+  "int": 9,
+  "wis": 11,
+  "cha": 9,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Reckless",
+      "entries": [
+        "At the start of its turn, Fennor can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Fennor makes two attacks with her greatsword"
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "coastal",
+    "mountain",
+    "hill",
+    "arctic",
+    "forest",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

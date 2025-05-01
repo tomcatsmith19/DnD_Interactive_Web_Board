@@ -1,0 +1,87 @@
+{
+  "name": "Wine Weird",
+  "source": "ToA",
+  "page": 141,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 0,
+    "swim": 60
+  },
+  "str": 17,
+  "dex": 16,
+  "con": 13,
+  "int": 11,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Aquan but doesn't speak"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Invisible in Water",
+      "entries": [
+        "The wine weird is {@condition invisible} while fully immersed in water."
+      ]
+    },
+    {
+      "name": "Water Bound",
+      "entries": [
+        "The wine weird dies if it leaves the water to which it is bound or if that water is destroyed."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Constrict",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one creature. 13 (3d6 + 3 damage) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC 13) and pulled 5 feet toward the wine weird. Until this grapple ends, the target is {@condition restrained}, the wine weird tries to drown it, and the wine weird can't constrict another target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "poisoned",
+    "restrained",
+    "prone",
+    "unconscious"
+  ],
+  "resist": [
+    "fire",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 30 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

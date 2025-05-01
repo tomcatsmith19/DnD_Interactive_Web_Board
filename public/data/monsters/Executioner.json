@@ -1,0 +1,125 @@
+{
+  "name": "Executioner",
+  "source": "DoDk",
+  "page": 209,
+  "size": [
+    "H"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 405,
+  "speed": {
+    "walk": 40
+  },
+  "str": 29,
+  "dex": 11,
+  "con": 25,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands common but does not speak"
+  ],
+  "cr": "20",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the Executioner fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The Executioner is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The Executioner has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The Executioner's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If the Executioner is destroyed, it returns with all its hit points in 24 hours unless a {@spell disintegrate} spell is cast on its remains."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Guillotine Blade",
+      "entries": [
+        "Melee/Ranged atk +15 to hit, reach 10 ft., or range 30/120 ft., one target. 30 (6d6 + 9 damage) slashing damage plus 14 (4d6 damage) necrotic damage. The target must succeed on a DC 21 Constitution saving throw or its hit point maximum is reduced by an amount equal to the necrotic damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. Immediately after making a ranged attack, this weapon flies back to the Executioner's hands."
+      ]
+    },
+    {
+      "name": "Necrotic Vents {@recharge 5}",
+      "entries": [
+        "The Executioner vents necrotic gas in a 30-foot radius. Each creature in that area must succeed on a DC 21 Constitution saving throw, taking 45 (10d8 damage) necrotic damage on a failed save, or half as much damage on a successful one. A creature who fails this saving throw by 5 or more gains one {@adventure level of contamination|DoDk|12}."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Lumber Forward",
+      "entries": [
+        "The Executioner moves half its speed."
+      ]
+    },
+    {
+      "name": "Attack (Costs 2 actions)",
+      "entries": [
+        "The Executioner makes a melee or ranged attack with its Guillotine Blade."
+      ]
+    },
+    {
+      "name": "Summon Shadows. (Costs 3 actions)",
+      "entries": [
+        "The Executioner targets up to six humanoid corpses it can see within 60 feet of it that have died violently. Each target's spirit rises as a shadow in the space of its corpse or in the nearest unoccupied space. The shadows act after the Executioner on the same initiative count, are under its control, and remain for 1 minute or until they're destroyed. They disappear if the Executioner is destroyed."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic",
+    "bludgeoning (from nonmagical attacks that aren't adamantine)",
+    "piercing (from nonmagical attacks that aren't adamantine)",
+    "slashing (from nonmagical attacks that aren't adamantine)"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

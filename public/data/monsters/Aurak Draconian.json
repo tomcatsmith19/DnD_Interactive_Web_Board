@@ -1,0 +1,144 @@
+{
+  "name": "Aurak Draconian",
+  "source": "DSotDQ",
+  "page": 196,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "sorcerer"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 35
+  },
+  "str": 13,
+  "dex": 14,
+  "con": 16,
+  "int": 16,
+  "wis": 11,
+  "cha": 17,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Aura of Command",
+      "entries": [
+        "The draconian radiates a commanding presence in a 20-foot-radius sphere centered on itself. A draconian in the aura that can see or hear the aurak can't be {@condition charmed} and has advantage on saving throws made to avoid or end the {@condition frightened} condition on itself."
+      ]
+    },
+    {
+      "name": "Death Throes",
+      "entries": [
+        "When the draconian is reduced to 0 hit points, its magical essence lashes out as a ball of lightning at the closest creature within 30 feet of it before arcing out to up to two other creatures within 15 feet of the first. Each creature must make a {@dc 14} Dexterity saving throw. On a failed save, the creature takes 9 ({@damage 2d8}) lightning damage and is {@condition stunned} until the end of its next turn. On a successful save, the creature takes half as much damage and isn't {@condition stunned}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The draconian makes three Rend or Energy Ray attacks."
+      ]
+    },
+    {
+      "name": "Rend",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (1d12 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Energy Ray",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 60 ft., one target. 8 (1d10 + 3 damage) force damage."
+      ]
+    },
+    {
+      "name": "Noxious Breath {@recharge 5}",
+      "entries": [
+        "The draconian exhales a 15-foot cone of noxious gas. Each creature in that area must make a DC 14 Constitution saving throw. On a failed save, the creature takes 21 (6d6 damage) poison damage and gains 1 level of {@condition exhaustion}. On a successful save, the creature takes half as much damage, doesn't gain {@condition exhaustion}, and is immune to all draconians' Noxious Breath for 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The draconian casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "invisibility",
+        "mage hand"
+      ],
+      "daily": {
+        "1": [
+          "dominate person"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

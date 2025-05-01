@@ -1,0 +1,75 @@
+{
+  "name": "Pidlwick II",
+  "source": "CoS",
+  "page": 236,
+  "size": [
+    "S"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 11,
+  "int": 8,
+  "wis": 13,
+  "cha": 10,
+  "skills": {
+    "performance": "+2"
+  },
+  "passive": 11,
+  "languages": [
+    "understands Common but doesn't speak and can't read or write"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Ambusher",
+      "entries": [
+        "During the first round of combat, Pidlwick II has advantage on attack rolls against any creature that hasn't had a turn yet."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Dart",
+      "entries": [
+        "Ranged atk +4 to hit, range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

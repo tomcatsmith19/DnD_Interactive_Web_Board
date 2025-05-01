@@ -1,0 +1,70 @@
+{
+  "name": "Sir Jared",
+  "source": "BMT",
+  "page": 80,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 17,
+  "int": 13,
+  "wis": 14,
+  "cha": 17,
+  "skills": {
+    "arcana": "+4",
+    "athletics": "+7",
+    "persuasion": "+6",
+    "survival": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Halfling"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Jared makes three Longsword attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage plus 4 (1d8 damage) radiant damage. On a roll of 19 or 20, Jared scores a critical hit."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

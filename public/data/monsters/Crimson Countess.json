@@ -1,0 +1,102 @@
+{
+  "name": "Crimson Countess",
+  "source": "DoDk",
+  "page": 208,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 130,
+  "speed": {
+    "walk": 20,
+    "fly": 60
+  },
+  "str": 10,
+  "dex": 21,
+  "con": 15,
+  "int": 13,
+  "wis": 14,
+  "cha": 19,
+  "skills": {
+    "acrobatics": "+11",
+    "deception": "+7",
+    "perception": "+8"
+  },
+  "passive": 16,
+  "languages": [
+    "Abyssal"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Aerial Acrobat",
+      "entries": [
+        "On each of her turns, the Crimson Countess can use a bonus action to take the Dash, Disengage, or Dodge action."
+      ]
+    },
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The Crimson Countess has advantage on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Crimson Countess can use her Frightful Screech. She then makes two attacks with her talons or one with her javelin."
+      ]
+    },
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 11 (1d10 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Frightful Screech",
+      "entries": [
+        "Each creature of the Crimson Countess' choice that is within 120 feet of her and not {@condition deafened} must succeed on a DC 15 Wisdom saving throw or become {@condition frightened} for 1 minute. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the effects of the Crimson Countess' Frightful Screech for the next 24 hours.",
+        "While {@condition frightened} by this effect, a creature must take the Dash action and move away from the Crimson Countess by the safest available route on each of its turns, unless there is nowhere to move. If the creature ends its turn in a location where it doesn't have line of sight to the Crimson Countess, the creature can repeat the saving throw. On a successful save, the effect ends for that creature."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +8 to hit, reach 5 ft. or ranged 20/60 feet, one target. 9 (1d6 + 5 damage) piercing damage, plus 14 (4d6 damage) lightning damage."
+      ]
+    },
+    {
+      "name": "Thunder Blast {@recharge 5}",
+      "entries": [
+        "The Crimson Countess unleashes a thunderous cry in a 15-foot cube. Each creature in the cube must succeed on a DC 15 Constitution saving throw, taking 14 (4d6 damage) thunder damage on a failed save, or half as much damage on a successful one. Creatures who fail this saving throw are pushed 10 feet and knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "thunder"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

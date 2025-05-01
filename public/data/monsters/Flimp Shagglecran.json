@@ -1,0 +1,161 @@
+{
+  "name": "Flimp Shagglecran",
+  "source": "MaBJoV",
+  "page": 32,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gnome"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "21"
+  ],
+  "hp": 77,
+  "speed": {
+    "walk": 25,
+    "fly": 25,
+    "swim": 60
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 14,
+  "int": 18,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "arcana": "+8",
+    "history": "+8",
+    "medicine": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Dwarvish",
+    "Giant",
+    "Gnomish"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Infused Magical Items",
+      "entries": [
+        "Flimp is wearing a {@item cloak of the manta ray}, a {@item ring of protection}, {@item +2 plate armor||plate armor +2}, and {@item winged boots}. Flimp wields a {@item +2 warhammer||warhammer +2}. These items vanish 4 days after Flimp dies."
+      ]
+    },
+    {
+      "name": "Gnome Cunning",
+      "entries": [
+        "Flimp has advantage on all Intelligence, Wisdom, and Charisma Saving Throws against magic."
+      ]
+    },
+    {
+      "name": "Battle Smith",
+      "entries": [
+        "Flimp uses his Intelligence modifier for attack and damage rolls with his weapons."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Flimp makes two weapon attacks."
+      ]
+    },
+    {
+      "name": "Warhammer, +2",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 10 (1d8 + 6 damage) bludgeoning damage plus 3 (1d6 damage) force damage."
+      ]
+    },
+    {
+      "name": "Summon Steel Defender (1/Day)",
+      "entries": [
+        "Flimp summons a {@creature Steel Defender|TCE|metallic panther} to aid him in combat. The panther has maximum hit points (24) and is immune to poison and being {@condition charmed}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Flimp is a 14th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). Flimp has the following artificer spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "acid splash",
+            "fire bolt",
+            "guidance",
+            "light"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "feather fall",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "aid",
+            "blur",
+            "warding bond"
+          ]
+        },
+        "3": {
+          "spells": [
+            "aura of vitality",
+            "blink",
+            "elemental weapon"
+          ]
+        },
+        "4": {
+          "spells": [
+            "fire shield"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

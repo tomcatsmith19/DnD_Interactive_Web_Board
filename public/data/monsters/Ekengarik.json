@@ -1,0 +1,151 @@
+{
+  "name": "Ekengarik",
+  "source": "CoA",
+  "page": 141,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 231,
+  "speed": {
+    "walk": 30
+  },
+  "str": 23,
+  "dex": 16,
+  "con": 21,
+  "int": 14,
+  "wis": 17,
+  "cha": 21,
+  "skills": {
+    "deception": "+10",
+    "insight": "+8",
+    "persuasion": "+10"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Formian",
+    "telepathy 120 ft."
+  ],
+  "cr": "16",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Hive Mind",
+      "entries": [
+        "All fiendish formians within 1 mile of Ekengarik can telepathically communicate with each other and Ekengarik."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "Ekengarik regenerates 10 hit points at the start of her turn, unless she took radiant damage in the last round."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Ekengarik makes three Bite attacks. She can replace one of the attacks with an Acid Spray (if available) attack or a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 15 (2d8 + 6 damage) piercing damage and the target must make a DC 19 Constitution saving throw. On a failed save, the target's Strength score is reduced by 2 ({@dice 1d4}). The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest."
+      ]
+    },
+    {
+      "name": "Acid Spray {@recharge 5}",
+      "entries": [
+        "Ekengarik spits acid at one creature within 60 feet of her, or two creatures within 60 feet of her and 5 feet of each other. Targets must make a DC 18 Dexterity saving throw, taking 33 (6d10 damage) acid damage on a failed saving throw, or half as much on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Ekengarik casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 18}):"
+      ],
+      "will": [
+        "Detect Magic",
+        "Dispel Magic",
+        "Heroism",
+        "Magic Missile"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [
+    "acid",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

@@ -1,0 +1,67 @@
+{
+  "name": "Crystal Cave Merfolk",
+  "source": "AWM",
+  "page": 31,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "merfolk"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 10,
+    "swim": 40
+  },
+  "str": 10,
+  "dex": 13,
+  "con": 12,
+  "int": 11,
+  "wis": 11,
+  "cha": 12,
+  "skills": {},
+  "passive": 0,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The merfolk can breathe air and water."
+      ]
+    },
+    {
+      "name": "Siren Song",
+      "entries": [
+        "Lovely singing voices charm every humanoid or giant within 300 feet. The targets must succeed on a {@dc 11} Wisdom saving throw or be {@condition charmed} until the song ends."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +2 to hit, one target. 3 (1d6 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,93 @@
+{
+  "name": "Holga Kilgore",
+  "source": "HAT-TG",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 120,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 14,
+  "con": 16,
+  "int": 11,
+  "wis": 16,
+  "cha": 13,
+  "skills": {
+    "athletics": "+7",
+    "intimidation": "+4",
+    "nature": "+3",
+    "survival": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Halfling"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Reckless",
+      "entries": [
+        "At the start of her turn, Holga can gain advantage on melee weapon attack rolls during that turn, but attack rolls against her have advantage until the start of her next turn."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Holga carries a darksteel greataxe, a magic weapon that grants her resistance to lightning damage while she carries it (included above)."
+      ]
+    },
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While Holga isn't wearing armor, her AC includes her Constitution modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Holga makes three Darksteel Greataxe or Improvised Weapon attacks, in any combination."
+      ]
+    },
+    {
+      "name": "Darksteel Greataxe",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 10 (1d12 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Improvised Weapon",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft., or range 20/60 ft., one target. 7 (1d6 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

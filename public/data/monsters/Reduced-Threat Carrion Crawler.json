@@ -1,0 +1,83 @@
+{
+  "name": "Reduced-Threat Carrion Crawler",
+  "source": "TftYP",
+  "page": 113,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 51,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 14,
+  "dex": 13,
+  "con": 16,
+  "int": 1,
+  "wis": 12,
+  "cha": 5,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The carrion crawler has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The carrion crawler can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The carrion crawler makes two attacks: one with its tentacles and one with its bite."
+      ]
+    },
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one creature. 4 (1d4 + 2 damage) poison damage, and the target must succeed on a DC 13 Constitution saving throw or be {@condition poisoned} for 1 minute. Until this poison ends, the target is {@condition paralyzed}. The target can repeat the saving throw at the end of each of its turns, ending the poison on itself on a success."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (2d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

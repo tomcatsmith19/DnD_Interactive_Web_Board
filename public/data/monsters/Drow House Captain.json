@@ -1,0 +1,147 @@
+{
+  "name": "Drow House Captain",
+  "source": "MTF",
+  "page": 184,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 162,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 19,
+  "con": 15,
+  "int": 12,
+  "wis": 14,
+  "cha": 13,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+8"
+  },
+  "passive": 16,
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Battle Command",
+      "entries": [
+        "As a bonus action, the drow targets one ally he can see within 30 feet of him. If the target can see or hear the drow, the target can use its reaction to make one melee attack or to take the Dodge or Hide action."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The drow has advantage on saving throws against being {@condition charmed}, and magic can't put the drow to sleep."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The drow makes three attacks: two with his scimitar and one with his whip or his hand crossbow."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) slashing damage plus 14 (4d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Whip",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 6 (1d4 + 4 damage) slashing damage. If the target is an ally, it has advantage on attack rolls until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +8 to hit, range 30/120 ft., one target. 7 (1d6 + 4 damage) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be {@condition poisoned} for 1 hour. If the saving throw fails by 5 or more, the target is also {@condition unconscious} while {@condition poisoned} in this way. The target regains consciousness if it takes damage or if another creature takes an action to shake it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The drow's innate spellcasting ability is Charisma (spell save {@dc 13}). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "dancing lights"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

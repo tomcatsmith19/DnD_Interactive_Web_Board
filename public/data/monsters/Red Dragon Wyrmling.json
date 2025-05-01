@@ -1,0 +1,70 @@
+{
+  "name": "Red Dragon Wyrmling",
+  "source": "MM",
+  "page": 98,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30,
+    "climb": 30,
+    "fly": 60
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 17,
+  "int": 12,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+2"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 9 (1d10 + 4 damage) piercing damage plus 3 (1d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Fire Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 24 (7d6 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

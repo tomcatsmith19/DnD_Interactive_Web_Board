@@ -1,0 +1,73 @@
+{
+  "name": "Stone Giant of Evil Earth",
+  "source": "BGG",
+  "page": 179,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 137,
+  "speed": {
+    "walk": 40
+  },
+  "str": 23,
+  "dex": 13,
+  "con": 22,
+  "int": 10,
+  "wis": 12,
+  "cha": 9,
+  "skills": {
+    "athletics": "+14",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Giant",
+    "Terran"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two Thundering Stone Club or Boulder attacks in any combination."
+      ]
+    },
+    {
+      "name": "Thundering Stone Club",
+      "entries": [
+        "Melee atk +10 to hit, reach 15 ft., one target. 16 (3d6 + 6 damage) bludgeoning damage. The giant can cause the club to emit a burst of thunderous energy that deals 10 (3d6 damage) thunder damage to each creature, other than the giant, within 30 feet of the target. The club can emit a burst this way only once per turn."
+      ]
+    },
+    {
+      "name": "Boulder",
+      "entries": [
+        "Ranged atk +10 to hit, range 60/240 ft., one target. 19 (3d8 + 6 damage) bludgeoning damage, and the target must succeed on a DC 18 Strength saving throw or have the {@condition prone} condition. After the giant throws the boulder, roll a {@dice d6}; on a roll of 3 or lower, the giant has no more boulders to throw."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

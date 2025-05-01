@@ -1,0 +1,90 @@
+{
+  "name": "Shadow Mastiff",
+  "source": "VGM",
+  "page": 190,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 40
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 13,
+  "int": 5,
+  "wis": 12,
+  "cha": 5,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+6"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Ethereal Awareness",
+      "entries": [
+        "The shadow mastiff can see ethereal creatures and objects."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The shadow mastiff has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    },
+    {
+      "name": "Shadow Blend",
+      "entries": [
+        "While in dim light or darkness, the shadow mastiff can use a bonus action to become {@condition invisible}, along with anything it is wearing or carrying. The invisibility lasts until the shadow mastiff uses a bonus action to end it or until the shadow mastiff attacks, is in bright light, or is {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Sunlight Weakness",
+      "entries": [
+        "While in bright light created by sunlight, the shadow mastiff has disadvantage on attack rolls, ability checks, and saving throws."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "swamp",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

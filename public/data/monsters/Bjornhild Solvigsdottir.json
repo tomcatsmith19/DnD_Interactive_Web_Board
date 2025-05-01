@@ -1,0 +1,80 @@
+{
+  "name": "Bjornhild Solvigsdottir",
+  "source": "IDRotF",
+  "page": 306,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 18,
+  "int": 14,
+  "wis": 11,
+  "cha": 14,
+  "skills": {
+    "athletics": "+7",
+    "intimidation": "+5",
+    "survival": "+3"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Yeti"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Auril's Blessing (3/Day)",
+      "entries": [
+        "When Bjornhild hits a creature with a weapon attack, the attack deals an extra 11 ({@damage 2d10}) cold damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Bjornhild makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 10 (1d12 + 4 damage) slashing damage, plus 11 (2d10 damage) cold damage if Bjornhild uses Auril's Blessing."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage, or 8 (1d8 + 4 damage) piercing damage if used with two hands to make a melee attack, plus 11 (2d10 damage) cold damage if Bjornhild uses Auril's Blessing."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

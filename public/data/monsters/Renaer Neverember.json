@@ -1,0 +1,88 @@
+{
+  "name": "Renaer Neverember",
+  "source": "WDH",
+  "page": 215,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    {
+      "tag": "human",
+      "prefix": "Illuskan"
+    }
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 18,
+  "con": 12,
+  "int": 14,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "acrobatics": "+8",
+    "athletics": "+5",
+    "persuasion": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Lightfooted",
+      "entries": [
+        "The swashbuckler can take the Dash or Disengage action as a bonus action on each of its turns."
+      ]
+    },
+    {
+      "name": "Suave Defense",
+      "entries": [
+        "While the swashbuckler is wearing light or no armor and wielding no shield, its AC includes its Charisma modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The swashbuckler makes three attacks: one with a dagger and two with its rapier."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d4 + 4 damage) piercing damage. Or Ranged Weapon Attack: +6 to hit, range 20/60 ft., one target. 6 (1d4 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

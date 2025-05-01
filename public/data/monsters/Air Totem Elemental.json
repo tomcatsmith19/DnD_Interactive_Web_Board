@@ -1,0 +1,99 @@
+{
+  "name": "Air Totem Elemental",
+  "source": "PSX",
+  "page": 38,
+  "size": [
+    "L"
+  ],
+  "type": "totem elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 90,
+  "speed": {
+    "fly": {
+      "number": 90,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 14,
+  "dex": 20,
+  "con": 14,
+  "int": 6,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Auran"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Air Form",
+      "entries": [
+        "The totem elemental can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The totem elemental makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Whirlwind {@recharge 4}",
+      "entries": [
+        "Each creature in the totem elemental's space must make a DC 13 Strength saving throw. On a failure, a target takes 15 (3d8 + 2 damage) bludgeoning damage and is flung up 20 feet away from the totem elemental in a random direction and knocked {@condition prone}. If a thrown target strikes an object, such as a wall or floor, the target takes 3 (1d6 damage) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC 13 Dexterity saving throw or take the same damage and be knocked {@condition prone}.",
+        "If the saving throw is successful, the target takes half the bludgeoning damage and isn't flung away or knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "lightning",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

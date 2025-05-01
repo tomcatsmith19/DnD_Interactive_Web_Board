@@ -1,0 +1,91 @@
+{
+  "name": "Slayer",
+  "source": "CoA",
+  "page": 30,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    {
+      "special": "host's alignment"
+    }
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 19,
+  "con": 18,
+  "int": 13,
+  "wis": 14,
+  "cha": 14,
+  "skills": {
+    "acrobatics": "+8",
+    "deception": "+6",
+    "perception": "+6",
+    "stealth": "+12"
+  },
+  "passive": 16,
+  "languages": [
+    "Languages of the host"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Assassinate",
+      "entries": [
+        "During its first turn, the Slayer has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the Slayer scores against a surprised creature is a critical hit."
+      ]
+    },
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the Slayer's darkvision."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The Slayer has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Slayer makes four Claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage plus 7 (2d6 damage) poison damage. The Slayer deals an extra 14 (4d6 damage) slashing damage when it has advantage on the attack roll and hits the target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

@@ -1,0 +1,115 @@
+{
+  "name": "Cosmic Horror",
+  "source": "BAM",
+  "page": 18,
+  "size": [
+    "G"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 280,
+  "speed": {
+    "walk": 50,
+    "fly": 100
+  },
+  "str": 27,
+  "dex": 10,
+  "con": 25,
+  "int": 24,
+  "wis": 15,
+  "cha": 24,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Deep Speech",
+    "telepathy 240 ft."
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the horror fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The horror doesn't require air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The horror makes one Bite attack and two Tentacle attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +14 to hit, reach 10 ft., one target. 22 (4d6 + 8 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +14 to hit, reach 30 ft., one target. 18 (3d6 + 8 damage) force damage, and if the target is a creature, it is {@condition grappled} (escape DC 18). Until this grapple ends, the horror can't use this tentacle against other targets. The horror has {@dice 1d8 + 1} tentacles, each of which can grapple one target."
+      ]
+    },
+    {
+      "name": "Psychic Whispers {@recharge 5}",
+      "entries": [
+        "The horror emits dreadful whispers in a 60-foot-radius sphere centered on itself. Each creature in the sphere that isn't an Aberration must make a DC 21 Wisdom saving throw, taking 33 (6d10 damage) psychic damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Crushing Tentacle",
+      "entries": [
+        "The horror crushes one creature it is grappling. The {@condition grappled} creature must make a {@dc 22} Constitution saving throw, taking 18 ({@damage 3d6 + 8}) force damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Poison Jet (Costs 2 Actions)",
+      "entries": [
+        "Foul gas squirts from the horror in a 30-foot line that is 5 feet wide. Each creature in the line must succeed on a {@dc 21} Constitution saving throw or take 14 ({@damage 4d6}) poison damage."
+      ]
+    },
+    {
+      "name": "Teleport (Costs 2 Actions)",
+      "entries": [
+        "The horror teleports, along with any creatures it is grappling, to an unoccupied space it can see within 120 feet of itself."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 240 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

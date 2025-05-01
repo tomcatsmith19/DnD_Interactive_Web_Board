@@ -1,0 +1,67 @@
+{
+  "name": "Winged Thrull",
+  "source": "GGR",
+  "page": 221,
+  "size": [
+    "S"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 31,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 9,
+  "dex": 15,
+  "con": 12,
+  "int": 8,
+  "wis": 9,
+  "cha": 8,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (2d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +4 to hit, range 20/60 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

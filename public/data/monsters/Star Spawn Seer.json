@@ -1,0 +1,99 @@
+{
+  "name": "Star Spawn Seer",
+  "source": "MTF",
+  "page": 236,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 153,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 12,
+  "con": 18,
+  "int": 22,
+  "wis": 19,
+  "cha": 16,
+  "skills": {
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "Undercommon"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Out-of-Phase Movement",
+      "entries": [
+        "The seer can move through other creatures and objects as if they were {@quickref difficult terrain||3}. Each creature it moves through takes 5 ({@damage 1d10}) psychic damage; no creature can take this damage more than once per turn. The seer takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The seer makes two comet staff attacks or uses Psychic Orb twice."
+      ]
+    },
+    {
+      "name": "Comet Staff",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 9 (1d6 + 6 damage) bludgeoning damage plus 18 (4d8 damage) psychic damage, or 10 (1d8 + 6 damage) bludgeoning damage plus 18 (4d8 damage) psychic damage, if used with two hands, and the target must succeed on a DC 19 Constitution saving throw or be {@condition incapacitated} until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Psychic Orb",
+      "entries": [
+        "Ranged Spell atk +11 to hit, range 120 feet, one target. 27 (5d10 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Collapse Distance {@recharge}",
+      "entries": [
+        "The seer warps space around a creature it can see within 30 feet of it. That creature must make a DC 19 Wisdom saving throw. On a failed save, the target, along with any equipment it is wearing or carrying, is magically teleported up to 60 feet to an unoccupied space the seer can see, and all other creatures within 10 feet of the target's original space each takes 39 (6d12 damage) psychic damage. On a successful save, the target takes 19 (3d12 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "psychic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain",
+    "swamp",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

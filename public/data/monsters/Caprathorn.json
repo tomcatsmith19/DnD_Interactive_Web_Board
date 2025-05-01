@@ -1,0 +1,171 @@
+{
+  "name": "Caprathorn",
+  "source": "GHLoE",
+  "page": 91,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 250,
+  "speed": {
+    "walk": 40,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 25,
+  "dex": 14,
+  "con": 23,
+  "int": 14,
+  "wis": 17,
+  "cha": 10,
+  "skills": {
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "21",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the caprathorn moves at least 20 feet straight toward a target, and then hits it with a gore attack on the same turn, the target takes an extra 18 ({@damage 4d8}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 22} Strength saving throw or be pushed up to 10 feet away and knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Implosion",
+      "entries": [
+        "The caprathorn implodes when it dies, leaving behind a sphere of annihilation. Each creature within 60 feet of the caprathorn when this implosion occurs must succeed on a {@dc 21} Strength saving throw or be pulled 10 feet toward the sphere."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the caprathorn fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The caprathorn has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The caprathorn's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Thornlamms",
+      "entries": [
+        "A caprathorn typically has three inanimate thornlamms (see that stat block) attached to its horns with vines. Attached thornlamms don't take damage separately, but whenever the caprathorn takes 50 or more damage in a single turn, one of the attached thornlamms dies.",
+        "While it has at least one thornlamm attached to its vines, the caprathorn can use a bonus action to consume or detach a thornlamm. If the caprathorn consumes a thornlamm, the caprathorn regains 21 hit points. When the caprathorn detaches a thornlamm, that thornlamm lands in a space within 10 feet of the caprathorn and takes a turn immediately after the caprathorn. The thornlamm obeys the caprathorn's verbal or telepathic commands (no action for the caprathorn). If issued no commands, the thornlamm acts independently, often attacking a creature that isn't its ally. A thornlamm can survive indefinitely detached from a caprathorn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The caprathorn makes three attacks, one with its gore, one with its stomp, and one with its thorns."
+      ]
+    },
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +14 to hit, reach 10 ft., one target. 25 (4d8 + 7 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Stomp",
+      "entries": [
+        "Melee atk +14 to hit, reach 10 ft., one target. 25 (4d8 + 7 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Thorns",
+      "entries": [
+        "Melee/Ranged atk +14 to hit, reach 10 ft. or range 30/120 ft., one target. 21 (4d6 + 7 damage) piercing damage. Being within 5 feet of a hostile creature doesn't cause the caprathorn to have disadvantage on the ranged attack roll."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "The caprathorn makes one attack with its gore, stomp, or thorns."
+      ]
+    },
+    {
+      "name": "Detach Thornlamm",
+      "entries": [
+        "The caprathorn detaches a thornlamm as per the Thornlamms trait."
+      ]
+    },
+    {
+      "name": "Grow Thornlamm",
+      "entries": [
+        "Provided it has taken no damage from a silvered weapon this round, the caprathorn grows one thornlamm as per the Thornlamms trait. A caprathorn can have up to six attached thornlamms at a time."
+      ]
+    },
+    {
+      "name": "Consume Thornlamm (Costs 2 Actions)",
+      "entries": [
+        "The caprathorn consumes an attached thornlamm, regaining 21 hit points."
+      ]
+    },
+    {
+      "name": "Entomb (Costs 2 Actions)",
+      "entries": [
+        "The caprathorn chooses a creature that has 0 hit points that the caprathorn can see within 30 feet of it. The target must make a {@dc 18} Wisdom saving throw. On a success, the target is immune to this effect for 24 hours. If the save fails, the target is entombed deep within the earth in a sphere of magical force that is just large enough to contain the target. Nothing can pass through the sphere, nor can any creature teleport or use planar travel to get into or out of it. A caprathorn can entomb only one target at a time. This effect ends, returning the target to where it was before being entombed, if the target regains any hit points or the caprathorn dies."
+      ]
+    },
+    {
+      "name": "Annihilation Field (Costs 3 Actions; Recharges if an Entombed Creature Dies or after a Long Rest)",
+      "entries": [
+        "A sphere of energy ripples out in a 30-foot-radius from the caprathorn. Each creature in that area must make a {@dc 18} Constitution saving throw, taking 38 ({@damage 7d10}) force damage on a failed save, or half a s much damage on a successful one. For objects that aren't worn or carried, this emanation destroys Small and smaller ones and damages larger ones. The circle destroys a wall of force or similar structures of force in the area instantly. A creature or object is disintegrated if it drops to 0 hit points due to this magic. A disintegrated creature or object turns to fine ash, and nonmagical objects a disintegrated creature wears or carries disintegrate with it."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

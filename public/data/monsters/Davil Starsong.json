@@ -1,0 +1,143 @@
+{
+  "name": "Davil Starsong",
+  "source": "WDH",
+  "page": 199,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 16,
+  "wis": 12,
+  "cha": 17,
+  "skills": {
+    "arcana": "+6",
+    "history": "+6",
+    "insight": "+4",
+    "perception": "+4",
+    "performance": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Elvish"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Davil has advantage on saving throws against being {@condition charmed}, and magic can't put him to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage. Or Ranged Weapon Attack: +5 to hit, range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Davil is a 12th-level spellcaster. His spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks) He has the following bard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "mending",
+            "minor illusion",
+            "vicious mockery"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "disguise self",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": [
+            "crown of madness",
+            "invisibility",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "nondetection",
+            "sending",
+            "tongues"
+          ]
+        },
+        "4": {
+          "spells": [
+            "compulsion",
+            "freedom of movement",
+            "polymorph"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dominate person",
+            "greater restoration"
+          ]
+        },
+        "6": {
+          "spells": [
+            "Otto's irresistible dance"
+          ]
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

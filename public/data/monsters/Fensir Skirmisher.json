@@ -1,0 +1,134 @@
+{
+  "name": "Fensir Skirmisher",
+  "source": "BGG",
+  "page": 135,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 94,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 20,
+  "int": 14,
+  "wis": 11,
+  "cha": 12,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The fensir regains 10 hit points at the start of its turn if it isn't in sunlight. If the fensir takes acid or fire damage, this trait doesn't function at the start of the fensir's next turn. The fensir dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    },
+    {
+      "name": "Sunlight Hypersensitivity",
+      "entries": [
+        "When the fensir starts its turn in sunlight, it must succeed on a {@dc 15} Constitution saving throw or have the {@condition petrified} condition until the fensir is no longer in sunlight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The fensir makes three Battleaxe attacks or two Magic Stone attacks."
+      ]
+    },
+    {
+      "name": "Battleaxe",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) slashing damage, or 15 (2d10 + 4 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Magic Stone",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 60 ft., one target. 15 (2d12 + 2 damage) bludgeoning damage. If the target is a Large or smaller creature, it must succeed on a DC 13 Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Mud to Stone {@recharge}",
+      "entries": [
+        "The fensir lobs a magical mass of mud that splashes all creatures in a 30-foot-radius sphere centered on a point the fensir can see within 60 feet of itself. Each non-fensir creature in that area must succeed on a DC 13 Dexterity saving throw or take 13 (3d8 damage) bludgeoning damage and have the {@condition restrained} condition as the mud begins to turn to stone. An affected creature must repeat the saving throw at the end of its next turn. On a successful save, the effect ends on the creature. On a failed save, the creature has the {@condition petrified} condition for 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The fensir casts one of the following spells, using Intelligence as the spellcasting ability:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

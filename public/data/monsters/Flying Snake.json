@@ -1,0 +1,67 @@
+{
+  "name": "Flying Snake",
+  "source": "MM",
+  "page": 322,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 30,
+    "fly": 60,
+    "swim": 30
+  },
+  "str": 4,
+  "dex": 18,
+  "con": 11,
+  "int": 2,
+  "wis": 12,
+  "cha": 5,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The snake doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 1 piercing damage plus 7 (3d4 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft."
+  ],
+  "environment": [
+    "grassland",
+    "forest",
+    "urban",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

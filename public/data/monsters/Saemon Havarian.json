@@ -1,0 +1,160 @@
+{
+  "name": "Saemon Havarian",
+  "source": "MaBJoV",
+  "page": 122,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 91,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 18,
+  "con": 14,
+  "int": 18,
+  "wis": 11,
+  "cha": 14,
+  "skills": {
+    "athletics": "+8",
+    "deception": "+6",
+    "intimidation": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Infernal",
+    "Undercommon"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magical Equipment",
+      "entries": [
+        "Saemon wears a quiver of ehlonna."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Saemon makes three melee or ranged attacks."
+      ]
+    },
+    {
+      "name": "Handaxe",
+      "entries": [
+        "Melee/Ranged atk +8 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Weapon Attack",
+      "entries": [
+        "Saemon makes a weapon attack."
+      ]
+    },
+    {
+      "name": "Cantrip",
+      "entries": [
+        "Saemon casts a cantrip from his spell list."
+      ]
+    },
+    {
+      "name": "Animate Objects (Costs 3 Actions)",
+      "entries": [
+        "Saemon casts the spell animate objects, targeting hand axes that he has hurled at enemies up to a total of 10. If there are not enough hand axes to equal 10, then he provides the remaining hand axes from his quiver of ehlonna. The hand axes are considered tiny objects."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Saemon is a 9th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). Saemon has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "misty step",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "fly"
+          ]
+        },
+        "4": {
+          "spells": [
+            "greater invisibility",
+            "ice storm"
+          ]
+        },
+        "5": {
+          "spells": [
+            "animate objects"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

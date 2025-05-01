@@ -1,0 +1,134 @@
+{
+  "name": "Nilbog",
+  "source": "VGM",
+  "page": 182,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 7,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 10,
+  "int": 10,
+  "wis": 8,
+  "cha": 15,
+  "skills": {
+    "stealth": "+6"
+  },
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Nilbogism",
+      "entries": [
+        "Any creature that attempts to damage the nilbog must first succeed on a {@dc 12} Charisma saving throw or be {@condition charmed} until the end of the creature's next turn. A creature {@condition charmed} in this way must use its action praising the nilbog. The nilbog can't regain hit points, including through magical healing, except through its Reversal of Fortune reaction."
+      ]
+    },
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "The nilbog can take the Disengage or Hide action as a bonus action on each of its turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fool's Scepter",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 80/320 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The nilbog's innate spellcasting ability is Charisma (spell save {@dc 12}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "mage hand",
+        "Tasha's hideous laughter",
+        "vicious mockery"
+      ],
+      "daily": {
+        "1": [
+          "confusion"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

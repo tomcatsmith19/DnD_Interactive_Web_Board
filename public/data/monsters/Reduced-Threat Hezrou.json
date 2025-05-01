@@ -1,0 +1,95 @@
+{
+  "name": "Reduced-Threat Hezrou",
+  "source": "TftYP",
+  "page": 113,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 17,
+  "con": 20,
+  "int": 5,
+  "wis": 12,
+  "cha": 13,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The hezrou has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Stench",
+      "entries": [
+        "Any creature that starts its turn within 10 feet of the hezrou must succeed on a {@dc 14} Constitution saving throw or be {@condition poisoned} until the start of its next turn. On a successful saving throw, the creature is immune to the hezrou's stench for 24 hours."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hezrou makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 15 (2d10 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

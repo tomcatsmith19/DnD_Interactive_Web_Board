@@ -1,0 +1,143 @@
+{
+  "name": "Rahadin",
+  "source": "CoS",
+  "page": 237,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 135,
+  "speed": {
+    "walk": 35
+  },
+  "str": 14,
+  "dex": 22,
+  "con": 17,
+  "int": 15,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "deception": "+8",
+    "insight": "+7",
+    "intimidation": "+12",
+    "perception": "+11",
+    "stealth": "+14"
+  },
+  "passive": 21,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Deathly Choir",
+      "entries": [
+        "Any creature within 10 feet of Rahadin that isn't protected by a {@spell mind blank} spell hears in its mind the screams of the thousands of people Rahadin has killed. As a bonus action, Rahadin can force all creatures that can hear the screams to make a {@dc 16} Wisdom saving throw. Each creature takes 16 ({@damage 3d10}) psychic damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Rahadin has advantage on saving throws against being {@condition charmed}, and magic can't put him to sleep."
+      ]
+    },
+    {
+      "name": "Mask of the Wild",
+      "entries": [
+        "Rahadin can attempt to hide even when he is only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Rahadin attacks three times with his scimitar, or twice with his {@condition poisoned} darts."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 9 (1d6 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Poisoned Dart",
+      "entries": [
+        "Ranged atk +10 to hit, range 20/60 ft., one target. 8 (1d4 + 6 damage) piercing damage plus 5 (2d4 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Rahadin's innate spellcasting ability is Intelligence. He can innately cast the following spells, requiring no components:"
+      ],
+      "daily": {
+        "1": [
+          "magic weapon",
+          "nondetection"
+        ]
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

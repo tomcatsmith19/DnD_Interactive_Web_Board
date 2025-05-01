@@ -1,0 +1,152 @@
+{
+  "name": "Bol'bara",
+  "source": "EGW",
+  "page": 261,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    {
+      "alignment": [
+        "C",
+        "G"
+      ],
+      "note": "chaotic evil when fully possessed"
+    }
+  ],
+  "ac": [
+    "13",
+    "15"
+  ],
+  "hp": 40,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 12,
+  "int": 10,
+  "wis": 13,
+  "cha": 14,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dark One's Blessing",
+      "entries": [
+        "When Bol'bara reduces a hostile creature to 0 hit points, she gains 6 temporary hit points."
+      ]
+    },
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "Bol'bara can take the Disengage or Hide action as a bonus action on each of her turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Bol'bara makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Eldritch Blast (Cantrip)",
+      "entries": [
+        "Ranged Spell atk +4 to hit, range 120 ft., one creature. 7 (1d10 + 2 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Incorporeal Dash",
+      "entries": [
+        "Bol'bara moves up to her speed. She can move through other creatures and objects as if they were {@quickref difficult terrain||3}. She takes 5 ({@damage 1d10}) force damage if she ends her turn inside an object."
+      ]
+    },
+    {
+      "name": "Zone of Calamity (Costs 2 Actions)",
+      "entries": [
+        "A 15-foot-radius sphere of magical confusion extends from a point Bol'bara can see within 60 feet of her and spreads around corners. Each creature that starts its turn in that area is treated as if targeted by the {@spell confusion} spell (save {@dc 12}). The sphere lasts as long as Bol'bara maintains {@status concentration}, up to 1 minute (as if {@status concentration||concentrating} on a spell)."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Bol'bara's innate spellcasting ability is Charisma (spell save {@dc 12}, {@hit 4} to hit with spell attacks). She can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "eldritch blast",
+        "false life",
+        "mage armor",
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

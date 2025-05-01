@@ -1,0 +1,151 @@
+{
+  "name": "Soluun Xibrindas",
+  "source": "WDH",
+  "page": 202,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 18,
+  "con": 14,
+  "int": 11,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+8"
+  },
+  "passive": 13,
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Soluun has advantage on saving throws against being {@condition charmed}, and magic can't put Soluun to sleep."
+      ]
+    },
+    {
+      "name": "Gunslinger",
+      "entries": [
+        "Being within 5 feet of a hostile creature or attacking at long range doesn't impose disadvantage on Soluun's ranged attack rolls with a pistol. In addition, Soluun ignores half cover and three-quarters cover when making ranged attacks with a pistol."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, Soluun has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Equipment",
+      "entries": [
+        "Four packets of smokepowder and a pouch containing 20 pistol bullets"
+      ]
+    },
+    {
+      "name": "Boots of Elvenkind",
+      "entries": [
+        "Whilst wearing these boots Soluun's steps make no sound and he has advantage on any Dexterity (Stealth) checks that rely on moving silently."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Soluun makes two scimitar attacks."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Poisonous Pistol",
+      "entries": [
+        "Ranged atk +6 to hit, range 30/90 ft., one target. 9 (1d10 + 4 damage) piercing damage plus 11 (2d10 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Soluun's spellcasting ability is Charisma. It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "dancing lights"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

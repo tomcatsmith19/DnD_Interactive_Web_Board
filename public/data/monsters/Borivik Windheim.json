@@ -1,0 +1,150 @@
+{
+  "name": "Borivik Windheim",
+  "source": "MaBJoV",
+  "page": 56,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 91,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 20,
+  "con": 14,
+  "int": 11,
+  "wis": 16,
+  "cha": 11,
+  "skills": {
+    "nature": "+8",
+    "perception": "+11",
+    "stealth": "+13",
+    "survival": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Bolts of Undead Slaying",
+      "entries": [
+        "Borivik has a half-dozen bolts of undead slaying. If he strikes an undead with one of these bolts, it must make a {@dc 17} Constitution saving throw, taking an extra {@damage 6d10} piercing damage on a failed save, or half as much extra damage on a successful one."
+      ]
+    },
+    {
+      "name": "Crossbow Expert",
+      "entries": [
+        "As a bonus action, Borivik can add {@dice 1d10} to his next attack or damage roll with a crossbow."
+      ]
+    },
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "Borivik can take the Disengage or Hide action as a bonus action on each of his turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Borivik makes two melee attacks or two ranged attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +9 to hit, ranged 100/400 ft., one target. 10 (1d10 + 5 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Borivik is a 11th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Borivik has the following ranger spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "absorb elements|XGE",
+            "ensnaring strike",
+            "speak with animals"
+          ]
+        },
+        "2": {
+          "spells": [
+            "cordon of arrows",
+            "lesser restoration",
+            "pass without trace"
+          ]
+        },
+        "3": {
+          "spells": [
+            "daylight",
+            "nondetection"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Snapjaw",
+  "source": "GHLoE",
+  "page": 36,
+  "size": [
+    "G"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 170,
+  "speed": {
+    "walk": 30,
+    "swim": 50
+  },
+  "str": 21,
+  "dex": 9,
+  "con": 17,
+  "int": 10,
+  "wis": 10,
+  "cha": 7,
+  "skills": {
+    "stealth": "+5"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "Snapjaw can hold its breath for 30 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Snapjaw makes three attacks: two with its bite and one with its tail."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 31 (3d10 + 15 damage) piercing damage, and the target is {@condition grappled} (escape DC 16). Until this grapple ends, the target is {@condition restrained}, and Snapjaw can't bite another target."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target not {@condition grappled} by Snapjaw. 24 (2d8 + 15 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 16 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

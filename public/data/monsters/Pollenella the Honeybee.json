@@ -1,0 +1,52 @@
+{
+  "name": "Pollenella the Honeybee",
+  "source": "WBtW",
+  "page": 135,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 5,
+    "fly": 30
+  },
+  "str": 1,
+  "dex": 16,
+  "con": 8,
+  "int": 1,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Sting",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 3 piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

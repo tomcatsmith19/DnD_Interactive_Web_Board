@@ -1,0 +1,116 @@
+{
+  "name": "White Abishai",
+  "source": "MTF",
+  "page": 163,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 68,
+  "speed": {
+    "walk": 30,
+    "fly": 40
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 18,
+  "int": 11,
+  "wis": 12,
+  "cha": 13,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Draconic",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the abishai's darkvision."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The abishai has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The abishai's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Reckless",
+      "entries": [
+        "At the start of its turn, the abishai can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The abishai makes two attacks: one with its longsword and one with its claw."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d10 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) piercing damage plus 3 (1d6 damage) cold damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

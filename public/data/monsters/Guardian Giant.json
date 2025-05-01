@@ -1,0 +1,71 @@
+{
+  "name": "Guardian Giant",
+  "source": "GGR",
+  "page": 201,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 137,
+  "speed": {
+    "walk": 40
+  },
+  "str": 24,
+  "dex": 17,
+  "con": 22,
+  "int": 10,
+  "wis": 18,
+  "cha": 12,
+  "skills": {
+    "insight": "+7",
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Vigilant",
+      "entries": [
+        "The giant can't be {@quickref Surprise|PHB|3|0|surprised}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes three spear attacks."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +10 to hit, reach 10 ft. or range 60/240 ft., one target. 17 (3d6 + 7 damage) piercing damage, or 20 (3d8 + 7 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

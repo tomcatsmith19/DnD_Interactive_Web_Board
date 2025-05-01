@@ -1,0 +1,68 @@
+{
+  "name": "Tribal Warrior Spore Servant",
+  "source": "IDRotF",
+  "page": 52,
+  "size": [
+    "M"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 20
+  },
+  "str": 13,
+  "dex": 11,
+  "con": 12,
+  "int": 2,
+  "wis": 6,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": null,
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": null,
+  "actions": [
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d6 + 1 damage) piercing damage, or 5 (1d8 + 1 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "paralyzed"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft. (blind beyond this radius)"
+  ],
+  "environment": [
+    "coastal",
+    "mountain",
+    "grassland",
+    "hill",
+    "arctic",
+    "forest",
+    "swamp",
+    "underdark",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

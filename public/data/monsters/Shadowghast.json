@@ -1,0 +1,90 @@
+{
+  "name": "Shadowghast",
+  "source": "EGW",
+  "page": 299,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 49,
+  "speed": {
+    "walk": 35
+  },
+  "str": 14,
+  "dex": 20,
+  "con": 12,
+  "int": 12,
+  "wis": 11,
+  "cha": 8,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+8"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Stench",
+      "entries": [
+        "Any creature that starts its turn within 5 feet of the shadowghast must succeed on a {@dc 12} Constitution saving throw or be {@condition poisoned} until the start of its next turn. On a successful saving throw, the creature is immune to this Stench for 24 hours."
+      ]
+    },
+    {
+      "name": "Shadow Stealth",
+      "entries": [
+        "While in dim light or darkness, the shadowghast can take the Hide action as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The shadowghast makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one creature. 11 (2d8 + 2 damage) slashing damage plus 5 (1d10 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 12 Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

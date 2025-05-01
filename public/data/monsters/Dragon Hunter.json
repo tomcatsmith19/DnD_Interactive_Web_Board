@@ -1,0 +1,85 @@
+{
+  "name": "Dragon Hunter",
+  "source": "JttRC",
+  "page": 138,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 13,
+  "con": 14,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "athletics": "+5",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon hunter makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +3 to hit, range 100/400 ft., one target. 6 (1d10 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "coastal",
+    "mountain",
+    "grassland",
+    "hill",
+    "arctic",
+    "urban",
+    "forest",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

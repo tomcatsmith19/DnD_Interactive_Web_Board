@@ -1,0 +1,73 @@
+{
+  "name": "Blink Dog",
+  "source": "MM",
+  "page": 318,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 40
+  },
+  "str": 12,
+  "dex": 17,
+  "con": 12,
+  "int": 10,
+  "wis": 13,
+  "cha": 11,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Blink Dog",
+    "understands Sylvan but can't speak it"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The dog has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Teleport {@recharge 4}",
+      "entries": [
+        "The dog magically teleports, along with any equipment it is wearing or carrying, up to 40 feet to an unoccupied space it can see. Before or after teleporting, the dog can make one bite attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

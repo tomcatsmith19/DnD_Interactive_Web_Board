@@ -1,0 +1,88 @@
+{
+  "name": "Martial Arts Adept",
+  "source": "VGM",
+  "page": 216,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 40
+  },
+  "str": 11,
+  "dex": 17,
+  "con": 13,
+  "int": 11,
+  "wis": 16,
+  "cha": 10,
+  "skills": {
+    "acrobatics": "+5",
+    "insight": "+5",
+    "stealth": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the adept is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The adept makes three unarmed strikes or three dart attacks."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) bludgeoning damage. If the target is a creature, the adept can choose one of the following additional effects:",
+        {
+          "type": "list",
+          "items": [
+            "The target must succeed on a {@dc 13} Strength saving throw or drop one item it is holding (adept's choice).",
+            "The target must succeed on a {@dc 13} Dexterity saving throw or be knocked {@condition prone}.",
+            "The target must succeed on a {@dc 13} Constitution saving throw or be {@condition stunned} until the end of the adept's next turn."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dart",
+      "entries": [
+        "Ranged atk +5 to hit, range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,85 @@
+{
+  "name": "Avatar of Death",
+  "source": "DMG",
+  "page": 164,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 60,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 16,
+  "int": 16,
+  "wis": 16,
+  "cha": 16,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "all languages known to its summoner"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The avatar can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    },
+    {
+      "name": "Turn Immunity",
+      "entries": [
+        "The avatar is immune to features that turn undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Reaping Scythe",
+      "entries": [
+        "The avatar sweeps its spectral scythe through a creature within 5 feet of it, dealing 7 (1d8 + 3 damage) slashing damage plus 4 (1d8 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft.",
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

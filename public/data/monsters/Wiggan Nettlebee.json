@@ -1,0 +1,134 @@
+{
+  "name": "Wiggan Nettlebee",
+  "source": "PotA",
+  "page": 212,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "halfling"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11",
+    "16"
+  ],
+  "hp": 36,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 12,
+  "con": 12,
+  "int": 14,
+  "wis": 15,
+  "cha": 13,
+  "skills": {
+    "deception": "+3",
+    "insight": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Halfling"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Brave Devotion",
+      "entries": [
+        "Wiggan has advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Wiggan makes two attacks with his wooden cane."
+      ]
+    },
+    {
+      "name": "Wooden Cane",
+      "entries": [
+        "Melee atk +0 to hit (+4 to hit with shillelagh), reach 5 ft., one target. 1 (1d4 - 1 damage) bludgeoning damage, or 6 (1d8 + 2 damage) bludgeoning damage with shillelagh."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Wiggan is a 4th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). He has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "light",
+            "mending",
+            "shillelagh",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "animal friendship",
+            "cure wounds",
+            "healing word",
+            "inflict wounds",
+            "speak with animals"
+          ]
+        },
+        "2": {
+          "spells": [
+            "barkskin",
+            "spike growth",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

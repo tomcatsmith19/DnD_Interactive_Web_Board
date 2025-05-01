@@ -1,0 +1,145 @@
+{
+  "name": "Turlang",
+  "source": "SKT",
+  "page": 107,
+  "size": [
+    "H"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 200,
+  "speed": {
+    "walk": 30
+  },
+  "str": 23,
+  "dex": 8,
+  "con": 21,
+  "int": 12,
+  "wis": 16,
+  "cha": 12,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Druidic",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While Turlang remains motionless, it is indistinguishable from a normal tree."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The treant deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The treant makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 16 (3d6 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +10 to hit, range 60/180 ft., one target. 28 (4d10 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Animate Trees (1/Day)",
+      "entries": [
+        "The treant magically animates one or two trees it can see within 60 feet of it. These trees have the same statistics as a {@creature treant}, except they have Intelligence and Charisma scores of 1, they can't speak, and they have only the Slam action option. An animated tree acts as an ally of Turlang. The tree remains animate for 1 day or until it dies; until Turlang dies or is more than 120 feet from the tree; or until Turlang takes a bonus action to turn it back into an inanimate tree. The tree then takes root if possible."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Turlang casts one of the following spells, requiring no material spell components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "druidcraft",
+        "guidance",
+        "resistance",
+        "speak with plants"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

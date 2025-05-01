@@ -1,0 +1,84 @@
+{
+  "name": "Dragonbait",
+  "source": "ToA",
+  "page": 218,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "saurial"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 120,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 13,
+  "con": 17,
+  "int": 14,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "athletics": "+5",
+    "medicine": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Divine Health",
+      "entries": [
+        "Dragonbait is immune to disease."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "While holding his {@item holy avenger longsword}, Dragonbait creates an aura in a 10-foot radius around him. While this aura is active, Dragonbait and all creatures friendly to him in the aura have advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Dragonbait makes two melee weapon attacks."
+      ]
+    },
+    {
+      "name": "Holy Avenger (+3 Longsword)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) slashing damage, or 10 (1d10 + 5 damage) slashing damage when used with two hands. If the target is a fiend or an undead it takes an extra 11 (2d10 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Sense Alignment",
+      "entries": [
+        "Dragonbait chooses one creature he can see within 60 feet of him and determines its alignment, as long as the creature isn't hidden from divination magic by a spell or other magical effect."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

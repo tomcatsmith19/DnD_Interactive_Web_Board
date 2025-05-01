@@ -1,0 +1,93 @@
+{
+  "name": "Chitine",
+  "source": "VGM",
+  "page": 131,
+  "size": [
+    "S"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 7,
+  "skills": {
+    "athletics": "+4",
+    "stealth": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Undercommon"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The chitine has advantage on saving throws against being {@condition charmed}, and magic can't put the chitine to sleep."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the chitine has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Web Sense",
+      "entries": [
+        "While in contact with a web, the chitine knows the exact location of any other creature in contact with the same web."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": [
+        "The chitine ignores movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The chitine makes three attacks with its daggers."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

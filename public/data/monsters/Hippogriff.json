@@ -1,0 +1,77 @@
+{
+  "name": "Hippogriff",
+  "source": "MM",
+  "page": 184,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 40,
+    "fly": 60
+  },
+  "str": 17,
+  "dex": 13,
+  "con": 13,
+  "int": 2,
+  "wis": 12,
+  "cha": 8,
+  "skills": {
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The hippogriff has advantage on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hippogriff makes two attacks: one with its beak and one with its claws."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (1d10 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "mountain",
+    "grassland",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

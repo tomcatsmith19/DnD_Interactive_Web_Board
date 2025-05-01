@@ -1,0 +1,134 @@
+{
+  "name": "Gloom Weaver",
+  "source": "MTF",
+  "page": 224,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "14",
+    "17"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 18,
+  "con": 14,
+  "int": 15,
+  "wis": 12,
+  "cha": 18,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Burden of Time",
+      "entries": [
+        "Beasts and humanoids, other than shadar-kai, have disadvantage on saving throws while within 10 feet of the gloom weaver."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The gloom weaver has advantage on saving throws against being {@condition charmed}, and magic can't put it to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gloom weaver makes two spear attacks and casts one spell that takes 1 action to cast."
+      ]
+    },
+    {
+      "name": "Shadow Spear",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage plus 26 (4d12 damage) necrotic damage, or 8 (1d8 + 4 damage) piercing damage plus 26 (4d12 damage) necrotic damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The gloom weaver's innate spellcasting ability is Charisma (spell save {@dc 16}, {@hit 8} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "arcane eye",
+        "mage armor",
+        "speak with dead"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

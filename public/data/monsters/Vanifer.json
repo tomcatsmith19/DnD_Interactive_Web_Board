@@ -1,0 +1,155 @@
+{
+  "name": "Vanifer",
+  "source": "PotA",
+  "page": 203,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "tiefling"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 17,
+  "int": 12,
+  "wis": 13,
+  "cha": 19,
+  "skills": {
+    "arcana": "+5",
+    "deception": "+8",
+    "performance": "+8"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Ignan",
+    "Infernal"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Funeral Pyre",
+      "entries": [
+        "When Vanifer drops to 0 hit points, her body is consumed in a flash of fire and smoke. Anything she was wearing or carrying is left behind among ashes."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "If Vanifer fails a saving throw, she can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Vanifer makes two attacks."
+      ]
+    },
+    {
+      "name": "Tinderstrike",
+      "entries": [
+        "Melee/Ranged atk +9 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d4 + 5 damage) piercing damage plus 7 (2d6 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Vanifer is a 10th-level spellcaster. Her spellcasting ability is Charisma (spell save {@dc 16}, {@hit 8} to hit with spell attacks). Vanifer knows the following sorcerer spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "fire bolt",
+            "friends",
+            "mage hand",
+            "message",
+            "produce flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "burning hands",
+            "chromatic orb",
+            "hellish rebuke",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "darkness",
+            "detect thoughts",
+            "misty step",
+            "scorching ray"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "hypnotic pattern"
+          ]
+        },
+        "4": {
+          "spells": [
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dominate person"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

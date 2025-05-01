@@ -1,0 +1,84 @@
+{
+  "name": "Girallon",
+  "source": "VGM",
+  "page": 152,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 18,
+  "dex": 16,
+  "con": 16,
+  "int": 5,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+5"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, the girallon can move up to its speed toward a hostile creature that it can see."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The girallon has advantage on Wisdom (Perception) checks that rely on smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The girallon makes five attacks: one with its bite and four with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit. reach 10 ft., one target. 7 (1d6 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Amidor the Dandelion",
+  "source": "WBtW",
+  "page": 135,
+  "size": [
+    "S"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 28,
+  "speed": {
+    "walk": 30
+  },
+  "str": 6,
+  "dex": 15,
+  "con": 10,
+  "int": 13,
+  "wis": 12,
+  "cha": 17,
+  "skills": {
+    "perception": "+3",
+    "persuasion": "+5",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Speak with Beasts and Plants",
+      "entries": [
+        "Amidor can communicate with Beasts and Plants as if it shared a language with them."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Seed Sling",
+      "entries": [
+        "Ranged atk +4 to hit, range 30/120 ft., one target. 4 (1d4 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

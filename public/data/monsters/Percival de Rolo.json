@@ -1,0 +1,148 @@
+{
+  "name": "Percival de Rolo",
+  "source": "TDCSR",
+  "page": 266,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [],
+  "ac": [
+    "18"
+  ],
+  "hp": 190,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 22,
+  "con": 14,
+  "int": 20,
+  "wis": 16,
+  "cha": 14,
+  "skills": {
+    "acrobatics": "+12",
+    "history": "+11",
+    "perception": "+9",
+    "persuasion": "+8"
+  },
+  "passive": 19,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Action Surge (2/{@quickref resting|PHB|2|0|Short Rest})",
+      "entries": [
+        "Once on his turn, Percy can take one additional action."
+      ]
+    },
+    {
+      "name": "Cabal's Ruin",
+      "entries": [
+        "{@item Cabal's Ruin (Exalted)|TDCSR|Cabal's Ruin} grants Percy {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against spells or magical effects. Additionally, {@item Cabal's Ruin (Exalted)|TDCSR|Cabal's Ruin} has 10 charges. When Percy hits with a weapon attack, he can expend up to 10 charges to have the attack deal {@dice 1d6} extra lightning damage per charge spent."
+      ]
+    },
+    {
+      "name": "Indomitable (3/{@quickref resting|PHB|2|0|Long Rest})",
+      "entries": [
+        "Percy can reroll a failed {@quickref saving throws|PHB|2|1|saving throw}."
+      ]
+    },
+    {
+      "name": "Misfire",
+      "entries": [
+        "When Percy rolls a 2 or lower on the {@dice d20} when making an attack with Animus or Bad News, the attack misses and he can't use the weapon again until he spends an action to repair it. On a misfire with Animus, he takes 7 ({@damage 2d6}) psychic damage."
+      ]
+    },
+    {
+      "name": "No Mercy",
+      "entries": [
+        "Percy's weapon attacks score a critical hit on a roll of 19-20."
+      ]
+    },
+    {
+      "name": "Ranged Master",
+      "entries": [
+        "Percy's ranged weapon attacks have a +2 bonus to hit (included in attacks), ignore {@quickref cover|PHB|3|0|half cover} and {@quickref cover|PHB|3|0|three-quarters cover}, and have no range penalty. Additionally, Percy can take a \u00e2\u02c6\u20195 penalty to any ranged attack roll to gain a +10 bonus to the damage roll."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Percy wears a {@item ring of lightning resistance} and {@item Cabal's Ruin (Exalted)|TDCSR|Cabal's Ruin}. He wields Animus and Bad News, which are both +1 weapons."
+      ]
+    },
+    {
+      "name": "Quick Draw",
+      "entries": [
+        "Percy adds his proficiency bonus to initiative rolls, giving him a +12 to initiative rolls."
+      ]
+    },
+    {
+      "name": "Toughness",
+      "entries": [
+        "Percy has an additional 40 hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Percy makes four ranged attacks with Animus, or two ranged attacks with Bad News. When Percy hits with an attack with either weapon, he can choose one of the following additional effects:",
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "item",
+              "name": "Deadeye",
+              "entries": [
+                "Percy gains {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on his next attack roll this turn made against the same target."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "Disarm",
+              "entries": [
+                "The target must make a {@dc 20} Strength {@quickref saving throws|PHB|2|1|saving throw}. On a failure, the target drops one item it is holding of Percy's choice."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Animus",
+      "entries": [
+        "Ranged atk +15 to hit, range 320 ft., one target. 11 (1d10 + 6 damage) piercing damage and 3 (1d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Bad News",
+      "entries": [
+        "Ranged atk +15 to hit, range 800 ft., one target. 19 (2d12 + 6 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

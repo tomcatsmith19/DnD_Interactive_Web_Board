@@ -1,0 +1,75 @@
+{
+  "name": "Myconid Sprout",
+  "source": "MM",
+  "page": 230,
+  "size": [
+    "S"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 7,
+  "speed": {
+    "walk": 10
+  },
+  "str": 8,
+  "dex": 10,
+  "con": 10,
+  "int": 8,
+  "wis": 11,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Distress Spores",
+      "entries": [
+        "When the myconid takes damage, all other myconids within 240 feet of it can sense its pain."
+      ]
+    },
+    {
+      "name": "Sun Sickness",
+      "entries": [
+        "While in sunlight, the myconid has disadvantage on ability checks, attack rolls, and saving throws. The myconid dies if it spends more than 1 hour in direct sunlight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +1 to hit, reach 5 ft., one target. 1 (1d4 - 1 damage) bludgeoning damage plus 2 (1d4 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Rapport Spores (3/Day)",
+      "entries": [
+        "A 10-foot radius of spores extends from the myconid. These spores can go around corners and affect only creatures with an Intelligence of 2 or higher that aren't undead, constructs, or elementals. Affected creatures can communicate telepathically with one another while they are within 30 feet of each other. The effect lasts for 1 hour."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

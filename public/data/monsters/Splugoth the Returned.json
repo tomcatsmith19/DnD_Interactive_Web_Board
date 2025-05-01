@@ -1,0 +1,94 @@
+{
+  "name": "Splugoth the Returned",
+  "source": "AI",
+  "page": 213,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 14,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "stealth": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Elvish",
+    "Goblin"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Defensive Advantage",
+      "entries": [
+        "As long as two or more of Splugoth's allies are within 5 feet of him and are not {@condition incapacitated}, attack rolls against him are made with disadvantage."
+      ]
+    },
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "Splugoth can take the Disengage or Hide action as a bonus action on each of his turns."
+      ]
+    },
+    {
+      "name": "Touch of Madness",
+      "entries": [
+        "Splugoth has advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Splugoth makes two attacks with his dagger."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Word From Beyond (1/Day)",
+      "entries": [
+        "Splugoth remembers and repeats aloud a few words from a place he entered while walking back from the next world to this one. Each creature of his choice within 30 feet of him that can hear him must succeed on a DC 12 Wisdom saving throw or be {@condition stunned} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

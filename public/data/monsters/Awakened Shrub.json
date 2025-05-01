@@ -1,0 +1,66 @@
+{
+  "name": "Awakened Shrub",
+  "source": "MM",
+  "page": 317,
+  "size": [
+    "S"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "9"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 20
+  },
+  "str": 3,
+  "dex": 8,
+  "con": 11,
+  "int": 10,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "one language known by its creator"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the shrub remains motionless, it is indistinguishable from a normal shrub."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Rake",
+      "entries": [
+        "Melee atk +1 to hit, reach 5 ft., one target. 1 (1d4 - 1 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "piercing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

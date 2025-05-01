@@ -1,0 +1,76 @@
+{
+  "name": "Harengon Brigand",
+  "source": "WBtW",
+  "page": 235,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 17,
+  "con": 11,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "acrobatics": "+5",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The harengon has advantage on an attack roll against a creature if at least one of the harengon's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The harengon's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Sling",
+      "entries": [
+        "Ranged atk +5 to hit, range 30/120 ft., one target. 5 (1d4 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

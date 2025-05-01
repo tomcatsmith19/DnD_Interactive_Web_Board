@@ -1,0 +1,96 @@
+{
+  "name": "Entropic Flame",
+  "source": "DoDk",
+  "page": 204,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 17,
+  "con": 13,
+  "int": 5,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Deep Speech"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fire Form",
+      "entries": [
+        "The entropic flame can move through a space as narrow as 1 inch wide without squeezing. A creature that touches the flame or hits it with a melee attack while within 5 feet of it takes 5 ({@damage 1d10}) fire damage. In addition, the flame can enter a hostile creature's space and stop there. The first time it enters a creature's space on a turn, that creature takes 5 ({@damage 1d10}) fire damage and catches fire; until someone takes an action to douse the fire, the creature takes 5 ({@damage 1d10}) fire damage at the start of each of its turns."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The entropic flame sheds bright light in a 30-foot radius and dim light for an additional 30 feet."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The entropic flame makes three hurl flame attacks. Before or after making each attack, the entropic flame can teleport up to 10 feet to a space it can see. It may teleport into a space occupied by another creature."
+      ]
+    },
+    {
+      "name": "Hurl Flame",
+      "entries": [
+        "Ranged atk +6 to hit, range 120 ft., one target. 10 (3d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Touch",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 5 (1d10 damage) fire damage at the start of each of its turns."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

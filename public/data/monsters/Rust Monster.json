@@ -1,0 +1,75 @@
+{
+  "name": "Rust Monster",
+  "source": "MM",
+  "page": 262,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 40
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 13,
+  "int": 2,
+  "wis": 13,
+  "cha": 6,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Iron Scent",
+      "entries": [
+        "The rust monster can pinpoint, by scent, the location of ferrous metal within 30 feet of it."
+      ]
+    },
+    {
+      "name": "Rust Metal",
+      "entries": [
+        "Any nonmagical weapon made of metal that hits the rust monster corrodes. After dealing damage, the weapon takes a permanent and cumulative \u00e2\u02c6\u20191 penalty to damage rolls. If its penalty drops to \u00e2\u02c6\u20195, the weapon is destroyed. Non magical ammunition made of metal that hits the rust monster is destroyed after dealing damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Antennae",
+      "entries": [
+        "The rust monster corrodes a nonmagical ferrous metal object it can see within 5 feet of it. If the object isn't being worn or carried, the touch destroys a 1-foot cube of it. If the object is being worn or carried by a creature, the creature can make a DC 11 Dexterity saving throw to avoid the rust monster's touch.",
+        "If the object touched is either metal armor or a metal shield being worn or carried, it takes a permanent and cumulative \u00e2\u02c6\u20191 penalty to the AC it offers. Armor reduced to an AC of 10 or a shield that drops to a +0 bonus is destroyed. If the object touched is a held metal weapon, it rusts as described in the Rust Metal trait."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Parrot",
+  "source": "PSX",
+  "page": 39,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 10,
+    "fly": 50
+  },
+  "str": 2,
+  "dex": 14,
+  "con": 8,
+  "int": 2,
+  "wis": 12,
+  "cha": 6,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mimicry",
+      "entries": [
+        "The parrot can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful {@dc 10} Wisdom (Insight) check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 1 piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "swamp",
+    "hill",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

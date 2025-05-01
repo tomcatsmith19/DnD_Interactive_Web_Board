@@ -1,0 +1,93 @@
+{
+  "name": "Giff",
+  "source": "MTF",
+  "page": 204,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 17,
+  "int": 11,
+  "wis": 12,
+  "cha": 12,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Headfirst Charge",
+      "entries": [
+        "The giff can try to knock a creature over; if the giff moves at least 20 feet in a straight line that ends within 5 feet of a Large or smaller creature, that creature must succeed on a {@dc 14} Strength saving throw or take 7 ({@damage 2d6}) bludgeoning damage and be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Firearms Knowledge",
+      "entries": [
+        "The giff's mastery of its weapons enables it to ignore the loading property of muskets and pistols."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giff makes two pistol attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage, or 9 (1d10 + 4 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Musket",
+      "entries": [
+        "Ranged atk +4 to hit, range 40/120 ft., one target. 8 (1d12 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Pistol",
+      "entries": [
+        "Ranged atk +4 to hit, range 30/90 ft., one target. 7 (1d10 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Fragmentation Grenade (1/Day)",
+      "entries": [
+        "The giff throws a grenade up to 60 feet. Each creature within 20 feet of the grenade's detonation must make a DC 15 Dexterity saving throw, taking 17 (5d6 damage) piercing damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,143 @@
+{
+  "name": "Rath Modar",
+  "source": "HotDQ",
+  "page": 92,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13",
+    "16"
+  ],
+  "hp": 71,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 14,
+  "int": 18,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "arcana": "+7",
+    "deception": "+3",
+    "insight": "+5",
+    "stealth": "+6"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Infernal",
+    "Primordial",
+    "Thayan"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Rath has a {@item staff of fire}, and scrolls of {@spell dimension door}, {@spell feather fall}, and {@spell fireball}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d8 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Rath is an 11th-level spellcaster who uses Intelligence as his spellcasting ability (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Rath has the following spells prepared from the wizard spell list:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "minor illusion",
+            "prestidigitation",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "chromatic orb",
+            "color spray",
+            "mage armor",
+            "magic missile"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "mirror image",
+            "phantasmal force"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "major image"
+          ]
+        },
+        "4": {
+          "spells": [
+            "confusion",
+            "greater invisibility"
+          ]
+        },
+        "5": {
+          "spells": [
+            "mislead",
+            "seeming"
+          ]
+        },
+        "6": {
+          "spells": [
+            "globe of invulnerability"
+          ]
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

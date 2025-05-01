@@ -1,0 +1,85 @@
+{
+  "name": "Goblin Boss",
+  "source": "MM",
+  "page": 166,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 21,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 10,
+  "int": 10,
+  "wis": 8,
+  "cha": 10,
+  "skills": {
+    "stealth": "+6"
+  },
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The goblin makes two attacks with its scimitar. The second attack has disadvantage."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +2 to hit, reach 5 ft. or range 30/120 ft., one target. 3 (1d6 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

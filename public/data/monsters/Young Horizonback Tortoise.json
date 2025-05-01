@@ -1,0 +1,60 @@
+{
+  "name": "Young Horizonback Tortoise",
+  "source": "CRCotN",
+  "page": 26,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 68,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 11,
+  "con": 15,
+  "int": 2,
+  "wis": 12,
+  "cha": 5,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "understands Goblin but can't speak"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The young horizonback tortoise can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 18 (4d6 + 4 damage) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

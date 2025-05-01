@@ -1,0 +1,85 @@
+{
+  "name": "Angry Sorrowsworn",
+  "source": "MPMM",
+  "page": 222,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 255,
+  "speed": {
+    "walk": 30
+  },
+  "str": 17,
+  "dex": 10,
+  "con": 19,
+  "int": 8,
+  "wis": 13,
+  "cha": 6,
+  "skills": {
+    "perception": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "Common"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Two Heads",
+      "entries": [
+        "The sorrowsworn has advantage on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, or knocked {@condition unconscious}."
+      ]
+    },
+    {
+      "name": "Rising Anger",
+      "entries": [
+        "If another creature deals damage to the sorrowsworn, the sorrowsworn's attack rolls have advantage until the end of its next turn, and the first time it hits with a Hook attack on its next turn, the attack's target takes an extra 19 ({@damage 3d12}) psychic damage.",
+        "On its turn, the sorrowsworn has disadvantage on attack rolls if no other creature has dealt damage to it since the end of its last turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The sorrowsworn makes two Hook attacks."
+      ]
+    },
+    {
+      "name": "Hook",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 16 (2d12 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

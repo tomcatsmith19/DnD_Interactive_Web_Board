@@ -1,0 +1,77 @@
+{
+  "name": "Dragon Army Soldier",
+  "source": "DSotDQ",
+  "page": 200,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 12,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 10,
+  "skills": {
+    "athletics": "+4",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Draconic Devotion",
+      "entries": [
+        "While the soldier can see a Dragon that isn't hostile to it, the soldier has advantage on attack rolls."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The soldier makes two Longsword or Javelin attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage, or 7 (1d10 + 2 damage) slashing damage if used with two hands, plus 2 (1d4 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 30/120 ft., one target. 5 (1d6 + 2 damage) piercing damage plus 2 (1d4 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

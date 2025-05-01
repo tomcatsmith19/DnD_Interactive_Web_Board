@@ -1,0 +1,76 @@
+{
+  "name": "Deinonychus",
+  "source": "VGM",
+  "page": 139,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 40
+  },
+  "str": 15,
+  "dex": 15,
+  "con": 14,
+  "int": 4,
+  "wis": 12,
+  "cha": 6,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Pounce",
+      "entries": [
+        "If the deinonychus moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 12} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the deinonychus can make one bite attack against it as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The deinonychus makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

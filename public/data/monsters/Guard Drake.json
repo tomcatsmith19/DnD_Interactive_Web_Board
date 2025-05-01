@@ -1,0 +1,77 @@
+{
+  "name": "Guard Drake",
+  "source": "MPMM",
+  "page": 151,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 16,
+  "int": 4,
+  "wis": 10,
+  "cha": 7,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "understands Draconic but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The guard drake makes one Bite attack and one Tail attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "arctic",
+    "desert",
+    "forest",
+    "mountain",
+    "swamp",
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

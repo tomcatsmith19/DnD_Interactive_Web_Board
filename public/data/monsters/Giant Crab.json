@@ -1,0 +1,65 @@
+{
+  "name": "Giant Crab",
+  "source": "MM",
+  "page": 324,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 13,
+  "dex": 15,
+  "con": 11,
+  "int": 1,
+  "wis": 9,
+  "cha": 3,
+  "skills": {
+    "stealth": "+4"
+  },
+  "passive": 9,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The crab can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) bludgeoning damage, and the target is {@condition grappled} (escape DC 11). The crab has two claws, each of which can grapple only one target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft."
+  ],
+  "environment": [
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

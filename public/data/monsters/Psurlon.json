@@ -1,0 +1,134 @@
+{
+  "name": "Psurlon",
+  "source": "BAM",
+  "page": 44,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 14,
+  "con": 14,
+  "int": 17,
+  "wis": 11,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Deep Speech",
+    "telepathy 120 ft."
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aberrant Mind",
+      "entries": [
+        "Magic can't read the psurlon's thoughts or put the psurlon to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The psurlon makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Psychic Crush",
+      "entries": [
+        "The psurlon targets one creature it can see within 120 feet of itself. The target must make a DC 13 Wisdom saving throw, taking 14 (2d10 + 3 damage) psychic damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The psurlon casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "daily": {
+        "1": [
+          "suggestion"
+        ]
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "blinded",
+    "charmed"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 120 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

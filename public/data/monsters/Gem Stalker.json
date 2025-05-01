@@ -1,0 +1,80 @@
+{
+  "name": "Gem Stalker",
+  "source": "FTD",
+  "page": 202,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 17,
+  "dex": 15,
+  "con": 14,
+  "int": 15,
+  "wis": 10,
+  "cha": 6,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "telepathy 60 ft. understands Draconic but can't speak"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The gem stalker can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The gem stalker doesn't require food or drink."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gem stalker makes four Claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,164 @@
+{
+  "name": "Corruption Devil (Paeliryon)",
+  "source": "CoA",
+  "page": 239,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 218,
+  "speed": {
+    "walk": 20,
+    "burrow": 20,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 21,
+  "dex": 14,
+  "con": 22,
+  "int": 19,
+  "wis": 15,
+  "cha": 14,
+  "skills": {
+    "arcana": "+9",
+    "deception": "+7",
+    "insight": "+7",
+    "intimidation": "+7"
+  },
+  "passive": 12,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the paeliryon's darkvision."
+      ]
+    },
+    {
+      "name": "Keen Eyes",
+      "entries": [
+        "The paeliryon scores a critical hit on a roll of 19 or 20."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The paeliryon has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The paeliryon makes three Claw attacks. It can replace one of the attacks with Draining Grasp (if available)."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +10 to hit, reach 10 ft., one target. 16 (2d10 + 5 damage) slashing damage plus 10 (3d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Draining Grasp {@recharge 4}",
+      "entries": [
+        "The paeliryon makes a Claw attack. On a hit, the target's Charisma score is reduced by 2 ({@dice 1d4}). This reduction lasts until the target finishes a short or long rest. A creature whose Charisma is reduced to 3 or less because of this ability, has the {@condition stunned} condition for 1 minute."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The paeliryon casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 17}):"
+      ],
+      "will": [
+        "Bestow Curse",
+        "Command",
+        "Darkness",
+        "Hold Monster",
+        "Major Image"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned",
+    "stunned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

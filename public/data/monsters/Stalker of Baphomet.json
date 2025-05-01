@@ -1,0 +1,143 @@
+{
+  "name": "Stalker of Baphomet",
+  "source": "BGG",
+  "page": 178,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 200,
+  "speed": {
+    "walk": 40
+  },
+  "str": 25,
+  "dex": 17,
+  "con": 22,
+  "int": 13,
+  "wis": 16,
+  "cha": 12,
+  "skills": {
+    "athletics": "+15",
+    "perception": "+7",
+    "stealth": "+11"
+  },
+  "passive": 17,
+  "languages": [
+    "Abyssal",
+    "Giant"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Labyrinthine Recall",
+      "entries": [
+        "The stalker can perfectly recall any path it has traveled."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The stalker has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The stalker makes two Glaive attacks or two Rock attacks."
+      ]
+    },
+    {
+      "name": "Glaive",
+      "entries": [
+        "Melee atk +11 to hit, reach 15 ft., one target. 18 (2d10 + 7 damage) slashing damage plus 9 (2d8 damage) force damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +11 to hit, range 60/240 ft., one target. 23 (3d10 + 7 damage) bludgeoning damage. If the target is a Large or smaller creature, it must succeed on a DC 19 Strength saving throw or have the {@condition prone} condition. After the stalker throws the rock, roll a {@dice d6}; on a roll of 3 or lower, the stalker has no more rocks to throw."
+      ]
+    },
+    {
+      "name": "Erupting Horns {@recharge 5}",
+      "entries": [
+        "The stalker causes the earth to churn at a point on the ground it can see within 60 feet of itself. Six horn-shaped stones erupt in a 30-foot-radius, 30-foot-high cylinder centered on that point and then crumble to dust.",
+        "Each creature in that area must make a {@dc 15} Dexterity saving throw. On a failed save, a creature takes 33 ({@damage 6d10}) piercing damage and is pushed up to 30 feet upward and then falls. On a successful save, a creature takes half as much damage only."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The stalker casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

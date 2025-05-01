@@ -1,0 +1,164 @@
+{
+  "name": "Yochlol",
+  "source": "MM",
+  "page": 65,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon",
+    "shapechanger"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 18,
+  "int": 13,
+  "wis": 15,
+  "cha": 15,
+  "skills": {
+    "deception": "+10",
+    "insight": "+6"
+  },
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The yochlol can use its action to polymorph into a form that resembles a female drow or giant spider, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The yochlol has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The yochlol can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": [
+        "The yochlol ignores movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The yochlol makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Slam (Bite in Spider Form)",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft. (10 feet in demon form), one target. 5 ({@dice 1d6 + 2}) bludgeoning (piercing in spider form) damage plus 21 (6d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Mist Form",
+      "entries": [
+        "The yochlol transforms into toxic mist or reverts to its true form. Any equipment it is wearing or carrying is also transformed. It reverts to its true form if it dies.",
+        "While in mist form, the yochlol is {@condition incapacitated} and can't speak. It has a flying speed of 30 feet, can hover, and can pass through any space that isn't airtight. It has advantage on Strength, Dexterity, and Constitution saving throws, and it is immune to nonmagical damage.",
+        "While in mist form, the yochlol can enter a creature's space and stop there. Each time that creature starts its turn with the yochlol in its space, the creature must succeed on a {@dc 14} Constitution saving throw or be {@condition poisoned} until the start of its next turn. While {@condition poisoned} in this way, the target is {@condition incapacitated}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The yochlol's spellcasting ability is Charisma (spell save {@dc 14}). The yochlol can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect thoughts",
+        "web"
+      ],
+      "daily": {
+        "1": [
+          "dominate person"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

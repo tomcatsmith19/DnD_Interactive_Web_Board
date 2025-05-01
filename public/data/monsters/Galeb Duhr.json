@@ -1,0 +1,92 @@
+{
+  "name": "Galeb Duhr",
+  "source": "MM",
+  "page": 139,
+  "size": [
+    "M"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": {
+      "number": 15,
+      "condition": "(30 ft. when rolling, 60 ft. rolling downhill)"
+    }
+  },
+  "str": 20,
+  "dex": 14,
+  "con": 20,
+  "int": 11,
+  "wis": 12,
+  "cha": 11,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Terran"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the galeb duhr remains motionless, it is indistinguishable from a normal boulder."
+      ]
+    },
+    {
+      "name": "Rolling Charge",
+      "entries": [
+        "If the galeb duhr rolls at least 20 feet straight toward a target and then hits it with a slam attack on the same turn, the target takes an extra 7 ({@damage 2d6}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 16} Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Animate Boulders (1/Day)",
+      "entries": [
+        "The galeb duhr magically animates up to two boulders it can see within 60 feet of it. A boulder has statistics like those of a galeb duhr, except it has Intelligence 1 and Charisma 1, it can't be {@condition charmed} or {@condition frightened}, and it lacks this action option. A boulder remains animated as long as the galeb duhr maintains {@status concentration}, up to 1 minute (as if {@status concentration||concentrating} on a spell)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft.",
+    "tremorsense 60 ft."
+  ],
+  "environment": [
+    "mountain",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

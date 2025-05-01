@@ -1,0 +1,97 @@
+{
+  "name": "Deck Defender",
+  "source": "BMT",
+  "page": 72,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 14,
+  "int": 3,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands one of your languages but can't speak"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Allied Knight",
+      "entries": [
+        "Some of the deck defender's statistics are based on the character who drew the Knight card. Where the deck defender stat block refers to \"you,\" it refers to that character."
+      ]
+    },
+    {
+      "name": "Folded Versatility",
+      "entries": [
+        "After finishing a long rest, you can refold the deck defender's shape, changing it to acrobat form, berserker form, or guardian form."
+      ]
+    },
+    {
+      "name": "Fragile",
+      "entries": [
+        "If the deck defender is reduced to 0 hit points, it collapses into a haphazard pile of nonmagical playing cards and can't be resurrected or reconstructed."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The deck defender makes a number of attacks equal to half its proficiency bonus (rounded down)."
+      ]
+    },
+    {
+      "name": "Paper Cut",
+      "entries": [
+        "Melee atk PB + +3 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Reckless Strike (Berserker Form Only)",
+      "entries": [
+        "Melee atk PB + +3 to hit (with advantage), reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage, and attacks made against the deck defender until the start of its next turn have advantage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft. (can't see beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

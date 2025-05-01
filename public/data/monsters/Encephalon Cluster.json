@@ -1,0 +1,82 @@
+{
+  "name": "Encephalon Cluster",
+  "source": "PaBTSO",
+  "page": 205,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 20
+  },
+  "str": 23,
+  "dex": 10,
+  "con": 13,
+  "int": 5,
+  "wis": 17,
+  "cha": 7,
+  "skills": {},
+  "passive": 13,
+  "languages": [],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the cluster fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The cluster has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cluster makes two Slam attacks. It can replace one of these attacks with Spawn Progeny if available."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 17 (2d10 + 6 damage) bludgeoning damage plus 10 (3d6 damage) psychic damage, and if the target is a creature, the target must succeed on a DC 18 Strength saving throw or have the {@condition prone} condition. If this attack reduces the target to 0 hit points, the target immediately dies and is consumed by the cluster."
+      ]
+    },
+    {
+      "name": "Spawn Progeny (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The cluster bulges and spews {@dice 1d4} mature eggs. Each egg lands in an unoccupied space of the cluster's choice within 30 feet of itself and immediately transforms into an {@creature encephalon gemmule|PaBTSO}. The gemmules obey the cluster's commands and take their turns immediately after it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (can't see beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

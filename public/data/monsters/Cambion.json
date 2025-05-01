@@ -1,0 +1,147 @@
+{
+  "name": "Cambion",
+  "source": "MM",
+  "page": 36,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "L",
+    "NX",
+    "C",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 18,
+  "dex": 18,
+  "con": 16,
+  "int": 14,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "deception": "+6",
+    "intimidation": "+6",
+    "perception": "+4",
+    "stealth": "+7"
+  },
+  "passive": 14,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Infernal"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fiendish Blessing",
+      "entries": [
+        "The AC of the cambion includes its Charisma bonus."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cambion makes two melee attacks or uses its Fire Ray twice."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage, or 8 (1d8 + 4 damage) piercing damage if used with two hands to make a melee attack, plus 3 (1d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Fire Ray",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 120 ft., one target. 10 (3d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Fiendish Charm",
+      "entries": [
+        "One humanoid the cambion can see within 30 feet of it must succeed on a DC 14 Wisdom saving throw or be magically {@condition charmed} for 1 day. The {@condition charmed} target obeys the cambion's spoken commands. If the target suffers any harm from the cambion or another creature or receives a suicidal command from the cambion, the target can repeat the saving throw, ending the effect on itself on a success. If a target's saving throw is successful, or if the effect ends for it, the creature is immune to the cambion's Fiendish Charm for the next 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The cambion's spellcasting ability is Charisma (spell save {@dc 14}). The cambion can innately cast the following spells, requiring no material components:"
+      ],
+      "daily": {
+        "1": [
+          "plane shift"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "poison",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

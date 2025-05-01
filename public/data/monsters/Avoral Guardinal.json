@@ -1,0 +1,129 @@
+{
+  "name": "Avoral Guardinal",
+  "source": "MPP",
+  "page": 32,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 172,
+  "speed": {
+    "walk": 30,
+    "fly": 50
+  },
+  "str": 16,
+  "dex": 19,
+  "con": 17,
+  "int": 16,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "perception": "+11",
+    "religion": "+7"
+  },
+  "passive": 21,
+  "languages": [
+    "Celestial",
+    "Common"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Dive Attack",
+      "entries": [
+        "If the avoral is flying, dives at least 30 feet in a straight line toward a Medium or smaller creature, and ends within 5 feet of it, that creature must succeed on a {@dc 15} Strength saving throw or take 14 ({@damage 4d6}) piercing damage and have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Flyby",
+      "entries": [
+        "The avoral doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The avoral makes two Talon attacks. It can replace one attack with a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Talon",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) piercing damage plus 13 (2d12 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The avoral casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [
+    "radiant"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

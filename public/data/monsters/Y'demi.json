@@ -1,0 +1,96 @@
+{
+  "name": "Y'demi",
+  "source": "SCC",
+  "page": 172,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "warlock"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 18,
+  "int": 20,
+  "wis": 12,
+  "cha": 12,
+  "skills": {
+    "deception": "+9",
+    "medicine": "+5",
+    "survival": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Common plus any four languages"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Blood Aegis",
+      "entries": [
+        "The AC of Y'demi includes her Constitution modifier while she isn't wearing armor or wielding a shield."
+      ]
+    },
+    {
+      "name": "Oriq Mask",
+      "entries": [
+        "Y'demi wears an Oriq mask. While wearing the mask, Y'demi can't be targeted by any divination magic or perceived through magical scrying sensors, and she adds double her proficiency bonus to Charisma (Deception) checks (included above)."
+      ]
+    },
+    {
+      "name": "Sanguine Sense",
+      "entries": [
+        "While Y'demi isn't {@condition blinded}, she can see any creature that isn't an Undead or a Construct within 60 feet of itself, even through total cover, heavily obscured areas, invisibility, or any other phenomena that would prevent sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Y'demi makes two Blood Lash attacks."
+      ]
+    },
+    {
+      "name": "Blood Lash",
+      "entries": [
+        "{@atk ms} +9 to hit, reach 10 ft., one target. 21 (3d10 + 5 damage) necrotic damage. If the target is a creature, it can't regain hit points until the start of the Y'demi's next turn."
+      ]
+    },
+    {
+      "name": "Blood Boil {@recharge 4}",
+      "entries": [
+        "Y'demi chooses a point within 150 feet of itself, and a 20-foot radius sphere centered on that point fills with a burst of searing, blood-red mist. Each creature of Y'demi's choice that she can see in that area must make a DC 17 Constitution saving throw. On a failed save, a creature takes 38 (7d10 damage) necrotic damage and is {@condition incapacitated} until the end of its next turn. On a success, a creature takes half as much damage and isn't {@condition incapacitated}. A creature dies if reduced to 0 hit points by this necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Garra",
+  "source": "ERLW",
+  "page": 272,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 30
+  },
+  "str": 17,
+  "dex": 10,
+  "con": 14,
+  "int": 14,
+  "wis": 9,
+  "cha": 10,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Battleaxe",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 12 (2d8 + 3 damage) slashing damage, or 14 (2d10 + 3 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 30/120 ft., one target. 10 (2d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "forest",
+    "hill",
+    "urban",
+    "desert",
+    "arctic"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

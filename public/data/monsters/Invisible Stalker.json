@@ -1,0 +1,100 @@
+{
+  "name": "Invisible Stalker",
+  "source": "MM",
+  "page": 192,
+  "size": [
+    "M"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 50,
+    "fly": {
+      "number": 50,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 16,
+  "dex": 19,
+  "con": 14,
+  "int": 10,
+  "wis": 15,
+  "cha": 11,
+  "skills": {
+    "perception": "+8",
+    "stealth": "+10"
+  },
+  "passive": 18,
+  "languages": [
+    "Auran",
+    "understands Common but doesn't speak it"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Invisibility",
+      "entries": [
+        "The stalker is {@condition invisible}."
+      ]
+    },
+    {
+      "name": "Faultless Tracker",
+      "entries": [
+        "The stalker is given a quarry by its summoner. The stalker knows the direction and distance to its quarry as long as the two of them are on the same plane of existence. The stalker also knows the location of its summoner."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The stalker makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

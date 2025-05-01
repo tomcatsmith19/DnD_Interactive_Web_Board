@@ -1,0 +1,81 @@
+{
+  "name": "Stone Cursed",
+  "source": "MTF",
+  "page": 240,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 10
+  },
+  "str": 16,
+  "dex": 5,
+  "con": 14,
+  "int": 5,
+  "wis": 8,
+  "cha": 7,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cunning Opportunist",
+      "entries": [
+        "The stone cursed has advantage on the attack rolls of opportunity attacks."
+      ]
+    },
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the stone cursed remains motionless, it is indistinguishable from a normal statue."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Petrifying Claws",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (1d10 + 3 damage) slashing damage, or 14 (2d10 + 3 damage) slashing damage if the attack roll had advantage. If the target is a creature, it must succeed on a DC 12 Constitution saving throw, or it begins to turn to stone and is {@condition restrained} until the end of its next turn, when it must repeat the saving throw. The effect ends if the second save is successful; otherwise the target is {@condition petrified} for 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [
+    "desert",
+    "mountain",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

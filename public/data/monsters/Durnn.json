@@ -1,0 +1,72 @@
+{
+  "name": "Durnn",
+  "source": "TftYP",
+  "page": 25,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 12,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 9,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Martial Advantage",
+      "entries": [
+        "Once per turn, the hobgoblin can deal an extra 7 ({@dice 2d6}) damage to a creature it hits with a weapon attack if that creature is within 5 feet of an ally of the hobgoblin that isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) slashing damage, or 6 (1d10 + 2 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 150/600 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

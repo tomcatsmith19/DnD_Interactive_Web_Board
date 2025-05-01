@@ -1,0 +1,132 @@
+{
+  "name": "K'Tulah",
+  "source": "CM",
+  "page": 64,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "tabaxi"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 12,
+  "con": 13,
+  "int": 12,
+  "wis": 15,
+  "cha": 11,
+  "skills": {
+    "medicine": "+4",
+    "nature": "+3",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Druidic"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Feline Agility",
+      "entries": [
+        "When K'Tulah moves on her turn in combat, she can double her speed until the end of the turn. Once she uses this ability, K'Tulah can't use it again until she moves 0 feet on one of her turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +2 to hit (+4 to hit with shillelagh), reach 5 ft., one target. 3 (1d6 damage) bludgeoning damage, 4 (1d8 damage) bludgeoning damage if wielded with two hands, or 6 (1d8 + 2 damage) bludgeoning damage with shillelagh."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "K'Tulah is a 4th-level spellcaster. K'Tulah's spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). K'Tulah has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "produce flame",
+            "shillelagh"
+          ]
+        },
+        "1": {
+          "spells": [
+            "entangle",
+            "longstrider",
+            "speak with animals",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "animal messenger",
+            "barkskin"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

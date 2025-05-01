@@ -1,0 +1,140 @@
+{
+  "name": "Dermot Wurder (Tier 3)",
+  "source": "CRCotN",
+  "page": 193,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "cleric",
+    "goblin",
+    "goblinoid"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 30,
+    "swim": {
+      "number": 30,
+      "condition": "(mariner's armor)"
+    }
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 14,
+  "int": 10,
+  "wis": 20,
+  "cha": 10,
+  "skills": {
+    "medicine": "+8",
+    "religion": "+3",
+    "survival": "+8"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Goblin",
+    "Orc"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Dermot wears mariner's armor and wields a ruidium warhammer (see appendix B). If Dermot rolls a 1 on an attack roll made with the warhammer, he must succeed on a {@dc 20} Charisma saving throw or gain 1 level of {@condition exhaustion}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Dermot makes one Ruidium Warhammer attack and one Searing Wrath attack."
+      ]
+    },
+    {
+      "name": "Ruidium Warhammer",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) bludgeoning damage, or 9 (1d10 + 4 damage) bludgeoning damage when used with two hands, plus 7 (2d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Searing Wrath",
+      "entries": [
+        "Ranged Spell atk +8 to hit, range 60 ft., one creature. 22 (5d8 damage) radiant damage, and the target is {@condition blinded} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Dermot casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "guidance",
+        "light",
+        "spare the dying"
+      ],
+      "daily": {
+        "1": [
+          "revivify"
+        ]
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

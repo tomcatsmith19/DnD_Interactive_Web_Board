@@ -1,0 +1,137 @@
+{
+  "name": "Young Crystal Dragon",
+  "source": "FTD",
+  "page": 172,
+  "size": [
+    "L"
+  ],
+  "type": "dragon",
+  "tags": [
+    "gem"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 95,
+  "speed": {
+    "walk": 40,
+    "burrow": 20,
+    "climb": 40,
+    "fly": 80
+  },
+  "str": 17,
+  "dex": 12,
+  "con": 18,
+  "int": 16,
+  "wis": 14,
+  "cha": 17,
+  "skills": {
+    "perception": "+8",
+    "stealth": "+7",
+    "survival": "+5"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Draconic",
+    "telepathy 120 ft."
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 14 (2d10 + 3 damage) piercing damage plus 4 (1d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Scintillating Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a burst of brilliant radiance in a 30-foot cone. Each creature in that area must make a DC 15 Constitution saving throw, taking 27 (6d8 damage) radiant damage on a failed save, or half as much damage on a successful one. The dragon then gains 10 temporary hit points by absorbing a portion of the radiant energy."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The dragon casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "dancing lights",
+        "guidance"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "radiant"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

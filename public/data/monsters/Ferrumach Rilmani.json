@@ -1,0 +1,133 @@
+{
+  "name": "Ferrumach Rilmani",
+  "source": "MPP",
+  "page": 44,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 14,
+  "con": 18,
+  "int": 15,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "athletics": "+8",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "telepathy 120 ft.",
+    "any two languages"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Bladed Edges",
+      "entries": [
+        "A creature takes 10 ({@damage 3d6}) slashing damage if it starts its turn grappling or being {@condition grappled} by the ferrumach."
+      ]
+    },
+    {
+      "name": "Skewering Charge",
+      "entries": [
+        "If the ferrumach moves at least 20 feet in a straight line toward a Large or smaller creature and ends within 5 feet of it, that creature must succeed on a {@dc 16} Strength saving throw or have the {@condition grappled} condition (escape {@dc 18}) and take 10 ({@damage 3d6}) piercing damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ferrumach makes three Sharpened Limb or Bolt attacks."
+      ]
+    },
+    {
+      "name": "Sharpened Limb",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 9 (1d10 + 4 damage) slashing damage plus 11 (2d10 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Bolt",
+      "entries": [
+        "Ranged atk +8 to hit, range 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage plus 11 (2d10 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The ferrumach casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "detect magic"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,70 @@
+{
+  "name": "Spirit Statue Mascot",
+  "source": "SCC",
+  "page": 216,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 9,
+  "con": 15,
+  "int": 12,
+  "wis": 13,
+  "cha": 8,
+  "skills": {
+    "arcana": "+5",
+    "history": "+5",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "any languages it knew in life"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the spirit statue is reduced to 0 hit points, the statue crumbles, and the spirit returns to the afterlife in a burst of ghostly white flame. Each creature within 5 feet of it must succeed on a {@dc 12} Constitution saving throw or take 3 ({@damage 1d6}) radiant damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Counsel of the Past (2/Day)",
+      "entries": [
+        "The spirit statue touches one creature. Once within the next 10 minutes, that creature can roll a {@dice d4} and add the number rolled to one ability check of its choice, immediately after rolling the {@dice d20}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

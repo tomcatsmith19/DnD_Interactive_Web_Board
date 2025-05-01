@@ -1,0 +1,120 @@
+{
+  "name": "Warlock of the Archfey",
+  "source": "VGM",
+  "page": 219,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "11",
+    "14"
+  ],
+  "hp": 49,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 13,
+  "con": 11,
+  "int": 11,
+  "wis": 12,
+  "cha": 18,
+  "skills": {
+    "arcana": "+2",
+    "deception": "+6",
+    "nature": "+2",
+    "persuasion": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "any two languages (usually Sylvan)"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The warlock's innate spellcasting ability is Charisma. It can innately cast the following spells (spell save {@dc 15}), requiring no material components:"
+      ],
+      "will": [
+        "disguise self",
+        "mage armor",
+        "silent image",
+        "speak with animals"
+      ],
+      "daily": {
+        "1": [
+          "conjure fey"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "arctic",
+    "forest",
+    "mountain",
+    "swamp",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

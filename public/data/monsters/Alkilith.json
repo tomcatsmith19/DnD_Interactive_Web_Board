@@ -1,0 +1,109 @@
+{
+  "name": "Alkilith",
+  "source": "MTF",
+  "page": 130,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 157,
+  "speed": {
+    "walk": 40
+  },
+  "str": 12,
+  "dex": 19,
+  "con": 22,
+  "int": 6,
+  "wis": 11,
+  "cha": 7,
+  "skills": {
+    "stealth": "+8"
+  },
+  "passive": 10,
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The alkilith can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the alkilith is motionless, it is indistinguishable from an ordinary slime or fungus."
+      ]
+    },
+    {
+      "name": "Foment Madness",
+      "entries": [
+        "Any creature that isn't a demon that starts its turn within 30 feet of the alkilith must succeed on a {@dc 18} Wisdom saving throw, or it hears a faint buzzing in its head for a moment and has disadvantage on its next attack roll, saving throw, or ability check.",
+        "If the saving throw against Foment Madness fails by 5 or more, the creature is instead subjected to the {@spell confusion} spell for 1 minute (no {@status concentration} required by the alkilith). While under the effect of that confusion, the creature is immune to Foment Madness."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The alkilith has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The alkilith makes three tentacle attacks."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +8 to hit, reach 15 ft., one target. 18 (4d6 + 4 damage) acid damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

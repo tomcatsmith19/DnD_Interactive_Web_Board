@@ -1,0 +1,97 @@
+{
+  "name": "Cadaver Collector",
+  "source": "MTF",
+  "page": 122,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 189,
+  "speed": {
+    "walk": 30
+  },
+  "str": 21,
+  "dex": 14,
+  "con": 20,
+  "int": 5,
+  "wis": 11,
+  "cha": 8,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands all languages but can't speak"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The cadaver collector has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Summon Specters (Recharges after a Short or Long Rest)",
+      "entries": [
+        "As a bonus action, the cadaver collector calls up the enslaved spirits of those it has slain; {@dice 1d6} {@creature specter||specters} (without Sunlight Sensitivity) arise in unoccupied spaces within 15 feet of the cadaver collector. The specters act right after the cadaver collector on the same initiative count and fight until they're destroyed. They disappear when the cadaver collector is destroyed."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cadaver collector makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 18 (3d8 + 5 damage) bludgeoning damage plus 16 (3d10 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Paralyzing Breath {@recharge 5}",
+      "entries": [
+        "The cadaver collector releases paralyzing gas in a 30-foot cone. Each creature in that area must make a successful DC 18 Constitution saving throw or be {@condition paralyzed} for 1 minute. A {@condition paralyzed} creature repeats the saving throw at the end of each of its turns, ending the effect on itself with a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison",
+    "psychic",
+    "bludgeoning (from nonmagical attacks that aren't adamantine)",
+    "piercing (from nonmagical attacks that aren't adamantine)",
+    "slashing (from nonmagical attacks that aren't adamantine)"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,78 @@
+{
+  "name": "The Weevil",
+  "source": "SKT",
+  "page": 114,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 16,
+  "con": 14,
+  "int": 14,
+  "wis": 11,
+  "cha": 14,
+  "skills": {
+    "athletics": "+4",
+    "deception": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "any two languages"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Weevil makes three melee attacks: two with its scimitar and one with its dagger. Or the Weevil makes two ranged attacks with its daggers."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "coastal",
+    "hill",
+    "arctic",
+    "urban",
+    "forest",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

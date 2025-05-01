@@ -1,0 +1,132 @@
+{
+  "name": "Astral Elf Star Priest",
+  "source": "BAM",
+  "page": 13,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "cleric"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 11,
+  "con": 10,
+  "int": 16,
+  "wis": 20,
+  "cha": 17,
+  "skills": {
+    "medicine": "+8",
+    "religion": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The elf has advantage on saving throws it makes to avoid or end the {@condition charmed} condition on itself, and magic can't put it to sleep."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The elf doesn't require sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The elf makes two Morningstar attacks. It can use Rain of Radiance in place of one of these attacks."
+      ]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d8 damage) piercing damage plus 17 (5d6 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Rain of Radiance",
+      "entries": [
+        "Magical, flame-like radiance rains down on a creature that the elf can see within 60 feet of itself. The target must make a DC 16 Dexterity saving throw, taking 22 (5d8 damage) radiant damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The elf casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

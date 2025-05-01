@@ -1,0 +1,99 @@
+{
+  "name": "Four-Armed Statue",
+  "source": "OotA",
+  "page": 206,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 178,
+  "speed": {
+    "walk": 30
+  },
+  "str": 22,
+  "dex": 9,
+  "con": 20,
+  "int": 3,
+  "wis": 11,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The statue is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The statue has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The statue's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The statue makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 19 (3d8 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Slow {@recharge 5}",
+      "entries": [
+        "The statue targets one or more creatures it can see within 10 feet of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic",
+    "bludgeoning (from nonmagical attacks that aren't adamantine)",
+    "piercing (from nonmagical attacks that aren't adamantine)",
+    "slashing (from nonmagical attacks that aren't adamantine)"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Xakalonus",
+  "source": "GHLoE",
+  "page": 73,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 17,
+  "int": 9,
+  "wis": 12,
+  "cha": 9,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "understands Draconic but can't speak"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Absorption",
+      "entries": [
+        "If a xakalonus succeeds on a saving throw against a magical effect that would damage it, it takes no damage. Instead, the xakalonus regains 11 ({@dice 2d10}) hit points. Alternatively, if the xakalonus is at full hit points, the next successful melee attack by the xakalonus deals an additional 11 ({@damage 2d10}) force damage."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The xakalonus has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The xakalonus makes one bite and one claws attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 15 (2d10 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Sonic Bark {@recharge 5}",
+      "entries": [
+        "All creatures within 30 ft. who can hear the xakalonus must succeed on a DC 14 Constitution saving throw or take 14 (4d6 damage) thunder damage and be {@condition stunned} until the end of their next turn. Other xakalonus and the hraptnon are immune to this."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,112 @@
+{
+  "name": "Platinum Golem",
+  "source": "TDCSR",
+  "page": 243,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "21"
+  ],
+  "hp": 189,
+  "speed": {
+    "walk": 30
+  },
+  "str": 22,
+  "dex": 10,
+  "con": 21,
+  "int": 3,
+  "wis": 12,
+  "cha": 1,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "16",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Divine Custodian",
+      "entries": [
+        "When the golem hits a creature with an {@action opportunity attack}, that creature's speed becomes 0 for the rest of the turn."
+      ]
+    },
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The golem is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The golem has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The golem's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The golem makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 19 (3d8 + 6 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Mace",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 22 (3d10 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Radiant Blast {@recharge}",
+      "entries": [
+        "The golem emits a burst of radiant light in a 20-foot radius. Each creature in the area must make a DC 18 Constitution {@quickref saving throws|PHB|2|1|saving throw}. On a failed save, a creature takes 18 (4d8 damage) radiant damage and is {@condition blinded} until the end of its next turn. On a success, the creature takes half as much damage and is not {@condition blinded}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "cold",
+    "fire",
+    "poison",
+    "psychic",
+    "bludgeoning (from nonmagical attacks that aren't adamantine)",
+    "piercing (from nonmagical attacks that aren't adamantine)",
+    "slashing (from nonmagical attacks that aren't adamantine)"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

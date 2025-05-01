@@ -1,0 +1,124 @@
+{
+  "name": "Markos Delphi",
+  "source": "KftGV",
+  "page": 53,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "warlock"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 15,
+  "con": 12,
+  "int": 17,
+  "wis": 13,
+  "cha": 16,
+  "skills": {
+    "arcana": "+7",
+    "history": "+7",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Deep Speech"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Markos makes two Ceremonial Blade attacks, two Psychic Orb attacks, or one of each."
+      ]
+    },
+    {
+      "name": "Ceremonial Blade",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage plus 3 (1d6 damage) poison damage. If the target is a creature, it must succeed on a DC 13 Constitution saving throw or become {@condition poisoned} for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Psychic Orb",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 60 ft., one creature. 10 (2d6 + 3 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Markos casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "psychic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

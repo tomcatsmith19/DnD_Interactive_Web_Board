@@ -1,0 +1,234 @@
+{
+  "name": "Mephistopheles",
+  "source": "MaBJoV",
+  "page": 99,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "21"
+  ],
+  "hp": 460,
+  "speed": {
+    "walk": 40,
+    "fly": 100
+  },
+  "str": 22,
+  "dex": 23,
+  "con": 22,
+  "int": 30,
+  "wis": 28,
+  "cha": 26,
+  "skills": {
+    "deception": "+24",
+    "insight": "+25",
+    "persuasion": "+24"
+  },
+  "passive": 19,
+  "languages": [
+    "all",
+    "telepathy 100 ft."
+  ],
+  "cr": "27",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede Mephistopheles's darkvision."
+      ]
+    },
+    {
+      "name": "Flames of Hell",
+      "entries": [
+        "Mephistopheles is covered in dark flames. At the start of his turn, any creature within 5 feet of him takes 7 ({@damage 2d6}) fire damage, if Mephistopheles desires it."
+      ]
+    },
+    {
+      "name": "Flyby",
+      "entries": [
+        "Mephistopheles doesn't provoke opportunity attacks when he flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Hellfire Mastery",
+      "entries": [
+        "When Mephistopheles inflicts fire damage from a Hellfire ability on any opponent that fire damage ignores the target's fire resistance and immunity. Mephistopheles is immune to damage from his own hellfire abilities."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Mephistopheles fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Mephistopheles has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "Mephistopheles's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "Mephistopheles regains 20 hit points at the start of his turn. If he takes radiant damage, this trait doesn't function at the start of his next turn. Mephistopheles dies only if he starts his turn with 0 hit points and is unable to regenerate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Mephistopheles uses his Hellfire Lash ability (if available) and then makes two attacks with his ranseur."
+      ]
+    },
+    {
+      "name": "Ranseur, +3",
+      "entries": [
+        "Melee atk +17 to hit, reach 10 ft., one target. 20 (2d10 + 9 damage) piercing damage. At Mephistopheles's whim, a successful hit does an additional 27 (6d8 damage) fire or cold damage."
+      ]
+    },
+    {
+      "name": "Ashen Teleport",
+      "entries": [
+        "Mephistopheles's body and any equipment he is wearing or carrying turns to ash and he magically teleports up to 120 feet to an unoccupied space he can see and reforms."
+      ]
+    },
+    {
+      "name": "Hellfire Lash {@recharge 5}",
+      "entries": [
+        "Mephistopheles unleashes a 60-foot long lash of hellfire that ignites a 5-foot radius around where it strikes. Any targets in the area of effect must make a DC 22 Dexterity check or take 22 (5d8 damage) fire damage. The damage is halved on a successful saving throw."
+      ]
+    },
+    {
+      "name": "Summon Allies (1/Day)",
+      "entries": [
+        "Mephistopheles summons {@dice 1d4} {@creature ice devil||ice devils}."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Hellfire Storm (Costs 2 Actions)",
+      "entries": [
+        "Mephistopheles selects an area up to 160 feet away from him and creates a hellfire explosion in a 20-foot radius. Anyone in the area that fails the {@dc 22} Dexterity saving throw takes 38 ({@damage 7d10}) fire damage. Those that succeed suffer only half the damage."
+      ]
+    },
+    {
+      "name": "Hellfire Wings",
+      "entries": [
+        "Mephistopheles uses his wings to generate a burst of heat. Each creature within 10 feet of him must succeed on a {@dc 22} Dexterity saving throw or take 10 ({@damage 3d6}) bludgeoning damage and be knocked {@condition prone}. They also must make a {@dc 22} Constitution saving throw or suffer 10 ({@damage 3d6}) fire damage."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "Mephistopheles uses his Ashen Teleport action."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Mephistopheles's innate spellcasting ability is Charisma (spell save {@dc 24}, {@hit 16} to hit with spell attacks). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "animate dead",
+        "detect evil and good",
+        "detect magic",
+        "dispel magic",
+        "fireball",
+        "geas",
+        "greater restoration",
+        "hallow",
+        "hold monster",
+        "locate creature",
+        "locate object",
+        "major image",
+        "resurrection",
+        "scrying",
+        "suggestion",
+        "teleport",
+        "true seeing",
+        "wall of fire",
+        "wall of ice"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

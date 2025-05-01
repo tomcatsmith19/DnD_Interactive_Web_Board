@@ -1,0 +1,132 @@
+{
+  "name": "Thought Spy",
+  "source": "GGR",
+  "page": 233,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 10,
+  "int": 16,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "deception": "+6",
+    "insight": "+3",
+    "investigation": "+5",
+    "perception": "+3",
+    "sleight of hand": "+4",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cunning Action",
+      "entries": [
+        "On each of its turns, the thought spy can use a bonus action to take the Dash, Disengage, or Hide action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The thought spy makes two melee attacks, or it makes three ranged attacks with its daggers."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The thought spy's innate spellcasting ability is Intelligence (spell save {@dc 13}). The thought spy can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "charm person",
+        "disguise self",
+        "encode thoughts|GGR"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

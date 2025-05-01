@@ -1,0 +1,77 @@
+{
+  "name": "Ott Steeltoes",
+  "source": "WDH",
+  "page": 214,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 25
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 10,
+  "int": 6,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "deception": "+2",
+    "religion": "+0"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dwarven Resilience",
+      "entries": [
+        "Ott has advantage on saving throws against poison and resistance to poison damage."
+      ]
+    },
+    {
+      "name": "Dark Devotion",
+      "entries": [
+        "The cultist has advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one creature. 4 (1d6 + 1 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

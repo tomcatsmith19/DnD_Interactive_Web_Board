@@ -1,0 +1,67 @@
+{
+  "name": "Seal",
+  "source": "IDRotF",
+  "page": 308,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 20,
+    "swim": 40
+  },
+  "str": 10,
+  "dex": 12,
+  "con": 11,
+  "int": 3,
+  "wis": 12,
+  "cha": 5,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The seal can hold its breath for 15 minutes."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The seal has advantage on Wisdom (Perception) checks that rely on smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 1 piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

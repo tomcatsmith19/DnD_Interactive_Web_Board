@@ -1,0 +1,136 @@
+{
+  "name": "Kelek",
+  "source": "WBtW",
+  "page": 219,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "sorcerer"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 14,
+  "int": 15,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "deception": "+6",
+    "intimidation": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Elvish"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Kelek wears bracers of defense and carries a staff of striking with 10 charges. The staff regains {@dice 1d6 + 4} expended charges daily at dawn. If its last charge is expended, roll a {@dice d20}; on a 1, the staff becomes a nonmagical quarterstaff."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Kelek makes three attacks using Sorcerer's Bolt, Staff of Striking, or a combination of them. He can replace one of the attacks with a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Sorcerer's Bolt",
+      "entries": [
+        "{@atk ms,rs} +6 to hit, reach 5 ft. or range 60 ft., one target. 13 (2d12 damage) force damage."
+      ]
+    },
+    {
+      "name": "Staff of Striking",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) bludgeoning damage, or 9 (1d8 + 5 damage) bludgeoning damage when used with two hands, and Kelek can expend up to 3 of the staff's charges, dealing an extra 3 (1d6 damage) force damage for each expended charge."
+      ]
+    },
+    {
+      "name": "Fiery Explosion {@recharge 4}",
+      "entries": [
+        "Kelek creates a magical explosion of fire centered on a point he can see within 120 feet of him. Each creature in a 20-foot-radius sphere centered on that point must make a DC 14 Dexterity saving throw, taking 35 (10d6 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Kelek casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "light",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

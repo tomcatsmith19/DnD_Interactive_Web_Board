@@ -1,0 +1,124 @@
+{
+  "name": "Adult Red Dracolich",
+  "source": "TCE",
+  "page": 137,
+  "size": [
+    "H"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 256,
+  "speed": {
+    "walk": 40,
+    "climb": 40,
+    "fly": 80
+  },
+  "str": 27,
+  "dex": 10,
+  "con": 25,
+  "int": 16,
+  "wis": 13,
+  "cha": 21,
+  "skills": {
+    "perception": "+13",
+    "stealth": "+6"
+  },
+  "passive": 23,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the dragon fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +14 to hit, reach 10 ft., one target. 19 (2d10 + 8 damage) piercing damage plus 7 (2d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +14 to hit, reach 5 ft., one target. 15 (2d6 + 8 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +14 to hit, reach 15 ft., one target. 17 (2d8 + 8 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Frightful Presence",
+      "entries": [
+        "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 19 Wisdom saving throw or become {@condition frightened} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Fire Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 21 Dexterity saving throw, taking 63 (18d6 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Detect",
+      "entries": [
+        "The dragon makes a Wisdom ({@skill Perception}) check."
+      ]
+    },
+    {
+      "name": "Tail Attack",
+      "entries": [
+        "The dragon makes a tail attack."
+      ]
+    },
+    {
+      "name": "Wing Attack (Costs 2 Actions)",
+      "entries": [
+        "The dragon beats its wings. Each creature within 10 feet of the dragon must succeed on a {@dc 22} Dexterity saving throw or take 15 ({@damage 2d6 + 8}) bludgeoning damage and be knocked {@condition prone}. The dragon can then fly up to half its flying speed."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "mountain",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

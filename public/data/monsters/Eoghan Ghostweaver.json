@@ -1,0 +1,157 @@
+{
+  "name": "Eoghan Ghostweaver",
+  "source": "DoDk",
+  "page": 105,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 99,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 15,
+  "wis": 20,
+  "cha": 16,
+  "skills": {
+    "arcana": "+13",
+    "history": "+13",
+    "medicine": "+9",
+    "nature": "+6",
+    "perception": "+9",
+    "survival": "+9"
+  },
+  "passive": 12,
+  "languages": [
+    "Druidic",
+    "Elvish"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Eoghan has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Eoghan is an 18th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 17}, {@hit 9} to hit with spell attacks). He has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "mending",
+            "poison spray",
+            "produce flame"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "entangle",
+            "faerie fire",
+            "speak with animals"
+          ]
+        },
+        "2": {
+          "spells": [
+            "animal messenger",
+            "beast sense",
+            "hold person"
+          ]
+        },
+        "3": {
+          "spells": [
+            "conjure animals",
+            "purge contamination|DoDk",
+            "sleet storm"
+          ]
+        },
+        "4": {
+          "spells": [
+            "ice storm",
+            "polymorph",
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": [
+            "commune with nature",
+            "cone of cold",
+            "greater restoration"
+          ]
+        },
+        "6": {
+          "spells": [
+            "conjure fey",
+            "heal"
+          ]
+        },
+        "7": {
+          "spells": [
+            "resurrection"
+          ]
+        },
+        "8": {
+          "spells": [
+            "feeblemind"
+          ]
+        },
+        "9": {
+          "spells": [
+            "foresight"
+          ]
+        }
+      },
+      "footerEntries": [
+        "*spells found in Appendix D of Dungeons of Drakkenheim."
+      ],
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

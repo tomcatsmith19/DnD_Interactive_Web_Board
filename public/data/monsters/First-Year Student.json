@@ -1,0 +1,113 @@
+{
+  "name": "First-Year Student",
+  "source": "SCC",
+  "page": 191,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "wizard"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 12,
+  "con": 13,
+  "int": 12,
+  "wis": 10,
+  "cha": 11,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common plus any two languages"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Excited to Be Here",
+      "entries": [
+        "The student has advantage on initiative rolls."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Magic Flare",
+      "entries": [
+        "{@atk ms,rs} +3 to hit, reach 5 ft. or range 60 ft., one target. 7 (1d12 + 1 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The student casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 11}):"
+      ],
+      "will": [
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": [
+          "detect magic"
+        ]
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

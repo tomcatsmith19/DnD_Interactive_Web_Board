@@ -1,0 +1,65 @@
+{
+  "name": "Plesiosaurus",
+  "source": "MM",
+  "page": 80,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 68,
+  "speed": {
+    "walk": 20,
+    "swim": 40
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 16,
+  "int": 2,
+  "wis": 12,
+  "cha": 5,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The plesiosaurus can hold its breath for 1 hour."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 14 (3d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "underwater",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

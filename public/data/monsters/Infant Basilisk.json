@@ -1,0 +1,55 @@
+{
+  "name": "Infant Basilisk",
+  "source": "OotA",
+  "page": 100,
+  "size": [
+    "T"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 4,
+  "speed": {
+    "walk": 10
+  },
+  "str": 10,
+  "dex": 8,
+  "con": 15,
+  "int": 2,
+  "wis": 8,
+  "cha": 7,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": null,
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 1 piercing damage plus 1 poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

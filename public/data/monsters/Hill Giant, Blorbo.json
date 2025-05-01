@@ -1,0 +1,64 @@
+{
+  "name": "Hill Giant, Blorbo",
+  "source": "AWM",
+  "page": 34,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 40
+  },
+  "str": 21,
+  "dex": 8,
+  "con": 19,
+  "int": 5,
+  "wis": 9,
+  "cha": 6,
+  "skills": {},
+  "passive": 0,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two greatclub attacks."
+      ]
+    },
+    {
+      "name": "Greatclub",
+      "entries": [
+        "Melee atk +8 to hit, one target. 18 (3d8 + 5 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +8 to hit, one target. 21 (3d10 + 5 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

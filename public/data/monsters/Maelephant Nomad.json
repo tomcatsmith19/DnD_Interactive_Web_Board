@@ -1,0 +1,105 @@
+{
+  "name": "Maelephant Nomad",
+  "source": "CoA",
+  "page": 245,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 190,
+  "speed": {
+    "walk": 40
+  },
+  "str": 22,
+  "dex": 11,
+  "con": 18,
+  "int": 14,
+  "wis": 17,
+  "cha": 15,
+  "skills": {
+    "athletics": "+16",
+    "insight": "+8",
+    "intimidation": "+7",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Infernal",
+    "Maelephant"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The maelephant has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Regenerative",
+      "entries": [
+        "At the start of its turn, if the maelephant has less than half its hit points, it regenerates 20 hit points. This trait doesn't function if the maelephant starts its turn with less than 1 hit point."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The maelephant makes two attacks using its Claw, Trunk, or a combination of the two."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 17 (2d10 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Trunk",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 16 (3d6 + 6 damage) piercing damage. If the target is a Medium or smaller creature, it has the {@condition grappled} condition (escape DC 18). Until this grapple ends, the target has the {@condition restrained} condition. While it is grappling a creature, the maelephant can't use its Trunk attack against other creatures."
+      ]
+    },
+    {
+      "name": "Noxious Breath {@recharge 5}",
+      "entries": [
+        "The maelephant releases a cloud of noxious gas. All creatures in a 30-foot cone in front of the maelephant must make a DC 16 Constitution saving throw. Targets take 42 (12d6 damage) acid damage on a failed save, or half as much damage on a successful one. In addition, on a failed save, the creature's Intelligence and Charisma scores become 1. The creature can't cast spells, activate magic items, understand language, or communicate in any intelligible way. The creature can, however, identify its friends, follow them, and even protect them. A feebled creature can repeat the save every minute, ending the effect on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "acid",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

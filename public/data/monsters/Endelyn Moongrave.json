@@ -1,0 +1,141 @@
+{
+  "name": "Endelyn Moongrave",
+  "source": "WBtW",
+  "page": 217,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [
+    "hag"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 114,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 20,
+  "dex": 13,
+  "con": 20,
+  "int": 13,
+  "wis": 10,
+  "cha": 17,
+  "skills": {
+    "arcana": "+7",
+    "deception": "+6",
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Boon of Immortality",
+      "entries": [
+        "Endelyn is immune to any effect that would age her, and she can't die from old age."
+      ]
+    },
+    {
+      "name": "Eclipsed Doom",
+      "entries": [
+        "Endelyn can be killed only if she is reduced to 0 hit points during a solar eclipse or while she is within 60 feet of a symbolic representation of one. Otherwise, Endelyn disappears in a cloud of inky smoke when she drops to 0 hit points, along with anything she was wearing or carrying, and reappears 24 hours later in the same location or the nearest unoccupied space."
+      ]
+    },
+    {
+      "name": "Uncanny Awareness",
+      "entries": [
+        "Endelyn can't be {@quickref Surprise|PHB|3|0|surprised}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Endelyn makes two Puppeteer's Lash attacks"
+      ]
+    },
+    {
+      "name": "Puppeteer's Lash",
+      "entries": [
+        "{@atk ms,rs} +6 to hit, reach 5 ft. or range 60 ft., one creature. 17 (4d6 + 3 damage) psychic damage, and if the target is Large or smaller, Endelyn telekinetically moves it up to 10 feet in any direction horizontally."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Endelyn casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "detect magic",
+        "mage hand"
+      ],
+      "daily": {
+        "1": [
+          "plane shift"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

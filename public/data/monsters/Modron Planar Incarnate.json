@@ -1,0 +1,119 @@
+{
+  "name": "Modron Planar Incarnate",
+  "source": "ToFW",
+  "page": 41,
+  "size": [
+    "G"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 333,
+  "speed": {
+    "walk": 40,
+    "fly": 40
+  },
+  "str": 27,
+  "dex": 10,
+  "con": 26,
+  "int": 15,
+  "wis": 20,
+  "cha": 20,
+  "skills": {
+    "perception": "+12"
+  },
+  "passive": 22,
+  "languages": [
+    "all"
+  ],
+  "cr": "22",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the incarnate fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The incarnate has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Planar Form",
+      "entries": [
+        "An incarnate on the Upper Planes is a Celestial. An incarnate on the Lower Planes is a Fiend."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The incarnate deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The incarnate makes two Slam or Energy Bolt attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +15 to hit, reach 15 ft., one target. 27 (3d12 + 8 damage) force damage."
+      ]
+    },
+    {
+      "name": "Energy Bolt",
+      "entries": [
+        "Ranged Spell atk +12 to hit, range 120 ft., one target. 32 (5d12 damage) necrotic damage if the incarnate is a Fiend or radiant damage if the incarnate is a Celestial."
+      ]
+    },
+    {
+      "name": "Planar Exhalation {@recharge 5}",
+      "entries": [
+        "The incarnate exhales concentrated energy native to its plane in a 60-foot cone. Each creature in that area must make a DC 23 Constitution saving throw. On a failed save, a creature takes 52 (8d12 damage) necrotic damage if the incarnate is a Fiend or radiant damage if the incarnate is a Celestial, and the creature has the {@condition blinded} condition until the end of the incarnate's next turn. On a successful save, a creature takes half as much damage only."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "restrained",
+    "stunned",
+    "unconscious"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison",
+    "radiant",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

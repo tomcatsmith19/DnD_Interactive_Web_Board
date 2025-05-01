@@ -1,0 +1,100 @@
+{
+  "name": "Torlin Silvershield",
+  "source": "TftYP",
+  "page": 159,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 16,
+  "int": 10,
+  "wis": 13,
+  "cha": 15,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, Torlin has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The wight makes two longsword attacks or two longbow attacks. It can use its Life Drain in place of one longsword attack."
+      ]
+    },
+    {
+      "name": "Life Drain",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 5 (1d6 + 2 damage) necrotic damage. The target must succeed on a DC 13 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.",
+        "A humanoid slain by this attack rises 24 hours later as a {@creature zombie} under Torlin's control, unless the humanoid is restored to life or its body is destroyed. The wight can have no more than twelve zombies under its control at one time."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage, or 7 (1d10 + 2 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 150/600 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "swamp",
+    "urban",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

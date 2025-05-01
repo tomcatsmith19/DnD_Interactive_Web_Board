@@ -1,0 +1,72 @@
+{
+  "name": "Piercer",
+  "source": "MM",
+  "page": 252,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 5,
+    "climb": 5
+  },
+  "str": 10,
+  "dex": 13,
+  "con": 16,
+  "int": 1,
+  "wis": 7,
+  "cha": 3,
+  "skills": {
+    "stealth": "+5"
+  },
+  "passive": 8,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the piercer remains motionless on the ceiling, it is indistinguishable from a normal stalactite."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The piercer can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Drop",
+      "entries": [
+        "Melee atk +3 to hit, one creature directly underneath the piercer. 3 (1d6 damage) piercing damage per 10 feet fallen, up to 21 ({@dice 6d6}). Miss: The piercer takes half the normal falling damage for the distance fallen."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

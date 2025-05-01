@@ -1,0 +1,67 @@
+{
+  "name": "Ogre Howdah",
+  "source": "MTF",
+  "page": 221,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 8,
+  "con": 16,
+  "int": 5,
+  "wis": 7,
+  "cha": 7,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Howdah",
+      "entries": [
+        "The ogre carries a compact fort on its back. Up to four Small creatures can ride in the fort without squeezing. To make a melee attack against a target within 5 feet of the ogre, they must use spears or weapons with reach. Creatures in the fort have three-quarters cover against attacks and effects from outside it. If the ogre dies, creatures in the fort are placed in unoccupied spaces within 5 feet of the ogre."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Mace",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

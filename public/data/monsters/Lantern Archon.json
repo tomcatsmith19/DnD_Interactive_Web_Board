@@ -1,0 +1,156 @@
+{
+  "name": "Lantern Archon",
+  "source": "MPP",
+  "page": 17,
+  "size": [
+    "S"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 1,
+  "dex": 16,
+  "con": 12,
+  "int": 6,
+  "wis": 12,
+  "cha": 13,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "all"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aura of Menace",
+      "entries": [
+        "As long as the archon doesn't have the {@condition incapacitated} condition, each creature of the archon's choice that starts its turn within 20 feet of the archon must make a {@dc 11} Wisdom saving throw. On a failed save, the creature has the {@condition frightened} condition until the start of its next turn. On a successful save, the creature is immune to all archons' Aura of Menace for 24 hours."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The archon sheds bright light in a 30-foot radius and dim light for an additional 30 feet."
+      ]
+    },
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The archon can move through creatures and objects as if they were difficult terrain. If it ends its turn inside an object, it takes 5 ({@damage 1d10}) force damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The archon makes two Radiant Strike attacks. It can replace one attack with a use of Teleport."
+      ]
+    },
+    {
+      "name": "Radiant Strike",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 60 ft., one target. 6 (1d6 + 3 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The archon teleports, along with any equipment it is wearing or carrying, to an unoccupied space it can see within 120 feet of itself."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The archon casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability:"
+      ],
+      "will": [
+        "detect evil and good"
+      ],
+      "daily": {
+        "1": [
+          "aid"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "radiant"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,162 @@
+{
+  "name": "Thessalar",
+  "source": "IMR",
+  "page": 57,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 12,
+  "con": 13,
+  "int": 19,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "animal handling": "+7",
+    "arcana": "+8",
+    "insight": "+7",
+    "medicine": "+7"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Elvish",
+    "Primordial"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Thessalar wields a {@item +1 dagger} coated with {@item Thessaltoxin|IMR|thessaltoxin poison} (see appendix C)."
+      ]
+    },
+    {
+      "name": "Alchemical Homunculus",
+      "entries": [
+        "Thessalar is accompanied by his {@creature Thessalar's homunculus|IMR}. If the {@spell mending} spell is cast on it, the homunculus regains {@dice 2d6} hit points."
+      ]
+    },
+    {
+      "name": "Healing Toxicity",
+      "entries": [
+        "Any magic item that restores hit points and can be applied to a piercing or slashing weapon (a potion, an ointment, and so forth) causes a hit with that weapon to deal extra damage to Thessalar equal to the amount the item would normally heal."
+      ]
+    },
+    {
+      "name": "Greater Restoration (1/Day)",
+      "entries": [
+        "Thessalar can cast {@spell greater restoration} if he has access to {@item Alchemist's Supplies|phb|alchemical supplies}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 3 (1d4 + 1 damage) piercing damage, and the target must succeed on a DC 15 Constitution saving throw. On a failed save, the target is affected as if by the {@spell polymorph} spell, transforming into a random {@filter beast|bestiary|type=beast|miscellaneous=!swarm} or a creature it has seen within the last 24 hours (as chosen by the DM). This effect lasts until the target finishes a long rest."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Thessalar is an 18th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He has the following artificer spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "mending",
+            "message",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "alarm",
+            "cure wounds",
+            "identify",
+            "ray of sickness"
+          ]
+        },
+        "2": {
+          "spells": [
+            "invisibility",
+            "Melf's acid arrow",
+            "web"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "haste",
+            "stinking cloud"
+          ]
+        },
+        "4": {
+          "spells": [
+            "blight",
+            "Mordenkainen's faithful hound",
+            "Otiluke's resilient sphere"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cloudkill"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

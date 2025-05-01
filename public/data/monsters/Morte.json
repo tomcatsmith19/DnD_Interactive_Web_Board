@@ -1,0 +1,71 @@
+{
+  "name": "Morte",
+  "source": "ToFW",
+  "page": 10,
+  "size": [
+    "T"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 16,
+  "int": 13,
+  "wis": 10,
+  "cha": 12,
+  "skills": {
+    "arcana": "+3",
+    "stealth": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

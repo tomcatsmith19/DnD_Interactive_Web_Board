@@ -1,0 +1,165 @@
+{
+  "name": "Zox Clammersham",
+  "source": "WDMM",
+  "page": 176,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 99,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 20,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "arcana": "+13",
+    "history": "+13"
+  },
+  "passive": 12,
+  "languages": [
+    "Aquan",
+    "Auran",
+    "Common",
+    "Gnomish",
+    "Ignan",
+    "Terran"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The archmage has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 17}, {@hit 9} to hit with spell attacks). The archmage can cast {@spell disguise self} and {@spell invisibility} at will and has the following wizard spells prepared:"
+      ],
+      "will": [
+        "disguise self",
+        "invisibility"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "identify",
+            "mage armor",
+            "magic missile"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fly",
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "fire shield",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cone of cold",
+            "scrying",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": [
+            "globe of invulnerability"
+          ]
+        },
+        "7": {
+          "spells": [
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": [
+            "mind blank"
+          ]
+        },
+        "9": {
+          "spells": [
+            "time stop"
+          ]
+        }
+      },
+      "footerEntries": [
+        "*The archmage casts these spells on itself before combat."
+      ],
+      "ability": "int",
+      "hidden": [
+        "will"
+      ],
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

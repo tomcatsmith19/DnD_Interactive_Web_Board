@@ -1,0 +1,138 @@
+{
+  "name": "Blackguard",
+  "source": "VGM",
+  "page": 211,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "L",
+    "NX",
+    "C",
+    "NY",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 153,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 18,
+  "int": 11,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "athletics": "+7",
+    "deception": "+5",
+    "intimidation": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The blackguard makes three attacks with its glaive or its shortbow."
+      ]
+    },
+    {
+      "name": "Glaive",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 9 (1d10 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +3 to hit, range 80/320 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Dreadful Aspect (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The blackguard exudes magical menace. Each enemy within 30 feet of the blackguard must succeed on a DC 13 Wisdom saving throw or be {@condition frightened} for 1 minute. If a {@condition frightened} target ends its turn more than 30 feet away from the blackguard, the target can repeat the saving throw, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The blackguard is a 10th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It has the following paladin spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "command",
+            "protection from evil and good",
+            "thunderous smite"
+          ]
+        },
+        "2": {
+          "spells": [
+            "branding smite",
+            "find steed"
+          ]
+        },
+        "3": {
+          "spells": [
+            "blinding smite",
+            "dispel magic"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

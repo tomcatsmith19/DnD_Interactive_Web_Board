@@ -1,0 +1,96 @@
+{
+  "name": "Tanarukk",
+  "source": "VGM",
+  "page": 186,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon",
+    "orc"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 95,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 13,
+  "con": 20,
+  "int": 9,
+  "wis": 9,
+  "cha": 9,
+  "skills": {
+    "intimidation": "+2",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Orc"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, the tanarukk can move up to its speed toward a hostile creature that it can see."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The tanarukk has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The tanarukk makes two attacks: one with its bite and one with its greatsword."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "fire",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

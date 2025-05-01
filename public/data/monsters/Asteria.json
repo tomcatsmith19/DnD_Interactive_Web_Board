@@ -1,0 +1,175 @@
+{
+  "name": "Asteria",
+  "source": "BMT",
+  "page": 188,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "paladin"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 195,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(winged boots)"
+    }
+  },
+  "str": 12,
+  "dex": 21,
+  "con": 17,
+  "int": 15,
+  "wis": 11,
+  "cha": 20,
+  "skills": {
+    "acrobatics": "+11",
+    "arcana": "+14",
+    "investigation": "+8",
+    "perception": "+12",
+    "persuasion": "+11",
+    "survival": "+6"
+  },
+  "passive": 22,
+  "languages": [
+    "Common",
+    "Druidic"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Guardian Aura",
+      "entries": [
+        "Whenever a creature of Asteria's choice within 30 feet of her makes a saving throw, Asteria can give the creature advantage on the saving throw (no action required). This trait doesn't function if Asteria has the {@condition incapacitated} condition."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Asteria fails a saving throw, she can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Asteria wears Winged Boots, which grant her a flying speed (included in her statistics). She also carries one half of a pair of Sending Stones; the other half of the pair is held by Euryale."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Asteria makes two Radiant Blade attacks and uses Bursting Benediction."
+      ]
+    },
+    {
+      "name": "Radiant Blade",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) slashing damage plus 13 (3d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Bursting Benediction",
+      "entries": [
+        "Asteria causes a burst of magical energy to envelop one creature she can see within 60 feet of herself. The target must make a DC 19 Dexterity saving throw, taking 40 (9d8 damage) force damage on a failed save, or half as much damage on a successful one. Asteria or another creature that she can see within 60 feet of herself then regains 10 hit points."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Brazen Strike",
+      "entries": [
+        "Asteria makes one Radiant Blade attack."
+      ]
+    },
+    {
+      "name": "Nimble Sprint",
+      "entries": [
+        "Asteria moves up to her speed. This movement doesn't provoke opportunity attacks."
+      ]
+    },
+    {
+      "name": "Cast a Spell (Costs 2 Actions)",
+      "entries": [
+        "Asteria uses Spellcasting."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Asteria casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 19}):"
+      ],
+      "will": [
+        "Guidance",
+        "Light",
+        "Thaumaturgy"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Verbeeg Marauder",
+  "source": "IDRotF",
+  "page": 311,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 11,
+  "con": 16,
+  "int": 11,
+  "wis": 10,
+  "cha": 9,
+  "skills": {
+    "animal handling": "+2",
+    "athletics": "+6",
+    "stealth": "+2"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Simple Weapon Wielder",
+      "entries": [
+        "A simple weapon deals one extra die of its damage when the verbeeg hits with it (included in the attack)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The verbeeg makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 14 (3d6 + 4 damage) piercing damage, or 17 (3d8 + 4 damage) piercing damage if used to make a ranged attack or used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

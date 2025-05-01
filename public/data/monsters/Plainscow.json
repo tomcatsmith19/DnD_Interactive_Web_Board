@@ -1,0 +1,66 @@
+{
+  "name": "Plainscow",
+  "source": "TDCSR",
+  "page": 248,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "13"
+  ],
+  "hp": 42,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 8,
+  "con": 16,
+  "int": 2,
+  "wis": 10,
+  "cha": 6,
+  "skills": {
+    "insight": "+2"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Trampling Charge",
+      "entries": [
+        "If the plainscow moves at least 20 feet straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a {@dc 14} Strength {@quickref saving throws|PHB|2|1|saving throw} or be knocked {@condition prone}. If the target is {@condition prone}, the plainscow can make another attack with its hooves as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "hill",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

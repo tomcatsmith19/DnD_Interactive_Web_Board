@@ -1,0 +1,190 @@
+{
+  "name": "Champion of Ravens",
+  "source": "TDCSR",
+  "page": 275,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "20"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 14,
+  "dex": 20,
+  "con": 14,
+  "int": 16,
+  "wis": 14,
+  "cha": 17,
+  "skills": {
+    "acrobatics": "+19",
+    "intimidation": "+10",
+    "investigation": "+10",
+    "perception": "+16",
+    "persuasion": "+10",
+    "sleight of hand": "+12",
+    "stealth": "+19"
+  },
+  "passive": 26,
+  "languages": [
+    "Abyssal",
+    "Celestial",
+    "Common",
+    "Druidic",
+    "Elvish",
+    "Thieves' cant"
+  ],
+  "cr": "21",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Assassinate",
+      "entries": [
+        "During his first turn, the Champion has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on attack rolls against any creature that hasn't taken a turn. Any hit the Champion scores against a surprised creature is a critical hit."
+      ]
+    },
+    {
+      "name": "Aura of Protection",
+      "entries": [
+        "While the Champion is conscious, he and friendly creatures within 10 feet of him have a +3 bonus to {@quickref saving throws|PHB|2|1} (included above)."
+      ]
+    },
+    {
+      "name": "Eternal Champion",
+      "entries": [
+        "When the Champion is reduced to 0 hit points or dies, his body is destroyed but his spirit returns to the {@deity The Matron of Ravens|Exandria|TDCSR|Raven Queen's} side, and he gains a new body after {@dice 1d4} days."
+      ]
+    },
+    {
+      "name": "Evasion",
+      "entries": [
+        "If the Champion is subjected to an effect that allows him to make a Dexterity {@quickref saving throws|PHB|2|1|saving throw} to take only half damage, he instead takes no damage if he succeeds on the {@quickref saving throws|PHB|2|1|saving throw}, and only half damage if he fails."
+      ]
+    },
+    {
+      "name": "Fate-Touched (4/Day)",
+      "entries": [
+        "When the Champion makes an attack roll, ability check, or {@quickref saving throws|PHB|2|1|saving throw}, he can reroll the {@dice d20} and use either roll. Alternatively, when a creature the Champion can see makes an attack roll against him, or a {@quickref saving throws|PHB|2|1|saving throw} against one of his spells or features, he can force that creature to reroll the attack or save and use the new roll."
+      ]
+    },
+    {
+      "name": "Shadow Smite (1/Turn)",
+      "entries": [
+        "The Champion deals an extra 49 ({@damage 14d6}) radiant or necrotic damage (his choice) when he hits a target with a weapon attack and he doesn't have {@quickref Advantage and Disadvantage|PHB|2|0|disadvantage} on the attack roll."
+      ]
+    },
+    {
+      "name": "Unerring Sight",
+      "entries": [
+        "The Champion's ranged weapon attacks ignore {@quickref cover|PHB|3|0|half cover} and {@quickref cover|PHB|3|0|three-quarters cover} and have no range penalty."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "The Champion wears {@item boots of haste|TDCSR} and the {@item deathwalker's ward (Exalted)|TDCSR|Deathwalker's Ward}, and wields {@item Whisper (Exalted)|TDCSR|Whisper}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Champion makes three attacks with {@item Whisper (Exalted)|TDCSR|Whisper}."
+      ]
+    },
+    {
+      "name": "Whisper",
+      "entries": [
+        "Melee/Ranged atk +15 to hit, reach 5 ft. or range 60 ft., one target. 10 (1d4 + 8 damage) piercing damage plus 4 (1d8 damage) psychic damage. On a critical hit, the target must succeed on a DC 18 Wisdom {@quickref saving throws|PHB|2|1|saving throw} or be {@condition frightened} of the Champion for 1 minute. On a ranged attack, the Champion can teleport with {@item Whisper (Exalted)|TDCSR|Whisper}, appearing within 5 feet of the target on a hit, or in a random space within 30 feet of the target on a miss."
+      ]
+    },
+    {
+      "name": "Touch of Life and Death (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
+      "entries": [
+        "The Champion touches a creature within 5 feet of him, and chooses to either heal or harm that creature, restoring 55 ({@dice 10d10}) hit points or dealing 55 (10d10 damage) necrotic damage. If the creature is an unwilling target, it can avoid either effect with a successful DC 20 Dexterity {@quickref saving throws|PHB|2|1|saving throw}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The Champion's innate spellcasting ability is Charisma ({@hit 10} to hit with spell attacks, save {@dc 18}). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "bane",
+        "bless",
+        "druidcraft"
+      ],
+      "daily": {
+        "1": [
+          "greater invisibility"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "unconscious"
+  ],
+  "resist": [
+    "radiant",
+    "necrotic",
+    "poison",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

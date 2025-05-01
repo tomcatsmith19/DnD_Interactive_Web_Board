@@ -1,0 +1,104 @@
+{
+  "name": "Maggie Keeneyes (Tier 3)",
+  "source": "CRCotN",
+  "page": 194,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [
+    "ogre"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 142,
+  "speed": {
+    "walk": 30,
+    "swim": {
+      "number": 30,
+      "condition": "(ruidium armor)"
+    }
+  },
+  "str": 20,
+  "dex": 14,
+  "con": 18,
+  "int": 14,
+  "wis": 14,
+  "cha": 8,
+  "skills": {
+    "athletics": "+8",
+    "insight": "+5",
+    "perception": "+5",
+    "persuasion": "+5"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Push",
+      "entries": [
+        "Once during each of her turns, after hitting a creature with an attack, Maggie can force the target to make a {@dc 16} Strength saving throw; on a failed save, the target is pushed up to 15 feet horizontally away from Maggie and knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Maggie wears a suit of ruidium armor (plate; see appendix B). If Maggie rolls a 1 on a saving throw while wearing the armor, she must succeed on a {@dc 20} Charisma saving throw or gain 1 level of {@condition exhaustion}."
+      ]
+    },
+    {
+      "name": "Tactical Readiness",
+      "entries": [
+        "Maggie and allies within 30 feet of her have advantage on initiative rolls, as long as Maggie isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Maggie makes two Heavy Greataxe or Hammer Toss attacks."
+      ]
+    },
+    {
+      "name": "Heavy Greataxe",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 16 (2d12 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Hammer Toss",
+      "entries": [
+        "Ranged atk +8 to hit, range 20/60 ft., one target. 15 (4d4 + 5 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

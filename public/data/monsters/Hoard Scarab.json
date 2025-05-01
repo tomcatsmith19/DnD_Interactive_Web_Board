@@ -1,0 +1,63 @@
+{
+  "name": "Hoard Scarab",
+  "source": "FTD",
+  "page": 205,
+  "size": [
+    "T"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 7,
+  "speed": {
+    "walk": 20,
+    "burrow": 20,
+    "fly": 20
+  },
+  "str": 4,
+  "dex": 16,
+  "con": 11,
+  "int": 3,
+  "wis": 8,
+  "cha": 6,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "If the scarab is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the scarab move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the scarab is animate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) piercing damage. If the target is a creature, it has disadvantage on attack rolls until the start of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft.",
+    "tremorsense 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

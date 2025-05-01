@@ -1,0 +1,129 @@
+{
+  "name": "Space Clown",
+  "source": "BAM",
+  "page": 54,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 14,
+  "int": 11,
+  "wis": 11,
+  "cha": 16,
+  "skills": {
+    "acrobatics": "+5",
+    "performance": "+5",
+    "sleight of hand": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dying Burst",
+      "entries": [
+        "When the clown drops to 0 hit points, it pops like a balloon, releasing a splash of putrid, corrosive ichor. Each creature within 5 feet of the clown when it bursts must make a {@dc 12} Dexterity saving throw, taking 10 ({@damage 3d6}) acid damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Squeakers",
+      "entries": [
+        "The clown wears shoes that squeak when it walks. The squeaking can be heard out to a range of 30 feet. The squeaking is silenced while the clown's Phantasmal Form is in effect."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shock",
+      "entries": [
+        "{@atk ms} +5 to hit, reach 5 ft., one target. 17 (4d6 + 3 damage) lightning damage."
+      ]
+    },
+    {
+      "name": "Ray Gun",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 120 ft., one creature. 7 (2d6 damage) psychic damage, and if the target is a Humanoid with an Intelligence score of 3 or higher, it must make a DC 12 Wisdom saving throw. On a failed save, the target perceives everything it sees or hears as hilariously funny and is {@condition incapacitated} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The clown casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability:"
+      ],
+      "will": [
+        "friends",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

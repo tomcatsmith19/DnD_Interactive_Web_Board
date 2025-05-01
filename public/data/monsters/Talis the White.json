@@ -1,0 +1,151 @@
+{
+  "name": "Talis the White",
+  "source": "HotDQ",
+  "page": 93,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-elf"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 12,
+  "con": 14,
+  "int": 10,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "deception": "+6",
+    "insight": "+6",
+    "perception": "+6",
+    "persuasion": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Elvish",
+    "Infernal"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Talis has {@item +1 scale mail} and a {@item wand of winter|hotdq}."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Talis has advantage on saving throws against being {@condition charmed}, and magic can't put her to sleep."
+      ]
+    },
+    {
+      "name": "Winter Strike (3/Day)",
+      "entries": [
+        "Once per turn, when Talis hits with a melee attack, she can expend a use of this trait to deal an extra 9 ({@damage 2d8}) cold damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or ranged 20/60 ft., one target. 6 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Talis is a 9th-level spellcaster that uses Wisdom as her spellcasting ability (spell save {@dc 14}, {@hit 6} to hit with spell attacks). Talis has the following spells prepared from the cleric spell list:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "resistance",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "command",
+            "cure wounds",
+            "healing word",
+            "inflict wounds"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blindness/deafness",
+            "lesser restoration",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "mass healing word",
+            "sending"
+          ]
+        },
+        "4": {
+          "spells": [
+            "death ward",
+            "freedom of movement"
+          ]
+        },
+        "5": {
+          "spells": [
+            "insect plague"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

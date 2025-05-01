@@ -1,0 +1,76 @@
+{
+  "name": "Aeshma",
+  "source": "CoA",
+  "page": 261,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "tiefling"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 14,
+  "int": 14,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "deception": "+7",
+    "insight": "+4",
+    "performance": "+7",
+    "persuasion": "+7",
+    "sleight of hand": "+7",
+    "stealth": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Infernal"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Aeshma makes two attacks using his Shortsword, Hand Crossbow, or a combination of the two."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 30/120 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

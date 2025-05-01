@@ -1,0 +1,102 @@
+{
+  "name": "Emil Toranescu",
+  "source": "CoS",
+  "page": 81,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "shapechanger"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "11",
+    "12"
+  ],
+  "hp": 72,
+  "speed": {
+    "walk": {
+      "number": 30,
+      "condition": "(40 ft. in wolf form)"
+    }
+  },
+  "str": 15,
+  "dex": 13,
+  "con": 14,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+3"
+  },
+  "passive": 14,
+  "languages": [
+    "Common (can't speak in wolf form)"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The werewolf has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Humanoid or Hybrid Form Only)",
+      "entries": [
+        "The werewolf makes two attacks: two with its spear (humanoid form) or one with its bite and one with its claws (hybrid form)."
+      ]
+    },
+    {
+      "name": "Bite (Wolf or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with werewolf lycanthropy."
+      ]
+    },
+    {
+      "name": "Claws (Hybrid Form Only)",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 7 (2d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Spear (Humanoid Form Only)",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one creature. 5 (1d6 + 2 damage) piercing damage, or 6 (1d8 + 2 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "bludgeoning (from nonmagical attacks that aren't silvered)",
+    "piercing (from nonmagical attacks that aren't silvered)",
+    "slashing (from nonmagical attacks that aren't silvered)"
+  ],
+  "senses": [],
+  "environment": [
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

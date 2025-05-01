@@ -1,0 +1,63 @@
+{
+  "name": "Orond Gralhund",
+  "source": "WDH",
+  "page": 213,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    {
+      "tag": "human",
+      "prefix": "Tethyrian"
+    }
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 11,
+  "int": 9,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "deception": "+5",
+    "insight": "+4",
+    "persuasion": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

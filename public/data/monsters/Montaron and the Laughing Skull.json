@@ -1,0 +1,114 @@
+{
+  "name": "Montaron and the Laughing Skull",
+  "source": "MaBJoV",
+  "page": 86,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "halfling"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 91,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 20,
+  "con": 16,
+  "int": 13,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "acrobatics": "+9",
+    "deception": "+4",
+    "perception": "+4",
+    "stealth": "+13"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Halfling",
+    "Thieves' cant"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Assassinate",
+      "entries": [
+        "During his first turn, Montaron has advantage on attack rolls against any creature that hasn't taken a turn. Any hit Montaron scores against a {@quickref Surprise|PHB|3|0|surprised} creature is a critical hit."
+      ]
+    },
+    {
+      "name": "Evasion",
+      "entries": [
+        "If Montaron is subjected to an effect that allows him to make a Dexterity saving throw to take only half damage, Montaron instead takes no damage if he succeeds on the saving throw, and only half damage if he fails."
+      ]
+    },
+    {
+      "name": "Nimbleness",
+      "entries": [
+        "Montaron can move through the space of any creature that is of a size larger than his."
+      ]
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "entries": [
+        "Montaron deals an extra 21 ({@damage 6d6}) damage when he hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 ft. of an ally of Montaron that isn't incapacitated and Montaron doesn't have disadvantage on the attack roll."
+      ]
+    },
+    {
+      "name": "Special Items",
+      "entries": [
+        "Montaron possesses a {@item bag of holding}. He keeps the {@creature demilich}, Xzar, in the bag. He also possesses a portable hole, which he uses to aid in robberies. As a bonus action, Montaron can place his portable hole in his bag of holding. This instantly destroys both items and opens a gate to the Astral Plane. Montaron and any creature within 10 feet of him is sucked through the gate to a random location on the Astral Plane. The gate then closes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Montaron makes two shortsword attacks and uses the ability Unleash the Demilich if available."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Light Crossbow",
+      "entries": [
+        "Ranged atk +9 to hit, range 80/320 ft., one target. 9 (1d8 + 5 damage) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Unleash the Demilich",
+      "entries": [
+        "Montaron reaches inside his bag of holding and releases Xzar. Xzar is a demilich and appears within 5 ft. of Montaron. Xzar rolls for his own initiative. Xzar cannot use lair actions or legendary actions. He has a CR of 14."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

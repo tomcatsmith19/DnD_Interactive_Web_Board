@@ -1,0 +1,68 @@
+{
+  "name": "Homunculus",
+  "source": "MM",
+  "page": 188,
+  "size": [
+    "T"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 20,
+    "fly": 40
+  },
+  "str": 4,
+  "dex": 15,
+  "con": 11,
+  "int": 10,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Telepathic Bond",
+      "entries": [
+        "While the homunculus is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 1 piercing damage, and the target must succeed on a DC 10 Constitution saving throw or be {@condition poisoned} for 1 minute. If the saving throw fails by 5 or more, the target is instead {@condition poisoned} for 5 ({@dice 1d10}) minutes and {@condition unconscious} while {@condition poisoned} in this way."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,131 @@
+{
+  "name": "Heralds of Dust Exorcist",
+  "source": "AATM",
+  "page": null,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13",
+    "16"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 16,
+  "con": 16,
+  "int": 17,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "arcana": "+6",
+    "perception": "+5",
+    "religion": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "Common plus three more languages"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Incorruptible Vessel",
+      "entries": [
+        "The exorcist can't be possessed by Celestials, Fiends, or Undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The exorcist makes two Grave Burst attacks."
+      ]
+    },
+    {
+      "name": "Grave Burst",
+      "entries": [
+        "{@atk ms,rs} +6 to hit, reach 5 ft. or range 120 ft., one target. 19 (3d10 + 3 damage) necrotic or radiant damage (exorcist's choice)."
+      ]
+    },
+    {
+      "name": "Admit Entity {@recharge 5}",
+      "entries": [
+        "The exorcist thins the veil of death for a creature it can see within 60 feet of itself, exposing the target to malevolent entities. The target must make a DC 14 Charisma saving throw. On a failed save, the target takes 36 (8d8 damage) psychic damage and has the {@condition incapacitated} condition for 1 minute, during which time it retches and babbles incoherently in a voice that is not its own. On a successful save, the target takes half as much damage only. An {@condition incapacitated} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The exorcist casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 14}, {@hit 6} to hit with spell attacks):",
+        "At-will: detect evil and good, mage armor (self only), mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

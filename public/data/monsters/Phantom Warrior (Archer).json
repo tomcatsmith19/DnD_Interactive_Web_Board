@@ -1,0 +1,107 @@
+{
+  "name": "Phantom Warrior (Archer)",
+  "source": "CoS",
+  "page": 142,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 16,
+  "int": 8,
+  "wis": 10,
+  "cha": 15,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "any languages it knew in life"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Ethereal Sight",
+      "entries": [
+        "The phantom warrior can see 60 feet into the Ethereal Plane when it is on the Material Plane, and vice versa."
+      ]
+    },
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The phantom warrior can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    },
+    {
+      "name": "Spectral Armor and Shield",
+      "entries": [
+        "The phantom warrior's AC accounts for its spectral armor and shield."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The phantom warrior makes two attacks with its spectral longsword."
+      ]
+    },
+    {
+      "name": "Spectral Longsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) force damage."
+      ]
+    },
+    {
+      "name": "Etherealness",
+      "entries": [
+        "The phantom warrior enters the Ethereal Plane from the Material Plane, or vice versa. It is visible on the Material Plane while it is in the Border Ethereal, and vice versa, yet it can't affect or be affected by anything on the other plane."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

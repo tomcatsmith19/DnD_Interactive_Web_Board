@@ -1,0 +1,89 @@
+{
+  "name": "Tasloi",
+  "source": "MaBJoV",
+  "page": 153,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 25,
+    "climb": 25
+  },
+  "str": 8,
+  "dex": 16,
+  "con": 8,
+  "int": 12,
+  "wis": 9,
+  "cha": 12,
+  "skills": {
+    "stealth": "+5",
+    "perception": "+1"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Sylvan",
+    "Tasloi"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "The tasloi can take the Disengage or Hide action as a bonus action on each of its turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Javelin Expert",
+      "entries": [
+        "Tasloi can use their Dexterity score for attack and damage rolls with a javelin, just as if the javelin had the finesse property."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Net",
+      "entries": [
+        "Ranged atk +3 to hit, range 5/15 ft., one Large or smaller creature. The target is {@condition restrained}. A creature can use its action to make a DC 10 Strength check to free itself or another creature in a net, ending the effect on a success. Dealing 5 slashing damage to the net (AC 10) frees the target without harming it and destroys the net."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Ranged atk +5 to hit, range 30/120 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

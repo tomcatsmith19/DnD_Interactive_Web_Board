@@ -1,0 +1,145 @@
+{
+  "name": "Skr'a S'orsk",
+  "source": "EGW",
+  "page": 254,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "lizardfolk"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 13,
+  "int": 10,
+  "wis": 15,
+  "cha": 8,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+4",
+    "survival": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The lizardfolk can hold its breath for 15 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Lizardfolk Form Only)",
+      "entries": [
+        "The lizardfolk makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage, or 7 (1d10 + 2 damage) piercing damage in {@creature crocodile} form. If Skr'a S'orsk is in crocodile form and the target is a Large or smaller creature, the target is {@condition grappled} (escape DC 12). Until this grapple ends, the target is {@condition restrained}, and Skr'a S'orsk can't bite another target. If Skr'a S'orsk reverts to its true form, the grapple ends."
+      ]
+    },
+    {
+      "name": "Claws (Lizardfolk Form Only)",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Change Shape (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The lizardfolk magically polymorphs into a {@creature crocodile}, remaining in that form for up to 1 hour. It can revert to its true form as a bonus action. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Lizardfolk Form Only)",
+      "headerEntries": [
+        "Skr'a S'orsk is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). Skr'a S'orsk has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "produce flame",
+            "resistance",
+            "thorn whip"
+          ]
+        },
+        "1": {
+          "spells": [
+            "entangle",
+            "fog cloud"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blindness/deafness",
+            "spike growth"
+          ]
+        },
+        "3": {
+          "spells": [
+            "animate dead",
+            "conjure animals"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

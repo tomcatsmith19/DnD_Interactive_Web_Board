@@ -1,0 +1,92 @@
+{
+  "name": "Mister Threadneedle",
+  "source": "ToA",
+  "page": 183,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 36,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 13,
+  "con": 11,
+  "int": 10,
+  "wis": 10,
+  "cha": 13,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While Mister Threadneedle remains motionless, it is indistinguishable from an ordinary, inanimate scarecrow."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The scarecrow makes two claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 6 (2d4 + 1 damage) slashing damage. If the target is a creature, it must succeed on a DC 11 Wisdom saving throw or be {@condition frightened} until the end of Mister Threadneedle's next turn."
+      ]
+    },
+    {
+      "name": "Terrifying Glare",
+      "entries": [
+        "The scarecrow targets one creature it can see within 30 feet of it. If the target can see Mister Threadneedle, the target must succeed on a DC 11 Wisdom saving throw or be magically {@condition frightened} until the end of Mister Threadneedle's next turn. The {@condition frightened} target is {@condition paralyzed}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

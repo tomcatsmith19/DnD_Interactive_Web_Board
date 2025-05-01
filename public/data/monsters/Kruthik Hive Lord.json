@@ -1,0 +1,99 @@
+{
+  "name": "Kruthik Hive Lord",
+  "source": "MTF",
+  "page": 212,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 40,
+    "burrow": 20,
+    "climb": 40
+  },
+  "str": 19,
+  "dex": 16,
+  "con": 17,
+  "int": 10,
+  "wis": 14,
+  "cha": 10,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Kruthik"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The kruthik has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The kruthik has advantage on an attack roll against a creature if at least one of the kruthik's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The kruthik can burrow through solid rock at half its burrowing speed and leaves a 10-foot-diameter tunnel in its wake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The kruthik makes two stab attacks or two spike attacks."
+      ]
+    },
+    {
+      "name": "Stab",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 9 (1d10 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Spike",
+      "entries": [
+        "Ranged atk +6 to hit, range 30/120 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Acid Spray {@recharge 5}",
+      "entries": [
+        "The kruthik sprays acid in a 15-foot cone. Each creature in that area must make a DC 14 Dexterity saving throw, taking 22 (4d10 damage) acid damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft.",
+    "tremorsense 60 ft."
+  ],
+  "environment": [
+    "desert",
+    "mountain",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

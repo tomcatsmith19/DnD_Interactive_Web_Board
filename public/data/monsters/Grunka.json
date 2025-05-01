@@ -1,0 +1,78 @@
+{
+  "name": "Grunka",
+  "source": "OoW",
+  "page": 115,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 9,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Martial Advantage",
+      "entries": [
+        "Once per turn, Grunka can deal an extra 7 ({@dice 2d6}) damage to a creature it hits with a weapon attack if that creature is within 5 feet of an ally of Grunka that isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) slashing damage, or 6 (1d10 + 1 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +3 to hit, range 150/600 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "grassland",
+    "forest",
+    "hill",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,149 @@
+{
+  "name": "Narrak",
+  "source": "OotA",
+  "page": 232,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "derro"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 40,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 13,
+  "int": 14,
+  "wis": 5,
+  "cha": 16,
+  "skills": {
+    "arcana": "+4",
+    "stealth": "+4"
+  },
+  "passive": 7,
+  "languages": [
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Insanity",
+      "entries": [
+        "Narrak has advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Narrak has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, Narrak has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Armor of Shadows (Recharges after a Short or Long Rest)",
+      "entries": [
+        "Narrak casts {@spell mage armor} on himself"
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "One with Shadows",
+      "entries": [
+        "While he is in a dim light or darkness, Narrak can become {@condition invisible}. He remains so until he moves or takes an action or reaction."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Narrak is a 5th-level spellcaster. His spellcasting ability is Charisma (Save {@dc 13}, {@hit 5} to hit with spell attacks) Narrak has two 2nd-level spell slots, which he regains after finishing a short or long rest, and knows the following warlock spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "eldritch blast",
+            "friends",
+            "poison spray"
+          ]
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": [
+            "armor of Agathys",
+            "charm person",
+            "hex",
+            "hold person",
+            "ray of enfeeblement",
+            "spider climb"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

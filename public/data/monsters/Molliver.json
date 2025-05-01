@@ -1,0 +1,91 @@
+{
+  "name": "Molliver",
+  "source": "WBtW",
+  "page": 226,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 17,
+  "con": 16,
+  "int": 10,
+  "wis": 9,
+  "cha": 16,
+  "skills": {
+    "acrobatics": "+7",
+    "sleight of hand": "+7",
+    "stealth": "+7"
+  },
+  "passive": 9,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Evasion",
+      "entries": [
+        "When subjected to an effect that allows a Dexterity saving throw to take only half damage, Molliver takes no damage on a successful save or half damage on a failed one, provided Molliver is not {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Molliver wears  +1 leather armor and boots of levitation."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Molliver makes two Dagger or Shortsword attacks, or one of each."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage. The attack deals an extra 7 (2d6 damage) piercing damage if Molliver has advantage on the attack roll or if the target is within 5 feet of one of Molliver's allies."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 6 (1d6 + 3 damage) piercing damage. The attack deals an extra 7 (2d6 damage) piercing damage if Molliver has advantage on the attack roll or if the target is within 5 feet of one of Molliver's allies."
+      ]
+    },
+    {
+      "name": "Levitate",
+      "entries": [
+        "While wearing boots of levitation, Molliver casts {@spell levitate} (self only)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

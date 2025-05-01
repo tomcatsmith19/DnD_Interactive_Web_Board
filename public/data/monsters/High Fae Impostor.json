@@ -1,0 +1,136 @@
+{
+  "name": "High Fae Impostor",
+  "source": "MCV4EC",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 149,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 13,
+  "dex": 21,
+  "con": 15,
+  "int": 18,
+  "wis": 16,
+  "cha": 23,
+  "skills": {
+    "deception": "+14",
+    "performance": "+10",
+    "stealth": "+13"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The high fae has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The high fae makes two Fae Blade attacks and uses Vexing Prank once."
+      ]
+    },
+    {
+      "name": "Fae Blade",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 18 (3d8 + 5 damage) force damage."
+      ]
+    },
+    {
+      "name": "Vexing Prank",
+      "entries": [
+        "The high fae targets one creature it can see within 60 feet of itself with a magical trick. The target must make a DC 18 Wisdom saving throw. On a failed save, the target takes 21 (6d6 damage) psychic damage and has the {@condition frightened} condition until the start of the high fae's next turn. On a successful save, the target takes half as much damage only."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The high fae casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 18}):"
+      ],
+      "will": [
+        "friends",
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

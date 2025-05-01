@@ -1,0 +1,74 @@
+{
+  "name": "Immortal Lotus Monk",
+  "source": "CM",
+  "page": 165,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "15"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 14,
+  "int": 11,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "acrobatics": "+6",
+    "perception": "+5",
+    "stealth": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "Common"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the monk is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The monk makes two attacks."
+      ]
+    },
+    {
+      "name": "Force Strike",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) force damage, and if the target is a creature, it must succeed on a DC 14 Dexterity saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Dart",
+      "entries": [
+        "Ranged atk +6 to hit, range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

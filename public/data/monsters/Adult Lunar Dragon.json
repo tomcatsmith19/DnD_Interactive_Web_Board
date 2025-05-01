@@ -1,0 +1,119 @@
+{
+  "name": "Adult Lunar Dragon",
+  "source": "BAM",
+  "page": 34,
+  "size": [
+    "H"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 172,
+  "speed": {
+    "walk": 40,
+    "burrow": 20,
+    "fly": 80
+  },
+  "str": 23,
+  "dex": 12,
+  "con": 20,
+  "int": 10,
+  "wis": 13,
+  "cha": 15,
+  "skills": {
+    "perception": "+11",
+    "stealth": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "If the dragon fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The dragon can burrow through solid rock at half its burrowing speed and leaves a 15-foot-diameter tunnel in its wake."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The dragon doesn't require air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 13 (2d6 + 6 damage) piercing damage plus 3 (1d6 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 13 (2d6 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +11 to hit, reach 15 ft., one target. 13 (2d6 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Cold Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a blast of frost in a 60-foot cone. Each creature in the cone must make a DC 18 Constitution saving throw. On a failed save, the creature takes 36 (8d8 damage) cold damage, and its speed is reduced to 0 until the end of its next turn. On a successful save, the creature takes half as much damage, and its speed isn't reduced."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Tail Attack",
+      "entries": [
+        "The dragon makes one Tail attack."
+      ]
+    },
+    {
+      "name": "Treacherous Ice",
+      "entries": [
+        "Magical ice covers the ground in a 20-foot radius centered on a point the dragon can see within 120 feet of itself. The ice, which is difficult terrain for all creatures except lunar dragons, lasts for 10 minutes or until the dragon uses this legendary action again."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "darkvision 240 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

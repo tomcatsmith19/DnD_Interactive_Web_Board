@@ -1,0 +1,119 @@
+{
+  "name": "Scion of Surtur",
+  "source": "BGG",
+  "page": 173,
+  "size": [
+    "G"
+  ],
+  "type": "giant",
+  "tags": [
+    "titan"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 546,
+  "speed": {
+    "walk": 60
+  },
+  "str": 30,
+  "dex": 17,
+  "con": 28,
+  "int": 21,
+  "wis": 24,
+  "cha": 20,
+  "skills": {
+    "athletics": "+18",
+    "perception": "+15"
+  },
+  "passive": 25,
+  "languages": [
+    "Giant",
+    "Primordial"
+  ],
+  "cr": "25",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Legendary Resistance (6/Day)",
+      "entries": [
+        "If the scion fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The scion has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The scion deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The scion makes one attack using Lava Blade or Lava Ball, as well as two Slam attacks."
+      ]
+    },
+    {
+      "name": "Lava Blade",
+      "entries": [
+        "Melee atk +18 to hit, reach 30 ft., one target. 32 (4d10 + 10 damage) slashing damage plus 18 (4d8 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Lava Ball",
+      "entries": [
+        "Ranged atk +18 to hit, range 120/480 ft., one target. 29 (3d12 + 10 damage) bludgeoning damage plus 10 (3d6 damage) fire damage, and the target must succeed on a DC 26 Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +18 to hit, reach 20 ft., one target. 28 (4d8 + 10 damage) force damage."
+      ]
+    },
+    {
+      "name": "Lava Wave {@recharge 5}",
+      "entries": [
+        "The scion emits a wave of lava from its blade, hands, or mouth in a 90-foot cone. Each creature in that area must make a DC 25 Dexterity saving throw. On a failed save, a creature takes 60 (11d10 damage) fire damage and has the {@condition restrained} condition from being embedded in hardening rock. A creature can make a DC 25 Strength (Athletics) check as an action, freeing itself or a creature within reach from the rock on a success. The rock has AC 17 and 40 hit points, and it is immune to fire, poison, and psychic damage. On a successful save, a creature takes half as much damage only."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified"
+  ],
+  "resist": [
+    "cold",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

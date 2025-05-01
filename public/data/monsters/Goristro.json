@@ -1,0 +1,114 @@
+{
+  "name": "Goristro",
+  "source": "MM",
+  "page": 59,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 310,
+  "speed": {
+    "walk": 40
+  },
+  "str": 25,
+  "dex": 11,
+  "con": 25,
+  "int": 6,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Abyssal"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the goristro moves at least 15 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 38 ({@damage 7d10}) piercing damage. If the target is a creature, it must succeed on a {@dc 21} Strength saving throw or be pushed up to 20 feet away and knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Labyrinthine Recall",
+      "entries": [
+        "The goristro can perfectly recall any path it has traveled."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The goristro has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The goristro deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The goristro makes three attacks: two with its fists and one with its hoof."
+      ]
+    },
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +13 to hit, reach 10 ft., one target. 20 (3d8 + 7 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Hoof",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target. 23 (3d10 + 7 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 21 Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +13 to hit, reach 10 ft., one target. 45 (7d10 + 7 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

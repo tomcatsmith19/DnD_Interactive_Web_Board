@@ -1,0 +1,121 @@
+{
+  "name": "Mjork Burner",
+  "source": "GHLoE",
+  "page": 71,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 95,
+  "speed": {
+    "walk": 40
+  },
+  "str": 15,
+  "dex": 15,
+  "con": 18,
+  "int": 7,
+  "wis": 12,
+  "cha": 7,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Ignan",
+    "Terran"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fiery Body",
+      "entries": [
+        "A creature that touches the mjork burner or hits it with a melee attack while within 5 feet of it takes 7 ({@damage 2d6}) fire damage."
+      ]
+    },
+    {
+      "name": "Fire Path",
+      "entries": [
+        "The mjork burner leaves fire behind in any space it moves through. Until the start of the mjork's next turn, any creature that enters this area for the first time on a turn or ends its turn there takes 5 ({@damage 2d4}) fire damage. The fire can ignite flammable objects (not creatures), causing the mjork's Fire Path to last longer."
+      ]
+    },
+    {
+      "name": "Ignite",
+      "entries": [
+        "A creature or flammable object ignites if it takes fire damage from the mjork burner's attacks. Until a creature takes an action to douse this fire, the target takes 5 ({@damage 2d4}) fire damage at the start of each of its turns."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The mjork burner sheds bright light in a 10-foot radius and dim light for another 10 feet."
+      ]
+    },
+    {
+      "name": "Smoke Sense",
+      "entries": [
+        "A mjork burner in contact with smoke has blindsight in that smoke's area in a radius of up to 120 feet."
+      ]
+    },
+    {
+      "name": "Water Susceptibility",
+      "entries": [
+        "For every 5 feet the mjork burner moves in water, or for every gallon of water splashed on it, it takes 1 cold damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The mjork burner makes two attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 9 (2d6 + 2 damage) bludgeoning damage, 7 (2d6 damage) fire damage, and Ignite."
+      ]
+    },
+    {
+      "name": "Hurl Fire",
+      "entries": [
+        "Ranged Spell atk +5 to hit, ranged 30/60 ft., one target. 13 (3d6 + 3 damage) fire damage and Ignite."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "thunder"
+  ],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

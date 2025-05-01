@@ -1,0 +1,70 @@
+{
+  "name": "Oozing Vulture",
+  "source": "GHLoE",
+  "page": 38,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 20,
+    "fly": 50
+  },
+  "str": 16,
+  "dex": 13,
+  "con": 12,
+  "int": 5,
+  "wis": 14,
+  "cha": 8,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+3"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "The oozing vulture has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Keen Sight and Smell",
+      "entries": [
+        "The oozing vulture has advantage on Wisdom (Perception) checks that rely on sight or smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

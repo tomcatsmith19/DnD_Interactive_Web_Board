@@ -1,0 +1,79 @@
+{
+  "name": "Husk Zombie",
+  "source": "EGW",
+  "page": 293,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 37,
+  "speed": {
+    "walk": 35
+  },
+  "str": 16,
+  "dex": 10,
+  "con": 16,
+  "int": 3,
+  "wis": 6,
+  "cha": 5,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Curse of the Husk",
+      "entries": [
+        "A humanoid slain by a melee attack from the zombie revives as a husk zombie on its next turn."
+      ]
+    },
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The zombie makes two claw attacks. For each of these attacks that reduces a creature to 0 hit points, the zombie can make an additional claw attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

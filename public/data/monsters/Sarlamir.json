@@ -1,0 +1,86 @@
+{
+  "name": "Sarlamir",
+  "source": "DSotDQ",
+  "page": 102,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 10,
+  "con": 16,
+  "int": 13,
+  "wis": 14,
+  "cha": 10,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces Sarlamir to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is bludgeoning or from a critical hit. On a success, Sarlamir drops to 1 hit point instead."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The skeletal knight doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skeletal knight makes three Enervating Blade or Throwing Axe attacks in any combination."
+      ]
+    },
+    {
+      "name": "Enervating Blade",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 15 (3d6 + 5 damage) necrotic damage, and if the target is a creature, it can't regain hit points until the start of Sarlamir's next turn."
+      ]
+    },
+    {
+      "name": "Throwing Axe",
+      "entries": [
+        "Melee/Ranged atk +8 to hit, reach 5 ft. or range 20/60 ft., one target. 14 (2d8 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

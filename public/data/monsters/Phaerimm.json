@@ -1,0 +1,198 @@
+{
+  "name": "Phaerimm",
+  "source": "MaBJoV",
+  "page": 147,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 144,
+  "speed": {
+    "walk": 15,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 20,
+  "dex": 13,
+  "con": 16,
+  "int": 19,
+  "wis": 20,
+  "cha": 23,
+  "skills": {
+    "arcana": "+9",
+    "insight": "+10"
+  },
+  "passive": 15,
+  "languages": [
+    "Undercommon",
+    "understands Common",
+    "telepathy 100 ft."
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Arcane Sight",
+      "entries": [
+        "The phaerimm discerns the location of all magical auras within sight and knows which creatures within 60 feet are spellcasters."
+      ]
+    },
+    {
+      "name": "Extended Concentration",
+      "entries": [
+        "The phaerimm can concentrate on two different spells at the same time. If {@status concentration} is broken, then both spells fade immediately."
+      ]
+    },
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The phaerimm is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The phaerimm has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The phaerimm makes four attacks with its claws and a bite or stinger attack. Alternatively, it attacks with two claws and casts one spell."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +10 to hit, reach 10 ft., one target. 12 (2d6 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Stinger",
+      "entries": [
+        "Melee atk +10 to hit, reach 10 ft., one target. 12 (2d6 + 5 damage) piercing damage. If the target fails a DC 18 Constitution saving throw, they will be {@condition paralyzed} for 1 minute. The phaerimm's poison forces the {@condition paralyzed} target to float five feet above the ground. The target may repeat the saving throw at the end of each of it's turns."
+      ]
+    },
+    {
+      "name": "Implant",
+      "entries": [
+        "The phaerimm uses an action to do a stinger attack against a {@condition paralyzed} target. If the stinger hits, an egg is implanted in the target. This egg can only be removed by spells that cure disease, such as lesser restoration. If the egg is not removed within 90 days, the larva emerges, and the host is killed. A phaerimm has a single egg so may only use this ability once."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The phaerimm is a 15th-level spellcaster. It's innate spellcasting ability is Charisma (spell save {@dc 19}, {@hit 11} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "minor illusion",
+            "poison spray",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "dissonant whispers",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "crown of madness",
+            "detect thoughts",
+            "phantasmal force"
+          ]
+        },
+        "3": {
+          "spells": [
+            "fireball",
+            "fear",
+            "hypnotic pattern"
+          ]
+        },
+        "4": {
+          "spells": [
+            "confusion",
+            "greater invisibility",
+            "phantasmal killer"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dominate person",
+            "hold monster",
+            "telekinesis"
+          ]
+        },
+        "6": {
+          "spells": [
+            "chain lightning",
+            "mass suggestion"
+          ]
+        },
+        "7": {
+          "spells": [
+            "prismatic spray",
+            "reverse gravity"
+          ]
+        },
+        "8": {
+          "spells": [
+            "dominate monster"
+          ]
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "petrified"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

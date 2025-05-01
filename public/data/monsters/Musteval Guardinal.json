@@ -1,0 +1,115 @@
+{
+  "name": "Musteval Guardinal",
+  "source": "MPP",
+  "page": 33,
+  "size": [
+    "S"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 38,
+  "speed": {
+    "walk": 35
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 11,
+  "int": 14,
+  "wis": 15,
+  "cha": 14,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+7"
+  },
+  "passive": 16,
+  "languages": [
+    "Celestial",
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The musteval makes two Bone Blade attacks."
+      ]
+    },
+    {
+      "name": "Bone Blade",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage plus 3 (1d6 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The musteval casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability:"
+      ],
+      "will": [
+        "dancing lights"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [
+    "radiant"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

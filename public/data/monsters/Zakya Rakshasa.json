@@ -1,0 +1,146 @@
+{
+  "name": "Zakya Rakshasa",
+  "source": "ERLW",
+  "page": 309,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 18,
+  "int": 12,
+  "wis": 13,
+  "cha": 11,
+  "skills": {
+    "athletics": "+7",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Infernal"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Limited Magic Immunity",
+      "entries": [
+        "The rakshasa can't be affected or detected by spells of 1st level or lower unless it wishes to be. It has advantage on saving throws against all other spells and magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The rakshasa's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Martial Prowess (1/Turn)",
+      "entries": [
+        "When the rakshasa hits a creature with a melee weapon attack, the attack deals an extra 11 ({@dice 2d10}) damage of the weapon's type, and the creature must make a {@dc 15} Strength saving throw. On a failure, the rakshasa can push the creature up to 10 feet away from it, knock the creature {@condition prone}, or make the creature drop one item it is holding of the rakshasa's choice."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The rakshasa makes three melee weapon attacks. Alternatively, it can make two ranged attacks with its javelins."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage, or 9 (1d10 + 4 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 30/120 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The rakshasa's innate spellcasting ability is Charisma (spell save {@dc 11}). The rakshasa can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect thoughts",
+        "disguise self"
+      ],
+      "daily": {
+        "1": [
+          "shield"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "piercing"
+  ],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

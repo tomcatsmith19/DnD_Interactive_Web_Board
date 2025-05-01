@@ -1,0 +1,130 @@
+{
+  "name": "Aurumach Rilmani",
+  "source": "MPP",
+  "page": 43,
+  "size": [
+    "L"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 285,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 20,
+  "dex": 21,
+  "con": 18,
+  "int": 21,
+  "wis": 18,
+  "cha": 16,
+  "skills": {
+    "arcana": "+11",
+    "history": "+11",
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The aurumach makes three Manifested Blade or Gleaming Ray attacks."
+      ]
+    },
+    {
+      "name": "Manifested Blade",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 23 (4d8 + 5 damage) force damage."
+      ]
+    },
+    {
+      "name": "Gleaming Ray",
+      "entries": [
+        "Ranged Spell atk +11 to hit, range 120 ft., one target. 24 (3d12 + 5 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The aurumach casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 19}):"
+      ],
+      "will": [
+        "detect magic",
+        "detect thoughts"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "psychic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

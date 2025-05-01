@@ -1,0 +1,60 @@
+{
+  "name": "Rooster",
+  "source": "JttRC",
+  "page": 206,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 10
+  },
+  "str": 5,
+  "dex": 16,
+  "con": 8,
+  "int": 2,
+  "wis": 14,
+  "cha": 6,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The rooster has advantage on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 1 slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

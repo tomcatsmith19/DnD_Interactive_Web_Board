@@ -1,0 +1,84 @@
+{
+  "name": "Horror Flit Hunter",
+  "source": "GHLoE",
+  "page": 50,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 40,
+    "climb": 40,
+    "swim": 40
+  },
+  "str": 11,
+  "dex": 18,
+  "con": 12,
+  "int": 3,
+  "wis": 10,
+  "cha": 4,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The horror flit hunter can breathe air and water."
+      ]
+    },
+    {
+      "name": "Breed",
+      "entries": [
+        "When the horror flit hunter kills a Small or larger creature, a new horror flit swarm emerges from the corpse {@dice 1d4} hours later."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The horror flit hunter can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The horror flit hunter makes two bite attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 9 (2d4 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Reaper Spirit",
+  "source": "BMT",
+  "page": 50,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "0"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 16,
+  "int": 16,
+  "wis": 16,
+  "cha": 16,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "understands the languages you speak"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The spirit can move through other creatures and objects as if they were difficult terrain. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes {@damage 1d10} force damage for every 5 feet shunted."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The spirit makes a number of Reaping Scythe attacks equal to half the level of the spell (rounded down)."
+      ]
+    },
+    {
+      "name": "Reaping Scythe",
+      "entries": [
+        "Melee atk your spell attack modifier to hit (with advantage), reach 5 ft., the creature haunted by Haunt Creature. 1d8 + 3 + summonSpellLevel damage necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

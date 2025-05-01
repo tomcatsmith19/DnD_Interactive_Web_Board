@@ -1,0 +1,88 @@
+{
+  "name": "Death's Head of Bhaal",
+  "source": "BGDIA",
+  "page": 233,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 76,
+  "speed": {
+    "walk": 50
+  },
+  "str": 20,
+  "dex": 20,
+  "con": 20,
+  "int": 14,
+  "wis": 13,
+  "cha": 16,
+  "skills": {
+    "intimidation": "+6",
+    "perception": "+4",
+    "persuasion": "+6",
+    "stealth": "+11"
+  },
+  "passive": 14,
+  "languages": [
+    "Common"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Aura of Murder",
+      "entries": [
+        "As long as the death's head is not {@condition incapacitated}, hostile creatures within 5 feet of it gain vulnerability to piercing damage unless they have resistance or immunity to such damage."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The death's head has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The death's head uses Stunning Gaze and makes two dagger attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d4 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Stunning Gaze",
+      "entries": [
+        "The death's head targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be {@condition stunned} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

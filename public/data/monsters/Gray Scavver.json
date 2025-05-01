@@ -1,0 +1,61 @@
+{
+  "name": "Gray Scavver",
+  "source": "BAM",
+  "page": 49,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 0,
+    "fly": 40
+  },
+  "str": 16,
+  "dex": 13,
+  "con": 15,
+  "int": 1,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The scavver doesn't require air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit (with advantage if the target is a creature that is missing any hit points), reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

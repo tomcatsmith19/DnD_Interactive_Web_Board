@@ -1,0 +1,168 @@
+{
+  "name": "Manshoon",
+  "source": "WDH",
+  "page": 209,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 126,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 23,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "arcana": "+11",
+    "history": "+11"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Goblin",
+    "Infernal",
+    "Orc",
+    "Undercommon"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Manshoon wears a black {@item robe of the archmagi} and wields a {@item staff of power} (both accounted for in his statistics). Roll {@dice 2d10} to determine how many charges the staff has remaining."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "While wearing his robe of the archmagi, Manshoon has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Metal Fist",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Staff of Power",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage, or 6 (1d8 + 2 damage) bludgeoning damage when used with two hands. Manshoon can expend 1 of the staff's charges to deal an extra 3 (1d6 damage) force damage on a hit."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Manshoon is an 18th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 21}, {@hit 15} to hit with spell attacks). He has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "lightning bolt",
+            "sending"
+          ]
+        },
+        "4": {
+          "spells": [
+            "fire shield",
+            "greater invisibility",
+            "polymorph"
+          ]
+        },
+        "5": {
+          "spells": [
+            "Bigby's hand",
+            "scrying",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": [
+            "flesh to stone",
+            "globe of invulnerability"
+          ]
+        },
+        "7": {
+          "spells": [
+            "finger of death",
+            "simulacrum"
+          ]
+        },
+        "8": {
+          "spells": [
+            "feeblemind",
+            "mind blank"
+          ]
+        },
+        "9": {
+          "spells": [
+            "imprisonment",
+            "power word kill"
+          ]
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

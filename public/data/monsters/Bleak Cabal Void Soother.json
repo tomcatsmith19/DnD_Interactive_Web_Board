@@ -1,0 +1,116 @@
+{
+  "name": "Bleak Cabal Void Soother",
+  "source": "MPP",
+  "page": 54,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 55,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 12,
+  "int": 12,
+  "wis": 15,
+  "cha": 10,
+  "skills": {
+    "medicine": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "Common plus one more language"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The void soother makes two Mace or Void Bolt attacks."
+      ]
+    },
+    {
+      "name": "Mace",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage plus 3 (1d6 damage) force damage."
+      ]
+    },
+    {
+      "name": "Void Bolt",
+      "entries": [
+        "Ranged Spell atk +4 to hit, range 90 ft., one target. 9 (2d8 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The void soother casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 12}):"
+      ],
+      "will": [
+        "guidance",
+        "light"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

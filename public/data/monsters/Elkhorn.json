@@ -1,0 +1,83 @@
+{
+  "name": "Elkhorn",
+  "source": "WBtW",
+  "page": 224,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 25
+  },
+  "str": 9,
+  "dex": 13,
+  "con": 16,
+  "int": 9,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "perception": "+2",
+    "survival": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Elkhorn wields a {@item +1 longsword}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Elkhorn makes two Dagger or +1 Longsword attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 3 (1d4 + 1 damage) piercing damage. If the target is a creature that is Large or bigger, it takes an extra 5 (1d10 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "+1 Longsword",
+      "entries": [
+        "Melee atk  +2 to hit, reach 5 ft., one target. 4 (1d8 damage) slashing damage, or 5 (1d10 damage) slashing damage when used with two hands. If the target is a creature that is Large or bigger, it takes an extra 5 (1d10 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

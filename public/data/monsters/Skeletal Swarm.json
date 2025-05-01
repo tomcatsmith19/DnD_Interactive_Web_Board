@@ -1,0 +1,84 @@
+{
+  "name": "Skeletal Swarm",
+  "source": "GoS",
+  "page": 254,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 15,
+  "int": 6,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Deafening Clatter",
+      "entries": [
+        "Creatures are {@condition deafened} while in the swarm's space."
+      ]
+    },
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Small humanoid. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slash",
+      "entries": [
+        "Melee atk +4 to hit, reach 0 ft., one target in the swarm's space. 11 (2d8 + 2 damage) slashing damage, or 6 (1d8 + 2 damage) slashing damage if the swarm has half of its hit points or fewer."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [
+    "slashing",
+    "piercing"
+  ],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,148 @@
+{
+  "name": "Dezmyr Shadowdusk",
+  "source": "WDMM",
+  "page": 287,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 180,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 11,
+  "con": 20,
+  "int": 12,
+  "wis": 16,
+  "cha": 18,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The death knight has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Marshal Undead",
+      "entries": [
+        "Unless Dezmyr is {@condition incapacitated}, it and undead creatures of its choice within 60 feet of it have advantage on saving throws against features that turn undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The death knight makes three longsword attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) slashing damage, or 10 (1d10 + 5 damage) slashing damage if used with two hands, plus 18 (4d8 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Hellfire Orb (1/Day)",
+      "entries": [
+        "The death knight hurls a magical ball of fire that explodes at a point it can see within 120 feet of it. Each creature in a 20-foot-radius sphere centered on that point must make a DC 18 Dexterity saving throw. The sphere spreads around corners. A creature takes 35 (10d6 damage) fire damage and 35 (10d6 damage) necrotic damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Dezmyr is a 19th-level spellcaster. Her spellcasting ability is Charisma (spell save {@dc 18}, {@hit 10} to hit with spell attacks). She has the following paladin spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "command",
+            "compelled duel",
+            "searing smite"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "magic weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "elemental weapon"
+          ]
+        },
+        "4": {
+          "spells": [
+            "locate creature",
+            "staggering smite"
+          ]
+        },
+        "5": {
+          "spells": [
+            "destructive wave"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,114 @@
+{
+  "name": "Illusionist Wizard",
+  "source": "MPMM",
+  "page": 263,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 13,
+  "int": 16,
+  "wis": 11,
+  "cha": 12,
+  "skills": {
+    "arcana": "+5",
+    "history": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "any four languages"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The illusionist makes two Arcane Burst attacks."
+      ]
+    },
+    {
+      "name": "Arcane Burst",
+      "entries": [
+        "{@atk ms,rs} +5 to hit, reach 5 ft. or range 120 ft., one target. 14 (2d10 + 3 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The illusionist casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "dancing lights",
+        "mage hand",
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

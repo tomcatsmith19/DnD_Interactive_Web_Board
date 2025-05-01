@@ -1,0 +1,178 @@
+{
+  "name": "Vecna the Archlich",
+  "source": "VD",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [
+    "Wizard"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 272,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 16,
+  "con": 18,
+  "int": 22,
+  "wis": 24,
+  "cha": 16,
+  "skills": {
+    "arcana": "+22",
+    "history": "+14",
+    "insight": "+15",
+    "perception": "+15"
+  },
+  "passive": 25,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Elvish",
+    "Infernal"
+  ],
+  "cr": "26",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Legendary Resistance (5/Day)",
+      "entries": [
+        "If Vecna fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Vecna carries a magic dagger named Afterthought. In the hands of anyone other than Vecna, Afterthought is a {@item +2 dagger}."
+      ]
+    },
+    {
+      "name": "Undying",
+      "entries": [
+        "If Vecna is slain, his soul refuses to accept its fate and lives on as a disembodied spirit that fashions a new body for itself after {@dice 1d100} years. Vecna's soul can fashion a new body even if its old body was burned to ash or otherwise obliterated. When the new body is complete, Vecna regains all his hit points and becomes active again. Vecna's new body appears anywhere within 100 miles of where Vecna was slain."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "Vecna doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Vecna uses Flight of the Damned (if available), Rotten Fate, or Spellcasting. He then makes two attacks with {@i Afterthought}."
+      ]
+    },
+    {
+      "name": "Afterthought",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target. 7 (1d4 + 5 damage) piercing damage, plus 9 (2d8 damage) necrotic damage. If the target is a creature, it is afflicted by entropic magic, taking 9 (2d8 damage) necrotic damage at the start of each of its turns. Immediately after taking this damage on its turn, the target can make a DC 20 Constitution saving throw, ending the effect on itself on a success. Until it succeeds on this save, the afflicted target can't regain hit points."
+      ]
+    },
+    {
+      "name": "Flight of the Damned {@recharge 5}",
+      "entries": [
+        "Vecna conjures a torrent of flying, spectral entities that fill a 120-foot cone and pass through all creatures in that area before dissipating. Each creature in that area must make a DC 22 Constitution saving throw. On a failed save, the creature takes 36 (8d8 damage) necrotic damage and is {@condition frightened} of Vecna for 1 minute. On a successful save, the creature takes half as much damage and isn't {@condition frightened}. A {@condition frightened} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Rotten Fate",
+      "entries": [
+        "Vecna causes necrotic magic to engulf one creature he can see within 120 feet of himself. The target must make a DC 22 Constitution saving throw, taking 96 (8d8 + 60 damage) necrotic damage on a failed save, or half as much damage on a successful one. A Humanoid killed by this magic rises as a {@creature zombie} at the start of Vecna's next turn and acts immediately after Vecna in the initiative order. The {@creature zombie} is under Vecna's control."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Vecna casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 22}):"
+      ],
+      "will": [
+        "animate dead",
+        "detect magic",
+        "dispel magic",
+        "fly",
+        "lightning bolt",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "stunned"
+  ],
+  "resist": [
+    "cold",
+    "lightning",
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison ()",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

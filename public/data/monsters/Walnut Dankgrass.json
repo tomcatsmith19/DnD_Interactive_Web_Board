@@ -1,0 +1,163 @@
+{
+  "name": "Walnut Dankgrass",
+  "source": "AI",
+  "page": 204,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 35
+  },
+  "str": 8,
+  "dex": 16,
+  "con": 14,
+  "int": 10,
+  "wis": 18,
+  "cha": 10,
+  "skills": {
+    "athletics": "+1",
+    "insight": "+6",
+    "perception": "+6",
+    "stealth": "+5",
+    "survival": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Druidic",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Walnut has advantage on saving throws against being {@condition charmed}, and magic can't put her to sleep."
+      ]
+    },
+    {
+      "name": "Mask of the Wild",
+      "entries": [
+        "Walnut can attempt to hide even when she is only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+      ]
+    },
+    {
+      "name": "Wild Shape (Recharges after a Short or Long rest)",
+      "entries": [
+        "As a bonus action, Walnut can assume the shape of a dire wolf. She can stay in this form for 3 hours or until she reverts to her normal form as a bonus action. She automatically reverts if she falls {@condition unconscious}, drops to 0 hit points, or dies.",
+        "While transformed, Walnut's game statistics are replaced by the statistics of the dire wolf, except she retains her alignment, personality, and Intelligence, Wisdom, and Charisma scores.",
+        "Her attacks in beast form are magical. While in beast form, Walnut can use a bonus action to expend one spell slot and regain {@dice 1d8} hit points per level of the spell slot expended."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Walnut makes two attacks with Foremother or her longbow."
+      ]
+    },
+    {
+      "name": "Foremother (+1 Scimitar)",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 150/600 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Walnut is a 7th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks). She has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "produce flame",
+            "thorn whip"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "entangle",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "flame blade",
+            "moonbeam",
+            "pass without trace"
+          ]
+        },
+        "3": {
+          "spells": [
+            "call lightning",
+            "dispel magic",
+            "plant growth"
+          ]
+        },
+        "4": {
+          "spells": [
+            "blight",
+            "freedom of movement"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

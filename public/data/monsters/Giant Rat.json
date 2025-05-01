@@ -1,0 +1,71 @@
+{
+  "name": "Giant Rat",
+  "source": "MM",
+  "page": 327,
+  "size": [
+    "S"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 7,
+  "speed": {
+    "walk": 30
+  },
+  "str": 7,
+  "dex": 15,
+  "con": 11,
+  "int": 2,
+  "wis": 10,
+  "cha": 4,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The rat has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "forest",
+    "swamp",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

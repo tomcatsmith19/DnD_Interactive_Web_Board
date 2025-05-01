@@ -1,0 +1,94 @@
+{
+  "name": "Dolgaunt",
+  "source": "ERLW",
+  "page": 290,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 40
+  },
+  "str": 14,
+  "dex": 18,
+  "con": 12,
+  "int": 13,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "acrobatics": "+6",
+    "perception": "+4",
+    "stealth": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Deep Speech",
+    "Goblin"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Evasion",
+      "entries": [
+        "If the dolgaunt is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the dolgaunt instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the dolgaunt is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dolgaunt makes two tentacle attacks and two unarmed strikes. Up to two tentacle attacks can be replaced by Vitality Drain."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +6 to hit, reach 15 ft., one target. 7 (1d6 + 4 damage) bludgeoning damage. The target is {@condition grappled} (escape DC 12) if it is a Large or smaller creature. Until this grapple ends, the dolgaunt can't use the same tentacle on another target. The dolgaunt has two tentacles."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d4 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Vitality Drain",
+      "entries": [
+        "One creature {@condition grappled} by a tentacle of the dolgaunt must make a DC 11 Constitution saving throw. On a failed save, the target takes 9 (2d8 damage) necrotic damage, and the dolgaunt regains a number of hit points equal to half the necrotic damage taken."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 120 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

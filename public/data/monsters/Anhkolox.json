@@ -1,0 +1,82 @@
+{
+  "name": "Anhkolox",
+  "source": "DSotDQ",
+  "page": 192,
+  "size": [
+    "H"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 157,
+  "speed": {
+    "walk": 50
+  },
+  "str": 22,
+  "dex": 11,
+  "con": 18,
+  "int": 4,
+  "wis": 14,
+  "cha": 2,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The anhkolox doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The anhkolox makes two Claw attacks and one Entrapping Rend attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 17 (2d10 + 6 damage) piercing damage. If the target is a Large or smaller creature, it must succeed on a DC 18 Strength saving throw or be pushed up to 20 feet in a horizontal direction of the anhkolox's choice."
+      ]
+    },
+    {
+      "name": "Entrapping Rend",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 23 (5d6 + 6 damage) piercing damage, and if the target is a Large or smaller creature, the target must succeed on a DC 18 Strength saving throw or be trapped in the anhkolox's rib cage and {@condition grappled} (escape DC 18). Until this grapple ends, the target is {@condition restrained}, and the anhkolox can't use Entrapping Rend on another target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

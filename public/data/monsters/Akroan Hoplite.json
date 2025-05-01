@@ -1,0 +1,72 @@
+{
+  "name": "Akroan Hoplite",
+  "source": "MOT",
+  "page": 228,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 14,
+  "int": 11,
+  "wis": 14,
+  "cha": 13,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold the Line",
+      "entries": [
+        "While the hoplite is holding a spear, other creatures provoke an opportunity attack from the hoplite when they move within 5 feet of it. When the hoplite hits a creature with an opportunity attack using its spear, the creature takes an extra 4 ({@damage 1d8}) piercing damage, and the creature's speed becomes 0 for the rest of the turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hoplite makes three melee attacks or two ranged attacks."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft., or range 20/60 ft., one target. 6 (1d6 + 3 damage) piercing damage, or 7 (1d8 + 3 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Shield Bash",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 5 (1d4 + 3 damage) bludgeoning damage. If the target is a Medium or smaller creature, it must succeed on a DC 13 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

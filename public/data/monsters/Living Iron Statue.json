@@ -1,0 +1,92 @@
+{
+  "name": "Living Iron Statue",
+  "source": "GoS",
+  "page": 241,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 20
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 18,
+  "int": 6,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The statue is immune to any spell or effect that would alter its form."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The statue makes two attacks: one with its blade and one with its hammer."
+      ]
+    },
+    {
+      "name": "Blade",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Hammer",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage, and the target is knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Whirl {@recharge 5}",
+      "entries": [
+        "The statue can use its action to spin at the waist, targeting creatures of its choice within 10 feet of it. Each target must make a DC 13 Dexterity saving throw, taking 19 (3d10 + 3 damage) bludgeoning damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "acid"
+  ],
+  "immune": [
+    "lightning",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,135 @@
+{
+  "name": "Irda Veil Keeper",
+  "source": "MCV2DC",
+  "page": 9,
+  "size": [
+    "M"
+  ],
+  "type": "giant",
+  "tags": [
+    "sorcerer"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 49,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 16,
+  "con": 13,
+  "int": 14,
+  "wis": 17,
+  "cha": 19,
+  "skills": {
+    "arcana": "+4",
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Giant",
+    "Sylvan"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The veil keeper uses Augment Physicality, if available, and makes two Mirage Flare attacks."
+      ]
+    },
+    {
+      "name": "Mirage Flare",
+      "entries": [
+        "{@atk ms,rs} +6 to hit, reach 5 ft. or range 60 ft., one target. 11 (2d6 + 4 damage) radiant damage, and the target must succeed on a DC 14 Wisdom saving throw or be {@condition charmed} by the veil keeper until the start of the veil keeper's next turn. While {@condition charmed} in this way, a creature is {@condition incapacitated} as it is beset by hypnotic, illusory visions."
+      ]
+    },
+    {
+      "name": "Augment Physicality (1/Day)",
+      "entries": [
+        "For 1 minute, the veil keeper magically obscures it location, heightens its physical ability, and increases in size, along with anything it is wearing or carrying. While the veil keeper is augmented, attack rolls against it have disadvantage, it is Large, and it makes Strength and Dexterity saving throws with advantage. If the veil keeper lacks the room to become Large, it attains the maximum size possible in the space available. These augmentations end if the veil keeper is {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Change Shape (3/Day)",
+      "entries": [
+        "The veil keeper magically transforms to look and feel like a Medium Humanoid it has seen. Any equipment the veil keeper is wearing or carrying isn't transformed, and the veil keeper's statistics don't change. The veil keeper reverts to its true form if the veil keeper is reduced to 0 hit points or if the veil keeper uses an action to end the transformation."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The veil keeper casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "dancing lights",
+        "minor illusion"
+      ],
+      "daily": {
+        "1": [
+          "hallucinatory terrain"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft.",
+    "truesight 5 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

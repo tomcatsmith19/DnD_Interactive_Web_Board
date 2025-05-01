@@ -1,0 +1,137 @@
+{
+  "name": "Charmayne Daymore",
+  "source": "KftGV",
+  "page": 159,
+  "size": [
+    "M"
+  ],
+  "type": "elemental",
+  "tags": [
+    "wizard"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 123,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 15,
+  "int": 20,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "arcana": "+9",
+    "deception": "+7",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Elvish",
+    "Ignan"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Charmayne fails a saving throw, she can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Charmayne makes three Ashen Burst attacks. She can replace one of these attacks with one use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Ashen Burst",
+      "entries": [
+        "{@atk ms,rs} +9 to hit, reach 5 ft. or range 60 ft., one target. 17 (5d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Cinder Spite {@recharge 5}",
+      "entries": [
+        "Charmayne creates a magical explosion of fire centered on a point she can see within 120 feet of herself. Each creature in a 20-foot-radius sphere centered on that point must make a DC 17 Dexterity saving throw, taking 35 (10d6 damage) fire damage on a failed save, or half as much damage on a successful one. A Humanoid reduced to 0 hit points by this damage dies and is transformed into a Tiny charcoal figurine."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Charmayne casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 17}):"
+      ],
+      "will": [
+        "dancing lights",
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

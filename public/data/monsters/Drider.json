@@ -1,0 +1,152 @@
+{
+  "name": "Drider",
+  "source": "MM",
+  "page": 120,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 123,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 18,
+  "int": 13,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+9"
+  },
+  "passive": 15,
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The drider has advantage on saving throws against being {@condition charmed}, and magic can't put the drider to sleep."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The drider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the drider has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": [
+        "The drider ignores movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The drider makes three attacks, either with its longsword or its longbow. It can replace one of those attacks with a bite attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 2 (1d4 damage) piercing damage plus 9 (2d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +6 to hit, range 150/600 ft., one target. 7 (1d8 + 3 damage) piercing damage plus 4 (1d8 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The drider's innate spellcasting ability is Wisdom (spell save {@dc 13}). The drider can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "dancing lights"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

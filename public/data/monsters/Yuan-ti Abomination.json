@@ -1,0 +1,157 @@
+{
+  "name": "Yuan-ti Abomination",
+  "source": "MM",
+  "page": 308,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "shapechanger",
+    "yuan-ti"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 16,
+  "con": 17,
+  "int": 17,
+  "wis": 15,
+  "cha": 18,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The yuan-ti can use its action to polymorph into a Large snake, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It doesn't change form if it dies."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The yuan-ti has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Abomination Form Only)",
+      "entries": [
+        "The yuan-ti makes two ranged attacks or three melee attacks, but can use its bite and constrict attacks only once each."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 7 (1d6 + 4 damage) piercing damage plus 10 (3d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Constrict",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage, and the target is {@condition grappled} (escape DC 14). Until this grapple ends, the target is {@condition restrained}, and the yuan-ti can't constrict another target."
+      ]
+    },
+    {
+      "name": "Scimitar (Abomination Form Only)",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Longbow (Abomination Form Only)",
+      "entries": [
+        "Ranged atk +6 to hit, range 150/600 ft., one target. 12 (2d8 + 3 damage) piercing damage plus 10 (3d6 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Abomination Form Only)",
+      "headerEntries": [
+        "The yuan-ti's innate spellcasting ability is Charisma (spell save {@dc 15}). The yuan-ti can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "animal friendship"
+      ],
+      "daily": {
+        "1": [
+          "fear"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "swamp",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

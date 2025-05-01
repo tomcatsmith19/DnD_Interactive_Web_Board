@@ -1,0 +1,83 @@
+{
+  "name": "Pentadrone",
+  "source": "MM",
+  "page": 226,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 40
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 13,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Modron"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Axiomatic Mind",
+      "entries": [
+        "The pentadrone can't be compelled to act in a manner contrary to its nature or its instructions."
+      ]
+    },
+    {
+      "name": "Disintegration",
+      "entries": [
+        "If the pentadrone dies, its body disintegrates into dust, leaving behind its weapons and anything else it was carrying."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The pentadrone makes five arm attacks."
+      ]
+    },
+    {
+      "name": "Arm",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Paralysis Gas {@recharge 5}",
+      "entries": [
+        "The pentadrone exhales a 30-foot cone of gas. Each creature in that area must succeed on a DC 11 Constitution saving throw or be {@condition paralyzed} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

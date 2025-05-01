@@ -1,0 +1,70 @@
+{
+  "name": "Crawling Claw",
+  "source": "MM",
+  "page": 44,
+  "size": [
+    "T"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 2,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 13,
+  "dex": 14,
+  "con": 11,
+  "int": 5,
+  "wis": 10,
+  "cha": 4,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Turn Immunity",
+      "entries": [
+        "The claw is immune to effects that turn undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) bludgeoning or slashing damage (claw's choice)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 30 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Zombie Troll",
+  "source": "GHLoE",
+  "page": 121,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 6,
+  "con": 18,
+  "int": 3,
+  "wis": 6,
+  "cha": 5,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "understands Giant but can't speak"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The zombie troll regains 10 hit points at the start of its turn. If the zombie troll takes acid or radiant damage, this trait doesn't function at the start of the zombie troll's next turn. The zombie troll dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The zombie troll makes two attacks."
+      ]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Unrelenting Brute",
+      "entries": [
+        "If a creature is hit by both morningstar attacks, the creature must take a DC 14 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,130 @@
+{
+  "name": "Enchanter",
+  "source": "VGM",
+  "page": 213,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 40,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 11,
+  "int": 17,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "arcana": "+6",
+    "history": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "any four languages"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d6 - 1 damage) bludgeoning damage, or 3 (1d8 - 1 damage) bludgeoning damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The enchanter is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). The enchanter has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "friends",
+            "mage hand",
+            "mending",
+            "message"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "mage armor",
+            "magic missile"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "invisibility",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "fireball",
+            "haste",
+            "tongues"
+          ]
+        },
+        "4": {
+          "spells": [
+            "dominate beast",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "hold monster"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "footerEntries": [
+        "*Enchantment spell of 1st level or higher"
+      ],
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

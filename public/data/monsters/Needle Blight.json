@@ -1,0 +1,67 @@
+{
+  "name": "Needle Blight",
+  "source": "MM",
+  "page": 32,
+  "size": [
+    "M"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 12,
+  "con": 13,
+  "int": 4,
+  "wis": 8,
+  "cha": 3,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 6 (2d4 + 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Needles",
+      "entries": [
+        "Ranged atk +3 to hit, range 30/60 ft., one target. 8 (2d6 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,86 @@
+{
+  "name": "Greater Zombie",
+  "source": "TftYP",
+  "page": 237,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 97,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 10,
+  "con": 17,
+  "int": 4,
+  "wis": 6,
+  "cha": 6,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Turn Resistance",
+      "entries": [
+        "The zombie has advantage on saving throws against any effect that turns undead."
+      ]
+    },
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The zombie makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Empowered Slam",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) bludgeoning damage and 7 (2d6 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

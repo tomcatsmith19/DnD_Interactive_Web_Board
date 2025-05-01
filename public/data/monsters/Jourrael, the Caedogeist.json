@@ -1,0 +1,161 @@
+{
+  "name": "Jourrael, the Caedogeist",
+  "source": "TDCSR",
+  "page": 245,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "drow"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 152,
+  "speed": {
+    "walk": 80,
+    "fly": 40
+  },
+  "str": 13,
+  "dex": 24,
+  "con": 20,
+  "int": 14,
+  "wis": 17,
+  "cha": 15,
+  "skills": {
+    "acrobatics": "+12",
+    "perception": "+13",
+    "stealth": "+17"
+  },
+  "passive": 23,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Infernal",
+    "Undercommon"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "Jourrael can move through other creatures and objects as if they were {@quickref difficult terrain||3}. They take 5 ({@damage 1d10}) force damage if they end their turn inside an object."
+      ]
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "entries": [
+        "Jourrael deals an extra 35 ({@damage 10d6}) damage when they hit a target with a weapon attack and have {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on the attack roll, or when the target is within 5 feet of an ally of Jourrael that isn't {@condition incapacitated} and Jourrael doesn't have {@quickref Advantage and Disadvantage|PHB|2|0|disadvantage} on the attack roll."
+      ]
+    },
+    {
+      "name": "Inevitable",
+      "entries": [
+        "If Jourrael is reduced to 0 hit points, they do not fall {@condition unconscious} but becomes an incorporeal spirit for 24 hours. During this time, Jourrael can't return to their original form until they returns to full hit points. In this form, they are {@condition invisible}, can't attack or interact with corporeal creatures or objects, and can't be targeted by spells. After 24 hours have passed, Jourrael regains 1 hit point and returns to their original form with four levels of {@condition exhaustion}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Jourrael makes two melee attacks or two ranged attacks."
+      ]
+    },
+    {
+      "name": "Spectral Blade",
+      "entries": [
+        "Melee atk +12 to hit, reach 5 ft., one target. 10 (1d6 + 7 damage) slashing damage, and the target must succeed on a DC 14 Constitution {@quickref saving throws|PHB|2|1|saving throw} or be {@condition poisoned} for 1 hour. If the {@quickref saving throws|PHB|2|1|saving throw} fails by 5 or more, the target is also {@condition unconscious} while {@condition poisoned} in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake."
+      ]
+    },
+    {
+      "name": "Void Dagger",
+      "entries": [
+        "Ranged atk +12 to hit, range 60/120 ft., one target. 9 (1d4 + 7 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Jourrael's spellcasting ability is Charisma (spell save {@dc 15}). She can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "dancing lights"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "acid",
+    "fire",
+    "lightning",
+    "cold",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

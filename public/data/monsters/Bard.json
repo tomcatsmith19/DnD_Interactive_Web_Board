@@ -1,0 +1,137 @@
+{
+  "name": "Bard",
+  "source": "VGM",
+  "page": 211,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 12,
+  "int": 10,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "acrobatics": "+4",
+    "perception": "+5",
+    "performance": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "any two languages"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Song of Rest",
+      "entries": [
+        "The bard can perform a song while taking a short rest. Any ally who hears the song regains an extra {@dice 1d6} hit points if it spends any Hit Dice to regain hit points at the end of that rest. The bard can confer this benefit on itself as well."
+      ]
+    },
+    {
+      "name": "Taunt (2/Day)",
+      "entries": [
+        "The bard can use a bonus action on its turn to target one creature within 30 feet of it. If the target can hear the bard, the target must succeed on a {@dc 12} Charisma saving throw or have disadvantage on ability checks, attack rolls, and saving throws until the start of the bard's next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 80/320 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The bard is a 4th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 12}, {@hit 4} to hit with spell attacks). It has the following bard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "friends",
+            "mage hand",
+            "vicious mockery"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "healing word",
+            "heroism",
+            "sleep",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "invisibility",
+            "shatter"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

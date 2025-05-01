@@ -1,0 +1,129 @@
+{
+  "name": "Skull Lasher of Myrkul",
+  "source": "BGDIA",
+  "page": 234,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 15,
+  "int": 16,
+  "wis": 13,
+  "cha": 10,
+  "skills": {
+    "arcana": "+5",
+    "religion": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Infernal"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skull lasher makes two attacks with its flail."
+      ]
+    },
+    {
+      "name": "Iron Skull Flail",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 4 (1d8 damage) bludgeoning damage plus 7 (2d6 damage) necrotic damage, and the target has disadvantage on all saving throws until the end of the skull lasher's next turn."
+      ]
+    },
+    {
+      "name": "Ray of Sickness (1st-Level Spell; Requires a Spell Slot)",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 60 ft., one creature. 9 (2d8 damage) poison damage, and the target must succeed on a DC 13 Constitution saving throw or be {@condition poisoned} until the end of the skull lasher's next turn. If the skull lasher casts this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d8} for each slot level above 1st."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The skull lasher is a 3rd-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "message",
+            "prestidigitation"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "protection from evil and good",
+            "ray of sickness",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "darkness",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

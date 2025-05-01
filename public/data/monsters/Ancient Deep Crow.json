@@ -1,0 +1,114 @@
+{
+  "name": "Ancient Deep Crow",
+  "source": "AI",
+  "page": 211,
+  "size": [
+    "H"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 187,
+  "speed": {
+    "walk": 20,
+    "fly": 80
+  },
+  "str": 23,
+  "dex": 16,
+  "con": 23,
+  "int": 10,
+  "wis": 15,
+  "cha": 19,
+  "skills": {
+    "perception": "+7",
+    "stealth": "+13"
+  },
+  "passive": 17,
+  "languages": [
+    "Deep Crow"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The ancient deep crow has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Shadow Stealth",
+      "entries": [
+        "While in dim light or darkness, the ancient deep crow can take the Hide action as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ancient deep crow makes three attacks: one with its mandibles and two with its claws."
+      ]
+    },
+    {
+      "name": "Mandibles",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 17 (2d10 + 6 damage) piercing damage, and the target is {@condition grappled} (escape DC 19). Until this grapple ends, the target is {@condition restrained}, and the ancient deep crow can't use its mandibles on another target."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 13 (2d6 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Shadow Caw",
+      "entries": [
+        "The ancient deep crow releases an ear-splitting caw. Each creature within 60 feet of the crow and able to hear it must make a DC 17 Constitution saving throw. On a failure, a creature takes 10 (3d6 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Detect",
+      "entries": [
+        "The deep crow makes a Wisdom (Perception) check."
+      ]
+    },
+    {
+      "name": "Shadow Caw (Costs 2 Actions)",
+      "entries": [
+        "The ancient deep crow uses Shadow Caw."
+      ]
+    },
+    {
+      "name": "Wing Attack (Costs 2 Actions)",
+      "entries": [
+        "The ancient deep crow beats its wings. Each creature within 10 feet of the deep crow must succeed on a {@dc 19} Dexterity saving throw or take 13 ({@damage 2d6 + 6}) bludgeoning damage and be knocked {@condition prone}. The ancient deep crow can then fly up to half its flying speed."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

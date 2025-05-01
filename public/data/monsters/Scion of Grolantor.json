@@ -1,0 +1,116 @@
+{
+  "name": "Scion of Grolantor",
+  "source": "BGG",
+  "page": 165,
+  "size": [
+    "G"
+  ],
+  "type": "giant",
+  "tags": [
+    "titan"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 402,
+  "speed": {
+    "walk": 60
+  },
+  "str": 27,
+  "dex": 14,
+  "con": 25,
+  "int": 15,
+  "wis": 21,
+  "cha": 18,
+  "skills": {
+    "perception": "+12"
+  },
+  "passive": 22,
+  "languages": [
+    "Giant",
+    "Primordial"
+  ],
+  "cr": "22",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Legendary Resistance (6/Day)",
+      "entries": [
+        "If the scion fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The scion has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The scion deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The scion makes one Great Tree Club attack and two Slam attacks, or it makes three Boulder attacks."
+      ]
+    },
+    {
+      "name": "Great Tree Club",
+      "entries": [
+        "Melee atk +15 to hit, reach 30 ft., one target. 30 (4d10 + 8 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 23 Strength saving throw or be pushed horizontally up to 100 feet straight away from the scion and have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +15 to hit, reach 20 ft., one target. 26 (4d8 + 8 damage) force damage."
+      ]
+    },
+    {
+      "name": "Boulder",
+      "entries": [
+        "Ranged atk +15 to hit, range 120/480 ft., one target. 27 (3d12 + 8 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Inhale {@recharge 5}",
+      "entries": [
+        "The scion inhales a vortex of air in a 120-foot line that is 15 feet wide. Each creature in that area that is Huge or smaller must succeed on a DC 23 Strength saving throw or be pulled up to 120 feet straight toward the scion and be swallowed. A swallowed creature has the {@condition restrained} condition, has total cover against attacks and other effects outside the scion, and takes 24 (7d6 damage) force damage at the start of each of the scion's turns.",
+        "The scion's stomach can hold up to two creatures at a time. If the scion takes 60 damage or more on a single turn from a creature inside it, the scion must succeed on a {@dc 17} Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 10 feet of the scion and has the {@condition prone} condition. If the scion dies, any swallowed creature no longer has the {@condition restrained} condition and can escape from the corpse using 15 feet of movement, exiting with the {@condition prone} condition."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

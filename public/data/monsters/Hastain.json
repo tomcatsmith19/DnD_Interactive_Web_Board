@@ -1,0 +1,149 @@
+{
+  "name": "Hastain",
+  "source": "LoX",
+  "page": 25,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 12,
+  "int": 19,
+  "wis": 16,
+  "cha": 24,
+  "skills": {
+    "arcana": "+7",
+    "history": "+7",
+    "performance": "+10",
+    "persuasion": "+10"
+  },
+  "passive": 13,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Deep Speech",
+    "Draconic"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Glory",
+      "entries": [
+        "The reigar's Armor Class includes its Charisma modifier."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The reigar can hold its breath for 1 hour."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "The reigar wears a talarith."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The reigar makes two Trident attacks."
+      ]
+    },
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage, or 8 (1d8 + 4 damage) piercing damage if used with two hands to make a melee attack, plus 3 (1d6 damage) force damage if Hastain is wearing its talarith."
+      ]
+    },
+    {
+      "name": "Chromatic Bolt",
+      "entries": [
+        "Ranged Spell atk +10 to hit, range 90 ft., one target. 22 (5d8 damage) damage of a type chosen by Hastain from the following list: cold, fire, lightning, or radiant."
+      ]
+    },
+    {
+      "name": "Summon Duplicate (Recharges after a Short or Long Rest)",
+      "entries": [
+        "Using its talarith, Hastain summons a duplicate of itself. The duplicate obeys Hastain's commands and uses Hastain's statistics, except it is an unaligned Construct that doesn't have a talarith of its own. The duplicate takes its turn immediately after Hastain. It vanishes after 1 hour or when it is reduced to 0 hit points."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The reigar casts one of the following spells, requiring no spell components and using Charisma as the spellcasting ability (spell save {@dc 18}):"
+      ],
+      "will": [
+        "light",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

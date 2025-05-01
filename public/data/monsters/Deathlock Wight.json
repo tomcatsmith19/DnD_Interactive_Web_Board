@@ -1,0 +1,138 @@
+{
+  "name": "Deathlock Wight",
+  "source": "MTF",
+  "page": 129,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 37,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 16,
+  "int": 12,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "arcana": "+3",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The wight attacks twice with Grave Bolt."
+      ]
+    },
+    {
+      "name": "Grave Bolt",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 120 ft., one target. 7 (1d8 + 3 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Life Drain",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 9 (2d6 + 2 damage) necrotic damage. The target must succeed on a DC 13 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.",
+        "A humanoid slain by this attack rises 24 hours later as a {@creature zombie} under the wight's control, unless the humanoid is restored to life or its body is destroyed. The wight can have no more than twelve {@creature zombie||zombies} under its control at one time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The wight's innate spellcasting ability is Charisma (spell save {@dc 13}). It can innately cast the following spells, requiring no verbal or material components:"
+      ],
+      "will": [
+        "detect magic",
+        "disguise self",
+        "mage armor"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

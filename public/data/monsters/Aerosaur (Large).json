@@ -1,0 +1,71 @@
+{
+  "name": "Aerosaur (Large)",
+  "source": "PSX",
+  "page": 29,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 10,
+    "fly": 80
+  },
+  "str": 15,
+  "dex": 13,
+  "con": 13,
+  "int": 2,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dive Attack",
+      "entries": [
+        "If the aerosaur is flying and dives at least 30 feet toward a target and then hits with a bite attack, the attack deals an extra 10 ({@dice 3d6}) damage to the target."
+      ]
+    },
+    {
+      "name": "Flyby",
+      "entries": [
+        "The aerosaur doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 10 ft., one creature. 12 (3d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "mountain",
+    "hill",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

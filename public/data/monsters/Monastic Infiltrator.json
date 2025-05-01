@@ -1,0 +1,131 @@
+{
+  "name": "Monastic Infiltrator",
+  "source": "CRCotN",
+  "page": 202,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "monk"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 50
+  },
+  "str": 13,
+  "dex": 20,
+  "con": 16,
+  "int": 15,
+  "wis": 17,
+  "cha": 16,
+  "skills": {
+    "acrobatics": "+8",
+    "deception": "+9",
+    "perception": "+6",
+    "stealth": "+11"
+  },
+  "passive": 16,
+  "languages": [
+    "Common plus three other languages"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Guarded Mind",
+      "entries": [
+        "Spells and other effects can't read the infiltrator's thoughts or determine if the infiltrator is lying. Creatures can communicate telepathically with the infiltrator only if it allows such contact."
+      ]
+    },
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the infiltrator is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The infiltrator makes three Unarmed Strike attacks."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 10 (1d10 + 5 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The infiltrator casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "disguise self"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

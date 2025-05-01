@@ -1,0 +1,75 @@
+{
+  "name": "Assassin Vine",
+  "source": "ToA",
+  "page": 213,
+  "size": [
+    "L"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 5,
+    "climb": 5
+  },
+  "str": 18,
+  "dex": 10,
+  "con": 16,
+  "int": 1,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the assassin vine remains motionless, it is indistinguishable from a normal plant."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Constrict",
+      "entries": [
+        "Melee atk +6 to hit, reach 20 ft., one creature. The target takes 11 (2d6 + 4 damage) bludgeoning damage, and it is {@condition grappled} (escape DC 14). Until this grapple ends, the target is {@condition restrained}, and it takes 21 (6d6 damage) poison damage at the start of each of its turns. The vine can constrict only one target at a time."
+      ]
+    },
+    {
+      "name": "Entangling Vines",
+      "entries": [
+        "The assassin vine can animate normal vines and roots on the ground in a 15-foot square within 30 feet of it. These plants turn the ground in that area into {@quickref difficult terrain||3}. A creature in that area when the effect begins must succeed on a DC 13 Strength saving throw or be {@condition restrained} by entangling vines and roots. A creature {@condition restrained} by the plants can use its action to make a DC 13 Strength (Athletics) check, freeing itself on a successful check. The effect ends after 1 minute or when the assassin vine dies or uses Entangling Vines again."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened",
+    "exhaustion",
+    "prone"
+  ],
+  "resist": [
+    "cold",
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,106 @@
+{
+  "name": "Warlord",
+  "source": "VGM",
+  "page": 220,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 229,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 16,
+  "con": 18,
+  "int": 12,
+  "wis": 12,
+  "cha": 18,
+  "skills": {
+    "athletics": "+9",
+    "intimidation": "+8",
+    "perception": "+5",
+    "persuasion": "+8"
+  },
+  "passive": 15,
+  "languages": [
+    "any two languages"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Indomitable (3/Day)",
+      "entries": [
+        "The warlord can reroll a saving throw it fails. It must use the new roll."
+      ]
+    },
+    {
+      "name": "Survivor",
+      "entries": [
+        "The warlord regains 10 hit points at the start of its turn if it has at least 1 hit point but fewer hit points than half its hit point maximum."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The warlord makes two weapon attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +7 to hit, range 80/320 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Weapon Attack",
+      "entries": [
+        "The warlord makes a weapon attack."
+      ]
+    },
+    {
+      "name": "Command Ally",
+      "entries": [
+        "The warlord targets one ally it can see within 30 feet of it. if the target can see and hear the warlord, the target can make one weapon attack as a reaction and gains advantage on the attack roll."
+      ]
+    },
+    {
+      "name": "Frighten Foe (Costs 2 Actions)",
+      "entries": [
+        "The warlord targets one enemy it can see within 30 feet of it. If the target can see and hear it, the target must succeed on a {@dc 16} Wisdom saving throw or be {@condition frightened} until the end of warlord's next turn."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

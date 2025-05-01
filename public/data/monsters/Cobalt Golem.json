@@ -1,0 +1,117 @@
+{
+  "name": "Cobalt Golem",
+  "source": "TDCSR",
+  "page": 240,
+  "size": [
+    "H"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "21"
+  ],
+  "hp": 300,
+  "speed": {
+    "walk": 40
+  },
+  "str": 28,
+  "dex": 9,
+  "con": 22,
+  "int": 3,
+  "wis": 11,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Conductive Body",
+      "entries": [
+        "Whenever the golem is subjected to lightning damage, it takes no damage. Instead, its weapon attacks deal an extra 11 ({@dice 2d10}) lightning damage until the end of its next turn. Also until the end of the golem's next turn, any creature that touches it or hits it with a melee attack while within 5 feet of it takes 11 ({@damage 2d10}) lightning damage."
+      ]
+    },
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The golem is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The golem has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The golem's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The golem makes two attacks: one with its slam and one with its sword, or it uses its Magnetic Pulse and then its Spinning Cleave."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +15 to hit, reach 5 ft., one target. 25 (3d10 + 9 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Sword",
+      "entries": [
+        "Melee atk +15 to hit, reach 10 ft., one target. 28 (3d12 + 9 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Spinning Cleave",
+      "entries": [
+        "The golem makes a sword attack against each creature within 10 feet of it."
+      ]
+    },
+    {
+      "name": "Magnetic Pulse {@recharge}",
+      "entries": [
+        "The golem raises its arms and unleashes a magnetic pulse. All unattended metal objects within 30 feet of it are pulled to an unoccupied space within 5 feet of the golem. Each creature wearing metal armor or made of metal within 30 feet of the golem must succeed on a DC 20 Strength {@quickref saving throws|PHB|2|1|saving throw} or be pulled to an unoccupied space within 5 feet of the golem, then fall {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "lightning",
+    "poison",
+    "psychic",
+    "bludgeoning (from nonmagical weapons that aren't adamantine)",
+    "piercing (from nonmagical weapons that aren't adamantine)",
+    "slashing (from nonmagical weapons that aren't adamantine)"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

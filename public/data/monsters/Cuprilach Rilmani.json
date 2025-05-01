@@ -1,0 +1,121 @@
+{
+  "name": "Cuprilach Rilmani",
+  "source": "MPP",
+  "page": 44,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 202,
+  "speed": {
+    "walk": 40
+  },
+  "str": 12,
+  "dex": 20,
+  "con": 16,
+  "int": 16,
+  "wis": 15,
+  "cha": 14,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+13"
+  },
+  "passive": 16,
+  "languages": [
+    "telepathy 120 ft.",
+    "any four languages"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cuprilach makes three Burnished Blade or Bolt attacks."
+      ]
+    },
+    {
+      "name": "Burnished Blade",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) piercing damage plus 13 (2d12 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Bolt",
+      "entries": [
+        "Ranged atk +9 to hit, range 20/60 ft., one target. 7 (1d4 + 5 damage) piercing damage plus 13 (2d12 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The cuprilach casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "detect magic",
+        "disguise self"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

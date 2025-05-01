@@ -1,0 +1,78 @@
+{
+  "name": "Warduke",
+  "source": "WBtW",
+  "page": 221,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 14,
+  "int": 9,
+  "wis": 11,
+  "cha": 11,
+  "skills": {
+    "athletics": "+6",
+    "intimidation": "+3"
+  },
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Warduke wears a dread helm (see appendix A) and wields a flame tongue longsword."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Warduke makes three Flame Tongue or Dagger attacks."
+      ]
+    },
+    {
+      "name": "Flame Tongue",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage when used with two hands, plus 7 (2d6 damage) fire damage if the weapon is aflame."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

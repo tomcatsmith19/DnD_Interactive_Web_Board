@@ -1,0 +1,88 @@
+{
+  "name": "Swarm of Quippers",
+  "source": "MM",
+  "page": 338,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 28,
+  "speed": {
+    "walk": 0,
+    "swim": 40
+  },
+  "str": 13,
+  "dex": 16,
+  "con": 9,
+  "int": 1,
+  "wis": 7,
+  "cha": 2,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "The swarm has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny quipper. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    },
+    {
+      "name": "Water Breathing",
+      "entries": [
+        "The swarm can breathe only underwater."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bites",
+      "entries": [
+        "Melee atk +5 to hit, reach 0 ft., one creature in the swarm's space. 14 (4d6 damage) piercing damage, or 7 (2d6 damage) piercing damage if the swarm has half of its hit points or fewer."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underwater"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

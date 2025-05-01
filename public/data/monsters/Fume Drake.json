@@ -1,0 +1,81 @@
+{
+  "name": "Fume Drake",
+  "source": "DoSI",
+  "page": 41,
+  "size": [
+    "S"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 6,
+  "dex": 14,
+  "con": 12,
+  "int": 6,
+  "wis": 10,
+  "cha": 11,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Draconic",
+    "Ignan"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the fume drake dies, it explodes in a cloud of noxious fumes. Each creature within 5 feet of the fume drake must succeed on a {@dc 11} Constitution saving throw or take 4 ({@damage 1d8}) poison damage."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The fume drake doesn't require food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Scalding Breath {@recharge}",
+      "entries": [
+        "The fume drake exhales a 15-foot cone of scalding steam. Each creature in that area must make a DC 11 Dexterity saving throw, taking 4 (1d8 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,91 @@
+{
+  "name": "Swarm of Bats",
+  "source": "MM",
+  "page": 337,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 0,
+    "fly": 30
+  },
+  "str": 5,
+  "dex": 15,
+  "con": 10,
+  "int": 2,
+  "wis": 12,
+  "cha": 4,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Echolocation",
+      "entries": [
+        "The swarm can't use its blindsight while {@condition deafened}."
+      ]
+    },
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The swarm has advantage on Wisdom ({@skill Perception}) checks that rely on hearing."
+      ]
+    },
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny bat. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bites",
+      "entries": [
+        "Melee atk +4 to hit, reach 0 ft., one creature in the swarm's space. 5 (2d4 damage) piercing damage, or 2 (1d4 damage) piercing damage if the swarm has half of its hit points or fewer."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "hill",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

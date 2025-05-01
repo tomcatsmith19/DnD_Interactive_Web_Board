@@ -1,0 +1,100 @@
+{
+  "name": "Phylaskia",
+  "source": "MOT",
+  "page": 239,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 15,
+  "con": 18,
+  "int": 10,
+  "wis": 16,
+  "cha": 14,
+  "skills": {
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "all"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Gatekeeper's Aura",
+      "entries": [
+        "Any creature that starts its turn within 10 feet of the phylaskia must make a {@dc 15} Wisdom saving throw. On a successful save, the creature is immune to this aura for the next 24 hours. On a failed save, the creature has disadvantage on saving throws and its speed is halved until the start of its next turn."
+      ]
+    },
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the phylaskia to 0 hit points, it must make a Constitution saving throw with a DC equal to 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the phylaskia drops to 1 hit point instead."
+      ]
+    },
+    {
+      "name": "Vigilant",
+      "entries": [
+        "The phylaskia can't be {@quickref Surprise|PHB|3|0|surprised}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The phylaskia makes two longsword attacks and uses its Strength Drain once."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 14 (2d8 + 5 damage) slashing damage, or 16 (2d10 + 5 damage) slashing damage if used with two hands, plus 11 (2d10 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Strength Drain",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one creature. 12 (2d6 + 5 damage) necrotic damage. Unless the target is immune to necrotic damage, its Strength score is reduced by {@dice 1d4}. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

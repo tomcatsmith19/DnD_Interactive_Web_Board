@@ -1,0 +1,85 @@
+{
+  "name": "Mr. Greystone",
+  "source": "NRH-AT",
+  "page": 13,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 16,
+  "int": 10,
+  "wis": 12,
+  "cha": 15,
+  "skills": {
+    "athletics": "+10",
+    "intimidation": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Brave",
+      "entries": [
+        "Mr. Greystone has advantage on saving throws against being {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Brute",
+      "entries": [
+        "A melee weapon deals one extra die of its damage when Mr. Greystone hits with it (included in the attack)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Mr. Greystone makes two melee attacks or two ranged attacks."
+      ]
+    },
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 30/120 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

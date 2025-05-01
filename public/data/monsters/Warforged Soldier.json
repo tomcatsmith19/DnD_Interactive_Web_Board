@@ -1,0 +1,80 @@
+{
+  "name": "Warforged Soldier",
+  "source": "ERLW",
+  "page": 320,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "warforged"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 16,
+  "int": 10,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "athletics": "+5",
+    "perception": "+4",
+    "survival": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Warforged Resilience",
+      "entries": [
+        "The warforged has advantage on saving throws against being {@condition poisoned} and is immune to disease. Magic can't put it to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The warforged makes two armblade attacks."
+      ]
+    },
+    {
+      "name": "Armblade",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 30/120 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,151 @@
+{
+  "name": "Forest Master",
+  "source": "MCV2DC",
+  "page": 6,
+  "size": [
+    "L"
+  ],
+  "type": "celestial",
+  "tags": [
+    "unicorn"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 105,
+  "speed": {
+    "walk": 50
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 15,
+  "int": 13,
+  "wis": 19,
+  "cha": 17,
+  "skills": {
+    "insight": "+7",
+    "nature": "+4",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Celestial",
+    "Elvish",
+    "Sylvan",
+    "telepathy 60 ft."
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "If the Forest Master fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The Forest Master has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Master of Beasts",
+      "entries": [
+        "The Forest Master can comprehend and communicate with any Beast, even if the Beast knows no languages."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Forest Master makes either two Hooves attacks, two Moon Bolt attacks, or one of each."
+      ]
+    },
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Moon Bolt",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 60 ft., one target. 11 (2d6 + 4 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The Forest Master casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "druidcraft",
+        "fog cloud",
+        "guidance"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

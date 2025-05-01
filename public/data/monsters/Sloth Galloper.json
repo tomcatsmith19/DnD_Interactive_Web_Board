@@ -1,0 +1,67 @@
+{
+  "name": "Sloth Galloper",
+  "source": "GHLoE",
+  "page": 97,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 25,
+    "climb": 25
+  },
+  "str": 17,
+  "dex": 13,
+  "con": 12,
+  "int": 4,
+  "wis": 12,
+  "cha": 7,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Speed Burst",
+      "entries": [
+        "Provided it isn't moving over difficult terrain, the sloth galloper can use a bonus action to take the Dash action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The sloth galloper makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (2d4 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

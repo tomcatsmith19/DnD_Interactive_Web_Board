@@ -1,0 +1,185 @@
+{
+  "name": "Aurnozci",
+  "source": "BMT",
+  "page": 167,
+  "size": [
+    "G"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 370,
+  "speed": {
+    "walk": 50,
+    "burrow": 30
+  },
+  "str": 27,
+  "dex": 20,
+  "con": 26,
+  "int": 6,
+  "wis": 21,
+  "cha": 19,
+  "skills": {},
+  "passive": 15,
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "cr": "22",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Heat Regeneration",
+      "entries": [
+        "If the temperature around it is 100 degrees Fahrenheit or higher, Aurnozci regains 15 hit points at the start of its turn. If it takes cold or radiant damage, this trait doesn't function at the start of its next turn. Aurnozci dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Aurnozci fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Aurnozci has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Aurnozci makes one Bite attack and two Tail attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +15 to hit, reach 10 ft., one target. 21 (2d12 + 8 damage) slashing damage plus 9 (2d8 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +15 to hit, reach 10 ft., one target. 17 (2d8 + 8 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Mucus Spray {@recharge 5}",
+      "entries": [
+        "Aurnozci sprays mucus in a 60-foot cone. Each creature in that cone must make a DC 20 Dexterity saving throw, taking 42 (12d6 damage) acid damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Move",
+      "entries": [
+        "Aurnozci moves up to its speed."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Aurnozci makes one Tail attack."
+      ]
+    },
+    {
+      "name": "Cast a Spell (Costs 2 Actions)",
+      "entries": [
+        "Aurnozci uses Spellcasting."
+      ]
+    },
+    {
+      "name": "Conflagration (Costs 2 Actions)",
+      "entries": [
+        "Flames momentarily surround Aurnozci. Each creature within 15 feet of Aurnozci must make a {@dc 20} Dexterity saving throw, taking 18 ({@damage 4d8}) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Aurnozci casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 20}):"
+      ],
+      "will": [
+        "Detect Magic",
+        "Heat Metal"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "fire",
+    "poison",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

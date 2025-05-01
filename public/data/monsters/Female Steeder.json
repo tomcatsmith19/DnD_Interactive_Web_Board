@@ -1,0 +1,78 @@
+{
+  "name": "Female Steeder",
+  "source": "MTF",
+  "page": 238,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 15,
+  "dex": 16,
+  "con": 14,
+  "int": 2,
+  "wis": 10,
+  "cha": 3,
+  "skills": {
+    "stealth": "+7",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The steeder can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Extraordinary Leap",
+      "entries": [
+        "The distance of the steeder's long jumps is tripled; every foot of its walking speed that it spends on the jump allows it to move 3 feet."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage plus 9 (2d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Sticky Leg",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one Medium or smaller creature. The target is stuck to the steeder's leg and is {@condition grappled} until it escapes (escape DC 12). The steeder can have only one creature {@condition grappled} at a time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,139 @@
+{
+  "name": "Smiler the Defiler",
+  "source": "BGDIA",
+  "page": 133,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 165,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 20,
+  "con": 16,
+  "int": 18,
+  "wis": 11,
+  "cha": 18,
+  "skills": {
+    "deception": "+7",
+    "persuasion": "+7"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fey Step {@recharge 4}",
+      "entries": [
+        "As a bonus action, Smiler can teleport up to 30 feet to an unoccupied space that he can see or to the empty seat of his infernal war machine."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Smiler has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Equipment",
+      "entries": [
+        "Smiler wears +2 leather armor. He carries seven soul coins in a bag and a +1 shortsword"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Smiler makes two weapon attacks. He can cast a spell in place of one of these attacks."
+      ]
+    },
+    {
+      "name": "+1 Shortsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 9 (1d6 + 6 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Smiler's innate spellcasting ability is Charisma (spell save {@dc 15}). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "charm person",
+        "Tasha's hideous laughter"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Egg Hunter Hatchling",
+  "source": "FTD",
+  "page": 193,
+  "size": [
+    "T"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 28,
+  "speed": {
+    "walk": 30,
+    "burrow": 10,
+    "climb": 30
+  },
+  "str": 8,
+  "dex": 17,
+  "con": 13,
+  "int": 1,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+7"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The egg hunter can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The egg hunter makes two Egg Tooth attacks."
+      ]
+    },
+    {
+      "name": "Egg Tooth",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage, or 17 (4d6 + 3 damage) piercing damage if the target is an object."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

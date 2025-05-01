@@ -1,0 +1,120 @@
+{
+  "name": "Lorehold Pledgemage",
+  "source": "SCC",
+  "page": 197,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "wizard"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 13,
+  "int": 17,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "history": "+7",
+    "insight": "+3",
+    "investigation": "+7"
+  },
+  "passive": 11,
+  "languages": [
+    "Common plus any two languages"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The pledgemage makes two Scroll Bash attacks."
+      ]
+    },
+    {
+      "name": "Scroll Bash",
+      "entries": [
+        "{@atk ms} +5 to hit, reach 30 ft., one target. 8 (1d10 + 3 damage) bludgeoning damage plus 9 (2d8 damage) thunder damage."
+      ]
+    },
+    {
+      "name": "Reduce to Memory {@recharge 5}",
+      "entries": [
+        "Thundering golden energy erupts around a creature the pledgemage can see within 90 feet of it. The creature must make a DC 13 Constitution saving throw, taking 44 (8d10 damage) thunder damage on a failed save, or half as much damage on a successful one. A Construct has disadvantage on the saving throw."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The pledgemage casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "guidance",
+        "light"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

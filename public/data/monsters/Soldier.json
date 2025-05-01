@@ -1,0 +1,71 @@
+{
+  "name": "Soldier",
+  "source": "GGR",
+  "page": 226,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 12,
+  "int": 10,
+  "wis": 11,
+  "cha": 11,
+  "skills": {
+    "perception": "+2",
+    "athletics": "+3"
+  },
+  "passive": 12,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Formation Tactics",
+      "entries": [
+        "The soldier has advantage on saving throws against being {@condition charmed}, {@condition frightened}, {@condition grappled}, or {@condition restrained} while it is within 5 feet of at least one ally."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The soldier makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage, or 7 (1d10 + 2 damage) slashing damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Magmin",
+  "source": "MM",
+  "page": 212,
+  "size": [
+    "S"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30
+  },
+  "str": 7,
+  "dex": 15,
+  "con": 12,
+  "int": 8,
+  "wis": 11,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Ignan"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the magmin dies, it explodes in a burst of fire and magma. Each creature within 10 feet of it must make a {@dc 11} Dexterity saving throw, taking 7 ({@damage 2d6}) fire damage on a failed save, or half as much damage on a successful one. Flammable objects that aren't being worn or carried in that area are ignited."
+      ]
+    },
+    {
+      "name": "Ignited Illumination",
+      "entries": [
+        "As a bonus action, the magmin can set itself ablaze or extinguish its flames. While ablaze, the magmin sheds bright light in a 10-foot radius and dim light for an additional 10 feet."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Touch",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (2d6 damage) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 3 (1d6 damage) fire damage at the end of each of its turns."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

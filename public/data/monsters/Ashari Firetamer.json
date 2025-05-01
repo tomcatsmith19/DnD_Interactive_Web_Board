@@ -1,0 +1,131 @@
+{
+  "name": "Ashari Firetamer",
+  "source": "TDCSR",
+  "page": 226,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [],
+  "ac": [
+    "17"
+  ],
+  "hp": 92,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 15,
+  "con": 14,
+  "int": 12,
+  "wis": 18,
+  "cha": 11,
+  "skills": {
+    "arcana": "+4",
+    "nature": "+7"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Druidic",
+    "Ignan"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage plus 14 (4d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Flamecharm (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
+      "entries": [
+        "The firetamer can cast the {@spell dominate monster} spell (save DC 15) on a {@creature fire elemental} or other elemental fire creature. If the creature has 150 or more hit points, it has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on the {@quickref saving throws|PHB|2|1|saving throw}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The firetamer is a 9th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). It has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "mending",
+            "produce flame"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "faerie fire",
+            "jump"
+          ]
+        },
+        "2": {
+          "spells": [
+            "flame blade",
+            "heat metal",
+            "lesser restoration"
+          ]
+        },
+        "3": {
+          "spells": [
+            "daylight",
+            "dispel magic",
+            "protection from energy"
+          ]
+        },
+        "4": {
+          "spells": [
+            "freedom of movement",
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": [
+            "conjure elemental"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

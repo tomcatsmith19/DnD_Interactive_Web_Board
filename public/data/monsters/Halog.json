@@ -1,0 +1,84 @@
+{
+  "name": "Halog",
+  "source": "CoA",
+  "page": 242,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 40
+  },
+  "str": 13,
+  "dex": 14,
+  "con": 18,
+  "int": 4,
+  "wis": 8,
+  "cha": 8,
+  "skills": {
+    "athletics": "+4",
+    "perception": "+2",
+    "survival": "+5"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Adaptive Fangs",
+      "entries": [
+        "The halog magically alters its fangs to inflict more damage on the creatures it hits (included in the attack)."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The halog has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The halog gains advantage on attacks targeting creatures adjacent to one or more of the halog's conscious allies."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The halog makes two Bite attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 12 (3d6 + 2 damage) piercing damage plus 10 (3d6 damage) damage of a type that the target is most vulnerable to."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

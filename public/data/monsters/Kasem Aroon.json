@@ -1,0 +1,62 @@
+{
+  "name": "Kasem Aroon",
+  "source": "JttRC",
+  "page": 21,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 11,
+  "int": 12,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "deception": "+5",
+    "insight": "+4",
+    "persuasion": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "any two languages"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,138 @@
+{
+  "name": "Lampad",
+  "source": "MOT",
+  "page": 235,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 13,
+  "con": 14,
+  "int": 11,
+  "wis": 12,
+  "cha": 18,
+  "skills": {
+    "deception": "+6",
+    "intimidation": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Corpse Stride",
+      "entries": [
+        "Once on its turn, the lampad can use 10 feet of its movement to step magically into one creature's corpse within its reach and emerge from a second creature's corpse within 60 feet of the first corpse, appearing in an unoccupied space within 5 feet of the second corpse. Both corpses must be Medium or bigger."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The lampad has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The lampad attacks twice with its necrotic touch or chill touch."
+      ]
+    },
+    {
+      "name": "Necrotic Touch",
+      "entries": [
+        "{@atk ms} +6 to hit, reach 5 ft., one target. 9 (1d10 + 4 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Chill Touch (Cantrip)",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 120 ft., one creature. 9 (2d8 damage) necrotic damage, and the target can't regain hit points until the start of the lampad's next turn. If the target is undead, it has disadvantage on attack rolls against the lampad until the end of the lampad's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The lampad's spellcasting ability is Charisma ({@hit 6} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "chill touch",
+        "gentle repose"
+      ],
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

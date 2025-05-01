@@ -1,0 +1,77 @@
+{
+  "name": "Maggie Keeneyes (Tier 1)",
+  "source": "CRCotN",
+  "page": 189,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [
+    "ogre"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 16,
+  "int": 14,
+  "wis": 14,
+  "cha": 8,
+  "skills": {
+    "athletics": "+6",
+    "insight": "+4",
+    "perception": "+4",
+    "persuasion": "+3"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Tactical Readiness",
+      "entries": [
+        "Maggie and allies within 30 feet of her have advantage on initiative rolls, as long as Maggie isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Giant Maul",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage, and if the target is a creature, Maggie can force it to make a DC 14 Strength saving throw; on a failed save, the target is pushed 5 feet away from Maggie and knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Hammer Toss",
+      "entries": [
+        "Ranged atk +6 to hit, range 20/60 ft., one target. 9 (2d4 + 4 damage) bludgeoning damage, and if the target is a creature, Maggie can force it to make a DC 14 Strength saving throw; on a failed save, the target is pushed 5 feet away from Maggie and knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

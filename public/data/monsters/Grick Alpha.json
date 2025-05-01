@@ -1,0 +1,86 @@
+{
+  "name": "Grick Alpha",
+  "source": "MM",
+  "page": 173,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 18,
+  "dex": 16,
+  "con": 15,
+  "int": 4,
+  "wis": 14,
+  "cha": 9,
+  "skills": {},
+  "passive": 12,
+  "languages": [],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Stone Camouflage",
+      "entries": [
+        "The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The grick makes two attacks: one with its tail and one with its tentacles. If it hits with its tentacles, the grick can make one beak attack against the same target."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 22 (4d8 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

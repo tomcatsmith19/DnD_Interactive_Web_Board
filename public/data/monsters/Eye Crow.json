@@ -1,0 +1,67 @@
+{
+  "name": "Eye Crow",
+  "source": "GHLoE",
+  "page": 58,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 2,
+  "speed": {
+    "walk": 10,
+    "fly": 50
+  },
+  "str": 2,
+  "dex": 14,
+  "con": 10,
+  "int": 3,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mimicry",
+      "entries": [
+        "The eye crow can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful {@dc 10} Wisdom (Insight) check."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The eye crow has advantage on an attack roll against a creature if at least one of the crow's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 1 piercing damage. If the eye crow scores a critical hit on a creature, the target is {@condition blinded} until the end of the crow's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

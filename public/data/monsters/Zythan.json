@@ -1,0 +1,162 @@
+{
+  "name": "Zythan",
+  "source": "CoA",
+  "page": 26,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 117,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 14,
+  "int": 20,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "arcana": "+15",
+    "history": "+15",
+    "investigation": "+10",
+    "religion": "+10"
+  },
+  "passive": 12,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Draconic",
+    "Elvish",
+    "Infernal",
+    "Primordial"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Battlemage",
+      "entries": [
+        "Being within 5 feet of a hostile creature doesn't impose disadvantage on Zythan's ranged attack rolls."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Zythan has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Zythan makes three Dagger or Arcane Burst attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Arcane Burst",
+      "entries": [
+        "Ranged Spell atk +10 to hit, range 120 ft., one target. 27 (4d10 + 5 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Spirit Fissure {@recharge 4}",
+      "entries": [
+        "Zythan causes a disruption in arcane energies in a 300-foot line that is 5 feet wide. Each creature in the line must make a DC 18 Constitution saving throw, taking 65 (10d12 damage) radiant damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Zythan casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 18})."
+      ],
+      "will": [
+        "Arcane Eye",
+        "Detect Magic",
+        "Detect Thoughts",
+        "Fly",
+        "Light",
+        "Locate Object",
+        "Mage Armor",
+        "Mage Hand",
+        "Message",
+        "Prestidigitation"
+      ],
+      "daily": {
+        "1": [
+          "Cone of Cold",
+          "Foresight",
+          "Stoneskin",
+          "Rary's telepathic bond",
+          "True Seeing"
+        ]
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

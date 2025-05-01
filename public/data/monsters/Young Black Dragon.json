@@ -1,0 +1,92 @@
+{
+  "name": "Young Black Dragon",
+  "source": "MM",
+  "page": 88,
+  "size": [
+    "L"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 40,
+    "fly": 80,
+    "swim": 40
+  },
+  "str": 19,
+  "dex": 14,
+  "con": 17,
+  "int": 12,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+5"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The dragon can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 15 (2d10 + 4 damage) piercing damage plus 4 (1d8 damage) acid damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Acid Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales acid in a 30-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 49 (11d8 damage) acid damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "acid"
+  ],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

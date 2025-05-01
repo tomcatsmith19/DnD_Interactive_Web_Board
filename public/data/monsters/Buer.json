@@ -1,0 +1,136 @@
+{
+  "name": "Buer",
+  "source": "CoA",
+  "page": 211,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "21"
+  ],
+  "hp": 315,
+  "speed": {
+    "walk": 25
+  },
+  "str": 23,
+  "dex": 22,
+  "con": 21,
+  "int": 16,
+  "wis": 18,
+  "cha": 17,
+  "skills": {
+    "arcana": "+10",
+    "athletics": "+22",
+    "insight": "+11",
+    "intimidation": "+17",
+    "perception": "+11",
+    "survival": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Draconic",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "21",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Contractually Obligated",
+      "entries": [
+        "Buer has advantage to hit creatures under an infernal contract and when she hits such creatures she delivers an additional 9 ({@damage 2d8}) damage of a type the target is most vulnerable to. A creature bound under an infernal contract also makes all saving throws against effects originating from Buer with disadvantage."
+      ]
+    },
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede Buer's darkvision."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Buer has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Buer makes three attacks using her Claw. She can replace two of the attacks with a Cleansing Bite attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +13 to hit, reach 10 ft., one target. 22 (3d10 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Cleansing Bite",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target. 19 (2d12 + 6 damage) bludgeoning damage, healing Buer for an amount equal to the damage dealt."
+      ]
+    },
+    {
+      "name": "Spectral Reaping {@recharge}",
+      "entries": [
+        "Buer focuses her ethereal form, dashing up to 50 feet in a straight line through the ethereal plane. Any creatures in the line must make a DC 21 Constitution saving throw, taking 42 (12d6 damage) force damage on a failed save, or half as much damage on a successful one. Buer may reappear at any unoccupied space along the line. For 1 minute after using Spectral Reaping, Buer is empowered by ethereal essence. Her Cleansing Bite attack now deals force damage instead of bludgeoning."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Teamwork",
+      "entries": [
+        "Buer or one other devil within 60 feet of Buer makes a melee weapon attack against a target of Buer's choosing."
+      ]
+    },
+    {
+      "name": "Backdoor Clause",
+      "entries": [
+        "Buer wreathes energy around a creature she can see within 60 feet of her. Until the end of Buer's next turn, the target is covered in fire or cold energy, Buer's choice. Each time the target is struck with a melee attack, the attacker takes 9 ({@damage 2d8}) fire or cold damage."
+      ]
+    },
+    {
+      "name": "Refresh Souls (Costs 2 Actions)",
+      "entries": [
+        "Buer devours a Soul Coin, instantly refreshing one Recharge ability of any devil within 60 feet, including herself."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

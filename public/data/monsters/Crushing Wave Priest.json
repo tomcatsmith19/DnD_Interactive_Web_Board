@@ -1,0 +1,121 @@
+{
+  "name": "Crushing Wave Priest",
+  "source": "PotA",
+  "page": 205,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 11,
+  "con": 14,
+  "int": 10,
+  "wis": 11,
+  "cha": 16,
+  "skills": {
+    "deception": "+5",
+    "religion": "+2",
+    "stealth": "+2"
+  },
+  "passive": 10,
+  "languages": [
+    "Aquan",
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The priest is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It knows the following sorcerer spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "mage hand",
+            "minor illusion",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "expeditious retreat",
+            "ice knife|xge",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blur",
+            "hold person"
+          ]
+        },
+        "3": {
+          "spells": [
+            "sleet storm"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,111 @@
+{
+  "name": "Hedge Mage",
+  "source": "DoDk",
+  "page": 219,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 13,
+  "int": 15,
+  "wis": 11,
+  "cha": 11,
+  "skills": {
+    "arcana": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Any two"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The hedge mage is a 4th-level spellcaster that uses Intelligence as its spellcasting ability (spell save {@dc 12}; {@hit 4} to hit with spell attacks). The hedge mage has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "mage hand",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "false life",
+            "mage armor",
+            "magic missile"
+          ]
+        },
+        "2": {
+          "spells": [
+            "Melf's acid arrow",
+            "web"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

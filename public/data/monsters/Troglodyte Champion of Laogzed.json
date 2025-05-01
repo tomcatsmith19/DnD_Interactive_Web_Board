@@ -1,0 +1,105 @@
+{
+  "name": "Troglodyte Champion of Laogzed",
+  "source": "OotA",
+  "page": 229,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "troglodyte"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 18,
+  "int": 8,
+  "wis": 12,
+  "cha": 12,
+  "skills": {
+    "athletics": "+6",
+    "intimidation": "+3",
+    "stealth": "+3"
+  },
+  "passive": 11,
+  "languages": [
+    "Troglodyte"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Chameleon Skin",
+      "entries": [
+        "The troglodyte has advantage on Dexterity (Stealth) checks made to hide."
+      ]
+    },
+    {
+      "name": "Stench",
+      "entries": [
+        "Any creature other than a troglodyte that starts its turn within 5 feet of the troglodyte must succeed on a {@dc 14} Constitution saving throw or be {@condition poisoned} until the start of the creature's next turn. On a successful saving throw, the creature is immune to the stench of all troglodytes for 1 hour."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the troglodyte has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The troglodyte makes three attacks: one with its bite and two with either its claws or its greatclub."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d4 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d4 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Greatclub",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Acid Spray {@recharge}",
+      "entries": [
+        "The troglodyte spits acid in a line 15 feet long and 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 10 (3d6 damage) acid damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

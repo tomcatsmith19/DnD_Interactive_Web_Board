@@ -1,0 +1,91 @@
+{
+  "name": "Sentient Gray Ooze",
+  "source": "TftYP",
+  "page": 158,
+  "size": [
+    "M"
+  ],
+  "type": "ooze",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "8"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 10,
+    "climb": 10
+  },
+  "str": 12,
+  "dex": 6,
+  "con": 16,
+  "int": 5,
+  "wis": 6,
+  "cha": 2,
+  "skills": {
+    "stealth": "+2"
+  },
+  "passive": 8,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The ooze can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Corrode Metal",
+      "entries": [
+        "Any nonmagical weapon made of metal that hits the ooze corrodes. After dealing damage, the weapon takes a permanent and cumulative \u00e2\u02c6\u20191 penalty to damage rolls. If its penalty drops to \u00e2\u02c6\u20195, the weapon is destroyed. Nonmagical ammunition made of metal that hits the ooze is destroyed after dealing damage.",
+        "The ooze can eat through 2-inch-thick, nonmagical metal in 1 round."
+      ]
+    },
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the ooze remains motionless, it is indistinguishable from an oily pool or wet rock."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) bludgeoning damage plus 7 (2d6 damage) acid damage, and if the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative \u00e2\u02c6\u20191 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "prone"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

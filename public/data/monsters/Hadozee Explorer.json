@@ -1,0 +1,79 @@
+{
+  "name": "Hadozee Explorer",
+  "source": "BAM",
+  "page": 28,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 49,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 11,
+  "dex": 17,
+  "con": 13,
+  "int": 13,
+  "wis": 17,
+  "cha": 14,
+  "skills": {
+    "athletics": "+2",
+    "perception": "+5",
+    "stealth": "+5",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Hadozee"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Glide",
+      "entries": [
+        "If it isn't {@condition incapacitated} or wearing heavy armor, the hadozee can extend its skin membranes to move up to 5 feet horizontally for every 1 foot it descends in the air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hadozee makes two Shortsword attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Musket",
+      "entries": [
+        "Ranged atk +5 to hit, range 40/120 ft., one target. 16 (2d12 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,126 @@
+{
+  "name": "Reaper of Bhaal",
+  "source": "BGDIA",
+  "page": 233,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 40
+  },
+  "str": 11,
+  "dex": 20,
+  "con": 13,
+  "int": 15,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "intimidation": "+5",
+    "perception": "+3",
+    "persuasion": "+5",
+    "stealth": "+9"
+  },
+  "passive": 13,
+  "languages": [
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aura of Murder",
+      "entries": [
+        "As long as the reaper is not {@condition incapacitated}, hostile creatures within 5 feet of it gain vulnerability to piercing damage unless they have resistance or immunity to such damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The reaper makes two dagger attacks and uses Shroud Self."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d4 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Shroud Self",
+      "entries": [
+        "The reaper magically turns {@condition invisible} until the start of its next turn. This invisibility ends if the reaper makes an attack roll, makes a damage roll, or casts a spell."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The reaper's innate spellcasting ability is Charisma (spell save {@dc 13}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

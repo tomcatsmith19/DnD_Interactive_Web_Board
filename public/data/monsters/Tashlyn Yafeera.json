@@ -1,0 +1,90 @@
+{
+  "name": "Tashlyn Yafeera",
+  "source": "WDH",
+  "page": 200,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 149,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 14,
+  "int": 10,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "athletics": "+8",
+    "intimidation": "+5",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Indomitable (2/Day)",
+      "entries": [
+        "Tashlyn can reroll a saving throw that she fails. She must use the new roll."
+      ]
+    },
+    {
+      "name": "Second Wind (Recharges after a Short or Long Rest)",
+      "entries": [
+        "As a bonus action, Tashlyn can regain 20 hit points."
+      ]
+    },
+    {
+      "name": "Extra Damage",
+      "entries": [
+        "Tashlyn deals an extra 7 ({@dice 2d6}) damage to every hit if she has more than half her hit points remaining."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Tashlyn makes three attacks with her greatsword or her shortbow."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +6 to hit, range 80/320 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

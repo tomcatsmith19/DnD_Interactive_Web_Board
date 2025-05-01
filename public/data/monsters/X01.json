@@ -1,0 +1,156 @@
+{
+  "name": "X01",
+  "source": "ToFW",
+  "page": 37,
+  "size": [
+    "H"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 209,
+  "speed": {
+    "walk": 40,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 19,
+  "dex": 16,
+  "con": 17,
+  "int": 19,
+  "wis": 17,
+  "cha": 15,
+  "skills": {
+    "perception": "+13"
+  },
+  "passive": 23,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Axiomatic Mind",
+      "entries": [
+        "X01 can't be compelled to act in a manner contrary to its nature or its instructions."
+      ]
+    },
+    {
+      "name": "Combat Ready",
+      "entries": [
+        "X01 has advantage on initiative rolls."
+      ]
+    },
+    {
+      "name": "Disintegration",
+      "entries": [
+        "If the hexton dies, its body disintegrates into dust, leaving behind anything it was carrying."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (4/Day)",
+      "entries": [
+        "If the hexton fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "X01 makes one Pincer attack and two Tentacle attacks."
+      ]
+    },
+    {
+      "name": "Pincer",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage plus 10 (3d6 damage) force damage. If the target is a creature, it must succeed on a DC 17 Constitution saving throw or have the {@condition incapacitated} condition until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 15 (2d10 + 4 damage) piercing damage, and if the target is a Medium or smaller creature, it has the {@condition grappled} condition (escape DC 14). Until this grapple ends, the hexton can't use this tentacle against other targets. X01 has six tentacles, each of which can grapple one target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "X01 casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 17}):"
+      ],
+      "will": [
+        "detect magic",
+        "dispel magic",
+        "mending"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "lightning",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

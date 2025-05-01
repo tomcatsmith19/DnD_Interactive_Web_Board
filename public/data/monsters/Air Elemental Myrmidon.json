@@ -1,0 +1,93 @@
+{
+  "name": "Air Elemental Myrmidon",
+  "source": "MTF",
+  "page": 202,
+  "size": [
+    "M"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 117,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 14,
+  "int": 9,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Auran",
+    "one language of its creator's choice"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The myrmidon's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The myrmidon makes three flail attacks."
+      ]
+    },
+    {
+      "name": "Flail",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Lightning Strike {@recharge}",
+      "entries": [
+        "The myrmidon makes one flail attack. On a hit, the target takes an extra 18 (4d8 damage) lightning damage, and the target must succeed on a DC 13 Constitution saving throw or be {@condition stunned} until the end of the myrmidon's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone"
+  ],
+  "resist": [
+    "lightning",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

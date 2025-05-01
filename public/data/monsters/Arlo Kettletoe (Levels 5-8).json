@@ -1,0 +1,82 @@
+{
+  "name": "Arlo Kettletoe (Levels 5-8)",
+  "source": "KftGV",
+  "page": 8,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "halfling"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 14,
+  "int": 11,
+  "wis": 11,
+  "cha": 15,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Brave",
+      "entries": [
+        "The knight has advantage on saving throws against being {@condition frightened}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The knight makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +2 to hit, range 100/400 ft., one target. 5 (1d10 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Leadership (Recharges after a Short or Long Rest)",
+      "entries": [
+        "For 1 minute, Arlo Kettletoe can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a {@dice d4} to its roll provided it can hear and understand Arlo Kettletoe. A creature can benefit from only one Leadership die at a time. This effect ends if Arlo Kettletoe is {@condition incapacitated}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

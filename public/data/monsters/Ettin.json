@@ -1,0 +1,88 @@
+{
+  "name": "Ettin",
+  "source": "MM",
+  "page": 132,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 40
+  },
+  "str": 21,
+  "dex": 8,
+  "con": 17,
+  "int": 6,
+  "wis": 10,
+  "cha": 8,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Giant",
+    "Orc"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Two Heads",
+      "entries": [
+        "The ettin has advantage on Wisdom ({@skill Perception}) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, and knocked {@condition unconscious}."
+      ]
+    },
+    {
+      "name": "Wakeful",
+      "entries": [
+        "When one of the ettin's heads is asleep, its other head is awake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ettin makes two attacks: one with its battleaxe and one with its morningstar."
+      ]
+    },
+    {
+      "name": "Battleaxe",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

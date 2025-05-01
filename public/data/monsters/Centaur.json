@@ -1,0 +1,87 @@
+{
+  "name": "Centaur",
+  "source": "MM",
+  "page": 38,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 50
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 14,
+  "int": 9,
+  "wis": 13,
+  "cha": 11,
+  "skills": {
+    "athletics": "+6",
+    "perception": "+3",
+    "survival": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the centaur moves at least 30 feet straight toward a target and then hits it with a pike attack on the same turn, the target takes an extra 10 ({@damage 3d6}) piercing damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The centaur makes two attacks: one with its pike and one with its hooves or two with its longbow."
+      ]
+    },
+    {
+      "name": "Pike",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 9 (1d10 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 150/600 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

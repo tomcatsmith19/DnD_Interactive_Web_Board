@@ -1,0 +1,152 @@
+{
+  "name": "Hierophant of the Comet",
+  "source": "BMT",
+  "page": 92,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "warlock"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 153,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 13,
+  "con": 18,
+  "int": 15,
+  "wis": 17,
+  "cha": 20,
+  "skills": {
+    "arcana": "+10",
+    "deception": "+9",
+    "persuasion": "+9",
+    "religion": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "Common plus any two languages",
+    "telepathy 60 ft."
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Comet's Voice (1/Day)",
+      "entries": [
+        "The hierophant can cast {@spell Contact Other Plane}, using Charisma as the spellcasting ability."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The hierophant has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Thought Shield",
+      "entries": [
+        "The hierophant's thoughts can't be read by any means unless the hierophant allows it."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hierophant makes two Herald's Axe attacks or three Comet Blast attacks."
+      ]
+    },
+    {
+      "name": "Herald's Axe",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 11 (1d12 + 5 damage) slashing damage plus 10 (3d6 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Comet Blast",
+      "entries": [
+        "Ranged Spell atk +9 to hit, range 120 ft., one target. 16 (2d10 + 5 damage) force damage."
+      ]
+    },
+    {
+      "name": "All-Consuming Star {@recharge}",
+      "entries": [
+        "The hierophant conjures a manifestation of the All-Consuming Star: brilliant light and haunting screams that fill a 20-foot-radius sphere centered on a point the hierophant can see within 60 feet of itself. Each creature within the sphere has the {@condition blinded} and {@condition deafened} conditions. Each creature that enters the sphere for the first time on a turn or starts its turn there must make a DC 17 Wisdom saving throw. On a failed save, a creature takes 27 (6d8 damage) psychic damage and has the {@condition incapacitated} condition until the start of its next turn. On a successful save, a creature takes half as much damage only. The manifestation persists until the hierophant dies, has the {@condition incapacitated} condition, uses a bonus action to end the effect, or uses this action again."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The hierophant casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 17}):"
+      ],
+      "will": [
+        "Detect Thoughts",
+        "Mage Hand",
+        "Thaumaturgy"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

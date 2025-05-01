@@ -1,0 +1,152 @@
+{
+  "name": "Bavlorna Blightstraw",
+  "source": "WBtW",
+  "page": 216,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [
+    "hag"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 22,
+  "dex": 11,
+  "con": 18,
+  "int": 16,
+  "wis": 12,
+  "cha": 15,
+  "skills": {
+    "arcana": "+9",
+    "deception": "+5",
+    "perception": "+4",
+    "stealth": "+3"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "Bavlorna can breathe air and water."
+      ]
+    },
+    {
+      "name": "Boon of Immortality",
+      "entries": [
+        "Bavlorna is immune to any effect that would age her, and she can't die from old age."
+      ]
+    },
+    {
+      "name": "Widdershins Allergy",
+      "entries": [
+        "If a creature within 10 feet of Bavlorna uses at least 10 feet of movement to run in place counterclockwise, Bavlorna is overcome by a fit of sneezing and can't cast spells until the end of her next turn. In addition, any creature Bavlorna has swallowed is immediately expelled and falls {@condition prone} in an unoccupied space within 5 feet of her."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Bavlorna makes one Bite attack and one Withering Ray attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 13 (2d6 + 6 damage) piercing damage, and the target is {@condition grappled} (escape DC 16) if it is a Medium or smaller creature. Until the grapple ends, the target is {@condition restrained}, and Bavlorna can't use her Bite attack on another target."
+      ]
+    },
+    {
+      "name": "Withering Ray",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 60 ft., one target. 17 (4d6 + 3 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Create Lornlings {@recharge 5}",
+      "entries": [
+        "Bavlorna creates one or two 1-foot-tall duplicates of herself, called lornlings (use the Quickling stat block in appendix C). Each lornling appears in an unoccupied space within 5 feet of Bavlorna, obeys her commands, and takes its turn immediately after hers. A lornling lasts for 1 hour, until it or Bavlorna dies, or until Bavlorna dismisses it as an action. Bavlorna can have no more than eight lornlings in existence at a time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Bavlorna casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "detect magic"
+      ],
+      "daily": {
+        "1": [
+          "plane shift"
+        ]
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

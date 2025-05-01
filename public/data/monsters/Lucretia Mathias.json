@@ -1,0 +1,208 @@
+{
+  "name": "Lucretia Mathias",
+  "source": "DoDk",
+  "page": 216,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 10,
+  "con": 10,
+  "int": 19,
+  "wis": 24,
+  "cha": 19,
+  "skills": {
+    "insight": "+17",
+    "perception": "+17",
+    "persuasion": "+14",
+    "religion": "+14"
+  },
+  "passive": 26,
+  "languages": [
+    "all"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Prescient",
+      "entries": [
+        "Lucretia Mathias can't be surprised while she is conscious."
+      ]
+    },
+    {
+      "name": "Unarmoured Defense",
+      "entries": [
+        "While Lucretia Mathias is wearing no armour and wielding no shield, her AC includes her Wisdom modifier."
+      ]
+    },
+    {
+      "name": "Undeniable Faith",
+      "entries": [
+        "Lucretia Mathias automatically succeeds on Constitution saving throws to maintain {@status concentration} on her spells. Any spell she casts is treated as if it were cast using a 9th level spell slot, regardless of the spell slot used to cast the spell."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Lucretia Mathias fails a saving throw, she can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Divine Grace",
+      "entries": [
+        "Any creature who targets Lucretia Mathias with an attack or a harmful spell must first make a {@dc 20} Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This effect doesn't protect Lucretia Mathias from area effects, such as the explosion of a fireball.",
+        "If Lucretia Mathias makes an attack, casts a spell that affects an enemy, or deals damage to another creature, this effect ends until the start of her next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pacifying Touch",
+      "entries": [
+        "{@atk ms} +12 to hit, reach 5 ft., one creature. 10 (3d6 damage) psychic damage. A creature reduced to 0 hit points by this damage is stable at 0 hit points. The target must succeed on a DC 20 Wisdom saving throw or be {@condition incapacitated} for 1 minute. This effect ends for an affected creature if it takes any damage."
+      ]
+    },
+    {
+      "name": "Divine Intervention (1/ week)",
+      "entries": [
+        "Lucretia Mathias calls on the Sacred Flame for aid. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Cantrip",
+      "entries": [
+        "Lucretia Mathias casts a cantrip."
+      ]
+    },
+    {
+      "name": "Pacifying Touch (Costs 2 Actions)",
+      "entries": [
+        "Lucretia Mathias uses her Pacifying Touch."
+      ]
+    },
+    {
+      "name": "Cast a Spell (Costs 3 Actions)",
+      "entries": [
+        "Lucretia Mathias casts a spell using a spell slot."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Lucretia Mathias is a 20th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 20}, {@hit 12} to hit with spell attacks). She has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "guidance",
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "command",
+            "guiding bolt",
+            "healing word"
+          ]
+        },
+        "2": {
+          "spells": [
+            "aid",
+            "hold person",
+            "lesser restoration",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "sending",
+            "speak with dead",
+            "spirit guardians"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "death ward",
+            "divination"
+          ]
+        },
+        "5": {
+          "spells": [
+            "commune",
+            "flame strike",
+            "greater restoration",
+            "scrying"
+          ]
+        },
+        "6": {
+          "spells": [
+            "heal",
+            "word of recall"
+          ]
+        },
+        "7": {
+          "spells": [
+            "divine word",
+            "resurrection"
+          ]
+        },
+        "8": {
+          "spells": [
+            "holy aura"
+          ]
+        },
+        "9": {
+          "spells": [
+            "gate",
+            "sacrament of the falling fire|DoDk"
+          ]
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

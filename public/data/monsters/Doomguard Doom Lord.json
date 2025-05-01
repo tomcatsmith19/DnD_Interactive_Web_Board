@@ -1,0 +1,83 @@
+{
+  "name": "Doomguard Doom Lord",
+  "source": "MPP",
+  "page": 54,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 202,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 12,
+  "con": 16,
+  "int": 15,
+  "wis": 14,
+  "cha": 18,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common plus three more languages"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Aura of Doom",
+      "entries": [
+        "Any creature that starts its turn within 10 feet of the doom lord must make a {@dc 16} Constitution saving throw, taking 18 ({@damage 4d8}) necrotic damage on a failed save, or half as much damage on a successful one. If the doom lord doesn't have the {@condition incapacitated} condition, it can suppress or resume this aura at the start of its turn (no action required)."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The doom lord deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The doom lord makes two Entropic Greatsword or Entropic Javelin attacks."
+      ]
+    },
+    {
+      "name": "Entropic Greatsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage plus 10 (3d6 damage) necrotic damage. A creature killed by this attack has its body and everything it is wearing or carrying, except for magic items, reduced to ash."
+      ]
+    },
+    {
+      "name": "Entropic Javelin",
+      "entries": [
+        "Melee/Ranged atk +9 to hit, reach 5 ft. or range 30/120 ft., one target. 8 (1d6 + 5 damage) piercing damage plus 14 (4d6 damage) necrotic damage. A creature killed by this attack has its body and everything it is wearing or carrying, except for magic items, reduced to ash."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

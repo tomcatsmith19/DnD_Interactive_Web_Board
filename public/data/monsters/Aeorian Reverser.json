@@ -1,0 +1,83 @@
+{
+  "name": "Aeorian Reverser",
+  "source": "EGW",
+  "page": 284,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 133,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 21,
+  "dex": 16,
+  "con": 18,
+  "int": 6,
+  "wis": 14,
+  "cha": 8,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+6",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "understands Draconic but can't speak"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The reverser has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The reverser makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, range 5 ft., one creature. 11 (1d12 + 5 damage) piercing damage plus 6 (1d12 damage) force damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) slashing damage plus 7 (2d6 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "radiant"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

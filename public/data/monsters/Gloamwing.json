@@ -1,0 +1,103 @@
+{
+  "name": "Gloamwing",
+  "source": "GGR",
+  "page": 215,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 20,
+  "dex": 16,
+  "con": 17,
+  "int": 2,
+  "wis": 11,
+  "cha": 6,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "understands Common"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Death Link",
+      "entries": [
+        "If its specter rider is reduced to 0 hit points, the gloamwing is destroyed."
+      ]
+    },
+    {
+      "name": "Flyby",
+      "entries": [
+        "The gloamwing doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the gloamwing has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gloamwing makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 18 (3d8 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 15 (3d6 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Awakened White Moose",
+  "source": "IDRotF",
+  "page": 82,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 68,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 11,
+  "con": 16,
+  "int": 10,
+  "wis": 12,
+  "cha": 6,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Druidic"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the moose moves at least 20 feet straight toward a target and then hits it with an antlers attack on the same turn, the target takes an extra 9 ({@damage 2d8}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 14} Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Sure-Footed",
+      "entries": [
+        "The moose has advantage on Strength and Dexterity saving throws made against effects that would knock it {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The moose makes two attacks: one with its antlers and one with its hooves."
+      ]
+    },
+    {
+      "name": "Antlers",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 9 (2d4 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

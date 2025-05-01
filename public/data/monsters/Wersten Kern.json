@@ -1,0 +1,134 @@
+{
+  "name": "Wersten Kern",
+  "source": "DSotDQ",
+  "page": 209,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 178,
+  "speed": {
+    "walk": 30
+  },
+  "str": 21,
+  "dex": 10,
+  "con": 18,
+  "int": 13,
+  "wis": 14,
+  "cha": 16,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Infernal",
+    "Solamnic"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces Wersten to 0 hit points, she must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is bludgeoning or from a critical hit. On a success, Wersten drops to 1 hit point instead."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "Wersten doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Wersten makes three Banner Pike attacks and uses Terrifying Litany if it's available."
+      ]
+    },
+    {
+      "name": "Banner Pike",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 10 (1d10 + 5 damage) piercing damage plus 13 (3d8 damage) necrotic damage. If the target is a Humanoid, it must succeed on a DC 16 Charisma saving throw or be cursed. The curse lasts until it is lifted by remove curse or similar magic. Black, thorny rose stems sprout from the creature's body while it is cursed, imposing disadvantage on the creature's ability checks and attack rolls and halving its speed. A creature that succeeds on the saving throw against the curse is immune to it for 24 hours."
+      ]
+    },
+    {
+      "name": "Terrifying Litany {@recharge 5}",
+      "entries": [
+        "Wersten recites names of souls slain by Soth and his company, channeling their mortal terror. Each creature that isn't an Undead within 30 feet of her must make a DC 16 Wisdom saving throw. On a failed save, the creature takes 22 (4d10 damage) psychic damage and is {@condition frightened} of Wersten for 1 minute. On a successful save, the creature takes half as much damage and isn't {@condition frightened}. At the end of each of its turns, a {@condition frightened} creature can repeat the saving throw, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Wersten casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

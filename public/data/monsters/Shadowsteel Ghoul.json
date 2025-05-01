@@ -1,0 +1,89 @@
+{
+  "name": "Shadowsteel Ghoul",
+  "source": "GHLoE",
+  "page": 84,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 14,
+  "int": 9,
+  "wis": 10,
+  "cha": 6,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "one language known in life"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The Shadowsteel ghoul has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Shadowsteel Coat",
+      "entries": [
+        "The Shadowsteel ghoul is coated in metal armor made of Shadowsteel."
+      ]
+    },
+    {
+      "name": "Shadowsteel Hunger",
+      "entries": [
+        "The Shadowsteel ghoul has advantage on attack rolls against creatures carrying or wearing Shadowsteel."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Shadowsteel ghoul makes two claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage and 5 (2d4 damage) necrotic damage. A cursed target must make an escalation check. If a target drops to 0 hit points due to this damage and isn't already cursed, roll {@dice 1d4}, and the target is afflicted with a curse based on the result: 1-2 Curse of Damned Aging, 3-4 Curse of Foul Blight. (See Grim Hollow Campaign Guide for information on curses and escalation.)"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

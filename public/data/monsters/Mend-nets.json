@@ -1,0 +1,72 @@
+{
+  "name": "Mend-nets",
+  "source": "RoT",
+  "page": 32,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 11,
+  "con": 12,
+  "int": 8,
+  "wis": 11,
+  "cha": 8,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "any one language"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The warrior has advantage on an attack roll against a creature if at least one of the warrior's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d6 + 1 damage) piercing damage, or 5 (1d8 + 1 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "coastal",
+    "mountain",
+    "grassland",
+    "hill",
+    "arctic",
+    "forest",
+    "swamp",
+    "underdark",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

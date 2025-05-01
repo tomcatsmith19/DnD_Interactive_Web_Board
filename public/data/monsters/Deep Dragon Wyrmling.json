@@ -1,0 +1,77 @@
+{
+  "name": "Deep Dragon Wyrmling",
+  "source": "FTD",
+  "page": 175,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30,
+    "burrow": 15,
+    "fly": 60,
+    "swim": 30
+  },
+  "str": 14,
+  "dex": 11,
+  "con": 12,
+  "int": 11,
+  "wis": 12,
+  "cha": 13,
+  "skills": {
+    "perception": "+3",
+    "persuasion": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (1d10 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Nightmare Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a cloud of spores in a 15-foot cone. Each creature in that area must make a DC 11 Wisdom saving throw. On a failed save, the creature takes 5 (1d10 damage) psychic damage, and it is {@condition frightened} of the dragon for 1 minute. On a successful save, the creature takes half as much damage with no additional effects. A {@condition frightened} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "poison",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 90 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

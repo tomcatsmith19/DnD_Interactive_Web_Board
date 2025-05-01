@@ -1,0 +1,143 @@
+{
+  "name": "Githzerai Anarch",
+  "source": "MTF",
+  "page": 207,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gith"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 144,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 16,
+  "dex": 21,
+  "con": 18,
+  "int": 18,
+  "wis": 20,
+  "cha": 14,
+  "skills": {
+    "arcana": "+9",
+    "insight": "+10",
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "Gith"
+  ],
+  "cr": "16",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Psychic Defense",
+      "entries": [
+        "While the anarch is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The anarch makes three unarmed strikes."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) bludgeoning damage plus 18 (4d8 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Strike",
+      "entries": [
+        "The anarch makes one unarmed strike."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The anarch magically teleports, along with any equipment it is wearing and carrying, to an unoccupied space it can see within 30 feet of it."
+      ]
+    },
+    {
+      "name": "Change Gravity (Costs 3 Actions)",
+      "entries": [
+        "The anarch casts the {@spell reverse gravity} spell. The spell has the normal effect, except that the anarch can orient the area in any direction and creatures and objects fall toward the end of the area."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The anarch's innate spellcasting ability is Wisdom (spell save {@dc 18}, {@hit 10} to hit with spell attacks). It can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

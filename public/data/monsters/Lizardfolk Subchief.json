@@ -1,0 +1,133 @@
+{
+  "name": "Lizardfolk Subchief",
+  "source": "GoS",
+  "page": 242,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "lizardfolk"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 14,
+  "dex": 12,
+  "con": 14,
+  "int": 10,
+  "wis": 16,
+  "cha": 12,
+  "skills": {
+    "athletics": "+4",
+    "perception": "+5",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The subchief can hold its breath for 15 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tooth Dagger",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Jaws of Semuanya {@recharge 5}",
+      "entries": [
+        "The subchief invokes the primal magic of Semuanya, summoning a spectral maw around a target it can see within 60 feet of it. The target must make a DC 13 Dexterity saving throw, taking 22 (5d8 damage) piercing damage on a failed save, or half as much damage on a successful one. A creature that fails this saving throw is also {@condition frightened} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The subchief is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "sacred flame",
+            "spare the dying",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "command",
+            "guiding bolt",
+            "purify food and drink"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "lesser restoration",
+            "silence"
+          ]
+        },
+        "3": {
+          "spells": [
+            "bestow curse",
+            "dispel magic"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

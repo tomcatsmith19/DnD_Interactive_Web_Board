@@ -1,0 +1,71 @@
+{
+  "name": "Dragon Chosen",
+  "source": "FTD",
+  "page": 189,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 18,
+  "con": 14,
+  "int": 10,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "athletics": "+6",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The chosen makes one Handaxe attack and two Shortsword attacks."
+      ]
+    },
+    {
+      "name": "Handaxe",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) slashing damage. Hit or Miss: The handaxe magically returns to the chosen's hand immediately after a ranged attack."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Displacer Beast",
+  "source": "MM",
+  "page": 81,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 16,
+  "int": 6,
+  "wis": 12,
+  "cha": 8,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Avoidance",
+      "entries": [
+        "If the displacer beast is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      ]
+    },
+    {
+      "name": "Displacement",
+      "entries": [
+        "The displacer beast projects a magical illusion that makes it appear to be standing near its actual location, causing attack rolls against it to have disadvantage. If it is hit by an attack, this trait is disrupted until the end of its next turn. This trait is also disrupted while the displacer beast is {@condition incapacitated} or has a speed of 0."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The displacer beast makes two attacks with its tentacles."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 7 (1d6 + 4 damage) bludgeoning damage plus 3 (1d6 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,91 @@
+{
+  "name": "Lizardfolk Render",
+  "source": "GoS",
+  "page": 241,
+  "size": [
+    "L"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "lizardfolk"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 16,
+  "dex": 10,
+  "con": 14,
+  "int": 7,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "athletics": "+5",
+    "perception": "+3",
+    "survival": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "The render has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The render can hold its breath for 15 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The render makes two attacks: one with its claws and one with its bite."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one target. 12 (2d8 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (1d10 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Rend the Field {@recharge 5}",
+      "entries": [
+        "The render makes a claw attack against each creature of its choice within 10 feet of it. A creature hit by this attack must succeed on a DC 13 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

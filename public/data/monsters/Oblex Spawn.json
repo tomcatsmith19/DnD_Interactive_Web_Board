@@ -1,0 +1,77 @@
+{
+  "name": "Oblex Spawn",
+  "source": "MTF",
+  "page": 217,
+  "size": [
+    "T"
+  ],
+  "type": "ooze",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 20
+  },
+  "str": 8,
+  "dex": 16,
+  "con": 15,
+  "int": 14,
+  "wis": 11,
+  "cha": 10,
+  "skills": {},
+  "passive": 12,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The oblex can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Aversion to Fire",
+      "entries": [
+        "If the oblex takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) bludgeoning damage plus 2 (1d4 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this distance)"
+  ],
+  "environment": [
+    "swamp",
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

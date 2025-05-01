@@ -1,0 +1,136 @@
+{
+  "name": "Psionic Shambling Mound",
+  "source": "PaBTSO",
+  "page": 108,
+  "size": [
+    "L"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 20,
+    "swim": 20
+  },
+  "str": 18,
+  "dex": 8,
+  "con": 16,
+  "int": 5,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "stealth": "+2"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Lightning Absorption",
+      "entries": [
+        "Whenever the shambling mound is subjected to lightning damage, it takes no damage and regains a number of hit points equal to the lightning damage dealt."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The shambling mound makes two slam attacks. If both attacks hit a Medium or smaller target, the target is {@condition grappled} (escape DC 14), and the shambling mound uses its Engulf on it."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Engulf",
+      "entries": [
+        "The shambling mound engulfs a Medium or smaller creature {@condition grappled} by it. The engulfed target is {@condition blinded}, {@condition restrained}, and unable to breathe, and it must succeed on a DC 14 Constitution saving throw at the start of each of the mound's turns or take 13 (2d8 + 4 damage) bludgeoning damage. If the mound moves, the engulfed target moves with it. The mound can have only one creature engulfed at a time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The shambling mound casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 8}):"
+      ],
+      "will": [
+        "minor illusion"
+      ],
+      "daily": {
+        "1": [
+          "charm person"
+        ]
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "blinded",
+    "deafened",
+    "exhaustion"
+  ],
+  "resist": [
+    "cold",
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "lightning"
+  ],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [
+    "forest",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

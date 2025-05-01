@@ -1,0 +1,92 @@
+{
+  "name": "Maggie Keeneyes (Tier 2)",
+  "source": "CRCotN",
+  "page": 191,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [
+    "ogre"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 114,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 18,
+  "int": 14,
+  "wis": 16,
+  "cha": 8,
+  "skills": {
+    "athletics": "+7",
+    "insight": "+6",
+    "perception": "+6",
+    "persuasion": "+5"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Push",
+      "entries": [
+        "Once during each of her turns, after hitting a creature with an attack, Maggie can force the target to make a {@dc 15} Strength saving throw; on a failed save, the target is pushed up to 10 feet horizontally away from Maggie and knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Tactical Readiness",
+      "entries": [
+        "Maggie and allies within 30 feet of her have advantage on initiative rolls, as long as Maggie isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Maggie makes two Giant Maul or Hammer Toss attacks."
+      ]
+    },
+    {
+      "name": "Giant Maul",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Hammer Toss",
+      "entries": [
+        "Ranged atk +7 to hit, range 20/60 ft., one target. 9 (2d4 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

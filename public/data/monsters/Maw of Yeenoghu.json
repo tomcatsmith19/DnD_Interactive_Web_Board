@@ -1,0 +1,86 @@
+{
+  "name": "Maw of Yeenoghu",
+  "source": "BGG",
+  "page": 159,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 161,
+  "speed": {
+    "walk": 40
+  },
+  "str": 23,
+  "dex": 10,
+  "con": 21,
+  "int": 8,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Abyssal",
+    "Giant"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The maw has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The maw makes two Bite or Fang Fling attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +10 to hit, reach 10 ft., one target. 19 (2d12 + 6 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Fang Fling",
+      "entries": [
+        "Ranged atk +10 to hit, range 30/90 ft., one target. 11 (1d10 + 6 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Gorging Charge {@recharge 5}",
+      "entries": [
+        "The maw moves up to its speed without provoking opportunity attacks and can move through the spaces of Large or smaller creatures. Each time the maw enters a creature's space for the first time during this move, that creature must succeed on a DC 18 Strength saving throw or take 25 (3d12 + 6 damage) piercing damage and have the {@condition grappled} condition (escape DC 16); if a creature is already {@condition grappled} this way, it has the {@condition prone} condition. Until this grapple ends, the target has the {@condition restrained} condition. The maw can have only one creature {@condition grappled} in this way at a time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

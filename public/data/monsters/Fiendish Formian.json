@@ -1,0 +1,89 @@
+{
+  "name": "Fiendish Formian",
+  "source": "CoA",
+  "page": 144,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 17,
+  "int": 10,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "acrobatics": "+4",
+    "stealth": "+4"
+  },
+  "passive": 11,
+  "languages": [
+    "Formian"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hive Mind",
+      "entries": [
+        "All fiendish formians within 1 mile of Ekengarik can telepathically communicate with each other and Ekengarik."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The fiendish formian makes two Claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) piercing damage and the target must make a DC 14 Constitution saving throw. On a failed save, the target's Strength score is reduced by 1. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

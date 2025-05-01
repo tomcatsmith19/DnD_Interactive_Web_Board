@@ -1,0 +1,142 @@
+{
+  "name": "Mister Light",
+  "source": "WBtW",
+  "page": 26,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf",
+    "shadar-kai"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 77,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 12,
+  "int": 12,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "perception": "+3",
+    "performance": "+5",
+    "sleight of hand": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Light has advantage on saving throws against being {@condition charmed}, and magic can't put him to sleep."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Light carries and is attuned to the {@item Witchlight vane|WbtW}. In Light's hands, the vane is a finesse weapon."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Light makes two {@item Witchlight vane|WbtW} attacks."
+      ]
+    },
+    {
+      "name": "Witchlight Vane",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage plus 4 (1d8 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "While carrying the {@item Witchlight vane|WbtW}, Light casts one of the following spells, requiring no spell components and using Charisma as the spellcasting ability (spell save {@dc 13}, {@hit 5} to hit with spell attacks):"
+      ],
+      "will": [
+        "dancing lights",
+        "polymorph",
+        "ray of frost"
+      ],
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "blinded",
+    "deafened",
+    "petrified",
+    "stunned"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [
+    "lightning"
+  ],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,117 @@
+{
+  "name": "Rakdos Lampooner",
+  "source": "GGR",
+  "page": 248,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 13,
+  "int": 12,
+  "wis": 9,
+  "cha": 18,
+  "skills": {
+    "deception": "+6",
+    "performance": "+6"
+  },
+  "passive": 9,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The lampooner is a 4th-level Rakdos spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It knows the following bard spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "dancing lights",
+            "minor illusion",
+            "vicious mockery"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bane",
+            "dissonant whispers",
+            "silent image",
+            "Tasha's hideous laughter",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "crown of madness",
+            "enthrall",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

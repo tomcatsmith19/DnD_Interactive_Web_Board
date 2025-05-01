@@ -1,0 +1,132 @@
+{
+  "name": "Eater of Knowledge",
+  "source": "MPP",
+  "page": 29,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 10,
+  "con": 17,
+  "int": 18,
+  "wis": 16,
+  "cha": 15,
+  "skills": {
+    "arcana": "+7",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "telepathy 120 ft."
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Brains Devoured",
+      "entries": [
+        "When the eater of knowledge is first encountered, roll {@dice 1d10} to determine the number of brains it has already consumed."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The eater of knowledge has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The eater of knowledge makes two Slam attacks. If both attacks hit the same creature and the target is Large or smaller, it has the {@condition grappled} condition (escape DC 14) and must succeed on a DC 15 Intelligence saving throw or have the {@condition stunned} condition until the grapple ends."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Extract Brain",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one Humanoid with the {@condition incapacitated} condition. 45 (10d8 damage) piercing damage. If this damage reduces the target to 0 hit points, the eater of knowledge kills the target by extracting and consuming its brain."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The eater of knowledge casts one of the following spells, requiring no spell components and using Intelligence as its spellcasting ability (spell save {@dc 15}). It must have consumed the requisite number of brains to cast the spell, as indicated:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "psychic"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

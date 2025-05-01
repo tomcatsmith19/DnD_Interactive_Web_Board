@@ -1,0 +1,113 @@
+{
+  "name": "Pixie",
+  "source": "MM",
+  "page": 253,
+  "size": [
+    "T"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 10,
+    "fly": 30
+  },
+  "str": 2,
+  "dex": 20,
+  "con": 8,
+  "int": 10,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+7"
+  },
+  "passive": 14,
+  "languages": [
+    "Sylvan"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The pixie has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Superior Invisibility",
+      "entries": [
+        "The pixie magically turns {@condition invisible} until its {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment the pixie wears or carries is {@condition invisible} with it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The pixie's innate spellcasting ability is Charisma (spell save {@dc 12}). It can innately cast the following spells, requiring only its pixie dust as a component:"
+      ],
+      "will": [
+        "druidcraft"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

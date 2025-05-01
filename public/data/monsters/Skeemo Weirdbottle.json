@@ -1,0 +1,140 @@
+{
+  "name": "Skeemo Weirdbottle",
+  "source": "WDH",
+  "page": 200,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gnome"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 72,
+  "speed": {
+    "walk": 25
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 12,
+  "int": 17,
+  "wis": 12,
+  "cha": 15,
+  "skills": {
+    "arcana": "+6",
+    "history": "+6",
+    "perception": "+4",
+    "performance": "+5"
+  },
+  "passive": 14,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Gnomish",
+    "Undercommon"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Gnome Cunning",
+      "entries": [
+        "Skeemo has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage. Or Ranged Weapon Attack: +5 to hit, range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Skeemo is a 9th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks) He has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "misty step",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "fly"
+          ]
+        },
+        "4": {
+          "spells": [
+            "greater invisibility",
+            "ice storm"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cone of cold"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

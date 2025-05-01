@@ -1,0 +1,145 @@
+{
+  "name": "Sythian Skalderang",
+  "source": "KftGV",
+  "page": 117,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "bard",
+    "tiefling"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 99,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 15,
+  "con": 13,
+  "int": 14,
+  "wis": 11,
+  "cha": 16,
+  "skills": {
+    "arcana": "+5",
+    "deception": "+6",
+    "performance": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fear of Frogs and Toads",
+      "entries": [
+        "Sythian is {@condition frightened} while he is within 20 feet of a frog or a toad (of any size) that he can see."
+      ]
+    },
+    {
+      "name": "Graz'zt's Gift",
+      "entries": [
+        "Sythian's AC includes his Charisma modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Sythian makes two Poisoned Shortsword or Poisoned Dart attacks and uses Whispers of Azzagrat."
+      ]
+    },
+    {
+      "name": "Poisoned Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage plus 5 (1d10 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Poisoned Dart",
+      "entries": [
+        "Ranged atk +5 to hit, range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage plus 5 (1d10 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Whispers of Azzagrat",
+      "entries": [
+        "Each creature in a 15-foot cube originating from Sythian must make a DC 14 Wisdom saving throw. On a failed save, a creature takes 18 (4d8 damage) psychic damage and is {@condition incapacitated} until the end of its next turn. On a successful save, the creature takes half as much damage and isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Sythian casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

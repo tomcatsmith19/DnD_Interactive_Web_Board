@@ -1,0 +1,70 @@
+{
+  "name": "Mercykiller Bloodhound",
+  "source": "MPP",
+  "page": 60,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 40
+  },
+  "str": 17,
+  "dex": 12,
+  "con": 16,
+  "int": 12,
+  "wis": 15,
+  "cha": 8,
+  "skills": {
+    "perception": "+8",
+    "survival": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Common plus one more language"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Portal Sense",
+      "entries": [
+        "The bloodhound can sense the presence of portals within 30 feet of itself, including inactive portals, and instinctively knows the destination of each portal."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The bloodhound makes three Clawed Gauntlet attacks."
+      ]
+    },
+    {
+      "name": "Clawed Gauntlet",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage plus 10 (3d6 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

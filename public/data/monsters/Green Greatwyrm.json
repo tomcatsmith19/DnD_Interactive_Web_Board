@@ -1,0 +1,134 @@
+{
+  "name": "Green Greatwyrm",
+  "source": "FTD",
+  "page": 168,
+  "size": [
+    "G"
+  ],
+  "type": "dragon",
+  "tags": [
+    "chromatic"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "22"
+  ],
+  "hp": 533,
+  "speed": {
+    "walk": 60,
+    "burrow": 60,
+    "fly": 120,
+    "swim": 60
+  },
+  "str": 30,
+  "dex": 14,
+  "con": 30,
+  "int": 21,
+  "wis": 20,
+  "cha": 26,
+  "skills": {
+    "intimidation": "+16",
+    "perception": "+21",
+    "stealth": "+10"
+  },
+  "passive": 31,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "27",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Chromatic Awakening (Recharges after a Short or Long Rest)",
+      "entries": [
+        "If the greatwyrm would be reduced to 0 hit points, its current hit point total instead resets to 425 hit points, it recharges its Breath Weapon, and it regains any expended uses of Legendary Resistance. Additionally, the greatwyrm can now use the options in the \"Mythic Actions\" section for 1 hour. Award a party an additional 105,000 XP (210,000 XP total) for defeating the greatwyrm after its Chromatic Awakening activates."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (4/Day)",
+      "entries": [
+        "If the greatwyrm fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The greatwyrm doesn't require food or drink."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The greatwyrm makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +18 to hit, reach 15 ft., one target. 21 (2d10 + 10 damage) piercing damage plus 13 (2d12 damage) force damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +18 to hit, reach 10 ft., one target. 19 (2d8 + 10 damage) slashing damage. If the target is a Huge or smaller creature, it is {@condition grappled} (escape DC 20) and is {@condition restrained} until this grapple ends. The greatwyrm can have only one creature {@condition grappled} this way at a time."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +18 to hit, reach 20 ft., one target. 19 (2d8 + 10 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 26 Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Breath Weapon {@recharge 5}",
+      "entries": [
+        "The greatwyrm exhales a blast of energy in a 300-foot cone. Each creature in that area must make a DC 26 Dexterity saving throw. On a failed save, the creature takes 78 (12d12 damage) poison damage. On a successful save, the creature takes half as much damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "The greatwyrm makes one Claw or Tail attack."
+      ]
+    },
+    {
+      "name": "Wing Attack (Costs 2 Actions)",
+      "entries": [
+        "The greatwyrm beats its wings. Each creature within 30 feet of it must succeed on a {@dc 26} Dexterity saving throw or take 17 ({@damage 2d6 + 10}) bludgeoning damage and be knocked {@condition prone}. The greatwyrm can then fly up to half its flying speed."
+      ]
+    },
+    {
+      "name": "Arcane Spear (Costs 3 Actions)",
+      "entries": [
+        "The greatwyrm creates four spears of magical force. Each spear hits a creature of the greatwyrm's choice it can see within 120 feet of it, dealing 12 ({@damage 1d8 + 8}) force damage to its target, then disappears."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

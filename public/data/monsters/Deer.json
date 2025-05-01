@@ -1,0 +1,54 @@
+{
+  "name": "Deer",
+  "source": "MM",
+  "page": 321,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 4,
+  "speed": {
+    "walk": 50
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 11,
+  "int": 2,
+  "wis": 14,
+  "cha": 5,
+  "skills": {},
+  "passive": 12,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

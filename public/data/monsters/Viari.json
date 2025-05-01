@@ -1,0 +1,104 @@
+{
+  "name": "Viari",
+  "source": "AI",
+  "page": 198,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "18",
+    "19"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 20,
+  "con": 14,
+  "int": 10,
+  "wis": 8,
+  "cha": 14,
+  "skills": {
+    "acrobatics": "+11",
+    "athletics": "+7",
+    "perception": "+5",
+    "performance": "+5",
+    "persuasion": "+5",
+    "sleight of hand": "+11",
+    "stealth": "+8"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Thieves' cant"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Evasion",
+      "entries": [
+        "If Viari is subjected to an effect that allows him to make a Dexterity saving throw to take only half damage, he instead takes no damage if he succeeds on the saving throw, and only half damage if he fails. He can't use this trait if he's {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Second-Story Work",
+      "entries": [
+        "Climbing does not cost Viari extra movement. Additionally, when he makes a running jump, the distance he covers increases by 5 feet."
+      ]
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "entries": [
+        "Viari deals an extra 14 ({@dice 4d6}) damage when he hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of Viari that isn't {@condition incapacitated} and Viari doesn't have disadvantage on the attack roll."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Viari makes two attacks with his shortsword and two attacks with his rapier."
+      ]
+    },
+    {
+      "name": "+1 Shortsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 9 (1d6 + 6 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +8 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d4 + 5 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

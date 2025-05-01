@@ -1,0 +1,68 @@
+{
+  "name": "Star Spawn Grue",
+  "source": "MTF",
+  "page": 234,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 17,
+  "speed": {
+    "walk": 30
+  },
+  "str": 6,
+  "dex": 13,
+  "con": 10,
+  "int": 9,
+  "wis": 11,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Deep Speech"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aura of Madness",
+      "entries": [
+        "Creatures within 20 feet of the grue that aren't aberrations have disadvantage on saving throws, as well as on attack rolls against creatures other than a star spawn grue."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Confounding Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 6 (2d4 + 1 damage) piercing damage, and the target must succeed on a DC 10 Wisdom saving throw or attack rolls against it have advantage until the start of the grue's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "psychic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

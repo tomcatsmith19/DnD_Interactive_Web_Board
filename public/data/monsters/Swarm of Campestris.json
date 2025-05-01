@@ -1,0 +1,88 @@
+{
+  "name": "Swarm of Campestris",
+  "source": "WBtW",
+  "page": 232,
+  "size": [
+    "M"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 5
+  },
+  "str": 3,
+  "dex": 7,
+  "con": 10,
+  "int": 4,
+  "wis": 10,
+  "cha": 8,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "understands Common but speaks only through the use of its Mimicry trait"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mimicry",
+      "entries": [
+        "Each campestri in the swarm can mimic any voice or song it has heard, albeit in a nasal falsetto."
+      ]
+    },
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough to accommodate an individual campestri. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Head Butts",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one target. 10 (4d4 damage) bludgeoning damage, or 5 (2d4 damage) bludgeoning damage if the swarm has half its hit points or fewer."
+      ]
+    },
+    {
+      "name": "Spores (1/Day)",
+      "entries": [
+        "A 20-foot radius of spores extends from the swarm. These spores can go around corners, and they have no effect on Constructs, Elementals, Plants, or Undead. Each other creature in the area must make a DC 10 Wisdom saving throw. On a failed save, the creature is {@condition incapacitated} and its speed is halved, both for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "tremorsense 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

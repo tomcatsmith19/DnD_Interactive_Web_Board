@@ -1,0 +1,91 @@
+{
+  "name": "Salamander",
+  "source": "MM",
+  "page": 266,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 15,
+  "int": 11,
+  "wis": 10,
+  "cha": 12,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Ignan"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Heated Body",
+      "entries": [
+        "A creature that touches the salamander or hits it with a melee attack while within 5 feet of it takes 7 ({@damage 2d6}) fire damage."
+      ]
+    },
+    {
+      "name": "Heated Weapons",
+      "entries": [
+        "Any metal melee weapon the salamander wields deals an extra 3 ({@damage 1d6}) fire damage on a hit (included in the attack)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The salamander makes two attacks: one with its spear and one with its tail."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 11 (2d6 + 4 damage) piercing damage, or 13 (2d8 + 4 damage) piercing damage if used with two hands to make a melee attack, plus 3 (1d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage plus 7 (2d6 damage) fire damage, and the target is {@condition grappled} (escape DC 14). Until this grapple ends, the target is {@condition restrained}, the salamander can automatically hit the target with its tail, and the salamander can't make tail attacks against other targets."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "cold"
+  ],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

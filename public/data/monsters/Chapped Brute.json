@@ -1,0 +1,78 @@
+{
+  "name": "Chapped Brute",
+  "source": "GHLoE",
+  "page": 67,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "L",
+    "NX",
+    "C",
+    "NY",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 95,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 20,
+  "int": 7,
+  "wis": 10,
+  "cha": 7,
+  "skills": {
+    "athletics": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "understands one language but can't speak"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The chapped brute has advantage on Wisdom (Perception) checks that rely on hearing. While {@condition deafened}, the brute can't use its blindsight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The chapped brute makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

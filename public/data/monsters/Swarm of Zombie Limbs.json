@@ -1,0 +1,94 @@
+{
+  "name": "Swarm of Zombie Limbs",
+  "source": "VRGR",
+  "page": 254,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "10"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 10,
+  "int": 3,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny limb. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The swarm doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The swarm makes one Undead Mass attack and one Grasping Limbs attack."
+      ]
+    },
+    {
+      "name": "Undead Mass",
+      "entries": [
+        "Melee atk +4 to hit, reach 0 ft., one target in the swarm's space. 5 (1d6 + 2 damage) bludgeoning damage, or 4 (1d4 + 2 damage) bludgeoning damage if the swarm has half of its hit points or fewer."
+      ]
+    },
+    {
+      "name": "Grasping Limbs",
+      "entries": [
+        "Melee atk +4 to hit, reach 0 ft., one creature in the swarm's space. 7 (2d6 damage) necrotic damage, and the creature must succeed on a DC 12 Strength saving throw or be {@condition restrained}. The creature can repeat the saving throw at the end of each of its turns, taking 7 (2d6 damage) necrotic damage on a failed save. The creature is freed if it succeeds on this saving throw, the swarm moves out of the creature's space, or the swarm dies."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 30 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

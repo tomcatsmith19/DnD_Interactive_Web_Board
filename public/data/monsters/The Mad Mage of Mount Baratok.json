@@ -1,0 +1,158 @@
+{
+  "name": "The Mad Mage of Mount Baratok",
+  "source": "CoS",
+  "page": 39,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 99,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 20,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "arcana": "+13",
+    "history": "+13"
+  },
+  "passive": 12,
+  "languages": [
+    "any six languages"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The archmage has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The mad mage is an 18th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 17}, {@hit 9} to hit with spell attacks). He can cast {@spell disguise self} and {@spell invisibility} at will and has the following wizard spells prepared:"
+      ],
+      "will": [
+        "disguise self",
+        "invisibility"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "mirror image",
+            "misty step",
+            "web"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fly",
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": [
+            "Mordenkainen's faithful hound",
+            "polymorph",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "Bigby's hand",
+            "cone of cold",
+            "scrying"
+          ]
+        },
+        "6": {
+          "spells": [
+            "true seeing"
+          ]
+        },
+        "7": {
+          "spells": [
+            "Mordenkainen's magnificent mansion"
+          ]
+        },
+        "8": {
+          "spells": [
+            "mind blank"
+          ]
+        },
+        "9": {
+          "spells": [
+            "time stop"
+          ]
+        }
+      },
+      "ability": "int",
+      "hidden": [
+        "will"
+      ],
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

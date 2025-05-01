@@ -1,0 +1,148 @@
+{
+  "name": "Asharra",
+  "source": "ToA",
+  "page": 69,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "aarakocra"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 31,
+  "speed": {
+    "walk": 20,
+    "fly": 50
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 10,
+  "int": 14,
+  "wis": 17,
+  "cha": 11,
+  "skills": {
+    "history": "+4",
+    "insight": "+5",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Auran",
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dive Attack",
+      "entries": [
+        "If the aarakocra is flying and dives at least 30 feet straight toward a target and then hits it with a melee weapon attack, the attack deals an extra 3 ({@dice 1d6}) damage to the target."
+      ]
+    },
+    {
+      "type": "inset",
+      "name": "Dance of the Seven Winds",
+      "entries": [
+        "Asharra knows a ritual called the Dance of the Seven Winds, which temporarily grants magical flight to as many as ten nonflying creatures. The ritual, which takes 10 minutes to complete, can only be performed by an aarakocra elder and requires a black orchid as a material component.",
+        "Asharra must grind the orchid to powder, inhale it, and dance in circles around the ritual's beneficiaries uninterrupted while seven other aarakocra chant prayers to the Wind Dukes of Aaqa. When the dance concludes, Asharra's wings disappear and she loses the ability to fly. The ritual's beneficiaries each gain a magical flying speed of 30 feet (allowing them to fly 4 miles per hour). This benefit lasts for 3 days, after which Asharra's wings reappear and she regains the ability to fly."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Talon",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 30/120 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Summon Air Elemental",
+      "entries": [
+        "Five aarakocra within 30 feet of each other can magically summon an {@creature air elemental}. Each of the five must use its action and movement on three consecutive turns to perform an aerial dance and must maintain {@status concentration} while doing so (as if {@status concentration||concentrating} on a spell). When all five have finished their third turn of the dance, the elemental appears in an unoccupied space within 60 feet of them. It is friendly toward them and obeys their spoken commands. It remains for 1 hour, until it or all its summoners die, or until any of its summoners dismisses it as a bonus action. A summoner can't perform the dance again until it finishes a short rest. When the elemental returns to the Elemental Plane of Air, any aarakocra within 5 feet of it can return with it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Asharra is a 5th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 13}, {@hit 5} to hit with spell attacks). Asharra has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "mending",
+            "produce flame"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "faerie fire",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "gust of wind",
+            "hold person",
+            "lesser restoration"
+          ]
+        },
+        "3": {
+          "spells": [
+            "call lightning",
+            "wind wall"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,130 @@
+{
+  "name": "Brigganock",
+  "source": "WBtW",
+  "page": 230,
+  "size": [
+    "T"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 15
+  },
+  "str": 4,
+  "dex": 15,
+  "con": 14,
+  "int": 10,
+  "wis": 11,
+  "cha": 13,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The brigganock has advantage on saving throws against being {@condition charmed}, and magic can't put it to sleep."
+      ]
+    },
+    {
+      "name": "Soul Light",
+      "entries": [
+        "The brigganock is accompanied by an insubstantial, invulnerable ball of light that contains its soul. The brigganock can't turn off the light or control its brightness. The soul light sheds bright light in a 10-foot radius and dim light for an additional 10 feet. If the brigganock dies, its soul light fades away."
+      ]
+    },
+    {
+      "name": "Tunneler",
+      "entries": [
+        "Using a pickaxe or similar tool, a brigganock can burrow through solid rock at a speed of 5 feet, leaving a 6-inch-diameter tunnel in its wake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pickaxe",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Time Lapse (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The brigganock accelerates the passage of time around itself, enabling it to accomplish up to 1 hour of work in a matter of seconds. This work can't affect any creature other than the brigganock, or any object being worn or carried by another creature, and the activity must take place within a 10-foot cube. For example, the brigganock could use this action to rapidly carve a pumpkin, cook and eat dinner, move a pile of stones, or tie a dozen knots in a length of rope."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The brigganock casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 11}):"
+      ],
+      "will": [
+        "minor illusion",
+        "spare the dying"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "exhaustion"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

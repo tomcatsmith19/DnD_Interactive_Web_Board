@@ -1,0 +1,155 @@
+{
+  "name": "Kelubar Demodand",
+  "source": "MPP",
+  "page": 27,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 187,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 22,
+  "dex": 13,
+  "con": 18,
+  "int": 14,
+  "wis": 15,
+  "cha": 18,
+  "skills": {
+    "insight": "+7"
+  },
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Demodand",
+    "telepathy 120 ft."
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Acidic Secretions",
+      "entries": [
+        "A creature that touches the kelubar or hits it with a melee attack while within 5 feet of it takes 5 ({@damage 2d4}) acid damage."
+      ]
+    },
+    {
+      "name": "Boundless Movement",
+      "entries": [
+        "The kelubar ignores difficult terrain, and magical effects can't reduce its speed. It can spend 5 feet of movement to automatically remove the {@condition grappled} condition from itself."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The kelubar has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The kelubar makes two Bite attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 11 (1d10 + 6 damage) piercing damage plus 18 (4d8 damage) acid damage."
+      ]
+    },
+    {
+      "name": "Spit Acid",
+      "entries": [
+        "The kelubar spits acid in a line 60 feet long and 5 feet wide. Each creature in that area must make a DC 17 Dexterity saving throw, taking 27 (6d8 damage) acid damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Summon Demodand (1/Day)",
+      "entries": [
+        "The kelubar has a 40 percent chance of summoning its choice of {@dice 1d2} farastu demodands or 1 kelubar demodand. A summoned demodand appears in an unoccupied space within 60 feet of the kelubar, acts as an ally of the kelubar, and can't summon other demodands. It remains for 1 minute, until it or the kelubar dies, or until the kelubar dismisses it as an action."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The kelubar casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+      ],
+      "will": [
+        "invisibility"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "paralyzed",
+    "poisoned",
+    "restrained"
+  ],
+  "resist": [
+    "cold",
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

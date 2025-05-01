@@ -1,0 +1,79 @@
+{
+  "name": "Locathah",
+  "source": "GoS",
+  "page": 243,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "locathah"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 12,
+  "int": 11,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "athletics": "+3",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Aquan",
+    "Common"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Leviathan Will",
+      "entries": [
+        "The locathah has advantage on saving throws against being {@condition charmed}, {@condition frightened}, {@condition paralyzed}, {@condition poisoned}, {@condition stunned}, or put to sleep."
+      ]
+    },
+    {
+      "name": "Limited Amphibiousness",
+      "entries": [
+        "The locathah can breathe air and water, but it needs to be submerged at least once every 4 hours to avoid suffocating."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The locathah makes two melee attacks with its spear."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d6 + 1 damage) piercing damage, or 5 (1d8 + 1 damage) piercing damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

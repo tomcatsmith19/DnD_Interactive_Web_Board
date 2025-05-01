@@ -1,0 +1,81 @@
+{
+  "name": "Sea Drake",
+  "source": "GHLoE",
+  "page": 51,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 20,
+    "swim": 50
+  },
+  "str": 15,
+  "dex": 16,
+  "con": 14,
+  "int": 7,
+  "wis": 14,
+  "cha": 8,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+5"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The sea drake can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The sea drake makes one bite attack and one tail attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage. If the target is a Medium or smaller creature, it is pulled within 5 feet of the sea drake and {@condition grappled} (escape DC 13). Until this grapple ends, the drake can't use its tail on another target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

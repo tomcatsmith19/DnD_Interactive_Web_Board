@@ -1,0 +1,114 @@
+{
+  "name": "Apprentice",
+  "source": "HoL",
+  "page": 201,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "10"
+  ],
+  "hp": 7,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 10,
+  "con": 9,
+  "int": 13,
+  "wis": 11,
+  "cha": 12,
+  "skills": {
+    "arcana": "+3",
+    "history": "+3"
+  },
+  "passive": 10,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +1 to hit, reach 5 ft., one target. 2 (1d6 - 1 damage) bludgeoning damage, or 3 (1d8 - 1 damage) bludgeoning damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Burning Hands (1st-Level Spell; 2/Day)",
+      "entries": [
+        "You shoot forth a 15-foot cone of fire. Each creature in that area must make a DC 11 Dexterity saving throw. A creature takes 10 (3d6 damage) fire damage on a failed save, or half as much damage on a successful one The fire ignites any flammable objects in the area that aren't being worn or carried."
+      ]
+    },
+    {
+      "name": "Fire Bolt (Cantrip)",
+      "entries": [
+        "Ranged Spell atk Ranged Spell Attack: +3 to hit, range 120 ft., one target. 5 (1d10 damage) fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "You cast one of the following wizard spells (spell save {@dc 11}), using Intelligence as the spellcasting ability:"
+      ],
+      "will": [
+        "minor illusion",
+        "{'entry': '{@spell Fire Bolt}', 'hidden': True}"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

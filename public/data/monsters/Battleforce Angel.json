@@ -1,0 +1,93 @@
+{
+  "name": "Battleforce Angel",
+  "source": "GGR",
+  "page": 189,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30,
+    "fly": 90
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 13,
+  "int": 11,
+  "wis": 17,
+  "cha": 18,
+  "skills": {
+    "investigation": "+3",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "all"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The angel doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The angel has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The angel makes two melee attacks. It also uses Battlefield Inspiration."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands, plus 18 (4d8 damage) radiant damage. If the target is within 5 feet of any of the angel's allies, the target takes an extra 2 (1d4 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Battlefield Inspiration",
+      "entries": [
+        "The angel chooses up to three creatures it can see within 30 feet of it. Until the end of the angel's next turn, each target can add a {@dice d4} to its attack rolls and saving throws."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened"
+  ],
+  "resist": [
+    "fire",
+    "radiant"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft.",
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

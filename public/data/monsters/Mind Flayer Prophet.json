@@ -1,0 +1,137 @@
+{
+  "name": "Mind Flayer Prophet",
+  "source": "PaBTSO",
+  "page": 210,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 97,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 14,
+  "int": 20,
+  "wis": 17,
+  "cha": 17,
+  "skills": {
+    "arcana": "+8",
+    "insight": "+6",
+    "perception": "+6",
+    "stealth": "+5"
+  },
+  "passive": 16,
+  "languages": [
+    "Deep Speech",
+    "telepathy 120 ft.",
+    "Undercommon"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Awareness",
+      "entries": [
+        "The mind flayer has advantage on initiative rolls and can't be surprised as long as it doesn't have the {@condition incapacitated} condition."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The mind flayer has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one creature. 16 (2d10 + 5 damage) psychic damage. If the target is Medium or smaller, it has the {@condition grappled} condition (escape DC 16) and must succeed on a DC 16 Intelligence saving throw or have the {@condition stunned} condition until the grapple ends."
+      ]
+    },
+    {
+      "name": "Extract Brain",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one Humanoid {@condition grappled} by the mind flayer. 55 (10d10 damage) piercing damage. If this damage reduces the target to 0 hit points, the mind flayer kills it by extracting and devouring its brain."
+      ]
+    },
+    {
+      "name": "Mind Whip {@recharge 5}",
+      "entries": [
+        "The mind flayer lashes out with psychic energy, targeting up to two creatures it can see within 60 feet of itself. Each target must succeed on a DC 16 Intelligence saving throw or take 23 (4d8 + 5 damage) psychic damage and have the {@condition stunned} condition for 1 minute. A {@condition stunned} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The mind flayer casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "detect magic",
+        "detect thoughts",
+        "levitate"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

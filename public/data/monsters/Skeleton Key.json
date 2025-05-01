@@ -1,0 +1,71 @@
+{
+  "name": "Skeleton Key",
+  "source": "ToA",
+  "page": 126,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 15,
+  "int": 6,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands all languages it spoke in life but can't speak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skeleton makes two dagger attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

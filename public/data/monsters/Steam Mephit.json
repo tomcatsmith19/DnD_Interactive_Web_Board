@@ -1,0 +1,127 @@
+{
+  "name": "Steam Mephit",
+  "source": "MM",
+  "page": 217,
+  "size": [
+    "S"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 21,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 5,
+  "dex": 11,
+  "con": 10,
+  "int": 11,
+  "wis": 10,
+  "cha": 12,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Aquan",
+    "Ignan"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the mephit dies, it explodes in a cloud of steam. Each creature within 5 feet of the mephit must succeed on a {@dc 10} Dexterity saving throw or take 4 ({@damage 1d8}) fire damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one creature. 2 (1d4 damage) slashing damage plus 2 (1d4 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Steam Breath {@recharge}",
+      "entries": [
+        "The mephit exhales a 15-foot cone of scalding steam. Each creature in that area must succeed on a DC 10 Dexterity saving throw, taking 4 (1d8 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (1/Day)",
+      "headerEntries": [
+        "The mephit can innately cast {@spell blur}, requiring no material components. Its innate spellcasting ability is Charisma."
+      ],
+      "will": [
+        "blur"
+      ],
+      "ability": "cha",
+      "hidden": [
+        "will"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underwater"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

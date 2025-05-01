@@ -1,0 +1,83 @@
+{
+  "name": "Giant Ice Toad",
+  "source": "TftYP",
+  "page": 235,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 13,
+  "con": 14,
+  "int": 8,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Ice Toad"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The toad can breathe air and water."
+      ]
+    },
+    {
+      "name": "Cold Aura",
+      "entries": [
+        "Any creature that starts its turn within 10 feet of the toad takes 5 ({@damage 1d10}) cold damage."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The toad's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage, and the target is {@condition grappled} (escape DC 13). Until this grapple ends, the target is {@condition restrained}, and the toad can't bite another target."
+      ]
+    },
+    {
+      "name": "Swallow",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one Medium or smaller creature the toad is grappling. 10 (2d6 + 3 damage) piercing damage, the target is swallowed, and the grapple ends. The swallowed target is {@condition blinded} and {@condition restrained}, it has total cover against attacks and other effects outside the toad, and it takes 10 (3d6 damage) acid damage and 11 (2d10 damage) cold damage at the start of each of the toad's turns. The toad can have only one target swallowed at a time.",
+        "If the toad dies, a swallowed creature is no longer {@condition restrained} by it and can escape from the corpse using 5 feet of movement, exiting {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

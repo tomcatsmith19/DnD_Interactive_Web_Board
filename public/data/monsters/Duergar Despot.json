@@ -1,0 +1,154 @@
+{
+  "name": "Duergar Despot",
+  "source": "MTF",
+  "page": 188,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "21"
+  ],
+  "hp": 119,
+  "speed": {
+    "walk": 25
+  },
+  "str": 20,
+  "dex": 5,
+  "con": 19,
+  "int": 15,
+  "wis": 14,
+  "cha": 13,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The duergar has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Psychic Engine",
+      "entries": [
+        "When the duergar despot suffers a critical hit or is reduced to 0 hit points, psychic energy erupts from its frame to deal 14 ({@damage 4d6}) psychic damage to each creature within 5 feet of it."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the duergar despot has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The despot makes two iron fist attacks and two stomping foot attacks. It can replace up to four of these attacks with uses of its Flame Jet."
+      ]
+    },
+    {
+      "name": "Iron Fist",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) bludgeoning damage. If the target is a Large or smaller creature, it must make a successful DC 17 Strength saving throw or be thrown up to 30 feet away in a straight line. The target is knocked {@condition prone} and then takes 10 (3d6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Stomping Foot",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) bludgeoning damage, or 18 (3d8 + 5 damage) bludgeoning damage to a {@condition prone} target."
+      ]
+    },
+    {
+      "name": "Flame Jet",
+      "entries": [
+        "The duergar spews flames in a line 100 feet long and 5 feet wide. Each creature in the line must make a DC 16 Dexterity saving throw, taking 18 (4d8 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The duergar despot's innate spellcasting ability is Intelligence (spell save {@dc 12}). It can cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "mage hand",
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "mountain",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

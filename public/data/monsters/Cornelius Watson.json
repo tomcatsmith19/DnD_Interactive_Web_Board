@@ -1,0 +1,161 @@
+{
+  "name": "Cornelius Watson",
+  "source": "MaBJoV",
+  "page": 30,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 99,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 20,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "arcana": "+13",
+    "history": "+13",
+    "investigation": "+13",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Dwarvish",
+    "Gnomish",
+    "Halfling",
+    "Infernal"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Cornelius Watson has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Portent",
+      "entries": [
+        "(Recharges after Cornelius Watson Casts a Divination Spell of 1st Level or Higher.) When Cornelius Watson or a creature he can see makes an attack roll, a saving throw, or an ability check, Cornelius Watson can roll a {@dice d20} and choose to use this roll in place of the attack roll, saving throw, or ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Cornelius Watson is an 18th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 17}, {@hit 9} to hit with spell attacks). Cornelius Watson has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "identify",
+            "mage armor",
+            "magic missile"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "locate object",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "clairvoyance",
+            "counterspell",
+            "fireball"
+          ]
+        },
+        "4": {
+          "spells": [
+            "arcane eye",
+            "banishment"
+          ]
+        },
+        "5": {
+          "spells": [
+            "rary's telepathic bond",
+            "scrying",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": [
+            "true seeing"
+          ]
+        },
+        "7": {
+          "spells": [
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": [
+            "mind blank"
+          ]
+        },
+        "9": {
+          "spells": [
+            "foresight"
+          ]
+        }
+      },
+      "footerEntries": [
+        "* Divination spell of 1st level or higher."
+      ],
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Honna",
+  "source": "PaBTSO",
+  "page": 205,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 17,
+  "con": 16,
+  "int": 12,
+  "wis": 13,
+  "cha": 15,
+  "skills": {
+    "deception": "+5",
+    "perception": "+4",
+    "stealth": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Common plus one other language"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The medusa makes two Claw attacks and one Snake Hair attack, or it makes three Poison Ray attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atkr m} +6, reach 5 ft. 10 (2d6 + 3 damage) Slashing damage."
+      ]
+    },
+    {
+      "name": "Snake Hair",
+      "entries": [
+        "{@atkr m} +6, reach 5 ft. 5 (1d4 + 3 damage) Piercing damage plus 14 (4d6 damage) Poison damage."
+      ]
+    },
+    {
+      "name": "Poison Ray",
+      "entries": [
+        "{@atkr r} +5, range 150 ft. 11 (2d8 + 2 damage) Poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 150 ft."
+  ],
+  "environment": [
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

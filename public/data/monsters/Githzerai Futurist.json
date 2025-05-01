@@ -1,0 +1,131 @@
+{
+  "name": "Githzerai Futurist",
+  "source": "MPP",
+  "page": 30,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [
+    "gith"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 149,
+  "speed": {
+    "walk": 40
+  },
+  "str": 14,
+  "dex": 17,
+  "con": 15,
+  "int": 17,
+  "wis": 17,
+  "cha": 13,
+  "skills": {
+    "arcana": "+7",
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Gith"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Psychic Defense",
+      "entries": [
+        "While the githzerai is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The githzerai makes three Unarmed Strike or Psychic Bolt attacks."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 12 (2d8 + 3 damage) bludgeoning damage plus 11 (2d10 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Psychic Bolt",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 60 ft., one creature. 21 (4d8 + 3 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The githzerai casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "dispel magic",
+        "levitate",
+        "mage hand",
+        "see invisibility"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

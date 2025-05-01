@@ -1,0 +1,74 @@
+{
+  "name": "Thri-kreen Gladiator",
+  "source": "BAM",
+  "page": 60,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 142,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 18,
+  "con": 16,
+  "int": 10,
+  "wis": 15,
+  "cha": 11,
+  "skills": {
+    "acrobatics": "+7",
+    "athletics": "+7",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "telepathy 60 ft.",
+    "Thri-kreen"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The thri-kreen makes two Gythka attacks and one Chatkcha attack."
+      ]
+    },
+    {
+      "name": "Gythka",
+      "entries": [
+        "Melee atk +7 to hit (with advantage if the thri-kreen is missing any hit points), reach 5 ft., one target. 13 (2d8 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Chatkcha",
+      "entries": [
+        "Ranged atk +7 to hit (with advantage if the thri-kreen is missing any hit points), range 30/120 ft., one target. 7 (1d6 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

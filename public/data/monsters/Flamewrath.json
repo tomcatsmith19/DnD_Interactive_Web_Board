@@ -1,0 +1,132 @@
+{
+  "name": "Flamewrath",
+  "source": "PotA",
+  "page": 201,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 105,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 16,
+  "int": 11,
+  "wis": 10,
+  "cha": 16,
+  "skills": {
+    "arcana": "+3",
+    "religion": "+3"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Ignan"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Wreathed in Flame",
+      "entries": [
+        "For the flamewrath, the warm version of the {@spell fire shield} spell has a duration of \"until dispelled.\" The fire shield burns for 10 minutes after the flamewrath dies, consuming its body."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The flamewrath is a 7th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It knows the following sorcerer spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "control flames|xge",
+            "fire bolt",
+            "friends",
+            "light",
+            "minor illusion"
+          ]
+        },
+        "1": {
+          "spells": [
+            "burning hands",
+            "color spray",
+            "mage armor"
+          ]
+        },
+        "2": {
+          "spells": [
+            "scorching ray",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "fireball",
+            "hypnotic pattern"
+          ]
+        },
+        "4": {
+          "spells": [
+            "fire shield"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

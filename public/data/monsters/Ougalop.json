@@ -1,0 +1,100 @@
+{
+  "name": "Ougalop",
+  "source": "OotA",
+  "page": 142,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "kuo-toa"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 13,
+  "dex": 10,
+  "con": 11,
+  "int": 11,
+  "wis": 10,
+  "cha": 8,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Undercommon"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The kuo-toa can breathe air and water."
+      ]
+    },
+    {
+      "name": "Otherworldly Perception",
+      "entries": [
+        "The kuo-toa can sense the presence of any creature within 30 feet of it that is {@condition invisible} or on the Ethereal Plane. It can pinpoint such a creature that is moving."
+      ]
+    },
+    {
+      "name": "Slippery",
+      "entries": [
+        "The kuo-toa has advantage on ability checks and saving throws made to escape a grapple."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, Ougalop has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d6 + 1 damage) piercing damage, or 5 (1d8 + 1 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Net",
+      "entries": [
+        "Ranged atk +3 to hit, range 5/15 ft., one Large or smaller creature. The target is {@condition restrained}. A creature can use its action to make a DC 10 Strength check to free itself or another creature in a net, ending the effect on a success. Dealing 5 slashing damage to the net (AC 10) frees the target without harming it and destroys the net."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

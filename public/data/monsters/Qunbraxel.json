@@ -1,0 +1,150 @@
+{
+  "name": "Qunbraxel",
+  "source": "PaBTSO",
+  "page": 135,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [
+    "mind flayer",
+    "warlock"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 17,
+  "int": 19,
+  "wis": 15,
+  "cha": 19,
+  "skills": {
+    "arcana": "+8",
+    "insight": "+6",
+    "perception": "+6",
+    "stealth": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Deep Speech",
+    "telepathy 60 ft.",
+    "Undercommon"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Qunbraxel has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Qunbraxel makes two Eldritch Bolt attacks, or one Eldritch Bolt attack and one Tentacle attack."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one creature. 15 (2d10 + 4 damage) psychic damage. If the target is Medium or smaller, it has the {@condition grappled} condition (escape DC 16) and must succeed on a DC 16 Intelligence saving throw or have the {@condition stunned} condition until the grapple ends."
+      ]
+    },
+    {
+      "name": "Eldritch Bolt",
+      "entries": [
+        "Ranged Spell atk +8 to hit, range 120 ft., one target. 20 (3d10 + 4 damage) force damage."
+      ]
+    },
+    {
+      "name": "Extract Brain",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one Humanoid with the {@condition stunned} condition who is {@condition grappled} by Qunbraxel. 55 (10d10 damage) piercing damage. If this damage reduces the target to 0 hit points, Qunbraxel kills it by extracting and devouring its brain."
+      ]
+    },
+    {
+      "name": "Mind Blast {@recharge 5}",
+      "entries": [
+        "Qunbraxel magically emits psychic energy in a 60-foot cone. Each creature in that area must succeed on a DC 16 Intelligence saving throw or take 26 (5d8 + 4 damage) psychic damage and have the {@condition stunned} condition for 1 minute. A {@condition stunned} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "Qunbraxel casts one of the following spells, requiring no spell components and using Charisma as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "detect magic",
+        "detect thoughts",
+        "levitate",
+        "mage armor",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

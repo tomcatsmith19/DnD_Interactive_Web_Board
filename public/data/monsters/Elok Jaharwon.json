@@ -1,0 +1,102 @@
+{
+  "name": "Elok Jaharwon",
+  "source": "ToA",
+  "page": 67,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "shapechanger"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "10",
+    "11"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": {
+      "number": 30,
+      "condition": "(40 ft. in boar form)"
+    }
+  },
+  "str": 17,
+  "dex": 10,
+  "con": 15,
+  "int": 10,
+  "wis": 11,
+  "cha": 8,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common (can't speak in boar form)"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The wereboar can use its action to polymorph into a boar-humanoid hybrid or into a boar, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      ]
+    },
+    {
+      "name": "Charge (Boar or Hybrid Form Only)",
+      "entries": [
+        "If Elok moves at least 15 feet straight toward a target and then hits it with its tusks on the same turn, the target takes an extra 7 ({@damage 2d6}) slashing damage. If the target is a creature, it must succeed on a {@dc 13} Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Relentless (Recharges after a Short or Long Rest)",
+      "entries": [
+        "If Elok takes 14 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Humanoid or Hybrid Form Only)",
+      "entries": [
+        "The wereboar makes two attacks, only one of which can be with its tusks."
+      ]
+    },
+    {
+      "name": "Maul (Humanoid or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Tusks (Boar or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with wereboar lycanthropy."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "bludgeoning (from nonmagical attacks that aren't silvered)",
+    "piercing (from nonmagical attacks that aren't silvered)",
+    "slashing (from nonmagical attacks that aren't silvered)"
+  ],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

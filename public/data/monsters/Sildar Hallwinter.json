@@ -1,0 +1,70 @@
+{
+  "name": "Sildar Hallwinter",
+  "source": "PaBTSO",
+  "page": 22,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 10,
+  "con": 12,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Sildar makes two Longsword attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) slashing damage, or 6 (1d10 + 1 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +2 to hit, range 100/400 ft., one target. 5 (1d10 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

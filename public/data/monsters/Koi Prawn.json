@@ -1,0 +1,67 @@
+{
+  "name": "Koi Prawn",
+  "source": "JttRC",
+  "page": 26,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 0,
+    "swim": 40
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 11,
+  "int": 2,
+  "wis": 12,
+  "cha": 5,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the prawn moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 ({@damage 2d6}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 11} Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Water Breathing",
+      "entries": [
+        "The prawn can breathe only underwater."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Ram",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "underwater"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

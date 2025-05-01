@@ -1,0 +1,180 @@
+{
+  "name": "Edwin Odesseiron",
+  "source": "MaBJoV",
+  "page": 114,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 117,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 14,
+  "int": 20,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "arcana": "+15",
+    "history": "+15"
+  },
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Aquan",
+    "Auran",
+    "Common",
+    "Ignan",
+    "Infernal",
+    "Terran"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Focused Conjuration",
+      "entries": [
+        "While Edwin is {@status concentration||concentrating} on a conjuration spell, his {@status concentration} cannot be broken as a result of taking damage."
+      ]
+    },
+    {
+      "name": "Staff of Power",
+      "entries": [
+        "A magic quarterstaff that grants a +2 bonus to attack and damage rolls made with it. While held it grants a +2 bonus to armor class, saving throws, and spell attack rolls (all factored into Edwin's statistics). The staff has 20 charges for the following properties. The staff regains {@dice 2d8 + 4} expended charges daily at dawn.",
+        "While holding this staff, Edwin can use an action to expend 1 or more of its Charges to cast one of the following Spells from it, using his spell save DC and spell attack bonus: {@spell cone of cold} (5 charges), {@spell fireball} (5th-level version, 5 charges), {@spell globe of invulnerability} (6 charges), {@spell hold monster} (5 charges), {@spell levitate} (2 charges), {@spell lightning bolt} (5th-level version, 5 charges), {@spell magic missile} (1 charge), {@spell ray of enfeeblement} (1 charge), or {@spell wall of force} (5 charges)."
+      ]
+    },
+    {
+      "name": "Contingency",
+      "entries": [
+        "Edwin has a {@spell contingency} spell trigger if he is {@condition incapacitated}, {@condition paralyzed} or {@condition stunned}. When this occurs, a 6th level {@spell dispel magic} targets himself. He also has a clone body stored in a cavern one mile beneath the city of Baldur's Gate."
+      ]
+    },
+    {
+      "name": "Simulacrum",
+      "entries": [
+        "Edwin is always accompanied by a simulacrum of himself. The copy is identical to him in all respects except that it has 58 HP, does not have the staff of power and does not have a 7th level spell slot."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Staff of Power",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage or 6 (1d8 + 2 damage) bludgeoning damage if wielded with two hands. Edwin can expend one of the staff's charges to deal an extra 3 (1d6 damage) force damage on a hit."
+      ]
+    },
+    {
+      "name": "Summon Hell Hounds",
+      "entries": [
+        "Edwin magically summons three {@creature hell hound||hell hounds}. The summoned hell hounds appear in an unoccupied space within 60 feet of its summoner, and act as allies of their summoner. They remain for 10 minutes, until they or their summoner dies, or until their summoner dismisses them as an action."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Edwin is an 18th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 18}, {@hit 12} to hit with spell attacks). Edwin has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "acid splash",
+            "fire bolt",
+            "mage hand",
+            "poison spray"
+          ]
+        },
+        "1": {
+          "spells": [
+            "mage armor",
+            "shield",
+            "unseen servant"
+          ]
+        },
+        "2": {
+          "spells": [
+            "cloud of daggers",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "dispel magic",
+            "fireball",
+            "stinking cloud"
+          ]
+        },
+        "4": {
+          "spells": [
+            "conjure minor elementals",
+            "evard's black tentacles"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cloudkill",
+            "conjure elemental",
+            "scrying"
+          ]
+        },
+        "6": {
+          "spells": [
+            "arcane gate",
+            "contingency"
+          ]
+        },
+        "7": {
+          "spells": [
+            "simulacrum",
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": [
+            "clone",
+            "maze"
+          ]
+        },
+        "9": {
+          "spells": [
+            "meteor swarm"
+          ]
+        }
+      },
+      "footerEntries": [
+        "* Conjuration spell of 1st level or higher."
+      ],
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

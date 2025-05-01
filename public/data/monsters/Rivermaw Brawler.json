@@ -1,0 +1,99 @@
+{
+  "name": "Rivermaw Brawler",
+  "source": "TDCSR",
+  "page": 254,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [],
+  "ac": [
+    "15"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 40
+  },
+  "str": 17,
+  "dex": 14,
+  "con": 15,
+  "int": 14,
+  "wis": 16,
+  "cha": 8,
+  "skills": {
+    "acrobatics": "+4",
+    "athletics": "+5",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the brawler is wearing no armor and wielding no {@item shield|PHB}, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The brawler makes three unarmed strikes."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) bludgeoning damage. If the target is a Large or smaller creature, the brawler can choose one of the following additional effects:",
+        {
+          "type": "list",
+          "items": [
+            {
+              "name": "Bruise",
+              "type": "item",
+              "entries": [
+                "The target must succeed on a {@dc 13} Constitution {@quickref saving throws|PHB|2|1|saving throw}. On a failure, its speed is reduced by 5 feet until it receives at least 1 point of magical healing. A creature can use its action to make a {@dc 15} Wisdom ({@skill Medicine}) check to heal an affected creature within 5 feet of it (including itself), restoring any lost speed on a success."
+              ]
+            },
+            {
+              "name": "Disarm",
+              "type": "item",
+              "entries": [
+                "The target must succeed on a {@dc 13} Strength {@quickref saving throws|PHB|2|1|saving throw} or drop one item it is holding. The brawler can choose which item is dropped, and can pick it up."
+              ]
+            },
+            {
+              "name": "Suplex",
+              "type": "item",
+              "entries": [
+                "The target must succeed on a {@dc 13} Strength {@quickref saving throws|PHB|2|1|saving throw} or be knocked {@condition prone}."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

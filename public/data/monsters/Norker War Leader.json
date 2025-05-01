@@ -1,0 +1,81 @@
+{
+  "name": "Norker War Leader",
+  "source": "MFF",
+  "page": 17,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 10,
+  "con": 15,
+  "int": 12,
+  "wis": 11,
+  "cha": 13,
+  "skills": {
+    "athletics": "+5",
+    "intimidation": "+3",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The norker war leader makes one greataxe and one bite attack, and also uses Fight On, You Slugs."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 9 (1d12 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Fight On, You Slugs",
+      "entries": [
+        "The norker war leader picks up to three allied goblinoids within 60 feet that can see it. The chosen creatures can each use their reactions to make a single melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

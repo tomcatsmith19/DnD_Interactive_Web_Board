@@ -1,0 +1,81 @@
+{
+  "name": "Woe Strider",
+  "source": "MOT",
+  "page": 247,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 16,
+  "int": 8,
+  "wis": 14,
+  "cha": 14,
+  "skills": {
+    "intimidation": "+5",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "telepathy 120 ft."
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Antimagic Cone",
+      "entries": [
+        "The woe strider's open mouth creates an area of antimagic, as in the {@spell antimagic field} spell, in a 60-foot cone. At the start of each of its turns, the woe strider decides which way the cone faces and whether its mouth is open or closed."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The woe strider makes two claw attacks and one bite attack. If both claws hit the same creature, the target is {@condition grappled} (escape DC 14)."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 7 (1d6 + 4 damage) slashing damage plus 3 (1d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature that is {@condition grappled}, {@condition incapacitated}, or {@condition restrained}. 13 (2d8 + 4 damage) piercing damage plus 16 (3d10 damage) psychic damage. In addition, each magic item the creature is carrying that isn't an artifact has its magical properties suppressed for 1 minute."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

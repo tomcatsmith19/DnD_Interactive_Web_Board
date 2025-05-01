@@ -1,0 +1,100 @@
+{
+  "name": "Selenelion Twin",
+  "source": "WBtW",
+  "page": 241,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 7,
+  "dex": 18,
+  "con": 13,
+  "int": 12,
+  "wis": 10,
+  "cha": 17,
+  "skills": {
+    "acrobatics": "+8",
+    "sleight of hand": "+6",
+    "stealth": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The Selenelion twins, Gleam and Glister, have advantage on saving throws against being {@condition charmed}, and magic can't put them to sleep."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "A Selenelion twin regains 5 hit points at the start of her turn as long as both twins are alive and within 60 feet of each other. A twin dies only if she starts her turn with 0 hit points and doesn't regenerate."
+      ]
+    },
+    {
+      "name": "Twin Bond",
+      "entries": [
+        "While both Selenelion twins are alive and on the same plane of existence, each is aware of the other's emotions."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d4 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Moon Ray (Gleam Only; 3/Day)",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 60 ft., one creature. 12 (2d8 + 3 damage) radiant damage, and the target must succeed on a DC 13 Wisdom saving throw or be transformed into a bat for 1 minute, as though affected by a {@spell polymorph} spell. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Sun Ray (Glister Only; 3/Day)",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 60 ft., one creature. 12 (2d8 + 3 damage) radiant damage, and the target must succeed on a DC 13 Wisdom saving throw or be {@condition blinded} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Twin Sight (Recharges after a Short or Long Rest)",
+      "entries": [
+        "In her mind's eye, a Selenelion twin can see what the other twin sees for up to 1 minute, provided both twins are alive and on the same plane of existence. Maintaining this effect requires {@status concentration} (as if {@status concentration||concentrating} on a spell)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,71 @@
+{
+  "name": "White Dragon Wyrmling",
+  "source": "MM",
+  "page": 102,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30,
+    "burrow": 15,
+    "fly": 60,
+    "swim": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 14,
+  "int": 5,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+2"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (1d10 + 2 damage) piercing damage plus 2 (1d4 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Cold Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales an icy blast of hail in a 15-foot cone. Each creature in that area must make a DC 12 Constitution saving throw, taking 22 (5d8 damage) cold damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

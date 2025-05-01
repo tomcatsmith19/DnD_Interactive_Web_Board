@@ -1,0 +1,136 @@
+{
+  "name": "Lord of the Feast",
+  "source": "DoDk",
+  "page": 211,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 228,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 18,
+  "dex": 18,
+  "con": 18,
+  "int": 11,
+  "wis": 18,
+  "cha": 13,
+  "skills": {
+    "athletics": "+9",
+    "perception": "+14",
+    "stealth": "+14",
+    "survival": "+9"
+  },
+  "passive": 24,
+  "languages": [
+    "Abyssal"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the Lord of the Feast fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The Lord of the Feast regains 20 hit points at the start of his turn if he has at least 1 hit point remaining."
+      ]
+    },
+    {
+      "name": "Close-Quarters Hunter",
+      "entries": [
+        "Being within 5 feet of a hostile creature doesn't impose disadvantage on the Lord of the Feast's ranged attack rolls."
+      ]
+    },
+    {
+      "name": "Predatory Senses",
+      "entries": [
+        "The Lord of the Feast has advantage on Wisdom (Perception) checks. He can pinpoint the position of any creature within 120 feet of him that is {@condition invisible}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Lord of the Feast makes three attacks: either one with each of its different arrow attacks, or one with his bite and two with his claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 15 (2d10 + 4 damage) piercing damage plus 18 (4d8 damage) necrotic damage. A target hit by this attack must succeed on a DC 17 Constitution saving throw or gain one {@adventure level of contamination|DoDk|12}."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft, one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Contaminating Arrow",
+      "entries": [
+        "Ranged atk +9 to hit, range 150/600 ft., one target. 13 (2d8 + 4 damage) piercing damage plus 18 (4d8 damage) necrotic damage. A target hit by this attack must succeed on a DC 17 Constitution saving throw or gain one {@adventure level of contamination|DoDk|12}."
+      ]
+    },
+    {
+      "name": "Ensnaring Arrow",
+      "entries": [
+        "Ranged atk +9 to hit, range 150/600 ft., one target. 13 (2d8 + 4 damage) piercing damage. If the target is Large or smaller, it must succeed on a DC 17 Dexterity saving throw or become {@condition restrained} in a magical snare for 1 minute. A {@condition restrained} target can use its action to repeat the saving throw, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Harpoon Arrow",
+      "entries": [
+        "Ranged atk +9 to hit, range 150/600 ft., one target. 13 (2d8 + 4 damage) piercing damage. If the target is a Huge or smaller creature, it must succeed on DC 17 Strength saving throw or be pulled up to 20 feet directly toward the Lord of the Feast."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Dash",
+      "entries": [
+        "The Lord of the Feast moves his speed without provoking opportunity attacks."
+      ]
+    },
+    {
+      "name": "Arrow (Costs 2 actions)",
+      "entries": [
+        "The Lord of the Feast makes one arrow attack of his choice."
+      ]
+    },
+    {
+      "name": "Call of the Hunt (costs 3 actions)",
+      "entries": [
+        "The Lord of the Feast releases a blood-curdling howl which can be heard all across Drakkenheim. Garmyr within 60 feet who can see and hear the Lord of the Feast can use their reaction to move up to half their speed and make one melee or ranged attack with advantage."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

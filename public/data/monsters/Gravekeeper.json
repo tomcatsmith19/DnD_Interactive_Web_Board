@@ -1,0 +1,149 @@
+{
+  "name": "Gravekeeper",
+  "source": "DoDk",
+  "page": 210,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 210,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 18,
+  "dex": 7,
+  "con": 21,
+  "int": 19,
+  "wis": 17,
+  "cha": 21,
+  "skills": {
+    "perception": "+13"
+  },
+  "passive": 23,
+  "languages": [
+    "all but does not speak"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Dazzling Illumination",
+      "entries": [
+        "The Gravekeeper projects a brilliant corona of light which sheds bright light to a range of 60 feet, and causes attack rolls against it to have disadvantage. If it is hit by an attack, this trait is disrupted until the end of its next turn. This trait is also disrupted while the Gravekeeper is {@condition incapacitated} or has a speed of 0."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the Gravekeeper fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 22 (4d8 + 4 damage) bludgeoning damage plus 10 (3d6 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Lantern Blast",
+      "entries": [
+        "Magical octarine beams flash from the Gravekeeper's many lanterns. Each beam has a different power. Each creature within 120 feet of the Gravekeeper which is not behind total cover rolls a {@dice d6} to determine which colour ray affects it. The DC for all saving throws is 18:",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "1. Dispelling Blast",
+              "entries": [
+                "The targeted creature must succeed on an Intelligence saving throw or take 35 ({@damage 10d6}) psychic damage, and any spell or magical effect upon the target ends. A creature who fails this saving throw has their {@status concentration} broken on any spell they were actively maintaining."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "2. Forceful Blast",
+              "entries": [
+                "The targeted creature must succeed on a Strength saving throw or take 35 ({@damage 10d6}) force damage, be pushed 20 feet away, and knocked {@condition prone}."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "3. Blinding Blast",
+              "entries": [
+                "The targeted creature must succeed on a Constitution saving throw or take 35 ({@damage 10d6}) radiant damage and be {@condition blinded} for 1 minute. A {@condition blinded} creature can repeat the saving throw on each of its turns, ending the effect on itself on a success."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "4. Contamining Blast",
+              "entries": [
+                "The targeted creature must succeed on a Constitution saving throw or take 35 ({@damage 10d6}) necrotic damage and gain one {@adventure level of contamination|DoDk|12}."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "5. Igniting Blast",
+              "entries": [
+                "The targeted creature must succeed on a Dexterity saving throw or take 35 ({@damage 10d6}) fire damage, and catches fire; until someone takes an action to douse the fire, the target takes 35 ({@damage 10d6}) fire damage at the start of each of its turns."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "6. Freezing Blast",
+              "entries": [
+                "The targeted creature must succeed on a Constitution saving throw or take 35 ({@damage 10d6}) cold damage, and it can't take a reaction until the end of its next turn. Moreover, on its next turn, it must choose whether it gets a move, an action, or a bonus action; it gets only one of the three. On a successful save, the target takes half as much damage and suffers none of the blast's other effects."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Slam",
+      "entries": [
+        "The Gravekeeper makes a slam attack."
+      ]
+    },
+    {
+      "name": "Glide",
+      "entries": [
+        "The Gravekeeper moves its speed without provoking opportunity attacks."
+      ]
+    },
+    {
+      "name": "Lantern Blast (Costs 3 actions)",
+      "entries": [
+        "The Gravekeeper uses its Lantern Blast."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

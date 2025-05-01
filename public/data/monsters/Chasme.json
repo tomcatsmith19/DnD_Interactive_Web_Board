@@ -1,0 +1,90 @@
+{
+  "name": "Chasme",
+  "source": "MM",
+  "page": 57,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 20,
+    "fly": 60
+  },
+  "str": 15,
+  "dex": 15,
+  "con": 12,
+  "int": 11,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Drone",
+      "entries": [
+        "The chasme produces a horrid droning sound to which demons are immune. Any other creature that starts its turn with in 30 feet of the chasme must succeed on a {@dc 12} Constitution saving throw or fall {@condition unconscious} for 10 minutes. A creature that can't hear the drone automatically succeeds on the save. The effect on the creature ends if it takes damage or if another creature takes an action to splash it with holy water. If a creature's saving throw is successful or the effect ends for it, it is immune to the drone for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The chasme has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The chasme can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Proboscis",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 16 (4d6 + 2 damage) piercing damage plus 24 (7d6 damage) necrotic damage, and the target's hit point maximum is reduced by an amount equal to the necrotic damage taken. If this effect reduces a creature's hit point maximum to 0, the creature dies. This reduction to a creature's hit point maximum lasts until the creature finishes a long rest or until it is affected by a spell like  {@spell greater restoration}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

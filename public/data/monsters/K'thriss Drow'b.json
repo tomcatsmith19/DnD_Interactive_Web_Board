@@ -1,0 +1,139 @@
+{
+  "name": "K'thriss Drow'b",
+  "source": "AI",
+  "page": 202,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 12,
+  "int": 14,
+  "wis": 11,
+  "cha": 18,
+  "skills": {
+    "arcana": "+4",
+    "insight": "+2",
+    "investigation": "+4",
+    "perception": "+2",
+    "religion": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish",
+    "Undercommon; can read all writing"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "K'thriss wears a {@item robe of stars} (accounted for in his statistics). The robe allows him to cast the following spells: 6/day: {@spell magic missile} (7 missiles)"
+      ]
+    },
+    {
+      "name": "Awakened Mind",
+      "entries": [
+        "K'thriss can telepathically speak to any creature he can see within 30 feet of him, provided the creature can understand at least one language."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "K'thriss has advantage on saving throws against being {@condition charmed}, and magic can't put him to sleep. Sunlight Sensitivity. While in sunlight, K'thriss has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "K'thriss makes two attacks with his sickle."
+      ]
+    },
+    {
+      "name": "Sickle",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "K'thriss's innate spellcasting ability is Charisma (spell save {@dc 14}). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "dancing lights",
+        "disguise self"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

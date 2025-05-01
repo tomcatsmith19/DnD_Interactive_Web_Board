@@ -1,0 +1,134 @@
+{
+  "name": "Sharwyn Hucrele",
+  "source": "TftYP",
+  "page": 242,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 13,
+  "con": 14,
+  "int": 16,
+  "wis": 14,
+  "cha": 9,
+  "skills": {
+    "arcana": "+5",
+    "insight": "+4",
+    "persuasion": "+1"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Goblin"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Barkskin",
+      "entries": [
+        "Sharwyn's AC can't be lower than 16."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Sharwyn has a {@item spellbook|phb} that contains the spells listed in her Spellcasting trait, plus {@spell detect magic} and {@spell silent image}."
+      ]
+    },
+    {
+      "name": "Tree Thrall",
+      "entries": [
+        "If the Gulthias Tree dies, Sharwyn dies 24 hours later."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +4, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Sharwyn is a 1st-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 13}, {@hit 5} to hit with spell attacks). She has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "color spray",
+            "magic missile",
+            "shield",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

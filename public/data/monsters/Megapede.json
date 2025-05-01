@@ -1,0 +1,75 @@
+{
+  "name": "Megapede",
+  "source": "BAM",
+  "page": 36,
+  "size": [
+    "G"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 175,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 22,
+  "dex": 10,
+  "con": 17,
+  "int": 1,
+  "wis": 10,
+  "cha": 3,
+  "skills": {
+    "perception": "+8",
+    "stealth": "+4"
+  },
+  "passive": 18,
+  "languages": [],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The megapede makes one Bite attack and uses either Life Drain or Psychic Bomb."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +10 to hit, reach 20 ft., one target. 22 (3d10 + 6 damage) piercing damage plus 22 (5d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Life Drain",
+      "entries": [
+        "The megapede magically drains life energy from other creatures nearby. Each creature within 15 feet of the megapede must make a DC 15 Constitution saving throw, taking 16 (3d10 damage) necrotic damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Psychic Bomb",
+      "entries": [
+        "The megapede targets one creature it can see within 60 feet of itself. The target must make a DC 15 Wisdom saving throw. On a failed save, the target takes 22 (5d8 damage) psychic damage and is {@condition incapacitated} until the end of its next turn. On a successful save, the target takes half as much damage and isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

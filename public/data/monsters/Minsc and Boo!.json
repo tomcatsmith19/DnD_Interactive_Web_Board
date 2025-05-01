@@ -1,0 +1,103 @@
+{
+  "name": "Minsc and Boo!",
+  "source": "MaBJoV",
+  "page": 68,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 12,
+  "con": 18,
+  "int": 10,
+  "wis": 10,
+  "cha": 10,
+  "skills": {
+    "athletics": "+9",
+    "perception": "+4",
+    "survival": "+8"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Reckless",
+      "entries": [
+        "At the start of his turn, Minsc can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against him have advantage until the start of his next turn."
+      ]
+    },
+    {
+      "name": "Favored Enemy",
+      "entries": [
+        "Minsc's favored enemy is evil. When he hits an evil creature with a melee attack he deals an additional {@damage 1d6} slashing damage."
+      ]
+    },
+    {
+      "name": "Go for the eyes Boo",
+      "entries": [
+        "Boo is a miniature giant space hamster and has the statistics of a {@creature rat}. As a bonus action, Minsc can talk to Boo and gain the inspiration to go into a berserker fury. While in this berserking fury Minsc gains the following advantages:",
+        {
+          "type": "list",
+          "items": [
+            "Minsc has advantage on Strength checks and Strength saving throws.",
+            "Minsc gains a +4 bonus to the damage rolls when using a melee weapon.",
+            "Minsc has resistance to bludgeoning, piercing, and slashing damage.",
+            "Minsc can make a single melee weapon attack as a bonus",
+            "Minsc can't be {@condition charmed} or {@condition frightened} while raging. If Minsc is {@condition charmed} or {@condition frightened} when he enters his berserking fury, the effect is suspended for the duration of the rage",
+            "If Minsc drops to 0 hit points while in a berserking fury and doesn't die outright, he can make a {@dc 10} Constitution saving throw. If he succeeds, he drops to 1 hit point instead. Each time he uses this feature after the first, the DC increases by 5. After 24 hours, the DC resets to 10."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boo, The Miniature Giant Space Hamster",
+      "entries": [
+        "Boo is Minsc's animal companion. Boo is a miniature giant space hamster and has the statistics of a {@creature rat}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Minsc makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Great Sword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,90 @@
+{
+  "name": "Whistler",
+  "source": "JttRC",
+  "page": 221,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 180,
+  "speed": {
+    "walk": 40
+  },
+  "str": 13,
+  "dex": 16,
+  "con": 14,
+  "int": 15,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "stealth": "+11"
+  },
+  "passive": 13,
+  "languages": [
+    "Deep Speech",
+    "telepathy 120 ft."
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Blurred Form",
+      "entries": [
+        "Attack rolls against the whistler are made with disadvantage unless the whistler is {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The whistler doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The whistler makes three Psychic Swipe attacks."
+      ]
+    },
+    {
+      "name": "Psychic Swipe",
+      "entries": [
+        "{@atk ms} +8 to hit, reach 10 ft., one creature. 15 (2d10 + 4 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Otherworldly Melody {@recharge 5}",
+      "entries": [
+        "The whistler telepathically whistles an otherworldly melody into the minds of up to two creatures it can see within range of its telepathy. Each target must succeed on a DC 16 Wisdom saving throw or take 33 (6d10 damage) psychic damage and become {@condition frightened} of the whistler for 1 minute. A {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

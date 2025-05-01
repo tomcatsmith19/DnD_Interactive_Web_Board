@@ -1,0 +1,73 @@
+{
+  "name": "Star Lancer",
+  "source": "MCV1SC",
+  "page": 12,
+  "size": [
+    "L"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 0,
+    "fly": 50
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 15,
+  "int": 10,
+  "wis": 13,
+  "cha": 8,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Celestial",
+    "telepathy 120 ft."
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The star lancer doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Horn",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage. If the star lancer moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 10 (3d6 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Invisibility Cloak (3/Day)",
+      "entries": [
+        "The star lancer and one creature riding it (chosen by the star lancer) magically turn {@condition invisible}. This effect lasts until the star lancer or a creature riding it attacks or casts a spell, or until the star lancer's {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment worn or carried by the {@condition invisible} creatures is also {@condition invisible} for the duration of the Invisibility Cloak."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "radiant"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,76 @@
+{
+  "name": "Killer Whale",
+  "source": "MM",
+  "page": 331,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 90,
+  "speed": {
+    "swim": 60
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 13,
+  "int": 3,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Echolocation",
+      "entries": [
+        "The whale can't use its blindsight while {@condition deafened}."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The whale can hold its breath for 30 minutes."
+      ]
+    },
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The whale has advantage on Wisdom ({@skill Perception}) checks that rely on hearing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 21 (5d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 120 ft."
+  ],
+  "environment": [
+    "underwater"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

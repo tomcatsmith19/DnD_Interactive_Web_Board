@@ -1,0 +1,103 @@
+{
+  "name": "Shadow Demon",
+  "source": "MM",
+  "page": 64,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 1,
+  "dex": 17,
+  "con": 12,
+  "int": 14,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "stealth": "+7"
+  },
+  "passive": 11,
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The demon can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    },
+    {
+      "name": "Light Sensitivity",
+      "entries": [
+        "While in bright light, the demon has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Shadow Stealth",
+      "entries": [
+        "While in dim light or darkness, the demon can take the Hide action as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 10 (2d6 + 3 damage) psychic damage or, if the demon had advantage on the attack roll, 17 (4d6 + 3 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "acid",
+    "fire",
+    "necrotic",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "radiant"
+  ],
+  "immune": [
+    "cold",
+    "lightning",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

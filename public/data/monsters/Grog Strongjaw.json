@@ -1,0 +1,147 @@
+{
+  "name": "Grog Strongjaw",
+  "source": "TDCSR",
+  "page": 261,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-giant"
+  ],
+  "alignment": [],
+  "ac": [
+    "19"
+  ],
+  "hp": 290,
+  "speed": {
+    "walk": 50
+  },
+  "str": 26,
+  "dex": 15,
+  "con": 22,
+  "int": 8,
+  "wis": 10,
+  "cha": 13,
+  "skills": {
+    "animal handling": "+6",
+    "athletics": "+14",
+    "intimidation": "+7",
+    "survival": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Dwarvish",
+    "Giant",
+    "with limited reading and writing"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Brutal Critical",
+      "entries": [
+        "When Grog scores a critical hit, he rolls double weapon damage dice as usual, then rolls 3 additional weapon damage dice."
+      ]
+    },
+    {
+      "name": "Feral Instinct",
+      "entries": [
+        "Grog has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on initiative rolls."
+      ]
+    },
+    {
+      "name": "Melee Master",
+      "entries": [
+        "Grog can take a \u00e2\u02c6\u20195 penalty to any melee attack roll to gain a +10 bonus to the damage roll."
+      ]
+    },
+    {
+      "name": "Reckless",
+      "entries": [
+        "At the start of his turn, Grog can gain {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on all melee weapon attack rolls during that turn, but attack rolls against him have {@quickref Advantage and Disadvantage|PHB|2|0|advantage} until the start of his next turn."
+      ]
+    },
+    {
+      "name": "Relentless Rage",
+      "entries": [
+        "If Grog is reduced to 0 hit points while raging, he drops to 1 hit point instead if he succeeds on a {@dc 10} Constitution {@quickref saving throws|PHB|2|1|saving throw}."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Grog wears a {@item belt of dwarvenkind}. He wields the {@item Bloodaxe|EGW} (a +2 magic weapon), a {@item dwarven thrower}, and the {@item Titanstone Knuckles (Exalted)|TDCSR|Titanstone Knuckles}."
+      ]
+    },
+    {
+      "name": "Spellbreaker",
+      "entries": [
+        "When Grog damages a creature that is concentrating on a spell, that creature has {@quickref Advantage and Disadvantage|PHB|2|0|disadvantage} on the {@quickref saving throws|PHB|2|1|saving throw} to maintain its {@condition concentration}. In addition, Grog has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against spells cast by creatures within 5 feet of him."
+      ]
+    },
+    {
+      "name": "Toughness",
+      "entries": [
+        "Grog has an additional 40 hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Grog makes two attacks (three when raging) with his {@item Bloodaxe|EGW}, {@item dwarven thrower}, or {@item Titanstone Knuckles (Exalted)|TDCSR|Titanstone Knuckles}."
+      ]
+    },
+    {
+      "name": "{@item Bloodaxe|EGW}",
+      "entries": [
+        "Melee atk +16 to hit, reach 5 ft., one target. 20 (1d12 + 14 damage) slashing damage and 3 (1d6 damage) necrotic damage. If the target is reduced to 0 hit points, Grog gains 10 temporary hit points."
+      ]
+    },
+    {
+      "name": "{@item Dwarven Thrower}",
+      "entries": [
+        "Melee/Ranged atk +17 to hit, reach 5 ft. or range 20/60, one target. 24 (2d8 + 15 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Titanstone Knuckles",
+      "entries": [
+        "Melee atk +14 to hit, reach 5 ft., one target. 14 (1d4 + 12 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Enlarge (Recharges after a {@quickref resting|PHB|2|0|Long Rest})",
+      "entries": [
+        "Grog casts {@spell enlarge/reduce} on himself to grow in size for 10 minutes. While enlarged in this way, he has resistance to cold, fire, lightning, and thunder damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

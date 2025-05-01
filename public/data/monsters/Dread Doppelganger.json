@@ -1,0 +1,136 @@
+{
+  "name": "Dread Doppelganger",
+  "source": "MaBJoV",
+  "page": 139,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "shapechanger"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 40
+  },
+  "str": 11,
+  "dex": 20,
+  "con": 14,
+  "int": 17,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "deception": "+7",
+    "stealth": "+8"
+  },
+  "passive": 11,
+  "languages": [
+    "Common"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The dread doppelganger can use its action to polymorph into a Small or Medium humanoid it has seen, or back into its true form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      ]
+    },
+    {
+      "name": "Ambusher",
+      "entries": [
+        "In the first round of a combat, the dread doppelganger has advantage on attack rolls against any creature it has {@quickref Surprise|PHB|3|0|surprised}."
+      ]
+    },
+    {
+      "name": "Surprise Attack",
+      "entries": [
+        "If the dread doppelganger surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 10 ({@damage 3d6}) damage from the attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dread doppelganger makes three melee attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +8 to hit, range 5 ft., one target. 8 ({@dice 1d6 + 5})."
+      ]
+    },
+    {
+      "name": "Read Thoughts",
+      "entries": [
+        "The dread doppelganger magically reads the surface thoughts of one creature within 60 ft. of it. The effect can penetrate barriers, but 3 ft. of wood or dirt, 2 ft. of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the dread doppelganger can continue reading its thoughts, as long as the dread doppelganger's Concentration isn't broken (as if {@status concentration||concentrating} on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom (Insight) and Charisma ({@skill Deception}, {@skill Intimidation}, and {@skill Persuasion}) checks against the target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The dread doppelganger's spellcasting ability is Intelligence (spell save {@dc 14}). It can innately cast the following spells, requiring no components:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

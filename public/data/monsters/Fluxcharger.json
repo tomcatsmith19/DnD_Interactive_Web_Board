@@ -1,0 +1,93 @@
+{
+  "name": "Fluxcharger",
+  "source": "GGR",
+  "page": 208,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 0,
+    "fly": 60
+  },
+  "str": 15,
+  "dex": 18,
+  "con": 15,
+  "int": 6,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Amplify Lightning",
+      "entries": [
+        "Whenever a spell that deals lightning damage includes one or more fluxchargers in its area, the spell deals an extra 9 ({@damage 2d8}) lightning damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The fluxcharger makes two slam attacks or uses Arc Lightning twice."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage plus 10 (3d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Arc Lightning",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 30 ft., one target. 16 (3d10 damage) lightning damage, and lightning jumps from the target to one creature of the fluxcharger's choice that it can see within 30 feet of the target. That second creature must succeed on a DC 15 Dexterity saving throw or take 13 (3d8 damage) lightning damage. Hit or Miss: The fluxcharger takes 5 (1d10 damage) force damage after resolving the attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

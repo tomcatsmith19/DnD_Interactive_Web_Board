@@ -1,0 +1,117 @@
+{
+  "name": "Uthgardt Shaman",
+  "source": "SKT",
+  "page": 243,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 38,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 12,
+  "con": 13,
+  "int": 10,
+  "wis": 15,
+  "cha": 12,
+  "skills": {
+    "medicine": "+4",
+    "nature": "+4",
+    "perception": "+4",
+    "survival": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Bothii",
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d6 + 2 damage) piercing damage, or 6 (1d8 + 2 damage) piercing damage if wielded with two hands."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +3 to hit, range 80/320 ft., one target. 4 (1d6 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Requires a Sacred Bundle)",
+      "headerEntries": [
+        "The shaman casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 12}; {@hit 4} to hit with spell attacks):"
+      ],
+      "will": [
+        "dancing lights",
+        "mage hand",
+        "message",
+        "thaumaturgy"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

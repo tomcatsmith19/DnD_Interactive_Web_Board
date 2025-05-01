@@ -1,0 +1,89 @@
+{
+  "name": "Sundeth",
+  "source": "WDMM",
+  "page": 304,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 143,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 15,
+  "con": 14,
+  "int": 10,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "athletics": "+9",
+    "intimidation": "+5",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Indomitable (2/Day)",
+      "entries": [
+        "The champion rerolls a failed saving throw."
+      ]
+    },
+    {
+      "name": "Second Wind (Recharges after a Short or Long Rest)",
+      "entries": [
+        "As a bonus action, Sundeth can regain 20 hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The champion makes three attacks with its greatsword or its shortbow."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage, plus 7 (2d6 damage) slashing damage if Sundeth has more than half of its total hit points remaining."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +6 to hit, range 80/320 ft., one target. 5 (1d6 + 2 damage) piercing damage, plus 7 (2d6 damage) piercing damage if Sundeth has more than half of its total hit points remaining."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "desert",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

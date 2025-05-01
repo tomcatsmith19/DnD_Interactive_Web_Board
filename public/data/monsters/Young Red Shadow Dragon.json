@@ -1,0 +1,106 @@
+{
+  "name": "Young Red Shadow Dragon",
+  "source": "MM",
+  "page": 85,
+  "size": [
+    "L"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 178,
+  "speed": {
+    "walk": 40,
+    "climb": 40,
+    "fly": 80
+  },
+  "str": 23,
+  "dex": 10,
+  "con": 21,
+  "int": 14,
+  "wis": 11,
+  "cha": 19,
+  "skills": {
+    "perception": "+10",
+    "stealth": "+10"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Living Shadow",
+      "entries": [
+        "While in dim light or darkness, the dragon has resistance to damage that isn't force, psychic, or radiant."
+      ]
+    },
+    {
+      "name": "Shadow Stealth",
+      "entries": [
+        "While in dim light or darkness, the dragon can take the Hide action as a bonus action."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the dragon has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 17 (2d10 + 6 damage) piercing damage plus 3 (1d6 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 13 (2d6 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Shadow Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales shadowy fire in a 30-foot cone. Each creature in that area must make a DC 18 Dexterity saving throw, taking 56 (16d6 damage) necrotic damage on a failed save, or half as much damage on a successful one. A humanoid reduced to 0 hit points by this damage dies, and an undead {@creature shadow} rises from its corpse and acts immediately after the dragon in the initiative count. The shadow is under the dragon's control."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

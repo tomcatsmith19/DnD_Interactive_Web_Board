@@ -1,0 +1,207 @@
+{
+  "name": "The Lord of Blades",
+  "source": "ERLW",
+  "page": 300,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "warforged"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 195,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 15,
+  "con": 18,
+  "int": 19,
+  "wis": 17,
+  "cha": 18,
+  "skills": {
+    "arcana": "+10",
+    "athletics": "+11",
+    "history": "+10",
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Elvish"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Adamantine Plating",
+      "entries": [
+        "Any critical hit against the Lord of Blades becomes a normal hit."
+      ]
+    },
+    {
+      "name": "Bladed Armor",
+      "entries": [
+        "A creature that grapples the Lord of Blades or is {@condition grappled} by him takes 13 ({@damage 3d8}) slashing damage. A creature takes 13 ({@damage 3d8}) slashing damage if it starts its turn grappling or being {@condition grappled} by the Lord of Blades."
+      ]
+    },
+    {
+      "name": "Charge",
+      "entries": [
+        "If the Lord of Blades moves at least 10 feet straight toward a target and then hits it with his adamantine sixblade on the same turn, the target takes an extra 11 ({@damage 2d10}) slashing damage. If the target is a creature, it must succeed on a {@dc 19} Strength saving throw or be pushed up to 10 feet away and knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Warforged Resilience",
+      "entries": [
+        "The Lord of Blades has advantage on saving throws against being {@condition poisoned}, is immune to disease, and magic can't put him to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Lord of Blades makes three attacks: two with his adamantine sixblade and one with his bladed wings."
+      ]
+    },
+    {
+      "name": "Adamantine Sixblade",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 21 (3d10 + 5 damage) slashing damage plus 7 (2d6 damage) force damage."
+      ]
+    },
+    {
+      "name": "Bladed Wings",
+      "entries": [
+        "Melee/Ranged atk +11 to hit, reach 5 ft. or range 20/60 ft., one target. 8 (1d6 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Fire Bolt (Cantrip)",
+      "entries": [
+        "Ranged Spell atk +10 to hit, range 120 ft., one target. 22 (4d10 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "The Lord of Blades makes one weapon attack."
+      ]
+    },
+    {
+      "name": "Cantrip",
+      "entries": [
+        "The Lord of Blades casts one of his cantrips."
+      ]
+    },
+    {
+      "name": "Cast a Spell (Costs 2 Actions)",
+      "entries": [
+        "The Lord of Blades casts a spell of 2nd level or lower from his spell list that takes 1 action to cast."
+      ]
+    },
+    {
+      "name": "Blade Dash (Costs 3 Actions)",
+      "entries": [
+        "The Lord of Blades moves up to his speed without provoking opportunity attacks, then makes one attack with his adamantine sixblade. He can make one bladed wings attack against each creature he moves past."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The Lord of Blades is a 20th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 18}, {@hit 10} to hit with spell attacks). He has the following artificer spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "mage hand",
+            "mending",
+            "prestidigitation"
+          ]
+        },
+        "1": {
+          "spells": [
+            "expeditious retreat",
+            "sanctuary",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blur",
+            "heat metal",
+            "scorching ray",
+            "see invisibility"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "fly",
+            "haste"
+          ]
+        },
+        "4": {
+          "spells": [
+            "freedom of movement",
+            "Mordenkainen's faithful hound"
+          ]
+        },
+        "5": {
+          "spells": [
+            "animate objects",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened"
+  ],
+  "resist": [
+    "necrotic",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

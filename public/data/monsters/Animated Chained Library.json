@@ -1,0 +1,77 @@
+{
+  "name": "Animated Chained Library",
+  "source": "CM",
+  "page": 24,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "14"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 10
+  },
+  "str": 15,
+  "dex": 8,
+  "con": 14,
+  "int": 1,
+  "wis": 5,
+  "cha": 1,
+  "skills": {},
+  "passive": 7,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Object",
+      "entries": [
+        "If the library is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the library move or act, that creature must succeed on a {@dc 15} Wisdom (Perception) check to discern that the library is animate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The library makes two attacks."
+      ]
+    },
+    {
+      "name": "Chained Book",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) bludgeoning damage, and if the target is a creature, it is {@condition grappled} (escape DC 12)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [
+    "blindsight 30 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

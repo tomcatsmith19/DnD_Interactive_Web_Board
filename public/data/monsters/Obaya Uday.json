@@ -1,0 +1,127 @@
+{
+  "name": "Obaya Uday",
+  "source": "WDH",
+  "page": 20,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 10,
+  "con": 12,
+  "int": 13,
+  "wis": 16,
+  "cha": 13,
+  "skills": {
+    "medicine": "+7",
+    "persuasion": "+3",
+    "religion": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "any two languages"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Divine Eminence",
+      "entries": [
+        "As a bonus action, Obaya can expend a spell slot to cause its melee weapon attacks to magically deal an extra 10 ({@damage 3d6}) radiant damage to a target on a hit. This benefit lasts until the end of the turn. If Obaya expends a spell slot of 2nd level or higher, the extra damage increases by {@dice 1d6} for each level above 1st."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Mace",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 3 (1d6 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 13}, {@hit 5} to hit with spell attacks). The priest has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "guiding bolt",
+            "sanctuary"
+          ]
+        },
+        "2": {
+          "spells": [
+            "lesser restoration",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "spirit guardians"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

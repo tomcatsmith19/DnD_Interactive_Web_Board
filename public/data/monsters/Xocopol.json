@@ -1,0 +1,73 @@
+{
+  "name": "Xocopol",
+  "source": "JttRC",
+  "page": 112,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 162,
+  "speed": {
+    "walk": 30
+  },
+  "str": 25,
+  "dex": 9,
+  "con": 23,
+  "int": 10,
+  "wis": 14,
+  "cha": 13,
+  "skills": {
+    "athletics": "+11",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two greatsword attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 28 (6d6 + 7 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +11 to hit, range 60/240 ft., one target. 29 (4d10 + 7 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [],
+  "environment": [
+    "underdark",
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,144 @@
+{
+  "name": "Young Emerald Dragon",
+  "source": "FTD",
+  "page": 197,
+  "size": [
+    "L"
+  ],
+  "type": "dragon",
+  "tags": [
+    "gem"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 142,
+  "speed": {
+    "walk": 40,
+    "burrow": 30,
+    "fly": 60
+  },
+  "str": 21,
+  "dex": 12,
+  "con": 19,
+  "int": 16,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "arcana": "+6",
+    "deception": "+6",
+    "perception": "+8",
+    "stealth": "+4"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Draconic",
+    "telepathy 120 ft."
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The dragon can burrow through solid rock at half its burrowing speed and can leave a 10-foot-diameter tunnel in its wake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 16 (2d10 + 5 damage) piercing damage plus 3 (1d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Disorienting Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a wave of psychic dissonance in a 30-foot cone. Each creature in that area must make a DC 15 Intelligence saving throw. On a failed save, the creature takes 31 (9d6 damage) psychic damage, and until the end of its next turn, when the creature makes an attack roll or an ability check, it must roll a {@dice d6} and reduce the total by the number rolled. On a successful save, the creature takes half as much damage with no additional effects."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The dragon casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "mage hand",
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "fire",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Steel Crane",
+  "source": "CM",
+  "page": 164,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 76,
+  "speed": {
+    "walk": 40
+  },
+  "str": 13,
+  "dex": 18,
+  "con": 18,
+  "int": 13,
+  "wis": 17,
+  "cha": 14,
+  "skills": {
+    "acrobatics": "+7",
+    "deception": "+5",
+    "perception": "+6",
+    "stealth": "+7"
+  },
+  "passive": 16,
+  "languages": [
+    "Common"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While Steel Crane is wearing no armor and wielding no shield, his AC includes his Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Steel Crane makes three attacks."
+      ]
+    },
+    {
+      "name": "Force Strike",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) force damage, and if the target is a creature, it must succeed on a DC 15 Constitution saving throw or be {@condition stunned} until the start of Steel Crane's next turn."
+      ]
+    },
+    {
+      "name": "Whip",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 6 (1d4 + 4 damage) slashing damage or, if the target is a creature, Steel Crane can grapple the target instead (escape DC 15). Steel Crane can't make attacks with the whip while using it to grapple a creature. Anytime on his turn, he can release a creature {@condition grappled} by the whip (no action required)."
+      ]
+    },
+    {
+      "name": "Heal Self (Recharges after a Long Rest)",
+      "entries": [
+        "Steel Crane regains {@dice 2d8 + 4} hit points, and all levels of {@condition exhaustion} end on him."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

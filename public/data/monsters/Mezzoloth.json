@@ -1,0 +1,152 @@
+{
+  "name": "Mezzoloth",
+  "source": "MM",
+  "page": 313,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "yugoloth"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 16,
+  "int": 7,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The mezzoloth has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The mezzoloth's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The mezzoloth makes two attacks: one with its claws and one with its trident."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (2d4 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage, or 8 (1d8 + 4 damage) piercing damage when held with two claws and used to make a melee attack."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The mezzoloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The mezzoloth's innate spellcasting ability is Charisma (spell save {@dc 11}). The mezzoloth can innately cast the following spells, requiring no material components:"
+      ],
+      "daily": {
+        "1": [
+          "cloudkill"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

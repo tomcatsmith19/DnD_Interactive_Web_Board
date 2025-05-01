@@ -1,0 +1,82 @@
+{
+  "name": "Gash",
+  "source": "OotA",
+  "page": 181,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gnoll"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 25
+  },
+  "str": 14,
+  "dex": 12,
+  "con": 11,
+  "int": 6,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Gnoll"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Rampage",
+      "entries": [
+        "When Gash reduces a creature to 0 hit points with a melee attack on its turn, Gash can take a bonus action to move up to half its speed and make a bite attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d6 + 2 damage) piercing damage, or 6 (1d8 + 2 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +3 to hit, range 150/600 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

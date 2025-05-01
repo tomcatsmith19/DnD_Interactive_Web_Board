@@ -1,0 +1,168 @@
+{
+  "name": "Pelyious Avhoste",
+  "source": "MaBJoV",
+  "page": 120,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 14,
+  "int": 17,
+  "wis": 11,
+  "cha": 13,
+  "skills": {
+    "perception": "+8",
+    "stealth": "+6"
+  },
+  "passive": 18,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "Pelyious can use his action to polymorph into a crocodile-humanoid hybrid, or back into his true form, which is humanoid. His statistics are the same in each form. Any equipment he is wearing or carrying isn't transformed. He reverts to his true form if he dies."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "Pelyious can hold his breath for 15 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Humanoid or Hybrid Form)",
+      "entries": [
+        "In humanoid form, Pelyious makes two scimitar attacks or two hand crossbow attacks. In hybrid form, he can substitute one scimitar attack for a bite attack."
+      ]
+    },
+    {
+      "name": "Bite (Hybrid Form Only)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 9 (1d10 + 4 damage) piercing damage. The target is {@condition grappled}, escape DC 16 until this grapple ends, the target is {@condition restrained}, and Pelyious can't bite another target."
+      ]
+    },
+    {
+      "name": "Hand Crossbow (Humanoid or Hybrid Form)",
+      "entries": [
+        "Ranged atk +6 to hit, range 30/90 ft., one target. 6 (1d6 + 3 damage) piercing damage plus 7 (2d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Scimitar (Humanoid or Hybrid Form)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) slashing damage plus 7 (2d6 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Pelyious is a 9th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Pelyious has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "misty step",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "fly"
+          ]
+        },
+        "4": {
+          "spells": [
+            "greater invisibility",
+            "ice storm"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cone of cold"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "bludgeoning (from nonmagical weapons that aren't silvered)",
+    "piercing (from nonmagical weapons that aren't silvered)",
+    "slashing (from nonmagical weapons that aren't silvered)"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Living Unseen Servant",
+  "source": "WDMM",
+  "page": 313,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 4,
+  "speed": {
+    "walk": 30
+  },
+  "str": 2,
+  "dex": 10,
+  "con": 11,
+  "int": 1,
+  "wis": 10,
+  "cha": 1,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "understands one language (usually Common) but can't speak"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Invisibility",
+      "entries": [
+        "The unseen servant is {@condition invisible}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 1 bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

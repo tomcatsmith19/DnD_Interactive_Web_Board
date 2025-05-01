@@ -1,0 +1,84 @@
+{
+  "name": "Grell",
+  "source": "MM",
+  "page": 172,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 55,
+  "speed": {
+    "walk": 10,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 13,
+  "int": 12,
+  "wis": 11,
+  "cha": 9,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Grell"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The grell makes two attacks: one with its tentacles and one with its beak."
+      ]
+    },
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +4 to hit, reach 10 ft., one creature. 7 (1d10 + 2 damage) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or be {@condition poisoned} for 1 minute. The {@condition poisoned} target is {@condition paralyzed}, and it can repeat the saving throw at the end of each of its turns, ending the effect on a success.",
+        "The target is also {@condition grappled} (escape {@dc 15}). If the target is Medium or smaller, it is also {@condition restrained} until this grapple ends. While grappling the target, the grell has advantage on attack rolls against it and can 't use this attack against other targets. When the grell moves, any Medium or smaller target it is grappling moves with it."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (2d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning"
+  ],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Yinra Emberwind",
+  "source": "EGW",
+  "page": 223,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 12,
+  "int": 14,
+  "wis": 13,
+  "cha": 11,
+  "skills": {
+    "investigation": "+4",
+    "perception": "+3",
+    "stealth": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Yinra has advantage on saving throws against being {@condition charmed}, and magic can't put her to sleep."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Sight",
+      "entries": [
+        "Yinra has advantage on Wisdom (Perception) checks that rely on hearing or sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 150/600 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

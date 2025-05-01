@@ -1,0 +1,122 @@
+{
+  "name": "Lenchtahg",
+  "source": "GHLoE",
+  "page": 51,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 18,
+  "int": 10,
+  "wis": 11,
+  "cha": 13,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "Celestial",
+    "Infernal"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Berserk",
+      "entries": [
+        "Whenever the lenchtahg starts its turn with 54 hit points or fewer, roll a {@dice d6}. On a 1, the lenchtahg recalls its former life and current agony, and it goes berserk. On each of its turns while berserk, the lenchtahg attacks the nearest creature it can see. It treats all creatures as enemies and makes any opportunity attack it can. Also, it has advantage on attack rolls, but all attack rolls against it have advantage. If no creature is near enough to move to and attack, the lenchtahg moves as far as it can toward the closest creature.",
+        "Once the lenchtahg goes berserk, it remains so until destroyed or it has more than 54 hit points. Also, a fiend can calm the lenchtahg. The lenchtahg must be able to understand the fiend, who must take an action to make a {@dc 15} Charisma (Persuasion) check. If the check succeeds, the lenchtahg ceases being berserk."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The lenchtahg has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The lenchtahg's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Radiant Absorption",
+      "entries": [
+        "Whenever the lenchtahg is subjected to radiant damage from a source other than a lenchtahg, it takes no damage and instead regains hit points equal to half the radiant damage dealt to it."
+      ]
+    },
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If the lenchtahg's head survives its demise, the head must be doused in holy water and ritually consecrated in a 1-hour ceremony or be the target of a {@spell dispel evil and good} spell. If it isn't, then the lenchtahg reappears in 6 days, emerging from a fiery explosion in a 20-foot-radius sphere centered on the head. Creatures in that area must make a {@dc 15} Dexterity saving throw, taking 28 {@damage 8d6} damage on a failed saving throw, or half as much damage on a successful one. The head can't rejuvenate in a holy {@spell hallow} spell's area."
+      ]
+    },
+    {
+      "name": "Water Aversion",
+      "entries": [
+        "If drenched in 5 gallons or more of water, or any amount of holy water, the lenchtahg has disadvantage on attack rolls and ability checks until the end of its next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The lenchtahg makes two claw attacks, makes one claw attack and uses radiant gaze once, or uses radiant gaze twice."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (2d4 + 4 damage) slashing damage and 9 (2d8 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Radiant Gaze",
+      "entries": [
+        "The lenchtahg targets one creature it can see within 60 feet of it with burning radiance. The target gains no benefit from cover and must succeed on a DC 15 Dexterity saving throw or take 13 (3d8 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison",
+    "radiant"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

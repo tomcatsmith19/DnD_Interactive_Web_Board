@@ -1,0 +1,237 @@
+{
+  "name": "Niv-Mizzet",
+  "source": "GGR",
+  "page": 241,
+  "size": [
+    "G"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "22"
+  ],
+  "hp": 370,
+  "speed": {
+    "walk": 40,
+    "climb": 30,
+    "fly": 80
+  },
+  "str": 29,
+  "dex": 14,
+  "con": 29,
+  "int": 30,
+  "wis": 17,
+  "cha": 25,
+  "skills": {
+    "arcana": "+18",
+    "insight": "+11",
+    "perception": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "26",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Niv-Mizzet fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Locus of the Firemind",
+      "entries": [
+        "Niv-Mizzet can maintain {@status concentration} on two different spells at the same time. In addition, he has advantage on saving throws to maintain {@status concentration} on spells."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Niv-Mizzet has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Master Chemister",
+      "entries": [
+        "When Niv-Mizzet casts a spell that deals damage, he can change the spell's damage to cold, fire, force, lightning, or thunder."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Niv-Mizzet makes three attacks: one with his bite and two with his claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +17 to hit, reach 15 ft., one target. 18 (2d8 + 9 damage) piercing damage plus 14 (4d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +17 to hit, reach 10 ft., one target. 14 (2d4 + 9 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +17 to hit, reach 20 ft., one target. 16 (2d6 + 9 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Fire Breath {@recharge 5}",
+      "entries": [
+        "Niv-Mizzet exhales fire in a 90-foot cone. Each creature in that area must make a DC 25 Dexterity saving throw, taking 91 (26d6 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Cantrip",
+      "entries": [
+        "Niv-Mizzet casts one of his cantrips."
+      ]
+    },
+    {
+      "name": "Tail Attack",
+      "entries": [
+        "Niv-Mizzet makes a tail attack."
+      ]
+    },
+    {
+      "name": "Wing Attack (Costs 2 Actions)",
+      "entries": [
+        "Niv-Mizzet beats his wings. Each creature within 15 feet of him must succeed on a {@dc 25} Dexterity saving throw or take 14 ({@damage 2d4 + 9}) bludgeoning damage and be knocked {@condition prone}. Niv-Mizzet can then fly up to half his flying speed."
+      ]
+    },
+    {
+      "name": "Dracogenius (Costs 3 Actions)",
+      "entries": [
+        "Niv-Mizzet regains a spell slot of 3rd level or lower."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Niv-Mizzet is a 20th-level Izzet spellcaster. His spellcasting ability is Intelligence (spell save {@dc 26}, {@hit 18} to hit with spell attacks). He has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "prestidigitation",
+            "ray of frost",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "magic missile",
+            "shield",
+            "thunderwave",
+            "unseen servant"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blur",
+            "enlarge/reduce",
+            "flaming sphere",
+            "hold person",
+            "scorching ray"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "lightning bolt",
+            "slow"
+          ]
+        },
+        "4": {
+          "spells": [
+            "confusion",
+            "dimension door",
+            "fabricate"
+          ]
+        },
+        "5": {
+          "spells": [
+            "conjure elemental",
+            "polymorph",
+            "wall of fire",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": [
+            "chain lightning",
+            "disintegrate",
+            "true seeing"
+          ]
+        },
+        "7": {
+          "spells": [
+            "project image",
+            "reverse gravity",
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": [
+            "control weather",
+            "maze",
+            "power word stun"
+          ]
+        },
+        "9": {
+          "spells": [
+            "prismatic wall"
+          ]
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed"
+  ],
+  "resist": [
+    "cold",
+    "psychic",
+    "thunder"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "lightning"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

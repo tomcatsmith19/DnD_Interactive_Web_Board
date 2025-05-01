@@ -1,0 +1,72 @@
+{
+  "name": "Thopter (Bat)",
+  "source": "PSK",
+  "page": 33,
+  "size": [
+    "T"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 5,
+    "fly": 30
+  },
+  "str": 2,
+  "dex": 15,
+  "con": 8,
+  "int": 2,
+  "wis": 12,
+  "cha": 4,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Echolocation",
+      "entries": [
+        "The thopter can't use its blindsight while {@condition deafened}."
+      ]
+    },
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The thopter has advantage on Wisdom ({@skill Perception}) checks that rely on hearing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one creature. 1 piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

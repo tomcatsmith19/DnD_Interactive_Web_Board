@@ -1,0 +1,77 @@
+{
+  "name": "Piggy Wiggle Butt",
+  "source": "RMBRE",
+  "page": 28,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 15,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 16,
+  "int": 7,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "intimidation": "+2"
+  },
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, Piggy Wiggle Butt can move up to its speed toward a hostile creature that it can see."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Clay Jug",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

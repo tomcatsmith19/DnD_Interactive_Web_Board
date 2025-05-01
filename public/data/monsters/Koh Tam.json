@@ -1,0 +1,127 @@
+{
+  "name": "Koh Tam",
+  "source": "CoA",
+  "page": 265,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 143,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 15,
+  "int": 19,
+  "wis": 20,
+  "cha": 15,
+  "skills": {
+    "arcana": "+8",
+    "history": "+8",
+    "insight": "+9",
+    "religion": "+8"
+  },
+  "passive": 15,
+  "languages": [
+    "Abyssal",
+    "Celestial",
+    "Common",
+    "Infernal"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Arbiter's Touch",
+      "entries": [
+        "{@atk ms} +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Judgement",
+      "entries": [
+        "Koh Tam judges a creature within 60 feet of him. The target must succeed on a DC 17 Wisdom saving throw or take 50 (10d8 + 5 damage) radiant damage. If the target had fewer hit points than their maximum prior to this attack, the creature takes 70 (10d12 + 5 damage) radiant damage instead."
+      ]
+    },
+    {
+      "name": "Arbiter's Light {@recharge 4}",
+      "entries": [
+        "Ranged Spell atk +9 to hit, range 120 ft., one target. 70 (10d12 + 5 damage) radiant damage, and the target has the {@condition blinded} condition until the start of Koh Tam's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Koh Tam casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 17}):"
+      ],
+      "will": [
+        "False Life",
+        "Gentle Repose",
+        "Lesser Restoration",
+        "Protection from Evil and Good",
+        "Speak with Dead"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

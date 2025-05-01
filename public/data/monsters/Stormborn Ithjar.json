@@ -1,0 +1,93 @@
+{
+  "name": "Stormborn Ithjar",
+  "source": "GHLoE",
+  "page": 94,
+  "size": [
+    "H"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 189,
+  "speed": {
+    "walk": 40,
+    "fly": 120
+  },
+  "str": 21,
+  "dex": 20,
+  "con": 19,
+  "int": 3,
+  "wis": 12,
+  "cha": 5,
+  "skills": {
+    "acrobatics": "+9",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The stormborn ithjar has advantage on Wisdom (Perception) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Slippery Serpent",
+      "entries": [
+        "The stormborn ithjar has advantage on ability checks or saving throws made to escape a grapple and saving throws to avoid being {@condition paralyzed} or {@condition restrained}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The stormborn ithjar attacks once with its bite and once with its tail."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one target. 21 (3d10 + 5 damage) slashing damage and 9 (2d8 damage) lightning damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one target. 18 (3d8 + 5 damage) bludgeoning damage and 7 (2d6 damage) thunder damage. If the target is a Large or smaller creature, it is {@condition grappled} (escape DC 17). Until this grapple ends, the target is {@condition restrained}, and the stormborn ithjar can't use its tail on another target."
+      ]
+    },
+    {
+      "name": "Storm Breath {@recharge 5}",
+      "entries": [
+        "The stormborn ithjar exhales a 30- foot cone of lightning and thunder. Each creature in that area must make a DC 16 Dexterity saving throw. On a failure, a creature takes 31 (7d8 damage) lightning damage and 31 (7d8 damage) thunder damage and falls {@condition prone}. If the save succeeds, the creature takes half the lightning and thunder damage and doesn't fall {@condition prone}. The discharge of this breath weapon is audible for 1 mile outside and 300 feet inside."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "thunder"
+  ],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

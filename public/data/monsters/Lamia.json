@@ -1,0 +1,130 @@
+{
+  "name": "Lamia",
+  "source": "MM",
+  "page": 201,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 97,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 13,
+  "con": 15,
+  "int": 14,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "deception": "+7",
+    "insight": "+4",
+    "stealth": "+3"
+  },
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The lamia makes two attacks: one with its claws and one with its dagger or Intoxicating Touch."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 14 (2d10 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Intoxicating Touch",
+      "entries": [
+        "{@atk ms} +5 to hit, reach 5 ft., one creature. The target is magically cursed for 1 hour. Until the curse ends, the target has disadvantage on Wisdom saving throws and all ability checks."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The lamia's innate spellcasting ability is Charisma (spell save {@dc 13}). It can innately cast the following spells, requiring no material components."
+      ],
+      "will": [
+        "disguise self",
+        "major image"
+      ],
+      "daily": {
+        "1": [
+          "geas"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

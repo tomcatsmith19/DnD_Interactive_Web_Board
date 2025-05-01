@@ -1,0 +1,86 @@
+{
+  "name": "Skeletal Juggernaut",
+  "source": "GoS",
+  "page": 253,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 142,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 15,
+  "int": 6,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Disassemble",
+      "entries": [
+        "If the juggernaut is reduced to 0 hit points, twelve skeletons rise from its remains."
+      ]
+    },
+    {
+      "name": "Falling Apart",
+      "entries": [
+        "If the juggernaut does not have all of its hit points at the start of its turn, it loses 10 hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The juggernaut makes two claws attacks."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 12 (2d8 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Avalanche of Bones {@recharge 5}",
+      "entries": [
+        "The juggernaut collapses into a large heap before quickly reforming. Each creature within 10 feet of the juggernaut must make a DC 14 Dexterity saving throw, taking 18 (4d8 damage) bludgeoning damage on a failed save, or half as much damage on a successful one. A creature that fails this saving throw is also knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,135 @@
+{
+  "name": "Ashari Waverider",
+  "source": "TDCSR",
+  "page": 230,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [],
+  "ac": [
+    "14"
+  ],
+  "hp": 77,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 12,
+  "int": 10,
+  "wis": 16,
+  "cha": 13,
+  "skills": {
+    "athletics": "+8",
+    "nature": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Aquan",
+    "Common",
+    "Druidic"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Healing Tides",
+      "entries": [
+        "Whenever the waverider casts a spell of 1st level or higher that affects a non-hostile creature, that creature regains 3 hit points (in addition to any healing the spell may provide)."
+      ]
+    },
+    {
+      "name": "Marine Empathy",
+      "entries": [
+        "The waverider can speak with and understand aquatic plants and animals."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Harpoon",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft., range 20/60 ft., one target. 7 (1d10 + 2 damage) piercing damage. If the target is a Large or smaller creature, it must succeed on a Strength contest against the waverider or be pulled up to 20 feet toward the waverider. Attacks with this weapon made while {@quickref Underwater Combat|PHB|3|0|underwater} do not have {@quickref Advantage and Disadvantage|PHB|2|0|disadvantage}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The waverider is a 7th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "poison spray",
+            "resistance"
+          ]
+        },
+        "1": {
+          "spells": [
+            "create or destroy water",
+            "cure wounds",
+            "healing word"
+          ]
+        },
+        "2": {
+          "spells": [
+            "animal messenger",
+            "lesser restoration",
+            "moonbeam"
+          ]
+        },
+        "3": {
+          "spells": [
+            "conjure animals",
+            "water breathing",
+            "water walk"
+          ]
+        },
+        "4": {
+          "spells": [
+            "control water"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Returned Drifter",
+  "source": "MOT",
+  "page": 240,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 15,
+  "con": 12,
+  "int": 10,
+  "wis": 12,
+  "cha": 11,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Turn Resistance",
+      "entries": [
+        "The Returned has advantage on saving throws against any effect that turns undead."
+      ]
+    },
+    {
+      "name": "Unreadable Face",
+      "entries": [
+        "The Returned is immune to any effect that would sense its emotions or read its thoughts. Wisdom (Insight) checks to ascertain the Returned's intentions or sincerity are made with disadvantage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage plus 3 (1d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Sling",
+      "entries": [
+        "Ranged atk +4 to hit, range 30/120 ft., one target. 4 (1d4 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

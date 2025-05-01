@@ -1,0 +1,70 @@
+{
+  "name": "Dwarf Skeleton",
+  "source": "PaBTSO",
+  "page": 123,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 25
+  },
+  "str": 16,
+  "dex": 10,
+  "con": 15,
+  "int": 6,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands Dwarvish but can't speak"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Sure-Footed",
+      "entries": [
+        "The skeleton has advantage on Strength and Dexterity saving throws made against effects that make it have the {@condition prone} condition."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Battleaxe",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

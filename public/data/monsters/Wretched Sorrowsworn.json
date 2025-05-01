@@ -1,0 +1,70 @@
+{
+  "name": "Wretched Sorrowsworn",
+  "source": "MPMM",
+  "page": 224,
+  "size": [
+    "S"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 40
+  },
+  "str": 7,
+  "dex": 12,
+  "con": 9,
+  "int": 5,
+  "wis": 6,
+  "cha": 5,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Wretched Pack Tactics",
+      "entries": [
+        "The sorrowsworn has advantage on an attack roll against a creature if at least one of the sorrowsworn's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}. The sorrowsworn otherwise has disadvantage on attack rolls."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 6 (1d10 + 1 damage) piercing damage, and the sorrowsworn attaches to the target. While attached, the sorrowsworn can't attack, and at the start of each of the sorrowsworn's turns, the target takes 6 (1d10 + 1 damage) necrotic damage.",
+        "The attached sorrowsworn moves with the target whenever the target moves, requiring none of the sorrowsworn's movement. The sorrowsworn can detach itself by spending 5 feet of its movement on its turn. A creature, including the target, can use its action to detach the sorrowsworn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "swamp",
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

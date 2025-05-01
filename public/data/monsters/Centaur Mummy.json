@@ -1,0 +1,97 @@
+{
+  "name": "Centaur Mummy",
+  "source": "TftYP",
+  "page": 231,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 12,
+  "con": 16,
+  "int": 5,
+  "wis": 14,
+  "cha": 12,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the centaur mummy moves at least 20 feet straight toward a target and then hits it with a pike attack on the same turn, the target takes an extra 10 ({@damage 3d6}) piercing damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The centaur mummy makes two melee attacks, one with its pike and one with its hooves, or it attacks with its pike and uses Dreadful Glare."
+      ]
+    },
+    {
+      "name": "Pike",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 10 (1d10 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) piercing damage plus 10 (3d6 damage) necrotic damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 ({@dice 3d6}) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the {@spell remove curse} spell or similar magic."
+      ]
+    },
+    {
+      "name": "Dreadful Glare",
+      "entries": [
+        "The centaur mummy targets one creature it can see within 60 feet of it. If the target can see the mummy, the target must succeed on a DC 12 Wisdom saving throw against this magic or become {@condition frightened} until the end of the mummy's next turn. If the target fails the saving throw by 5 or more, it is also {@condition paralyzed} for the same duration. A target that succeeds on the saving throw is immune to the Dreadful Glare of all mummies (but not mummy lords) for the next 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Hybrid Flier",
+  "source": "GGR",
+  "page": 217,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "Simic hybrid"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 30,
+    "fly": 40
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 14,
+  "int": 11,
+  "wis": 10,
+  "cha": 11,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hybrid makes two javelin attacks. It can replace one javelin attack with Spit Acid."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 30/120 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Spit Acid",
+      "entries": [
+        "Ranged atk +5 to hit, range 20/60 ft., one target. 10 (4d4 damage) acid damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "acid"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,96 @@
+{
+  "name": "Gomazoa",
+  "source": "PSZ",
+  "page": 26,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 93,
+  "speed": {
+    "fly": 10
+  },
+  "str": 18,
+  "dex": 8,
+  "con": 17,
+  "int": 7,
+  "wis": 16,
+  "cha": 6,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+5"
+  },
+  "passive": 16,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the gomazoa remains motionless, it is indistinguishable from a normal cave formation, such as a stalagmite."
+      ]
+    },
+    {
+      "name": "Grasping Tendrils",
+      "entries": [
+        "The gomazoa can have up to six tendrils at a time. Each tendril can be attacked (AC 20; 10 hit points; immunity to poison and psychic damage). Destroying a tendril deals no damage to the gomazoa, which can extrude a replacement tendril on its next turn. A tendril can also be broken if a creature takes an action and succeeds on a {@dc 15} Strength check against it."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The gomazoa can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gomazoa makes four attacks with its tendrils, uses Reel, and makes one attack with its bite."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 22 (4d8 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Tendril",
+      "entries": [
+        "Melee atk +7 to hit, reach 50 ft., one creature. The target is {@condition grappled} (escape DC 15). Until the grapple ends, the target is {@condition restrained} and has disadvantage on Strength checks and Strength saving throws, and the gomazoa can't use the same tendril on another target."
+      ]
+    },
+    {
+      "name": "Reel",
+      "entries": [
+        "The gomazoa pulls each creature {@condition grappled} by it up to 25 feet straight toward it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

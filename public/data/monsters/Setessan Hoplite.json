@@ -1,0 +1,76 @@
+{
+  "name": "Setessan Hoplite",
+  "source": "MOT",
+  "page": 229,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 16,
+  "con": 14,
+  "int": 13,
+  "wis": 16,
+  "cha": 11,
+  "skills": {
+    "acrobatics": "+5",
+    "perception": "+5",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The hoplite has advantage on an attack roll against a creature if at least one of the hoplite's allies is within 5 feet of the hoplite and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hoplite makes two scimitar attacks or two longbow attacks."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage plus 10 (3d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 150/600 ft., one target. 7 (1d8 + 3 damage) piercing damage plus 10 (3d6 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

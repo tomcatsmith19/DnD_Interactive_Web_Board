@@ -1,0 +1,62 @@
+{
+  "name": "Aurochs",
+  "source": "VGM",
+  "page": 207,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 38,
+  "speed": {
+    "walk": 50
+  },
+  "str": 20,
+  "dex": 10,
+  "con": 19,
+  "int": 2,
+  "wis": 12,
+  "cha": 5,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the aurochs moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 ({@damage 2d8}) piercing damage. If the target is a creature, it must succeed on a {@dc 15} Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "mountain",
+    "grassland",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,110 @@
+{
+  "name": "Wolfwere",
+  "source": "MaBJoV",
+  "page": 155,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "beast",
+    "shapechanger"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "13"
+  ],
+  "hp": 55,
+  "speed": {
+    "walk": {
+      "number": 30,
+      "condition": "(40 ft. in dire wolf form)"
+    }
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 12,
+  "int": 10,
+  "wis": 8,
+  "cha": 15,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Common (can't speak in wolf form)"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The wolfwere can use its action to polymorph into a wolf-humanoid hybrid or into a human or elf, or back into its true form, which is a dire wolf. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The wolfwere has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The wolfwere has advantage on an attack roll against a creature if at least one of the wolfwere's allies is within 5 ft. of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Hybrid form only)",
+      "entries": [
+        "The wolfwere makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Longsword (Humanoid form only)",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (1d8 + 4 damage) slashing damage or 10 (1d10 + 5 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Bite (Wolf or Hybrid form only)",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Claws (Hybrid form only)",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (2d4 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Lethargic Song (Humanoid form only)",
+      "entries": [
+        "The wolfwere plays a magical melody on an instrument. Every humanoid within 200 ft. of the wolfwere that can hear the melody must succeed on a DC 13 Wisdom saving throw or be {@spell slow||slowed} for 10 minutes. A creature can repeat the saving throw at the end of each of its turns. If a creature's saving throw is successful, the effect ends on it. A target that successfully saves is immune to this wolfwere's melody for the next 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "bludgeoning (from nonmagical weapons that aren't iron)",
+    "piercing (from nonmagical weapons that aren't iron)",
+    "slashing (from nonmagical weapons that aren't iron)"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

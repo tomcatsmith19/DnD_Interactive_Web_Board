@@ -1,0 +1,202 @@
+{
+  "name": "Bael",
+  "source": "MTF",
+  "page": 170,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 189,
+  "speed": {
+    "walk": 30
+  },
+  "str": 24,
+  "dex": 17,
+  "con": 20,
+  "int": 21,
+  "wis": 24,
+  "cha": 24,
+  "skills": {
+    "intimidation": "+13",
+    "perception": "+13",
+    "persuasion": "+13"
+  },
+  "passive": 23,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "19",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Dreadful",
+      "entries": [
+        "Bael can use a bonus action to appear dreadful until the start of his next turn. Each creature, other than a devil, that starts its turn within 10 feet of Bael must succeed on a {@dc 22} Wisdom saving throw or be {@condition frightened} until the start of the creature's next turn."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Bael fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Bael has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "Bael's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "Bael regains 20 hit points at the start of his turn. If he takes cold or radiant damage, this trait doesn't function at the start of his next turn. Bael dies only if he starts his turn with 0 hit points and doesn't regenerate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Bael makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Hellish Morningstar",
+      "entries": [
+        "Melee atk +13 to hit, reach 20 ft., one target. 16 (2d8 + 7 damage) piercing damage plus 13 (3d8 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Infernal Command",
+      "entries": [
+        "Each ally of Bael's within 60 feet of him can't be {@condition charmed} or {@condition frightened} until the end of his next turn."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "Bael magically teleports, along with any equipment he is wearing and carrying, up to 120 feet to an unoccupied space he can see."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack (Cost 2 Actions)",
+      "entries": [
+        "Bael attacks once with his hellish morningstar."
+      ]
+    },
+    {
+      "name": "Awaken Greed",
+      "entries": [
+        "Bael casts {@spell charm person} or major image."
+      ]
+    },
+    {
+      "name": "Infernal Command",
+      "entries": [
+        "Bael uses his Infernal Command action."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "Bael uses his Teleport action."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Bael's innate spellcasting ability is Charisma (spell save {@dc 21}, {@hit 13} to hit with spell attacks). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "alter self",
+        "animate dead",
+        "charm person",
+        "detect magic",
+        "inflict wounds",
+        "invisibility",
+        "major image"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

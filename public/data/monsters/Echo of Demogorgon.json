@@ -1,0 +1,88 @@
+{
+  "name": "Echo of Demogorgon",
+  "source": "BGG",
+  "page": 132,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 40
+  },
+  "str": 22,
+  "dex": 10,
+  "con": 17,
+  "int": 10,
+  "wis": 12,
+  "cha": 14,
+  "skills": {
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Abyssal",
+    "Giant",
+    "Orc"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The echo has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Wakeful",
+      "entries": [
+        "When one of the echo's heads is asleep, its other head is awake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The echo makes two Tentacle attacks."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 13 (2d6 + 6 damage) bludgeoning damage plus 9 (2d8 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

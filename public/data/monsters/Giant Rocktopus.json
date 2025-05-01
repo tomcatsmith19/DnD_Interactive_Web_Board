@@ -1,0 +1,84 @@
+{
+  "name": "Giant Rocktopus",
+  "source": "OotA",
+  "page": 28,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 20,
+    "climb": 10
+  },
+  "str": 17,
+  "dex": 13,
+  "con": 13,
+  "int": 4,
+  "wis": 10,
+  "cha": 4,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+5"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "While out of water, the octopus can hold its breath for 1 hour."
+      ]
+    },
+    {
+      "name": "Underwater Camouflage",
+      "entries": [
+        "The octopus has advantage on Dexterity ({@skill Stealth}) checks made while underwater."
+      ]
+    },
+    {
+      "name": "Water Breathing",
+      "entries": [
+        "The octopus can breathe only underwater."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +5 to hit, reach 15 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage. If the target is a creature, it is {@condition grappled} (escape DC 16). Until this grapple ends, the target is {@condition restrained}, and the octopus can't use its tentacles on another target."
+      ]
+    },
+    {
+      "name": "Ink Cloud (Recharges after a Short or Long Rest)",
+      "entries": [
+        "A 20-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underwater"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

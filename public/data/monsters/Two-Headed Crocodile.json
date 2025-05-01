@@ -1,0 +1,80 @@
+{
+  "name": "Two-Headed Crocodile",
+  "source": "IMR",
+  "page": 89,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 20,
+    "swim": 30
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 13,
+  "int": 2,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+2"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The two-headed crocodile can hold its breath for 15 minutes."
+      ]
+    },
+    {
+      "name": "Two Heads",
+      "entries": [
+        "The two-headed crocodile has advantage on Wisdom (Perception) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, and knocked {@condition unconscious}."
+      ]
+    },
+    {
+      "name": "Wakeful",
+      "entries": [
+        "When one of the crocodile's heads is asleep, its other head is awake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The two-headed crocodile makes two attacks with its bite."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (1d10 + 2 damage) piercing damage, and the target is {@condition grappled} (escape DC 12). Until this grapple ends, the target is {@condition restrained}, and that head of the crocodile can't bite another target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

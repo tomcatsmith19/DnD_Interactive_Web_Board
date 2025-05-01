@@ -1,0 +1,117 @@
+{
+  "name": "Eriflamme",
+  "source": "CoA",
+  "page": 121,
+  "size": [
+    "G"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 518,
+  "speed": {
+    "walk": 40
+  },
+  "str": 30,
+  "dex": 11,
+  "con": 26,
+  "int": 5,
+  "wis": 10,
+  "cha": 10,
+  "skills": {
+    "arcana": "+5",
+    "athletics": "+18"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "28",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the Eriflamme fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The Eriflamme has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Eriflamme makes four Claw attacks. It can replace one of the attacks with a Bite attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +18 to hit, reach 15 ft., one target. 20 (3d6 + 10 damage) slashing damage plus 7 (2d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +18 to hit, reach 10 ft., one target. 24 (4d6 + 10 damage) piercing damage plus 33 (6d10 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Reform",
+      "entries": [
+        "All the Eriflamme's fire elementals vanish and the Eriflamme reappears in one of their spaces. The Eriflamme's hit points are equivalent to the combined hit points of the fire elementals."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Slam",
+      "entries": [
+        "The Eriflamme makes a Claw attack, which deals force damage instead of slashing damage if it hits."
+      ]
+    },
+    {
+      "name": "Fireglide",
+      "entries": [
+        "The Eriflamme moves up to half its speed. It can fly during this movement."
+      ]
+    },
+    {
+      "name": "Chomp (Costs 2 Actions)",
+      "entries": [
+        "The Eriflamme makes a Bite attack with advantage."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "blindsight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

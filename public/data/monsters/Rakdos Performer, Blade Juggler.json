@@ -1,0 +1,73 @@
+{
+  "name": "Rakdos Performer, Blade Juggler",
+  "source": "GGR",
+  "page": 249,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 40,
+    "climb": 30
+  },
+  "str": 13,
+  "dex": 17,
+  "con": 12,
+  "int": 10,
+  "wis": 8,
+  "cha": 15,
+  "skills": {
+    "acrobatics": "+7",
+    "performance": "+4"
+  },
+  "passive": 9,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Nimble",
+      "entries": [
+        "The performer can take the Disengage action as a bonus action on each of its turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The juggler makes three dagger attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

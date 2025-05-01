@@ -1,0 +1,117 @@
+{
+  "name": "Cradle of the Stone Scion",
+  "source": "BGG",
+  "page": 168,
+  "size": [
+    "G"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 455,
+  "speed": {
+    "walk": 40
+  },
+  "str": 26,
+  "dex": 15,
+  "con": 24,
+  "int": 11,
+  "wis": 18,
+  "cha": 10,
+  "skills": {},
+  "passive": 14,
+  "languages": [
+    "Giant",
+    "Primordial"
+  ],
+  "cr": "23",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Awakening of the Scion",
+      "entries": [
+        "The cradle is a container for the {@creature scion of Skoraeus|BGG}. When the cradle drops to 0 hit points, its body crumbles to dust. The scion instantly appears in the space the cradle occupied and uses the cradle's initiative count."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (5/Day)",
+      "entries": [
+        "If the cradle fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The cradle has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The cradle deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cradle makes two Slam or Spit Rock attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +15 to hit, reach 20 ft., one target. 30 (4d10 + 8 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Spit Rock",
+      "entries": [
+        "Ranged atk +15 to hit, range 120 ft., one target. 24 (3d10 + 8 damage) bludgeoning damage, and the target must succeed on a DC 23 Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Shattering Roar {@recharge 5}",
+      "entries": [
+        "The cradle lets out a painfully load roar. Each creature within 60 feet of the cradle must make a DC 23 Constitution saving throw. On a failed save, a creature takes 33 (6d10 damage) thunder damage and has the {@condition incapacitated} condition until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "tremorsense 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

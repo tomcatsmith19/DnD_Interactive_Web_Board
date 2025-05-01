@@ -1,0 +1,65 @@
+{
+  "name": "Trilobite",
+  "source": "PSX",
+  "page": 40,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 2,
+  "speed": {
+    "walk": 20,
+    "swim": 20
+  },
+  "str": 2,
+  "dex": 11,
+  "con": 10,
+  "int": 1,
+  "wis": 8,
+  "cha": 2,
+  "skills": {
+    "stealth": "+2"
+  },
+  "passive": 9,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The trilobite can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one target. 1 bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft."
+  ],
+  "environment": [
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

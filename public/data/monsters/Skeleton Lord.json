@@ -1,0 +1,96 @@
+{
+  "name": "Skeleton Lord",
+  "source": "MaBJoV",
+  "page": 149,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 14,
+  "con": 18,
+  "int": 18,
+  "wis": 12,
+  "cha": 12,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "all the languages it knew in life"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Fear Aura",
+      "entries": [
+        "Any creature hostile to the skeleton lord that starts its turn within 20 feet of the skeleton lord must make a {@dc 17} Wisdom saving throw, unless the skeleton lord is {@condition incapacitated}. On a failed save, the creature is {@condition frightened} until the start of its next turn. If a creature's saving throw is successful, then the creature is immune to the skeleton lord's Fear Aura for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The skeleton lord has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The skeleton lord's weapon attacks are magical and have a +3 bonus to attack and damage rolls (included in the attack)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skeleton lord makes three greatsword attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +12 to hit, reach 5 ft., one target. 16 (2d6 + 9 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "necrotic"
+  ],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

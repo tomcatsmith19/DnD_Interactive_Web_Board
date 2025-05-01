@@ -1,0 +1,92 @@
+{
+  "name": "Corpse Walker",
+  "source": "GHLoE",
+  "page": 103,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 13,
+  "con": 17,
+  "int": 6,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands languages it knew in life but can't speak"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Cursed Gaze",
+      "entries": [
+        "A humanoid that starts its turn within 30 ft. of and able to see the corpse walker must succeed on a {@dc 14} Charisma saving throw, provided the corpse walker isn't {@condition incapacitated}. On a failure, the humanoid is {@condition frightened} for 1 minute. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, with disadvantage if not averting its eyes from the corpse walker, ending the effect on itself on a success. A creature failing two of these saving throws becomes cursed with disturbing thoughts. Such a creature can't benefit from a short or long rest until the curse is removed. On a successful save, the target is immune to any corpse walker's Cursed Gaze for the next 24 hours.",
+        "Unless surprised, a creature can avert its eyes to avoid the saving throw. If the creature does so, it can't see the corpse walker until the start of its next turn. A creature that looks at the corpse walker in the meantime must immediately make the save."
+      ]
+    },
+    {
+      "name": "Sunlight Hypersensitivity",
+      "entries": [
+        "The corpse walker takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks."
+      ]
+    },
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the corpse walker to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the corpse walker drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The corpse walker makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) bludgeoning damage and 5 (2d4 damage) necrotic damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw, or its hit point maximum is reduced by an amount equal to the necrotic damage taken, and the corpse walker regains hit points equal to that amount. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. An evil humanoid slain this way rises 24 hours later as a corpse walker."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,138 @@
+{
+  "name": "Orc Claw of Luthic",
+  "source": "VGM",
+  "page": 183,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "orc"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 15,
+  "con": 16,
+  "int": 10,
+  "wis": 15,
+  "cha": 11,
+  "skills": {
+    "intimidation": "+2",
+    "medicine": "+4",
+    "survival": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The orc makes two claw attacks, or four claw attacks if it has fewer than half of its hit points remaining."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The orc is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). The orc has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "mending",
+            "resistance",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bane",
+            "cure wounds",
+            "guiding bolt"
+          ]
+        },
+        "2": {
+          "spells": [
+            "augury",
+            "warding bond"
+          ]
+        },
+        "3": {
+          "spells": [
+            "bestow curse",
+            "create food and water"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

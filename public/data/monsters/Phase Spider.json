@@ -1,0 +1,82 @@
+{
+  "name": "Phase Spider",
+  "source": "MM",
+  "page": 334,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 15,
+  "dex": 15,
+  "con": 12,
+  "int": 6,
+  "wis": 10,
+  "cha": 6,
+  "skills": {
+    "stealth": "+6"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Ethereal Jaunt",
+      "entries": [
+        "As a bonus action, the spider can magically shift from the Material Plane to the Ethereal Plane, or vice versa."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": [
+        "The spider ignores movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 7 (1d10 + 2 damage) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 18 (4d8 damage) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but {@condition poisoned} for 1 hour, even after regaining hit points, and is {@condition paralyzed} while {@condition poisoned} in this way."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "grassland",
+    "forest",
+    "hill",
+    "urban",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

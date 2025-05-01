@@ -1,0 +1,89 @@
+{
+  "name": "Skitterwidget",
+  "source": "CM",
+  "page": 136,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "18"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 18,
+  "int": 3,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Skitterwidget"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Lightning Absorption",
+      "entries": [
+        "Whenever the skitterwidget is subjected to lightning damage, it takes no damage and instead regains a number of hit points equal to the lightning damage dealt."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The skitterwidget doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skitterwidget makes two attacks: one with its bite and one with its tail."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage. If the target is a creature, it is {@condition grappled} by the skitterwidget (escape DC 13)."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage plus 10 (3d6 damage) lightning damage, and if the target is a creature, it must succeed on a DC 15 Constitution saving throw or be {@condition stunned} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened",
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

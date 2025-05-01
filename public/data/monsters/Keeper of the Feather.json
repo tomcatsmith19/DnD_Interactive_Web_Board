@@ -1,0 +1,153 @@
+{
+  "name": "Keeper of the Feather",
+  "source": "PSI",
+  "page": 40,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "shapechanger"
+  ],
+  "alignment": [],
+  "ac": [
+    "12"
+  ],
+  "hp": 31,
+  "speed": {
+    "walk": {
+      "number": 30,
+      "condition": "(fly 50 ft. in raven and hybrid forms)"
+    }
+  },
+  "str": 10,
+  "dex": 15,
+  "con": 11,
+  "int": 13,
+  "wis": 15,
+  "cha": 14,
+  "skills": {
+    "insight": "+4",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common (can't speak in raven form)"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The keeper can use its action to polymorph into a raven-humanoid hybrid or into a raven, or back into its human form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its human form if it dies."
+      ]
+    },
+    {
+      "name": "Mimicry",
+      "entries": [
+        "The keeper can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful {@dc 10} Wisdom (Insight) check."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The keeper regains 10 hit points at the start of its turn. If the keeper takes damage from a silvered weapon or a spell, this trait doesn't function at the start of the keeper's next turn. The keeper dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Human or Hybrid Form Only)",
+      "entries": [
+        "The keeper makes two weapon attacks, one of which can be with its hand crossbow."
+      ]
+    },
+    {
+      "name": "Beak (Raven or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 1 piercing damage in raven form, or 4 (1d4 + 2 damage) piercing damage in hybrid form. If the target is humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with keeper lycanthropy."
+      ]
+    },
+    {
+      "name": "Shortsword (Human or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hand Crossbow (Human or Hybrid Form Only)",
+      "entries": [
+        "Ranged atk +4 to hit, range 30/120 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The keeper is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). It has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "produce flame",
+            "shillelagh"
+          ]
+        },
+        "1": {
+          "spells": [
+            "entangle",
+            "longstrider",
+            "speak with animals",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "animal messenger",
+            "barkskin"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

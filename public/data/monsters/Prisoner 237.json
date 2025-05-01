@@ -1,0 +1,129 @@
+{
+  "name": "Prisoner 237",
+  "source": "IDRotF",
+  "page": 160,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": {
+      "number": 30,
+      "condition": "(10 ft. while shackled)"
+    }
+  },
+  "str": 9,
+  "dex": 13,
+  "con": 14,
+  "int": 17,
+  "wis": 10,
+  "cha": 15,
+  "skills": {
+    "arcana": "+5",
+    "deception": "+4",
+    "persuasion": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Infernal",
+    "Orc"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Shocking Grasp (Cantrip)",
+      "entries": [
+        "{@atk ms} +5 to hit (with advantage on the attack if the target is wearing armor made of metal), reach 5 ft., one creature. 9 (2d8 damage) lightning damage, and the target can't take reactions until the start of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Prisoner 237 is a 5th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 13}; {@hit 5} to hit with spell attacks). He has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "message",
+            "prestidigitation",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "mage armor",
+            "shield",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": [
+            "arcane lock",
+            "detect thoughts",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "footerEntries": [
+        "*Prisoner 237 needs material components to cast these spells."
+      ],
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,149 @@
+{
+  "name": "Faerie Dragon (Indigo)",
+  "source": "MM",
+  "page": 133,
+  "size": [
+    "T"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 14,
+  "speed": {
+    "walk": 10,
+    "fly": 60
+  },
+  "str": 3,
+  "dex": 20,
+  "con": 13,
+  "int": 14,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "arcana": "+4",
+    "perception": "+3",
+    "stealth": "+7"
+  },
+  "passive": 13,
+  "languages": [
+    "Draconic",
+    "Sylvan"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "The Colors of Age",
+      "entries": [
+        "A faerie dragon's scales change hue as it ages, moving through all the colors of the rainbow. All faerie dragons have innate spellcasting ability, gaining new spells as they mature.",
+        "Red\u00e2\u20ac\u201d5 years or less",
+        "Orange\u00e2\u20ac\u201d6\u00e2\u20ac\u201c10 years",
+        "Yellow\u00e2\u20ac\u201d11\u00e2\u20ac\u201c20 years",
+        "Green\u00e2\u20ac\u201d21\u00e2\u20ac\u201c30 years",
+        "Blue\u00e2\u20ac\u201d31\u00e2\u20ac\u201c40 years",
+        "Indigo\u00e2\u20ac\u201d41\u00e2\u20ac\u201c50 years",
+        "Violet\u00e2\u20ac\u201d51 years or more",
+        "A green or older faerie dragon's CR increases to 2."
+      ]
+    },
+    {
+      "name": "Superior Invisibility",
+      "entries": [
+        "As a bonus action, the dragon can magically turn {@condition invisible} until its {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment the dragon wears or carries is {@condition invisible} with it."
+      ]
+    },
+    {
+      "name": "Limited Telepathy",
+      "entries": [
+        "Using telepathy, the dragon can magically communicate with any other faerie dragon within 60 feet of it."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The faerie dragon has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 1 piercing damage."
+      ]
+    },
+    {
+      "name": "Euphoria Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a puff of euphoria gas at one creature within 5 feet of it. The target must succeed on a DC 11 Wisdom saving throw, or for 1 minute, the target can't take reactions and must roll a {@dice d6} at the start of each of its turns to determine its behavior during the turn:",
+        "1\u00e2\u20ac\u201c4. The target takes no action or bonus action and uses all of its movement to move in a random direction.",
+        "5\u00e2\u20ac\u201c6. The target doesn't move, and the only thing it can do on its turn is make a {@dc 11} Wisdom saving throw, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The dragon's innate spellcasting ability is Charisma (spell save {@dc 13}). It can innately cast a number of spells, requiring no material components:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

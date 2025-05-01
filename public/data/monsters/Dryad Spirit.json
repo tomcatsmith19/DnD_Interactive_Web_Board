@@ -1,0 +1,112 @@
+{
+  "name": "Dryad Spirit",
+  "source": "BGDIA",
+  "page": 108,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 1,
+  "dex": 14,
+  "con": 10,
+  "int": 12,
+  "wis": 11,
+  "cha": 17,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Detect Life",
+      "entries": [
+        "The dryad can magically sense the presence of living creatures up to 5 miles away that aren't undead or constructs. She knows the general direction they're in but not their exact locations."
+      ]
+    },
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The dryad can move through other creatures and objects as if they were {@quickref difficult terrain||3}. She takes 5 ({@damage 1d10}) force damage if she ends her turn inside an object."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Corrupting Touch",
+      "entries": [
+        "{@atk ms} +4 to hit, reach 5 ft., one target. 12 (3d6 + 2 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Horrifying Visage",
+      "entries": [
+        "Each non-undead creature within 60 feet of the dryad that can see her must succeed on a DC 13 Wisdom saving throw or be {@condition frightened} for 1 minute. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, with disadvantage if the dryad is within line of sight, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to the dryad's Horrifying Visage for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Wail (1/Day)",
+      "entries": [
+        "The dryad releases a mournful wail, provided that she isn't in sunlight. This wail has no effect on constructs and undead. All other creatures within 30 feet of her that can hear her must make a DC 13 Constitution saving throw. On a failure, a creature drops to 0 hit points. On a success, a creature takes 10 (3d6 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "acid",
+    "fire",
+    "lightning",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

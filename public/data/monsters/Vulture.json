@@ -1,0 +1,71 @@
+{
+  "name": "Vulture",
+  "source": "MM",
+  "page": 339,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 10,
+    "fly": 50
+  },
+  "str": 7,
+  "dex": 10,
+  "con": 13,
+  "int": 2,
+  "wis": 12,
+  "cha": 4,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Sight and Smell",
+      "entries": [
+        "The vulture has advantage on Wisdom ({@skill Perception}) checks that rely on sight or smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "hill",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

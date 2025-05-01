@@ -1,0 +1,95 @@
+{
+  "name": "Feyr",
+  "source": "BAM",
+  "page": 22,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 88,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 50,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 11,
+  "int": 14,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+9"
+  },
+  "passive": 15,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The feyr doesn't require air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The feyr makes one Frightful Bite attack and one Tentacle attack."
+      ]
+    },
+    {
+      "name": "Frightful Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 8 (1d10 + 3 damage) piercing damage, and each creature within 10 feet of the feyr that can see it must succeed on a DC 13 Wisdom saving throw or be {@condition frightened} of the feyr until the end of the feyr's next turn."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one creature. 17 (4d6 + 3 damage) psychic damage, and the target is {@condition grappled} (escape DC 13). Until this grapple ends, the feyr can't use this tentacle against other targets. The feyr has two tentacles, each of which can grapple one creature."
+      ]
+    },
+    {
+      "name": "Invisibility",
+      "entries": [
+        "The feyr becomes {@condition invisible} until it attacks, uses Nightmare Fuel, or uses a bonus action to become visible."
+      ]
+    },
+    {
+      "name": "Nightmare Fuel (1/Day)",
+      "entries": [
+        "The feyr targets one {@condition unconscious} creature it can see within 10 feet of itself. The target must succeed on a DC 13 Wisdom saving throw or take 27 (5d10 damage) psychic damage, and the feyr gains temporary hit points equal to the damage dealt."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

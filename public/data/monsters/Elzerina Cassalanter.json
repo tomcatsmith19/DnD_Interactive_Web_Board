@@ -1,0 +1,48 @@
+{
+  "name": "Elzerina Cassalanter",
+  "source": "WDH",
+  "page": 115,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 10,
+  "con": 10,
+  "int": 10,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "Unknown",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

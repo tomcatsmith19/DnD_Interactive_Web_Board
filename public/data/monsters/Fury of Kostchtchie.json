@@ -1,0 +1,97 @@
+{
+  "name": "Fury of Kostchtchie",
+  "source": "BGG",
+  "page": 148,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 216,
+  "speed": {
+    "walk": 40
+  },
+  "str": 26,
+  "dex": 10,
+  "con": 25,
+  "int": 10,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "athletics": "+13",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Abyssal",
+    "Giant"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Chilling Aura",
+      "entries": [
+        "A creature that starts its turn within 10 feet of the fury must succeed on a {@dc 20} Constitution saving throw or take 11 ({@damage 2d10}) cold damage."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The fury has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The fury makes two Fist or Rock attacks."
+      ]
+    },
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +13 to hit, reach 10 ft., one target. 17 (2d8 + 8 damage) bludgeoning damage plus 10 (3d6 damage) cold damage, or 17 (5d6 damage) cold damage if the target took damage from the fury's Chilling Aura since the end of the fury's last turn."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +13 to hit, range 60/240 ft., one target. 30 (4d10 + 8 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "fire",
+    "lightning",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

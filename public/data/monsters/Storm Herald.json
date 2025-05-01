@@ -1,0 +1,159 @@
+{
+  "name": "Storm Herald",
+  "source": "BGG",
+  "page": 183,
+  "size": [
+    "H"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 287,
+  "speed": {
+    "walk": 50,
+    "swim": 100
+  },
+  "str": 27,
+  "dex": 14,
+  "con": 22,
+  "int": 24,
+  "wis": 18,
+  "cha": 18,
+  "skills": {
+    "arcana": "+13",
+    "deception": "+10",
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "Common",
+    "Giant",
+    "telepathy 120 ft."
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The herald can breathe air and water."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The herald has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The herald makes one Claw attack, one Tentacles attack, and one Trident attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +14 to hit, reach 10 ft., one target. 18 (3d6 + 8 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +14 to hit, reach 10 ft., one target. 21 (3d8 + 8 damage) bludgeoning damage. If the target is a Large or smaller creature, it has the {@condition grappled} condition (escape DC 18). It also has the {@condition restrained} condition and takes 16 (3d10 damage) psychic damage at the start of each of its turns until this grapple ends. The herald can have only one creature {@condition grappled} this way at a time."
+      ]
+    },
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee atk +14 to hit, reach 10 ft., one target. 18 (3d6 + 8 damage) piercing damage or 21 (3d8 + 8 damage) piercing damage if used with two hands, plus 13 (3d8 damage) lightning damage."
+      ]
+    },
+    {
+      "name": "Psychic Wave {@recharge}",
+      "entries": [
+        "The herald unleashes a blast of psionic energy into the minds of up to three creatures it can see within 90 feet of itself. Each target must make a DC 21 Intelligence saving throw. On a failed save, a target takes 23 (3d10 + 7 damage) psychic damage and has the {@condition stunned} condition for 1 minute. On a successful save, a target takes half as much damage only. An affected creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+        "If a creature is reduced to 0 hit points by this psychic damage, it dies and its head explodes if it has one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The herald casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 21}):"
+      ],
+      "will": [
+        "detect magic",
+        "detect thoughts",
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "cold",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "thunder"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

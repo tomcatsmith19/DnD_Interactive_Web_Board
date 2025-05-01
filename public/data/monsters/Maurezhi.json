@@ -1,0 +1,110 @@
+{
+  "name": "Maurezhi",
+  "source": "MTF",
+  "page": 133,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 88,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 17,
+  "con": 12,
+  "int": 11,
+  "wis": 12,
+  "cha": 15,
+  "skills": {
+    "deception": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Abyssal",
+    "Elvish",
+    "telepathy 120 ft."
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Assume Form",
+      "entries": [
+        "The maurezhi can assume the appearance of any Medium humanoid it has eaten. It remains in this form for {@dice 1d6} days, during which time the form gradually decays until, when the effect ends, the form sloughs from the demon's body."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The maurezhi has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The maurezhi makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 14 (2d10 + 3 damage) piercing damage. If the target is a humanoid, its Charisma score is reduced by {@dice 1d4}. This reduction lasts until the target finishes a short or long rest. The target dies if this reduces its Charisma to 0. It rises 24 hours later as a ghoul, unless it has been revived or its corpse has been destroyed."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 12 (2d8 + 3 damage) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 12 Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Raise Ghoul {@recharge 5}",
+      "entries": [
+        "The maurezhi targets one dead ghoul or ghast it can see within 30 feet of it. The target is revived with all its hit points."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "swamp",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

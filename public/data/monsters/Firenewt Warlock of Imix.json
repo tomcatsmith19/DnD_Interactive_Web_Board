@@ -1,0 +1,129 @@
+{
+  "name": "Firenewt Warlock of Imix",
+  "source": "VGM",
+  "page": 143,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "firenewt"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "10",
+    "13"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 11,
+  "con": 12,
+  "int": 9,
+  "wis": 11,
+  "cha": 14,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Draconic",
+    "Ignan"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The firenewt can breathe air and water."
+      ]
+    },
+    {
+      "name": "Imix's Blessing",
+      "entries": [
+        "When the firenewt reduces an enemy to 0 hit points, the firenewt gains 5 temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The firenewt's innate spellcasting ability is Charisma. It can innately cast {@spell mage armor} (self only) at will, requiring no material components."
+      ],
+      "will": [
+        "mage armor"
+      ],
+      "ability": "cha",
+      "hidden": [
+        "will"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "darkvision 120 ft. (penetrates magical darkness)"
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "hill",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

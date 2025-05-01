@@ -1,0 +1,147 @@
+{
+  "name": "Sahuagin Warlock of Uk'otoa",
+  "source": "EGW",
+  "page": 297,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "sahuagin"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "swim": 40
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 11,
+  "int": 8,
+  "wis": 8,
+  "cha": 16,
+  "skills": {
+    "arcana": "+1",
+    "persuasion": "+5"
+  },
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Sahuagin"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "The warlock has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Limited Amphibiousness",
+      "entries": [
+        "The warlock can breathe air and water, but it needs to be submerged at least once every 4 hours to avoid suffocating."
+      ]
+    },
+    {
+      "name": "Shark Telepathy",
+      "entries": [
+        "The warlock can magically command any shark within 120 feet of it, using a limited telepathy."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The warlock makes two attacks: one with its bite and one with its Sword of Fathoms."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Sword of Fathoms",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (1d10 + 2 damage) slashing damage, and if the target is a creature, it must succeed on a DC 13 Constitution saving throw or begin choking. The choking creature is {@condition incapacitated} until the end of its next turn, when the effect ends on it."
+      ]
+    },
+    {
+      "name": "Eldritch Blast (Cantrip)",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 120 ft., one creature. 5 (1d10 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The warlock's innate spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "eldritch blast",
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

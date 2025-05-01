@@ -1,0 +1,88 @@
+{
+  "name": "Winter Wolf",
+  "source": "MM",
+  "page": 340,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 50
+  },
+  "str": 18,
+  "dex": 13,
+  "con": 14,
+  "int": 7,
+  "wis": 12,
+  "cha": 8,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+3"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Giant",
+    "Winter Wolf"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The wolf has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Snow Camouflage",
+      "entries": [
+        "The wolf has advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Cold Breath {@recharge 5}",
+      "entries": [
+        "The wolf exhales a blast of freezing wind in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 18 (4d8 damage) cold damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [],
+  "environment": [
+    "arctic"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

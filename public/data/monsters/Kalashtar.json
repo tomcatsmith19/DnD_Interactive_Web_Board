@@ -1,0 +1,75 @@
+{
+  "name": "Kalashtar",
+  "source": "ERLW",
+  "page": 317,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "kalashtar"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 12,
+  "int": 13,
+  "wis": 15,
+  "cha": 15,
+  "skills": {
+    "acrobatics": "+4",
+    "insight": "+4",
+    "persuasion": "+6"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "telepathy 20 ft."
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dual Mind",
+      "entries": [
+        "The kalashtar has advantage on Wisdom saving throws."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Mind Thrust",
+      "entries": [
+        "The kalashtar targets a creature it can see within 30 feet of it. The target must succeed on a DC 12 Wisdom saving throw or take 11 (2d10 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

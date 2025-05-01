@@ -1,0 +1,148 @@
+{
+  "name": "Bebilith",
+  "source": "MaBJoV",
+  "page": 133,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 189,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 16,
+  "dex": 22,
+  "con": 18,
+  "int": 11,
+  "wis": 13,
+  "cha": 8,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+10"
+  },
+  "passive": 15,
+  "languages": [
+    "understands Abyssal but only speaks telepathically to its own kind"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Relentless Hunter",
+      "entries": [
+        "The bebilith may use a bonus action to mark prey that it has damaged. Only one creature can be marked at a time. The bebilith always knows the exact location of the marked prey on the current plane of existence, cannot be {@quickref Surprise|PHB|3|0|surprised} by it, and has advantage on all attack rolls against it."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The bebilith can climb difficult surfaces, including upside down, without needing to make an ability check and ignores any movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Bebilith uses {@condition poisoned} web if it can and then makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (1d12 + 3 damage) piercing damage plus 21 (6d6 damage) poison damage. Any creature that drops to zero hit points because it has been bit by the bebilith lights on fire and suffers 7 (2d6 damage) fire damage each round until healing is applied to them."
+      ]
+    },
+    {
+      "name": "Foreleg",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 12 (2d8 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Poisoned Web {@recharge 5}",
+      "entries": [
+        "Ranged atk +10 to hit, range 30/60 ft., one creature. 36 (8d8 damage) poison damage, and the target is {@condition restrained} by webbing. While {@condition restrained}, the target takes 9 (2d8 damage) poison damage at the start of each of its turns and the target may then make a DC 17 Strength check to free itself from the webbing. Unlike normal webs, fire cannot burn a bebilith's webbing but if used will ignite the web inflicting an additional 3 (1d6 damage) fire damage to trapped targets."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The bebilith can innately cast the following spell, requiring no material components:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

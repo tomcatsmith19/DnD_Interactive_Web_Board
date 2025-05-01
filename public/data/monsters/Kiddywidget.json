@@ -1,0 +1,83 @@
+{
+  "name": "Kiddywidget",
+  "source": "CM",
+  "page": 136,
+  "size": [
+    "S"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "16"
+  ],
+  "hp": 15,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 6,
+  "dex": 14,
+  "con": 18,
+  "int": 1,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Skitterwidget"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The kiddywidget doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The kiddywidget makes two attacks: one with its bite and one with its tail."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage. If the target is a creature, it is {@condition grappled} by the kiddywidget (escape DC 8)."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage plus 2 (1d4 damage) lightning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened",
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

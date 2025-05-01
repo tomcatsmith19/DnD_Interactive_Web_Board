@@ -1,0 +1,71 @@
+{
+  "name": "Athar Null",
+  "source": "MPP",
+  "page": 53,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 14,
+  "int": 15,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "investigation": "+8",
+    "perception": "+5",
+    "stealth": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "Common plus two more languages"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Avoidance",
+      "entries": [
+        "If the null is subjected to an effect that allows it to make a saving throw to take half as much damage, it instead takes no damage if it succeeds on the saving throw, and half as much damage if it fails."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The null makes two Force Dagger attacks."
+      ]
+    },
+    {
+      "name": "Force Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage plus 13 (3d8 damage) force damage. Hit or Miss: The dagger magically returns to the null's hand immediately after a ranged attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

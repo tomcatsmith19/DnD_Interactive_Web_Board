@@ -1,0 +1,99 @@
+{
+  "name": "Ettin Ceremorph",
+  "source": "BGG",
+  "page": 133,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 18,
+  "int": 18,
+  "wis": 15,
+  "cha": 14,
+  "skills": {
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Deep Speech",
+    "Giant",
+    "telepathy 60 ft.",
+    "Undercommon"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The ceremorph has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ceremorph makes one Slam attack and one Tentacles attack. The ceremorph can replace one of the attacks with a Mind Bolt attack, if available."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 22 (4d8 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one creature. 15 (2d10 + 4 damage) psychic damage. If the target is Large or smaller, it has the {@condition grappled} condition (escape DC 14) and must succeed on a DC 15 Intelligence saving throw or have the {@condition stunned} condition until this grapple ends."
+      ]
+    },
+    {
+      "name": "Extract Brain",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one {@condition incapacitated} Humanoid {@condition grappled} by the ceremorph. 55 (10d10 damage) piercing damage. If this damage reduces the target to 0 hit points, the ceremorph kills the target by extracting and devouring its brain."
+      ]
+    },
+    {
+      "name": "Mind Bolt (3/Day)",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 120 ft., one creature. 17 (2d12 + 4 damage) psychic damage, and the target must succeed on a DC 15 Intelligence saving throw or have the {@condition stunned} condition until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "stunned",
+    "unconscious"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,94 @@
+{
+  "name": "Scream Thief",
+  "source": "GHLoE",
+  "page": 14,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 6,
+  "dex": 15,
+  "con": 14,
+  "int": 10,
+  "wis": 12,
+  "cha": 12,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "languages it knew in life"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The scream thief can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Life Drain",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 18 (4d8 damage) necrotic damage. The target must succeed on a DC 12 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
+      ]
+    },
+    {
+      "name": "Silence the Living {@recharge 5}",
+      "entries": [
+        "The scream thief forces a humanoid within 30 feet of it to make a DC13 Wisdom saving throw. On a failure, the target takes 19 (3d12 damage) psychic damage, is {@condition frightened}, and is unable to vocalize a sound of any kind. The target may repeat the saving throw at the end of its turns to end these effects. On a success the creature takes half as much damage and is not {@condition frightened} or silenced."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

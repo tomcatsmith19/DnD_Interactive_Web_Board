@@ -1,0 +1,67 @@
+{
+  "name": "Winged Lion",
+  "source": "MOT",
+  "page": 214,
+  "size": [
+    "L"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 114,
+  "speed": {
+    "walk": 60,
+    "fly": 60
+  },
+  "str": 20,
+  "dex": 16,
+  "con": 18,
+  "int": 6,
+  "wis": 14,
+  "cha": 5,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "understands Celestial but can't speak"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Pounce",
+      "entries": [
+        "If the lion moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 15} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the lion can make one bite attack against it as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 16 (2d10 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

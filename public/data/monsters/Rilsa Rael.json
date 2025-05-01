@@ -1,0 +1,94 @@
+{
+  "name": "Rilsa Rael",
+  "source": "BGDIA",
+  "page": 199,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 18,
+  "con": 14,
+  "int": 10,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "acrobatics": "+6",
+    "athletics": "+4",
+    "deception": "+4",
+    "perception": "+2",
+    "sleight of hand": "+6",
+    "stealth": "+6"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Thieves' cant"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cunning Action",
+      "entries": [
+        "On each of her turns in combat, Rilsa can use a bonus action to take the Dash, Disengage, or Hide action."
+      ]
+    },
+    {
+      "name": "Focus",
+      "entries": [
+        "If Rilsa damages a creature with a weapon attack, she gains advantage on attack rolls against that target until the end of her next turn."
+      ]
+    },
+    {
+      "name": "Tactical Leadership",
+      "entries": [
+        "As a bonus action, Rilsa chooses one creature she can see within 30 feet of her. The creature doesn't provoke opportunity attacks until the end of its next turn, provided it can hear Rilsa's commands."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Rilsa makes three weapon attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d4 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

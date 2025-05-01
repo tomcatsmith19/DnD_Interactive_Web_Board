@@ -1,0 +1,135 @@
+{
+  "name": "Githyanki Supreme Commander",
+  "source": "MTF",
+  "page": 206,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gith"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 187,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 17,
+  "con": 18,
+  "int": 16,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "insight": "+8",
+    "intimidation": "+9",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Gith"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The githyanki makes two greatsword attacks."
+      ]
+    },
+    {
+      "name": "Silver Greatsword",
+      "entries": [
+        "Melee atk +12 to hit, reach 5 ft., one target. 14 (2d6 + 7 damage) slashing damage plus 17 (5d6 damage) psychic damage. On a critical hit against a target in an astral body (as with the {@spell astral projection} spell), the githyanki can cut the silvery cord that tethers the target to its material body, instead of dealing damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack (2 Actions)",
+      "entries": [
+        "The githyanki makes a greatsword attack."
+      ]
+    },
+    {
+      "name": "Command Ally",
+      "entries": [
+        "The githyanki targets one ally it can see within 30 feet of it. If the target can see or hear the githyanki, the target can make one melee weapon attack using its reaction and has advantage on the attack roll."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The githyanki magically teleports, along with any equipment it is wearing and carrying, to an unoccupied space it can see within 30 feet of it. It also becomes insubstantial until the start of its next turn. While insubstantial, it can move through other creatures and objects as if they were {@quickref difficult terrain||3}. If it ends its turn inside an object, it takes 16 ({@damage 3d10}) force damage and is moved to the nearest unoccupied space."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The githyanki's innate spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). It can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "desert",
+    "mountain",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

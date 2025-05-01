@@ -1,0 +1,89 @@
+{
+  "name": "Vitebriate",
+  "source": "GHLoE",
+  "page": 21,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 16,
+  "int": 12,
+  "wis": 12,
+  "cha": 16,
+  "skills": {},
+  "passive": 20,
+  "languages": [
+    "languages it knew previously"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unnatural Life",
+      "entries": [
+        "Vitebriates are immune to the effects of old age and death by natural causes."
+      ]
+    },
+    {
+      "name": "Vitebriance",
+      "entries": [
+        "While on the same plane of existence as a person {@condition charmed} by the vitebriate's Dominate Person action, the vitebriate may leech 1 hp per day permanently from the thrall. When a thrall is reduced to 0 hp through this process, it is killed. Drained hit points are regained after 7 days of rest."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The vitebriate makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one creature. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Dominate Person",
+      "entries": [
+        "A vitebriate can target a single humanoid with dominate person as the spell, with the following differences: once the vitebriate has chosen the target, it can use this ability only on the chosen target (until the next day when it can choose a different target and drop the focus on the current target). The spell does not require {@status concentration} but is broken if the vitebriate is knocked {@condition unconscious} involuntarily or killed (though not if it trances or sleeps). If the person has been {@condition charmed} for at least an hour, damage does not force a new saving throw."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

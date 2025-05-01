@@ -1,0 +1,159 @@
+{
+  "name": "Nellik",
+  "source": "PaBTSO",
+  "page": 193,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "yugoloth"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 123,
+  "speed": {
+    "walk": 40,
+    "fly": 60
+  },
+  "str": 20,
+  "dex": 11,
+  "con": 19,
+  "int": 12,
+  "wis": 10,
+  "cha": 15,
+  "skills": {
+    "intimidation": "+6",
+    "perception": "+4",
+    "stealth": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The nycaloth has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The nycaloth's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The nycaloth makes two melee attacks, or it makes one melee attack and teleports before or after the attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or take 5 (2d4 damage) slashing damage at the start of each of its turns due to a fiendish wound. Each time Nellik hits the wounded target with this attack, the damage dealt by the wound increases by 5 ({@dice 2d4}). Any creature can take an action to stanch the wound with a successful DC 13 Wisdom (Medicine) check. The wound also closes if the target receives magical healing."
+      ]
+    },
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 18 (2d12 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The nycaloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The nycaloth's innate spellcasting ability is Charisma. The nycaloth can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "darkness",
+        "detect magic",
+        "dispel magic",
+        "invisibility",
+        "mirror image"
+      ],
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

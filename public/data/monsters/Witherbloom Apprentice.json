@@ -1,0 +1,121 @@
+{
+  "name": "Witherbloom Apprentice",
+  "source": "SCC",
+  "page": 221,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "druid"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 13,
+  "int": 12,
+  "wis": 15,
+  "cha": 11,
+  "skills": {
+    "medicine": "+4",
+    "nature": "+5",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common plus any two languages"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The apprentice regains 5 hit points at the start of its turn if it has at least 1 hit point."
+      ]
+    },
+    {
+      "name": "Verdant Talisman",
+      "entries": [
+        "At the end of a 10-minute ritual, the apprentice can touch one willing creature (including itself) and bestow upon it a small talisman imbued with magic. Upon receiving the talisman, the creature gains 10 temporary hit points, and it can add {@dice 1d6} to its initiative rolls while it wears the talisman. These benefits last for 1 hour or until the apprentice conducts another ritual to bestow another talisman. When the benefits expire, the talisman crumbles to dust."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Briar Vine",
+      "entries": [
+        "{@atk ms} +4 to hit, reach 15 ft., one target. 7 (1d10 + 2 damage) piercing damage plus 9 (2d8 damage) poison damage. If the target is a Large or smaller creature, the apprentice can pull it up to 10 feet closer to itself."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The apprentice casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability:"
+      ],
+      "will": [
+        "druidcraft",
+        "spare the dying"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,101 @@
+{
+  "name": "Mjork Sootling Swarm",
+  "source": "GHLoE",
+  "page": 72,
+  "size": [
+    "M"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 25
+  },
+  "str": 9,
+  "dex": 15,
+  "con": 12,
+  "int": 4,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Ignan and Terran but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hot Soot",
+      "entries": [
+        "A creature that ends its turn in the sootling swarm's space takes 5 ({@damage 2d4}) fire damage, or 2 ({@damage 1d4}) fire damage if the swarm has half of its hit points or fewer. The creature must also succeed on a {@dc 11} Constitution saving throw or be {@condition blinded} and unable to breathe until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Smoke Sense",
+      "entries": [
+        "A sootling swarm in contact with smoke has blindsight in that smoke's area in a radius of up to 120 feet."
+      ]
+    },
+    {
+      "name": "Swarm",
+      "entries": [
+        "The sootling swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny creature. The swarm can't regain hit points or gain temporary hit points"
+      ]
+    },
+    {
+      "name": "Water Susceptibility",
+      "entries": [
+        "For every 5 feet the sootling swarm moves in water, or for every gallon of water splashed on it, it takes 2 cold damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Burns",
+      "entries": [
+        "Melee atk +4 to hit, reach 0 ft., one target in the swarm's space. 10 (4d4 damage) fire damage, or 5 (2d4 damage) fire damage if the swarm has half of its hit points or fewer."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "thunder"
+  ],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

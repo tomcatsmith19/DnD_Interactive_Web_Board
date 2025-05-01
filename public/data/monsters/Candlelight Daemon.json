@@ -1,0 +1,177 @@
+{
+  "name": "Candlelight Daemon",
+  "source": "GHLoE",
+  "page": 25,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 170,
+  "speed": {
+    "walk": 50,
+    "fly": 50
+  },
+  "str": 16,
+  "dex": 17,
+  "con": 18,
+  "int": 12,
+  "wis": 14,
+  "cha": 17,
+  "skills": {
+    "deception": "+7",
+    "insight": "+6",
+    "investigation": "+5",
+    "perception": "+6",
+    "stealth": "+7"
+  },
+  "passive": 16,
+  "languages": [
+    "Infernal"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Candle Dependence",
+      "entries": [
+        "The daemon remains on the Material Plane only while the candle that summoned it burns."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The daemon has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Nether Step",
+      "entries": [
+        "As its movement for its turn, the candlelight daemon can teleport to an unoccupied space within 30 feet of it, provided the space it's teleporting to and from are both in dim light or darkness. The daemon doesn't need to see the destination."
+      ]
+    },
+    {
+      "name": "Shadow Stealth",
+      "entries": [
+        "While in dim light or darkness, the daemon can take the Hide action as a bonus action."
+      ]
+    },
+    {
+      "name": "Slayer's Advantage",
+      "entries": [
+        "The candlelight daemon has advantage on attack rolls against any creature that hasn't had a turn in combat."
+      ]
+    },
+    {
+      "name": "Slayer's Attack (1/Turn)",
+      "entries": [
+        "The candlelight daemon deals an extra 35 {@damage 10d6} damage when it hits a target with an attack and has advantage on the attack roll. With the {@spell suffocate|GHLoE} spell, the daemon deals this damage as extra bludgeoning damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The daemon makes two claw attacks and one gore attack. It can use hurl fire in place of any of these attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage and 4 (1d8 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 12 (2d8 + 3 damage) piercing damage and 4 (1d8 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Hurl Fire",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 120 ft., one target. 13 (3d8 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The daemon's spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). The daemon can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "detect magic",
+        "hunter sense|GHLoE",
+        "knock"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

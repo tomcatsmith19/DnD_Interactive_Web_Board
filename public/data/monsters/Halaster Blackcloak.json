@@ -1,0 +1,209 @@
+{
+  "name": "Halaster Blackcloak",
+  "source": "WDMM",
+  "page": 310,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14",
+    "17"
+  ],
+  "hp": 246,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 18,
+  "con": 18,
+  "int": 24,
+  "wis": 18,
+  "cha": 18,
+  "skills": {
+    "arcana": "+21",
+    "history": "+21",
+    "perception": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "Abyssal",
+    "Celestial",
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Elvish",
+    "Infernal",
+    "Undercommon"
+  ],
+  "cr": "23",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Halaster wears a robe of eyes that lets him see in all directions, gives him darkvision out to a range of 120 feet, grants advantage on Wisdom (Perception) checks that rely on sight, and allows him to see {@condition invisible} creatures and objects, as well as into the Ethereal Plane, out to a range of 120 feet.",
+        "Halaster wields a blast scepter (a very rare magic item that requires attunement). It can be used as an arcane focus. Whoever is attuned to the blast scepter gains resistance to fire and lightning damage and can, as an action, use it to cast {@spell thunderwave} as a 4th-level spell (save {@dc 16}) without expending a spell slot.",
+        "Halaster also wears a horned ring (a very rare magic item that requires attunement), which allows an attuned wearer to ignore Undermountain's magical restrictions (see \"Alterations to Magic\")."
+      ]
+    },
+    {
+      "name": "Arcane Recovery (1/Day)",
+      "entries": [
+        "When he finishes a short rest, Halaster recovers all his spell slots of 5th level and lower."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Halaster fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If Halaster dies in Undermountain, he revives after {@dice 1d10} days, with all his hit points and any missing body parts restored. His new body appears in a random safe location in Undermountain."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Blast Scepter",
+      "entries": [
+        "Halaster uses his blast scepter to cast {@spell thunderwave} as a 4th-level spell. Each creature in a 15-foot cube originating from him must make a DC 16 Constitution saving throw. On a failed save, a creature takes {@dice 5d8} thunder damage and is pushed 10 feet away. On a successful save, the creature takes half as much damage and isn't pushed"
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Cast Spell",
+      "entries": [
+        "Halaster casts a spell of 3rd level or lower."
+      ]
+    },
+    {
+      "name": "Spell Ward (Costs 2 Actions)",
+      "entries": [
+        "Halaster expends a spell slot of 4th level or lower and gains 5 temporary hit points per level of the slot."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Halaster is a 20th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 22}, {@hit 14} to hit with spell attacks). He can cast {@spell disguise self} and {@spell invisibility} at will. He can cast {@spell fly} and {@spell lightning bolt} once each without expending a spell slot, but can't do so again until he finishes a short or long rest. Halaster has the following wizard spells prepared:"
+      ],
+      "will": [
+        "disguise self",
+        "invisibility"
+      ],
+      "daily": {
+        "1": [
+          "fly",
+          "lightning bolt"
+        ]
+      },
+      "spells": {
+        "0": {
+          "spells": [
+            "dancing lights",
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation"
+          ]
+        },
+        "1": {
+          "spells": [
+            "mage armor",
+            "magic missile",
+            "shield",
+            "silent image"
+          ]
+        },
+        "2": {
+          "spells": [
+            "arcane lock",
+            "cloud of daggers",
+            "darkvision",
+            "knock"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "dispel magic",
+            "fireball"
+          ]
+        },
+        "4": {
+          "spells": [
+            "confusion",
+            "hallucinatory terrain",
+            "polymorph"
+          ]
+        },
+        "5": {
+          "spells": [
+            "Bigby's hand",
+            "geas",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": [
+            "chain lightning",
+            "globe of invulnerability",
+            "programmed illusion"
+          ]
+        },
+        "7": {
+          "spells": [
+            "finger of death",
+            "symbol",
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": [
+            "maze",
+            "mind blank"
+          ]
+        },
+        "9": {
+          "spells": [
+            "meteor swarm",
+            "wish"
+          ]
+        }
+      },
+      "ability": "int",
+      "hidden": [
+        "will",
+        "daily"
+      ]
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

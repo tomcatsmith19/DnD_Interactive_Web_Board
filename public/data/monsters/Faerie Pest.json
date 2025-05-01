@@ -1,0 +1,114 @@
+{
+  "name": "Faerie Pest",
+  "source": "MCV4EC",
+  "page": null,
+  "size": [
+    "S"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 8,
+  "dex": 16,
+  "con": 12,
+  "int": 10,
+  "wis": 12,
+  "cha": 14,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+7"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Stingblade",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage plus 5 (2d4 damage) poison damage. If the faerie had advantage on the attack roll, the target takes an additional 3 (1d6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Theft of Nerves (1/Day)",
+      "entries": [
+        "The faerie unleashes a burst of mind-muddling magic in a 15-foot cone. Each creature in that area must succeed on a DC 12 Intelligence saving throw or have the {@condition frightened} condition for 1 minute. A {@condition frightened} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 12}):"
+      ],
+      "daily": {
+        "1": [
+          "blindness/deafness"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

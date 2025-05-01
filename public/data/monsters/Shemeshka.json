@@ -1,0 +1,169 @@
+{
+  "name": "Shemeshka",
+  "source": "MPP",
+  "page": 46,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "yugoloth"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 162,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 20,
+  "dex": 14,
+  "con": 14,
+  "int": 21,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "deception": "+9",
+    "insight": "+8",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Legendary Resistance (4/Day)",
+      "entries": [
+        "If Shemeshka fails a saving throw, she can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Shemeshka has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Shemeshka carries a magic crown called the Razorvine Tiara. In the hands of anyone other than Shemeshka, the Razorvine Tiara functions as a tentacle rod that deals slashing damage instead of bludgeoning damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Shemeshka uses Arcane Flux or Spellcasting. She then makes one Claw attack or one attack with her Razorvine Tiara."
+      ]
+    },
+    {
+      "name": "Arcane Flux",
+      "entries": [
+        "Shemeshka causes a surge of arcane energy to burst around one creature she can see within 120 feet of herself. The target must make a DC 18 Dexterity saving throw. On a failed save, the target takes 45 (7d12 damage) force damage and has the {@condition incapacitated} condition until the end of its next turn. On a successful save, the target takes half as much damage only."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 10 (2d4 + 5 damage) slashing damage plus 14 (4d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Razorvine Tiara",
+      "entries": [
+        "Melee atk +10 to hit, reach 15 ft., one target. 10 (3d6 damage) slashing damage plus 9 (2d8 damage) necrotic damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw, or its speed is halved and it has disadvantage on attack rolls and saving throws until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Shemeshka casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 18}):"
+      ],
+      "will": [
+        "alter self",
+        "darkness",
+        "invisibility",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

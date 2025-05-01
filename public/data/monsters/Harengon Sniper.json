@@ -1,0 +1,71 @@
+{
+  "name": "Harengon Sniper",
+  "source": "WBtW",
+  "page": 235,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 17,
+  "con": 11,
+  "int": 10,
+  "wis": 13,
+  "cha": 10,
+  "skills": {
+    "athletics": "+2",
+    "perception": "+5",
+    "stealth": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The harengon's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Light Crossbow",
+      "entries": [
+        "Ranged atk +5 to hit (the target gains no benefit from less than total cover), range 320 ft., one target. 7 (1d8 + 3 damage) piercing damage. Hit or Miss: Immediately after making this attack, the harengon can use the Hide action."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

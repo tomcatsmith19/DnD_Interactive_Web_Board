@@ -1,0 +1,62 @@
+{
+  "name": "Delerium Dreg",
+  "source": "DoDk",
+  "page": 199,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 13,
+  "con": 11,
+  "int": 7,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Misty Camouflage",
+      "entries": [
+        "A delerium dreg has advantage on Dexterity (Stealth) checks to hide in any area obscured by mist or fog."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d6 + 2 damage) piercing damage, or 6 (1d8 + 2 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

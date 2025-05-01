@@ -1,0 +1,136 @@
+{
+  "name": "Barnibus Blastwind",
+  "source": "WDH",
+  "page": 195,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "10",
+    "13"
+  ],
+  "hp": 24,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 10,
+  "con": 9,
+  "int": 17,
+  "wis": 15,
+  "cha": 11,
+  "skills": {
+    "arcana": "+5",
+    "insight": "+6",
+    "investigation": "+7",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Halfling"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Barnibus carries a {@item wand of magic detection}. (spell included in spell list below but does not use a slot when cast from the wand)"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +2 to hit, reach 5 ft. or range 20/60 ft., one target. 2 (1d4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Barnibus is a 7th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 13}, {@hit 5} to hit with spell attacks) He has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "blade ward",
+            "light",
+            "mage hand",
+            "message"
+          ]
+        },
+        "1": {
+          "spells": [
+            "comprehend languages",
+            "identify",
+            "detect magic",
+            "mage armor",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "clairvoyance",
+            "sending"
+          ]
+        },
+        "4": {
+          "spells": [
+            "locate creature",
+            "Otiluke's resilient sphere"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

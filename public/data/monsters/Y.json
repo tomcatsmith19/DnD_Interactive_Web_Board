@@ -1,0 +1,97 @@
+{
+  "name": "Y",
+  "source": "OotA",
+  "page": 29,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [],
+  "hp": 49,
+  "speed": {},
+  "str": 10,
+  "dex": 10,
+  "con": 10,
+  "int": 18,
+  "wis": 10,
+  "cha": 14,
+  "skills": {},
+  "passive": null,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The derro savant is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 12}, {@hit 4} to hit with spell attacks). The derro knows the following sorcerer spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "acid splash",
+            "mage hand",
+            "message",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "burning hands",
+            "chromatic orb",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": [
+            "invisibility",
+            "spider climb"
+          ]
+        },
+        "3": {
+          "spells": [
+            "blink",
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

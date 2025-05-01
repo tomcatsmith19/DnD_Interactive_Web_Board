@@ -1,0 +1,131 @@
+{
+  "name": "Elizar Dryflagon",
+  "source": "PotA",
+  "page": 202,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 71,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 15,
+  "con": 14,
+  "int": 11,
+  "wis": 18,
+  "cha": 10,
+  "skills": {
+    "arcana": "+3",
+    "deception": "+3"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Druidic"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Summon Mephits (Recharges after a Long Rest)",
+      "entries": [
+        "By puffing on his pipe, Elizar can use an action to cast {@spell conjure minor elementals}. If he does so, he summons four smoke mephits."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger +1",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Elizar is a 7th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Elizar has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "guidance",
+            "poison spray",
+            "produce flame"
+          ]
+        },
+        "1": {
+          "spells": [
+            "animal friendship",
+            "faerie fire",
+            "healing word",
+            "jump",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "flame blade",
+            "spike growth"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "stinking cloud"
+          ]
+        },
+        "4": {
+          "spells": [
+            "blight",
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

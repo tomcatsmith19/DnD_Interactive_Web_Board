@@ -1,0 +1,118 @@
+{
+  "name": "Duergar Spy",
+  "source": "TftYP",
+  "page": 234,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 25
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 12,
+  "int": 12,
+  "wis": 10,
+  "cha": 13,
+  "skills": {
+    "deception": "+5",
+    "insight": "+2",
+    "investigation": "+5",
+    "perception": "+4",
+    "persuasion": "+3",
+    "sleight of hand": "+5",
+    "stealth": "+7"
+  },
+  "passive": 14,
+  "languages": [
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cunning Action",
+      "entries": [
+        "On each of its turns, the spy can use a bonus action to take the Dash, Disengage, or Hide action."
+      ]
+    },
+    {
+      "name": "Duergar Resilience",
+      "entries": [
+        "The spy has advantage on saving throws against poison, spells, and illusions, as well as to resist being {@condition charmed} or {@condition paralyzed}."
+      ]
+    },
+    {
+      "name": "Sneak Attack",
+      "entries": [
+        "Once per turn, the spy can deal an extra 7 ({@dice 2d6}) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the spy that isn't {@condition incapacitated} and the spy doesn't have disadvantage on the attack roll."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the spy has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The spy makes two shortsword attacks."
+      ]
+    },
+    {
+      "name": "Enlarge (Recharges after a Short or Long Rest)",
+      "entries": [
+        "For 1 minute, the spy magically increases in size, along with anything it is wearing or carrying. While enlarged, the spy is Large, doubles her damage dice on Strength-based weapon attacks (included in the attacks), and makes Strength checks and Strength saving throws with advantage. If the spy lacks the room to become Large, it attains the maximum size possible in the space available."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage, or 10 (2d6 + 3 damage) piercing damage while enlarged."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 30/120 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Invisibility (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The spy magically turns {@condition invisible} until it attacks, deals damage, casts a spell, or uses its Enlarge, or until its {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment the spy wears or carries is {@condition invisible} with it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

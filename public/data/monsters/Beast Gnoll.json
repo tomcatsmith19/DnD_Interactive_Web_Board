@@ -1,0 +1,77 @@
+{
+  "name": "Beast Gnoll",
+  "source": "GHLoE",
+  "page": 60,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gnoll"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 11,
+  "int": 6,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Gnoll"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Rampage",
+      "entries": [
+        "When the beast gnoll reduces a creature to 0 hit points with a melee attack on its turn, the gnoll can take a bonus action to move up to half its speed and make a bite attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Spine Spike",
+      "entries": [
+        "Ranged atk +3 to hit, range 20/60 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

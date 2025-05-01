@@ -1,0 +1,152 @@
+{
+  "name": "Rictavio",
+  "source": "CoS",
+  "page": 238,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 77,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 12,
+  "con": 13,
+  "int": 16,
+  "wis": 18,
+  "cha": 16,
+  "skills": {
+    "arcana": "+9",
+    "insight": "+7",
+    "medicine": "+7",
+    "perception": "+7",
+    "religion": "+6",
+    "sleight of hand": "+4"
+  },
+  "passive": 17,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Elvish",
+    "Infernal"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "In addition to his sword cane, Rictavio wears a {@item hat of disguise} and a {@item ring of mind shielding}, and he carries a {@item spell scroll (5th level)||spell scroll} of {@spell raise dead}."
+      ]
+    },
+    {
+      "name": "Undead Slayer",
+      "entries": [
+        "When Rictavio hits an undead with a weapon attack, the undead takes an extra 10 ({@dice 3d6}) damage of the weapon's type."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Rictavio makes two attacks with his sword cane."
+      ]
+    },
+    {
+      "name": "Sword Cane",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) bludgeoning damage (wooden cane) or piercing damage (silvered sword)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Rictavio is a 9th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Rictavio has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "light",
+            "mending",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "detect evil and good",
+            "protection from evil and good",
+            "sanctuary"
+          ]
+        },
+        "2": {
+          "spells": [
+            "augury",
+            "lesser restoration",
+            "protection from poison"
+          ]
+        },
+        "3": {
+          "spells": [
+            "magic circle",
+            "remove curse",
+            "speak with dead"
+          ]
+        },
+        "4": {
+          "spells": [
+            "death ward",
+            "freedom of movement"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dispel evil and good"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

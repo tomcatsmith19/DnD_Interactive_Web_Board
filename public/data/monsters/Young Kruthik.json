@@ -1,0 +1,81 @@
+{
+  "name": "Young Kruthik",
+  "source": "MTF",
+  "page": 211,
+  "size": [
+    "S"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30,
+    "burrow": 10,
+    "climb": 30
+  },
+  "str": 13,
+  "dex": 16,
+  "con": 13,
+  "int": 4,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Kruthik"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The kruthik has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The kruthik has advantage on an attack roll against a creature if at least one of the kruthik's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The kruthik can burrow through solid rock at half its burrowing speed and leaves a 2\u00c2\u00bd-foot-diameter tunnel in its wake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Stab",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft.",
+    "tremorsense 60 ft."
+  ],
+  "environment": [
+    "desert",
+    "mountain",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

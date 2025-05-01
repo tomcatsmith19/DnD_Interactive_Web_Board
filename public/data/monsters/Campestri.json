@@ -1,0 +1,70 @@
+{
+  "name": "Campestri",
+  "source": "WBtW",
+  "page": 232,
+  "size": [
+    "T"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 2,
+  "speed": {
+    "walk": 5
+  },
+  "str": 1,
+  "dex": 7,
+  "con": 10,
+  "int": 4,
+  "wis": 10,
+  "cha": 8,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "understands Common but speaks only through the use of its Mimicry trait"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mimicry",
+      "entries": [
+        "The campestri can mimic any voice or song it has heard, albeit in a nasal falsetto."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Head Butt",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one target. 1 bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Spores (1/Day)",
+      "entries": [
+        "A 5-foot radius of spores extends from the campestri. These spores can go around corners, and they have no effect on Constructs, Elementals, Plants, or Undead. Each other creature in the area must make a DC 10 Wisdom saving throw. On a failed save, the creature is {@condition incapacitated} and its speed is halved, both for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "tremorsense 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

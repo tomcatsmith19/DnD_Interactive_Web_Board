@@ -1,0 +1,100 @@
+{
+  "name": "Swarm of Spiders",
+  "source": "MM",
+  "page": 338,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 3,
+  "dex": 13,
+  "con": 10,
+  "int": 1,
+  "wis": 7,
+  "cha": 1,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The swarm can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Web Sense",
+      "entries": [
+        "While in contact with a web, the swarm knows the exact location of any other creature in contact with the same web."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": [
+        "The swarm ignores movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bites",
+      "entries": [
+        "Melee atk +3 to hit, reach 0 ft., one target in the swarm's space. 10 (4d4 damage) piercing damage, or 5 (2d4 damage) piercing damage if the swarm has half of its hit points or fewer."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft."
+  ],
+  "environment": [
+    "underdark",
+    "grassland",
+    "forest",
+    "swamp",
+    "hill",
+    "urban",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

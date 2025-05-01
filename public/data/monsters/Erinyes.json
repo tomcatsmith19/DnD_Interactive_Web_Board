@@ -1,0 +1,95 @@
+{
+  "name": "Erinyes",
+  "source": "MM",
+  "page": 73,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 153,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 18,
+  "dex": 16,
+  "con": 18,
+  "int": 14,
+  "wis": 14,
+  "cha": 18,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Hellish Weapons",
+      "entries": [
+        "The erinyes's weapon attacks are magical and deal an extra 13 ({@damage 3d8}) poison damage on a hit (included in the attacks)."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The erinyes has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The erinyes makes three attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage, or 9 (1d10 + 4 damage) slashing damage if used with two hands, plus 13 (3d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +7 to hit, range 150/600 ft., one target. 7 (1d8 + 3 damage) piercing damage plus 13 (3d8 damage) poison damage, and the target must succeed on a DC 14 Constitution saving throw or be {@condition poisoned}. The poison lasts until it is removed by the {@spell lesser restoration} spell or similar magic."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

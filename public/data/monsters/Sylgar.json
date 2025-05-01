@@ -1,0 +1,61 @@
+{
+  "name": "Sylgar",
+  "source": "WDH",
+  "page": 220,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 1,
+  "speed": {
+    "walk": 0,
+    "swim": 40
+  },
+  "str": 2,
+  "dex": 16,
+  "con": 9,
+  "int": 1,
+  "wis": 7,
+  "cha": 2,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Water Breathing",
+      "entries": [
+        "Sylgar can breathe only underwater."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 1 piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

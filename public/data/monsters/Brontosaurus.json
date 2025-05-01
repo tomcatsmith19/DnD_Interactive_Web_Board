@@ -1,0 +1,60 @@
+{
+  "name": "Brontosaurus",
+  "source": "VGM",
+  "page": 139,
+  "size": [
+    "G"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 121,
+  "speed": {
+    "walk": 30
+  },
+  "str": 21,
+  "dex": 9,
+  "con": 17,
+  "int": 2,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Stomp",
+      "entries": [
+        "Melee atk +8 to hit, reach 20 ft., one target. 27 (5d8 + 5 damage) bludgeoning damage, and the target must succeed on a DC 14 Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +8 to hit, reach 20 ft., one target. 32 (6d8 + 5 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

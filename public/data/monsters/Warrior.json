@@ -1,0 +1,103 @@
+{
+  "name": "Warrior",
+  "source": "SLW",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "20"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 14,
+  "int": 10,
+  "wis": 12,
+  "cha": 10,
+  "skills": {
+    "athletics": "+6",
+    "perception": "+4",
+    "survival": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "plus one of your choice"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Battle Readiness",
+      "entries": [
+        "The warrior has advantage on initiative rolls."
+      ]
+    },
+    {
+      "name": "Improved Critical",
+      "entries": [
+        "The warrior's attack rolls score a critical hit on a roll of 19 or 20 on the d20."
+      ]
+    },
+    {
+      "name": "Martial Role",
+      "entries": [
+        "The warrior has one of the following traits of your choice:",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Attacker",
+              "entry": "The warrior gains a +2 bonus to attack rolls."
+            },
+            {
+              "type": "item",
+              "name": "Defender",
+              "entry": "The warrior gains the Protection reaction below."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Extra Attack",
+      "entries": [
+        "The warrior can attack twice, instead of once, whenever it takes the {@action Attack} action on its turn."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 150/600 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

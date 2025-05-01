@@ -1,0 +1,104 @@
+{
+  "name": "Wraithroot Tree",
+  "source": "TDCSR",
+  "page": 259,
+  "size": [
+    "H"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 270,
+  "speed": {
+    "walk": 30
+  },
+  "str": 23,
+  "dex": 8,
+  "con": 24,
+  "int": 12,
+  "wis": 16,
+  "cha": 12,
+  "skills": {
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Druidic",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the wraithroot tree remains motionless, it is indistinguishable from a normal tree."
+      ]
+    },
+    {
+      "name": "Wraith Shift",
+      "entries": [
+        "On its turn, the wraithroot tree can move through other creatures and objects as if they were {@quickref difficult terrain||3}. The tree does not provoke {@action opportunity attack|PHB|opportunity attacks} while moving, and must finish its movement in a space unoccupied by any Large or larger objects or creatures. Any Medium or smaller creature in the tree's space when it finishes moving is pushed to the nearest unoccupied space of the creature's choice. Medium or smaller objects in the tree's space are pushed to the nearest unoccupied spaces of the tree's choice."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The wraithroot tree makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 16 (3d6 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +11 to hit, range 60/180 ft., one target. 28 (4d10 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Wraithstorm {@recharge 5}",
+      "entries": [
+        "The wraithroot tree pulls life energy from the area around it, leaving creatures temporarily frail. Each creature that is not a construct or undead within 30 feet of the tree must succeed on a DC 16 Constitution {@quickref saving throws|PHB|2|1|saving throw} or have its speed halved and gain vulnerability to bludgeoning damage until the end of the tree's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "stunned",
+    "frightened",
+    "charmed",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest",
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

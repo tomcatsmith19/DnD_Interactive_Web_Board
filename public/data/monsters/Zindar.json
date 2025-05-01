@@ -1,0 +1,165 @@
+{
+  "name": "Zindar",
+  "source": "ToA",
+  "page": 239,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-dragon"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 14,
+  "int": 16,
+  "wis": 15,
+  "cha": 18,
+  "skills": {
+    "arcana": "+6",
+    "history": "+9",
+    "insight": "+5",
+    "investigation": "+9"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Primordial"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Dragon Wings",
+      "entries": [
+        "As a bonus action on his turn, Zindar can sprout a pair of dragon wings from his back, gaining a flying speed of 30 feet until he dismisses them as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage, or 6 (1d8 + 2 damage) bludgeoning damage when used with two hands."
+      ]
+    },
+    {
+      "name": "Breath Weapon {@recharge 5}",
+      "entries": [
+        "Zindar uses one of the following options:"
+      ]
+    },
+    {
+      "name": "Fire Breath",
+      "entries": [
+        "Zindar exhales fire in a 15-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 22 (4d10 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Weakening Breath",
+      "entries": [
+        "Zindar exhales gas in a 15-foot cone. Each creature in that area must succeed on a DC 15 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Zindar is a 14th-level spellcaster. His spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Zindar knows the following sorcerer spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "friends",
+            "light",
+            "mage hand",
+            "mending",
+            "message"
+          ]
+        },
+        "1": {
+          "spells": [
+            "magic missile",
+            "shield",
+            "sleep"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "knock"
+          ]
+        },
+        "3": {
+          "spells": [
+            "clairvoyance",
+            "tongues"
+          ]
+        },
+        "4": {
+          "spells": [
+            "dominate beast",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "hold monster",
+            "telekinesis"
+          ]
+        },
+        "6": {
+          "spells": [
+            "true seeing"
+          ]
+        },
+        "7": {
+          "spells": [
+            "fire storm"
+          ]
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

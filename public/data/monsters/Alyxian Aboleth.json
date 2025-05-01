@@ -1,0 +1,105 @@
+{
+  "name": "Alyxian Aboleth",
+  "source": "CRCotN",
+  "page": 195,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 135,
+  "speed": {
+    "walk": 10,
+    "swim": 30
+  },
+  "str": 21,
+  "dex": 9,
+  "con": 15,
+  "int": 18,
+  "wis": 18,
+  "cha": 18,
+  "skills": {
+    "history": "+12",
+    "perception": "+12"
+  },
+  "passive": 22,
+  "languages": [
+    "Deep Speech",
+    "telepathy 120 ft."
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The aboleth can breathe air and water."
+      ]
+    },
+    {
+      "name": "Mucous Cloud",
+      "entries": [
+        "While underwater, the aboleth is surrounded by a cloud of sticky mucus. A creature that touches the aboleth or hits it with a melee attack while within 5 feet of it must succeed on a {@dc 14} Strength saving throw or be {@condition restrained} until the end of the aboleth's next turn."
+      ]
+    },
+    {
+      "name": "Probing Telepathy",
+      "entries": [
+        "If a creature the aboleth can see communicates telepathically with the aboleth, the aboleth learns the creature's greatest desires."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The aboleth makes two Tentacle attacks."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 12 (2d6 + 5 damage) bludgeoning damage plus 3 (1d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 14 (2d8 + 5 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Tail Swipe",
+      "entries": [
+        "The aboleth makes one Tail attack."
+      ]
+    },
+    {
+      "name": "Psychic Drain (Costs 2 Actions)",
+      "entries": [
+        "One creature {@condition charmed} by the aboleth takes 10 ({@damage 3d6}) psychic damage, and the aboleth regains hit points equal to the damage dealt."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

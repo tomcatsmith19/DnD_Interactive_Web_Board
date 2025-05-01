@@ -1,0 +1,183 @@
+{
+  "name": "Keyleth, Voice of the Tempest",
+  "source": "TDCSR",
+  "page": 263,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-elf"
+  ],
+  "alignment": [],
+  "ac": [
+    "17"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 15,
+  "con": 16,
+  "int": 15,
+  "wis": 22,
+  "cha": 15,
+  "skills": {
+    "athletics": "+8",
+    "insight": "+12",
+    "intimidation": "+8",
+    "nature": "+12",
+    "perception": "+12",
+    "persuasion": "+8",
+    "stealth": "+8",
+    "survival": "+12"
+  },
+  "passive": 22,
+  "languages": [
+    "Auran",
+    "Common",
+    "Druidic",
+    "Elvish"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Keyleth has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against being {@condition charmed}, and magic can't put her to sleep."
+      ]
+    },
+    {
+      "name": "Focused",
+      "entries": [
+        "Keyleth has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on Constitution {@quickref saving throws|PHB|2|1} made to maintain {@condition concentration} on spells."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Keyleth wears a {@item circlet of wisdom|TDCSR} (which increases her Wisdom score by 2), {@item +2 leather armor}, and a {@item +2 Ring of Protection|TDCSR|ring of protection with a +2 bonus}. She wields the {@item Spire of Conflux (Exalted)|TDCSR|Spire of Conflux}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shapechange",
+      "entries": [
+        "Keyleth casts {@spell shapechange} to transform into a {@creature planetar}, an {@creature adult bronze dragon}, or {@filter another creature of CR 20 or lower that is not a construct or undead|bestiary|Challenge Rating=[0;&20]|type=!construct;!undead|source=null}."
+      ]
+    },
+    {
+      "name": "Meteor ({@creature Earth Elemental} Form Only)",
+      "entries": [
+        "When Keyleth falls at least 20 feet, she lands with meteoric force. Each creature within 20 feet of her must succeed on a DC 19 Dexterity {@quickref saving throws|PHB|2|1|saving throw} or take 1d6 damage bludgeoning damage for every 10 feet Keyleth fell. Keyleth still takes {@quickref falling|XGE|2|0|falling damage} while in {@creature earth elemental} form."
+      ]
+    },
+    {
+      "name": "Chain Lightning",
+      "entries": [
+        "Keyleth casts {@spell chain lightning} (spell save DC 22) from the {@item Spire of Conflux (Exalted)|TDCSR|Spire of Conflux} at a creature she can see within 150 feet of her."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Keyleth is a 20th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 22}, {@hit 14} to hit with spell attacks). She has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "guidance",
+            "mending"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "faerie fire",
+            "fog cloud",
+            "healing word",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "alter self",
+            "flaming sphere",
+            "gust of wind",
+            "pass without trace"
+          ]
+        },
+        "3": {
+          "spells": [
+            "call lightning",
+            "wind wall"
+          ]
+        },
+        "4": {
+          "spells": [
+            "blight",
+            "control water",
+            "grasping vine",
+            "polymorph",
+            "stone shape"
+          ]
+        },
+        "5": {
+          "spells": [
+            "conjure elemental",
+            "greater restoration",
+            "scrying",
+            "wall of stone"
+          ]
+        },
+        "6": {
+          "spells": [
+            "heroes' feast",
+            "move earth",
+            "transport via plants"
+          ]
+        },
+        "7": {
+          "spells": [
+            "fire storm",
+            "plane shift"
+          ]
+        },
+        "8": {
+          "spells": [
+            "control weather"
+          ]
+        },
+        "9": {
+          "spells": [
+            "foresight",
+            "shapechange"
+          ]
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

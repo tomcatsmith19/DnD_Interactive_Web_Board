@@ -1,0 +1,137 @@
+{
+  "name": "Magma Mephit",
+  "source": "MM",
+  "page": 216,
+  "size": [
+    "S"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 8,
+  "dex": 12,
+  "con": 12,
+  "int": 7,
+  "wis": 10,
+  "cha": 10,
+  "skills": {
+    "stealth": "+3"
+  },
+  "passive": 10,
+  "languages": [
+    "Ignan",
+    "Terran"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the mephit dies, it explodes in a burst of lava. Each creature within 5 feet of it must make a {@dc 11} Dexterity saving throw, taking 7 ({@damage 2d6}) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the mephit remains motionless, it is indistinguishable from an ordinary mound of magma."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one creature. 3 (1d4 + 1 damage) slashing damage plus 2 (1d4 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Fire Breath {@recharge}",
+      "entries": [
+        "The mephit exhales a 15-foot cone of fire. Each creature in that area must make a DC 11 Dexterity saving throw, taking 7 (2d6 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (1/Day)",
+      "headerEntries": [
+        "The mephit can innately cast {@spell heat metal} (spell save {@dc 10}), requiring no material components. Its innate spellcasting ability is Charisma."
+      ],
+      "will": [
+        "heat metal"
+      ],
+      "ability": "cha",
+      "hidden": [
+        "will"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "cold"
+  ],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

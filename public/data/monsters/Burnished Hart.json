@@ -1,0 +1,95 @@
+{
+  "name": "Burnished Hart",
+  "source": "MOT",
+  "page": 211,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 50
+  },
+  "str": 17,
+  "dex": 14,
+  "con": 16,
+  "int": 3,
+  "wis": 15,
+  "cha": 1,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "understands one language of its creator but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the hart moves at least 20 feet straight toward a target and then hits it with an antlers attack on the same turn, the target takes an extra 7 ({@damage 2d6}) fire damage. If the target is a creature, it must succeed on a {@dc 13} Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Heated Body",
+      "entries": [
+        "A creature that touches the hart or hits it with a melee attack while within 5 feet of it takes 5 ({@damage 1d10}) fire damage."
+      ]
+    },
+    {
+      "name": "Sure-Footed",
+      "entries": [
+        "The hart has advantage on Strength and Dexterity saving throws made against effects that would knock it {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hart makes two attacks: one with its antlers and one with its hooves."
+      ]
+    },
+    {
+      "name": "Antlers",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) bludgeoning damage plus 2 (1d4 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

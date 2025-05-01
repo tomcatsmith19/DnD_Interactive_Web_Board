@@ -1,0 +1,104 @@
+{
+  "name": "Fiendish Orc",
+  "source": "CRCotN",
+  "page": 71,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "orc"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 18,
+  "int": 11,
+  "wis": 11,
+  "cha": 16,
+  "skills": {
+    "intimidation": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Orc"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see."
+      ]
+    },
+    {
+      "name": "Gruumsh's Fury",
+      "entries": [
+        "The orc deals an extra 4 ({@dice 1d8}) damage when it hits with a weapon attack (included in the attacks)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The orc makes two attacks with its greataxe or its spear."
+      ]
+    },
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 15 (1d12 + 4 damage plus 1d8 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 12 (1d6 + 4 damage plus 1d8 damage) piercing damage, or 13 (2d8 + 4 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Battle Cry (1/Day)",
+      "entries": [
+        "Each creature of the war chief's choice that is within 30 feet of it, can hear it, and not already affected by Battle Cry gain advantage on attack rolls until the start of the war chief's next turn. The war chief can then make one attack as a bonus action."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "grassland",
+    "forest",
+    "swamp",
+    "hill",
+    "arctic"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,116 @@
+{
+  "name": "Dragon Speaker",
+  "source": "FTD",
+  "page": 189,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 36,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 13,
+  "wis": 11,
+  "cha": 17,
+  "skills": {
+    "persuasion": "+5",
+    "religion": "+3"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Draconic",
+    "and any two languages"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The speaker makes two Thunder Bolt attacks."
+      ]
+    },
+    {
+      "name": "Thunder Bolt",
+      "entries": [
+        "{@atk ms,rs} +5 to hit, reach 5 ft. or range 60 ft., one target. 13 (3d8 damage) thunder damage, and the target is pushed horizontally up to 10 feet away from the speaker."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The speaker casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "dancing lights"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

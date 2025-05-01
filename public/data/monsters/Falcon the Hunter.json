@@ -1,0 +1,85 @@
+{
+  "name": "Falcon the Hunter",
+  "source": "DIP",
+  "page": 56,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 15,
+  "con": 16,
+  "int": 11,
+  "wis": 16,
+  "cha": 15,
+  "skills": {
+    "athletics": "+4",
+    "perception": "+7",
+    "survival": "+5"
+  },
+  "passive": 17,
+  "languages": [
+    "Common"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Archer",
+      "entries": [
+        "A longbow or shortbow deals one extra die of its damage when Falcon hits with it (included in his longbow attack)."
+      ]
+    },
+    {
+      "name": "Sharpshooter",
+      "entries": [
+        "Falcon's ranged weapon attacks ignore half cover and three-quarters cover."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Falcon makes three melee attacks or two ranged attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage, or 7 (1d10 + 2 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 150/600 ft., one target. 11 (2d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

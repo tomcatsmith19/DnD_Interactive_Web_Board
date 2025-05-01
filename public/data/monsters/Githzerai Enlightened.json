@@ -1,0 +1,129 @@
+{
+  "name": "Githzerai Enlightened",
+  "source": "MTF",
+  "page": 208,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gith"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 19,
+  "con": 16,
+  "int": 17,
+  "wis": 19,
+  "cha": 13,
+  "skills": {
+    "arcana": "+7",
+    "insight": "+8",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Gith"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Psychic Defense",
+      "entries": [
+        "While the githzerai is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The githzerai makes three unarmed strikes."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage plus 13 (3d8 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Temporal Strike {@recharge}",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one creature. 13 (2d8 + 4 damage) bludgeoning damage plus 52 (8d12 damage) psychic damage. The target must succeed on a DC 16 Wisdom saving throw or move 1 round forward in time. A target moved forward in time vanishes for the duration. When the effect ends, the target reappears in the space it left or in an unoccupied space nearest to that space if it's occupied."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The githzerai's innate spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to hit with spell attacks). It can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "desert",
+    "mountain",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,81 @@
+{
+  "name": "Living Doll",
+  "source": "WBtW",
+  "page": 238,
+  "size": [
+    "T"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 28,
+  "speed": {
+    "walk": 30
+  },
+  "str": 3,
+  "dex": 11,
+  "con": 13,
+  "int": 10,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "If the doll is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the doll move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the doll is animate."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The doll regains 5 hit points at the start of its turn. If the doll takes fire or psychic damage, this trait doesn't function at the start of the doll's next turn. The doll is destroyed only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The doll doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Grabby Hands",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one creature. The target is {@condition grappled} (escape DC 6) and takes 11 (2d10 damage) psychic damage at the start of each of its turns until this grapple ends. The doll can grapple only one creature at a time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,160 @@
+{
+  "name": "Kopoha",
+  "source": "ToFW",
+  "page": 130,
+  "size": [
+    "H"
+  ],
+  "type": "celestial",
+  "tags": [
+    "titan"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "22"
+  ],
+  "hp": 313,
+  "speed": {
+    "walk": 50,
+    "fly": 50,
+    "swim": 50
+  },
+  "str": 30,
+  "dex": 21,
+  "con": 30,
+  "int": 21,
+  "wis": 22,
+  "cha": 27,
+  "skills": {
+    "insight": "+13",
+    "persuasion": "+15"
+  },
+  "passive": 16,
+  "languages": [
+    "all"
+  ],
+  "cr": "23",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the empyrean fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Kopoha has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "Kopoha's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Maul",
+      "entries": [
+        "Melee atk +17 to hit, reach 10 ft., one target. 31 (6d6 + 10 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw or be {@condition stunned} until the end of the empyrean's next turn."
+      ]
+    },
+    {
+      "name": "Bolt",
+      "entries": [
+        "Ranged Spell atk +15 to hit, range 600 ft., one target. 24 ({@dice 7d6}) damage of one of the following types (empyrean's choice): acid, cold, fire, force, lightning, radiant, or thunder."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "Kopoha makes one attack."
+      ]
+    },
+    {
+      "name": "Bolster",
+      "entries": [
+        "Kopoha bolsters all nonhostile creatures within 120 feet of it until the end of its next turn. Bolstered creatures can't be {@condition charmed} or {@condition frightened}, and they gain advantage on ability checks and saving throws until the end of the empyrean's next turn."
+      ]
+    },
+    {
+      "name": "Trembling Strike (Costs 2 Actions)",
+      "entries": [
+        "Kopoha strikes the ground with its maul, triggering an earth tremor. All other creatures on the ground within 60 feet of the empyrean must succeed on a {@dc 25} Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Kopoha's innate spellcasting ability is Charisma (spell save {@dc 23}, {@hit 15} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "greater restoration",
+        "pass without trace",
+        "water breathing",
+        "water walk"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

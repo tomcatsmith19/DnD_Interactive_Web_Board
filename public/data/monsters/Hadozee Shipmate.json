@@ -1,0 +1,65 @@
+{
+  "name": "Hadozee Shipmate",
+  "source": "BAM",
+  "page": 29,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 11,
+  "int": 10,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "perception": "+4",
+    "survival": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Hadozee"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Glide",
+      "entries": [
+        "If it isn't {@condition incapacitated} or wearing heavy armor, the hadozee can extend its skin membranes to move up to 5 feet horizontally for every 1 foot it descends in the air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

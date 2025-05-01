@@ -1,0 +1,103 @@
+{
+  "name": "Aboleth Spawn",
+  "source": "CRCotN",
+  "page": 135,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 19,
+  "dex": 11,
+  "con": 18,
+  "int": 7,
+  "wis": 12,
+  "cha": 9,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "telepathy 60 ft."
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Abolethic Vessel",
+      "entries": [
+        "The spawn must obey its aboleth master."
+      ]
+    },
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The spawn can breathe air and water."
+      ]
+    },
+    {
+      "name": "Water Dependency",
+      "entries": [
+        "The spawn takes 6 ({@damage 1d12}) acid damage every 10 minutes it goes without being immersed in water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The spawn makes one Spear attack, two Tentacle attacks, and one Psychic Lash attack."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage, or 8 (1d8 + 4 damage) piercing damage when used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one creature. The target is {@condition grappled} (escape DC 14) and takes 9 (2d8 damage) psychic damage at the start of each of its turns until the grapple ends. The spawn has four tentacles, each of which can grapple one creature."
+      ]
+    },
+    {
+      "name": "Psychic Lash",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 120 ft., one creature. 18 (4d8 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

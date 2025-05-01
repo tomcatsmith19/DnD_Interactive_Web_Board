@@ -1,0 +1,133 @@
+{
+  "name": "Ayo Jabe (Tier 2)",
+  "source": "CRCotN",
+  "page": 190,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "ranger",
+    {
+      "tag": "genasi",
+      "prefix": "Water"
+    }
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 97,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 14,
+  "dex": 16,
+  "con": 14,
+  "int": 10,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "athletics": "+5",
+    "perception": "+5",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Goblin",
+    "Orc"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "Ayo can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Ayo makes three Harpoon or Longbow attacks."
+      ]
+    },
+    {
+      "name": "Harpoon",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 11 (2d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +6 to hit, range 150/600 ft., one target. 12 (2d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Ayo casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "acid"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

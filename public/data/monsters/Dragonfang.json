@@ -1,0 +1,104 @@
+{
+  "name": "Dragonfang",
+  "source": "RoT",
+  "page": 89,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 14,
+  "int": 12,
+  "wis": 12,
+  "cha": 14,
+  "skills": {
+    "deception": "+5",
+    "stealth": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Infernal"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Dragon Fanatic",
+      "entries": [
+        "The dragonfang has advantage on saving throws against being {@condition charmed} or {@condition frightened}. While the dragonfang can see a dragon or higher-ranking Cult of the Dragon cultist friendly to it, the dragonfang ignores the effects of being {@condition charmed} or {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Fanatic Advantage",
+      "entries": [
+        "Once per turn, if the dragonfang makes a weapon attack with advantage on the attack roll and hits, the target takes an extra 10 ({@dice 3d6}) damage."
+      ]
+    },
+    {
+      "name": "Limited Flight",
+      "entries": [
+        "The dragonfang can use a bonus action to gain a flying speed of 30 feet until the end of its turn."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The dragonfang has advantage on an attack roll against a creature if at least one of the dragonfang's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Dragonfang attacks twice with its shortsword."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage plus 7 ({@dice 2d6}) damage of the type to which the dragonfang has resistance."
+      ]
+    },
+    {
+      "name": "Orb of Dragon's Breath (2/Day)",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 50 ft., one target. 22 ({@dice 5d8}) damage of the type to which the dragonfang has damage resistance."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

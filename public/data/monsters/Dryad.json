@@ -1,0 +1,136 @@
+{
+  "name": "Dryad",
+  "source": "XMM",
+  "page": 107,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 12,
+  "con": 11,
+  "int": 14,
+  "wis": 15,
+  "cha": 18,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+5"
+  },
+  "passive": 14,
+  "languages": [
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The dryad has {@variantrule Advantage|XPHB} on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Speak with Beasts and Plants",
+      "entries": [
+        "The dryad can communicate with Beasts and Plants as if they shared a language."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dryad makes one Vine Lash or Thorn Burst attack, and it can use Spellcasting to cast {@spell Charm Monster|XPHB}."
+      ]
+    },
+    {
+      "name": "Vine Lash",
+      "entries": [
+        "{@atkr m} +6, reach 10 ft. 8 (1d8 + 4 damage) Slashing damage."
+      ]
+    },
+    {
+      "name": "Thorn Burst",
+      "entries": [
+        "{@atkr r} +6, range 60 ft. 7 (1d6 + 4 damage) Piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "type": "spellcasting",
+      "headerEntries": [
+        "The dryad casts one of the following spells, requiring no Material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "Animal Friendship|XPHB",
+        "Charm Monster|XPHB",
+        "Druidcraft|XPHB"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

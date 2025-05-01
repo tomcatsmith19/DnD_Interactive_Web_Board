@@ -1,0 +1,70 @@
+{
+  "name": "Clasp Enforcer",
+  "source": "TDCSR",
+  "page": 233,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [],
+  "ac": [
+    "16"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 18,
+  "int": 8,
+  "wis": 11,
+  "cha": 14,
+  "skills": {
+    "athletics": "+6",
+    "intimidation": "+8"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Thieves' cant"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Intimidating Presence",
+      "entries": [
+        "Whenever the enforcer hits a creature with a melee attack, the target must succeed on a {@dc 15} Wisdom {@quickref saving throws|PHB|2|1|saving throw} or be {@condition frightened} of the enforcer until the end of the target's next turn. The enforcer and its allies have {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on attack rolls against any creature {@condition frightened} in this way. If a creature's {@quickref saving throws|PHB|2|1|saving throw} is successful or the effect ends for it, the creature is immune to the enforcer's Intimidating Presence for the next 24 hours."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The enforcer makes three warhammer attacks."
+      ]
+    },
+    {
+      "name": "Warhammer",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d10 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

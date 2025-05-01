@@ -1,0 +1,113 @@
+{
+  "name": "Mind's Eye Matter Smith",
+  "source": "MPP",
+  "page": 60,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 14,
+  "int": 14,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "investigation": "+4",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common plus two more languages"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The matter smith makes two Manifested Force attacks."
+      ]
+    },
+    {
+      "name": "Manifested Force",
+      "entries": [
+        "{@atk ms,rs} +5 to hit, reach 5 ft. or range 120 ft., one target. 10 (2d6 + 3 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The matter smith casts one of the following spells, using Charisma as the spellcasting ability:"
+      ],
+      "will": [
+        "mage armor",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

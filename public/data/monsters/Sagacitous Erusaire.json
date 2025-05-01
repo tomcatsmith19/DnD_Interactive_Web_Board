@@ -1,0 +1,144 @@
+{
+  "name": "Sagacitous Erusaire",
+  "source": "TDCSR",
+  "page": 122,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 18,
+  "con": 16,
+  "int": 16,
+  "wis": 19,
+  "cha": 18,
+  "skills": {},
+  "passive": 14,
+  "languages": [
+    "Celestial",
+    "Common"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If it dies, Sagacitous Erusaire returns to life in {@dice 1d6} days and regains all its hit points. Only a {@spell wish} spell can prevent this trait from functioning."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one creature. 8 (1d8 + 4 damage) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 45 (10d8 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Spit Poison",
+      "entries": [
+        "Ranged atk +8 to hit, range 15/30 ft., one creature. The target must make a DC 15 Constitution saving throw, taking 45 (10d8 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mending",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "command",
+            "cure wounds",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "calm emotions",
+            "hold person"
+          ]
+        },
+        "3": {
+          "spells": [
+            "bestow curse",
+            "clairvoyance"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "freedom of movement"
+          ]
+        },
+        "5": {
+          "spells": [
+            "flame strike",
+            "geas"
+          ]
+        },
+        "6": {
+          "spells": [
+            "true seeing"
+          ]
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

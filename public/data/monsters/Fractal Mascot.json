@@ -1,0 +1,64 @@
+{
+  "name": "Fractal Mascot",
+  "source": "SCC",
+  "page": 192,
+  "size": [
+    "S"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 13,
+  "int": 7,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Relative Density",
+      "entries": [
+        "The fractal can move through creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quantum Strike",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) force damage, or 6 (2d4 + 1 damage) force damage if the fractal is Medium or bigger."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

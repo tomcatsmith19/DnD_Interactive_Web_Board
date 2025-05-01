@@ -1,0 +1,87 @@
+{
+  "name": "Neogi Pirate",
+  "source": "BAM",
+  "page": 41,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 6,
+  "dex": 15,
+  "con": 14,
+  "int": 13,
+  "wis": 12,
+  "cha": 15,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "Undercommon"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mental Fortitude",
+      "entries": [
+        "The neogi has advantage on saving throws against being {@condition charmed} or {@condition frightened}, and magic can't put the neogi to sleep."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The neogi can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The neogi makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage plus 14 (4d6 damage) poison damage, and the target must succeed on a DC 12 Constitution saving throw or become {@condition poisoned} for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Sled Dog",
+  "source": "RoT",
+  "page": 27,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 40
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 12,
+  "int": 3,
+  "wis": 12,
+  "cha": 6,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The dog has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The dog has advantage on an attack roll against a creature if at least one of the dog's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (2d4 + 2 damage) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

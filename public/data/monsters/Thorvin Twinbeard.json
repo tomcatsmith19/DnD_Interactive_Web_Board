@@ -1,0 +1,68 @@
+{
+  "name": "Thorvin Twinbeard",
+  "source": "WDH",
+  "page": 216,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 4,
+  "speed": {
+    "walk": 25
+  },
+  "str": 10,
+  "dex": 10,
+  "con": 10,
+  "int": 10,
+  "wis": 16,
+  "cha": 10,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dwarven Resilience",
+      "entries": [
+        "Thorvin has advantage on saving throws against poison and resistance to poison damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

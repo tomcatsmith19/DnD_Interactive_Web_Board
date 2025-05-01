@@ -1,0 +1,64 @@
+{
+  "name": "Pegasus",
+  "source": "MM",
+  "page": 250,
+  "size": [
+    "L"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 60,
+    "fly": 90
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 16,
+  "int": 10,
+  "wis": 15,
+  "cha": 13,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "understands Celestial",
+    "Common",
+    "Elvish",
+    "and Sylvan but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

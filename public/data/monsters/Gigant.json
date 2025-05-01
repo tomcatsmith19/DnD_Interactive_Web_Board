@@ -1,0 +1,82 @@
+{
+  "name": "Gigant",
+  "source": "BGG",
+  "page": 154,
+  "size": [
+    "G"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 325,
+  "speed": {
+    "walk": 50,
+    "burrow": 50,
+    "fly": 80
+  },
+  "str": 24,
+  "dex": 14,
+  "con": 21,
+  "int": 3,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [],
+  "cr": "20",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Spell-Resistant Carapace",
+      "entries": [
+        "The gigant has advantage on saving throws against spells, and any creature that makes a spell attack against the gigant has disadvantage on the attack roll."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gigant makes one Mandibles attack and two Talons attacks."
+      ]
+    },
+    {
+      "name": "Mandibles",
+      "entries": [
+        "Melee atk +13 to hit, reach 10 ft., one creature. 21 (4d6 + 7 damage) slashing damage, and the target has the {@condition grappled} condition (escape DC 17). Until the grapple ends, the target takes 21 (4d6 + 7 damage) slashing damage at the start of each of the gigant's turns. While the gigant is grappling a target, it can't use Mandibles against other targets."
+      ]
+    },
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +13 to hit, reach 20 ft., one target. 17 (3d6 + 7 damage) slashing damage, and the target is pulled 10 feet straight toward the gigant."
+      ]
+    },
+    {
+      "name": "Scale Dust {@recharge 5}",
+      "entries": [
+        "The gigant releases magical dust from its wings in a 30-foot cube. Each creature in that area must make a DC 19 Constitution saving throw, taking 45 (10d8 damage) poison damage on a failed save, or half as much damage on a successful one. On a success or failure, the creature has the {@condition poisoned} condition for 1 hour. While {@condition poisoned} this way, the creature can't regain hit points."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

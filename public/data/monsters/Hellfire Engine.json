@@ -1,0 +1,114 @@
+{
+  "name": "Hellfire Engine",
+  "source": "MTF",
+  "page": 165,
+  "size": [
+    "H"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 216,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 16,
+  "con": 24,
+  "int": 2,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Infernal but can't speak"
+  ],
+  "cr": "16",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The hellfire engine is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The hellfire engine has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Flesh-Crushing Stride",
+      "entries": [
+        "The hellfire engine moves up to its speed in a straight line. During this move, it can enter Large or smaller creatures' spaces. A creature whose space the hellfire engine enters must make a DC 18 Dexterity saving throw. On a successful save, the creature is pushed to the nearest space out of the hellfire engine's path. On a failed save, the creature falls {@condition prone} and takes 28 (8d6 damage) bludgeoning damage.",
+        "If the hellfire engine remains in the {@condition prone} creature's space, the creature is also {@condition restrained} until it's no longer in the same space as the hellfire engine. While {@condition restrained} in this way, the creature, or another creature within 5 feet of it, can make a {@dc 18} Strength check. On a success, the creature is shunted to an unoccupied space of its choice within 5 feet of the hellfire engine and is no longer {@condition restrained}."
+      ]
+    },
+    {
+      "name": "Hellfire Weapons",
+      "entries": [
+        "The hellfire engine uses one of the following options:",
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "item",
+              "name": "Bonemelt Sprayer",
+              "entry": "The hellfire engine spews acidic flame in a 60-foot cone. Each creature in the cone must make a {@dc 20} Dexterity saving throw, taking 11 ({@damage 2d10}) fire damage plus 18 ({@damage 4d8}) acid damage on a failed save, or half as much damage on a successful one. Creatures that fail the saving throw are drenched in burning acid and take 5 ({@damage 1d10}) fire damage plus 9 ({@damage 2d8}) acid damage at the end of their turns. An affected creature or another creature within 5 feet of it can take an action to scrape off the burning fuel."
+            },
+            {
+              "type": "item",
+              "name": "Lightning Flail",
+              "entry": "{@atk mw} {@hit 11} to hit, reach 15 ft., one creature. {@h}18 ({@damage 3d8 + 5}) bludgeoning damage plus 22 ({@damage 5d8}) lightning damage. Up to three other creatures of the hellfire engine's choice that it can see within 30 feet of the target must each make a {@dc 20} Dexterity saving throw, taking 22 ({@damage 5d8}) lightning damage on a failed save, or half as much damage on a successful one."
+            },
+            {
+              "type": "item",
+              "name": "Thunder Cannon",
+              "entry": "The hellfire engine targets a point within 120 feet of it that it can see. Each creature within 30 feet of that point must make a {@dc 20} Dexterity saving throw, taking 27 ({@damage 5d10}) bludgeoning damage plus 13 ({@damage 2d12}) thunder damage on a failed save, or half as much damage on a successful one."
+            }
+          ]
+        },
+        "If the chosen option kills a creature, the creature's soul rises from the River Styx as a lemure in Avernus in {@dice 1d4} hours. If the creature isn't revived before then, only a {@spell wish} spell or killing the lemure and casting true resurrection on the creature's original body can restore it to life. Constructs and devils are immune to this effect."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [
+    "cold",
+    "psychic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,130 @@
+{
+  "name": "Sludge Hag",
+  "source": "MGELFT",
+  "page": 33,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    {
+      "special": "neutral oozy"
+    }
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 16,
+  "int": 13,
+  "wis": 14,
+  "cha": 14,
+  "skills": {
+    "arcana": "+3",
+    "deception": "+4",
+    "perception": "+4",
+    "stealth": "+3"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Sylvan"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The sludge hag can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The sludge hag can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "The sludge hag collapses into a oily pool of sludge. While motionless, the sludge hag is indistinguishable from any other oily pool of oozy drippiness."
+      ]
+    },
+    {
+      "name": "Sludge Slap",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 12 (1d8 + 8 damage) bludgeoning damage, plus 4 (1d8 damage) acid damage. Sludge Slap does both bludgeoning and acid damage"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "will": [
+        "acid splash",
+        "dancing lights",
+        "minor illusion"
+      ],
+      "footerEntries": [
+        "The hag's innate spellcasting ability is Charisma (spell save {@dc 12}). She can innately cast the following spells, requiring no material components. "
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,114 @@
+{
+  "name": "Enchanter Wizard",
+  "source": "MPMM",
+  "page": 261,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 49,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 11,
+  "int": 17,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "arcana": "+6",
+    "history": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "any four languages"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The enchanter makes three Arcane Burst attacks."
+      ]
+    },
+    {
+      "name": "Arcane Burst",
+      "entries": [
+        "{@atk ms,rs} +6 to hit, reach 5 ft. or range 120 ft., one target. 19 (3d10 + 3 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The enchanter casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "will": [
+        "friends",
+        "mage hand",
+        "message"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

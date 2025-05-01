@@ -1,0 +1,147 @@
+{
+  "name": "Planetar",
+  "source": "MM",
+  "page": 17,
+  "size": [
+    "L"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 200,
+  "speed": {
+    "walk": 40,
+    "fly": 120
+  },
+  "str": 24,
+  "dex": 20,
+  "con": 24,
+  "int": 19,
+  "wis": 22,
+  "cha": 25,
+  "skills": {
+    "perception": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "16",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Angelic Weapons",
+      "entries": [
+        "The planetar's weapon attacks are magical. When the planetar hits with any weapon, the weapon deals an extra {@dice 5d8} radiant damage (included in the attack)."
+      ]
+    },
+    {
+      "name": "Divine Awareness",
+      "entries": [
+        "The planetar knows if it hears a lie."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The planetar has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The planetar makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +12 to hit, reach 5 ft., one target. 21 (4d6 + 7 damage) slashing damage plus 22 (5d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Healing Touch (4/Day)",
+      "entries": [
+        "The planetar touches another creature. The target magically regains 30 ({@dice 6d8 + 3}) hit points and is freed from any curse, disease, poison, blindness, or deafness."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The planetar's spellcasting ability is Charisma (spell save {@dc 20}). The planetar can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect evil and good",
+        "invisibility"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened"
+  ],
+  "resist": [
+    "radiant",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

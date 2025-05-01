@@ -1,0 +1,147 @@
+{
+  "name": "Riverine",
+  "source": "JttRC",
+  "page": 133,
+  "size": [
+    "L"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 204,
+  "speed": {
+    "walk": 30,
+    "swim": 60
+  },
+  "str": 20,
+  "dex": 19,
+  "con": 17,
+  "int": 12,
+  "wis": 16,
+  "cha": 21,
+  "skills": {
+    "insight": "+7",
+    "nature": "+5",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Aquan",
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The riverine can breathe air and water."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the riverine fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The riverine makes two Flood Strike attacks."
+      ]
+    },
+    {
+      "name": "Flood Strike",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 14 (2d8 + 5 damage) bludgeoning damage plus 10 (3d6 damage) cold damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Whirlpool Rush",
+      "entries": [
+        "The riverine uses its Whirlpool Step. Immediately after it teleports, each creature within 5 feet of the riverine's destination space takes 5 ({@damage 1d10}) cold damage."
+      ]
+    },
+    {
+      "name": "Raging Deluge (Costs 2 Actions)",
+      "entries": [
+        "The riverine unleashes a torrent of river water in a 30-foot line that is 5 feet wide. Each creature in that area must make a {@dc 17} Dexterity saving throw. On a failed save, a creature takes 11 ({@damage 2d10}) bludgeoning damage and is knocked {@condition prone}. On a successful save, a creature takes half as much damage and isn't knocked {@condition prone}."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The riverine casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+      ],
+      "will": [
+        "control water",
+        "fog cloud"
+      ],
+      "daily": {
+        "1": [
+          "greater restoration"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,146 @@
+{
+  "name": "Lesser Avarice Seraph",
+  "source": "GHLoE",
+  "page": 94,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 105,
+  "speed": {
+    "walk": 30,
+    "fly": 90
+  },
+  "str": 16,
+  "dex": 18,
+  "con": 17,
+  "int": 13,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "deception": "+6",
+    "insight": "+5",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The seraph has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Seraphic Weapons",
+      "entries": [
+        "The seraph's weapon attacks are magical. When the seraph hits with any weapon, the weapon deals an extra ({@dice 2d8}) radiant damage (included in the attack)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The seraph makes three attacks."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage and 9 (2d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Tempting Call",
+      "entries": [
+        "The seraph calls out a tempting promise to one creature that can hear it withing 30 feet. The creature must succeed on a DC 14 Charisma saving throw. On a failed save, the creature cannot take actions for 1 minute, as it dwells on the promise the seraph made. The target can repeat the saving throw at the end of each turn, ending the effect on a success. Each failed saving throw after the initial failure deals 9 (2d8 damage) psychic damage to the target"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The seraph's spellcasting ability is Charisma (spell save {@dc 14}). The seraph can innately cast the following spells, using only verbal components:"
+      ],
+      "will": [
+        "detect evil and good",
+        "detect magic",
+        "light",
+        "minor illusion",
+        "thaumaturgy"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened"
+  ],
+  "resist": [
+    "radiant",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

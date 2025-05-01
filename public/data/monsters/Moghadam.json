@@ -1,0 +1,169 @@
+{
+  "name": "Moghadam",
+  "source": "IMR",
+  "page": 55,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 12,
+  "con": 13,
+  "int": 19,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "arcana": "+8",
+    "insight": "+7",
+    "medicine": "+7"
+  },
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Dwarvish",
+    "Infernal",
+    "Undercommon"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Moghadam wields {@item Ruinblade|IMR} (see appendix C)."
+      ]
+    },
+    {
+      "name": "Artificial Mind",
+      "entries": [
+        "Moghadam can manifest an artificial mind as a floating spectral image of a {@creature demilich}'s jeweled skull. Moghadam can communicate telepathically with this mind, send it up to 300 feet away from him, and see and hear through it."
+      ]
+    },
+    {
+      "name": "Infoportation (1/Day)",
+      "entries": [
+        "Moghadam can teleport himself into an unoccupied space next to his artificial mind."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Ruinblade",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 9 (2d6 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Blight (1/Day)",
+      "entries": [
+        "While wielding {@item Ruinblade|IMR}, Moghadam can cast the {@spell blight} spell (DC 15)."
+      ]
+    },
+    {
+      "name": "Disintegrate (1/7 Days)",
+      "entries": [
+        "While wielding {@item Ruinblade|IMR}, Moghadam can cast the {@spell disintegrate} spell against any nonmagical object or creation of magical force."
+      ]
+    },
+    {
+      "name": "Information Overload {@recharge 5}",
+      "entries": [
+        "Moghadam overloads the thoughts of one creature within 5 feet of either himself or his artificial mind. The target must succeed on a DC 16 Intelligence saving throw or take 22 (4d8 + 4 damage) psychic damage, and the next attack roll made against the target before the end of Moghadam's next turn has advantage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Moghadam is an 18th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He has the following artificer spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "dancing lights",
+            "light",
+            "message",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "comprehend languages",
+            "cure wounds",
+            "grease",
+            "identify"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "invisibility",
+            "heat metal"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "flame arrows|XGE",
+            "hypnotic pattern"
+          ]
+        },
+        "4": {
+          "spells": [
+            "fabricate",
+            "stone shape",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "creation"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

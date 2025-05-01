@@ -1,0 +1,77 @@
+{
+  "name": "Wyvern",
+  "source": "MM",
+  "page": 303,
+  "size": [
+    "L"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 20,
+    "fly": 80
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 16,
+  "int": 5,
+  "wis": 12,
+  "cha": 6,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The wyvern makes two attacks: one with its bite and one with its stinger. While flying, it can use its claws in place of one other attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one creature. 11 (2d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Stinger",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one creature. 11 (2d6 + 4 damage) piercing damage. The target must make a DC 15 Constitution saving throw, taking 24 (7d6 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

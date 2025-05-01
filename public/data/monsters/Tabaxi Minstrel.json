@@ -1,0 +1,89 @@
+{
+  "name": "Tabaxi Minstrel",
+  "source": "ToA",
+  "page": 233,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "tabaxi"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "climb": 20
+  },
+  "str": 10,
+  "dex": 15,
+  "con": 11,
+  "int": 14,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "perception": "+3",
+    "performance": "+7",
+    "persuasion": "+5",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Common plus any two languages"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Feline Agility",
+      "entries": [
+        "When the tabaxi moves on its turn in combat, it can double its speed until the end of the turn. Once it uses this ability, the tabaxi can't use it again until it moves 0 feet on one of its turns."
+      ]
+    },
+    {
+      "name": "Inspire (1/Day)",
+      "entries": [
+        "While taking a short rest, the tabaxi can spend 1 minute singing, playing an instrument, telling a story, or reciting a poem to soothe and inspire creatures other than itself. Up to five creatures of the tabaxi's choice that can see and hear its performance gain 8 temporary hit points at the end of the tabaxi's short rest."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The tabaxi makes two claws attacks or two dart attacks."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Dart",
+      "entries": [
+        "Ranged atk +4 to hit, range 20/ 60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

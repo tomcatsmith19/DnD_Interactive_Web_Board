@@ -1,0 +1,95 @@
+{
+  "name": "Living Deep Haze",
+  "source": "DoDk",
+  "page": 204,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 90,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 14,
+  "dex": 20,
+  "con": 14,
+  "int": 5,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Deep Speech"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fog Form",
+      "entries": [
+        "The Living Deep Haze can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Deep Haze",
+      "entries": [
+        "A creature who enters or starts its turn in the same space as the Living Deep Haze must succeed on a {@dc 15} Constitution saving throw or take 10 ({@damage 3d6}) necrotic damage and gain one {@adventure level of contamination|DoDk|12}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Living Deep Haze makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

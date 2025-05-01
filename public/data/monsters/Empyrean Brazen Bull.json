@@ -1,0 +1,127 @@
+{
+  "name": "Empyrean Brazen Bull",
+  "source": "GHLoE",
+  "page": 100,
+  "size": [
+    "H"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 162,
+  "speed": {
+    "walk": 50,
+    "fly": 30
+  },
+  "str": 26,
+  "dex": 10,
+  "con": 25,
+  "int": 14,
+  "wis": 17,
+  "cha": 21,
+  "skills": {
+    "athletics": "+12",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Celestial"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Celestial Arsenal",
+      "entries": [
+        "The Empyrean brazen bull's weapon attacks are magical. When it hits with any weapon, the weapon deals an extra 18 ({@damage 4d8}) radiant damage (included in the attack)."
+      ]
+    },
+    {
+      "name": "Death Throes",
+      "entries": [
+        "When the Empyrean brazen bull dies, it explodes, and each creature within 20 feet of it must make a {@dc 17} Dexterity saving throw, taking 21 {@dice 6d6} fire and 21 ({@damage 6d6}) radiant damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Soulfire Nimbus",
+      "entries": [
+        "At the start of each of the Empyrean brazen bull's turns, each creature within 5 feet of it takes 10 ({@damage 3d6}) radiant damage. A creature that touches the Empyrean brazen bull or hits it with a melee attack while within 5 feet of it takes 10 ({@damage 3d6}) radiant damage."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The Empyrean brazen bull deals double damage to objects and structures."
+      ]
+    },
+    {
+      "name": "Unrelenting Charge",
+      "entries": [
+        "If the Empyrean brazen bull moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a {@dc 20} Strength saving thrown or be knocked {@condition prone}. If the target is {@condition prone}, the Empyrean brazen bull can make one attack with its bite or hooves against it as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +12 to hit, reach 10 ft., one target., 24 (3d10 + 8 damage) bludgeoning damage plus 18 (4d8 damage) radiant damage. If the target is a creature, it is {@condition grappled} (escape DC 20). Until this grapple ends, the target is {@condition restrained}, and the Empyrean brazen bull can't bite another target."
+      ]
+    },
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +12 to hit, reach 10 ft., one target. 27 (3d12 + 8 damage) piercing damage and 18 (4d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +12 to hit, reach 5 feet., one target. 24 (3d10 + 8 damage) bludgeoning damage and 18 (4d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Swallow",
+      "entries": [
+        "The Empyrean brazen bull makes one bite attack against a Medium or smaller creature it is grappling. If the attack hits, that creature takes the bite's damage and is swallowed, and the grapple ends. While swallowed, the creature is {@condition blinded} and {@condition restrained}, it has total cover against attacks and other effects outside the Empyrean brazen bull, and it takes 21 (6d6 damage) fire damage at the start of each of theEmpyrean brazen bull's turns. If the Empyrean brazen bull takes 30 damage or more on a single turn from a creature inside it, the Empyrean brazen bull must succeed on a DC 15 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall {@condition prone} in a space within 10 feet of the empyrean brazen bull. If the Empyrean brazen bull dies, a swallowed creature is no longer {@condition restrained} by it and can escape from the corpse using 15 feet of movement, exiting {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "necrotic",
+    "poison",
+    "radiant"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

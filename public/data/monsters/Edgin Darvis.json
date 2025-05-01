@@ -1,0 +1,129 @@
+{
+  "name": "Edgin Darvis",
+  "source": "HAT-TG",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "bard"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 16,
+  "con": 14,
+  "int": 14,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "deception": "+7",
+    "performance": "+10",
+    "persuasion": "+10",
+    "sleight of hand": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "Common"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Edgin makes two Reinforced Lute or Shortsword attacks."
+      ]
+    },
+    {
+      "name": "Reinforced Lute",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) bludgeoning damage plus 11 (2d10 damage) thunder damage."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage plus 11 (2d10 damage) thunder damage."
+      ]
+    },
+    {
+      "name": "Disorienting Words",
+      "entries": [
+        "Edgin magically taunts up to three creatures he can see within 60 feet of himself. Each creature must succeed on a DC 15 Wisdom saving throw or take 10 (3d6 damage) psychic damage and have disadvantage on the next attack roll it makes before the start of Edgin's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Edgin casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "friends",
+        "message"
+      ],
+      "daily": {
+        "1": [
+          "suggestion"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,70 @@
+{
+  "name": "Young Winter Wolf",
+  "source": "TftYP",
+  "page": 181,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 37,
+  "speed": {
+    "walk": 50
+  },
+  "str": 17,
+  "dex": 15,
+  "con": 15,
+  "int": 3,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The wolf has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

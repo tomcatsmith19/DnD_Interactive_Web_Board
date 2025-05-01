@@ -1,0 +1,85 @@
+{
+  "name": "Ssurran Poisoner",
+  "source": "BAM",
+  "page": 58,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "lizardfolk"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 13,
+  "int": 12,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+3",
+    "survival": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The ssurran can hold its breath for 15 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ssurran makes two Claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 30/120 ft., one target. 4 (1d6 + 1 damage) piercing damage plus 4 (1d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Poison Bomb",
+      "entries": [
+        "The ssurran throws a tangerine-sized bomb at a point up to 60 feet away, where it explodes, releasing a 10-foot-radius sphere of poisonous gas that disperses quickly. Each creature in the sphere must make a DC 11 Constitution saving throw, taking 10 (3d6 damage) poison damage on a failed save, or half as much damage on a successful one. After the ssurran throws a bomb, roll a {@dice d6}; on a roll of 4 or lower, the ssurran has no more bombs to throw."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,162 @@
+{
+  "name": "Gluttony Seraph",
+  "source": "GHLoE",
+  "page": 95,
+  "size": [
+    "H"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 218,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 21,
+  "dex": 12,
+  "con": 20,
+  "int": 13,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The seraph has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Seraphic Weapons",
+      "entries": [
+        "The seraph's weapon attacks are magical. When the seraph hits with any weapon, the weapon deals an extra ({@dice 2d8}) radiant damage (included in the attacks)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The seraph makes three attacks, only one of which can be a bite."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 24 (3d12 + 5 damage) piercing damage and 9 (2d8 damage) radiant damage. If the target is a Large or smaller creature, it is {@condition grappled} (escape DC 18). Until this grapple ends, the target is {@condition restrained}, and the seraph can't bite another target."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage and 9 (2d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Tongue",
+      "entries": [
+        "Melee atk +10 to hit, reach 20 ft., one creature. 10 (2d4 + 5 damage) bludgeoning damage and 9 (2d8 damage) radiant damage, and the target is {@condition grappled} (escape DC 18) and pulled to within 5 feet of the seraph. Until the grapple ends, the target is {@condition restrained}, and the seraph can't use its tongue or bite on another target."
+      ]
+    },
+    {
+      "name": "Swallow",
+      "entries": [
+        "The seraph makes one bite attack against a Medium or smaller creature it holds {@condition grappled}. If the attack hits, the target takes the bite's damage, the grapple ends, and the target is swallowed. While swallowed, a creature is {@condition blinded} and {@condition restrained}, has total cover against anything originating outside the seraph, and takes 18 (4d8 damage) acid damage and 9 (2d8 damage) radiant damage at the start of each of the seraph's turns. The seraph can have only one creature swallowed at a time.",
+        "If the seraph takes 35 damage or more on a single turn from a creature inside it, the seraph must succeed on a {@dc 20} Constitution saving throw at the end of that turn or regurgitate the swallowed creature, which falls {@condition prone} in a space within 10 feet of the seraph. If the seraph dies, the swallowed creature is no longer {@condition restrained} by it and can escape the corpse by using 10 feet of movement, exiting {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The seraph's spellcasting ability is Charisma (spell save {@dc 16}). The seraph can innately cast the following spells, using only verbal components:"
+      ],
+      "will": [
+        "detect evil and good",
+        "detect magic",
+        "light",
+        "thaumaturgy"
+      ],
+      "daily": {
+        "1": [
+          "create food and water"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "radiant",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

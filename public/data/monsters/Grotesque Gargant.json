@@ -1,0 +1,93 @@
+{
+  "name": "Grotesque Gargant",
+  "source": "DoDk",
+  "page": 197,
+  "size": [
+    "H"
+  ],
+  "type": "grotesque gargant",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 126,
+  "speed": {
+    "walk": 40
+  },
+  "str": 23,
+  "dex": 15,
+  "con": 20,
+  "int": 10,
+  "wis": 12,
+  "cha": 9,
+  "skills": {
+    "athletics": "+12",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Regeneration",
+      "entries": [
+        "A grotesque gargant regains 10 hit points at the start of its turn as long as it is within the Deep Haze. The gargant dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    },
+    {
+      "name": "Contaminating Beam",
+      "entries": [
+        "The grotesque gargant magically forces a creature it can see within 60 feet of it to make a {@dc 15} Constitution saving throw. The creature takes 27 ({@damage 6d8}) necrotic damage on a failed save and gains one {@adventure level of contamination|DoDk|12}."
+      ]
+    },
+    {
+      "name": "Misty Camouflage",
+      "entries": [
+        "The grotesque gargant has advantage on Dexterity (Stealth) checks to hide in any area obscured by mist or fog."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The grotesque gargant makes two greatclub attacks."
+      ]
+    },
+    {
+      "name": "Greatclub",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one target. 19 (3d8 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +9 to hit, range 60/240 ft., one target. 28 (4d10 + 6 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

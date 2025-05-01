@@ -1,0 +1,81 @@
+{
+  "name": "Amrik Vanthampur",
+  "source": "BGDIA",
+  "page": 30,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 18,
+  "con": 12,
+  "int": 14,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "acrobatics": "+6",
+    "athletics": "+3",
+    "deception": "+6",
+    "insight": "+6"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Infernal"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Suave Defense",
+      "entries": [
+        "While Amrik is wearing light or no armor and wielding no shield, his AC includes his Charisma modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Amrik makes three dagger attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d4 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Smoke Bomb (1/Day)",
+      "entries": [
+        "Amrik hurls a smoke bomb up to 20 feet away. The bomb explodes on impact, creating a cloud of black smoke that fills a 10-foot-radius sphere. The area within the cloud is heavily obscured. A strong wind disperses the cloud, which otherwise remains until the end of Amrik's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

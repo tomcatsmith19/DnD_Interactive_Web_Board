@@ -1,0 +1,88 @@
+{
+  "name": "Vargouille Reflection",
+  "source": "MPP",
+  "page": 52,
+  "size": [
+    "T"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 5,
+    "fly": 40
+  },
+  "str": 6,
+  "dex": 15,
+  "con": 14,
+  "int": 6,
+  "wis": 10,
+  "cha": 2,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Abyssal",
+    "Infernal",
+    "and any languages it knew before becoming a vargouille",
+    "but it can't speak"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The vargouille has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage plus 10 (3d6 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Abyssal Curse",
+      "entries": [
+        "The vargouille targets one Humanoid within 5 feet of itself that has the {@condition incapacitated} condition. The target must succeed on a DC 12 Charisma saving throw or become cursed. The cursed target's Charisma decreases by 1 after each hour, as its head takes on fiendish aspects, and its Charisma can't increase. The curse doesn't advance while the target is in sunlight or the area of a {@spell daylight} spell. When the cursed target's Charisma becomes 2, the target dies, and its head tears from its body and becomes a new vargouille reflection. Casting remove curse, greater restoration, or a similar spell on the target before the transformation is complete ends the curse and restores the target's Charisma."
+      ]
+    },
+    {
+      "name": "Horrific Reflection {@recharge 5}",
+      "entries": [
+        "The vargouille's head mimics that of a Humanoid the vargouille can see within 120 feet of itself. The target must succeed on a DC 12 Wisdom saving throw or take 10 (3d6 damage) psychic damage and have the {@condition frightened} condition for 1 hour or until the vargouille loses {@status concentration} (as if {@status concentration||concentrating} on a spell). If the target's saving throw is successful or if the effect ends on it, the target is immune to the Horrific Reflection of all vargouille reflections for 1 hour."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

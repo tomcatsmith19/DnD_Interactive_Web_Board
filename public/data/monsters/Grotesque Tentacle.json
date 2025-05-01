@@ -1,0 +1,78 @@
+{
+  "name": "Grotesque Tentacle",
+  "source": "CoA",
+  "page": 78,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 0
+  },
+  "str": 19,
+  "dex": 18,
+  "con": 16,
+  "int": 16,
+  "wis": 19,
+  "cha": 18,
+  "skills": {},
+  "passive": 14,
+  "languages": [
+    "Celestial",
+    "Common"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If it dies, the tentacle returns to life in {@dice 1d6} days and regains all its hit points. Only a {@spell wish} spell can prevent this trait from functioning."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one creature. 8 (1d8 + 4 damage) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 45 (10d8 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Spit Poison",
+      "entries": [
+        "Ranged atk +8 to hit, range 15/30 ft., one creature. The target must make a DC 15 Constitution saving throw, taking 45 (10d8 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": null,
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

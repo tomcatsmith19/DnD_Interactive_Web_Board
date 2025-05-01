@@ -1,0 +1,80 @@
+{
+  "name": "Hangry Otyugh",
+  "source": "AWM",
+  "page": 33,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 19,
+  "int": 6,
+  "wis": 13,
+  "cha": 6,
+  "skills": {},
+  "passive": 0,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Limited Telepathy",
+      "entries": [
+        "The otyugh can magically transmit simple messages and images to any creature within 120 feet of it that can understand a language. This form of telepathy doesn't allow the receiving creature to telepathically respond."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The otyugh makes three attacks:"
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 12 (2d8 + 3 damage) piercing damage. Target must make a DC 15 Constitution save, or take d",
+        "({@dice 1d10}) poison damage until cured."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 7 (1d8 + 3 damage) bludgeoning damage ,Target must make a DC 19 Constitution save, or take 42",
+        "({@dice 12d6}) poison damage"
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Target must make a DC 14 Constitution save, or be {@condition grappled}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

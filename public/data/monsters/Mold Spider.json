@@ -1,0 +1,72 @@
+{
+  "name": "Mold Spider",
+  "source": "GHLoE",
+  "page": 83,
+  "size": [
+    "T"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 3,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 2,
+  "dex": 13,
+  "con": 13,
+  "int": 1,
+  "wis": 8,
+  "cha": 2,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Regrowth",
+      "entries": [
+        "When a mold spider dies, unless fire destroyed it, it releases spores that regrow a mold spider in 3 days."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The mold spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 1 slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

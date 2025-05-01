@@ -1,0 +1,54 @@
+{
+  "name": "Stegosaurus",
+  "source": "VGM",
+  "page": 140,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 76,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 9,
+  "con": 17,
+  "int": 2,
+  "wis": 11,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 26 (6d6 + 5 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

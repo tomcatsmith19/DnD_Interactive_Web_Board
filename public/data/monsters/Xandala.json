@@ -1,0 +1,138 @@
+{
+  "name": "Xandala",
+  "source": "ToA",
+  "page": 236,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-elf"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 71,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 11,
+  "con": 14,
+  "int": 18,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "arcana": "+7",
+    "deception": "+10",
+    "history": "+7",
+    "insight": "+6",
+    "survival": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Elvish",
+    "Halfling"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Quickened Spell (3/Day)",
+      "entries": [
+        "When she casts a spell that has a casting time of 1 action, Xandala changes the casting time to 1 bonus action for that casting."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d6 damage) bludgeoning damage, or 4 (1d8 damage) bludgeoning damage when used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Xandala is a 9th-level spellcaster. Her spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Xandala has the following sorcerer spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "acid splash",
+            "fire bolt",
+            "light",
+            "mage hand",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "chromatic orb",
+            "feather fall",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "invisibility",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "fireball",
+            "fly"
+          ]
+        },
+        "4": {
+          "spells": [
+            "ice storm",
+            "polymorph"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dominate person"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

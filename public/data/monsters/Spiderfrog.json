@@ -1,0 +1,79 @@
+{
+  "name": "Spiderfrog",
+  "source": "MGELFT",
+  "page": 33,
+  "size": [
+    "S"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    {
+      "special": "chaotic sticky"
+    }
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 14,
+  "int": 3,
+  "wis": 12,
+  "cha": 4,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+7"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The spiderfrog can breathe air and water."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The spiderfrog can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "Spiderfrog's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) piercing damage. Target is {@condition grappled} (escape DC 11). Until this grapple ends, the target is {@condition restrained}, and spiderfrog can't bite another target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,107 @@
+{
+  "name": "Kuo-toa Monitor",
+  "source": "MM",
+  "page": 198,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "kuo-toa"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 14,
+  "int": 12,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "perception": "+6",
+    "religion": "+5"
+  },
+  "passive": 16,
+  "languages": [
+    "Undercommon"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The kuo-toa can breathe air and water."
+      ]
+    },
+    {
+      "name": "Otherworldly Perception",
+      "entries": [
+        "The kuo-toa can sense the presence of any creature within 30 feet of it that is {@condition invisible} or on the Ethereal Plane. It can pinpoint such a creature that is moving."
+      ]
+    },
+    {
+      "name": "Slippery",
+      "entries": [
+        "The kuo-toa has advantage on ability checks and saving throws made to escape a grapple."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the kuo-toa has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "The kuo-toa adds its Wisdom modifier to its armor class."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The kuo-toa makes one bite attack and two unarmed strikes."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage plus 3 (1d6 damage) lightning damage, and the target can't take reactions until the end of the kuo-toa's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

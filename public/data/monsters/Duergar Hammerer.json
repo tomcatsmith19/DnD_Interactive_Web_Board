@@ -1,0 +1,93 @@
+{
+  "name": "Duergar Hammerer",
+  "source": "MTF",
+  "page": 188,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 20
+  },
+  "str": 17,
+  "dex": 7,
+  "con": 12,
+  "int": 5,
+  "wis": 5,
+  "cha": 5,
+  "skills": {},
+  "passive": 7,
+  "languages": [
+    "understands Dwarvish but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Engine of Pain",
+      "entries": [
+        "Once per turn, a creature that attacks the hammerer can target the duergar trapped in it. The attacker has disadvantage on the attack roll. On a hit, the attack deals an extra 5 ({@dice 1d10}) damage to the hammerer, and the hammerer can respond by using its Multiattack with its reaction."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The hammerer deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hammerer makes two attacks: one with its claw and one with its hammer."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Hammer",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

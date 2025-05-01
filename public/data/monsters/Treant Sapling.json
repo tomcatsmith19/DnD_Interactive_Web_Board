@@ -1,0 +1,87 @@
+{
+  "name": "Treant Sapling",
+  "source": "WBtW",
+  "page": 36,
+  "size": [
+    "L"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 17,
+  "dex": 8,
+  "con": 15,
+  "int": 12,
+  "wis": 12,
+  "cha": 10,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Druidic",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "If the treant is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the treant move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the treant is animate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The treant makes two Slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (1d10 + 3 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +5 to hit, range 20/60 ft., one target. 14 (2d10 + 3 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Animate Trees (1/Day)",
+      "entries": [
+        "The treant magically animates one or two trees it can see within 60 feet of it. These trees have the same statistics as an awakened tree (see the Monster Manual), except they can't speak. An animated tree acts as an ally of the treant. The tree remains animate for 1 day or until it dies, until the treant dies or is more than 120 feet from the tree, or until the treant takes a bonus action to turn it back into an inanimate tree. The tree then takes root if possible."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

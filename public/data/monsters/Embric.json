@@ -1,0 +1,130 @@
+{
+  "name": "Embric",
+  "source": "WDH",
+  "page": 32,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    {
+      "tag": "genasi",
+      "prefix": "Fire"
+    }
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 16,
+  "con": 14,
+  "int": 14,
+  "wis": 11,
+  "cha": 14,
+  "skills": {
+    "athletics": "+4",
+    "deception": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Primordial"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The captain makes three melee attacks: two with its scimitar and one with its dagger. Or Embric makes two ranged attacks with its daggers."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Embric's spellcasting ability is Constitution ({@hit 4} to hit with spell attacks). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "produce flame"
+      ],
+      "ability": "con",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "coastal",
+    "hill",
+    "arctic",
+    "urban",
+    "forest",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Dolphin Delighter",
+  "source": "MPMM",
+  "page": 97,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 0,
+    "swim": 60
+  },
+  "str": 14,
+  "dex": 13,
+  "con": 13,
+  "int": 11,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "perception": "+3",
+    "performance": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Aquan",
+    "telepathy 120 ft."
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The dolphin can hold its breath for 20 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dolphin makes two Dazzling Slam attacks."
+      ]
+    },
+    {
+      "name": "Dazzling Slam",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage plus 7 (2d6 damage) psychic damage, and the target is {@condition blinded} until the start of the dolphin's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [
+    "coastal",
+    "underwater"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

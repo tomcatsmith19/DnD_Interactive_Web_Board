@@ -1,0 +1,91 @@
+{
+  "name": "Jade Tigress",
+  "source": "CM",
+  "page": 166,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 71,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 15,
+  "int": 11,
+  "wis": 16,
+  "cha": 11,
+  "skills": {
+    "athletics": "+7",
+    "insight": "+6",
+    "intimidation": "+3",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While Jade Tigress is wearing no armor and wielding no shield, her AC includes her Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Jade Tigress makes three attacks."
+      ]
+    },
+    {
+      "name": "Force Strike",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) force damage, and if the target is a creature, it must succeed on a DC 15 Constitution saving throw or be {@condition stunned} until the end of Jade Tigress's next turn."
+      ]
+    },
+    {
+      "name": "Poisoned Dart",
+      "entries": [
+        "Ranged atk +5 to hit, range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage plus 7 (3d4 damage) poison damage, and the target must succeed on a DC 15 Constitution saving throw or gain 1 level of {@condition exhaustion}."
+      ]
+    },
+    {
+      "name": "Heal Self (Recharges after a Long Rest)",
+      "entries": [
+        "Jade Tigress regains {@dice 2d8 + 2} hit points, and all levels of {@condition exhaustion} end on her."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Bristled Moorbounder",
+  "source": "EGW",
+  "page": 295,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 70
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 14,
+  "int": 2,
+  "wis": 13,
+  "cha": 5,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Bladed Hide",
+      "entries": [
+        "At the start of each of its turns, the moorbounder deals 5 ({@damage 2d4}) piercing damage to any creature grappling it."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The moorbounder's long jump is up to 40 feet and its high jump is up to 20 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The moorbounder makes two attacks: one with its blades and one with its claws."
+      ]
+    },
+    {
+      "name": "Blades",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 14 (4d4 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

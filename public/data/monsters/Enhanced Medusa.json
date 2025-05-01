@@ -1,0 +1,135 @@
+{
+  "name": "Enhanced Medusa",
+  "source": "IMR",
+  "page": 47,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 17,
+  "con": 16,
+  "int": 12,
+  "wis": 13,
+  "cha": 15,
+  "skills": {
+    "deception": "+5",
+    "perception": "+4",
+    "stealth": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Common plus one other language"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Petrifying Gaze",
+      "entries": [
+        "When a creature that can see the medusa's eyes starts its turn within 30 feet of the medusa, the medusa can force it to make a {@dc 14} Constitution saving throw if the medusa isn't {@condition incapacitated} and can see the creature. If the saving throw fails by 5 or more, the creature is instantly {@condition petrified}. Otherwise, a creature that fails the save begins to turn to metal, wood, or porcelain (the medusa's choice) and is {@condition restrained}. The {@condition restrained} creature must repeat the saving throw at the end of its next turn, becoming {@condition petrified} on a failure or ending the effect on a success. The petrification lasts until the creature is freed by the  {@spell greater restoration} spell or other magic.",
+        "Unless {@quickref Surprise|PHB|3|0|surprised}, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the medusa until the start of its next turn, when it can avert its eyes again. If the creature looks at the medusa in the meantime, it must immediately make the save.",
+        "If the medusa sees itself reflected on a polished surface within 30 feet of it and in an area of bright light, the medusa is, due to its curse, affected by its own gaze."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The medusa makes two Claw attacks and one Snake Hair attack, or it makes three Poison Ray attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atkr m} +6, reach 5 ft. 10 (2d6 + 3 damage) Slashing damage."
+      ]
+    },
+    {
+      "name": "Snake Hair",
+      "entries": [
+        "{@atkr m} +6, reach 5 ft. 5 (1d4 + 3 damage) Piercing damage plus 14 (4d6 damage) Poison damage."
+      ]
+    },
+    {
+      "name": "Poison Ray",
+      "entries": [
+        "{@atkr r} +5, range 150 ft. 11 (2d8 + 2 damage) Poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The medusa's innate spellcasting ability is Charisma (spell save {@dc 13}). The medusa can innately cast the following spells, requiring no material components:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light"
+          ]
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

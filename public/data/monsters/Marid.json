@@ -1,0 +1,141 @@
+{
+  "name": "Marid",
+  "source": "MM",
+  "page": 146,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 229,
+  "speed": {
+    "walk": 30,
+    "fly": 60,
+    "swim": 90
+  },
+  "str": 22,
+  "dex": 12,
+  "con": 26,
+  "int": 18,
+  "wis": 17,
+  "cha": 18,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Aquan"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The marid can breathe air and water."
+      ]
+    },
+    {
+      "name": "Elemental Demise",
+      "entries": [
+        "If the marid dies, its body disintegrates into a burst of water and foam, leaving behind only equipment the marid was wearing or carrying."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The marid makes two trident attacks."
+      ]
+    },
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee/Ranged atk +10 to hit, reach 5 ft. or range 20/60 ft., one target. 13 (2d6 + 6 damage) piercing damage, or 15 (2d8 + 6 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Water Jet",
+      "entries": [
+        "The marid magically shoots water in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw. On a failure, a target takes 21 (6d6 damage) bludgeoning damage and, if it is Huge or smaller, is pushed up to 20 feet away from the marid and knocked {@condition prone}. On a success, a target takes half the bludgeoning damage, but is neither pushed nor knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The marid's innate spellcasting ability is Charisma (spell save {@dc 16}, {@hit 8} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "create or destroy water",
+        "detect evil and good",
+        "detect magic",
+        "fog cloud",
+        "purify food and drink"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "cold",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underwater",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

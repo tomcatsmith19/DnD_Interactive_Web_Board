@@ -1,0 +1,81 @@
+{
+  "name": "Bullywug Knight",
+  "source": "WBtW",
+  "page": 231,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 13,
+  "int": 9,
+  "wis": 11,
+  "cha": 14,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Bullywug",
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The knight can breathe air and water."
+      ]
+    },
+    {
+      "name": "Speak with Frogs and Toads",
+      "entries": [
+        "The knight can communicate simple concepts to frogs and toads when it speaks in Bullywug."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The knight's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The knight makes two Glaive attacks."
+      ]
+    },
+    {
+      "name": "Glaive",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one target. 8 (1d10 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

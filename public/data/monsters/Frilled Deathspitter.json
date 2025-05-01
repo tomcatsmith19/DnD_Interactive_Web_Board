@@ -1,0 +1,71 @@
+{
+  "name": "Frilled Deathspitter",
+  "source": "PSX",
+  "page": 30,
+  "size": [
+    "S"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 40
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 13,
+  "int": 4,
+  "wis": 12,
+  "cha": 6,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The deathspitter makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Spit Poison",
+      "entries": [
+        "Ranged atk +5 to hit, range 15/30 ft., one creature. The target must make a DC 13 Constitution saving throw, taking 18 (4d8 damage) poison damage on a failed save, or half as much damage on a successful one. In addition, a creature that fails its saving throw is {@condition blinded} until the end of the deathspitter's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

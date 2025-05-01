@@ -1,0 +1,126 @@
+{
+  "name": "Prismari Professor of Perfection",
+  "source": "SCC",
+  "page": 206,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "sorcerer"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 97,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 16,
+  "con": 15,
+  "int": 15,
+  "wis": 13,
+  "cha": 19,
+  "skills": {
+    "acrobatics": "+6",
+    "arcana": "+5",
+    "athletics": "+5",
+    "perception": "+4",
+    "performance": "+10"
+  },
+  "passive": 14,
+  "languages": [
+    "Common plus any four languages"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Water Walking",
+      "entries": [
+        "The professor can walk across water and other liquids as if they were solid ground."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The professor makes three Tidal Strike attacks."
+      ]
+    },
+    {
+      "name": "Tidal Strike",
+      "entries": [
+        "{@atk ms,rs} +7 to hit, reach 5 ft. or range 60 ft., one target. 13 (2d8 + 4 damage) cold damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The professor casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "minor illusion"
+      ],
+      "daily": {
+        "1": [
+          "wall of ice"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

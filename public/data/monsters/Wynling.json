@@ -1,0 +1,66 @@
+{
+  "name": "Wynling",
+  "source": "JttRC",
+  "page": 33,
+  "size": [
+    "T"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 21,
+  "speed": {
+    "walk": 30,
+    "fly": 40
+  },
+  "str": 3,
+  "dex": 20,
+  "con": 13,
+  "int": 10,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "sleight of hand": "+7",
+    "stealth": "+7"
+  },
+  "passive": 12,
+  "languages": [
+    "Sylvan"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 7 (1d4 + 5 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Cloak of the Mountain {@recharge 4}",
+      "entries": [
+        "The wynling magically turns {@condition invisible}, along with any equipment it is wearing or carrying, for 1 minute or until it makes an attack roll."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

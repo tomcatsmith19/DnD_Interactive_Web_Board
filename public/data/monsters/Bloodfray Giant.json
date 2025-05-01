@@ -1,0 +1,63 @@
+{
+  "name": "Bloodfray Giant",
+  "source": "GGR",
+  "page": 200,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 103,
+  "speed": {
+    "walk": 40
+  },
+  "str": 23,
+  "dex": 9,
+  "con": 20,
+  "int": 7,
+  "wis": 8,
+  "cha": 9,
+  "skills": {
+    "athletics": "+9",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Chain",
+      "entries": [
+        "Melee atk +9 to hit, reach 20 ft., one target. 16 (3d6 + 6 damage) bludgeoning damage. If the target is a creature, it is {@condition grappled} (escape DC 17). Until the grapple ends, the target is {@condition restrained}, and the giant can't use this attack on anyone else."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +9 to hit, range 60/240 ft., one target. 16 (3d6 + 6 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

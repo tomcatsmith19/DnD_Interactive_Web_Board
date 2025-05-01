@@ -1,0 +1,60 @@
+{
+  "name": "Moorbounder",
+  "source": "EGW",
+  "page": 295,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 70
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 14,
+  "int": 2,
+  "wis": 13,
+  "cha": 5,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The moorbounder's long jump is up to 40 feet and its high jump is up to 20 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 14 (4d4 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

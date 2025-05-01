@@ -1,0 +1,195 @@
+{
+  "name": "Zegana",
+  "source": "GGR",
+  "page": 255,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "merfolk"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 130,
+  "speed": {
+    "walk": 30,
+    "swim": 40
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 14,
+  "int": 20,
+  "wis": 18,
+  "cha": 16,
+  "skills": {
+    "insight": "+9",
+    "nature": "+10",
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Merfolk"
+  ],
+  "cr": "16",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "Zegana can breathe air and water."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Zegana fails a saving throw, she can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Zegana has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Prime Speaker's Trident",
+      "entries": [
+        "Melee/Ranged atk +10 to hit, reach 5 ft. or range 20/60 ft., one target. 12 (2d6 + 5 damage) piercing damage, and the trident emits a thunderous boom. Each creature in a 15-foot cube originating from the prongs of the trident must make a DC 18 Constitution saving throw. On a failed save, the creature takes 9 (2d8 damage) thunder damage and is pushed 10 feet away from Zegana. If the creature is underwater, the damage is increased to 13 ({@dice 3d8}). On a successful save, the creature takes half as much damage and isn't pushed."
+      ]
+    },
+    {
+      "name": "Deluge {@recharge 4}",
+      "entries": [
+        "Zegana conjures a wave of water that crashes down on an area within 120 feet of her. The area can be up to 30 feet long, up to 10 feet wide, and up to 10 feet tall. Each creature in that area must make a DC 18 Dexterity saving throw. On a failed save, a creature takes 18 (4d8 damage) bludgeoning damage and is knocked {@condition prone}. On a successful save, a creature takes half as much damage and isn't knocked {@condition prone}. The water spreads out across the ground, extinguishing unprotected flames it comes in contact with, and then vanishes."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Adaptive Skin",
+      "entries": [
+        "Zegana gains resistance to one damage type of her choice-acid, fire, lightning, or thunder-until the start of her next turn."
+      ]
+    },
+    {
+      "name": "Trident",
+      "entries": [
+        "Zegana makes one melee attack with the Prime Speaker's Trident."
+      ]
+    },
+    {
+      "name": "Enlarge (Costs 2 Actions)",
+      "entries": [
+        "Zegana casts {@spell enlarge/reduce} on herself, using the enlarge option, without expending a spell slot."
+      ]
+    },
+    {
+      "name": "Deluge (Costs 3 Actions)",
+      "entries": [
+        "Zegana uses Deluge, if available."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Zegana is a 15th-level Simic spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 18}, {@hit 10} to hit with spell attacks). She has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "acid splash",
+            "druidcraft",
+            "ray of frost",
+            "shape water|XGE"
+          ]
+        },
+        "1": {
+          "spells": [
+            "color spray",
+            "expeditious retreat",
+            "fog cloud",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "enlarge/reduce",
+            "gust of wind"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fly",
+            "slow"
+          ]
+        },
+        "4": {
+          "spells": [
+            "control water",
+            "ice storm",
+            "polymorph"
+          ]
+        },
+        "5": {
+          "spells": [
+            "conjure elemental",
+            "creation"
+          ]
+        },
+        "6": {
+          "spells": [
+            "move earth",
+            "wall of ice"
+          ]
+        },
+        "7": {
+          "spells": [
+            "prismatic spray",
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": [
+            "control weather",
+            "dominate monster"
+          ]
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

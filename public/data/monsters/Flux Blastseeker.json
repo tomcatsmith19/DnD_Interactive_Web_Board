@@ -1,0 +1,111 @@
+{
+  "name": "Flux Blastseeker",
+  "source": "GGR",
+  "page": 242,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 55,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 15,
+  "con": 12,
+  "int": 20,
+  "wis": 9,
+  "cha": 14,
+  "skills": {
+    "arcana": "+8",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fluxbending Overcast {@recharge 5}",
+      "entries": [
+        "The blastseeker can create an additional effect immediately after casting a spell. Roll a {@dice d6} to determine the effect: 1-3. The blastseeker teleports, swapping places with a creature it can see within 30 feet of it. 4-6. The blastseeker and each creature within 10 feet of it must succeed on a {@dc 16} Constitution saving throw or take 11 ({@damage 2d10}) thunder damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d6 damage) bludgeoning damage, or 4 (1d8 damage) bludgeoning damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The blastseeker's innate spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). The blastseeker can innately cast the following spells, requiring no components other than its Izzet gear, which doesn't function for others:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

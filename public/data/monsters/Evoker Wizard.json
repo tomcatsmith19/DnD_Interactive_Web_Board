@@ -1,0 +1,121 @@
+{
+  "name": "Evoker Wizard",
+  "source": "MPMM",
+  "page": 262,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 121,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 12,
+  "int": 17,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "arcana": "+7",
+    "history": "+7"
+  },
+  "passive": 11,
+  "languages": [
+    "any four languages"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The evoker makes three Arcane Burst attacks."
+      ]
+    },
+    {
+      "name": "Arcane Burst",
+      "entries": [
+        "{@atk ms,rs} +7 to hit, reach 5 ft. or range 120 ft., one target. 25 (4d10 + 3 damage) force damage."
+      ]
+    },
+    {
+      "name": "Sculpted Explosion {@recharge 4}",
+      "entries": [
+        "The evoker unleashes a magical explosion of a particular damage type: cold, fire, lightning, or thunder. The magic erupts in a 20-foot-radius sphere centered on a point within 150 feet of the evoker. Each creature in that area must make a DC 15 Dexterity saving throw. The evoker can select up to three creatures it can see in the area to ignore the spell, as the evoker sculpts the spell's energy around them. On a failed save, a creature takes 40 (9d8 damage) damage of the chosen type and is knocked {@condition prone}. On a successful save, a creature takes half as much damage and isn't knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The evoker casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "light",
+        "mage hand",
+        "message",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

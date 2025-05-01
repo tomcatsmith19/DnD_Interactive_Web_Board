@@ -1,0 +1,138 @@
+{
+  "name": "Neh-thalggu",
+  "source": "BAM",
+  "page": 39,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 95,
+  "speed": {
+    "walk": 40
+  },
+  "str": 15,
+  "dex": 8,
+  "con": 18,
+  "int": 12,
+  "wis": 11,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Deep Speech; see also Brain Dump"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Brain Dump",
+      "entries": [
+        "Whenever the neh-thalggu consumes a brain, it gains the magical ability to speak and understand languages known by the brain's previous owner."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The neh-thalggu doesn't require air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The neh-thalggu makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 11 (2d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Extract Brain",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one {@condition incapacitated} Humanoid. 35 (10d6 damage) piercing damage. If this damage reduces the target to 0 hit points, the neh-thalggu kills the target by extracting and consuming its brain."
+      ]
+    },
+    {
+      "name": "Mind Blast {@recharge 5}",
+      "entries": [
+        "The neh-thalggu magically emits psychic energy at one Humanoid it can see within 10 feet of itself. The target must make a DC 14 Wisdom saving throw. On a failed save, the target takes 9 (2d8 damage) psychic damage and is {@condition incapacitated} until the end of its next turn. On a successful save, the target takes half as much damage and isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The neh-thalggu casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 11}). It must have consumed the requisite number of brains to cast the spell, as indicated:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Minotaur Archaeologist",
+  "source": "BMT",
+  "page": 126,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 10,
+  "con": 11,
+  "int": 13,
+  "wis": 12,
+  "cha": 10,
+  "skills": {
+    "arcana": "+3",
+    "history": "+5",
+    "perception": "+5",
+    "religion": "+3"
+  },
+  "passive": 15,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Labyrinthine Recall",
+      "entries": [
+        "The minotaur can perfectly recall any path it has traveled."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) piercing damage. If the minotaur moved at least 10 feet straight toward the target immediately before it hit, the target takes an extra 3 (1d6 damage) piercing damage, and if the target is a Large or smaller creature, it must succeed on a DC 11 Strength saving throw or be pushed up to 10 feet from the minotaur and have the {@condition prone} condition."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

@@ -1,0 +1,122 @@
+{
+  "name": "Firbolg Primeval Warden",
+  "source": "BGG",
+  "page": 136,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "druid"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 14,
+  "int": 12,
+  "wis": 16,
+  "cha": 11,
+  "skills": {
+    "medicine": "+5",
+    "nature": "+3",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Druidic",
+    "Giant"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The firbolg makes two Spear or Fire Lance attacks."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d6 + 3 damage) piercing damage plus 9 (2d8 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Fire Lance",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 120 ft., one target. 14 (2d10 + 3 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The firbolg casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "entangle",
+        "speak with animals",
+        "speak with plants"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

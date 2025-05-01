@@ -1,0 +1,159 @@
+{
+  "name": "Istrid Horn",
+  "source": "WDH",
+  "page": 199,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 117,
+  "speed": {
+    "walk": 25
+  },
+  "str": 12,
+  "dex": 10,
+  "con": 14,
+  "int": 11,
+  "wis": 17,
+  "cha": 13,
+  "skills": {
+    "intimidation": "+4",
+    "religion": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Dwarven Resilience",
+      "entries": [
+        "Istrid has advantage on saving throws against being {@condition poisoned}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Istrid makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Maul",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 8 (2d6 + 1 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Treasure Sense (3/Day)",
+      "entries": [
+        "Istrid magically pinpoints precious metals and stones, such as coins and gems, within 60 feet of her."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Istrid is a 9th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks) She has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "mending",
+            "sacred flame",
+            "spare the dying"
+          ]
+        },
+        "1": {
+          "spells": [
+            "divine favor",
+            "guiding bolt",
+            "healing word",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "lesser restoration",
+            "magic weapon",
+            "hold person",
+            "silence",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "beacon of hope",
+            "crusader's mantle",
+            "dispel magic",
+            "revivify",
+            "spirit guardians",
+            "water walk"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "freedom of movement",
+            "guardian of faith",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "flame strike",
+            "mass cure wounds",
+            "hold monster"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

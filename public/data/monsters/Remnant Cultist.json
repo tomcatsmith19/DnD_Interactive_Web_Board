@@ -1,0 +1,150 @@
+{
+  "name": "Remnant Cultist",
+  "source": "TDCSR",
+  "page": 252,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [],
+  "ac": [
+    "13"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 12,
+  "int": 18,
+  "wis": 8,
+  "cha": 8,
+  "skills": {
+    "deception": "+5",
+    "stealth": "+6"
+  },
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Infernal"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Unknowable Secrets",
+      "entries": [
+        "Any attempt to form a mental link with the cultist, cast {@spell scrying} on the cultist, or cast {@spell speak with dead} on the cultist automatically fails, and the creature that initiated the attempt takes 21 ({@damage 6d6}) psychic damage."
+      ]
+    },
+    {
+      "name": "One-Eyed",
+      "entries": [
+        "The cultist has {@quickref Advantage and Disadvantage|PHB|2|0|disadvantage} on any attack roll made against a target more than 30 feet away."
+      ]
+    },
+    {
+      "name": "Spellsteal",
+      "entries": [
+        "If the cultist successfully uses {@spell counterspell} to negate another creature's spell, it can cast the countered spell once before the end of its next turn using one of its spell slots of the same level or higher, and requiring no material components."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger of Wounding",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft., range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage. Hit points lost to {@item sword of wounding|DMG|this weapon's} damage can be regained only through a {@quickref resting|PHB|2|0|short or long rest}, rather than by regeneration, magic, or any other means.",
+        "Once per turn when the cultist hits a creature with an attack using this weapon, it can wound its target. At the start of each of the wounded creature's turns, it takes 2 ({@damage 1d4}) necrotic damage for each time it's been wounded by this weapon. It can then make a {@dc 15} Constitution {@quickref saving throws|PHB|2|1|saving throw}, ending the effect of all such wounds on itself on a success. Alternatively, the wounded creature, or a creature within 5 feet of it, can use an action to make a {@dc 15} Wisdom ({@skill Medicine}) check, ending the effect of such wounds on it on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The remnant cultist is an 11th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 15}, {@hit 7} to hit with spell attacks). The cultist has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "message",
+            "minor illusion",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "Tasha's hideous laughter",
+            "mage armor",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fear",
+            "vampiric touch"
+          ]
+        },
+        "4": {
+          "spells": [
+            "greater invisibility",
+            "phantasmal killer"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dream",
+            "mislead"
+          ]
+        },
+        "6": {
+          "spells": [
+            "circle of death"
+          ]
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

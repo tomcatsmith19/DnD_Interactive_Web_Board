@@ -1,0 +1,85 @@
+{
+  "name": "Silver Dragon Wyrmling",
+  "source": "MM",
+  "page": 118,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 17,
+  "int": 12,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+2"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 9 (1d10 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Breath Weapons {@recharge 5}",
+      "entries": [
+        "The dragon uses one of the following breath weapons.",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Cold Breath",
+              "entry": "The dragon exhales an icy blast in a 15-foot cone. Each creature in that area must make a {@dc 13} Constitution saving throw, taking 18 ({@damage 4d8}) cold damage on a failed save, or half as much damage on a successful one."
+            },
+            {
+              "type": "item",
+              "name": "Paralyzing Breath",
+              "entry": "The dragon exhales paralyzing gas in a 15-foot cone. Each creature in that area must succeed on a {@dc 13} Constitution saving throw or be {@condition paralyzed} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

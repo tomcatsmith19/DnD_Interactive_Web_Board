@@ -1,0 +1,104 @@
+{
+  "name": "Varram",
+  "source": "RoT",
+  "page": 9,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 18,
+  "con": 14,
+  "int": 13,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "deception": "+6",
+    "stealth": "+7"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Infernal"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Dragon Fanatic",
+      "entries": [
+        "The dragonsoul has advantage on saving throws against being {@condition charmed} or {@condition frightened}. While Varram can see a dragon or higher-ranking Cult of the Dragon cultist friendly to it, Varram ignores the effects of being {@condition charmed} or {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Fanatic Advantage",
+      "entries": [
+        "Once per turn, if Varram makes a weapon attack with advantage on the attack roll and hits, the target takes an extra 10 ({@dice 3d6}) damage."
+      ]
+    },
+    {
+      "name": "Limited Flight",
+      "entries": [
+        "The dragonsoul can use a bonus action to gain a flying speed of 30 feet until the end of its turn."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The dragonsoul has advantage on an attack roll against a creature if at least one of Varram's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Dragonsoul attacks twice with its shortsword."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage plus 10 ({@dice 3d6}) damage of the type to which Varram has resistance."
+      ]
+    },
+    {
+      "name": "Orb of Dragon's Breath (3/Day)",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 90 ft., one target. 27 ({@dice 6d8}) damage of the type to which Varram has damage resistance."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

@@ -1,0 +1,118 @@
+{
+  "name": "Cradle of the Frost Scion",
+  "source": "BGG",
+  "page": 174,
+  "size": [
+    "G"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 499,
+  "speed": {
+    "walk": 40,
+    "swim": 40
+  },
+  "str": 27,
+  "dex": 14,
+  "con": 26,
+  "int": 11,
+  "wis": 19,
+  "cha": 16,
+  "skills": {},
+  "passive": 14,
+  "languages": [
+    "Giant",
+    "Primordial"
+  ],
+  "cr": "24",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Awakening of the Scion",
+      "entries": [
+        "The cradle is a container for the {@creature scion of Thrym|BGG}. When the cradle drops to 0 hit points, its body shatters into shards of ice. The scion instantly appears in the space the cradle occupied and uses the cradle's initiative count."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (5/Day)",
+      "entries": [
+        "If the cradle fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The cradle has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The cradle deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cradle makes two Slam or Hurl Icicle attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +15 to hit, reach 20 ft., one target. 30 (4d10 + 8 damage) bludgeoning damage plus 11 (2d10 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Hurl Icicle",
+      "entries": [
+        "Ranged atk +15 to hit, range 120 ft., one target. 26 (4d8 + 8 damage) piercing damage plus 9 (2d8 damage) cold damage, and the target must succeed on a DC 23 Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Freezing Breath {@recharge 5}",
+      "entries": [
+        "The cradle exhales a blast of frost in a 90-foot cone. Each creature in that area must make a DC 23 Constitution saving throw. On a failed save, a creature takes 52 (8d12 damage) cold damage, and its speed is reduced to 0 until the end of its next turn. On a successful save, a creature takes half as much damage only. If this damage would reduce the target to 0 hit points, the target drops to 1 hit point instead and has the {@condition petrified} condition, turning into a frozen statue.",
+        "If the statue takes bludgeoning damage, it shatters, killing the frozen creature. If the statue would take fire damage, it instead takes no damage and thaws, ending the petrification."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

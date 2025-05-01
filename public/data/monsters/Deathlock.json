@@ -1,0 +1,127 @@
+{
+  "name": "Deathlock",
+  "source": "MTF",
+  "page": 128,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 36,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 15,
+  "con": 10,
+  "int": 14,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "arcana": "+4",
+    "history": "+4"
+  },
+  "passive": 11,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Turn Resistance",
+      "entries": [
+        "The deathlock has advantage on saving throws against any effect that turns undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Deathly Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 9 (2d6 + 2 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The deathlock's innate spellcasting ability is Charisma (spell save {@dc 13}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect magic",
+        "disguise self",
+        "mage armor"
+      ],
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

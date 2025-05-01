@@ -1,0 +1,95 @@
+{
+  "name": "Oblivion Leaper",
+  "source": "GHLoE",
+  "page": 27,
+  "size": [
+    "S"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 14,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 11,
+  "int": 10,
+  "wis": 10,
+  "cha": 8,
+  "skills": {
+    "stealth": "+5"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shadow Leap",
+      "entries": [
+        "Starting in an area of dim light or darkness, an oblivion leaper can teleport to an unoccupied space also in dim light or darkness. Every foot of teleportation costs the oblivion leaper 1 foot of movement."
+      ]
+    },
+    {
+      "name": "Shadow Stealth",
+      "entries": [
+        "While in dim light or darkness, the oblivion leaper can take the Hide action as a bonus action."
+      ]
+    },
+    {
+      "name": "Sunlight Weakness",
+      "entries": [
+        "While in sunlight, the oblivion leaper has disadvantage on attack rolls, ability checks, and saving throws."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Soul Drain",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 7 (2d4 + 3 damage) necrotic damage, and the target must make a DC 11 Constitution saving throw. On a failure, the target's available Hit Dice are reduced by 1. If this effect reduces the target's Hit Dice to 0, the target falls {@condition unconscious}. The target can repeat the saving throw at the end of each of its turns, regaining consciousness on a success. Hit Dice lost this way return at the end of a short rest, in time to spend them to regain hit points.",
+        "If an oblivion leaper kills a living creature with this attack when the creature is at 0 Hit Dice, the target's soul is lost to the realm of shadow. This lost soul can be raised from the dead only with mighty magic, such as wish or divine intervention."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "radiant"
+  ],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,76 @@
+{
+  "name": "Barachiel",
+  "source": "CoA",
+  "page": 263,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30,
+    "fly": 50
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 18,
+  "int": 11,
+  "wis": 14,
+  "cha": 20,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Infernal"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Barachiel makes three Greatsword attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage plus 22 (5d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Purifying Flames {@recharge 4}",
+      "entries": [
+        "Barachiel wreathes his sword in white flame, then makes a Greatsword attack. On a hit, the target takes an additional 45 (7d12 damage) fire damage plus 45 (7d12 damage) radiant damage. The target must succeed on a DC 18 Charisma saving throw or have the {@condition stunned} condition until the end of their next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

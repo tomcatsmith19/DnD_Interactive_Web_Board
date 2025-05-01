@@ -1,0 +1,142 @@
+{
+  "name": "Windharrow",
+  "source": "PotA",
+  "page": 192,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-elf"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 55,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 12,
+  "int": 14,
+  "wis": 10,
+  "cha": 17,
+  "skills": {
+    "acrobatics": "+5",
+    "deception": "+7",
+    "persuasion": "+5",
+    "performance": "+7",
+    "stealth": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Auran",
+    "Common",
+    "Elvish"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Windharrow has advantage on saving throws against being {@condition charmed}, and magic can't put him to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Windharrow makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Windharrow is an 8th-level spellcaster. His spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). Windharrow knows the following bard spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "friends",
+            "prestidigitation",
+            "vicious mockery"
+          ]
+        },
+        "1": {
+          "spells": [
+            "disguise self",
+            "dissonant whispers",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "invisibility",
+            "shatter",
+            "silence"
+          ]
+        },
+        "3": {
+          "spells": [
+            "nondetection",
+            "sending",
+            "tongues"
+          ]
+        },
+        "4": {
+          "spells": [
+            "confusion",
+            "dimension door"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,169 @@
+{
+  "name": "Barghest",
+  "source": "VGM",
+  "page": 123,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "shapechanger"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": {
+      "number": 60,
+      "condition": "(30 ft. in goblin form)"
+    }
+  },
+  "str": 19,
+  "dex": 15,
+  "con": 14,
+  "int": 13,
+  "wis": 12,
+  "cha": 14,
+  "skills": {
+    "deception": "+4",
+    "intimidation": "+4",
+    "perception": "+5",
+    "stealth": "+4"
+  },
+  "passive": 15,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Goblin",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The barghest can use its action to polymorph into a Small goblin or back into its true form. Other than its size and speed, its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. The barghest reverts to its true form if it dies."
+      ]
+    },
+    {
+      "name": "Fire Banishment",
+      "entries": [
+        "When the barghest starts its turn engulfed in flames that are at least 10 feet high or wide, it must succeed on a {@dc 15} Charisma saving throw or be instantly banished to Gehenna. Instantaneous bursts of flame (such as a red dragon's breath or a {@spell fireball} spell) don't have this effect on the barghest."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The barghest has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Soul Feeding",
+      "entries": [
+        "A barghest can feed on the corpse of a humanoid that it killed that has been dead for less than 10 minutes, devouring both flesh and soul in doing so. This feeding takes at least 1 minute, and it destroys the victim's body. The victim's soul is trapped in the barghest for 24 hours, after which time it is digested. If the barghest dies before the soul is digested, the soul is released.",
+        "While a humanoid's soul is trapped in a barghest, any form of revival that could work has only a {@chance 50|50 percent} chance of doing so, freeing the soul from the barghest if it is successful. Once a creature's soul is digested, however, no mortal magic can return that humanoid to life."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The barghest's innate spellcasting ability is Charisma (spell save {@dc 12}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "levitate",
+        "minor illusion",
+        "pass without trace"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

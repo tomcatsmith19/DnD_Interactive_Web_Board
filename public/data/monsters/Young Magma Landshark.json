@@ -1,0 +1,89 @@
+{
+  "name": "Young Magma Landshark",
+  "source": "TDCSR",
+  "page": 248,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "16"
+  ],
+  "hp": 105,
+  "speed": {
+    "walk": 40,
+    "burrow": 40,
+    "swim": {
+      "number": 40,
+      "condition": "(lava only)"
+    }
+  },
+  "str": 20,
+  "dex": 11,
+  "con": 21,
+  "int": 2,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Searing Presence",
+      "entries": [
+        "Any creature that starts its turn within 10 feet of the landshark takes 11 ({@damage 2d10}) fire damage."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The landshark's {@quickref jumping|PHB|4|0|long jump} is up to 40 feet and its {@quickref jumping|PHB|4|0|high jump} is up to 20 feet, with or without a running start."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The landshark sheds bright light in a 15-foot radius and dim light for an additional 15 feet."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 31 (4d12 + 5 damage) piercing damage, and 14 (4d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Deadly Leap",
+      "entries": [
+        "If the landshark {@quickref jumping|PHB|4|0|jumps} at least 15 feet as part of its movement, it can then use this action to land on its feet in a space that contains one or more other creatures. Each of those creatures must succeed on a DC 16 Strength or Dexterity {@quickref saving throws|PHB|2|1|saving throw} (target's choice) or be knocked {@condition prone} and take 19 (4d6 + 5 damage) bludgeoning damage plus 14 (4d6 damage) fire damage. On a successful save, the creature takes only half the damage, isn't knocked {@condition prone}, and is pushed 5 feet out of the landshark's space into an unoccupied space of the creature's choice. If no unoccupied space is within range, the creature instead falls {@condition prone} in the land-shark's space."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "darkvision 60 ft.",
+    "tremorsense 120 ft."
+  ],
+  "environment": [
+    "mountain",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

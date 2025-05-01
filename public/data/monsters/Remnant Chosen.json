@@ -1,0 +1,149 @@
+{
+  "name": "Remnant Chosen",
+  "source": "TDCSR",
+  "page": 251,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [],
+  "ac": [
+    "12"
+  ],
+  "hp": 117,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 14,
+  "int": 15,
+  "wis": 16,
+  "cha": 20,
+  "skills": {
+    "arcana": "+10",
+    "deception": "+9"
+  },
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Infernal"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The chosen has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on {@quickref saving throws|PHB|2|1} against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Withering Spells",
+      "entries": [
+        "When the chosen casts a spell of 1st level or higher, the next Withered Hand attack it makes before the end of its next turn deals extra damage equal to {@dice 1d6} per level of the spell cast."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Withering Touch",
+      "entries": [
+        "{@atk ms} +9 to hit, reach 5 ft., one target. 17 (5d6 damage) force damage plus extra damage from the Withering Touch trait. If this damage reduces a creature to 0 hit points, the creature and everything it is wearing and carrying, except magic items, are reduced to a pile of fine gray dust. The creature can be restored to life only by means of a {@spell true resurrection} or a {@spell wish} spell."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The chosen is an 18th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 17}, {@hit 9} to hit with spell attacks). It has the following sorcerer spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "dancing lights",
+            "mage hand",
+            "message",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "mage armor",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blindness/deafness",
+            "detect thoughts"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fly",
+            "hypnotic pattern"
+          ]
+        },
+        "4": {
+          "spells": [
+            "greater invisibility"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dominate person",
+            "seeming"
+          ]
+        },
+        "6": {
+          "spells": [
+            "eyebite"
+          ]
+        },
+        "7": {
+          "spells": [
+            "finger of death"
+          ]
+        },
+        "8": {
+          "spells": [
+            "power word stun"
+          ]
+        },
+        "9": {
+          "spells": [
+            "power word kill"
+          ]
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic"
+  ],
+  "senses": [
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,163 @@
+{
+  "name": "Adult Crystal Dragon",
+  "source": "FTD",
+  "page": 171,
+  "size": [
+    "H"
+  ],
+  "type": "dragon",
+  "tags": [
+    "gem"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 172,
+  "speed": {
+    "walk": 40,
+    "burrow": 40,
+    "climb": 40,
+    "fly": 80
+  },
+  "str": 21,
+  "dex": 12,
+  "con": 21,
+  "int": 18,
+  "wis": 15,
+  "cha": 19,
+  "skills": {
+    "perception": "+10",
+    "stealth": "+9",
+    "survival": "+6"
+  },
+  "passive": 20,
+  "languages": [
+    "Common",
+    "Draconic",
+    "telepathy 120 ft."
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the dragon fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one target. 16 (2d10 + 5 damage) piercing damage plus 4 (1d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Scintillating Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a burst of brilliant radiance in a 60-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 40 (9d8 damage) radiant damage on a failed save, or half as much damage on a successful one. The dragon then gains 15 temporary hit points by absorbing a portion of the radiant energy."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Claw",
+      "entries": [
+        "The dragon makes one Claw attack."
+      ]
+    },
+    {
+      "name": "Psionics (Costs 2 Actions)",
+      "entries": [
+        "The dragon uses Psychic Step or Spellcasting."
+      ]
+    },
+    {
+      "name": "Starlight Strike (Costs 3 Actions)",
+      "entries": [
+        "The dragon releases a searing beam of starlight at a creature that it can see within 60 feet of it. The target must succeed on a {@dc 17} Dexterity saving throw or take 31 ({@damage 9d6}) radiant damage."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The dragon casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "dancing lights",
+        "guidance"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "radiant"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

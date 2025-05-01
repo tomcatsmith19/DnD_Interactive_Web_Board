@@ -1,0 +1,114 @@
+{
+  "name": "Cradle of the Fire Scion",
+  "source": "BGG",
+  "page": 172,
+  "size": [
+    "G"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 555,
+  "speed": {
+    "walk": 40
+  },
+  "str": 28,
+  "dex": 12,
+  "con": 27,
+  "int": 12,
+  "wis": 20,
+  "cha": 17,
+  "skills": {},
+  "passive": 15,
+  "languages": [
+    "Giant",
+    "Primordial"
+  ],
+  "cr": "25",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Awakening of the Scion",
+      "entries": [
+        "The cradle is a container for the {@creature scion of Surtur|BGG}. When the cradle drops to 0 hit points, its body hardens and crumbles to ash. The scion instantly appears in the space the cradle occupied and uses the cradle's initiative count."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (5/Day)",
+      "entries": [
+        "If the cradle fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The cradle has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The cradle deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cradle makes three Slam or Hurl Lava attacks in any combination."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +17 to hit, reach 20 ft., one target. 31 (4d10 + 9 damage) bludgeoning damage plus 14 (4d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Hurl Lava",
+      "entries": [
+        "Ranged atk +17 to hit, range 120 ft., one target. 27 (4d8 + 9 damage) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature within 5 feet of the fire takes an action to douse the fire, the target takes 10 (3d6 damage) fire damage at the start of each of its turns."
+      ]
+    },
+    {
+      "name": "Erupting Breath {@recharge 5}",
+      "entries": [
+        "The cradle exhales flames and volcanic gases in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw. On a failed save, a creature takes 55 (10d10 damage) fire damage and has the {@condition poisoned} condition for 1 minute. On a successful save, a creature takes half as much damage only.",
+        "A creature {@condition poisoned} in this way can make a {@dc 24} Constitution saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

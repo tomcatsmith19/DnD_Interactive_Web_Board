@@ -1,0 +1,86 @@
+{
+  "name": "Earth Elemental Myrmidon",
+  "source": "MTF",
+  "page": 202,
+  "size": [
+    "M"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 10,
+  "con": 17,
+  "int": 8,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Terran",
+    "one language of its creator's choice"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The myrmidon's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The myrmidon makes two maul attacks."
+      ]
+    },
+    {
+      "name": "Maul",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Thunderous Strike {@recharge}",
+      "entries": [
+        "The myrmidon makes one maul attack. On a hit, the target takes an extra 16 (3d10 damage) thunder damage, and the target must succeed on a DC 14 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

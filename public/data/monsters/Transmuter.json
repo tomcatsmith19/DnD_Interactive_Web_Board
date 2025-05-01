@@ -1,0 +1,142 @@
+{
+  "name": "Transmuter",
+  "source": "VGM",
+  "page": 218,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 40,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 11,
+  "int": 17,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "arcana": "+6",
+    "history": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "any four languages"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Transmuter's Stone",
+      "entries": [
+        "The transmuter carries a magic stone it crafted that grants its bearer one of the following effects:",
+        "Darkvision out to a range of 60 feet",
+        "An extra 10 feet of speed while the bearer is unencumbered",
+        "Proficiency with Constitution saving throws",
+        "Resistance to acid, cold, fire, lightning, or thunder damage (transmuter's choice whenever the transmuter chooses this benefit)",
+        "If the transmuter has the stone and casts a transmutation spell of 1st level or higher, it can change the effect of the stone."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d6 - 1 damage) bludgeoning damage, or 3 (1d8 - 1 damage) bludgeoning damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The transmuter is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). The transmuter has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "mending",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "chromatic orb",
+            "expeditious retreat",
+            "mage armor"
+          ]
+        },
+        "2": {
+          "spells": [
+            "alter self",
+            "hold person",
+            "knock"
+          ]
+        },
+        "3": {
+          "spells": [
+            "blink",
+            "fireball",
+            "slow"
+          ]
+        },
+        "4": {
+          "spells": [
+            "polymorph",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "telekinesis"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "footerEntries": [
+        "*Transmutation spell of 1st level or higher"
+      ],
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

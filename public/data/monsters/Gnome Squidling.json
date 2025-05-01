@@ -1,0 +1,124 @@
+{
+  "name": "Gnome Squidling",
+  "source": "IDRotF",
+  "page": 303,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "8"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 15
+  },
+  "str": 4,
+  "dex": 7,
+  "con": 10,
+  "int": 4,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Deep Speech and Gnomish but can't speak",
+    "telepathy 60 ft."
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The squidling has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one creature. 5 (2d4 damage) psychic damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC 7) and must succeed on a DC 7 Intelligence saving throw or be {@condition stunned} until this grapple ends."
+      ]
+    },
+    {
+      "name": "Extract Brain",
+      "entries": [
+        "Melee atk +0 to hit, reach 5 ft., one {@condition incapacitated} creature {@condition grappled} by the squidling. 27 (5d10 damage) piercing damage. If this damage reduces the target to 0 hit points, the squidling kills the target by extracting and devouring its brain."
+      ]
+    },
+    {
+      "name": "Mind Tickle {@recharge 5}",
+      "entries": [
+        "The squidling magically emits psychic energy in a 30-foot cone. Each creature in that area must succeed on a DC 7 Intelligence saving throw or take 2 (1d4 damage) psychic damage and be {@condition stunned} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The squidling's innate spellcasting ability is Intelligence (spell save {@dc 7}). It can innately cast {@spell levitate} at will, requiring no components."
+      ],
+      "will": [
+        "levitate"
+      ],
+      "ability": "int",
+      "hidden": [
+        "will"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

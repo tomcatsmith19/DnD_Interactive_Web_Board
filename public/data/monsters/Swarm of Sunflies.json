@@ -1,0 +1,86 @@
+{
+  "name": "Swarm of Sunflies",
+  "source": "MPP",
+  "page": 47,
+  "size": [
+    "M"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 10,
+    "fly": 40
+  },
+  "str": 6,
+  "dex": 17,
+  "con": 10,
+  "int": 4,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Celestial but can't speak"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny dragonfly. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Stings",
+      "entries": [
+        "Melee atk +5 to hit, reach 0 ft., one creature in the swarm's space. 10 (3d4 + 3 damage) piercing damage, or 5 (1d4 + 3 damage) piercing damage if the swarm has half of its hit points or fewer. Additionally, if the swarm is on an Outer Plane, it injects the target with a toxin, the effect of which is determined by the swarm's location:"
+      ]
+    },
+    {
+      "name": "Upper Plane",
+      "entries": [
+        "The target sheds bright light in a 5-foot radius until the end of its next turn. During that time, the {@condition invisible} condition has no effect on it."
+      ]
+    },
+    {
+      "name": "Neutral Plane",
+      "entries": [
+        "If the target is {@status concentration||concentrating} on a spell or similar effect, it loses its {@status concentration}."
+      ]
+    },
+    {
+      "name": "Lower Plane",
+      "entries": [
+        "The target's speed is reduced by 10 feet until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Dazzling Lights {@recharge}",
+      "entries": [
+        "The swarm shines its lights in a dazzling display. Each creature within 15 feet of the swarm must succeed on a DC 10 Constitution saving throw or have the {@condition stunned} condition for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

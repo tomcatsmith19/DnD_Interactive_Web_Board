@@ -1,0 +1,94 @@
+{
+  "name": "Coldlight Walker",
+  "source": "IDRotF",
+  "page": 284,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 17,
+  "int": 8,
+  "wis": 10,
+  "cha": 8,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Blinding Light",
+      "entries": [
+        "The walker sheds bright light in a 20-foot radius and dim light for an additional 20 feet. As a bonus action, the walker can target one creature in its bright light that it can see and force it to succeed on a {@dc 14} Constitution saving throw or be {@condition blinded} until the start of the walker's next turn."
+      ]
+    },
+    {
+      "name": "Icy Doom",
+      "entries": [
+        "Any creature killed by the walker freezes for 9 days, during which time it can't be thawed, harmed by fire, animated, or raised from the dead."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The walker doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The walker makes two attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 11 (2d8 + 2 damage) bludgeoning damage plus 14 (4d6 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Cold Ray",
+      "entries": [
+        "Ranged Spell atk +3 to hit, range 60 ft., one target. 25 (4d10 + 3 damage) cold damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

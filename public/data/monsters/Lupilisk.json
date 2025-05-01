@@ -1,0 +1,79 @@
+{
+  "name": "Lupilisk",
+  "source": "GHLoE",
+  "page": 61,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 40
+  },
+  "str": 16,
+  "dex": 17,
+  "con": 14,
+  "int": 5,
+  "wis": 13,
+  "cha": 7,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "can learn languages but can't speak"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The lupilisk has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The lupilisk has advantage on an attack roll against a creature if at least one of the lupilisk's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage and 7 (2d6 damage) poison damage. If the target is a creature, it must succeed on a DC 12 Constitution saving throw or become {@condition poisoned} and {@condition restrained} while {@condition poisoned} in this way. The creature must repeat the saving throw at the end of its next turn. On a success, the effect ends. If the save fails again, the creature is {@condition petrified} for 24 hours. At that time, it can repeat the saving throw, becoming permanently {@condition petrified} on a failure or ending the effect on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

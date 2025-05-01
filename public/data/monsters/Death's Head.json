@@ -1,0 +1,81 @@
+{
+  "name": "Death's Head",
+  "source": "VRGR",
+  "page": 232,
+  "size": [
+    "T"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "16"
+  ],
+  "hp": 17,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 8,
+  "dex": 13,
+  "con": 12,
+  "int": 5,
+  "wis": 14,
+  "cha": 3,
+  "skills": {},
+  "passive": 12,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Beheaded Form",
+      "entries": [
+        "When created, a death's head takes one of three forms: Aberrant Head, Gnashing Head, or Petrifying Head. This form determines the creature's attack."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The death's head doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Gnashing Bite (Gnashing Head Only)",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) piercing damage plus 7 (2d6 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Mind-Bending Bite (Aberrant Head Only)",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) piercing damage plus 5 (1d10 damage) necrotic damage, and the target must succeed on a DC 10 Intelligence saving throw or it can't take a reaction until the end of its next turn. Moreover, on its next turn, the target must choose whether it gets a move, an action, or a bonus action; it gets only one of the three."
+      ]
+    },
+    {
+      "name": "Petrifying Bite (Petrifying Head Only)",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage, and the target must succeed on a DC 10 Constitution saving throw or be {@condition restrained} as it begins to turn to stone. The target must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the target is {@condition petrified} for 10 minutes."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Sky Whale",
+  "source": "PSK",
+  "page": 28,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 85,
+  "speed": {
+    "fly": {
+      "number": 50,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 21,
+  "dex": 9,
+  "con": 17,
+  "int": 2,
+  "wis": 10,
+  "cha": 7,
+  "skills": {
+    "stealth": "+5"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The whale can hold its breath for 30 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The whale makes two attacks: one with its bite and one with its tail."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 21 (3d10 + 5 damage) piercing damage, and the target is {@condition grappled} (escape DC 16). Until this grapple ends, the target is {@condition restrained}, and the whale can't bite another target."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target not {@condition grappled} by the whale. 14 (2d8 + 5 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 16 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

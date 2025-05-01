@@ -1,0 +1,80 @@
+{
+  "name": "Dragonborn of Tiamat",
+  "source": "FTD",
+  "page": 185,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 11,
+  "con": 18,
+  "int": 10,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "athletics": "+8",
+    "intimidation": "+6",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Legendary Resistance (1/Day)",
+      "entries": [
+        "If the dragonborn fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragonborn makes two Greataxe attacks."
+      ]
+    },
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 11 (1d12 + 5 damage) slashing damage plus 13 (3d8 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Necrotic Breath {@recharge}",
+      "entries": [
+        "The dragonborn exhales shadowy fire in a 30-foot cone. Each creature in that area must make a DC 15 Wisdom saving throw. On a failed save, the creature takes 36 (8d8 damage) necrotic damage and is {@condition frightened} of the dragonborn for 1 minute. On a successful save, the creature takes half as much damage and isn't {@condition frightened}. A {@condition frightened} creature can repeat the saving throw at end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,141 @@
+{
+  "name": "High Fae Mage",
+  "source": "MCV4EC",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [
+    "sorcerer"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14",
+    "17"
+  ],
+  "hp": 148,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 11,
+  "dex": 18,
+  "con": 12,
+  "int": 17,
+  "wis": 15,
+  "cha": 24,
+  "skills": {
+    "arcana": "+11",
+    "investigation": "+7",
+    "nature": "+7"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The high fae has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The high fae makes two Elemental Strike attacks."
+      ]
+    },
+    {
+      "name": "Elemental Strike",
+      "entries": [
+        "{@atk ms,rs} +11 to hit, reach 5 ft. or range 60 ft., one target. 18 (2d10 + 7 damage) acid, cold, fire, force, lightning, or thunder damage (the high fae's choice)."
+      ]
+    },
+    {
+      "name": "Negotiate Life {@recharge 5}",
+      "entries": [
+        "The high fae enacts a magical bargain, siphoning energy from its opponents to heal its wounds. The high fae targets up to three creatures it can see within 60 feet of itself. Each target must make a DC 19 Constitution saving throw, taking 26 (4d12 damage) necrotic damage on a failed save, or half as much damage on a successful one. The high fae then regains 30 hit points."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The high fae casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 19}):"
+      ],
+      "will": [
+        "dancing lights",
+        "detect magic",
+        "druidcraft",
+        "mage armor"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

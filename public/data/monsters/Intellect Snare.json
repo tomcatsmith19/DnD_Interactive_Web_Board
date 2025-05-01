@@ -1,0 +1,88 @@
+{
+  "name": "Intellect Snare",
+  "source": "PaBTSO",
+  "page": 208,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 99,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 45,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 13,
+  "dex": 18,
+  "con": 15,
+  "int": 23,
+  "wis": 17,
+  "cha": 11,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Deep Speech",
+    "telepathy 120 ft."
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Cacophony of Minds",
+      "entries": [
+        "Any creature that starts its turn within 30 feet of the intellect snare must succeed on a {@dc 17} Wisdom saving throw or have the {@condition incapacitated} condition for 1 minute. An {@condition incapacitated} creature can repeat the saving throw at the start of each of its turns, ending the effect on itself on a success. A creature that succeeds on the saving throw is immune to this intellect snare's Cacophony of Minds for 24 hours."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The intellect snare has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The intellect snare makes two Tentacle attacks."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one target. 10 (1d8 + 6 damage) force damage, and if the target is a Medium or smaller creature, the target has the {@condition grappled} condition (escape DC 17)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "psychic"
+  ],
+  "senses": [
+    "blindsight 120 ft. (can't see beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,87 @@
+{
+  "name": "Strigoi",
+  "source": "VRGR",
+  "page": 246,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "16"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30,
+    "fly": 40
+  },
+  "str": 17,
+  "dex": 14,
+  "con": 16,
+  "int": 11,
+  "wis": 17,
+  "cha": 10,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "Common"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Stirge Telepathy",
+      "entries": [
+        "The strigoi can magically command any {@creature stirge} within 120 feet of it, using a limited form of telepathy."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The strigoi makes one Claw attack and makes one Proboscis attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage plus 6 (1d12 damage) acid damage."
+      ]
+    },
+    {
+      "name": "Proboscis",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 8 (1d10 + 3 damage) piercing damage plus 10 (3d6 damage) necrotic damage, and the strigoi regains hit points equal to the amount of necrotic damage dealt. A creature reduced to 0 hit points from this attack dies and leaves nothing behind except its skin and its equipment."
+      ]
+    },
+    {
+      "name": "Ravenous Children (1/Day)",
+      "entries": [
+        "The strigoi magically summons {@dice 1d4 + 2} {@creature stirge||stirges} (see their entry in the Monster Manual) in unoccupied spaces it can see within 30 feet of it. The stirges are under the strigoi's control and act immediately after the strigoi in the initiative order. The stirges disappear after 1 hour, when the strigoi dies, or when the strigoi dismisses them (no action required)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

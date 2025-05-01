@@ -1,0 +1,99 @@
+{
+  "name": "Grung Elite Warrior",
+  "source": "VGM",
+  "page": 157,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "grung"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 49,
+  "speed": {
+    "walk": 25,
+    "climb": 25
+  },
+  "str": 7,
+  "dex": 16,
+  "con": 15,
+  "int": 10,
+  "wis": 11,
+  "cha": 12,
+  "skills": {
+    "athletics": "+2",
+    "perception": "+2",
+    "stealth": "+5",
+    "survival": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Grung"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The grung can breathe air and water."
+      ]
+    },
+    {
+      "name": "Poisonous Skin",
+      "entries": [
+        "Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The grung's long jump is up to 25 feet and its high jump is up to 15 feet, with or without a running start."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage, and the target must succeed on a DC 12 Constitution saving throw or take 5 (2d4 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 80/320 ft., one target. 6 (1d6 + 3 damage) piercing damage, and the target must succeed on a DC 12 Constitution saving throw or take 5 (2d4 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Mesmerizing Chirr {@recharge}",
+      "entries": [
+        "The grung makes a chirring noise to which grungs are immune. Each humanoid or beast that is within 15 feet of the grung and able to hear it must succeed on a DC 12 Wisdom saving throw or be {@condition stunned} until the end of the grung's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,166 @@
+{
+  "name": "Eo Ashmajiir",
+  "source": "MaBJoV",
+  "page": 116,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "tiefling"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 81,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 10,
+  "int": 12,
+  "wis": 14,
+  "cha": 20,
+  "skills": {
+    "arcana": "+9",
+    "deception": "+9",
+    "persuasion": "+9"
+  },
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Celestial",
+    "Common",
+    "Draconic",
+    "Infernal",
+    "Undercommon"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Lightning Affinity",
+      "entries": [
+        "When Eo Ashmajiir casts a spell that deals lightning damage, that spell deals an additional 5 damage. When Eo casts a spell that deals a type of damage from the following list, she can change that damage type to lightning: acid, cold, fire, poison, thunder."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Twinned Spell",
+      "entries": [
+        "Eo Ashmajiir casts a spell from her spell list that targets only one creature and doesn't have a range of self. This spell targets a second creature in range. Eo cannot use this action in conjunction with her Lightning Affinity ability."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Eo Ashmajiir is an 18th-level spellcaster. Her spellcasting ability is Charisma (spell save {@dc 17}, {@hit 9} to hit with spell attacks). Eo can cast the following spells:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "mage hand",
+            "prestidigitation",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "chromatic orb",
+            "detect magic",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "lightning bolt"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "greater invisibility",
+            "polymorph"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dominate person",
+            "scrying",
+            "wall of force"
+          ]
+        },
+        "6": {
+          "spells": [
+            "chain lightning",
+            "disintegrate"
+          ]
+        },
+        "7": {
+          "spells": [
+            "finger of death",
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": [
+            "power word stun"
+          ]
+        },
+        "9": {
+          "spells": [
+            "wish"
+          ]
+        }
+      },
+      "footerEntries": [
+        "* Eo can cast these spells with the Twinned Spell action.",
+        "** Eo uses Wish to ensure she has a simulacrum of herself at all times."
+      ],
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

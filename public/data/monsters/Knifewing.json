@@ -1,0 +1,74 @@
+{
+  "name": "Knifewing",
+  "source": "GHLoE",
+  "page": 15,
+  "size": [
+    "S"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30,
+    "climb": 30,
+    "fly": 30
+  },
+  "str": 6,
+  "dex": 15,
+  "con": 13,
+  "int": 2,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The knifewing doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Glider",
+      "entries": [
+        "The knifewing can't ascend while flying and its altitude decreases by 5 feet for every 30 feet it flies. If flying, the knifewing falls if it doesn't fly at least 30 feet during its turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Knifewing (Flying Only)",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

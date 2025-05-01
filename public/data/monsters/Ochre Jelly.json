@@ -1,0 +1,81 @@
+{
+  "name": "Ochre Jelly",
+  "source": "MM",
+  "page": 243,
+  "size": [
+    "L"
+  ],
+  "type": "ooze",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "8"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 10,
+    "climb": 10
+  },
+  "str": 15,
+  "dex": 6,
+  "con": 14,
+  "int": 2,
+  "wis": 6,
+  "cha": 1,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The jelly can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The jelly can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 9 (2d6 + 2 damage) bludgeoning damage plus 3 (1d6 damage) acid damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "prone"
+  ],
+  "resist": [
+    "acid"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "slashing"
+  ],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

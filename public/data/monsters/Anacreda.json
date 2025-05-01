@@ -1,0 +1,94 @@
+{
+  "name": "Anacreda",
+  "source": "CoA",
+  "page": 146,
+  "size": [
+    "L"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 253,
+  "speed": {
+    "walk": 40,
+    "fly": 40
+  },
+  "str": 25,
+  "dex": 16,
+  "con": 22,
+  "int": 15,
+  "wis": 16,
+  "cha": 19,
+  "skills": {
+    "deception": "+10",
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Common",
+    "Giant",
+    "Infernal",
+    "Sylvan"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Anacreda makes two Claw attacks. She can replace one of the attacks with a Crushing Hug attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target. 16 (2d8 + 7 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Crushing Hug",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target. 51 (8d10 + 7 damage) bludgeoning damage, and if the target is a Large or smaller creature, Anacreda grabs it with both arms. The target has the {@condition grappled} condition (escape DC 18). Until the grapple ends, the target takes 73 (12d10 + 7 damage) necrotic damage at the start of each of Anacreda's turns. Anacreda can't make attacks while grappling a creature in this way."
+      ]
+    },
+    {
+      "name": "Spinewall",
+      "entries": [
+        "Anacreda causes a 50-foot-long, 5-foot-wide row of bones to pierce the earth at a point within 120 feet of her. She chooses the direction of the line. The bones rise 10 feet into the air and form a solid wall. A 5-foot section of bone has an AC of 20 and 10 hit points."
+      ]
+    },
+    {
+      "name": "Shattering Shriek (1/Day)",
+      "entries": [
+        "Anacreda shrieks loud enough to shatter stone and bone alike. Each creature within a 50-foot-radius sphere centered on Anacreda must make a DC 18 Constitution saving throw. A creature takes 55 (10d10 damage) thunder damage on a failed save, or half as much damage on a successful one. Unworked stone, exposed bone, and similar materials in the radius are shattered and turned into difficult terrain."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "fire",
+    "bludgeoning (from nonmagical attacks)",
+    "piercing (from nonmagical attacks)",
+    "slashing (from nonmagical attacks)"
+  ],
+  "senses": [
+    "darkvision 120 ft.",
+    "truesight 10 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

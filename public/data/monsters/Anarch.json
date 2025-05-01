@@ -1,0 +1,72 @@
+{
+  "name": "Anarch",
+  "source": "GGR",
+  "page": 239,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 13,
+  "con": 12,
+  "int": 9,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "perception": "+2",
+    "survival": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, the anarch can move up to its speed toward a hostile creature it can see."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The anarch deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spiked Club",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage, or 7 (1d10 + 2 damage) piercing damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

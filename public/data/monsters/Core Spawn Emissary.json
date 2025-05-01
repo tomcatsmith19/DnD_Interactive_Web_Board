@@ -1,0 +1,94 @@
+{
+  "name": "Core Spawn Emissary",
+  "source": "EGW",
+  "page": 286,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 40,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 17,
+  "dex": 15,
+  "con": 18,
+  "int": 8,
+  "wis": 13,
+  "cha": 8,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "telepathy 120 ft.",
+    "understands Deep Speech but can't speak"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The emissary has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The emissary makes three talons attacks."
+      ]
+    },
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 14 (2d10 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Alluring Thrum {@recharge 5}",
+      "entries": [
+        "The emissary emits a dreadful yet alluring hum. Each creature within 20 feet of the emissary that can hear it and that isn't an aberration must succeed on a DC 14 Constitution saving throw or be {@condition charmed} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Crystal Spores {@recharge}",
+      "entries": [
+        "A 15-foot-radius cloud of toxic crystalline spores extends out from the emissary. The spores spread around corners. Each creature in the area must succeed on a DC 14 Constitution saving throw or become {@condition poisoned}. While {@condition poisoned} in this way, a creature takes 11 (2d10 damage) poison damage at the start of each of its turns. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "psychic"
+  ],
+  "senses": [
+    "blindsight 30 ft.",
+    "tremorsense 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,100 @@
+{
+  "name": "Leucrotta",
+  "source": "VGM",
+  "page": 169,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 50
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 15,
+  "int": 9,
+  "wis": 12,
+  "cha": 6,
+  "skills": {
+    "deception": "+2",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "Gnoll"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The leucrotta has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Kicking Retreat",
+      "entries": [
+        "If the leucrotta attacks with its hooves, it can take the Disengage action as a bonus action."
+      ]
+    },
+    {
+      "name": "Mimicry",
+      "entries": [
+        "The leucrotta can mimic animal sounds and humanoid voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 14} Wisdom (Insight) check."
+      ]
+    },
+    {
+      "name": "Rampage",
+      "entries": [
+        "When the leucrotta reduces a creature to 0 hit points with a melee attack on its turn, it can take a bonus action to move up to half its speed and make an attack with its hooves."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The leucrotta makes two attacks: one with its bite and one with its hooves."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) piercing damage. If the leucrotta scores a critical hit, it rolls the damage dice three times, instead of twice."
+      ]
+    },
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

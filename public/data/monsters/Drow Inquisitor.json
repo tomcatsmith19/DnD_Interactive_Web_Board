@@ -1,0 +1,146 @@
+{
+  "name": "Drow Inquisitor",
+  "source": "MTF",
+  "page": 184,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 143,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 15,
+  "con": 14,
+  "int": 16,
+  "wis": 21,
+  "cha": 20,
+  "skills": {
+    "insight": "+10",
+    "perception": "+10",
+    "religion": "+8",
+    "stealth": "+7"
+  },
+  "passive": 20,
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Discern Lie",
+      "entries": [
+        "The drow knows when she hears a creature speak a lie in a language she knows."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The drow has advantage on saving throws against being {@condition charmed}, and magic can't put the drow to sleep."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The drow has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The drow makes three death lance attacks."
+      ]
+    },
+    {
+      "name": "Death Lance",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) piercing damage plus 18 (4d8 damage) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage it takes. This reduction lasts until the target finishes a long rest. The target dies if its hit point maximum is reduced to 0."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The drow's innate spellcasting ability is Charisma (spell save {@dc 18}). She can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "dancing lights",
+        "detect magic"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

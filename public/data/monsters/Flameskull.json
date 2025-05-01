@@ -1,0 +1,159 @@
+{
+  "name": "Flameskull",
+  "source": "MM",
+  "page": 134,
+  "size": [
+    "T"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 40,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 1,
+  "dex": 17,
+  "con": 14,
+  "int": 16,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "arcana": "+5",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Illumination",
+      "entries": [
+        "The flameskull sheds either dim light in a 15-foot radius, or bright light in a 15-foot radius and dim light for an additional 15 feet. It can switch between the options as an action."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The flameskull has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If the flameskull is destroyed, it regains all its hit points in 1 hour unless holy water is sprinkled on its remains or a {@spell dispel magic} or {@spell remove curse} spell is cast on them."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The flameskull uses Fire Ray twice."
+      ]
+    },
+    {
+      "name": "Fire Ray",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 30 ft., one target. 10 (3d6 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The flameskull is a 5th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It requires no somatic or material components to cast its spells. The flameskull has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand"
+          ]
+        },
+        "1": {
+          "spells": [
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blur",
+            "flaming sphere"
+          ]
+        },
+        "3": {
+          "spells": [
+            "fireball"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "prone"
+  ],
+  "resist": [
+    "lightning",
+    "necrotic",
+    "piercing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

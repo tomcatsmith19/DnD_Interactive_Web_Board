@@ -1,0 +1,134 @@
+{
+  "name": "Sofina",
+  "source": "HAT-TG",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "wizard"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 161,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 18,
+  "int": 20,
+  "wis": 14,
+  "cha": 8,
+  "skills": {
+    "arcana": "+10",
+    "history": "+10",
+    "insight": "+7"
+  },
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic",
+    "Infernal",
+    "Thayan"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Sofina wears a magic robe that grants her a +2 bonus to AC and a +1 bonus to saving throws (included above)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Sofina makes three Necrotic Strike attacks."
+      ]
+    },
+    {
+      "name": "Necrotic Strike",
+      "entries": [
+        "{@atk ms,rs} +10 to hit, reach 5 ft. or range 120 ft., one target. 32 (5d10 + 5 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Swarm of Meteors (1/Day)",
+      "entries": [
+        "Sofina magically calls down a meteor swarm that detonates in four 40-foot-radius spheres, each one centered on a point she can see within 1 mile of herself. These spheres can overlap. Each creature in one or more of these spheres must make a DC 18 Dexterity saving throw, taking 35 (10d6 damage) fire damage and 35 (10d6 damage) bludgeoning damage on a failed saving throw, or half as much damage on a successful one. A creature in multiple spheres takes this damage only once."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Sofina casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 18}):"
+      ],
+      "will": [
+        "mage hand",
+        "message",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

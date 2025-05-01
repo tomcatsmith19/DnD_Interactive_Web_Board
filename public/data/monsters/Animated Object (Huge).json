@@ -1,0 +1,62 @@
+{
+  "name": "Animated Object (Huge)",
+  "source": "PHB",
+  "page": 213,
+  "size": [
+    "H"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 0,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 6,
+  "con": 10,
+  "int": 3,
+  "wis": 3,
+  "cha": 1,
+  "skills": {},
+  "passive": 6,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Animated",
+      "entries": [
+        "If the object lacks legs or other appendages it can use for locomotion, it instead has a flying speed of 30 feet and can hover. If the object is securely attached to a surface or larger object, such as a chain bolted to a wall, its speed is 0.",
+        "When the animated object drops to 0 hit points, it reverts to its original object form, and any remaining damage carries over to its original object form.",
+        "The DM might rule that a specific objects slam attack inflicts slashing or piercing damage based on its form."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 16 (2d12 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

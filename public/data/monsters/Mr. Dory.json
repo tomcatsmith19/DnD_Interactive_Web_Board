@@ -1,0 +1,138 @@
+{
+  "name": "Mr. Dory",
+  "source": "GoS",
+  "page": 246,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 170,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 20,
+  "con": 19,
+  "int": 14,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "athletics": "+5",
+    "perception": "+6",
+    "stealth": "+9"
+  },
+  "passive": 16,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Deep Speech",
+    "telepathy 60 ft."
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Mr. Dory has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Water Dependency",
+      "entries": [
+        "Mr. Dory takes 6 ({@damage 1d12}) acid damage at the end of every hour he goes without exposure to water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Mr. Dory makes three attacks with his rapier."
+      ]
+    },
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) piercing damage and 7 (2d6 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Eye of Corruption {@recharge 5}",
+      "entries": [
+        "Mr. Dory glares at a creature he can see within 30 feet of him. The target must make a DC 15 Constitution saving throw. On a failed save, it takes 27 (5d10 damage) necrotic damage and 27 (5d10 damage) poison damage and then gains vulnerability to both necrotic and poison damage for 1 minute. On a successful save, it takes half damage and does not gain the vulnerabilities."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Mr. Dory's innate spellcasting ability is Charisma (save {@dc 15}, {@hit 7} to hit with spell attacks). Mr. Dory can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect magic",
+        "detect thoughts",
+        "invisibility"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

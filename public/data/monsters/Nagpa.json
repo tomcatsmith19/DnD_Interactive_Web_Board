@@ -1,0 +1,163 @@
+{
+  "name": "Nagpa",
+  "source": "MTF",
+  "page": 215,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "nagpa"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 187,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 15,
+  "con": 12,
+  "int": 23,
+  "wis": 18,
+  "cha": 21,
+  "skills": {
+    "arcana": "+12",
+    "deception": "+11",
+    "history": "+12",
+    "insight": "+10",
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "Common plus up to five other languages"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Corruption",
+      "entries": [
+        "As a bonus action, the nagpa targets one creature it can see within 90 feet of it. The target must make a {@dc 20} Charisma saving throw. An evil creature makes the save with disadvantage. On a failed save, the target is {@condition charmed} by the nagpa until the start of the nagpa's next turn. On a successful save, the target becomes immune to the nagpa's Corruption for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Paralysis {@recharge}",
+      "entries": [
+        "As a bonus action, the nagpa forces each creature within 30 feet of it to succeed on a {@dc 20} Wisdom saving throw or be {@condition paralyzed} for 1 minute. A {@condition paralyzed} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Undead and constructs are immune to this effect."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Staff",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 9 (2d6 + 2 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The nagpa is a 15th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 20}, {@hit 12} to hit with spell attacks). A nagpa has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "fire bolt",
+            "mage hand",
+            "message",
+            "minor illusion"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "detect magic",
+            "protection from evil and good",
+            "witch bolt"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "ray of enfeeblement",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "fireball",
+            "fly"
+          ]
+        },
+        "4": {
+          "spells": [
+            "confusion",
+            "hallucinatory terrain",
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": [
+            "dominate person",
+            "dream",
+            "geas"
+          ]
+        },
+        "6": {
+          "spells": [
+            "circle of death",
+            "disintegrate"
+          ]
+        },
+        "7": {
+          "spells": [
+            "etherealness",
+            "prismatic spray"
+          ]
+        },
+        "8": {
+          "spells": [
+            "feeblemind"
+          ]
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [
+    "coastal",
+    "desert",
+    "forest",
+    "swamp",
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

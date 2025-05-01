@@ -1,0 +1,81 @@
+{
+  "name": "Neogi Hatchling Swarm",
+  "source": "BAM",
+  "page": 40,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 12,
+  "dex": 13,
+  "con": 14,
+  "int": 6,
+  "wis": 10,
+  "cha": 9,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The swarm can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny neogi hatchling. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Swarm of Bites",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one creature. 22 (6d6 + 1 damage) poison damage, or 11 (3d6 + 1 damage) poison damage if the swarm has half of its hit points or fewer, and the target must succeed on a DC 12 Constitution saving throw or become {@condition poisoned} for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

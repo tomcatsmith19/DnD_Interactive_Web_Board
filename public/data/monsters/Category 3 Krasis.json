@@ -1,0 +1,76 @@
+{
+  "name": "Category 3 Krasis",
+  "source": "GGR",
+  "page": 212,
+  "size": [
+    "H"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 287,
+  "speed": {
+    "walk": 40
+  },
+  "str": 23,
+  "dex": 12,
+  "con": 21,
+  "int": 2,
+  "wis": 13,
+  "cha": 8,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "16",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The krasis can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The krasis makes three attacks: one with its bite, one with its claws, and one with its tail."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one creature. 27 (6d6 + 6 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 22 (3d10 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +11 to hit, reach 15 ft., one target. 33 (6d8 + 6 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 19 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

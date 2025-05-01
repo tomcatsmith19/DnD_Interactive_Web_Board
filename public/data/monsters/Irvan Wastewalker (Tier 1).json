@@ -1,0 +1,75 @@
+{
+  "name": "Irvan Wastewalker (Tier 1)",
+  "source": "CRCotN",
+  "page": 189,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 12,
+  "int": 12,
+  "wis": 12,
+  "cha": 12,
+  "skills": {
+    "acrobatics": "+4",
+    "deception": "+3",
+    "stealth": "+6",
+    "survival": "+3"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fortitude (Recharges after a Short or Long Rest)",
+      "entries": [
+        "If damage reduces Irvan to 0 hit points, he can make a Constitution saving throw with a DC equal to 5 + the damage taken. On a successful save, Irvan drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Irvan makes two Dagger attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage plus 7 (2d6 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Albino Dwarf Warrior",
+  "source": "ToA",
+  "page": 210,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 25
+  },
+  "str": 13,
+  "dex": 13,
+  "con": 17,
+  "int": 12,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+3",
+    "survival": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dwarven Resilience",
+      "entries": [
+        "The dwarf has advantage on saving throws against poison."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Handaxe",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d6 + 1 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

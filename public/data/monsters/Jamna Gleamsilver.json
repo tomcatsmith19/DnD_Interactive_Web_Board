@@ -1,0 +1,140 @@
+{
+  "name": "Jamna Gleamsilver",
+  "source": "HotDQ",
+  "page": 91,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gnome"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 25
+  },
+  "str": 8,
+  "dex": 17,
+  "con": 14,
+  "int": 15,
+  "wis": 10,
+  "cha": 12,
+  "skills": {
+    "acrobatics": "+5",
+    "deception": "+3",
+    "insight": "+2",
+    "perception": "+4",
+    "persuasion": "+3",
+    "stealth": "+7"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Gnomish",
+    "Goblin",
+    "Sylvan"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cunning Action",
+      "entries": [
+        "Jamna can take a bonus action to take the Dash, Disengage, or Hide action."
+      ]
+    },
+    {
+      "name": "Gnome Cunning",
+      "entries": [
+        "Jamna has advantage on Intelligence, Wisdom and Charisma saving throws against magic."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Jamna attacks twice with her shortswords."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage, or 9 ({@dice 1d6 + 3}) plus ({@dice 1d6}) piercing damage if the target is Medium or larger."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Jamna is a 4th-level spellcaster that uses Intelligence as her spellcasting ability (spell save {@dc 12}, {@hit 4} to hit with spell attacks). Jamna has the following spells prepared from the wizard spell list."
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "minor illusion",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "color spray",
+            "disguise self",
+            "longstrider"
+          ]
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

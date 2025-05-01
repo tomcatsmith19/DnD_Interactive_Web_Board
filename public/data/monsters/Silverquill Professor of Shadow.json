@@ -1,0 +1,126 @@
+{
+  "name": "Silverquill Professor of Shadow",
+  "source": "SCC",
+  "page": 215,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "bard"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 97,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 14,
+  "int": 16,
+  "wis": 13,
+  "cha": 19,
+  "skills": {
+    "arcana": "+6",
+    "deception": "+10",
+    "persuasion": "+7",
+    "stealth": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Common plus any four languages"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the professor's darkvision."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The professor makes two Ink Lance attacks. The professor can replace one of the attacks with a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Ink Lance",
+      "entries": [
+        "{@atk ms,rs} +7 to hit, reach 5 ft. or range 120 ft., one target. 17 (3d8 + 4 damage) necrotic damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw be {@condition blinded} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The professor casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "dancing lights",
+        "friends"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 300 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

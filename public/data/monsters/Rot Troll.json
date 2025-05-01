@@ -1,0 +1,84 @@
+{
+  "name": "Rot Troll",
+  "source": "MTF",
+  "page": 244,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 138,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 13,
+  "con": 22,
+  "int": 5,
+  "wis": 8,
+  "cha": 4,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Rancid Degeneration",
+      "entries": [
+        "At the end of each of the troll's turns, each creature within 5 feet of it takes 11 ({@damage 2d10}) necrotic damage, unless the troll has taken acid or fire damage since the end of its last turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The troll makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage plus 16 (3d10 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage plus 5 (1d10 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "desert",
+    "forest",
+    "swamp",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

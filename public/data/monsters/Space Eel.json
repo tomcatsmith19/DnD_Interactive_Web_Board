@@ -1,0 +1,73 @@
+{
+  "name": "Space Eel",
+  "source": "BAM",
+  "page": 55,
+  "size": [
+    "S"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 7,
+  "speed": {
+    "walk": 10,
+    "fly": 30
+  },
+  "str": 12,
+  "dex": 18,
+  "con": 11,
+  "int": 1,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The eel doesn't require air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "If it isn't attached to a creature, the eel makes one Bite attack and one Tail Spine attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one creature. 4 (1d6 + 1 damage) piercing damage, and the eel attaches to the target. While attached, the eel can't make Bite attacks. Instead, the target takes 4 (1d6 + 1 damage) piercing damage at the start of each of the eel's turns. The eel can detach itself as a bonus action. A creature, including the target, can use its action to detach the eel."
+      ]
+    },
+    {
+      "name": "Tail Spine",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one creature. 3 (1d4 + 1 damage) piercing damage, and the target must succeed on a DC 10 Constitution saving throw or be {@condition poisoned} for 1 minute. Until this poison ends, the target is {@condition paralyzed}. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

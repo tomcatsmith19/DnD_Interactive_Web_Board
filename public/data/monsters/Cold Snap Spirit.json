@@ -1,0 +1,98 @@
+{
+  "name": "Cold Snap Spirit",
+  "source": "TDCSR",
+  "page": 234,
+  "size": [
+    "M"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "18"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 10,
+  "dex": 20,
+  "con": 14,
+  "int": 2,
+  "wis": 7,
+  "cha": 3,
+  "skills": {
+    "perception": "+1",
+    "stealth": "+8"
+  },
+  "passive": 11,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Sense Heat",
+      "entries": [
+        "The cold snap spirit can sense heat within 60 feet of it."
+      ]
+    },
+    {
+      "name": "Frozen Aura",
+      "entries": [
+        "Any creature that starts its turn within 5 feet of a cold snap spirit takes 5 ({@damage 1d10}) cold damage."
+      ]
+    },
+    {
+      "name": "Jealous Spirit",
+      "entries": [
+        "If the spirit attacks a creature that is within 5 feet of another cold snap spirit, the attack deals an extra 10 ({@damage 3d6}) cold damage on a hit."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Consume Warmth",
+      "entries": [
+        "{@atk ms} +8 to hit, reach 5 ft., one target. 21 (6d6 damage) cold damage, and the target's speed is halved until the end of the spirit's next turn."
+      ]
+    },
+    {
+      "name": "Subzero Wave (1/Day)",
+      "entries": [
+        "Each creature within 30 feet of the cold snap spirit must make a DC 15 Constitution {@quickref saving throws|PHB|2|1|saving throw}, taking 18 (4d8 damage) cold damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned",
+    "paralyzed",
+    "stunned"
+  ],
+  "resist": [
+    "slashing",
+    "piercing"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [
+    "cold",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "arctic",
+    "forest",
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

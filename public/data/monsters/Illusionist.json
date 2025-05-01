@@ -1,0 +1,134 @@
+{
+  "name": "Illusionist",
+  "source": "VGM",
+  "page": 214,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 38,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 13,
+  "int": 16,
+  "wis": 11,
+  "cha": 12,
+  "skills": {
+    "arcana": "+5",
+    "history": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "any four languages"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Displacement (Recharges after the Illusionist Casts an Illusion Spell of 1st Level or Higher)",
+      "entries": [
+        "As a bonus action, the illusionist projects an illusion that makes the illusionist appear to be standing in a place a few inches from its actual location, causing any creature to have disadvantage on attack rolls against the illusionist. The effect ends if the illusionist takes damage, it is {@condition incapacitated}, or its speed becomes 0."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +1 to hit, reach 5 ft., one target. 2 (1d6 - 1 damage) bludgeoning damage, or 3 (1d8 - 1 damage) bludgeoning damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The illusionist is a 7th-level spellcaster. its spellcasting ability is Intelligence (spell save {@dc 13}, {@hit 5} to hit with spell attacks). The illusionist has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "dancing lights",
+            "mage hand",
+            "minor illusion",
+            "poison spray"
+          ]
+        },
+        "1": {
+          "spells": [
+            "color spray",
+            "disguise self",
+            "mage armor",
+            "magic missile"
+          ]
+        },
+        "2": {
+          "spells": [
+            "invisibility",
+            "mirror image",
+            "phantasmal force"
+          ]
+        },
+        "3": {
+          "spells": [
+            "major image",
+            "phantom steed"
+          ]
+        },
+        "4": {
+          "spells": [
+            "phantasmal killer"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "footerEntries": [
+        "*Illusion spell of 1st level or higher"
+      ],
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

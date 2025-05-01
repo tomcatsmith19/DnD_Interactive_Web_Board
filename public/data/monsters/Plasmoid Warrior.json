@@ -1,0 +1,92 @@
+{
+  "name": "Plasmoid Warrior",
+  "source": "BAM",
+  "page": 43,
+  "size": [
+    "M"
+  ],
+  "type": "ooze",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 71,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 14,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "athletics": "+5",
+    "stealth": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The plasmoid can squeeze through a space as narrow as 1 inch wide, provided it is wearing and carrying nothing. It has advantage on ability checks it makes to initiate or escape a grapple."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The plasmoid can hold its breath for 1 hour."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The plasmoid makes three Pseudopod attacks. It can replace one of those attacks with a Spear or Pistol attack."
+      ]
+    },
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 6 ({@dice 1d6 + 3}) piercing damage, or 7 (1d8 + 3 damage) piercing damage when used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Pistol",
+      "entries": [
+        "Ranged atk +4 to hit, range 30/90 ft., one target. 7 (1d10 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

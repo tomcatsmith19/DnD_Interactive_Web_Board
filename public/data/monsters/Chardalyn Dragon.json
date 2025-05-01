@@ -1,0 +1,127 @@
+{
+  "name": "Chardalyn Dragon",
+  "source": "IDRotF",
+  "page": 281,
+  "size": [
+    "H"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 147,
+  "speed": {
+    "walk": 30,
+    "fly": 90
+  },
+  "str": 24,
+  "dex": 11,
+  "con": 19,
+  "int": 10,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "the languages known by its creator"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Immutable Form",
+      "entries": [
+        "The dragon is immune to any spell or effect that would alter its form."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The dragon has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The dragon deals double damage to objects and structures."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The dragon doesn't require air, food, drink, or sleep, and it gains no benefit from finishing a short or long rest."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon uses its Malevolent Presence. It then makes three attacks: two with its claws and one with its tail. If the dragon isn't flying, it can also make one attack with its wings."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 14 (2d6 + 7 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 18 (2d10 + 7 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Wings",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 12 (2d4 + 7 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Malevolent Presence",
+      "entries": [
+        "Any creature with an Intelligence of 4 or more that is within 30 feet of the dragon must succeed on a DC 16 Wisdom saving throw or be {@condition charmed} by it for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Malevolent Presence for the next 24 hours. A creature {@condition charmed} in this way fixates on another creature or object that the dragon mentally chooses and must, on each of its turns, move as close as it can to that target and use its action to make a melee attack against it. If the dragon doesn't choose a target, the {@condition charmed} creature can act normally on its turn."
+      ]
+    },
+    {
+      "name": "Radiant Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a ray of radiant energy in a 120-foot line that is 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 31 (7d8 damage) radiant damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [
+    "radiant",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "cold",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

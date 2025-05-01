@@ -1,0 +1,127 @@
+{
+  "name": "Strongheart",
+  "source": "WBtW",
+  "page": 228,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "paladin"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 55,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 12,
+  "con": 13,
+  "int": 12,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "insight": "+3",
+    "persuasion": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Strongheart wields Steel, a sentient, lawful good longsword (see appendix A)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Strongheart makes three Steel attacks."
+      ]
+    },
+    {
+      "name": "Steel",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage, or 9 (1d10 + 4 damage) slashing damage when used with two hands. Once on each of his turns, Strongheart can also cause the blade to gleam with holy light. If he does so, the target is {@condition blinded} until the start of Strongheart's next turn."
+      ]
+    },
+    {
+      "name": "Revivify (Recharges at the Next Dawn)",
+      "entries": [
+        "While holding Steel, Strongheart casts {@spell revivify}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Strongheart casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

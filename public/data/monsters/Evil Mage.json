@@ -1,0 +1,116 @@
+{
+  "name": "Evil Mage",
+  "source": "LMoP",
+  "page": 57,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 11,
+  "int": 17,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "arcana": "+5",
+    "history": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Elvish"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +1 to hit, reach 5 ft., one target. 3 (1d8 - 1 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The mage is a 4th-level spellcaster that uses Intelligence as its spellcasting ability (spell save {@dc 13}; {@hit 5} to hit with spell attacks). The mage knows the following spells from the wizard's spell list:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "mage hand",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "magic missile"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

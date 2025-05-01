@@ -1,0 +1,88 @@
+{
+  "name": "Captain Othelstan",
+  "source": "HotDQ",
+  "page": 89,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 10,
+  "con": 16,
+  "int": 13,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "athletics": "+7",
+    "intimidation": "+7",
+    "perception": "+5",
+    "religion": "+4"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Giant"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Action Surge (Recharges on a Short or Long Rest)",
+      "entries": [
+        "On his turn, Othelstan can take one additional action."
+      ]
+    },
+    {
+      "name": "Tiamat's Blessing of Retribution",
+      "entries": [
+        "When Othelstan takes damage that reduces him to 0 hit points, he immediately regains 20 hit points. If he has 20 hit points or fewer at the end of his next turn, he dies."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Othelstan attacks twice with his flail or spear, or makes two ranged attacks with his spears."
+      ]
+    },
+    {
+      "name": "Flail",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or ranged 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

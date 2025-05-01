@@ -1,0 +1,135 @@
+{
+  "name": "Oreioth",
+  "source": "PotA",
+  "page": 212,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "11",
+    "14"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 13,
+  "con": 14,
+  "int": 16,
+  "wis": 9,
+  "cha": 11,
+  "skills": {
+    "arcana": "+5",
+    "investigation": "+5",
+    "medicine": "+1"
+  },
+  "passive": 9,
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Grim Harvest",
+      "entries": [
+        "Once per turn when Oreioth kills one or more creatures with a spell of 1st level or higher, he regains hit points equal to twice the spell's level."
+      ]
+    },
+    {
+      "name": "Swift Animation (Recharges after a Long Rest)",
+      "entries": [
+        "When a living Medium or Small humanoid within 30 feet of Oreioth dies, he can use an action on his next turn to cast {@spell animate dead} on that humanoid's corpse, instead of using the spell's normal casting time."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Oreioth is a 6th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 13}, {@hit 5} to hit with spell attacks). He has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "minor illusion",
+            "prestidigitation",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "false life",
+            "mage armor",
+            "magic missile",
+            "ray of sickness"
+          ]
+        },
+        "2": {
+          "spells": [
+            "crown of madness",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "animate dead",
+            "vampiric touch"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

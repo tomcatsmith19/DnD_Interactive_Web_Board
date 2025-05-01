@@ -1,0 +1,170 @@
+{
+  "name": "Yuan-ti Anathema",
+  "source": "VGM",
+  "page": 202,
+  "size": [
+    "H"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "shapechanger",
+    "yuan-ti"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 189,
+  "speed": {
+    "walk": 40,
+    "climb": 30,
+    "swim": 30
+  },
+  "str": 23,
+  "dex": 13,
+  "con": 19,
+  "int": 19,
+  "wis": 17,
+  "cha": 20,
+  "skills": {
+    "perception": "+7",
+    "stealth": "+5"
+  },
+  "passive": 17,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The anathema has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Ophidiophobia Aura",
+      "entries": [
+        "Any creature of the anathema's choice, other than a snake or a yuan-ti, that starts its turn within 30 feet of the anathema and can see or hear it must succeed on a {@dc 17} Wisdom saving throw or become {@condition frightened} of snakes and yuan-ti. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to this aura for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The anathema can use its action to polymorph into a Huge giant constrictor snake, or back into its true form. its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed."
+      ]
+    },
+    {
+      "name": "Six Heads",
+      "entries": [
+        "The anathema has advantage on Wisdom ({@skill Perception}) checks and on saving throws against being {@condition blinded}. {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, or knocked {@condition unconscious}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Anathema Form Only)",
+      "entries": [
+        "The anathema makes two claw attacks, one constrict attack, and one Flurry of Bites attack."
+      ]
+    },
+    {
+      "name": "Claw (Anathema Form Only)",
+      "entries": [
+        "Melee atk +10 to hit, reach 10 ft., one target. 13 (2d6 + 6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Constrict",
+      "entries": [
+        "Melee atk +10 to hit, reach 15 ft., one Large or smaller creature. 16 (3d6 + 6 damage) bludgeoning damage plus 7 (2d6 damage) acid damage, and the target is {@condition grappled} (escape DC 16). Until this grapple ends, the target is {@condition restrained} and takes 16 (3d6 + 6 damage) bludgeoning damage plus 7 (2d6 damage) acid damage at the start of each of its turns, and the anathema can't constrict another target."
+      ]
+    },
+    {
+      "name": "Flurry of Bites",
+      "entries": [
+        "Melee atk +10 to hit, reach 10 ft., one creature. 27 (6d6 + 6 damage) piercing damage plus 14 (4d6 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Anathema Form Only)",
+      "headerEntries": [
+        "The anathema's innate spellcasting ability is Charisma (spell save {@dc 17}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "animal friendship"
+      ],
+      "daily": {
+        "1": [
+          "divine word"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "acid",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft.",
+    "blindsight 30 ft."
+  ],
+  "environment": [
+    "underdark",
+    "forest",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

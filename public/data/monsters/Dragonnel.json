@@ -1,0 +1,72 @@
+{
+  "name": "Dragonnel",
+  "source": "FTD",
+  "page": 190,
+  "size": [
+    "L"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30,
+    "fly": 60
+  },
+  "str": 16,
+  "dex": 15,
+  "con": 12,
+  "int": 8,
+  "wis": 13,
+  "cha": 10,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "understands Draconic and Common but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The dragonnel doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragonnel makes two Rend attacks."
+      ]
+    },
+    {
+      "name": "Rend",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

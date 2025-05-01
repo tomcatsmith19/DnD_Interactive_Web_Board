@@ -1,0 +1,131 @@
+{
+  "name": "Cloud Giant of Evil Air",
+  "source": "BGG",
+  "page": 125,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 200,
+  "speed": {
+    "walk": 40,
+    "fly": 40
+  },
+  "str": 27,
+  "dex": 10,
+  "con": 22,
+  "int": 12,
+  "wis": 16,
+  "cha": 19,
+  "skills": {
+    "insight": "+7",
+    "perception": "+7",
+    "stealth": "+4"
+  },
+  "passive": 17,
+  "languages": [
+    "Auran",
+    "Common",
+    "Giant"
+  ],
+  "cr": "12",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The giant doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two Scimitar attacks and one Storm Boomerang attack."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +12 to hit, reach 10 ft., one target. 18 (3d6 + 8 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Storm Boomerang",
+      "entries": [
+        "Ranged atk +12 to hit, range 60/240 ft., one target. 15 (3d4 + 8 damage) bludgeoning damage plus 7 (2d6 damage) thunder damage, and the target must succeed on a DC 16 Constitution saving throw or have the {@condition stunned} condition until the end of its next turn. Hit or Miss: The boomerang magically returns to the giant's hand immediately after the attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The giant casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "detect magic",
+        "fog cloud",
+        "light"
+      ],
+      "daily": {
+        "1": [
+          "gaseous form"
+        ]
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

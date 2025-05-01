@@ -1,0 +1,135 @@
+{
+  "name": "Forlarren",
+  "source": "MFF",
+  "page": 9,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 40
+  },
+  "str": 14,
+  "dex": 16,
+  "con": 17,
+  "int": 12,
+  "wis": 11,
+  "cha": 18,
+  "skills": {
+    "acrobatics": "+5",
+    "deception": "+8",
+    "stealth": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The forlarren has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The forlarren makes two claw attacks and one gore attack, or it makes three chromatic ray attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Chromatic Ray",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 60 ft., one target. 3 (1d6 damage) lightning damage plus 3 (1d6 damage) fire damage plus 3 (1d6 damage) cold damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The forlarren's innate spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "expeditious retreat",
+        "false life",
+        "minor illusion",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

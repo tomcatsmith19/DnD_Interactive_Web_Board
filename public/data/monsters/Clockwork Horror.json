@@ -1,0 +1,109 @@
+{
+  "name": "Clockwork Horror",
+  "source": "MCV1SC",
+  "page": 4,
+  "size": [
+    "S"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 14,
+  "dex": 14,
+  "con": 18,
+  "int": 13,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Thri-kreen",
+    "Ziklight"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shutdown",
+      "entries": [
+        "If targeted by {@spell dispel magic}, the horror must succeed on a Constitution saving throw against the caster's spell save DC or fall {@condition unconscious} for 1 minute or until it takes any damage."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The horror doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The horror makes one Bite attack and two Rotating Saw attacks, or it makes two Lightning Jolt attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Rotating Saw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Lightning Jolt",
+      "entries": [
+        "Ranged Spell atk +4 to hit, range 120 ft., one target. 7 (1d10 + 2 damage) lightning damage."
+      ]
+    },
+    {
+      "name": "Spelljamming Helm Interface",
+      "entries": [
+        "The horror attaches to a spelljamming helm it can see within 5 feet of itself and attunes to the helm instantly. If another creature is already attuned to the helm, that creature's attunement to the helm ends when the horror's attunement begins. The horror can operate the helm even though it isn't a spellcaster. The horror can detach from the helm as a bonus action, which ends its attunement to the helm."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

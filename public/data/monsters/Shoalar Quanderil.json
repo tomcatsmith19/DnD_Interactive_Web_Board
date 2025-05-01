@@ -1,0 +1,124 @@
+{
+  "name": "Shoalar Quanderil",
+  "source": "PotA",
+  "page": 208,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    {
+      "tag": "genasi",
+      "prefix": "Water"
+    }
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "10",
+    "13"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 16,
+  "int": 14,
+  "wis": 10,
+  "cha": 17,
+  "skills": {
+    "arcana": "+4",
+    "deception": "+5",
+    "insight": "+2",
+    "persuasion": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "Aquan",
+    "Common"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "Shoalar can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or ranged 20/60 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Shoalar's innate spellcasting ability is Constitution (spell save {@dc 13}, {@hit 5} to hit with spell attacks). He can innately cast the following spells:"
+      ],
+      "will": [
+        "shape water|xge"
+      ],
+      "daily": {
+        "1": [
+          "create or destroy water"
+        ]
+      },
+      "ability": "con",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "acid"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

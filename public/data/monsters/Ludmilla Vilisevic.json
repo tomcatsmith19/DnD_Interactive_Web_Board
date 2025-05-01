@@ -1,0 +1,102 @@
+{
+  "name": "Ludmilla Vilisevic",
+  "source": "CoS",
+  "page": 93,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 16,
+  "int": 11,
+  "wis": 10,
+  "cha": 12,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The vampire regains 10 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If Ludmilla takes radiant damage or damage from holy water, this trait doesn't function at the start of Ludmilla's next turn."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Vampire Weaknesses",
+      "entries": [
+        "The vampire has the following flaws:",
+        "{@i Forbiddance.} The vampire can't enter a residence without an invitation from one of the occupants.",
+        "{@i Harmed by Running Water.} The vampire takes 20 acid damage when it ends its turn in running water.",
+        "{@i Stake to the Heart.} The vampire is destroyed if a piercing weapon made of wood is driven into its heart while it is {@condition incapacitated} in its resting place.",
+        "{@i Sunlight Hypersensitivity.} The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The vampire makes two attacks, only one of which can be a bite attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one willing creature, or a creature that is {@condition grappled} by Ludmilla, {@condition incapacitated}, or {@condition restrained}. 6 (1d6 + 3 damage) piercing damage plus 7 (2d6 damage) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and Ludmilla regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 8 (2d4 + 3 damage) slashing damage. Instead of dealing damage, Ludmilla can grapple the target (escape DC 13)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

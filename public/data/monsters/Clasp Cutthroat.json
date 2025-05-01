@@ -1,0 +1,76 @@
+{
+  "name": "Clasp Cutthroat",
+  "source": "TDCSR",
+  "page": 232,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [],
+  "ac": [
+    "15"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 18,
+  "con": 12,
+  "int": 8,
+  "wis": 14,
+  "cha": 9,
+  "skills": {
+    "deception": "+3",
+    "stealth": "+8"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Thieves' cant"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "entries": [
+        "The cutthroat deals an extra 14 ({@damage 4d6}) damage when it hits a target with a weapon attack and has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on the attack roll, or when the target is within 5 feet of an ally of the cutthroat that isn't {@condition incapacitated} and the cutthroat doesn't have {@quickref Advantage and Disadvantage|PHB|2|0|disadvantage} on the attack roll."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cutthroat makes two shortsword or dagger attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft., range 20/60 ft., one target. 6 (1d4 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

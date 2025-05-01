@@ -1,0 +1,82 @@
+{
+  "name": "Goblin Psi Brawler",
+  "source": "PaBTSO",
+  "page": 215,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 31,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 17,
+  "con": 12,
+  "int": 16,
+  "wis": 15,
+  "cha": 10,
+  "skills": {
+    "stealth": "+7"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Goblin",
+    "telepathy 30 ft."
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mental Burst",
+      "entries": [
+        "When the goblin dies, its pent-up mental energy explodes in a psychic blast. Each creature within 5 feet of it must succeed on a {@dc 13} Intelligence saving throw or take 5 ({@damage 2d4}) psychic damage."
+      ]
+    },
+    {
+      "name": "Mental Fortitude",
+      "entries": [
+        "The goblin has advantage on saving throws against effects that would make it have the {@condition charmed} or {@condition frightened} condition."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The goblin makes two Unarmed Strike attacks."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) bludgeoning damage plus 3 (1d6 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

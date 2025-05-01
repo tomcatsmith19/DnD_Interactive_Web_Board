@@ -1,0 +1,126 @@
+{
+  "name": "Prismari Pledgemage",
+  "source": "SCC",
+  "page": 205,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "sorcerer"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 66,
+  "speed": {
+    "walk": 35
+  },
+  "str": 10,
+  "dex": 15,
+  "con": 13,
+  "int": 12,
+  "wis": 14,
+  "cha": 17,
+  "skills": {
+    "acrobatics": "+4",
+    "athletics": "+4",
+    "performance": "+7"
+  },
+  "passive": 12,
+  "languages": [
+    "Common plus any two languages"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Evasion",
+      "entries": [
+        "If the pledgemage is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the pledgemage instead takes no damage if it succeeds on the saving throw and only half damage if it fails, provided it isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The pledgemage makes two Elemental Strike attacks."
+      ]
+    },
+    {
+      "name": "Elemental Strike",
+      "entries": [
+        "{@atk ms,rs} +5 to hit, reach 5 ft. or range 60 ft., one target. 12 (3d6 + 2 damage) fire or cold damage (the pledgemage's choice)."
+      ]
+    },
+    {
+      "name": "Showstopper (1/Day)",
+      "entries": [
+        "The pledgemage shines with elemental magic, targeting one creature it can see within 60 feet of itself. The target must make a DC 13 Wisdom saving throw. On a failed save, the target takes 28 (8d6 damage) fire or cold damage (the pledgemage's choice) and is {@condition stunned} until the start of the pledgemage's next turn. On a successful save, the target takes half as much damage and isn't {@condition stunned}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The pledgemage casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

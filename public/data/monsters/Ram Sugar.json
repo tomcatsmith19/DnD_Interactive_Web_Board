@@ -1,0 +1,137 @@
+{
+  "name": "Ram Sugar",
+  "source": "CM",
+  "page": 132,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dragonborn"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 12,
+  "int": 10,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "deception": "+4",
+    "persuasion": "+4",
+    "religion": "+2"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dark Devotion",
+      "entries": [
+        "Ram Sugar has advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Ram Sugar makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one creature. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Breath Weapon (Recharges after a Short or Long Rest)",
+      "entries": [
+        "Ram Sugar exhales fire in a 30-foot-long line that is 5 feet wide. Any creature in the line must make a DC 11 Dexterity saving throw, taking 7 (2d6 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Ram Sugar is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 11}, {@hit 3} to hit with spell attacks). Ram Sugar has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "command",
+            "inflict wounds",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

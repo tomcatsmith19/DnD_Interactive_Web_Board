@@ -1,0 +1,85 @@
+{
+  "name": "Dretch",
+  "source": "MM",
+  "page": 57,
+  "size": [
+    "S"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 20
+  },
+  "str": 11,
+  "dex": 11,
+  "con": 12,
+  "int": 5,
+  "wis": 8,
+  "cha": 3,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "Abyssal",
+    "telepathy 60 ft. (works only with creatures that understand Abyssal)"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dretch makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 3 (1d6 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 5 (2d4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Fetid Cloud (1/Day)",
+      "entries": [
+        "A 10-foot radius of disgusting green gas extends out from the dretch. The gas spreads around corners, and its area is lightly obscured. It lasts for 1 minute or until a strong wind disperses it. Any creature that starts its turn in that area must succeed on a DC 11 Constitution saving throw or be {@condition poisoned} until the start of its next turn. While {@condition poisoned} in this way, the target can take either an action or a bonus action on its turn, not both, and can't take reactions."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,147 @@
+{
+  "name": "Burney the Barber",
+  "source": "BGDIA",
+  "page": 129,
+  "size": [
+    "G"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "21"
+  ],
+  "hp": 350,
+  "speed": {
+    "walk": 40,
+    "climb": 40,
+    "fly": 80
+  },
+  "str": 27,
+  "dex": 12,
+  "con": 25,
+  "int": 20,
+  "wis": 17,
+  "cha": 19,
+  "skills": {
+    "deception": "+11",
+    "perception": "+17",
+    "stealth": "+8"
+  },
+  "passive": 27,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "21",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Burney fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +15 to hit, reach 15 ft., one target. 19 (2d10 + 8 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +15 to hit, reach 10 ft., one target. 15 (2d6 + 8 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +15 to hit, reach 20 ft., one target. 17 (2d8 + 8 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Frightful Presence",
+      "entries": [
+        "Each creature of Burney's choice that is within 120 feet of Burney and aware of it must succeed on a DC 19 Wisdom saving throw or become {@condition frightened} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to Burney's Frightful Presence for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Breath Weapons {@recharge 5}",
+      "entries": [
+        "The dragon uses one of the following breath weapons.",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Acid Breath",
+              "entry": "The dragon exhales acid in a 90-foot line that is 10 feet wide. Each creature in that line must make a {@dc 22} Dexterity saving throw, taking 63 ({@damage 14d8}) acid damage on a failed save, or half as much damage on a successful one."
+            },
+            {
+              "type": "item",
+              "name": "Slowing Breath",
+              "entry": "The dragon exhales gas in a 90-foot cone. Each creature in that area must succeed on a {@dc 22} Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Change Shape",
+      "entries": [
+        "The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (Burney's choice).",
+        "In a new form, Burney retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Detect",
+      "entries": [
+        "The dragon makes a Wisdom ({@skill Perception}) check."
+      ]
+    },
+    {
+      "name": "Tail Attack",
+      "entries": [
+        "The dragon makes a tail attack."
+      ]
+    },
+    {
+      "name": "Wing Attack (Costs 2 Actions)",
+      "entries": [
+        "The dragon beats its wings. Each creature within 15 feet of Burney must succeed on a {@dc 23} Dexterity saving throw or take 15 ({@damage 2d6 + 8}) bludgeoning damage and be knocked {@condition prone}. The dragon can then fly up to half its flying speed."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "acid"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

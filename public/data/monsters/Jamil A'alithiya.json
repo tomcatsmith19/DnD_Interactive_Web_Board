@@ -1,0 +1,135 @@
+{
+  "name": "Jamil A'alithiya",
+  "source": "CRCotN",
+  "page": 83,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "monk",
+    "wizard"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 130,
+  "speed": {
+    "walk": 60
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 14,
+  "int": 18,
+  "wis": 22,
+  "cha": 17,
+  "skills": {
+    "arcana": "+8",
+    "history": "+8",
+    "investigation": "+8",
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "Common plus four other languages"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While Jamil is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The high curator makes three Force Strike attacks and uses Brain Burn (if available)."
+      ]
+    },
+    {
+      "name": "Force Strike",
+      "entries": [
+        "{@atk ms,rs} +10 to hit, reach 5 ft. or range 10 ft., one target. 17 (2d10 + 6 damage) force damage."
+      ]
+    },
+    {
+      "name": "Brain Burn {@recharge 4}",
+      "entries": [
+        "The high curator targets up to two creatures it can see within 30 feet of itself. Each target must make a DC 18 Constitution saving throw. On a failed saving throw, the target takes 28 (8d6 damage) psychic damage and can't take reactions until the start of its next turn. On a successful save, the target takes half as much damage and suffers no other effect."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The high curator casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 18}):"
+      ],
+      "will": [
+        "detect magic"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,76 @@
+{
+  "name": "Giant Goose",
+  "source": "BGG",
+  "page": 150,
+  "size": [
+    "L"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 14,
+  "dex": 16,
+  "con": 15,
+  "int": 6,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "understands Giant and Sylvan but can't speak"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The goose makes one Beak attack and two Wing attacks."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +4 to hit, reach 10 ft., one target. 9 (2d6 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Wing",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (1d10 + 2 damage) bludgeoning damage, and the target must succeed on a DC 12 Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Thunderous Honk {@recharge 5}",
+      "entries": [
+        "The goose honks with ear-splitting volume. Each other creature within 30 feet of the goose must make a DC 12 Constitution saving throw. On a failed save, a creature takes 16 (3d10 damage) thunder damage and has the {@condition deafened} condition until the start of the goose's next turn. On a successful save, a creature takes half as much damage only. The honk can be heard within 300 feet."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

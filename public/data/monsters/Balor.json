@@ -1,0 +1,114 @@
+{
+  "name": "Balor",
+  "source": "MM",
+  "page": 55,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 262,
+  "speed": {
+    "walk": 40,
+    "fly": 80
+  },
+  "str": 26,
+  "dex": 15,
+  "con": 22,
+  "int": 20,
+  "wis": 16,
+  "cha": 22,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "cr": "19",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Death Throes",
+      "entries": [
+        "When the balor dies, it explodes, and each creature within 30 feet of it must make a {@dc 20} Dexterity saving throw, taking 70 ({@damage 20d6}) fire damage on a failed save, or half as much damage on a successful one. The explosion ignites flammable objects in that area that aren't being worn or carried, and it destroys the balor's weapons."
+      ]
+    },
+    {
+      "name": "Fire Aura",
+      "entries": [
+        "At the start of each of the balor's turns, each creature within 5 feet of it takes 10 ({@damage 3d6}) fire damage, and flammable objects in the aura that aren't being worn or carried ignite. A creature that touches the balor or hits it with a melee attack while within 5 feet of it takes 10 ({@damage 3d6}) fire damage."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The balor has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The balor's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The balor makes two attacks: one with its longsword and one with its whip."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +14 to hit, reach 10 ft., one target. 21 (3d8 + 8 damage) slashing damage plus 13 (3d8 damage) lightning damage. If the balor scores a critical hit, it rolls damage dice three times, instead of twice."
+      ]
+    },
+    {
+      "name": "Whip",
+      "entries": [
+        "Melee atk +14 to hit, reach 30 ft., one target. 15 (2d6 + 8 damage) slashing damage plus 10 (3d6 damage) fire damage, and the target must succeed on a DC 20 Strength saving throw or be pulled up to 25 feet toward the balor."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The balor magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

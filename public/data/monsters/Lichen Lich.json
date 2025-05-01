@@ -1,0 +1,169 @@
+{
+  "name": "Lichen Lich",
+  "source": "CM",
+  "page": 223,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "20"
+  ],
+  "hp": 225,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 16,
+  "int": 14,
+  "wis": 20,
+  "cha": 16,
+  "skills": {
+    "medicine": "+11",
+    "nature": "+14",
+    "perception": "+11",
+    "survival": "+11"
+  },
+  "passive": 21,
+  "languages": [
+    "Common",
+    "Druidic",
+    "Sylvan"
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the lich fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If it has a phylactery, a destroyed lich gains a new body in {@dice 1d10} days, regaining all its hit points and becoming active again. The new body appears within 5 feet of the phylactery."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The lich makes four attacks."
+      ]
+    },
+    {
+      "name": "Poisonous Touch",
+      "entries": [
+        "Melee atk +9 to hit, reach 10 ft., one creature. 17 (5d6 damage) poison damage, and the target must succeed on a DC 19 Constitution saving throw or be {@condition poisoned} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Wither",
+      "entries": [
+        "Ranged Spell atk +9 to hit, range 60 ft., one target. 14 (4d6 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Fire Storm (7th-Level Spell; 1/Day)",
+      "entries": [
+        "The lich fills up to ten 10-foot cubes with fire. Every cube must be within 150 feet of the lich and occupy a space the lich can see, and each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a DC 19 Dexterity saving throw, taking 38 (7d10 damage) fire damage on a failed save, or half as much damage on a successful one. The fire ignites flammable objects in the area that aren't being worn or carried. If the lich chooses, plant life in the area is unaffected by the spell."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "The lich makes an attack."
+      ]
+    },
+    {
+      "name": "Poison Prick (Cost 2 Actions)",
+      "entries": [
+        "The lich targets one {@condition poisoned} creature it can see within 30 feet of it. The target must succeed on a {@dc 19} Constitution saving throw or fall {@condition unconscious} until the {@condition poisoned} condition ends on it."
+      ]
+    },
+    {
+      "name": "Sap Life (Costs 2 Actions)",
+      "entries": [
+        "The lich targets one creature it can see within 30 feet of it. The target must succeed on a {@dc 19} Constitution saving throw or take 11 ({@damage 2d10}) necrotic damage. The lich regains a number of hit points equal to the amount of damage that the creature takes."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The lich casts one of the following spells using Wisdom as the spellcasting ability (save {@dc 19}):"
+      ],
+      "will": [
+        "druidcraft"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "stunned"
+  ],
+  "resist": [
+    "cold",
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

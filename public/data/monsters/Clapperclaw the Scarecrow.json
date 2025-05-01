@@ -1,0 +1,84 @@
+{
+  "name": "Clapperclaw the Scarecrow",
+  "source": "WBtW",
+  "page": 78,
+  "size": [
+    "S"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 14,
+  "speed": {
+    "walk": 25
+  },
+  "str": 14,
+  "dex": 13,
+  "con": 11,
+  "int": 7,
+  "wis": 10,
+  "cha": 10,
+  "skills": {
+    "stealth": "+3",
+    "survival": "+2"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "Clapperclaw doesn't require air, food, drink, or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (2d4 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Stuffing",
+      "entries": [
+        "Clapperclaw stuffs straw or other dead plant matter into itself and regains {@dice 2d4 + 2} hit points. Roll a {@dice d6}; on a 1 or 2, Clapperclaw runs out of stuffing and must spend 8 hours foraging for more before it can use this action again."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

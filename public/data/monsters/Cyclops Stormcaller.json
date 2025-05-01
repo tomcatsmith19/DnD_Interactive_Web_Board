@@ -1,0 +1,133 @@
+{
+  "name": "Cyclops Stormcaller",
+  "source": "TDCSR",
+  "page": 235,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "18"
+  ],
+  "hp": 114,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 60,
+      "condition": "(stormy conditions only)"
+    }
+  },
+  "str": 16,
+  "dex": 10,
+  "con": 18,
+  "int": 15,
+  "wis": 8,
+  "cha": 20,
+  "skills": {
+    "arcana": "+6"
+  },
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Giant"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "One-Eyed",
+      "entries": [
+        "The cyclops has {@quickref Advantage and Disadvantage|PHB|2|0|disadvantage} on any attack roll against a target more than 30 feet away."
+      ]
+    },
+    {
+      "name": "Storm Wings",
+      "entries": [
+        "While outdoors in stormy conditions, the cyclops has a flying speed of 60 feet."
+      ]
+    },
+    {
+      "name": "Supernatural Focus",
+      "entries": [
+        "The cyclops has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on Constitution {@quickref saving throws|PHB|2|1} made to maintain {@condition concentration} on spells, and cannot lose {@condition concentration} because of turbulent weather."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cyclops makes two ice claw attacks."
+      ]
+    },
+    {
+      "name": "Ice Claw",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (3d6 + 3 damage) slashing damage plus 3 (1d6 damage) cold damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The cyclops's innate spellcasting ability is Charisma (spell save {@dc 17}, {@hit 9} to hit with spell attacks). The cyclops can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "ray of frost",
+        "water walk"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

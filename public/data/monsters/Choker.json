@@ -1,0 +1,87 @@
+{
+  "name": "Choker",
+  "source": "MTF",
+  "page": 123,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 13,
+  "int": 4,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "stealth": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "Deep Speech"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aberrant Quickness (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The choker can take an extra action on its turn."
+      ]
+    },
+    {
+      "name": "Boneless",
+      "entries": [
+        "The choker can move through and occupy a space as narrow as 4 inches wide without squeezing."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The choker can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The choker makes two tentacle attacks."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one target. 5 (1d4 + 3 damage) bludgeoning damage plus 3 (1d6 damage) piercing damage. If the target is a Large or smaller creature, it is {@condition grappled} (escape DC 15). Until this grapple ends, the target is {@condition restrained}, and the choker can't use this tentacle on another target. The choker has two tentacles. If this attack is a critical hit, the target also can't breathe or speak until the grapple ends."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "mountain",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

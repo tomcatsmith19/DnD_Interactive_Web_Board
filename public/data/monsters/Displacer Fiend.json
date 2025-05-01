@@ -1,0 +1,90 @@
+{
+  "name": "Displacer Fiend",
+  "source": "CoA",
+  "page": 240,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 135,
+  "speed": {
+    "walk": 40
+  },
+  "str": 17,
+  "dex": 19,
+  "con": 14,
+  "int": 8,
+  "wis": 13,
+  "cha": 10,
+  "skills": {
+    "acrobatics": "+8",
+    "athletics": "+7",
+    "perception": "+5",
+    "stealth": "+12"
+  },
+  "passive": 15,
+  "languages": [],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Avoidance",
+      "entries": [
+        "If the displacer fiend is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      ]
+    },
+    {
+      "name": "Displacement",
+      "entries": [
+        "The displacer fiend projects a magical illusion that makes it appear to be standing near its actual location, causing attack rolls against it to have disadvantage. If it is hit by an attack, this trait is disrupted until the end of its next turn. This trait is also disrupted while the displacer fiend is {@condition incapacitated} or has a speed of 0."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The displacer fiend makes three Tentacle attacks. It can replace one of the attacks with a Bite attack."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 18 (4d6 + 4 damage) piercing damage plus 7 (2d6 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 23 (3d12 + 4 damage) piercing damage, and the target's Dexterity score is reduced by 2 ({@dice 1d4}). The target is killed if this reduces its Dexterity to 0. The reduction lasts until the target finishes a short or long rest."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "fire",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

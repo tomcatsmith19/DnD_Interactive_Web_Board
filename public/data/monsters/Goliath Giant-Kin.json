@@ -1,0 +1,66 @@
+{
+  "name": "Goliath Giant-Kin",
+  "source": "BGG",
+  "page": 155,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 13,
+  "con": 16,
+  "int": 10,
+  "wis": 12,
+  "cha": 12,
+  "skills": {
+    "athletics": "+6",
+    "perception": "+3",
+    "survival": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The goliath makes two Spear attacks."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage, or 8 (1d8 + 4 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

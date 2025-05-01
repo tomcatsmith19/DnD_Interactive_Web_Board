@@ -1,0 +1,89 @@
+{
+  "name": "Duke Thalamra Vanthampur",
+  "source": "BGDIA",
+  "page": 38,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 17,
+  "dex": 10,
+  "con": 15,
+  "int": 13,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "deception": "+6",
+    "insight": "+5",
+    "intimidation": "+6",
+    "religion": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Infernal"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dark Devotion",
+      "entries": [
+        "Thalamra has advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Thalamra can see normally in darkness, both magical and nonmagical, out to a distance of 120 feet."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Thalamra uses eldritch blast twice or makes two unarmed strikes."
+      ]
+    },
+    {
+      "name": "Eldritch Blast (Cantrip)",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 120 ft., one creature. 9 (1d10 + 4 damage) force damage."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 4 bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft. (see devil's sight below)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

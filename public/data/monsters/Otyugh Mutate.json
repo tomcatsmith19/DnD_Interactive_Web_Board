@@ -1,0 +1,85 @@
+{
+  "name": "Otyugh Mutate",
+  "source": "PaBTSO",
+  "page": 213,
+  "size": [
+    "L"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 76,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 11,
+  "con": 18,
+  "int": 10,
+  "wis": 15,
+  "cha": 6,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Otyugh",
+    "telepathy 120 ft."
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Virulent Breath",
+      "entries": [
+        "Noxious gas from the mutate's digestion of previous meals spews from its mouth. At the start of the mutate's turn, each creature within 5 feet of it must succeed on a {@dc 15} Constitution saving throw or take 3 ({@damage 1d6}) poison damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The mutate makes two Bite or Tentacle attacks. It can replace one of these attacks with Chitin Slam."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) piercing damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw or have the {@condition poisoned} condition. Every 24 hours that elapse, the target must repeat the saving throw, reducing its hit point maximum by 5 ({@dice 1d10}) on a failure. On a successful save, the target is no longer {@condition poisoned}. The target dies if its hit point maximum is reduced to 0. This reduction to the target's hit point maximum lasts until it no longer has the {@condition poisoned} condition."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage, and if the target is a Medium or smaller creature, it has the {@condition grappled} condition (escape DC 15) and the {@condition restrained} condition until this grapple ends. The mutate has two tentacles that can grapple one target each."
+      ]
+    },
+    {
+      "name": "Chitin Slam",
+      "entries": [
+        "The mutate targets one creature it is grappling, slamming the creature against its chitinous plating. The creature must succeed on a DC 15 Constitution saving throw or take 16 (3d10 damage) bludgeoning damage and have the {@condition stunned} condition until the end of the mutate's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

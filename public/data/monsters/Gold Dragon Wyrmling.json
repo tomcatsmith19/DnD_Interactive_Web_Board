@@ -1,0 +1,93 @@
+{
+  "name": "Gold Dragon Wyrmling",
+  "source": "MM",
+  "page": 115,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30,
+    "fly": 60,
+    "swim": 30
+  },
+  "str": 19,
+  "dex": 14,
+  "con": 17,
+  "int": 14,
+  "wis": 11,
+  "cha": 16,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The dragon can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 9 (1d10 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Breath Weapons {@recharge 5}",
+      "entries": [
+        "The dragon uses one of the following breath weapons.",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Fire Breath",
+              "entry": "The dragon exhales fire in a 15-foot cone. Each creature in that area must make a {@dc 13} Dexterity saving throw, taking 22 ({@damage 4d10}) fire damage on a failed save, or half as much damage on a successful one."
+            },
+            {
+              "type": "item",
+              "name": "Weakening Breath",
+              "entry": "The dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a {@dc 13} Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

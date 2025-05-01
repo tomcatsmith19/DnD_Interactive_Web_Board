@@ -1,0 +1,124 @@
+{
+  "name": "Ancient Blue Dragon",
+  "source": "MM",
+  "page": 90,
+  "size": [
+    "G"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "22"
+  ],
+  "hp": 481,
+  "speed": {
+    "walk": 40,
+    "burrow": 40,
+    "fly": 80
+  },
+  "str": 29,
+  "dex": 10,
+  "con": 27,
+  "int": 18,
+  "wis": 17,
+  "cha": 21,
+  "skills": {
+    "perception": "+17",
+    "stealth": "+7"
+  },
+  "passive": 27,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "23",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the dragon fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +16 to hit, reach 15 ft., one target. 20 (2d10 + 9 damage) piercing damage plus 11 (2d10 damage) lightning damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +16 to hit, reach 10 ft., one target. 16 (2d6 + 9 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +16 to hit, reach 20 ft., one target. 18 (2d8 + 9 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Frightful Presence",
+      "entries": [
+        "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 20 Wisdom saving throw or become {@condition frightened} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Lightning Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales lightning in a 120-foot line that is 10 feet wide. Each creature in that line must make a DC 23 Dexterity saving throw, taking 88 (16d10 damage) lightning damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Detect",
+      "entries": [
+        "The dragon makes a Wisdom ({@skill Perception}) check."
+      ]
+    },
+    {
+      "name": "Tail Attack",
+      "entries": [
+        "The dragon makes a tail attack."
+      ]
+    },
+    {
+      "name": "Wing Attack (Costs 2 Actions)",
+      "entries": [
+        "The dragon beats its wings. Each creature within 15 feet of the dragon must succeed on a {@dc 24} Dexterity saving throw or take 16 ({@damage 2d6 + 9}) bludgeoning damage and be knocked {@condition prone}. The dragon can then fly up to half its flying speed."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "lightning"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "desert",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

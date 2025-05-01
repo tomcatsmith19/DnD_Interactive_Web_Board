@@ -1,0 +1,127 @@
+{
+  "name": "Zargash",
+  "source": "WBtW",
+  "page": 223,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "cleric",
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 14,
+  "int": 12,
+  "wis": 16,
+  "cha": 15,
+  "skills": {
+    "deception": "+6",
+    "insight": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Cling to Life (Recharges after a Long Rest)",
+      "entries": [
+        "The first time Zargash would drop to 0 hit points as a result of taking damage, he instead drops to 1 hit point."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Zargash wears a bat-shaped amulet that has the properties of a ring of feather falling."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Warhammer",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) bludgeoning damage, or 7 (1d10 + 2 damage) bludgeoning damage when used with two hands."
+      ]
+    },
+    {
+      "name": "Deathly Ray",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 60 ft., one creature. 25 (4d10 + 3 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Zargash casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "light",
+        "thaumaturgy"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

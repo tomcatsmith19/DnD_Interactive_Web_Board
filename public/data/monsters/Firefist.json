@@ -1,0 +1,131 @@
+{
+  "name": "Firefist",
+  "source": "GGR",
+  "page": 231,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 117,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 10,
+  "con": 14,
+  "int": 11,
+  "wis": 17,
+  "cha": 13,
+  "skills": {
+    "intimidation": "+4",
+    "religion": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The firefist makes two greatsword attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The firefist is a 9th-level Boros spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "light",
+            "sacred flame",
+            "spare the dying"
+          ]
+        },
+        "1": {
+          "spells": [
+            "guiding bolt",
+            "healing word",
+            "heroism",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "lesser restoration",
+            "scorching ray"
+          ]
+        },
+        "3": {
+          "spells": [
+            "blinding smite",
+            "crusader's mantle",
+            "revivify"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": [
+            "flame strike"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

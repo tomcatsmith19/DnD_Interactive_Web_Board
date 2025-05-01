@@ -1,0 +1,95 @@
+{
+  "name": "Tlacatecolo",
+  "source": "JttRC",
+  "page": 65,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 12,
+  "dex": 17,
+  "con": 14,
+  "int": 10,
+  "wis": 15,
+  "cha": 10,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The tlacatecolo has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The tlacatecolo makes two Talon attacks."
+      ]
+    },
+    {
+      "name": "Talon",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 3 damage) piercing damage plus 14 (3d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Change Shape",
+      "entries": [
+        "The tlacatecolo magically transforms into a Medium owl, while retaining its game statistics (other than its size). This transformation ends if the tlacatecolo is reduced to 0 hit points or if it uses its action to end it."
+      ]
+    },
+    {
+      "name": "Plague Winds (Fiend Form Only; Recharge 5-6)",
+      "entries": [
+        "The tlacatecolo emits a chilling, disease-ridden wind in a 60-foot line that is 10 feet wide. Each creature in that area must succeed on a DC 13 Constitution saving throw or take 26 (4d12 damage) cold damage and become {@condition poisoned}.",
+        "While {@condition poisoned} in this way, the creature can't regain hit points. At the end of every hour, the creature must succeed on a {@dc 13} Constitution saving throw or gain 1 level of {@condition exhaustion}. If the creature is in direct sunlight when it makes this saving throw, it automatically succeeds on the save.",
+        "If the creature is targeted by magic that ends a poison or disease, such as lesser restoration, while the creature isn't in direct sunlight, the effect does not end."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

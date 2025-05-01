@@ -1,0 +1,87 @@
+{
+  "name": "Deep Spider",
+  "source": "MaBJoV",
+  "page": 151,
+  "size": [
+    "H"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 95,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 20,
+  "dex": 14,
+  "con": 16,
+  "int": 6,
+  "wis": 12,
+  "cha": 4,
+  "skills": {
+    "stealth": "+8"
+  },
+  "passive": 11,
+  "languages": [],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The deep spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Web Sense",
+      "entries": [
+        "While in contact with a web, the deep spider knows the exact location of any other creature in contact with the same web."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": [
+        "The deep spider ignores movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The deep spider makes two foreleg attacks and one bite attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) piercing damage, and the target must make a DC 14 Constitution saving throw, taking 18 (4d8 damage) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but {@condition poisoned} for 1 hour, even after regaining hit points, and is {@condition paralyzed} while {@condition poisoned} in this way."
+      ]
+    },
+    {
+      "name": "Foreleg",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 19 (4d6 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "tremorsense 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

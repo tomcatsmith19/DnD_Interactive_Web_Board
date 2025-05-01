@@ -1,0 +1,106 @@
+{
+  "name": "Ghald",
+  "source": "PotA",
+  "page": 210,
+  "size": [
+    "L"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "sahuagin"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 30,
+    "swim": 50
+  },
+  "str": 19,
+  "dex": 17,
+  "con": 16,
+  "int": 14,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "insight": "+4",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Sahuagin"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Assassinate",
+      "entries": [
+        "During its first turn, Ghald has advantage on attack rolls against any creature that hasn't taken a turn. Any hit Ghald scores against a {@quickref Surprise|PHB|3|0|surprised} creature is a critical hit."
+      ]
+    },
+    {
+      "name": "Limited Amphibiousness",
+      "entries": [
+        "Ghald can breathe air and water, but he needs to be submerged at least once every 4 hours to avoid suffocating."
+      ]
+    },
+    {
+      "name": "Shark Telepathy",
+      "entries": [
+        "Ghald can magically command any shark within 120 feet of him, using a limited telepathy."
+      ]
+    },
+    {
+      "name": "Sneak Attack",
+      "entries": [
+        "Ghald deals an extra 14 ({@dice 4d6}) damage when he hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of Ghald's that isn't {@condition incapacitated} and Ghald doesn't have disadvantage on the attack roll."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Ghald makes three attacks, one with his bite and two with his shortswords."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 9 (2d4 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 11 (2d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Garrote",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one Medium or Small creature against which Ghald has advantage on the attack roll. 9 (2d4 + 4 damage) bludgeoning damage, and the target is {@condition grappled} (escape DC 15). Until the grapple ends, the target can't breathe, and Ghald has advantage on attack rolls against it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

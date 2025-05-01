@@ -1,0 +1,91 @@
+{
+  "name": "Frostmourn",
+  "source": "BGG",
+  "page": 147,
+  "size": [
+    "H"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 195,
+  "speed": {
+    "walk": 40
+  },
+  "str": 23,
+  "dex": 9,
+  "con": 21,
+  "int": 9,
+  "wis": 11,
+  "cha": 18,
+  "skills": {
+    "athletics": "+10",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The frostmourn makes one Freezing Touch attack and one Icy Axe attack. It can replace one of these attacks with a Polar Ray attack."
+      ]
+    },
+    {
+      "name": "Freezing Touch",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one creature. 18 (4d8 damage) cold damage plus 18 (4d8 damage) necrotic damage. If this damage would reduce the target to 0 hit points, the target drops to 1 hit point instead and has the {@condition petrified} condition, turning into a frozen statue.",
+        "If the statue takes bludgeoning damage, it shatters, killing the frozen creature. If the statue would take fire damage, it instead takes no damage and thaws, ending the petrification."
+      ]
+    },
+    {
+      "name": "Icy Axe",
+      "entries": [
+        "Melee atk +10 to hit, reach 10 ft., one target. 19 (3d8 + 6 damage) slashing damage plus 7 (2d6 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Polar Ray",
+      "entries": [
+        "Ranged Spell atk +8 to hit, range 120 ft., one target. 31 (5d10 + 4 damage) cold damage, and the target's speed is reduced by 10 feet until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [
+    "cold",
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,127 @@
+{
+  "name": "Chwinga",
+  "source": "ToA",
+  "page": 216,
+  "size": [
+    "T"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 20,
+    "climb": 20,
+    "swim": 20
+  },
+  "str": 1,
+  "dex": 20,
+  "con": 10,
+  "int": 14,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "acrobatics": "+7",
+    "perception": "+7",
+    "stealth": "+7"
+  },
+  "passive": 17,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The chwinga doesn't require air, food, or drink. When it dies, it turns into a handful of flower petals, a cloud of pollen, a stone statuette resembling its former self, a tiny sphere of smooth stone, or a puddle of fresh water (your choice)."
+      ]
+    },
+    {
+      "name": "Evasion",
+      "entries": [
+        "When the chwinga is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Magical Gift (1/Day)",
+      "entries": [
+        "The chwinga targets a humanoid it can see within 5 feet of it. The target gains a {@filter supernatural charm|rewards|type=charm} of the DM's choice. See {@book chapter 7|DMG|7|Other Rewards} of the Dungeon Masters Guide for more information on supernatural charms."
+      ]
+    },
+    {
+      "name": "Natural Shelter",
+      "entries": [
+        "The chwinga magically takes shelter inside a rock, a living plant, or a natural source of fresh water in its space. The chwinga can't be targeted by any attack, spell, or other effect while inside this shelter, and the shelter doesn't impair the chwinga's blindsight. The chwinga can use its action to emerge from a shelter. If its shelter is destroyed, the chwinga is forced out and appears in the shelter's space, but is otherwise unharmed."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The chwinga's innate spellcasting ability is Wisdom. It can innately cast the following spells, requiring no material or verbal components:"
+      ],
+      "will": [
+        "druidcraft",
+        "guidance",
+        "pass without trace",
+        "resistance"
+      ],
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

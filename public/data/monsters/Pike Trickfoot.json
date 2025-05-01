@@ -1,0 +1,182 @@
+{
+  "name": "Pike Trickfoot",
+  "source": "TDCSR",
+  "page": 269,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gnome"
+  ],
+  "alignment": [],
+  "ac": [
+    "23"
+  ],
+  "hp": 170,
+  "speed": {
+    "walk": 25
+  },
+  "str": 19,
+  "dex": 12,
+  "con": 18,
+  "int": 14,
+  "wis": 20,
+  "cha": 14,
+  "skills": {
+    "athletics": "+10",
+    "perception": "+11",
+    "persuasion": "+8",
+    "religion": "+8",
+    "stealth": "+7"
+  },
+  "passive": 21,
+  "languages": [
+    "Common",
+    "Dwarvish",
+    "Gnomish",
+    "Undercommon"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Gnome Cunning",
+      "entries": [
+        "Pike has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on Intelligence, Wisdom, and Charisma {@quickref saving throws|PHB|2|1} against magic."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Pike wields a {@item mace of disruption} and wears {@item gauntlets of ogre power}, {@item boots of speed}, and the {@item plate of the dawnmartyr (exalted)|TDCSR|Plate of the Dawnmartyr}."
+      ]
+    },
+    {
+      "name": "Dawnmartyr's Grace (1/{@quickref resting|PHB|2|0|Long Rest})",
+      "entries": [
+        "When Pike is reduced to 0 hit points while wearing the {@item plate of the dawnmartyr (exalted)|TDCSR|Plate of the Dawnmartyr}, she can choose to have a blast of healing flame surround her. She regains 1 hit point and is lifted to her feet. Each enemy within 10 feet of her takes 7 ({@damage 2d6}) fire damage or radiant damage (her choice)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Mace of Disruption",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 17 (3d8 + 4 damage) bludgeoning damage, plus an extra 7 (2d6 damage) radiant damage if the target is a fiend or an undead. If the target has 25 hit points or fewer after taking this damage, it must succeed on a DC 15 Wisdom {@quickref saving throws|PHB|2|1|saving throw} or be destroyed. On a successful save, the creature becomes {@condition frightened} of Pike until the end of her next turn."
+      ]
+    },
+    {
+      "name": "Guiding Bolt (5th Level)",
+      "entries": [
+        "Ranged Spell atk +11 to hit, range 120 ft., one target. 28 (8d6 damage) radiant damage, and the next attack roll made against the target before the end of Pike's next turn has {@quickref Advantage and Disadvantage|PHB|2|0|advantage}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Pike is a 20th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 19}, {@hit 11} to hit with spell attacks). She has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "sacred flame",
+            "spare the dying",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "command",
+            "cure wounds",
+            "guiding bolt",
+            "healing word",
+            "sanctuary",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "aid",
+            "lesser restoration",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "glyph of warding",
+            "mass healing word",
+            "protection from energy",
+            "revivify",
+            "speak with dead"
+          ]
+        },
+        "4": {
+          "spells": [
+            "death ward",
+            "freedom of movement",
+            "guardian of faith"
+          ]
+        },
+        "5": {
+          "spells": [
+            "flame strike",
+            "greater restoration",
+            "hallow",
+            "mass cure wounds",
+            "scrying"
+          ]
+        },
+        "6": {
+          "spells": [
+            "heal",
+            "heroes' feast",
+            "planar ally"
+          ]
+        },
+        "7": {
+          "spells": [
+            "resurrection"
+          ]
+        },
+        "8": {
+          "spells": [
+            "holy aura"
+          ]
+        },
+        "9": {
+          "spells": [
+            "mass heal"
+          ]
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [
+    "fire",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

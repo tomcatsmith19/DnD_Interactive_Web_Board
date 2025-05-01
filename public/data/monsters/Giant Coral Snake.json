@@ -1,0 +1,56 @@
+{
+  "name": "Giant Coral Snake",
+  "source": "GoS",
+  "page": 236,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 14,
+  "int": 2,
+  "wis": 10,
+  "cha": 3,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (2d4 + 3 damage) piercing damage, and the target must succeed on a DC 12 Constitution saving throw or be {@condition stunned} until the end of its next turn. On a failed save, the target begins to hallucinate and is afflicted with a {@table short-term madness|DMG} effect (determined randomly or by the DM; see \"Madness\" in chapter 8 of the {@book Dungeon Master's Guide|dmg|8|madness}). The effect lasts 10 minutes."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

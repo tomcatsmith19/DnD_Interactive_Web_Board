@@ -1,0 +1,73 @@
+{
+  "name": "Yeti Tyke",
+  "source": "MGELFT",
+  "page": 34,
+  "size": [
+    "S"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    {
+      "special": "chaotic silly"
+    }
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 10,
+  "dex": 11,
+  "con": 12,
+  "int": 6,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands Yeti but can't speak"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The yeti tyke has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Snow Camouflage",
+      "entries": [
+        "The yeti tyke has advantage on Dexterity ({@skill Stealth}) checks made to hide in snowy terrain."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) slashing damage, plus 2 (1d4 damage) cold damage. Claw does both slashing and cold damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

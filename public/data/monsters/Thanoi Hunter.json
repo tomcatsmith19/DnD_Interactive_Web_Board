@@ -1,0 +1,86 @@
+{
+  "name": "Thanoi Hunter",
+  "source": "MCV2DC",
+  "page": 12,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 15,
+  "int": 12,
+  "wis": 16,
+  "cha": 11,
+  "skills": {
+    "athletics": "+6",
+    "perception": "+5",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Aquan",
+    "Common"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The hunter can hold its breath for up to 10 minutes."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The hunter has advantage on an attack roll against a creature if at least one of the hunter's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hunter makes one Bone Harpoon attack and one Tusk attack."
+      ]
+    },
+    {
+      "name": "Bone Harpoon",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 10 ft. or range 20/60 ft., one target. 8 (1d8 + 4 damage) piercing damage. Hit or Miss: The harpoon returns to the hunter's hand."
+      ]
+    },
+    {
+      "name": "Tusk",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d4 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

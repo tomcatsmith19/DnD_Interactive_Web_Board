@@ -1,0 +1,83 @@
+{
+  "name": "Dragon Army Officer",
+  "source": "DSotDQ",
+  "page": 200,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 15,
+  "int": 12,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "athletics": "+5",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Draconic Devotion",
+      "entries": [
+        "While the officer can see a Dragon that isn't hostile to it, the officer has advantage on attack rolls."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The officer makes two Vicious Lance attacks and uses Assault Orders if it's available."
+      ]
+    },
+    {
+      "name": "Vicious Lance",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one target. 8 (1d10 + 3 damage) piercing damage plus 2 (1d4 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 100/400 ft., one target. 7 (1d10 + 2 damage) piercing damage plus 5 (1d10 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Assault Orders {@recharge 5}",
+      "entries": [
+        "The officer shouts orders and targets up to two other creatures within 60 feet of itself. If a target has the Draconic Devotion trait and can hear the officer, the target can use its reaction to make one melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

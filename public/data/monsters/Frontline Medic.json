@@ -1,0 +1,113 @@
+{
+  "name": "Frontline Medic",
+  "source": "GGR",
+  "page": 231,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 14,
+  "int": 10,
+  "wis": 13,
+  "cha": 12,
+  "skills": {
+    "medicine": "+5",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d6 + 2 damage) piercing damage, or 6 (1d8 + 2 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The medic is a 3rd-level Boros spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 11}). The medic has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mending",
+            "resistance",
+            "spare the dying"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "sanctuary"
+          ]
+        },
+        "2": {
+          "spells": [
+            "aid",
+            "lesser restoration"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

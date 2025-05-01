@@ -1,0 +1,79 @@
+{
+  "name": "Rakdos Performer, Fire Eater",
+  "source": "GGR",
+  "page": 249,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 40,
+    "climb": 30
+  },
+  "str": 13,
+  "dex": 17,
+  "con": 12,
+  "int": 10,
+  "wis": 8,
+  "cha": 15,
+  "skills": {
+    "acrobatics": "+7",
+    "performance": "+4"
+  },
+  "passive": 9,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Nimble",
+      "entries": [
+        "The performer can take the Disengage action as a bonus action on each of its turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The fire eater makes two attacks with its bladed chain."
+      ]
+    },
+    {
+      "name": "Bladed Chain",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Spew Flame {@recharge 4}",
+      "entries": [
+        "The fire eater exhales flames. Each creature in a 15-foot cone must make a DC 13 Dexterity saving throw, taking 9 (2d8 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

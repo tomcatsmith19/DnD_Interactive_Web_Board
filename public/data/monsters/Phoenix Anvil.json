@@ -1,0 +1,131 @@
+{
+  "name": "Phoenix Anvil",
+  "source": "AI",
+  "page": 206,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 12,
+  "int": 13,
+  "wis": 16,
+  "cha": 13,
+  "skills": {
+    "athletics": "+4",
+    "performance": "+3",
+    "persuasion": "+3",
+    "religion": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Divine Display (1/Day)",
+      "entries": [
+        "As a bonus action, Phoenix causes his shield to flare with divine light. Each creature of his choice within 30 feet of him must succeed on a {@dc 13} Wisdom saving throw or be {@condition blinded} for 1 minute. A creature can repeat the save at the end of each of its turns, ending the effect on itself with a success."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Phoenix makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Warhammer",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) bludgeoning damage, and the target must succeed on a DC 12 Strength saving throw or be pushed 5 feet."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Phoenix is a 4th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 13}, {@hit 5} to hit with spell attacks). He has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "light",
+            "mending",
+            "sacred flame"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bane",
+            "cure wounds",
+            "guiding bolt"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

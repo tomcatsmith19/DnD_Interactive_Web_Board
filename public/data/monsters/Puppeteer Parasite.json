@@ -1,0 +1,86 @@
+{
+  "name": "Puppeteer Parasite",
+  "source": "MCV1SC",
+  "page": 11,
+  "size": [
+    "T"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 71,
+  "speed": {
+    "walk": 10,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 2,
+  "dex": 15,
+  "con": 18,
+  "int": 16,
+  "wis": 10,
+  "cha": 3,
+  "skills": {
+    "stealth": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "telepathy 30 ft."
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The parasite doesn't require air or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Cling",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 12 (3d6 + 2 damage) necrotic damage, and the parasite attaches to the target. While attached, the parasite can't make Cling attacks. The parasite can detach itself by spending 5 feet of its movement. As an action, a creature within reach of the parasite can try to detach it, doing so with a successful DC 14 Strength check."
+      ]
+    },
+    {
+      "name": "Consume Life",
+      "entries": [
+        "The parasite deals 12 (3d6 + 2 damage) necrotic damage to one creature it is physically attached to, provided that creature isn't a Construct or an Undead. The parasite regains hit points equal to the damage taken."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "fire",
+    "necrotic",
+    "poison"
+  ],
+  "vulnerable": [
+    "radiant"
+  ],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

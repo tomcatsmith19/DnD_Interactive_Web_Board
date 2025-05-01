@@ -1,0 +1,71 @@
+{
+  "name": "Pirate First Mate",
+  "source": "GoS",
+  "page": 248,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 11,
+  "con": 14,
+  "int": 11,
+  "wis": 10,
+  "cha": 13,
+  "skills": {
+    "athletics": "+4",
+    "intimidation": "+3"
+  },
+  "passive": 10,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Sea Legs",
+      "entries": [
+        "The first mate has advantage on ability checks and saving throws to resist being knocked {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The first mate makes two attacks with its longsword."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage, or 7 (1d10 + 2 damage) slashing damage if used with two hands. If the target is a creature, the first mate can choose to deal no damage with the attack to disarm the target. The target must succeed on a DC 14 Strength saving throw or drop one item it is holding on the ground."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

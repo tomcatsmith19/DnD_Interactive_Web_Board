@@ -1,0 +1,122 @@
+{
+  "name": "Urban Ranger",
+  "source": "DoDk",
+  "page": 220,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 12,
+  "dex": 17,
+  "con": 14,
+  "int": 11,
+  "wis": 15,
+  "cha": 11,
+  "skills": {
+    "athletics": "+5",
+    "perception": "+6",
+    "stealth": "+7",
+    "survival": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Any two"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The urban ranger makes two melee attacks or two ranged attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +5 to hit, ranged 150/600 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The urban ranger is an 8th-level spellcaster that uses Wisdom as its spellcasting ability (spell save {@dc 12}; {@hit 4} to hit with spell attacks). It knows the following spells from the ranger spell list:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "fog cloud",
+            "hunter's mark"
+          ]
+        },
+        "2": {
+          "spells": [
+            "pass without trace",
+            "spike growth"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

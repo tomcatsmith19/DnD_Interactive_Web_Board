@@ -1,0 +1,137 @@
+{
+  "name": "Orc Eye of Gruumsh",
+  "source": "MM",
+  "page": 247,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "orc"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 17,
+  "int": 9,
+  "wis": 13,
+  "cha": 12,
+  "skills": {
+    "intimidation": "+3",
+    "religion": "+1"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see."
+      ]
+    },
+    {
+      "name": "Gruumsh's Fury",
+      "entries": [
+        "The orc deals an extra 4 ({@dice 1d8}) damage when it hits with a weapon attack (included in the attacks)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 11 ({@dice 1d6 + 3} plus {@dice 1d8}) piercing damage, or 12 (2d8 + 3 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The orc is a 3rd-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 11}, {@hit 3} to hit with spell attacks). The orc has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "resistance",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "command"
+          ]
+        },
+        "2": {
+          "spells": [
+            "augury",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "grassland",
+    "forest",
+    "swamp",
+    "hill",
+    "arctic"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

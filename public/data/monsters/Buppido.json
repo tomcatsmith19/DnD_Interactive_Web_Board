@@ -1,0 +1,86 @@
+{
+  "name": "Buppido",
+  "source": "OotA",
+  "page": 6,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "derro"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 12,
+  "int": 11,
+  "wis": 5,
+  "cha": 9,
+  "skills": {
+    "stealth": "+4"
+  },
+  "passive": 7,
+  "languages": [
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Insanity",
+      "entries": [
+        "The derro has advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The derro has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, Buppido has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hooked Shortspear",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 1 (1d4 - 1 damage) piercing damage. If the target is a creature, Buppido can choose to deal no damage and try to trip the target instead, in which case the target must succeed on a DC 9 Strength saving throw or fall {@condition prone}."
+      ]
+    },
+    {
+      "name": "Light Repeating Crossbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 40/160 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

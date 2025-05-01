@@ -1,0 +1,74 @@
+{
+  "name": "Su-monster",
+  "source": "ToA",
+  "page": 232,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 14,
+  "dex": 15,
+  "con": 12,
+  "int": 9,
+  "wis": 13,
+  "cha": 9,
+  "skills": {
+    "athletics": "+6",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The su-monster makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (2d4 + 2 damage) slashing damage, or 12 (4d4 + 2 damage) slashing damage if the su-monster is hanging by its tail and all four of its limbs are free."
+      ]
+    },
+    {
+      "name": "Psychic Crush {@recharge 5}",
+      "entries": [
+        "The su-monster targets one creature it can see within 30 feet of it. The target must succeed on a DC 11 Wisdom saving throw or take 17 (5d6 damage) psychic damage and be {@condition stunned} for 1 minute. The {@condition stunned} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

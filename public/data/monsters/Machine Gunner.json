@@ -1,0 +1,108 @@
+{
+  "name": "Machine Gunner",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 15,
+  "speed": {
+    "walk": 25
+  },
+  "str": 12,
+  "dex": 8,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": null,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Machine Gun",
+      "entries": [
+        "Ranged weapon attack: -1 to hit, hit (4d12), range (90/300) ft."
+      ]
+    },
+    {
+      "name": "Saturate",
+      "entries": [
+        "Targets make dc 14 dex save or take 4d12 damage, half on a save, range (90/300) ft. Reload after."
+      ]
+    },
+    {
+      "name": "Hammer",
+      "entries": [
+        "Melee weapon attack: +1 to hit, d6 damage, single target, range 5ft."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "cure wounds",
+            "sanctuary"
+          ]
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "Keen Hearing and Smell (adv. on perc. hear and smell)",
+    "Toxic Spray (5ft spray dc12 con save or 1 min. poison)",
+    "Frantic Frenzy (0hp turns to 1hp instead)"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

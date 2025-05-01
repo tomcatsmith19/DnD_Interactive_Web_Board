@@ -1,0 +1,94 @@
+{
+  "name": "Aeorian Absorber",
+  "source": "EGW",
+  "page": 283,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 171,
+  "speed": {
+    "walk": 40
+  },
+  "str": 21,
+  "dex": 18,
+  "con": 18,
+  "int": 6,
+  "wis": 14,
+  "cha": 8,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+8",
+    "survival": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "understands Draconic but can't speak"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The absorber has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Pounce",
+      "entries": [
+        "If the absorber moves at least 20 feet straight toward a creature and then hits its claws attack on the same turn, that target must succeed on a {@dc 17} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the absorber can make one bite attack against it as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The absorber makes three attacks: one with its bite or Mind Bolt and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one creature. 10 (1d10 + 5 damage) piercing damage plus 5 (1d10 damage) force damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) slashing damage plus 3 (1d6 damage) force damage."
+      ]
+    },
+    {
+      "name": "Mind Bolt",
+      "entries": [
+        "Ranged Spell atk +8 to hit, range 120 ft., one creature. 22 (4d10 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "radiant"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

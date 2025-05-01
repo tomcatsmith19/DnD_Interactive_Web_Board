@@ -1,0 +1,86 @@
+{
+  "name": "Anvilwrought Raptor",
+  "source": "MOT",
+  "page": 209,
+  "size": [
+    "T"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 10,
+    "fly": 60
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 14,
+  "int": 3,
+  "wis": 14,
+  "cha": 1,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "understands one language of its creator but can't speak"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The raptor has advantage on Wisdom (Perception) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Recorded Mimicry",
+      "entries": [
+        "The raptor can mimic any sound, including voices, it has heard in the last 24 hours. A creature that hears the sounds can tell they are imitations with a successful {@dc 12} Wisdom (Insight) check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The raptor makes two attacks with its beak."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,85 @@
+{
+  "name": "Swarm of Animated Books",
+  "source": "CM",
+  "page": 19,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 10,
+  "dex": 13,
+  "con": 12,
+  "int": 1,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Objects",
+      "entries": [
+        "If the swarm is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the swarm move or act, that creature must succeed on a {@dc 15} Wisdom (Perception) check to discern that the swarm is animate."
+      ]
+    },
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a 1-foot-tall, 8-inch-wide, 2-inch-thick object. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Book Club",
+      "entries": [
+        "Melee atk +3 to hit, reach 0 ft., one target in the swarm's space. 6 (2d4 + 1 damage) bludgeoning damage, or 3 (1d4 + 1 damage) bludgeoning damage if the swarm has half its hit points or fewer."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

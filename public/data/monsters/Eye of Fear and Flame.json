@@ -1,0 +1,154 @@
+{
+  "name": "Eye of Fear and Flame",
+  "source": "MFF",
+  "page": 8,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 18,
+  "int": 18,
+  "wis": 17,
+  "cha": 18,
+  "skills": {
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "all languages known by any creature within 30 feet of it"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Turn Immunity",
+      "entries": [
+        "The eye of fear and flame is immune to effects that turn undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The eye of fear and flame makes two claw attacks and uses its Gemstone Eyes."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (1d12 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Gemstone Eyes",
+      "entries": [
+        "The eye of fear and flame shoots one of the following magical eye rays, choosing one target it can see within 90 feet of it.",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Eye of Fear",
+              "entry": "The target and up to four other creatures of the eye of fear and flame's choice within 10 feet of the target must each succeed on a {@dc 16} Wisdom saving throw or be {@condition frightened} for 1 minute. An affected creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+            },
+            {
+              "type": "item",
+              "name": "Eye of Flame",
+              "entry": "The target must make a {@dc 16} Dexterity saving throw. On a failed save, the target takes 44 ({@damage 8d10}) fire damage, and if it is a creature or a flammable object, it ignites. On a successful save, the target takes half as much damage and does not ignite. A target that ignites takes 5 ({@damage 1d10}) fire damage at the start of each of its turns until a creature takes an action to douse the fire."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The eye of fear and flame's innate spellcasting ability is Intelligence (spell save {@dc 16}). It can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "detect evil and good",
+        "detect thoughts"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "stunned"
+  ],
+  "resist": [
+    "necrotic",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

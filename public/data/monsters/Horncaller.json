@@ -1,0 +1,123 @@
+{
+  "name": "Horncaller",
+  "source": "GGR",
+  "page": 253,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 14,
+  "int": 10,
+  "wis": 14,
+  "cha": 13,
+  "skills": {
+    "animal handling": "+4",
+    "nature": "+2",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Speak with Beasts",
+      "entries": [
+        "The horncaller can communicate with beasts as if they shared a language."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The horncaller makes two melee attacks with its staff and uses One with the Worldsoul."
+      ]
+    },
+    {
+      "name": "Staff",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) piercing damage, or 5 (1d8 + 1 damage) bludgeoning damage if used with two hands."
+      ]
+    },
+    {
+      "name": "One with the Worldsoul",
+      "entries": [
+        "The horncaller chooses one beast it can see within 30 feet of it. If the beast can hear the horncaller, the beast uses its reaction to make one melee attack against a target that the horncaller can see."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The horncaller's innate spellcasting ability is Wisdom (spell save {@dc 14}). The horncaller can innately cast the following spells, requiring no material components:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

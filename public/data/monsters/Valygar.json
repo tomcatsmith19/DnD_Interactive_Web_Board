@@ -1,0 +1,81 @@
+{
+  "name": "Valygar",
+  "source": "MaBJoV",
+  "page": 36,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 18,
+  "con": 16,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "arcana": "+4",
+    "history": "+4",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Primordial"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Mage Slaying",
+      "entries": [
+        "When Valygar deals damage to a creature that is {@status concentration||concentrating} on a spell, that creature has disadvantage on the saving throw it makes to maintain its {@status concentration}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Valygar makes two katana attacks and one hand crossbow attack or two hand crossbow attacks."
+      ]
+    },
+    {
+      "name": "Katana",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage, or 9 (1d10 + 4 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +8 to hit, range 30/120 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

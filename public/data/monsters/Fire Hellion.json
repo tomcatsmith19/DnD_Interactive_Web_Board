@@ -1,0 +1,94 @@
+{
+  "name": "Fire Hellion",
+  "source": "BGG",
+  "page": 140,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 175,
+  "speed": {
+    "walk": 30
+  },
+  "str": 25,
+  "dex": 10,
+  "con": 23,
+  "int": 16,
+  "wis": 14,
+  "cha": 21,
+  "skills": {
+    "arcana": "+7",
+    "athletics": "+11",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Giant",
+    "Infernal"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The hellion has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Soul Taker",
+      "entries": [
+        "A Giant or a Humanoid that is reduced to 0 hit points by the hellion dies, and its soul rises as a lemure (see the Monster Manual) on Avernus, one of the Nine Hells, in {@dice 1d4} hours. If the creature isn't revived before then, it can be restored to life only by a {@spell wish} spell or by killing the lemure and casting true resurrection on the creature's original body."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hellion makes two Morningstar attacks."
+      ]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 20 (3d8 + 7 damage) piercing damage plus 11 (2d10 damage) fire damage. If the target is a creature, it can't regain hit points until the start of the hellion's next turn."
+      ]
+    },
+    {
+      "name": "Infernal Orb",
+      "entries": [
+        "The hellion hurls a magical ball of fire that explodes in a 20-foot-radius sphere centered on a point the hellion can see within 120 feet of itself. The sphere spreads around corners. Each creature in that area must make a DC 17 Dexterity saving throw. A creature takes 18 (4d8 damage) fire damage and 18 (4d8 damage) necrotic damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

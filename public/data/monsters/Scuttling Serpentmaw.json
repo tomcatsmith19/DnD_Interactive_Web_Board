@@ -1,0 +1,80 @@
+{
+  "name": "Scuttling Serpentmaw",
+  "source": "CRCotN",
+  "page": 208,
+  "size": [
+    "S"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 16,
+  "int": 3,
+  "wis": 11,
+  "cha": 3,
+  "skills": {
+    "stealth": "+6"
+  },
+  "passive": 10,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The serpentmaw can breathe air and water."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The serpentmaw has advantage on an attack roll against a creature if at least one of the serpentmaw's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The serpentmaw makes one Bite attack and two Claw attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 15 ft., one target. 10 (2d6 + 3 damage) piercing damage, or 17 (4d6 + 3 damage) piercing damage if the serpentmaw had advantage on the attack roll."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

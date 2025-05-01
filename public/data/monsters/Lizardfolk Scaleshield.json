@@ -1,0 +1,85 @@
+{
+  "name": "Lizardfolk Scaleshield",
+  "source": "GoS",
+  "page": 242,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "lizardfolk"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 14,
+  "int": 7,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "athletics": "+4",
+    "perception": "+3",
+    "survival": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The scaleshield can hold its breath for 15 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The scaleshield makes two melee attacks, each one with a different weapon."
+      ]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Spiked Shield",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

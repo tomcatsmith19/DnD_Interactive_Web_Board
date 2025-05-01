@@ -1,0 +1,130 @@
+{
+  "name": "Galeokaerda",
+  "source": "CRCotN",
+  "page": 130,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf",
+    "sorcerer"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 91,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 14,
+  "int": 16,
+  "wis": 15,
+  "cha": 18,
+  "skills": {
+    "arcana": "+6",
+    "deception": "+7",
+    "history": "+9",
+    "perception": "+5",
+    "stealth": "+8"
+  },
+  "passive": 15,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Galeokaerda has advantage on saving throws against being {@condition charmed}, and magic can't put her to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The extollant makes two Crimson Bolt attacks."
+      ]
+    },
+    {
+      "name": "Crimson Bolt",
+      "entries": [
+        "{@atk ms,rs} +7 to hit, reach 5 ft. or range 60 ft., one creature. 20 (3d10 + 4 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The extollant casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

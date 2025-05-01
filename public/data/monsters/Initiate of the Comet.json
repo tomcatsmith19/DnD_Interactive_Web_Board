@@ -1,0 +1,118 @@
+{
+  "name": "Initiate of the Comet",
+  "source": "BMT",
+  "page": 93,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "warlock"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 16,
+  "int": 11,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "arcana": "+2"
+  },
+  "passive": 11,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The initiate has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The initiate makes two Comet Strike attacks."
+      ]
+    },
+    {
+      "name": "Comet Strike",
+      "entries": [
+        "{@atk ms,rs} +5 to hit, reach 5 ft. or range 120 ft., one target. 14 (2d10 + 3 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The initiate casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "Mage Hand",
+        "Thaumaturgy"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

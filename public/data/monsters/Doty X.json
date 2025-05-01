@@ -1,0 +1,93 @@
+{
+  "name": "Doty X",
+  "source": "TDCSR",
+  "page": 272,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "17"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 40
+  },
+  "str": 14,
+  "dex": 12,
+  "con": 14,
+  "int": 4,
+  "wis": 10,
+  "cha": 6,
+  "skills": {
+    "athletics": "+7",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "understands the languages that {@creature Taryon Darrington|TDCSR|Tary} speaks"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Arcane Surge (4/Day)",
+      "entries": [
+        "When Doty hits a target, {@creature Taryon Darrington|TDCSR|Tary} can channel magical energy to deal an extra 14 ({@damage 4d6}) force damage to the target as long as {@creature Taryon Darrington|TDCSR|Tary} is not {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Dedicated Servant",
+      "entries": [
+        "Doty has an additional 20 hit points, and has a +2 modifier to {@quickref saving throws|PHB|2|1}, {@quickref ability checks|PHB|2|0} using skill proficiencies, and attack rolls."
+      ]
+    },
+    {
+      "name": "Limited Vocabulary",
+      "entries": [
+        "Doty can say the following words in Common: \"Tary,\" \"Yes,\" \"Correct,\" \"Absolutely,\" \"Soon,\" and \"Handsome.\""
+      ]
+    },
+    {
+      "name": "Vigilant",
+      "entries": [
+        "Doty can't be surprised."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Empowered Fist",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) force damage."
+      ]
+    },
+    {
+      "name": "Repair (3/Day)",
+      "entries": [
+        "Doty regains 15 ({@dice 2d8 + 6}) hit points."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

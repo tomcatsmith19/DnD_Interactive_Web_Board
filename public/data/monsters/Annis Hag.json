@@ -1,0 +1,131 @@
+{
+  "name": "Annis Hag",
+  "source": "VGM",
+  "page": 159,
+  "size": [
+    "L"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 40
+  },
+  "str": 21,
+  "dex": 12,
+  "con": 14,
+  "int": 13,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "deception": "+5",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Giant",
+    "Sylvan"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The annis makes three attacks: one with her bite and two with her claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 15 (3d6 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 15 (3d6 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Crushing Hug",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 36 (9d6 + 5 damage) bludgeoning damage, and the target is {@condition grappled} (escape DC 15) if it is a Large or smaller creature. Until the grapple ends, the target takes 36 (9d6 + 5 damage) bludgeoning damage at the start of each of the hag's turns. The hag can't make attacks while grappling a creature in this way."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The hag's innate spellcasting ability is Charisma (spell save {@dc 13}). She can innately cast the following spells:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,131 @@
+{
+  "name": "Merrow Shallowpriest",
+  "source": "EGW",
+  "page": 294,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 10,
+    "swim": 40
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 15,
+  "int": 11,
+  "wis": 16,
+  "cha": 9,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "Aquan"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The merrow can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Harpoon",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 11 (2d6 + 4 damage) piercing damage. If the target is a Medium or smaller creature, the merrow can pull it 10 feet closer."
+      ]
+    },
+    {
+      "name": "Lightning Bolt (3rd-Level Spell; Requires a Spell Slot)",
+      "entries": [
+        "The merrow unleashes a stroke of lightning in a line 100 feet long and 5 feet wide. Each creature in the line must make a DC 13 Dexterity saving throw, taking 28 (8d6 damage) lightning damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The merrow is a 6th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 13}, {@hit 5} to hit with spell attacks). The merrow has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "minor illusion",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "fog cloud",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "lightning bolt",
+            "sleet storm"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

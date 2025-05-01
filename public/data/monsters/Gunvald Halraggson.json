@@ -1,0 +1,90 @@
+{
+  "name": "Gunvald Halraggson",
+  "source": "IDRotF",
+  "page": 305,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 76,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 8,
+  "con": 18,
+  "int": 9,
+  "wis": 10,
+  "cha": 16,
+  "skills": {
+    "athletics": "+8",
+    "intimidation": "+6",
+    "survival": "+3"
+  },
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Indomitable (3/Day)",
+      "entries": [
+        "Gunvald can reroll a saving throw he fails. He must use the new roll."
+      ]
+    },
+    {
+      "name": "Menacing Blows (1/Turn)",
+      "entries": [
+        "Gunvald deals an extra 6 ({@damage 1d12}) damage when he hits a target with a weapon attack. If the target is a creature, it must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} until the start of Gunvald's next turn."
+      ]
+    },
+    {
+      "name": "Second Wind (Recharges after a Short or Long Rest)",
+      "entries": [
+        "As a bonus action, Gunvald can regain 15 hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Gunvald makes three melee attacks."
+      ]
+    },
+    {
+      "name": "Battleaxe",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) slashing damage, or 10 (1d10 + 5 damage) slashing damage when used with two hands, plus 6 (1d12 damage) slashing damage if Gunvald uses Menacing Blows."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +8 to hit, range 30/120 ft., one target. 8 (1d6 + 5 damage) piercing damage, plus 6 (1d12 damage) piercing damage if Gunvald uses Menacing Blows."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,87 @@
+{
+  "name": "Skeletal Two-Headed Owlbear",
+  "source": "IMR",
+  "page": 36,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 12,
+  "con": 17,
+  "int": 3,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Two Heads",
+      "entries": [
+        "The two-headed owlbear has advantage on Wisdom (Perception) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, and knocked {@condition unconscious}."
+      ]
+    },
+    {
+      "name": "Wakeful",
+      "entries": [
+        "When one of the owlbear's heads is asleep, its other head is awake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The two-headed owlbear makes three attacks: two with its beaks and one with its claws."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 10 (1d10 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

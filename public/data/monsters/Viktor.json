@@ -1,0 +1,148 @@
+{
+  "name": "Viktor",
+  "source": "MaBJoV",
+  "page": 82,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 18,
+  "int": 11,
+  "wis": 11,
+  "cha": 16,
+  "skills": {
+    "persuasion": "+7",
+    "religion": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Brave",
+      "entries": [
+        "Viktor has advantage on saving throws against being {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Shadow Dragon Companion",
+      "entries": [
+        "Viktor has a young gold shadow dragon that accompanies him at all times. If Viktor dies, the young gold shadow dragon returns to the Shadowfell."
+      ]
+    },
+    {
+      "name": "Sun Blade",
+      "entries": [
+        "Viktor wields a Sun Blade. Viktor gains a +2 bonus to attack and damage rolls made with this weapon, which deals radiant damage instead of slashing damage (this is already factored into Viktor's stat block). When Viktor hits an undead with this sword, that target takes an extra {@damage 1d8} radiant damage. The sword's luminous blade emits bright light in a 15-foot radius and dim light for an additional 15 feet. The light is sunlight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Viktor makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Sun Blade",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 10 (1d8 + 6 damage) radiant damage or 11 ({@dice 1d10 + 6}) radiant damage if used with two hands. An additional 4 (1d8 damage) radiant damage is dealt if the target is undead."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +7 to hit, range 100/400 ft., one target. 6 (1d10 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Viktor is a 16th-level spellcaster. His spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Viktor has the following paladin spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "shield of faith",
+            "thunderous smite"
+          ]
+        },
+        "2": {
+          "spells": [
+            "aid",
+            "branding smite",
+            "lesser restoration"
+          ]
+        },
+        "3": {
+          "spells": [
+            "blinding smite",
+            "revivify"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "death ward"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

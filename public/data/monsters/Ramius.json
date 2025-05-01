@@ -1,0 +1,130 @@
+{
+  "name": "Ramius",
+  "source": "CoA",
+  "page": 24,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "22"
+  ],
+  "hp": 190,
+  "speed": {
+    "walk": 30
+  },
+  "str": 23,
+  "dex": 10,
+  "con": 21,
+  "int": 11,
+  "wis": 14,
+  "cha": 18,
+  "skills": {
+    "animal handling": "+12",
+    "athletics": "+11",
+    "insight": "+7",
+    "religion": "+10"
+  },
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Celestial",
+    "Common",
+    "Infernal"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Aura of Protection",
+      "entries": [
+        "Ramius and any ally that starts their turn within 30 feet of him have a +4 bonus to all saving throws and resistance to nonmagical damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Ramius makes two Longsword attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +11 to hit, reach 5ft., one target. 10 (1d8 + 6 damage) slashing damage or 11 ({@dice 1d10 + 6}) if wielded in two hands, plus 13 (3d8 damage) radiant damage. If the target is an evil creature, it must succeed on a DC 17 Charisma saving throw or take an additional 13 (3d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Divine Wave {@recharge}",
+      "entries": [
+        "Ramius strikes the ground and causes holy energy to radiate outwards. Each creature of his choice within 30 feet of him must make a DC 17 Constitution saving throw. Targets take 21 (6d6 damage) thunder damage plus 21 (6d6 damage) radiant damage on a failed save, or half as much damage on a successful one. Creatures that fail the save are knocked down (have the {@condition prone} condition)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Ramius casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 17}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

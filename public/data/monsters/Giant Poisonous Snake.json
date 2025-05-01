@@ -1,0 +1,63 @@
+{
+  "name": "Giant Poisonous Snake",
+  "source": "MM",
+  "page": 327,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 10,
+  "dex": 18,
+  "con": 13,
+  "int": 2,
+  "wis": 10,
+  "cha": 3,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 6 (1d4 + 4 damage) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft."
+  ],
+  "environment": [
+    "underdark",
+    "grassland",
+    "forest",
+    "swamp",
+    "urban",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

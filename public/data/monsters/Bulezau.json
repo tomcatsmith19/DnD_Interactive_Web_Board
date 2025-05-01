@@ -1,0 +1,88 @@
+{
+  "name": "Bulezau",
+  "source": "MTF",
+  "page": 131,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 40
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 17,
+  "int": 8,
+  "wis": 9,
+  "cha": 6,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "Abyssal",
+    "telepathy 60 ft."
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Rotting Presence",
+      "entries": [
+        "When any creature that isn't a demon starts its turn within 30 feet one or more bulezaus, that creature must succeed on a {@dc 13} Constitution saving throw or take {@dice 1d6} necrotic damage plus 1 necrotic damage for each bulezau within 30 feet of it."
+      ]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The bulezau's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      ]
+    },
+    {
+      "name": "Sure-Footed",
+      "entries": [
+        "The bulezau has advantage on Strength and Dexterity saving throws made against effects that would knock it {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Barbed Tail",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 8 (1d12 + 2 damage) piercing damage. If the target is a creature, it must succeed on a DC 13 Constitution saving throw against disease or become {@condition poisoned} until the disease ends. While {@condition poisoned} in this way, the target sports festering boils, coughs up flies, and sheds rotting skin, and the target must repeat the saving throw after every 24 hours that elapse. On a successful save, the disease ends. On a failed save, the target's hit point maximum is reduced by 4 ({@dice 1d8}). The target dies if its hit point maximum is reduced to 0."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,107 @@
+{
+  "name": "Prismari Apprentice",
+  "source": "SCC",
+  "page": 205,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "sorcerer"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 35
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 13,
+  "int": 12,
+  "wis": 13,
+  "cha": 15,
+  "skills": {
+    "acrobatics": "+4",
+    "athletics": "+4",
+    "performance": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "Common plus any two languages"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Elemental Strike",
+      "entries": [
+        "{@atk ms,rs} +4 to hit, reach 5 ft. or range 60 ft., one target. 10 (3d6 damage) fire or cold damage (the apprentice's choice)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The apprentice casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 12}):"
+      ],
+      "will": [
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

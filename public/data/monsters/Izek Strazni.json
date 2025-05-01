@@ -1,0 +1,78 @@
+{
+  "name": "Izek Strazni",
+  "source": "CoS",
+  "page": 232,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 16,
+  "int": 10,
+  "wis": 9,
+  "cha": 15,
+  "skills": {
+    "intimidation": "+8",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Brute",
+      "entries": [
+        "A melee weapon deals one extra die of its damage when Izek hits with it (included in the attack)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Izek makes two attacks with his battleaxe."
+      ]
+    },
+    {
+      "name": "Battleaxe",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) slashing damage, or 15 ({@dice 2d10 + 4}) when used with two hands."
+      ]
+    },
+    {
+      "name": "Hurl Flame",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 60 ft., one target. 10 (3d6 damage) fire damage. If the target is a flammable object that isn't being worn or carried, it catches fire."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,123 @@
+{
+  "name": "Aartuk Starhorror",
+  "source": "BAM",
+  "page": 9,
+  "size": [
+    "M"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 12,
+  "dex": 10,
+  "con": 14,
+  "int": 13,
+  "wis": 16,
+  "cha": 10,
+  "skills": {
+    "stealth": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Aartuk"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The aartuk can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The aartuk makes two Branch attacks, two Radiant Pellet attacks, or one of each."
+      ]
+    },
+    {
+      "name": "Branch",
+      "entries": [
+        "Melee atk +3 to hit, reach 10 ft., one target. 8 (2d6 + 1 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Radiant Pellet",
+      "entries": [
+        "Ranged Spell atk +2 to hit, range 60 ft., one target. 7 (3d4 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The aartuk casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

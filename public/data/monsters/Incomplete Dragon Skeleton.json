@@ -1,0 +1,65 @@
+{
+  "name": "Incomplete Dragon Skeleton",
+  "source": "DSotDQ",
+  "page": 138,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 16,
+  "con": 12,
+  "int": 15,
+  "wis": 15,
+  "cha": 16,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Common plus one other language"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one creature. 10 (2d6 + 3 damage) piercing damage plus 10 (3d6 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": null,
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

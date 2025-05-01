@@ -1,0 +1,117 @@
+{
+  "name": "Goliath Werebear",
+  "source": "IDRotF",
+  "page": 293,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goliath",
+    "shapechanger"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "10",
+    "12"
+  ],
+  "hp": 161,
+  "speed": {
+    "walk": {
+      "number": 30,
+      "condition": "(40 ft. swim 30 ft. in bear or hybrid form)"
+    }
+  },
+  "str": 20,
+  "dex": 10,
+  "con": 18,
+  "int": 10,
+  "wis": 15,
+  "cha": 10,
+  "skills": {
+    "athletics": "+8",
+    "perception": "+8",
+    "survival": "+5"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Giant (can't speak in bear form)"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The werebear has advantage on Wisdom (Perception) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Mountain Born",
+      "entries": [
+        "The werebear is acclimated to high altitude, including elevations above 20,000 feet."
+      ]
+    },
+    {
+      "name": "Powerful Build (Humanoid Form Only)",
+      "entries": [
+        "The werebear counts as one size larger when determining its carrying capacity and the weight it can push, drag, or lift."
+      ]
+    },
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The werebear can use its action to polymorph into a Large bear-humanoid hybrid or into a Large polar bear, or back into its goliath form. Its statistics, other than its size and AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The werebear makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Bite (Bear or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one creature. 16 (2d10 + 5 damage) piercing damage. If the target is a humanoid, it must succeed on a DC 15 Constitution saving throw or be cursed with werebear lycanthropy, as described in the Monster Manual."
+      ]
+    },
+    {
+      "name": "Claw (Bear or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Greataxe (Humanoid or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 11 (1d12 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [
+    "fire"
+  ],
+  "immune": [
+    "bludgeoning (from nonmagical attacks that aren't silvered)",
+    "piercing (from nonmagical attacks that aren't silvered)",
+    "slashing (from nonmagical attacks that aren't silvered)"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

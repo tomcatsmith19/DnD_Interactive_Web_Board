@@ -1,0 +1,70 @@
+{
+  "name": "Xot",
+  "source": "CRCotN",
+  "page": 126,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 16,
+  "int": 14,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "arcana": "+4",
+    "athletics": "+4",
+    "history": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "Common plus two other languages"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Siege Expert",
+      "entries": [
+        "The excavator deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The excavator makes three Thunderous Warhammer attacks."
+      ]
+    },
+    {
+      "name": "Thunderous Warhammer",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (1d10 + 2 damage) thunder damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

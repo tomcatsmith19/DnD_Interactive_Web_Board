@@ -1,0 +1,155 @@
+{
+  "name": "Ravager Slaughter Lord",
+  "source": "TDCSR",
+  "page": 250,
+  "size": [
+    "L"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 157,
+  "speed": {
+    "walk": 30
+  },
+  "str": 22,
+  "dex": 14,
+  "con": 20,
+  "int": 12,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "intimidation": "+11",
+    "religion": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "one other language"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "If the Slaughter Lord fails a {@quickref saving throws|PHB|2|1|saving throw}, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the Slaughter Lord is wearing no armor and not wielding a {@item shield|PHB}, its AC includes its Constitution modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Slaughter Lord makes four attacks with its dual greatswords or three attacks with its spear."
+      ]
+    },
+    {
+      "name": "Dual Greatswords",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 13 (2d6 + 6 damage) piercing damage plus 3 (1d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +10 to hit, range 20/60 ft., one target. 13 (2d6 + 6 damage) piercing damage plus 3 (1d6 damage) fire damage, or 15 (2d8 + 6 damage) piercing damage plus 3 (1d6 damage) fire damage if used with both hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "The Slaughter Lord makes a spear or dual greatswords attack."
+      ]
+    },
+    {
+      "name": "Move",
+      "entries": [
+        "The Slaughter Lord moves up to half its speed."
+      ]
+    },
+    {
+      "name": "Cast a Spell (Costs 3 Actions)",
+      "entries": [
+        "The Slaughter Lord {@action cast a spell|PHB|casts an innate spell}."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The Slaughter Lord's innate spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "thaumaturgy"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

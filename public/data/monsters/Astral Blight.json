@@ -1,0 +1,75 @@
+{
+  "name": "Astral Blight",
+  "source": "LoX",
+  "page": 10,
+  "size": [
+    "M"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 10
+  },
+  "str": 16,
+  "dex": 8,
+  "con": 14,
+  "int": 6,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Illumination",
+      "entries": [
+        "While it has at least 1 hit point, the astral blight sheds dim light in a 10-foot radius."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The blight doesn't require air or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The blight makes two Heat-Draining Vine attacks."
+      ]
+    },
+    {
+      "name": "Heat-Draining Vine",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one target. 6 (1d6 + 3 damage) radiant damage, and if the target is a Large or smaller creature, it is {@condition grappled} (escape DC 13). Until this grapple ends, the target takes 3 (1d6 damage) cold damage at the start of each of its turns. The blight has two vines, each of which can grapple one creature."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "radiant"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

@@ -1,0 +1,67 @@
+{
+  "name": "Giant Scorpion",
+  "source": "MM",
+  "page": 327,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 40
+  },
+  "str": 15,
+  "dex": 13,
+  "con": 15,
+  "int": 1,
+  "wis": 9,
+  "cha": 3,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The scorpion makes three attacks: two with its claws and one with its sting."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) bludgeoning damage, and the target is {@condition grappled} (escape DC 12). The scorpion has two claws, each of which can grapple only one target."
+      ]
+    },
+    {
+      "name": "Sting",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature. 7 (1d10 + 2 damage) piercing damage, and the target must make a DC 12 Constitution saving throw, taking 22 (4d10 damage) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

@@ -1,0 +1,118 @@
+{
+  "name": "Githzerai Monk",
+  "source": "MM",
+  "page": 161,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gith"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 38,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 12,
+  "int": 13,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "insight": "+4",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Gith"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Psychic Defense",
+      "entries": [
+        "While the githzerai is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The githzerai makes two unarmed strikes."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) bludgeoning damage plus 9 (2d8 damage) psychic damage. This is a magic weapon attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The githzerai's innate spellcasting ability is Wisdom. It can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

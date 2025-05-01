@@ -1,0 +1,83 @@
+{
+  "name": "Pterafolk",
+  "source": "ToA",
+  "page": 229,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 30,
+    "fly": 50
+  },
+  "str": 15,
+  "dex": 13,
+  "con": 12,
+  "int": 9,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "perception": "+2",
+    "survival": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Terror Dive",
+      "entries": [
+        "If the pterafolk is flying and dives at least 30 feet straight toward a target, and then hits that target with a melee weapon attack, the target is {@condition frightened} until the end of its next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The pterafolk makes three attacks: one with its bite and two with its claws. Alternatively, it makes two melee attacks with its javelin."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 7 (2d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 30/120 ft., one target. 9 (2d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

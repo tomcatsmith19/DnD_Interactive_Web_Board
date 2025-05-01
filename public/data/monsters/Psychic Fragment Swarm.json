@@ -1,0 +1,96 @@
+{
+  "name": "Psychic Fragment Swarm",
+  "source": "GHLoE",
+  "page": 15,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 55,
+  "speed": {
+    "walk": 0,
+    "fly": 30
+  },
+  "str": 3,
+  "dex": 16,
+  "con": 13,
+  "int": 7,
+  "wis": 14,
+  "cha": 12,
+  "skills": {},
+  "passive": 14,
+  "languages": [
+    "can repeat one phrase it knew in life"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The swarm can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    },
+    {
+      "name": "Maddening Voices",
+      "entries": [
+        "The swarm constantly emits a babble of words and phrases spoken in life by its many undead spirits. Each creature that starts its turn within 20 ft. of the swarm must succeed on a {@dc 13} Wisdom saving throw. On a failure, the creature is {@condition stunned} until the start of its next turn. A creature that succeeds on a saving throw becomes immune to maddening voices for 24 hours."
+      ]
+    },
+    {
+      "name": "Swarm",
+      "entries": [
+        "The swarm can occupy another creature's space and vice versa. The swarm can't regain hit points or gain temporary hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Withering Touch",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 21 (6d6 damage) necrotic damage, or 10 (3d6 damage) necrotic damage if the swarm has half of its hit points or fewer."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

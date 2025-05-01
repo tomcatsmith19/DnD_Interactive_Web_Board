@@ -1,0 +1,123 @@
+{
+  "name": "Grandolpha Muzgardt",
+  "source": "IDRotF",
+  "page": 176,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "dwarf"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "9"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 25
+  },
+  "str": 14,
+  "dex": 9,
+  "con": 18,
+  "int": 13,
+  "wis": 17,
+  "cha": 16,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Duergar Resilience",
+      "entries": [
+        "Grandolpha has advantage on saving throws against poison, spells, and illusions, as well as to resist being {@condition charmed} or {@condition paralyzed}."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, Grandolpha has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Poison Spray (Cantrip)",
+      "entries": [
+        "Grandolpha extends her hand toward a creature she can see within 10 feet of her and projects a puff of noxious gas from her palm. The creature must succeed on a DC 13 Constitution saving throw or take 13 (2d12 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "Grandolpha's innate spellcasting ability is Wisdom (spell save {@dc 13}). She can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "druidcraft",
+        "mending",
+        "poison spray"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

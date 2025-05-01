@@ -1,0 +1,89 @@
+{
+  "name": "Skulk",
+  "source": "MTF",
+  "page": 227,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 30
+  },
+  "str": 6,
+  "dex": 19,
+  "con": 10,
+  "int": 10,
+  "wis": 7,
+  "cha": 1,
+  "skills": {
+    "stealth": "+8"
+  },
+  "passive": 8,
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fallible Invisibility",
+      "entries": [
+        "The skulk is {@condition invisible}. This invisibility can be circumvented by three things:",
+        {
+          "type": "list",
+          "items": [
+            "The skulk appears as a drab, smooth-skinned humanoid if its reflection can be seen in a mirror or on another surface.",
+            "The skulk appears as a dim, translucent form in the light of a candle made of fat rendered from a corpse whose identity is unknown.",
+            "Humanoid children, aged 10 and under, can see through this invisibility."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trackless",
+      "entries": [
+        "The skulk leaves no tracks to indicate where it has been or where it's headed."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d4 + 4 damage) slashing damage. If the skulk has advantage on the attack roll, the target also takes 7 (2d6 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "radiant"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "coastal",
+    "forest",
+    "swamp",
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

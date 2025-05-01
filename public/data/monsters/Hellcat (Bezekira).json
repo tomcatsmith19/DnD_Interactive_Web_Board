@@ -1,0 +1,94 @@
+{
+  "name": "Hellcat (Bezekira)",
+  "source": "CoA",
+  "page": 244,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 40
+  },
+  "str": 21,
+  "dex": 19,
+  "con": 17,
+  "int": 10,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "acrobatics": "+8",
+    "athletics": "+9",
+    "perception": "+6",
+    "stealth": "+12"
+  },
+  "passive": 16,
+  "languages": [
+    "understands Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Darkness Dweller",
+      "entries": [
+        "Attacks made against a bezekira in bright or dim light have disadvantage."
+      ]
+    },
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the bezekira's darkvision."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The bezekira makes three Claw attacks. It can replace one of the attacks with a Bite attack."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 15 (3d6 + 5 damage) slashing damage plus 7 (2d6 damage) fire damage. The bezekira deals an extra 28 (8d6 damage) fire damage when it hits a target with an attack and has advantage on the attack roll."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 16 (2d10 + 5 damage) bludgeoning damage, grasping the target with its mouth. If the target is a Medium or smaller creature, it has the {@condition grappled} condition (escape DC 17). The bezekira can't make a Bite attack while a creature is {@condition grappled} in this way."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "blindsight 30 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

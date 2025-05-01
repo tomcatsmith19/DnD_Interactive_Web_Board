@@ -1,0 +1,100 @@
+{
+  "name": "Skum",
+  "source": "GoS",
+  "page": 254,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 20,
+    "swim": 40
+  },
+  "str": 19,
+  "dex": 11,
+  "con": 18,
+  "int": 7,
+  "wis": 12,
+  "cha": 9,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "telepathy 60 ft."
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Abolethic Vassal",
+      "entries": [
+        "The skum is permanently {@condition charmed} by its aboleth master."
+      ]
+    },
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The skum can breathe air and water."
+      ]
+    },
+    {
+      "name": "Psychic Conditioning",
+      "entries": [
+        "The skum is immune to the {@condition frightened} and {@condition charmed} conditions unless they are from effects created by an aboleth."
+      ]
+    },
+    {
+      "name": "Water Dependency",
+      "entries": [
+        "The skum takes 6 ({@damage 1d12}) acid damage every 10 minutes it goes without exposure to water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skum makes three attacks: two with its trident and one with its Mind-Breaking Touch."
+      ]
+    },
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Mind-Breaking Touch",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 18 (4d8 damage) psychic damage, and the target has disadvantage on Wisdom saving throws until the end of the skum's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

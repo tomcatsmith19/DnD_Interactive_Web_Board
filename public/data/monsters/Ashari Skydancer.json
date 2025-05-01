@@ -1,0 +1,147 @@
+{
+  "name": "Ashari Skydancer",
+  "source": "TDCSR",
+  "page": 227,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [],
+  "ac": [
+    "14"
+  ],
+  "hp": 63,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 60,
+      "condition": "(with {@item skysail|TDCSR})"
+    }
+  },
+  "str": 10,
+  "dex": 18,
+  "con": 10,
+  "int": 12,
+  "wis": 16,
+  "cha": 11,
+  "skills": {
+    "acrobatics": "+7",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Auran",
+    "Common",
+    "Druidic"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Evasion",
+      "entries": [
+        "If the skydancer is subjected to an effect that allows it to make a Dexterity {@quickref saving throws|PHB|2|1|saving throw} to take only half damage, the skydancer instead takes no damage if it succeeds on the {@quickref saving throws|PHB|2|1|saving throw}, and only half damage if it fails."
+      ]
+    },
+    {
+      "name": "Flyby",
+      "entries": [
+        "The skydancer doesn't provoke an {@action opportunity attack|PHB} when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Skysail",
+      "entries": [
+        "The skydancer flies with a special Ashari magic item called a {@item skysail|TDCSR}. While the {@item skysail|TDCSR|skysail's} wings are extended, the skydancer can glide through the air at a speed of 60 feet, but must descend by at least 10 feet at the end of its turn and can't gain altitude."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skydancer makes two {@item skysail|TDCSR} staff attacks."
+      ]
+    },
+    {
+      "name": "Skysail Staff",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 7 (1d6 + 4 damage) bludgeoning damage. If the skydancer makes this attack while flying, the target must make a DC 14 Dexterity {@quickref saving throws|PHB|2|1|saving throw}, taking 21 (6d6 damage) lightning damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Fly (1/Day)",
+      "entries": [
+        "The skydancer uses its {@item skysail|TDCSR} to cast {@spell fly} on itself for up to 1 minute (no {@condition concentration} required)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The skydancer is a 3rd-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "shillelagh"
+          ]
+        },
+        "1": {
+          "spells": [
+            "entangle",
+            "fog cloud",
+            "jump"
+          ]
+        },
+        "2": {
+          "spells": [
+            "gust of wind",
+            "pass without trace"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

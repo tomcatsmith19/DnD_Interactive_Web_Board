@@ -1,0 +1,127 @@
+{
+  "name": "Solar Bastion Knight",
+  "source": "BMT",
+  "page": 75,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "paladin"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 10,
+  "con": 17,
+  "int": 15,
+  "wis": 16,
+  "cha": 17,
+  "skills": {
+    "arcana": "+6",
+    "history": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Aura of Protection",
+      "entries": [
+        "The knight and each ally within 10 feet of it have advantage on saving throws. This trait is suppressed while the knight has the {@condition incapacitated} condition."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The knight makes three Sunspear attacks."
+      ]
+    },
+    {
+      "name": "Sunspear",
+      "entries": [
+        "{@atk ms,rs} +8 to hit, reach 5 ft. or range 120 ft., one target. 14 (3d6 + 4 damage) radiant damage, or 21 (5d6 + 4 damage) radiant damage if the target is a Fiend or an Undead."
+      ]
+    },
+    {
+      "name": "Solar Flare {@recharge 5}",
+      "entries": [
+        "The knight unleashes a blaze of brilliant energy that fills a 30-foot-radius sphere centered on the knight. Each creature of the knight's choice in that area must make a DC 15 Dexterity saving throw. On a failed save, a creature takes 22 (4d10 damage) radiant damage and has the {@condition blinded} condition until the end of its next turn. On a successful save, a creature takes half as much damage only. For the next minute, the affected area is filled with bright light that is sunlight."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The knight casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,83 @@
+{
+  "name": "Inkling Mascot",
+  "source": "SCC",
+  "page": 195,
+  "size": [
+    "T"
+  ],
+  "type": "ooze",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 10,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 14,
+  "int": 6,
+  "wis": 7,
+  "cha": 11,
+  "skills": {
+    "stealth": "+5"
+  },
+  "passive": 8,
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The inkling can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Blot",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Ink Spray (1/Day)",
+      "entries": [
+        "The inkling sprays viscous ink at one creature within 15 feet of itself. The target must succeed on a DC 12 Constitution saving throw or be {@condition blinded} until the end of the inkling's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "psychic"
+  ],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

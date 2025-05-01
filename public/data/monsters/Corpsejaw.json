@@ -1,0 +1,78 @@
+{
+  "name": "Corpsejaw",
+  "source": "GHLoE",
+  "page": 92,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 40
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 10,
+  "int": 3,
+  "wis": 13,
+  "cha": 7,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Adamantine Jaws",
+      "entries": [
+        "The corpsejaw's bite works as if made of adamantine. The bite scores a critical hit on a roll of 19 or 20."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The corpsejaw has advantage on Wisdom (Perception) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pounce",
+      "entries": [
+        "If the corpsejaw moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 12} Strength saving throw or fall {@condition prone}. If the target is {@condition prone}, the corpsejaw can make one bite attack against it as a bonus action."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage. If the corpsejaw scores a critical hit and the target wears nonmagical armor, the armor takes a permanent and cumulative -1 penalty to the AC it offers. Armor reduced to an AC of 10 is destroyed."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

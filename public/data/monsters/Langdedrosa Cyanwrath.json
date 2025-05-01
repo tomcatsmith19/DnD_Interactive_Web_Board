@@ -1,0 +1,97 @@
+{
+  "name": "Langdedrosa Cyanwrath",
+  "source": "HotDQ",
+  "page": 91,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-dragon"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 57,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 13,
+  "con": 16,
+  "int": 10,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "athletics": "+6",
+    "intimidation": "+3",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Action Surge (Recharges on a Short or Long Rest)",
+      "entries": [
+        "On his turn, Langdedrosa can take one additional action."
+      ]
+    },
+    {
+      "name": "Improved Critical",
+      "entries": [
+        "Langdedrosa's weapon attacks score a critical hit on a roll of 19 or 20."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Langdedrosa attacks twice, either with his greatsword or spear."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or ranged 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Lightning Breath {@recharge 5}",
+      "entries": [
+        "Langdedrosa breathes lightning in a 30-foot line that is 5 feet wide. Each creature in the line must make a DC 13 Dexterity saving throw, taking 22 (4d10 damage) lightning damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

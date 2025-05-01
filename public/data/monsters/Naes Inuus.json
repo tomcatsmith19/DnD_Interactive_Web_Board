@@ -1,0 +1,154 @@
+{
+  "name": "Naes Inuus",
+  "source": "MaBJoV",
+  "page": 42,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 135,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 14,
+  "con": 16,
+  "int": 13,
+  "wis": 20,
+  "cha": 14,
+  "skills": {
+    "insight": "+10",
+    "medicine": "+15",
+    "persuasion": "+7",
+    "religion": "+11"
+  },
+  "passive": 15,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Mace",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Radiant Beauty of Sune",
+      "entries": [
+        "Naes dispels any magical darkness within 30 feet of him. Additionally, each hostile creature within 30 feet of Naes must make a Constitution saving throw at DC 18. A creature takes radiant damage equal to 30 on a failed saving throw, half damage on a successful one. A creature that has total cover from Naes is not affected."
+      ]
+    },
+    {
+      "name": "Corona of Beauty",
+      "entries": [
+        "Naes activates an aura of sunlight that lasts for 1 minute or until he dismisses it using an action. He emits bright light in a 60-foot radius and dim light 30 feet beyond that. His enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Naes is a 18th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 18}, {@hit 10} to hit with spell attacks). Naes has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "guiding bolt",
+            "sanctuary"
+          ]
+        },
+        "2": {
+          "spells": [
+            "lesser restoration",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "fireball",
+            "spirit guardians"
+          ]
+        },
+        "4": {
+          "spells": [
+            "death ward",
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": [
+            "antilife shell",
+            "flame strike"
+          ]
+        },
+        "6": {
+          "spells": [
+            "blade barrier"
+          ]
+        },
+        "7": {
+          "spells": [
+            "divine word"
+          ]
+        },
+        "8": {
+          "spells": [
+            "holy aura"
+          ]
+        },
+        "9": {
+          "spells": [
+            "mass heal"
+          ]
+        }
+      },
+      "footerEntries": [
+        "* Naes casts these spells on himself before combat"
+      ],
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

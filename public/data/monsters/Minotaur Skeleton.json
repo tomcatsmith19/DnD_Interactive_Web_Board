@@ -1,0 +1,78 @@
+{
+  "name": "Minotaur Skeleton",
+  "source": "MM",
+  "page": 273,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 67,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 15,
+  "int": 6,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the skeleton moves at least 10 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 ({@damage 2d8}) piercing damage. If the target is a creature, it must succeed on a {@dc 14} Strength saving throw or be pushed up to 10 feet away and knocked {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 17 (2d12 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,133 @@
+{
+  "name": "Grisha",
+  "source": "OotA",
+  "page": 232,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    {
+      "tag": "human",
+      "prefix": "Damaran"
+    }
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 12,
+  "con": 12,
+  "int": 11,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "persuasion": "+5",
+    "religion": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Undercommon"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Grisha makes two attacks with his +1 flail."
+      ]
+    },
+    {
+      "name": "+1 Flail",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) bludgeoning damage"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Grisha is a 6th-level-spellcaster. His spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). He has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "divine favor",
+            "inflict wounds",
+            "protection from evil and good",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "continual flame",
+            "hold person",
+            "magic weapon",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "bestow curse",
+            "dispel magic",
+            "spirit guardians"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

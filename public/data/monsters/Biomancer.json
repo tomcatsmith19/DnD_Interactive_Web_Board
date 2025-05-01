@@ -1,0 +1,151 @@
+{
+  "name": "Biomancer",
+  "source": "GGR",
+  "page": 256,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 15,
+  "con": 14,
+  "int": 20,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "arcana": "+9",
+    "nature": "+9"
+  },
+  "passive": 12,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Bolstering Presence",
+      "entries": [
+        "The biomancer magically emanates life-giving energy within 30 feet of itself. Any ally of the biomancer that starts its turn there regains 5 ({@dice 1d10}) hit points."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The biomancer has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The biomancer is a 16th-level Simic spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 17}, {@hit 9} to hit with spell attacks). The biomancer has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "acid splash",
+            "light",
+            "mending",
+            "poison spray",
+            "shocking grasp"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "grease",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "alter self",
+            "darkvision",
+            "enlarge/reduce",
+            "hold person"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "dispel magic",
+            "haste",
+            "protection from energy"
+          ]
+        },
+        "4": {
+          "spells": [
+            "confusion",
+            "conjure minor elementals",
+            "polymorph"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cone of cold",
+            "creation",
+            "hold monster"
+          ]
+        },
+        "6": {
+          "spells": [
+            "move earth",
+            "wall of ice"
+          ]
+        },
+        "7": {
+          "spells": [
+            "prismatic spray"
+          ]
+        },
+        "8": {
+          "spells": [
+            "control weather"
+          ]
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

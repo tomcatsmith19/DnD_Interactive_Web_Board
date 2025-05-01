@@ -1,0 +1,91 @@
+{
+  "name": "Gideon Lightward",
+  "source": "BGDIA",
+  "page": 65,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 136,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 13,
+  "con": 18,
+  "int": 10,
+  "wis": 18,
+  "cha": 13,
+  "skills": {
+    "insight": "+7",
+    "religion": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Common"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Regeneration",
+      "entries": [
+        "Gideon regains 10 hit points at the start of each of his turns. If he takes radiant damage, this trait doesn't function at the start of his next turn. Gideon is destroyed only if he starts his turn with 0 hit points and doesn't regenerate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Gideon attacks twice with his fists."
+      ]
+    },
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Withering Gaze",
+      "entries": [
+        "Gideon targets one creature he can see within 60 feet of him. The target must make a DC 15 Constitution saving throw, taking 22 (4d10 damage) necrotic damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "radiant"
+  ],
+  "immune": [
+    "necrotic",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

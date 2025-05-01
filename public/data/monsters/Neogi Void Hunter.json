@@ -1,0 +1,150 @@
+{
+  "name": "Neogi Void Hunter",
+  "source": "BAM",
+  "page": 41,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [
+    "warlock"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 6,
+  "dex": 16,
+  "con": 14,
+  "int": 16,
+  "wis": 12,
+  "cha": 18,
+  "skills": {
+    "arcana": "+5",
+    "deception": "+6",
+    "intimidation": "+6",
+    "perception": "+3",
+    "persuasion": "+6"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "telepathy 30 ft.",
+    "Undercommon"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the neogi's darkvision."
+      ]
+    },
+    {
+      "name": "Mental Fortitude",
+      "entries": [
+        "The neogi has advantage on saving throws against being {@condition charmed} or {@condition frightened}, and magic can't put the neogi to sleep."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The neogi can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The neogi makes one Bite attack and two Claw attacks, or it makes two Eldritch Bolt attacks."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage plus 14 (4d6 damage) poison damage, and the target must succeed on a DC 12 Constitution saving throw or become {@condition poisoned} for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Eldritch Bolt",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 120 ft., one creature. 20 (3d10 + 4 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The neogi casts one of the following spells, using Charisma as the spellcasting ability:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

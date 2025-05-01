@@ -1,0 +1,67 @@
+{
+  "name": "Lizardfolk Commoner",
+  "source": "GoS",
+  "page": 241,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "lizardfolk"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 12,
+  "int": 7,
+  "wis": 12,
+  "cha": 7,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+2",
+    "survival": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The lizardfolk can hold its breath for 15 minutes."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

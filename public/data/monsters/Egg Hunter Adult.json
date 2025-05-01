@@ -1,0 +1,85 @@
+{
+  "name": "Egg Hunter Adult",
+  "source": "FTD",
+  "page": 193,
+  "size": [
+    "S"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 14,
+  "dex": 20,
+  "con": 16,
+  "int": 3,
+  "wis": 13,
+  "cha": 5,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+11"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The egg hunter can breathe air and water."
+      ]
+    },
+    {
+      "name": "False Appearance",
+      "entries": [
+        "If the egg hunter is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the egg hunter move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the egg hunter is animate. Dragons have disadvantage on this check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The egg hunter makes two Barbed Proboscis attacks, and it can use Torpor Spores if it's available."
+      ]
+    },
+    {
+      "name": "Barbed Proboscis",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 8 (1d6 + 5 damage) piercing damage plus 9 (2d8 damage) necrotic damage, and the egg hunter regains hit points equal to the necrotic damage dealt."
+      ]
+    },
+    {
+      "name": "Torpor Spores {@recharge 5}",
+      "entries": [
+        "The egg hunter releases a billow of sparkling blue spores. Each creature in a 30-foot-radius sphere centered on the egg hunter must succeed on a DC 14 Constitution saving throw or be {@condition poisoned} for 1 minute. While {@condition poisoned} in this way, the creature can take either an action or a bonus action on its turn but not both, and it can't take reactions. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to this egg hunter's Torpor Spores for the next 24 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

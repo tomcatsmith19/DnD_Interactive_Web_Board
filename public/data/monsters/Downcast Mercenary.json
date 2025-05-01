@@ -1,0 +1,84 @@
+{
+  "name": "Downcast Mercenary",
+  "source": "GHLoE",
+  "page": 49,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 17,
+  "dex": 15,
+  "con": 16,
+  "int": 12,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "athletics": "+6",
+    "perception": "+4",
+    "religion": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Celestial and two other languages"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Action Surge (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The downcast mercenary takes one extra action."
+      ]
+    },
+    {
+      "name": "Indomitable (2/Day)",
+      "entries": [
+        "If the downcast mercenary fails a saving throw, it can reroll the saving throw and use the new roll."
+      ]
+    },
+    {
+      "name": "Thaumaturge",
+      "entries": [
+        "The downcast mercenary can cast {@spell thaumaturgy} at will."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The downcast mercenary makes three attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

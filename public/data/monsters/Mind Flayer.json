@@ -1,0 +1,133 @@
+{
+  "name": "Mind Flayer",
+  "source": "MM",
+  "page": 222,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 71,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 12,
+  "int": 19,
+  "wis": 17,
+  "cha": 17,
+  "skills": {
+    "arcana": "+7",
+    "deception": "+6",
+    "insight": "+6",
+    "perception": "+6",
+    "persuasion": "+6",
+    "stealth": "+4"
+  },
+  "passive": 16,
+  "languages": [
+    "Deep Speech",
+    "Undercommon",
+    "telepathy 120 ft."
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The mind flayer has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 15 (2d10 + 4 damage) psychic damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC 15) and must succeed on a DC 15 Intelligence saving throw or be {@condition stunned} until this grapple ends."
+      ]
+    },
+    {
+      "name": "Extract Brain",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one {@condition incapacitated} humanoid {@condition grappled} by the mind flayer. The target takes 55 (10d10 damage) piercing damage. If this damage reduces the target to 0 hit points, the mind flayer kills the target by extracting and devouring its brain."
+      ]
+    },
+    {
+      "name": "Mind Blast {@recharge 5}",
+      "entries": [
+        "The mind flayer magically emits psychic energy in a 60-foot cone. Each creature in that area must succeed on a DC 15 Intelligence saving throw or take 22 (4d8 + 4 damage) psychic damage and be {@condition stunned} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The mind flayer's innate spellcasting ability is Intelligence (spell save {@dc 15}). It can innately cast the following spells, requiring no components:"
+      ],
+      "will": [
+        "detect thoughts",
+        "levitate"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

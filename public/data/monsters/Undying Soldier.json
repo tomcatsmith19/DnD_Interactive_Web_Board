@@ -1,0 +1,93 @@
+{
+  "name": "Undying Soldier",
+  "source": "ERLW",
+  "page": 311,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 14,
+  "int": 11,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "athletics": "+5",
+    "history": "+4",
+    "perception": "+3",
+    "religion": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Illumination",
+      "entries": [
+        "The soldier magically sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The soldier can extinguish or restore this light as a bonus action."
+      ]
+    },
+    {
+      "name": "Turn Resistance",
+      "entries": [
+        "The soldier has advantage on saving throws against any effect that turns undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The soldier makes two spear attacks."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d6 + 3 damage) piercing damage or 7 (1d8 + 3 damage) piercing damage if used with two hands to make a melee attack, plus 9 (2d8 damage) radiant damage if the target is a fiend or undead."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [
+    "radiant",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "necrotic"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

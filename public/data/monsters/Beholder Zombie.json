@@ -1,0 +1,114 @@
+{
+  "name": "Beholder Zombie",
+  "source": "MM",
+  "page": 316,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 20,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 10,
+  "dex": 8,
+  "con": 16,
+  "int": 3,
+  "wis": 8,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "understands Deep Speech and Undercommon but can't speak"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 14 (4d6 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Eye Ray",
+      "entries": [
+        "The zombie uses a random magical eye ray, choosing a target that it can see within 60 feet of it.",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "1. Paralyzing Ray",
+              "style": "italic",
+              "entry": "The targeted creature must succeed on a {@dc 14} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+            },
+            {
+              "type": "item",
+              "name": "2. Fear Ray",
+              "style": "italic",
+              "entry": "The targeted creature must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+            },
+            {
+              "type": "item",
+              "name": "3. Enervation Ray",
+              "style": "italic",
+              "entry": "The targeted creature must make a {@dc 14} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one."
+            },
+            {
+              "type": "item",
+              "name": "4. Disintegration Ray",
+              "style": "italic",
+              "entries": [
+                "If the target is a creature, it must succeed on a {@dc 14} Dexterity saving throw or take 45 ({@damage 10d8}) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust.",
+                "If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger nonmagical object or creation of magical force, this ray disintegrates a 10-foot cube of it."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

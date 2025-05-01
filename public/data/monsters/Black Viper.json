@@ -1,0 +1,94 @@
+{
+  "name": "Black Viper",
+  "source": "WDH",
+  "page": 196,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 18,
+  "con": 14,
+  "int": 11,
+  "wis": 11,
+  "cha": 12,
+  "skills": {
+    "acrobatics": "+7",
+    "athletics": "+3",
+    "perception": "+3",
+    "sleight of hand": "+7",
+    "stealth": "+7"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Thieves' cant"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Cunning Action",
+      "entries": [
+        "On each of her turns, the Black Viper can use a bonus action to take the Dash, Disengage, or Hide action."
+      ]
+    },
+    {
+      "name": "Evasion",
+      "entries": [
+        "If the Black Viper is subjected to an effect that allows her to make a Dexterity saving throw to take only half damage, she instead takes no damage if she succeeds on the saving throw, and only half damage if she fails. She can't use this trait if she's {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "entries": [
+        "The Black Viper deals an extra 14 ({@dice 4d6}) damage when she hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the Black Viper that isn't {@condition incapacitated} and the Black Viper doesn't have disadvantage on the attack roll."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Black Viper makes three attacks with her rapier."
+      ]
+    },
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 7 (1d8 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +7 to hit, range 30/120 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

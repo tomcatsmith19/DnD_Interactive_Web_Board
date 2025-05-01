@@ -1,0 +1,90 @@
+{
+  "name": "Orc Nurtured One of Yurtrus",
+  "source": "VGM",
+  "page": 184,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "orc"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "9"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 8,
+  "con": 16,
+  "int": 7,
+  "wis": 11,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see."
+      ]
+    },
+    {
+      "name": "Corrupted Carrier",
+      "entries": [
+        "When the orc is reduced to 0 hit points, it explodes, and any creature within 10 feet of it must make a {@dc 13} Constitution saving throw. On a failed save, the creature takes 14 ({@damage 4d6}) poison damage and becomes {@condition poisoned}. On a success, the creature takes half as much damage and isn't {@condition poisoned}. A creature {@condition poisoned} by this effect can repeat the save at the end of each of its turn, ending the effect on itself on a success. While {@condition poisoned} by this effect, a creature can't regain hit points."
+      ]
+    },
+    {
+      "name": "Nurtured One of Yurtrus",
+      "entries": [
+        "The orc has advantage on saving throws against poison and disease."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) slashing damage plus 2 (1d4 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Corrupted Vengeance",
+      "entries": [
+        "The orc reduces itself to 0 hit points, triggering its Corrupted Carrier trait."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

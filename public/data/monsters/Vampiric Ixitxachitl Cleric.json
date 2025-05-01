@@ -1,0 +1,114 @@
+{
+  "name": "Vampiric Ixitxachitl Cleric",
+  "source": "OotA",
+  "page": 226,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 0,
+    "swim": 30
+  },
+  "str": 14,
+  "dex": 18,
+  "con": 13,
+  "int": 12,
+  "wis": 13,
+  "cha": 7,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Abyssal",
+    "Ixitxachitl"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Vampiric Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage. The target must succeed on a DC 11 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken, and the ixitxachitl regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if its hit point maximum is reduced to 0."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The ixitxachitl is a 5th-level spellcaster that uses Wisdom as its spellcasting ability (Spell save {@dc 11}, {@hit 3} to hit with spell attacks). The ixitxachitl has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "create or destroy water"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "silence"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "tongues"
+          ]
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

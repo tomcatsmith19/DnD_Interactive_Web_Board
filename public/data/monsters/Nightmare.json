@@ -1,0 +1,76 @@
+{
+  "name": "Nightmare",
+  "source": "MM",
+  "page": 235,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 68,
+  "speed": {
+    "walk": 60,
+    "fly": 90
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 16,
+  "int": 10,
+  "wis": 13,
+  "cha": 15,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "understands Abyssal, Common, and Infernal but can't speak "
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Confer Fire Resistance",
+      "entries": [
+        "The nightmare can grant resistance to fire damage to anyone riding it."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The nightmare sheds bright light in a 10-foot radius and dim light for an additional 10 feet."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hooves",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage plus 7 (2d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Ethereal Stride",
+      "entries": [
+        "The nightmare and up to three willing creatures within 5 feet of it magically enter the Ethereal Plane from the Material Plane, or vice versa."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

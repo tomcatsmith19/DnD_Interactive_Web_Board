@@ -1,0 +1,170 @@
+{
+  "name": "Lich Troll",
+  "source": "GHLoE",
+  "page": 121,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 133,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 18,
+  "int": 15,
+  "wis": 13,
+  "cha": 12,
+  "skills": {},
+  "passive": 16,
+  "languages": [
+    "the languages it knew in life and Giant"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "If the lich troll fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The lich troll regains 15 hit points at the start of its turn. If the lich troll takes acid or radiant damage, this trait doesn't function until the start of the lich troll's next turn. The lich troll dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The lich troll makes two claw attacks. Alternately, the lich troll can cast {@spell chill touch} or ray of frost twice."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage plus 7 (2d6 damage) cold damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Cantrip",
+      "entries": [
+        "The lich troll casts a cantrip."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "The lich troll makes a claw attack."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The lich troll is an 11th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 15}, {@hit 7} to hit with spell attacks). The lich troll has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "chill touch",
+            "mage hand",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "magic missile",
+            "shield",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "invisibility",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "animate dead",
+            "counterspell",
+            "dispel magic",
+            "haste"
+          ]
+        },
+        "4": {
+          "spells": [
+            "blight",
+            "dimension door"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cloudkill",
+            "scrying"
+          ]
+        },
+        "6": {
+          "spells": [
+            "create undead"
+          ]
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "truesight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

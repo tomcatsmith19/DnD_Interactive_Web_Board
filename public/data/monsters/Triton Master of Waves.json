@@ -1,0 +1,137 @@
+{
+  "name": "Triton Master of Waves",
+  "source": "MOT",
+  "page": 245,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "triton"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 105,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 16,
+  "int": 10,
+  "wis": 12,
+  "cha": 19,
+  "skills": {
+    "athletics": "+6",
+    "nature": "+6",
+    "survival": "+4"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Primordial"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The triton can breathe air and water."
+      ]
+    },
+    {
+      "name": "Summon Water Weird (Recharges after a Short or Long Rest)",
+      "entries": [
+        "As a bonus action, the triton magically summons {@dice 1d4} {@creature water weird||water weirds}. The summoned weirds appear in unoccupied spaces in water within 60 feet of the triton. The water weirds act immediately after the triton on the same initiative count and fight until they're destroyed. They disappear if the triton dies."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The triton makes two attacks using Wave Touch and casts {@spell ray of frost}."
+      ]
+    },
+    {
+      "name": "Wave Touch",
+      "entries": [
+        "{@atk ms} +7 to hit, reach 5 ft., one target. 22 (4d10 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Ray of Frost (Cantrip)",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 60 ft., one creature. 13 (3d8 damage) cold damage, and the target's speed is reduced by 10 feet until the start of the triton's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The triton's spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "ray of frost"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

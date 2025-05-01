@@ -1,0 +1,110 @@
+{
+  "name": "Barbed Devil",
+  "source": "MM",
+  "page": 70,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 17,
+  "con": 18,
+  "int": 12,
+  "wis": 14,
+  "cha": 14,
+  "skills": {
+    "deception": "+5",
+    "insight": "+5",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Barbed Hide",
+      "entries": [
+        "At the start of each of its turns, the barbed devil deals 5 ({@damage 1d10}) piercing damage to any creature grappling it."
+      ]
+    },
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the devil's darkvision."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The devil has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The devil makes three melee attacks: one with its tail and two with its claws. Alternatively, it can use Hurl Flame twice."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hurl Flame",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 150 ft., one target. 10 (3d6 damage) fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

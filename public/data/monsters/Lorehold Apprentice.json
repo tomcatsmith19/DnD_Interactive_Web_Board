@@ -1,0 +1,114 @@
+{
+  "name": "Lorehold Apprentice",
+  "source": "SCC",
+  "page": 197,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "wizard"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 33,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 13,
+  "int": 15,
+  "wis": 12,
+  "cha": 11,
+  "skills": {
+    "history": "+6",
+    "insight": "+3",
+    "investigation": "+6"
+  },
+  "passive": 11,
+  "languages": [
+    "Common plus any two languages"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Scroll Bash",
+      "entries": [
+        "{@atk ms} +4 to hit, reach 30 ft., one target. 7 (1d10 + 2 damage) bludgeoning damage plus 9 (2d8 damage) thunder damage."
+      ]
+    },
+    {
+      "name": "Reduce to Memory {@recharge}",
+      "entries": [
+        "Thundering golden energy erupts around a creature the apprentice can see within 90 feet of it. The creature must make a DC 12 Constitution saving throw, taking 33 (6d10 damage) thunder damage on a failed save, or half as much damage on a successful one. A Construct has disadvantage on the saving throw."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The apprentice casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 12}):"
+      ],
+      "will": [
+        "guidance",
+        "light"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

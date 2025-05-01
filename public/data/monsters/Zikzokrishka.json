@@ -1,0 +1,136 @@
+{
+  "name": "Zikzokrishka",
+  "source": "CM",
+  "page": 209,
+  "size": [
+    "H"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 225,
+  "speed": {
+    "walk": 40,
+    "burrow": 30,
+    "fly": 80
+  },
+  "str": 25,
+  "dex": 10,
+  "con": 23,
+  "int": 16,
+  "wis": 15,
+  "cha": 19,
+  "skills": {
+    "perception": "+14",
+    "stealth": "+6"
+  },
+  "passive": 24,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Zikzokrishka fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Zikzokrishka has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Zikzokrishka can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +13 to hit, reach 10 ft., one target. 18 (2d10 + 7 damage) piercing damage plus 5 (1d10 damage) lightning damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target. 14 (2d6 + 7 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +13 to hit, reach 15 ft., one target. 16 (2d8 + 7 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Frightful Presence",
+      "entries": [
+        "Each creature of Zikzokrishka's choice that is within 120 feet of the Zikzokrishka and aware of it must succeed on a DC 18 Wisdom saving throw or become {@condition frightened} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the Zikzokrishka's Frightful Presence for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Lightning Breath {@recharge 5}",
+      "entries": [
+        "Zikzokrishka exhales lightning in a 90-foot line that is 5 feet wide. Each creature in that line must make a DC 20 Dexterity saving throw, taking 66 (12d10 damage) lightning damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Detect",
+      "entries": [
+        "Zikzokrishka makes a Wisdom (Perception) check."
+      ]
+    },
+    {
+      "name": "Tail Attack",
+      "entries": [
+        "Zikzokrishka makes a tail attack."
+      ]
+    },
+    {
+      "name": "Wing Attack (Costs 2 Actions)",
+      "entries": [
+        "Zikzokrishka beats its tattered wings. Each creature within 10 feet of Zikzokrishka must succeed on a {@dc 21} Dexterity saving throw or take 14 ({@damage 2d6 + 7}) bludgeoning damage and be knocked {@condition prone}. After beating its wings this way, Zikzokrishka can fly up to half its flying speed."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

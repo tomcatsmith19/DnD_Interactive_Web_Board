@@ -1,0 +1,73 @@
+{
+  "name": "Khargra",
+  "source": "MFF",
+  "page": 12,
+  "size": [
+    "S"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 5,
+    "fly": 30
+  },
+  "str": 13,
+  "dex": 10,
+  "con": 14,
+  "int": 5,
+  "wis": 11,
+  "cha": 6,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Terran"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Iron Scent",
+      "entries": [
+        "The khargra can scent the location of ferrous metal within 30 feet of it."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage, and if the target is wearing metal armor or carrying a metal shield, the khargra attaches to that armor or shield. While attached, the khargra doesn't attack. Instead, at the start of each of the khargra's turns, roll a {@dice d20}. On a 10 or higher, the armor or shield takes a permanent and cumulative -1 penalty to the AC it offers. Armor reduced to an AC of 10 or a shield that drops to a +0 bonus is destroyed.",
+        "The khargra can detach itself by spending 5 feet of its movement. A creature, including the target, can use its action to detach the khargra."
+      ]
+    },
+    {
+      "name": "Earth Phasing",
+      "entries": [
+        "Until the end of its next turn, the khargra can fly through nonmagical earth and stone. While doing so, it doesn't disturb the material it moves through. It can end its movement within earth or stone, but if it remains within earth or stone when this ability ends, it takes 14 (4d6 damage) force damage and immediately moves to the nearest unoccupied space."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,131 @@
+{
+  "name": "Inquisitor of the Mind Fire",
+  "source": "VRGR",
+  "page": 248,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "16"
+  ],
+  "hp": 77,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 14,
+  "con": 12,
+  "int": 17,
+  "wis": 16,
+  "cha": 19,
+  "skills": {
+    "insight": "+6",
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "any three languages",
+    "telepathy 120 ft."
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The inquisitor attacks twice with its Silver Longsword or uses Mind Fire twice."
+      ]
+    },
+    {
+      "name": "Silver Longsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) slashing damage, or 9 ({@dice 1d10 + 4}) if used with two hands, plus 18 (4d8 damage) force damage."
+      ]
+    },
+    {
+      "name": "Mind Fire",
+      "entries": [
+        "The inquisitor targets one creature it can see within 120 feet of it. The target must succeed on a DC 15 Intelligence saving throw or take 17 (3d8 + 4 damage) psychic damage and be {@condition stunned} until the start of the inquisitor's next turn."
+      ]
+    },
+    {
+      "name": "Inquisitor's Command {@recharge 5}",
+      "entries": [
+        "Each creature of the inquisitor's choice that it can see within 60 feet of it must succeed on a DC 15 Wisdom saving throw or be {@condition charmed} until the start of the inquisitor's next turn. On the {@condition charmed} target's turn, the inquisitor can telepathically control the target's move, action, or both. When controlled in this way, the target can take only the Attack (inquisitor chooses the target) or Dash action."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The inquisitor casts one of the following spells, requiring no components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "arcane eye",
+        "calm emotions",
+        "detect magic",
+        "detect thoughts",
+        "dispel magic",
+        "sending",
+        "suggestion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

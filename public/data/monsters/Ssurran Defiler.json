@@ -1,0 +1,137 @@
+{
+  "name": "Ssurran Defiler",
+  "source": "BAM",
+  "page": 58,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "lizardfolk"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 16,
+  "int": 15,
+  "wis": 15,
+  "cha": 7,
+  "skills": {
+    "arcana": "+4",
+    "perception": "+4",
+    "stealth": "+3",
+    "survival": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The ssurran can hold its breath for 15 minutes."
+      ]
+    },
+    {
+      "name": "Intellect Fortress",
+      "entries": [
+        "The ssurran's AC includes its Intelligence modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ssurran makes two Claw attacks and uses Defile (if available)."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) slashing damage plus 4 (1d8 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Defile {@recharge}",
+      "entries": [
+        "Ordinary vegetation within 10 feet of the ssurran withers and dies. In addition, each creature within 10 feet of the ssurran must make a DC 11 Constitution saving throw, taking 22 (4d10 damage) necrotic damage on a failed save, or half as much damage on a successful one. The ssurran regains 5 ({@dice 1d10}) hit points for each creature that fails the saving throw."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The ssurran casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability:"
+      ],
+      "will": [
+        "mage hand"
+      ],
+      "daily": {
+        "1": [
+          "invisibility"
+        ]
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

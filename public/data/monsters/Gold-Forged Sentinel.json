@@ -1,0 +1,92 @@
+{
+  "name": "Gold-Forged Sentinel",
+  "source": "MOT",
+  "page": 211,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 76,
+  "speed": {
+    "walk": 40,
+    "fly": 60
+  },
+  "str": 18,
+  "dex": 13,
+  "con": 19,
+  "int": 3,
+  "wis": 16,
+  "cha": 10,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "understands one language of its creator but can't speak"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the sentinel moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 10 ({@damage 3d6}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 15} Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Spell Turning",
+      "entries": [
+        "The sentinel has advantage on saving throws against any spell that targets only the sentinel (not an area). If the sentinel's saving throw succeeds and the spell is of 4th level or lower, the spell has no effect on the sentinel and instead targets the caster."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The sentinel makes two ram attacks."
+      ]
+    },
+    {
+      "name": "Ram",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Fire Breath {@recharge 5}",
+      "entries": [
+        "The sentinel exhales fire in a 15-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 27 (6d8 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

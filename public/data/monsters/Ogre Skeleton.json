@@ -1,0 +1,73 @@
+{
+  "name": "Ogre Skeleton",
+  "source": "TftYP",
+  "page": 54,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 8,
+  "con": 16,
+  "int": 5,
+  "wis": 7,
+  "cha": 7,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greatclub",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 30/120 ft., one target. 11 (2d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "forest",
+    "swamp",
+    "hill",
+    "desert",
+    "coastal",
+    "arctic",
+    "underdark",
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

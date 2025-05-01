@@ -1,0 +1,51 @@
+{
+  "name": "Sea Horse",
+  "source": "MM",
+  "page": 337,
+  "size": [
+    "T"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 1,
+  "speed": {
+    "swim": 20
+  },
+  "str": 1,
+  "dex": 12,
+  "con": 8,
+  "int": 1,
+  "wis": 10,
+  "cha": 2,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Water Breathing",
+      "entries": [
+        "The sea horse can breathe only underwater."
+      ]
+    }
+  ],
+  "actions": [],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

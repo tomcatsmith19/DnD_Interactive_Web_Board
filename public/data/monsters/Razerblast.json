@@ -1,0 +1,81 @@
+{
+  "name": "Razerblast",
+  "source": "PotA",
+  "page": 201,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 16,
+  "int": 9,
+  "wis": 10,
+  "cha": 13,
+  "skills": {
+    "intimidation": "+4",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Ignan"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Searing Armor",
+      "entries": [
+        "The razerblast's armor is hot. Any creature grappling the razerblast or {@condition grappled} by it takes 5 ({@damage 1d10}) fire damage at the end of that creature's turn."
+      ]
+    },
+    {
+      "name": "Shrapnel Explosion",
+      "entries": [
+        "When the razerblast drops to 0 hit points, a flaming orb in its chest explodes, destroying the razerblast's body and scattering its armor as shrapnel. Creatures within 10 feet of the razerblast when it explodes must succeed on a {@dc 12} Dexterity saving throw, taking 21 ({@damage 6d6}) piercing damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The razerblast makes three melee attacks."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +6 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d6 + 3 damage) piercing damage, or 7 (1d8 + 3 damage) piercing damage if used with two hands to make a melee attack, plus 3 (1d6 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

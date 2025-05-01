@@ -1,0 +1,191 @@
+{
+  "name": "Graz'zt",
+  "source": "MTF",
+  "page": 149,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon",
+    "shapechanger"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 346,
+  "speed": {
+    "walk": 40
+  },
+  "str": 22,
+  "dex": 15,
+  "con": 21,
+  "int": 23,
+  "wis": 21,
+  "cha": 26,
+  "skills": {
+    "deception": "+15",
+    "insight": "+12",
+    "perception": "+12",
+    "persuasion": "+15"
+  },
+  "passive": 22,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "24",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "Graz'zt can use his action to polymorph into a form that resembles a Medium humanoid, or back into his true form. Aside from his size, his statistics are the same in each form. Any equipment he is wearing or carrying isn't transformed."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Graz'zt fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Graz'zt has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "Graz'zt's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Graz'zt attacks twice with Wave of Sorrow."
+      ]
+    },
+    {
+      "name": "Wave of Sorrow (Greatsword)",
+      "entries": [
+        "Melee atk +13 to hit, reach 10 ft., one target. 20 (4d6 + 6 damage) slashing damage plus 10 (3d6 damage) acid damage."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "Graz'zt magically teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "Graz'zt attacks once with Wave of Sorrow."
+      ]
+    },
+    {
+      "name": "Dance, My Puppet",
+      "entries": [
+        "One creature {@condition charmed} by Graz'zt that Graz'zt can see must use its reaction to move up to its speed as Graz'zt directs."
+      ]
+    },
+    {
+      "name": "Sow Discord",
+      "entries": [
+        "Graz'zt casts {@spell crown of madness} or dissonant whispers."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "Graz'zt uses his Teleport action."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Graz'zt's spellcasting ability is Charisma (spell save {@dc 23}). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "charm person",
+        "crown of madness",
+        "detect magic",
+        "dispel magic",
+        "dissonant whispers"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "bludgeoning (that is nonmagical)",
+    "piercing (that is nonmagical)",
+    "slashing (that is nonmagical)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Tree Blight",
+  "source": "CoS",
+  "page": 230,
+  "size": [
+    "H"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 92,
+  "speed": {
+    "walk": 30
+  },
+  "str": 23,
+  "dex": 10,
+  "con": 20,
+  "int": 6,
+  "wis": 10,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Common and Druidic but doesn't speak"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the blight remains motionless, it is indistinguishable from a dead tree."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The blight deals double damage to objects and structures."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The blight makes one Branch attack and one Grasping Root attack."
+      ]
+    },
+    {
+      "name": "Branch",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one target. 16 (3d6 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Grasping Root",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one creature not {@condition grappled} by the blight. The target is {@condition grappled} (escape DC 15). Until the grapple ends, the target takes 9 (1d6 + 6 damage) bludgeoning damage at the start of each of its turns. The root has AC 15 and can be severed by dealing 6 slashing damage or more to it at once. Cutting the root doesn't hurt the blight, but ends the grapple."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

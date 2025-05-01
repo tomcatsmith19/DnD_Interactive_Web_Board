@@ -1,0 +1,71 @@
+{
+  "name": "Mantrap",
+  "source": "ToA",
+  "page": 227,
+  "size": [
+    "L"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 5
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 12,
+  "int": 1,
+  "wis": 10,
+  "cha": 2,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Attractive Pollen (1/Day)",
+      "entries": [
+        "When the mantrap detects any creatures nearby, it can use its reaction to release pollen out to a radius of 30 feet. Any beast or humanoid within the area must succeed on a {@dc 11} Wisdom saving throw or be forced to use all its movement on its turns to get as close to the the mantrap as possible. An affected target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the mantrap remains motionless, it is indistinguishable from an ordinary tropical plant."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Engulf",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one Medium or smaller creature. The target is trapped inside the mantrap's leafy jaws. While trapped in this way, the target is {@condition blinded} and {@condition restrained}, has total cover from an attacks and other effects outside the mantrap, and takes 14 (4d6 damage) acid damage at the start of each of the target's turns. If the mantrap dies, the creature inside it is no longer {@condition restrained} by it. A mantrap can engulf only one creature at a time."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "deafened",
+    "exhaustion",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "tremorsense 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,171 @@
+{
+  "name": "Hythonia",
+  "source": "MOT",
+  "page": 252,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 199,
+  "speed": {
+    "walk": 40,
+    "climb": 40,
+    "swim": 40
+  },
+  "str": 21,
+  "dex": 17,
+  "con": 19,
+  "int": 14,
+  "wis": 16,
+  "cha": 18,
+  "skills": {
+    "deception": "+10",
+    "insight": "+9",
+    "perception": "+9",
+    "stealth": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Common"
+  ],
+  "cr": "17",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Hythonia fails a saving throw, she can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Petrifying Gaze",
+      "entries": [
+        "When a creature that can see Hythonia's eyes starts its turn within 30 feet of her, Hythonia can force it to make a {@dc 18} Constitution saving throw if she isn't {@condition incapacitated} and can see the creature. If the saving throw fails by 5 or more, the creature is instantly {@condition petrified}. Otherwise, on a failed save the creature begins to turn to stone and is {@condition restrained}. The {@condition restrained} creature must repeat the saving throw at the end of its next turn, becoming {@condition petrified} on a failure or ending the effect on a success. The petrification lasts until the creature is freed by the {@spell greater restoration} spell or other magic. Unless {@quickref Surprise|PHB|3|0|surprised}, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see Hythonia until the start of its next turn, when it can avert its eyes again. If the creature looks at Hythonia in the meantime, it must immediately make the save. If Hythonia sees herself reflected on a polished surface within 30 feet of her and in an area of bright light, she is affected by her own gaze."
+      ]
+    },
+    {
+      "name": "Shed Skin (Mythic Trait; Recharges after a Short or Long Rest)",
+      "entries": [
+        "If Hythonia is reduced to 0 hit points, she doesn't die or fall {@condition unconscious}. Instead, she sheds her skin, regains 199 hit points, and moves up to her speed without provoking opportunity attacks."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Hythonia makes three attacks: one with her claws, one to constrict, and one with her snaky hair."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +11 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) slashing damage plus 4 (1d8 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Constrict",
+      "entries": [
+        "Melee atk +11 to hit, reach 15 ft., one Large or smaller creature. 16 (2d10 + 5 damage) bludgeoning damage, and the target is {@condition grappled} (escape DC 19). Until this grapple ends, the target is {@condition restrained} and takes 15 (3d6 + 5 damage) bludgeoning damage at the start of each of its turns, and Hythonia can't constrict another target."
+      ]
+    },
+    {
+      "name": "Snaky Hair",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 31 (4d12 + 5 damage) bludgeoning damage, and Hythonia can pull the target up to 5 feet closer to her if it is a Large or smaller creature."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Move",
+      "entries": [
+        "Hythonia moves up to her speed without provoking opportunity attacks."
+      ]
+    },
+    {
+      "name": "Snaky Hair",
+      "entries": [
+        "Hythonia makes one attack with her snaky hair."
+      ]
+    },
+    {
+      "name": "Petrified Earth (Costs 2 Actions)",
+      "entries": [
+        "Hythonia causes stone spikes to erupt from the ground in a 30-foot radius centered on her. The area becomes {@quickref difficult terrain||3} until the start of her next turn. Any creature, other than Hythonia, takes 9 ({@damage 2d8}) piercing damage for every 5 feet it moves on those spikes."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Hythonia's spellcasting ability is Charisma (spell save {@dc 18}). She can innately cast {@spell animate objects} once per day requiring no material components."
+      ],
+      "daily": {
+        "1": [
+          "animate objects"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

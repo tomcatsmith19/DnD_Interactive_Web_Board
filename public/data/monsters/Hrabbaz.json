@@ -1,0 +1,88 @@
+{
+  "name": "Hrabbaz",
+  "source": "WDH",
+  "page": 205,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-orc"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 15,
+  "con": 17,
+  "int": 10,
+  "wis": 14,
+  "cha": 12,
+  "skills": {
+    "athletics": "+8",
+    "intimidation": "+4",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Indomitable (2/Day)",
+      "entries": [
+        "Hrabbaz can reroll a saving throw that he fails. He must use the new roll."
+      ]
+    },
+    {
+      "name": "Relentless Endurance (Recharges after a Long Rest)",
+      "entries": [
+        "When Hrabbaz is reduced to 0 hit points but not killed outright, he drops to 1 hit point instead."
+      ]
+    },
+    {
+      "name": "Extra Damage",
+      "entries": [
+        "As long as Hrabbaz has more than half his hit points left he deals an extra 3 ({@dice 1d6}) damage on all hits."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Hrabbaz makes three attacks with his morningstar."
+      ]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

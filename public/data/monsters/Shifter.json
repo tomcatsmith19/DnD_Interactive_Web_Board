@@ -1,0 +1,75 @@
+{
+  "name": "Shifter",
+  "source": "ERLW",
+  "page": 319,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "shifter"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 14,
+  "int": 11,
+  "wis": 15,
+  "cha": 10,
+  "skills": {
+    "acrobatics": "+5",
+    "insight": "+4",
+    "nature": "+2",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Shifting (Recharges after a Short or Long Rest)",
+      "entries": [
+        "As a bonus action, the shifter takes on a more bestial form for 1 minute or until it dies. The shifter gains 5 temporary hit points. It can make a bite attack when it activates this trait and also as a bonus action on each of its turns while in its bestial form."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

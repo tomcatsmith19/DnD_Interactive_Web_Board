@@ -1,0 +1,149 @@
+{
+  "name": "Lothar",
+  "source": "MaBJoV",
+  "page": 80,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 105,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 50,
+      "condition": "in raven and hybrid forms"
+    }
+  },
+  "str": 18,
+  "dex": 16,
+  "con": 16,
+  "int": 11,
+  "wis": 10,
+  "cha": 10,
+  "skills": {
+    "insight": "+4",
+    "perception": "+4",
+    "stealth": "+7",
+    "survival": "+8"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "Lothar can use his action to polymorph into a raven-humanoid hybrid or into a raven, or back into his human form. Any equipment he is wearing or carrying isn't transformed. He reverts to his human form if he dies."
+      ]
+    },
+    {
+      "name": "Mimicry",
+      "entries": [
+        "Lothar can mimic simple sounds he has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful {@dc 15} Wisdom (Insight) check."
+      ]
+    },
+    {
+      "name": "Rage",
+      "entries": [
+        "Lothar can enter a rage as a bonus action. His rage lasts for 1 minute. During his rage he has advantage on Strength checks and Strength saving throws. He gains a +4 bonus to damage while he is in a rage. He has resistance to bludgeoning, piercing, and slashing damage while in a rage. Lothar cannot cast spells while in a rage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Humanoid or Hybrid Form Only)",
+      "entries": [
+        "Lothar makes two attacks, only one of which can be a bite."
+      ]
+    },
+    {
+      "name": "Greataxe (Humanoid or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 10 (1d12 + 4 damage) piercing damage, 14 ({@dice 1d12 + 8}) while in a rage."
+      ]
+    },
+    {
+      "name": "Beak (Raven or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 1 piercing damage in raven form, or 4 (1d4 + 4 damage) piercing damage in hybrid form. If the target is humanoid, it must succeed on a DC 15 Constitution saving throw or be cursed with wereraven lycanthropy."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Lothar's innate spellcasting ability is Charisma (spell save {@dc 12}). Lothar can innately cast the following spells, requiring no material components:"
+      ],
+      "daily": {
+        "1": [
+          "plane shift"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "bludgeoning (from nonmagical weapons that aren't silvered)",
+    "piercing (from nonmagical weapons that aren't silvered)",
+    "slashing (from nonmagical weapons that aren't silvered)"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

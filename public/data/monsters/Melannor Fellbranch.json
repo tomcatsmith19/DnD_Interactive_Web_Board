@@ -1,0 +1,127 @@
+{
+  "name": "Melannor Fellbranch",
+  "source": "WDH",
+  "page": 36,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-elf"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "11",
+    "16"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 12,
+  "con": 13,
+  "int": 12,
+  "wis": 15,
+  "cha": 11,
+  "skills": {
+    "medicine": "+4",
+    "nature": "+3",
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Melannor has advantage on saving throws against being {@condition charmed}, and magic can't put him to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +2 to hit or Melee Weapon Attack +4 to hit with shillelagh, reach 5 ft., one target. 3 (1d6 damage) bludgeoning damage, or 6 (1d8 + 2 damage) bludgeoning damage with shillelagh or if wielded with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Melannor is a 4th-level spellcaster. His spellcasting ability is Wisdom. He has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "produce flame",
+            "shillelagh"
+          ]
+        },
+        "1": {
+          "spells": [
+            "entangle",
+            "longstrider",
+            "speak with animals",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "animal messenger",
+            "barkskin"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

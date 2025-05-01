@@ -1,0 +1,48 @@
+{
+  "name": "Pig",
+  "source": "SKT",
+  "page": 143,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 11,
+  "con": 12,
+  "int": 2,
+  "wis": 9,
+  "cha": 5,
+  "skills": {},
+  "passive": 9,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": null,
+  "actions": null,
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

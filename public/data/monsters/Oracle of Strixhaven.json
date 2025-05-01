@@ -1,0 +1,162 @@
+{
+  "name": "Oracle of Strixhaven",
+  "source": "SCC",
+  "page": 200,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "wizard"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 15,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 16,
+  "int": 21,
+  "wis": 20,
+  "cha": 18,
+  "skills": {
+    "arcana": "+15",
+    "insight": "+15",
+    "investigation": "+15",
+    "nature": "+10",
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "all"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the Oracle fails a saving throw, she can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Oracle makes two Magic Flare attacks. She can also use Paradoxy, if available."
+      ]
+    },
+    {
+      "name": "Magic Flare",
+      "entries": [
+        "{@atk ms,rs} +10 to hit, reach 5 ft. or range 60 ft., one target. 24 (3d12 + 5 damage) force damage."
+      ]
+    },
+    {
+      "name": "Paradoxy {@recharge 4}",
+      "entries": [
+        "Momentary warps in reality appear at three different points the Oracle can see within 120 feet of her. Each creature in a 20-foot-radius sphere centered on each point must make a DC 18 Strength saving throw. On a failed save, a creature takes 33 (6d10 damage) force damage and is pulled up to 15 feet in a straight line toward the center of the sphere. On a successful save, the creature takes half as much damage and isn't pulled. A creature caught in the area of multiple warps is affected by only one, which the Oracle chooses."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "The Oracle teleports, along with any equipment she is wearing or carrying, to an unoccupied space she can see within 60 feet of herself."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Vector Shift",
+      "entries": [
+        "The Oracle teleports one creature she can see within 60 feet of herself, along with any equipment it is wearing or carrying, to an unoccupied space within 30 feet of herself. An unwilling target must succeed on a {@dc 18} Charisma saving throw to avoid the effect."
+      ]
+    },
+    {
+      "name": "Spellcasting (Costs 2 Actions)",
+      "entries": [
+        "The Oracle uses Spellcasting."
+      ]
+    },
+    {
+      "name": "Vortex Jaunt (Costs 2 Actions)",
+      "entries": [
+        "The Oracle uses Teleport, and immediately after she disappears, each creature within 30 feet of the space she left must succeed on a {@dc 18} Constitution saving throw or take 16 ({@damage 3d10}) force damage."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The Oracle casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 18}):"
+      ],
+      "will": [
+        "detect magic"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

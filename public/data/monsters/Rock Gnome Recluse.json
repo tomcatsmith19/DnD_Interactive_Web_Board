@@ -1,0 +1,129 @@
+{
+  "name": "Rock Gnome Recluse",
+  "source": "DIP",
+  "page": 62,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gnome"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "10",
+    "13"
+  ],
+  "hp": 7,
+  "speed": {
+    "walk": 25
+  },
+  "str": 6,
+  "dex": 11,
+  "con": 10,
+  "int": 15,
+  "wis": 10,
+  "cha": 13,
+  "skills": {
+    "arcana": "+4",
+    "history": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Gnomish"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Gnome Cunning",
+      "entries": [
+        "The gnome has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Magic Missile (Expends a 1st-Level Spell Slot)",
+      "entries": [
+        "The gnome creates three magical darts. Each dart hits a creature the gnome chooses within 120 feet of it and deals 3 (1d4 + 1 damage) force damage."
+      ]
+    },
+    {
+      "name": "Ray of Frost",
+      "entries": [
+        "Ranged Spell atk +4 to hit, range 60 ft., one creature. 4 (1d8 damage) cold damage, and the target's speed is reduced by 10 feet until the start of the gnome's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The gnome is a 2nd-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 12}, {@hit 4} to hit with spell attacks). It has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mage hand",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "mage armor",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

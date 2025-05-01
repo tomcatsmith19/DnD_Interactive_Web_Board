@@ -1,0 +1,156 @@
+{
+  "name": "Alyxian the Absolved",
+  "source": "CRCotN",
+  "page": 182,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 161,
+  "speed": {
+    "walk": 30
+  },
+  "str": 19,
+  "dex": 15,
+  "con": 18,
+  "int": 13,
+  "wis": 14,
+  "cha": 19,
+  "skills": {
+    "athletics": "+9",
+    "insight": "+7",
+    "perception": "+7",
+    "persuasion": "+9"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "14",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Divinely Blessed",
+      "entries": [
+        "Alyxian can't be {@quickref Surprise|PHB|3|0|surprised} and can't be changed into another form against his will."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "If Alyxian fails a saving throw, he can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Alyxian makes two Spear attacks."
+      ]
+    },
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +9 to hit, reach 5 ft. or range 20/60 ft., one target. 7 (1d6 + 4 damage) piercing damage, or 8 (1d8 + 4 damage) piercing damage when used with two hands to make a melee attack, plus 9 (2d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Force Wave (1/Day)",
+      "entries": [
+        "Alyxian strikes the ground, creating a burst of energy that ripples outward. Each creature he chooses within a 30-foot-radius sphere centered on himself must succeed on a DC 17 Constitution saving throw or take 35 (10d6 damage) force damage and be knocked {@condition prone}. A creature that succeeds on the saving throw takes half as much damage and isn't knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Arch Heart's Strike",
+      "entries": [
+        "Alyxian makes one Spear attack, and all damage from this attack is radiant."
+      ]
+    },
+    {
+      "name": "Change Bringer's Dance",
+      "entries": [
+        "Alyxian moves up to his speed. This movement doesn't provoke opportunity attacks."
+      ]
+    },
+    {
+      "name": "Moon Weaver's Veil (Costs 2 Actions)",
+      "entries": [
+        "Alyxian becomes {@condition invisible} until the end of his next turn. Any equipment he is wearing or carrying becomes {@condition invisible} with him."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Alyxian casts one of the following spells, requiring no material components and using Charisma as the spellcasting modifier (spell save {@dc 17}):"
+      ],
+      "will": [
+        "guidance",
+        "light"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

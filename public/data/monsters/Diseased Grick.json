@@ -1,0 +1,126 @@
+{
+  "name": "Diseased Grick",
+  "source": "TDCSR",
+  "page": 122,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "str": 14,
+  "dex": 14,
+  "con": 11,
+  "int": 3,
+  "wis": 14,
+  "cha": 5,
+  "skills": {},
+  "passive": 12,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Stone Camouflage",
+      "entries": [
+        "The diseased grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The diseased grick makes one attack with its tentacles. If that attack hits, the diseased grick can make one beak attack against the same target."
+      ]
+    },
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 9 (2d6 + 2 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The grick's spellcasting ability is Wisdom (spell save {@dc 12} {@hit 4} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "daily": {
+        "1": [
+          "contagion"
+        ]
+      },
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

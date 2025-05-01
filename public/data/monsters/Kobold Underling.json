@@ -1,0 +1,84 @@
+{
+  "name": "Kobold Underling",
+  "source": "EGW",
+  "page": 221,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "kobold"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 7,
+  "speed": {
+    "walk": 30
+  },
+  "str": 7,
+  "dex": 16,
+  "con": 9,
+  "int": 8,
+  "wis": 9,
+  "cha": 8,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Messy End",
+      "entries": [
+        "The kobold explodes 3 rounds after it dies, or immediately if it was killed by a critical hit. The explosion destroys the kobold's body, leaving its equipment behind. Each creature within 5 feet of the exploding kobold must make a {@dc 10} Dexterity saving throw, taking 4 ({@damage 1d8}) bludgeoning damage on a failed save, or half as much damage on a successful one."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The kobold has advantage on an attack roll against a creature if at least one of the kobold's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hand Crossbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 30/120 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

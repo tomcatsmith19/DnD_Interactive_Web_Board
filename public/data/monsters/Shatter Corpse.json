@@ -1,0 +1,92 @@
+{
+  "name": "Shatter Corpse",
+  "source": "GHLoE",
+  "page": 16,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 20
+  },
+  "str": 13,
+  "dex": 6,
+  "con": 16,
+  "int": 3,
+  "wis": 6,
+  "cha": 5,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Glass Spikes",
+      "entries": [
+        "Each time a creature makes a melee attack against a shatter corpse, it takes 3 piercing damage. A creature can choose to make an attack with disadvantage to avoid this damage."
+      ]
+    },
+    {
+      "name": "Loud",
+      "entries": [
+        "Creatures have advantage on Wisdom (Perception) checks made to hear the approach of a shatter corpse."
+      ]
+    },
+    {
+      "name": "Turn Resistance",
+      "entries": [
+        "The shatter corpse has advantage on saving throws against any effect that turns undead."
+      ]
+    },
+    {
+      "name": "Undead Fortitude",
+      "entries": [
+        "If damage reduces the shatter corpse to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the shatter corpse drops to 1 hit point instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) bludgeoning damage and 2 (1d4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Volley of Glass {@recharge}",
+      "entries": [
+        "The shatter corpse flicks a volley of glass shards in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 10 (3d6 damage) slashing damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "piercing",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

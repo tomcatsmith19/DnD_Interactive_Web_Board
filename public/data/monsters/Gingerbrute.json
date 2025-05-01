@@ -1,0 +1,86 @@
+{
+  "name": "Gingerbrute",
+  "source": "MCV4EC",
+  "page": null,
+  "size": [
+    "T"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 60
+  },
+  "str": 13,
+  "dex": 18,
+  "con": 14,
+  "int": 7,
+  "wis": 10,
+  "cha": 12,
+  "skills": {
+    "acrobatics": "+6",
+    "athletics": "+3"
+  },
+  "passive": 10,
+  "languages": [
+    "one language of its creator"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Can't Catch Me",
+      "entries": [
+        "The gingerbrute has advantage on any ability checks or saving throws it makes to avoid or end the {@condition grappled} or the {@condition restrained} condition on itself."
+      ]
+    },
+    {
+      "name": "Sweet Victory",
+      "entries": [
+        "Once the gingerbrute is destroyed, a creature can use its action to eat all the remains and gain 5 temporary hit points. The remains crumble away after 24 hours if not eaten."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gingerbrute makes two Fork attacks, two Gumdrop Slingshot attacks, or one of each."
+      ]
+    },
+    {
+      "name": "Fork",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d4 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Gumdrop Slingshot",
+      "entries": [
+        "Ranged atk +6 to hit, range 30/120 ft., one target. 6 (1d4 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

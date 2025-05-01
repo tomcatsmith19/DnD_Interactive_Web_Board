@@ -1,0 +1,54 @@
+{
+  "name": "Rabbithead",
+  "source": "WDMM",
+  "page": 295,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 4,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 10,
+  "con": 10,
+  "int": 10,
+  "wis": 10,
+  "cha": 10,
+  "skills": {},
+  "passive": 10,
+  "languages": null,
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": null,
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "arctic",
+    "desert",
+    "coastal",
+    "grassland",
+    "hill",
+    "urban",
+    "forest"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

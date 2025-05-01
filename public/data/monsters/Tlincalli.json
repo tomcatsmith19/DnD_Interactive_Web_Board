@@ -1,0 +1,80 @@
+{
+  "name": "Tlincalli",
+  "source": "VGM",
+  "page": 193,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 40
+  },
+  "str": 16,
+  "dex": 13,
+  "con": 16,
+  "int": 8,
+  "wis": 12,
+  "cha": 8,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+4",
+    "survival": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Tlincalli"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The tlincalli makes two attacks: one with its longsword or spiked chain, and one with its sting."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands."
+      ]
+    },
+    {
+      "name": "Spiked Chain",
+      "entries": [
+        "Melee atk +6 to hit, reach 10 ft., one target. 6 (1d6 + 3 damage) piercing damage, and the target is {@condition grappled} (escape DC 11) if it is a Large or smaller creature. Until this grapple ends, the target is {@condition restrained}, and the tlincalli can't use the spiked chain against another target."
+      ]
+    },
+    {
+      "name": "Sting",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one creature. 6 (1d6 + 3 damage) piercing damage plus 14 (4d6 damage) poison damage, and the target must succeed on a DC 14 Constitution saving throw or be {@condition poisoned} for 1 minute. If it fails the saving throw by 5 or more, the target is also {@condition paralyzed} while {@condition poisoned}. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

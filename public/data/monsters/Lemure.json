@@ -1,0 +1,80 @@
+{
+  "name": "Lemure",
+  "source": "MM",
+  "page": 76,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "7"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 15
+  },
+  "str": 10,
+  "dex": 5,
+  "con": 11,
+  "int": 1,
+  "wis": 11,
+  "cha": 3,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "understands Infernal but can't speak"
+  ],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the lemure's darkvision."
+      ]
+    },
+    {
+      "name": "Hellish Rejuvenation",
+      "entries": [
+        "A lemure that dies in the Nine Hells comes back to life with all its hit points in {@dice 1d10} days unless it is killed by a good-aligned creature with a {@spell bless} spell cast on that creature or its remains are sprinkled with holy water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 2 (1d4 damage) bludgeoning damage"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

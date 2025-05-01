@@ -1,0 +1,63 @@
+{
+  "name": "Torcheater",
+  "source": "GHLoE",
+  "page": 73,
+  "size": [
+    "T"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 3,
+  "speed": {
+    "walk": 5,
+    "fly": 30
+  },
+  "str": 2,
+  "dex": 14,
+  "con": 12,
+  "int": 2,
+  "wis": 11,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "0",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Eat Fire",
+      "entries": [
+        "If the torcheater flies through fire, it reduces the fire's area by a 1-foot cube. A fire goes out if its area is reduced to nothing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft.one target. 1 fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

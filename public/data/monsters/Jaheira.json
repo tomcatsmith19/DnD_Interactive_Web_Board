@@ -1,0 +1,171 @@
+{
+  "name": "Jaheira",
+  "source": "MaBJoV",
+  "page": 60,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "half-elf"
+  ],
+  "alignment": [
+    {
+      "alignment": [
+        "N"
+      ]
+    },
+    {
+      "alignment": [
+        "NX",
+        "NY",
+        "N"
+      ]
+    }
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 112,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 12,
+  "con": 16,
+  "int": 12,
+  "wis": 20,
+  "cha": 15,
+  "skills": {
+    "medicine": "+10",
+    "nature": "+6",
+    "perception": "+10"
+  },
+  "passive": 20,
+  "languages": [
+    "Common",
+    "Druidic",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Jaheira has advantage on saving throws against being {@condition charmed}, and magic can't put Jaheira to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Jaheira makes two attacks with her quarterstaff."
+      ]
+    },
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +7 to hit (+10 to hit with shillelagh), reach 5 ft., one target. 5 (1d6 + 2 damage) bludgeoning damage, or 6 (1d8 + 2 damage) bludgeoning damage if wielded with two hands or 9 (1d8 + 5 damage) bludgeoning damage with shillelagh."
+      ]
+    },
+    {
+      "name": "Mighty Summons (1/Day)",
+      "entries": [
+        "Jaheira casts the spell conjure animals using a 7th level slot. She can choose to summon three {@filter CR 2 beasts|bestiary|challenge rating=[&2]|type=beast|miscellaneous=!swarm} or six {@filter CR 1 beasts|bestiary|challenge rating=[&1]|type=beast|miscellaneous=!swarm}. All summoned beasts have maximum hit points. The damage from the summoned beasts natural weapons are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Jaheira is a 15th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 18}, {@hit 10} to hit with spell attacks). She has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "poison spray",
+            "produce flame",
+            "shillelagh"
+          ]
+        },
+        "1": {
+          "spells": [
+            "entangle",
+            "longstrider",
+            "speak with animals",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "animal messenger",
+            "barkskin"
+          ]
+        },
+        "3": {
+          "spells": [
+            "conjure animals",
+            "water breathing"
+          ]
+        },
+        "4": {
+          "spells": [
+            "dominate beast",
+            "locate creature",
+            "stoneskin",
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": [
+            "commune with nature",
+            "mass cure wounds",
+            "tree stride"
+          ]
+        },
+        "6": {
+          "spells": [
+            "heal",
+            "heroes' feast",
+            "sunbeam"
+          ]
+        },
+        "7": {
+          "spells": [
+            "fire storm"
+          ]
+        },
+        "8": {
+          "spells": [
+            "animal shapes"
+          ]
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,168 @@
+{
+  "name": "Queen of Thieves",
+  "source": "DoDk",
+  "page": 217,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "23"
+  ],
+  "hp": 120,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 20,
+  "con": 13,
+  "int": 20,
+  "wis": 16,
+  "cha": 19,
+  "skills": {
+    "acrobatics": "+10",
+    "arcana": "+10",
+    "deception": "+14",
+    "insight": "+8",
+    "perception": "+8",
+    "persuasion": "+9",
+    "sleight of hand": "+10",
+    "stealth": "+15"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Dwarvish",
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "The Queen of Thieves wears an amulet of proof against detection and location and a spymasters signet. She wields a +3 rapier."
+      ]
+    },
+    {
+      "name": "Canny Defense",
+      "entries": [
+        "While the Queen of Thieves is wearing light or no armour and wielding no shield, her AC includes her Intelligence modifier."
+      ]
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "entries": [
+        "The Queen of Thieves deals an extra 18 {@damage 5d6} damage when she hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the Queen of Thieves that isn't incapacitated and she doesn't have disadvantage on the attack roll."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the Queen of Thieves fails a saving throw, she can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Memory Thief",
+      "entries": [
+        "Creatures are not aware when the Queen of Thieves reads their thoughts or charms them. Additionally, when a spell cast by the Queen of Thieves that causes creatures to become {@condition charmed} ends, she can make the affected creatures lose their memories. They must succeed on a {@dc 18} Intelligence saving throw or forget up to 8 hours of the time spent {@condition charmed} by her. These memories can be restored with a {@spell heal} spell or similar magic."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "+3 Rapier",
+      "entries": [
+        "Melee atk +13 to hit, reach 5 ft., one target 13 (1d8 + 8 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Ranged atk +10 to hit, range 20/60 ft., one target. 7 (1d4 + 7 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "The Queen of Thieves makes one melee or ranged attack."
+      ]
+    },
+    {
+      "name": "Move",
+      "entries": [
+        "The Queen of Thieves moves up to her speed without provoking opportunity attacks."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The Queen of Thieves' innate spellcasting ability is Intelligence. She can innately cast the following spells, requiring no material, somatic, or verbal components:"
+      ],
+      "will": [
+        "detect thoughts",
+        "disguise self",
+        "suggestion"
+      ],
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

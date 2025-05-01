@@ -1,0 +1,80 @@
+{
+  "name": "Monastic Operative",
+  "source": "CRCotN",
+  "page": 202,
+  "size": [
+    "S",
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "monk"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 40
+  },
+  "str": 13,
+  "dex": 18,
+  "con": 14,
+  "int": 14,
+  "wis": 17,
+  "cha": 11,
+  "skills": {
+    "acrobatics": "+7",
+    "insight": "+6",
+    "investigation": "+8",
+    "stealth": "+7"
+  },
+  "passive": 13,
+  "languages": [
+    "Common plus two other languages"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the operative is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The operative makes three Unarmed Strike attacks, three Cobalt Dart attacks, or a combination thereof."
+      ]
+    },
+    {
+      "name": "Unarmed Strike",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (1d10 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Cobalt Dart",
+      "entries": [
+        "Ranged atk +7 to hit, range 20/60 ft., one target. 6 (1d4 + 4 damage) piercing damage plus 3 (1d6 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

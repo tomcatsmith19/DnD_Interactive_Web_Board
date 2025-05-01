@@ -1,0 +1,101 @@
+{
+  "name": "Dream Eater",
+  "source": "MCV2DC",
+  "page": 3,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 77,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 50,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 15,
+  "dex": 20,
+  "con": 13,
+  "int": 12,
+  "wis": 16,
+  "cha": 21,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Deep Speech",
+    "telepathy 120 ft."
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Ghastly Visions",
+      "entries": [
+        "Each creature that starts its turn within 30 feet of the dream eater must make a {@dc 16} Wisdom saving throw. On a failed save, the creature is {@condition frightened} of the dream eater until the start of the creature's next turn. If a creature's saving throw is successful, the creature is immune to this dream eater's Ghastly Visions trait for the next 24 hours."
+      ]
+    },
+    {
+      "name": "Incorporeal Movement",
+      "entries": [
+        "The dream eater can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The dream eater has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dream eater makes two Ensnaring Shriek attacks."
+      ]
+    },
+    {
+      "name": "Ensnaring Shriek",
+      "entries": [
+        "{@atk ms,rs} +8 to hit, reach 15 ft. or range 60 ft., one target. 12 (2d6 + 5 damage) psychic damage, and if the target is a Medium or smaller creature, the target must succeed on a DC 16 Charisma saving throw or be pulled up to 15 feet toward the dream eater."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "restrained"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "psychic"
+  ],
+  "senses": [
+    "blindsight 120 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

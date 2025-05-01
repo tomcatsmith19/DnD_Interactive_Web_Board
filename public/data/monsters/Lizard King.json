@@ -1,0 +1,100 @@
+{
+  "name": "Lizard King",
+  "source": "MM",
+  "page": 205,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "lizardfolk"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 17,
+  "dex": 12,
+  "con": 15,
+  "int": 11,
+  "wis": 11,
+  "cha": 15,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+5",
+    "survival": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Abyssal",
+    "Draconic"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The lizardfolk can hold its breath for 15 minutes."
+      ]
+    },
+    {
+      "name": "Skewer",
+      "entries": [
+        "Once per turn, when the lizardfolk makes a melee attack with its trident and hits, the target takes an extra 10 ({@dice 3d6}) damage, and the lizardfolk gains temporary hit points equal to the extra damage dealt."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The lizardfolk makes two attacks: one with its bite and one with its claws or trident or two melee attacks with its trident."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 6 (1d6 + 3 damage) piercing damage, or 7 (1d8 + 3 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "forest",
+    "swamp"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

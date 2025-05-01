@@ -1,0 +1,59 @@
+{
+  "name": "Animated Stove",
+  "source": "WDMM",
+  "page": 186,
+  "size": [
+    "L"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 50,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 10,
+  "con": 10,
+  "int": 3,
+  "wis": 3,
+  "cha": 1,
+  "skills": {},
+  "passive": 6,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 11 (2d8 + 2 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Belch Fire {@recharge 4}",
+      "entries": [
+        "The stove belches fire in a 15-foot cone. Each creature in the area must make a DC 10 Dexterity saving throw, taking 22 (4d10 damage) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

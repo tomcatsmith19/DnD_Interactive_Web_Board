@@ -1,0 +1,154 @@
+{
+  "name": "Mordakhesh",
+  "source": "ERLW",
+  "page": 301,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 170,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 16,
+  "con": 18,
+  "int": 15,
+  "wis": 17,
+  "cha": 20,
+  "skills": {
+    "athletics": "+10",
+    "insight": "+8",
+    "perception": "+8",
+    "persuasion": "+10"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Infernal"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Limited Magic Immunity",
+      "entries": [
+        "Mordakhesh can't be affected or detected by spells of 6th level or lower unless he wishes to be. Mordakhesh has advantage on saving throws against all other spells and magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Mordakhesh makes three greatsword attacks."
+      ]
+    },
+    {
+      "name": "Greatsword",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage plus 5 (1d10 damage) force damage."
+      ]
+    },
+    {
+      "name": "Chromatic Orb",
+      "entries": [
+        "Ranged Spell atk +10 to hit, range 120 ft., one creature. 13 ({@dice 3d8}) damage of a type chosen by Mordakhesh: acid, cold, fire, lightning, poison, or thunder."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "Mordakhesh makes one weapon attack or casts {@spell chromatic orb}."
+      ]
+    },
+    {
+      "name": "Chromatic Resistance",
+      "entries": [
+        "Modakhesh gains resistance to one damage type of his choice\u00e2\u20ac\u201dacid, cold, fire, lightning, poison, or thunder\u00e2\u20ac\u201duntil the start of his next turn."
+      ]
+    },
+    {
+      "name": "Warlord's Command (Costs 2 Actions)",
+      "entries": [
+        "Mordakhesh targets up to two allies that he can see within 30 feet of him. If a target can see and hear him, the target can make one weapon attack as a reaction and gains advantage on the attack roll."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Mordakhesh's spellcasting ability is Charisma (spell save {@dc 18}, {@hit 10} to hit with spell attacks). Mordakhesh can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "chromatic orb",
+        "detect thoughts",
+        "disguise self"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [
+    "piercing"
+  ],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

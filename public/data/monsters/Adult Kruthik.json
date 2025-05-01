@@ -1,0 +1,93 @@
+{
+  "name": "Adult Kruthik",
+  "source": "MTF",
+  "page": 212,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 40,
+    "burrow": 20,
+    "climb": 40
+  },
+  "str": 15,
+  "dex": 16,
+  "con": 15,
+  "int": 7,
+  "wis": 12,
+  "cha": 8,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Kruthik"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The kruthik has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The kruthik has advantage on an attack roll against a creature if at least one of the kruthik's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The kruthik can burrow through solid rock at half its burrowing speed and leaves a 5-foot-diameter tunnel in its wake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The kruthik makes two stab attacks or two spike attacks."
+      ]
+    },
+    {
+      "name": "Stab",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Spike",
+      "entries": [
+        "Ranged atk +5 to hit, range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft.",
+    "tremorsense 60 ft."
+  ],
+  "environment": [
+    "desert",
+    "mountain",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

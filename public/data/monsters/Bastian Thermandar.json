@@ -1,0 +1,116 @@
+{
+  "name": "Bastian Thermandar",
+  "source": "PotA",
+  "page": 201,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    {
+      "tag": "genasi",
+      "prefix": "Fire"
+    }
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 15,
+  "int": 11,
+  "wis": 9,
+  "cha": 18,
+  "skills": {
+    "arcana": "+3",
+    "deception": "+7"
+  },
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Ignan"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Bastian's innate spellcasting ability is Constitution (spell save {@dc 13}, {@hit 5} to hit with spell attacks). He can innately cast the following spells:"
+      ],
+      "will": [
+        "produce flame"
+      ],
+      "daily": {
+        "1": [
+          "burning hands"
+        ]
+      },
+      "ability": "con",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "fire"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

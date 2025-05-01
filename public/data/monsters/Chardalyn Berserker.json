@@ -1,0 +1,81 @@
+{
+  "name": "Chardalyn Berserker",
+  "source": "IDRotF",
+  "page": 280,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 17,
+  "int": 9,
+  "wis": 11,
+  "cha": 9,
+  "skills": {
+    "survival": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Chardalyn Madness",
+      "entries": [
+        "The berserker must roll a {@dice d6} at the start of each of its turns. On a 1, the berserker does nothing on its turn except speak to a nonexistent, evil master whom it has pledged to serve."
+      ]
+    },
+    {
+      "name": "Reckless",
+      "entries": [
+        "At the start of its turn, the berserker can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The berserker attacks three times with a melee weapon."
+      ]
+    },
+    {
+      "name": "Chardalyn Flail",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) bludgeoning damage, and the target must succeed on a DC 13 Constitution saving throw or be {@condition poisoned} until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Chardalyn Javelin",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 30/120 ft., one target. 6 (1d6 + 3 damage) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be {@condition poisoned} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,135 @@
+{
+  "name": "Tiax",
+  "source": "CoA",
+  "page": 266,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "13",
+    "16"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 25
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 14,
+  "int": 15,
+  "wis": 19,
+  "cha": 18,
+  "skills": {
+    "deception": "+8",
+    "insight": "+8",
+    "performance": "+8",
+    "persuasion": "+8"
+  },
+  "passive": 14,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Gnomish"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Gnome Cunning",
+      "entries": [
+        "Tiax has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Tiax wears a Ring of Resistance that grants him resistance to radiant damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Touch of Decay",
+      "entries": [
+        "{@atk ms} +8 to hit, reach 5 ft., one target. 37 (6d10 + 4 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Unholy Firebolt",
+      "entries": [
+        "Tiax causes unholy fire to flare up in a creature's space within 60 feet of him. The target must succeed on a DC 16 Dexterity saving throw or take 18 (4d8 damage) necrotic damage plus 18 (4d8 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Tiax casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "Bane",
+        "Disguise Self",
+        "Dispel Magic",
+        "Mage Armor",
+        "Mirror Image",
+        "Thaumaturgy"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

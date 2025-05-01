@@ -1,0 +1,76 @@
+{
+  "name": "Chukka",
+  "source": "BGDIA",
+  "page": 83,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "kenku"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 13,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 10,
+  "int": 11,
+  "wis": 10,
+  "cha": 10,
+  "skills": {
+    "deception": "+4",
+    "perception": "+2",
+    "stealth": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "understands Auran and Common but speaks only through the use of its Mimicry trait"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Ambusher",
+      "entries": [
+        "In the first round of a combat, Chukka has advantage on attack rolls against any creature it {@quickref Surprise|PHB|3|0|surprised}."
+      ]
+    },
+    {
+      "name": "Mimicry",
+      "entries": [
+        "The kenku can mimic any sounds it has heard, including voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 14} Wisdom (Insight) check."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Silvered Pike",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 5 (1d10 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "forest",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

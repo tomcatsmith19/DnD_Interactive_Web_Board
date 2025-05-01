@@ -1,0 +1,90 @@
+{
+  "name": "Satyr Thornbearer",
+  "source": "MOT",
+  "page": 243,
+  "size": [
+    "M"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 38,
+  "speed": {
+    "walk": 40
+  },
+  "str": 12,
+  "dex": 18,
+  "con": 12,
+  "int": 11,
+  "wis": 13,
+  "cha": 14,
+  "skills": {
+    "perception": "+5",
+    "performance": "+6",
+    "stealth": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The satyr has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Sleepless Reveler",
+      "entries": [
+        "Magic can't put the satyr to sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The satyr makes three ram attacks or three shortbow attacks."
+      ]
+    },
+    {
+      "name": "Ram",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 6 (2d4 + 1 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +6 to hit, range 80/320 ft., one target. 7 (1d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Hail of Arrows (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The satyr fires an arrow that magically transforms into a flurry of missiles in a 30-foot cone. Each creature in that area must make a DC 14 Dexterity saving throw, taking 17 (5d6 damage) piercing damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

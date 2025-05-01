@@ -1,0 +1,132 @@
+{
+  "name": "Astral Elf Commander",
+  "source": "BAM",
+  "page": 12,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 143,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 13,
+  "int": 18,
+  "wis": 18,
+  "cha": 18,
+  "skills": {
+    "deception": "+7",
+    "history": "+7",
+    "intimidation": "+7",
+    "survival": "+7"
+  },
+  "passive": 14,
+  "languages": [
+    "Celestial",
+    "Common",
+    "Elvish"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The elf has advantage on saving throws it makes to avoid or end the {@condition charmed} condition on itself, and magic can't put it to sleep."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The elf doesn't require sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The elf makes two Longsword or Longbow attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) slashing damage, or 6 (1d10 + 1 damage) slashing damage when used with two hands, plus 14 (4d6 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 150/600 ft., one target. 6 (1d8 + 2 damage) piercing damage plus 14 (4d6 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The elf casts the following spell, using Wisdom as the spellcasting ability:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

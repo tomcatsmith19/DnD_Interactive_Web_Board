@@ -1,0 +1,89 @@
+{
+  "name": "Flying Rocking Horse",
+  "source": "WBtW",
+  "page": 121,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 40,
+      "condition": "(only while mounted; hover)"
+    },
+    "canHover": true
+  },
+  "str": 10,
+  "dex": 10,
+  "con": 13,
+  "int": 1,
+  "wis": 3,
+  "cha": 1,
+  "skills": {},
+  "passive": 6,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "If the rocking horse is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the rocking horse move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the rocking horse is animate."
+      ]
+    },
+    {
+      "name": "Flying Mount",
+      "entries": [
+        "The rocking horse can serve as a mount for a Medium or smaller creature and can fly only while mounted."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The rocking horse doesn't require air, food, drink, or sleep, and it regains no hit points or Hit Dice at the end of a long rest."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Head Butt",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 3 (1d6 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "psychic"
+  ],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

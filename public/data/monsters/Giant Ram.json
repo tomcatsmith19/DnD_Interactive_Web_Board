@@ -1,0 +1,68 @@
+{
+  "name": "Giant Ram",
+  "source": "BGG",
+  "page": 153,
+  "size": [
+    "L"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 28,
+  "speed": {
+    "walk": 50
+  },
+  "str": 19,
+  "dex": 12,
+  "con": 18,
+  "int": 3,
+  "wis": 14,
+  "cha": 10,
+  "skills": {},
+  "passive": 12,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The ram has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Ram",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 9 (2d4 + 4 damage) bludgeoning damage plus 3 (1d6 damage) force damage. If the ram moved at least 20 feet straight toward the target immediately before the hit, the target must succeed on a DC 14 Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Force Bolt",
+      "entries": [
+        "Ranged Spell atk +4 to hit, range 30 ft., one target. 7 (2d6 damage) force damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

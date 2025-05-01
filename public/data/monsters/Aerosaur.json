@@ -1,0 +1,81 @@
+{
+  "name": "Aerosaur",
+  "source": "BGG",
+  "page": 128,
+  "size": [
+    "G"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "dinosaur"
+  ],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 155,
+  "speed": {
+    "walk": 20,
+    "fly": 120
+  },
+  "str": 26,
+  "dex": 10,
+  "con": 21,
+  "int": 3,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The aerosaur has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The aerosaur makes one Bite attack and one Talons attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +12 to hit, reach 10 ft., one target. 27 (3d12 + 8 damage) piercing damage. If the target is a Huge or smaller creature, it has the {@condition grappled} condition (escape DC 18). Until this grapple ends, the target has the {@condition restrained} condition, and the aerosaur can't Bite another target."
+      ]
+    },
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +12 to hit, reach 10 ft., one target. 24 (3d10 + 8 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Wing Gusts {@recharge 5}",
+      "entries": [
+        "The aerosaur beats its wings, creating bursts of thunderous force. Each creature within 10 feet of the aerosaur must make a DC 20 Strength saving throw. On a failed save, a creature takes 38 (7d10 damage) thunder damage, is pushed up to 30 feet horizontally from the aerosaur, and has the {@condition prone} condition. On a successful save, a creature takes half as much damage and is pushed up to 15 feet horizontally from the aerosaur."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

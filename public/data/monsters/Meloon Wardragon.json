@@ -1,0 +1,88 @@
+{
+  "name": "Meloon Wardragon",
+  "source": "WDH",
+  "page": 210,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 143,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 15,
+  "con": 14,
+  "int": 10,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "athletics": "+9",
+    "survival": "+6"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "telepathy 60 ft."
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Meloon wields {@item Azuredge|wdh} but can't attune to it, and thus gains none of its benefits."
+      ]
+    },
+    {
+      "name": "Indomitable (2/Day)",
+      "entries": [
+        "Meloon can reroll a saving throw that he fails. He must use the new roll."
+      ]
+    },
+    {
+      "name": "Second Wind (Recharges after a Short or Long Rest)",
+      "entries": [
+        "As a bonus action, Meloon can regain 20 hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Meloon makes four attacks with Azuredge."
+      ]
+    },
+    {
+      "name": "Azuredge",
+      "entries": [
+        "{@atk m} +9 to hit, reach 5 ft., one target. 11 (1d12 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Cinder Hulk",
+  "source": "BGG",
+  "page": 123,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 12,
+  "con": 20,
+  "int": 9,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Giant",
+    "Ignan"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the cinder hulk dies, it leaves behind a cloud of cinders and smoke that fills a 10-foot-radius sphere centered on its space. The sphere is heavily obscured. Any creature that moves into the area for the first time on a turn or starts its turn there must succeed on a {@dc 16} Constitution saving throw or take 10 ({@damage 3d6}) fire damage. The cloud lasts for 1 minute or until it is dispersed by strong wind."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The cinder hulk makes two Slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 16 (2d10 + 5 damage) bludgeoning damage plus 10 (3d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Wave of Cinders {@recharge 5}",
+      "entries": [
+        "The cinder hulk emits a wave of smoldering ash from its face, hands, or chest in a 30-foot cone. Each creature in that area must make a DC 16 Dexterity saving throw. On a failed save, a creature takes 31 (7d8 damage) fire damage and has the {@condition blinded} condition until the end of its next turn. On a successful save, a creature takes half as much damage only."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

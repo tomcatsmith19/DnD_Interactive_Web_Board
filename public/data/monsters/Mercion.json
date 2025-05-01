@@ -1,0 +1,136 @@
+{
+  "name": "Mercion",
+  "source": "WBtW",
+  "page": 224,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "cleric",
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 31,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 10,
+  "con": 9,
+  "int": 12,
+  "wis": 17,
+  "cha": 17,
+  "skills": {
+    "insight": "+5",
+    "medicine": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Mercion wields a +1 quarterstaff."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Mercion makes one Divine Radiance attack and one +1 Quarterstaff attack. She can replace one of these attacks with a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Divine Radiance",
+      "entries": [
+        "{@atk ms,rs} +5 to hit, reach 5 ft. or range 60 ft., one target. 13 (3d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "+1 Quarterstaff",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage, or 7 (1d8 + 3 damage) bludgeoning damage when used with two hands."
+      ]
+    },
+    {
+      "name": "Radiant Fire {@recharge 5}",
+      "entries": [
+        "Mercion creates a magical explosion of fiery radiance centered on a point she can see within 120 feet of her. Each creature in a 20-foot-radius sphere centered on that point must make a DC 13 Dexterity saving throw, taking 28 (8d6 damage) radiant damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Mercion casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "light",
+        "spare the dying"
+      ],
+      "daily": {
+        "1": [
+          "death ward"
+        ]
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

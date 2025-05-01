@@ -1,0 +1,71 @@
+{
+  "name": "Slaad Tadpole",
+  "source": "MM",
+  "page": 276,
+  "size": [
+    "T"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 10,
+  "speed": {
+    "walk": 30
+  },
+  "str": 7,
+  "dex": 15,
+  "con": 10,
+  "int": 3,
+  "wis": 5,
+  "cha": 3,
+  "skills": {
+    "stealth": "+4"
+  },
+  "passive": 7,
+  "languages": [
+    "understands Slaad but can't speak"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The slaad has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

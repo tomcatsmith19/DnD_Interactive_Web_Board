@@ -1,0 +1,135 @@
+{
+  "name": "Ammalia Cassalanter",
+  "source": "WDH",
+  "page": 193,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 14,
+  "con": 11,
+  "int": 17,
+  "wis": 12,
+  "cha": 15,
+  "skills": {
+    "arcana": "+6",
+    "history": "+6",
+    "insight": "+4",
+    "persuasion": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Elvish",
+    "Infernal"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d6 - 1 damage) bludgeoning damage, or 3 (1d8 - 1 damage) bludgeoning damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Ammalia is a 9th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). She has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "friends",
+            "mage hand",
+            "mending",
+            "message"
+          ]
+        },
+        "1": {
+          "spells": [
+            "charm person",
+            "mage armor",
+            "magic missile"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "invisibility",
+            "suggestion"
+          ]
+        },
+        "3": {
+          "spells": [
+            "fireball",
+            "haste",
+            "tongues"
+          ]
+        },
+        "4": {
+          "spells": [
+            "confusion",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "hold monster"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

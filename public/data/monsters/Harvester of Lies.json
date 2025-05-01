@@ -1,0 +1,157 @@
+{
+  "name": "Harvester of Lies",
+  "source": "GHLoE",
+  "page": 13,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 91,
+  "speed": {
+    "walk": 40
+  },
+  "str": 13,
+  "dex": 20,
+  "con": 14,
+  "int": 11,
+  "wis": 16,
+  "cha": 15,
+  "skills": {
+    "acrobatics": "+9",
+    "insight": "+7",
+    "perception": "+7",
+    "stealth": "+13"
+  },
+  "passive": 17,
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Coat of Lies",
+      "entries": [
+        "While wearing their specially prepared coat, the harvester's AC is increase by 2 and it can use its innate spellcasting."
+      ]
+    },
+    {
+      "name": "Hear Lies",
+      "entries": [
+        "The harvester hears all lies uttered within 1 mile of it and knows the liar's distance and direction while the harvester choses to concentrate."
+      ]
+    },
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The harvester can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Trackless",
+      "entries": [
+        "The harvester leaves no tracks to indicate where it has been or where it's headed."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The harvester makes three attacks, only one of which can be sever tongue."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) slashing damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC 17)."
+      ]
+    },
+    {
+      "name": "Sever Tongue",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one humanoid {@condition grappled} by the harvester of lies. 33 (8d6 + 5 damage) slashing damage and the target must succeed on a DC 17 Constitution saving throw or have their tongue ripped out. A creature without a tongue cannot speak or cast spells with verbal components. A creature is immune to this effect if it is immune to slashing damage, doesn't have or need a tongue, or has legendary actions.",
+        "A tongue can be reattached within 1 hour of being severed with a successful {@dc 10} Wisdom (Medicine) check, or at can be regrown using magic that replaces lost limbs."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The harvester's spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring only that the harvester be wearing its coat of lies:"
+      ],
+      "will": [
+        "detect thoughts",
+        "zone of truth"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

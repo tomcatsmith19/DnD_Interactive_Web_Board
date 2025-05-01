@@ -1,0 +1,97 @@
+{
+  "name": "Shoosuva",
+  "source": "VGM",
+  "page": 137,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 13,
+  "con": 17,
+  "int": 7,
+  "wis": 14,
+  "cha": 9,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Abyssal",
+    "Gnoll",
+    "telepathy 120 ft."
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Rampage",
+      "entries": [
+        "When it reduces a creature to 0 hit points with a melee attack on its turn, the shoosuva can take a bonus action to move up to half its speed and make a bite attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The shoosuva makes two attacks: one with its bite and one with its tail stinger."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 26 (4d10 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Tail Stinger",
+      "entries": [
+        "Melee atk +7 to hit, reach 15 ft., one creature. 13 (2d8 + 4 damage) piercing damage, and the target must succeed on a DC 14 Constitution saving throw or become {@condition poisoned}. While {@condition poisoned}, the target is also {@condition paralyzed}. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill",
+    "arctic"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

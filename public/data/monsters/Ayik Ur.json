@@ -1,0 +1,81 @@
+{
+  "name": "Ayik Ur",
+  "source": "DSotDQ",
+  "page": 211,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 12,
+  "int": 11,
+  "wis": 13,
+  "cha": 11,
+  "skills": {
+    "athletics": "+2",
+    "nature": "+2",
+    "perception": "+5",
+    "stealth": "+5",
+    "survival": "+3"
+  },
+  "passive": 15,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Attacker",
+      "entries": [
+        "Ayik gains a +2 bonus to all attack rolls (included below)."
+      ]
+    },
+    {
+      "name": "Bonus Proficiencies",
+      "entries": [
+        "Ayik is proficient with simple and martial weapons, shields, and all armor."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +7 to hit, range 150/600 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

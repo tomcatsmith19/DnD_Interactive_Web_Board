@@ -1,0 +1,64 @@
+{
+  "name": "Giant Sea Eel",
+  "source": "GoS",
+  "page": 237,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 0,
+    "swim": 40
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 12,
+  "int": 7,
+  "wis": 10,
+  "cha": 7,
+  "skills": {
+    "perception": "+2",
+    "stealth": "+4"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Water Breathing",
+      "entries": [
+        "The eel can breathe only underwater."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 13 (2d10 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

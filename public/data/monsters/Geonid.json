@@ -1,0 +1,70 @@
+{
+  "name": "Geonid",
+  "source": "TTP",
+  "page": 22,
+  "size": [
+    "S"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 26,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 10,
+  "con": 16,
+  "int": 9,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+2"
+  },
+  "passive": 14,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Boulder Guise",
+      "entries": [
+        "While fully withdrawn into its shell, the geonid can't see and is indistinguishable from a small boulder"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Stone Tell",
+      "entries": [
+        "The geonid touches a stone object or surface and knows what types of creatures have been within 10 feet of that stone in the past 24 hours. The geonid can also determine the number of creatures of each type, but not their identities."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft.",
+    "tremorsense 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

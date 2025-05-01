@@ -1,0 +1,181 @@
+{
+  "name": "Sarevok",
+  "source": "MaBJoV",
+  "page": 124,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "21"
+  ],
+  "hp": 119,
+  "speed": {
+    "walk": 30
+  },
+  "str": 20,
+  "dex": 10,
+  "con": 18,
+  "int": 11,
+  "wis": 16,
+  "cha": 14,
+  "skills": {
+    "history": "+5",
+    "intimidation": "+12",
+    "religion": "+5"
+  },
+  "passive": 13,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Infernal"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Sarevok has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If Sarevok is killed he gains a new body in 24 hours, regaining all his hit points and becoming active again. The new body appears on the altar of the temple of Bhaal beneath Baldur's Gate. This ability ceases to function if a cleric of good alignment casts the spell hallow on the altar in the temple of Bhaal."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Sarevok can cast a spell and make one attack with his long sword."
+      ]
+    },
+    {
+      "name": "Long Sword",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) slashing damage or 10 ({@dice 1d10 + 5}) if wielded in two hands. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or be cursed by Bhaal. The cursed target can't regain hit points. The curse lasts until removed by the {@spell remove curse} spell or other magic."
+      ]
+    },
+    {
+      "name": "Assassin's Strike",
+      "entries": [
+        "Sarevok makes an attack with his long sword. If he hits the target and has advantage on the attack roll, then he deals an additional 21 (6d6 damage) slashing damage. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or be {@condition poisoned} for 10 minutes."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Attack",
+      "entries": [
+        "Sarevok makes one attack with his long sword."
+      ]
+    },
+    {
+      "name": "Cast Cantrip",
+      "entries": [
+        "Sarevok casts a cantrip from his spell list."
+      ]
+    },
+    {
+      "name": "Channel Bhaal's Hate (Costs 2 Actions)",
+      "entries": [
+        "Sarevok unleashes",
+        "Bhaal's power. Creatures within 30 feet of Sarevok, including ones behind barriers and around corners, can't regain hit points until the end of Sarevok's next turn."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Sarevok is a 12th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to hit with spell attacks). Sarevok has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "command",
+            "guiding bolt",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "hold person",
+            "silence",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "animate dead",
+            "dispel magic"
+          ]
+        },
+        "4": {
+          "spells": [
+            "divination",
+            "guardian of faith"
+          ]
+        },
+        "5": {
+          "spells": [
+            "contagion",
+            "insect plague"
+          ]
+        },
+        "6": {
+          "spells": [
+            "harm"
+          ]
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

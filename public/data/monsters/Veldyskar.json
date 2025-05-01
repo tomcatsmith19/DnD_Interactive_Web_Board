@@ -1,0 +1,114 @@
+{
+  "name": "Veldyskar",
+  "source": "OotA",
+  "page": 151,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 20
+  },
+  "str": 16,
+  "dex": 8,
+  "con": 15,
+  "int": 10,
+  "wis": 8,
+  "cha": 7,
+  "skills": {},
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Dwarvish",
+    "Giant",
+    "Undercommon"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Petrifying Gaze",
+      "entries": [
+        "If a creature starts its turn within 30 feet of Veldyskar and the two of them can see each other, Veldyskar can force the creature to make a {@dc 12} Constitution saving throw if Veldyskar isn't {@condition incapacitated}. On a failed save, the creature magically begins to turn to stone and is {@condition restrained}. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is {@condition petrified} until freed by the  {@spell greater restoration} spell or other magic.",
+        "A creature that isn't {@quickref Surprise|PHB|3|0|surprised} can avert its eyes to avoid the saving throw at the start of its turn. If it does so, it can't see Veldyskar until the start of its next turn, when it can avert its eyes again. If it looks at Veldyskar in the meantime, it must immediately make the save.",
+        "If Veldyskar sees its reflection within 30 feet of it in bright light, it mistakes itself for a rival and targets itself with its gaze."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) piercing damage plus 7 (2d6 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Veldyskar can innately cast the following spell, requiring no material components:"
+      ],
+      "daily": {
+        "1": [
+          "greater restoration"
+        ]
+      },
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

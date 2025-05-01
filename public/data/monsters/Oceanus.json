@@ -1,0 +1,82 @@
+{
+  "name": "Oceanus",
+  "source": "GoS",
+  "page": 246,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf"
+  ],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 15,
+  "dex": 12,
+  "con": 16,
+  "int": 11,
+  "wis": 12,
+  "cha": 10,
+  "skills": {
+    "athletics": "+4",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Aquan",
+    "Elvish"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "Oceanus can breathe air and water."
+      ]
+    },
+    {
+      "name": "Friend of the Sea",
+      "entries": [
+        "Using gestures and sounds, Oceanus can communicate simple ideas with any beast that has an innate swimming speed."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d6 + 2 damage) piercing damage, or 6 (1d8 + 2 damage) piercing damage if used with two hands to make a melee attack."
+      ]
+    },
+    {
+      "name": "Light Crossbow",
+      "entries": [
+        "Ranged atk +3 to hit, range 80/320 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

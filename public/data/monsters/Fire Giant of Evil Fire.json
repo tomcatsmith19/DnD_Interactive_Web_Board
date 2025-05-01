@@ -1,0 +1,80 @@
+{
+  "name": "Fire Giant of Evil Fire",
+  "source": "BGG",
+  "page": 139,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 30
+  },
+  "str": 25,
+  "dex": 9,
+  "con": 23,
+  "int": 10,
+  "wis": 19,
+  "cha": 14,
+  "skills": {
+    "athletics": "+11",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Giant",
+    "Ignan"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Shrapnel Explosion",
+      "entries": [
+        "When the giant drops to 0 hit points, its armor explodes, destroying the giant's body and scattering the armor as shrapnel. Creatures within 10 feet of the giant when its armor explodes must make a {@dc 18} Dexterity saving throw, taking 21 ({@damage 6d6}) piercing damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two Searing Scepter attacks or two Bolt of Imix attacks."
+      ]
+    },
+    {
+      "name": "Searing Scepter",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 17 (3d6 + 7 damage) bludgeoning damage plus 9 (2d8 damage) fire damage, and the target is magically branded. While branded in this way, the target becomes visible if it's {@condition invisible}, can't become {@condition invisible}, and sheds dim light in a 5-foot radius. The brand disappears after 24 hours, or it can be removed from a creature or an object by any spell that ends a curse."
+      ]
+    },
+    {
+      "name": "Bolt of Imix",
+      "entries": [
+        "Ranged Spell atk +8 to hit, range 120 ft., one target. 20 (3d10 + 4 damage) fire damage, and the target must succeed on a DC 16 Wisdom saving throw or have the {@condition frightened} condition until the end of the target's next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

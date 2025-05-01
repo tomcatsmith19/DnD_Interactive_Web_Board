@@ -1,0 +1,87 @@
+{
+  "name": "Coral",
+  "source": "MisMV1",
+  "page": 4,
+  "size": [
+    "L"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 135,
+  "speed": {
+    "walk": 10,
+    "fly": 60,
+    "swim": 60
+  },
+  "str": 20,
+  "dex": 13,
+  "con": 15,
+  "int": 14,
+  "wis": 18,
+  "cha": 19,
+  "skills": {
+    "arcana": "+6",
+    "insight": "+8",
+    "perception": "+8"
+  },
+  "passive": 18,
+  "languages": [
+    "Common",
+    "Primordial",
+    "Sylvan"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Coral has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Coral makes two Hoof attacks and uses Tail Thump."
+      ]
+    },
+    {
+      "name": "Hoof",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 12 (2d6 + 5 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Tail Thump",
+      "entries": [
+        "Coral slams her tail down, unleashing a burst of magical force toward one creature she can see within 60 feet of her. The target must make a DC 16 Dexterity saving throw. On a failed save, the target takes 22 (4d10 damage) force damage and has the {@condition prone} condition. On a successful save, the target takes half as much damage only. If this damage reduces the target to 0 hit points, the target dies, and its body is reduced to fine dust."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

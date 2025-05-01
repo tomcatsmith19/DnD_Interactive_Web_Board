@@ -1,0 +1,141 @@
+{
+  "name": "Nezznar the Spider",
+  "source": "PaBTSO",
+  "page": 74,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "elf",
+    "wizard"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11",
+    "14"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 13,
+  "con": 10,
+  "int": 16,
+  "wis": 14,
+  "cha": 13,
+  "skills": {
+    "arcana": "+5",
+    "perception": "+4",
+    "stealth": "+3"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Elvish",
+    "Undercommon"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Nezznar has a fully charged spider staff (see appendix B)."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Nezznar has advantage on saving throws to avoid or end the {@condition charmed} condition on himself, and magic can't put him to sleep."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "Nezznar has disadvantage on attack rolls while he or his target is in sunlight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Nezznar makes two Poison Blast attacks."
+      ]
+    },
+    {
+      "name": "Poison Blast",
+      "entries": [
+        "{@atk ms,rs} +5 to hit, reach 5 ft. or range 120 ft., one creature. 9 (2d8 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Nezznar casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 13} unless otherwise noted):"
+      ],
+      "will": [
+        "dancing lights",
+        "mage hand",
+        "spider climb",
+        "web"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

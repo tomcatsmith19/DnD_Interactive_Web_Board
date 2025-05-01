@@ -1,0 +1,95 @@
+{
+  "name": "Olara",
+  "source": "CRCotN",
+  "page": 129,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30,
+    "swim": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 12,
+  "int": 11,
+  "wis": 13,
+  "cha": 11,
+  "skills": {
+    "nature": "+4",
+    "perception": "+5",
+    "stealth": "+6",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Any one language (usually Common)"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "Olara can breathe air and water."
+      ]
+    },
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "Olara has advantage on saving throws to end the {@condition charmed} condition on herself, and magic can't put her to sleep."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Sight",
+      "entries": [
+        "The scout has advantage on Wisdom (Perception) checks that rely on hearing or sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Olara makes two melee attacks or two ranged attacks."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Longbow",
+      "entries": [
+        "Ranged atk +4 to hit, ranged 150/600 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

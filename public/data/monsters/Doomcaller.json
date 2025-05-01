@@ -1,0 +1,171 @@
+{
+  "name": "Doomcaller",
+  "source": "GHLoE",
+  "page": 47,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 40,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 8,
+  "dex": 17,
+  "con": 17,
+  "int": 14,
+  "wis": 12,
+  "cha": 21,
+  "skills": {
+    "arcana": "+7",
+    "deception": "+10",
+    "insight": "+6",
+    "perception": "+6",
+    "persuasion": "+10",
+    "religion": "+7"
+  },
+  "passive": 16,
+  "languages": [
+    "all"
+  ],
+  "cr": "15",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The doomcaller has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage, and the target has disadvantage on their next attack roll. Additionally, all attacks against the target by allies of the doomcaller are made with advantage until the start of the doomcaller's next turn."
+      ]
+    },
+    {
+      "name": "Summon Fiend (1/Day)",
+      "entries": [
+        "The doomcaller chooses what to summon and attempts a magical summoning. A doomcaller has a 60 percent chance of summoning {@dice 1d6} succubi or {@dice 1d4} barbed devils. A summoned fiend appears in an unoccupied space within 60 feet of its summoner, does as it pleases, and can't summon other fiends. The summoned fiend remains for 1 minute, until it or its summoner dies, or until its summoner takes a bonus action to dismiss it."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The doomcaller is an 18th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 18}, {@hit 10} to hit with spell attacks). It has the following spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "hunter sense|GHLoE",
+            "message",
+            "shocking grasp",
+            "true strike"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "magic missile",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "bestow curse",
+            "fireball"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "consume mind|GHLoE"
+          ]
+        },
+        "5": {
+          "spells": [
+            "magic mirror|GHLoE",
+            "scrying"
+          ]
+        },
+        "6": {
+          "spells": [
+            "disintegrate"
+          ]
+        },
+        "7": {
+          "spells": [
+            "arboreal curse|GHLoE"
+          ]
+        },
+        "8": {
+          "spells": [
+            "mind blank"
+          ]
+        },
+        "9": {
+          "spells": [
+            "gate"
+          ]
+        }
+      },
+      "footerEntries": [
+        "*The doomcaller casts this spell on itself before combat."
+      ],
+      "ability": "cha",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

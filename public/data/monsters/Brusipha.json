@@ -1,0 +1,143 @@
+{
+  "name": "Brusipha",
+  "source": "BMT",
+  "page": 127,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "minotaur",
+    "warlock"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 40
+  },
+  "str": 18,
+  "dex": 11,
+  "con": 16,
+  "int": 12,
+  "wis": 16,
+  "cha": 16,
+  "skills": {
+    "deception": "+5",
+    "perception": "+7",
+    "religion": "+3"
+  },
+  "passive": 17,
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Demonic Ritual",
+      "entries": [
+        "Brusipha can spend 3 hours performing a ritual that summons {@dice 1d3 + 1} barlguras or 1 hezrou. She must sacrifice a Medium or larger living creature to Baphomet during this ritual, and the ritual can be performed only at night. The demons vanish at dawn."
+      ]
+    },
+    {
+      "name": "Labyrinthine Recall",
+      "entries": [
+        "Brusipha can perfectly recall any path she has traveled."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Brusipha makes two Eldritch Blast attacks."
+      ]
+    },
+    {
+      "name": "Eldritch Blast",
+      "entries": [
+        "Ranged Spell atk +5 to hit, range 120 ft., one target. 8 (1d10 + 3 damage) force damage."
+      ]
+    },
+    {
+      "name": "Gore",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 8 (1d8 + 4 damage) piercing damage plus 4 (1d8 damage) necrotic damage. If Brusipha moved at least 10 feet straight toward the target immediately before she hit, the target takes an extra 4 (1d8 damage) piercing damage, and if the target is a creature, it must succeed on a DC 15 Strength saving throw or be pushed up to 10 feet from Brusipha and have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Incite the Hunters (Recharges after a Short or Long Rest)",
+      "entries": [
+        "Brusipha allows each ally within 30 feet of herself that has the Unerring Tracker trait to make one weapon attack as a reaction against the target of that ally's Unerring Tracker."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Brusipha casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "will": [
+        "Prestidigitation",
+        "Speak with Animals"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

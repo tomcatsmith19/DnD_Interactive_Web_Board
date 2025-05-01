@@ -1,0 +1,133 @@
+{
+  "name": "Inspired",
+  "source": "ERLW",
+  "page": 294,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 40,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 10,
+  "int": 16,
+  "wis": 10,
+  "cha": 16,
+  "skills": {
+    "deception": "+7",
+    "insight": "+2",
+    "persuasion": "+7"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Quori"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dual Mind",
+      "entries": [
+        "The Inspired has advantage on Wisdom saving throws."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The Inspired makes two crysteel dagger attacks. It can replace one attack with vicious mockery."
+      ]
+    },
+    {
+      "name": "Crysteel Dagger",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage plus 10 (3d6 damage) force damage."
+      ]
+    },
+    {
+      "name": "Vicious Mockery (Cantrip)",
+      "entries": [
+        "The Inspired unleashes a string of insults laced with subtle enchantments at one creature it can see within 60 feet of it. If the target can hear the Inspired, the target must succeed on a DC 13 Wisdom saving throw or take 2 (1d4 damage) psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "headerEntries": [
+        "The Inspired's spellcasting ability is Intelligence (spell save {@dc 13}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "mage hand",
+        "vicious mockery"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

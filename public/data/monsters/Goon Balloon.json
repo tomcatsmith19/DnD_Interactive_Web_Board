@@ -1,0 +1,86 @@
+{
+  "name": "Goon Balloon",
+  "source": "MCV1SC",
+  "page": 9,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 6,
+  "speed": {
+    "walk": 20,
+    "climb": 20
+  },
+  "str": 10,
+  "dex": 11,
+  "con": 14,
+  "int": 11,
+  "wis": 14,
+  "cha": 4,
+  "skills": {
+    "perception": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "Deep Speech"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Burst",
+      "entries": [
+        "The goon balloon bursts when it drops to 0 hit points, releasing noxious gas in a 10-foot-radius sphere centered on itself. Creatures in that area must succeed on a {@dc 12} Constitution saving throw or be {@condition poisoned} for 1 minute. A {@condition poisoned} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The goon balloon doesn't require air, food, or drink."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The goon balloon makes two Claw attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 3 (1d6 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Scintillating Eye",
+      "entries": [
+        "Magical, kaleidoscopic light emanates from one of the goon balloon's eyes as the goon balloon targets one creature it can see within 30 feet of itself. The target must make a DC 12 Wisdom saving throw, taking 6 (1d12 damage) psychic damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [
+    "piercing"
+  ],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

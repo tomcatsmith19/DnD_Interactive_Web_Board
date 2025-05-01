@@ -1,0 +1,228 @@
+{
+  "name": "Baalzebul",
+  "source": "MaBJoV",
+  "page": 91,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 540,
+  "speed": {
+    "walk": 20,
+    "burrow": 20,
+    "climb": 20
+  },
+  "str": 28,
+  "dex": 15,
+  "con": 25,
+  "int": 24,
+  "wis": 24,
+  "cha": 26,
+  "skills": {
+    "athletics": "+17",
+    "deception": "+24",
+    "insight": "+15",
+    "intimidation": "+16",
+    "persuasion": "+16"
+  },
+  "passive": 17,
+  "languages": [
+    "all",
+    "telepathy 100 ft."
+  ],
+  "cr": "26",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede Baalzebul's darkvision."
+      ]
+    },
+    {
+      "name": "Decipher Weakness",
+      "entries": [
+        "Baalzebul scores a critical hit on a roll of 19 or 20."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Baalzebul fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Lord of Flies",
+      "entries": [
+        "Insects do not attack Baalzebul and as a bonus action he can command any number of them within 50 feet to take move or action attacks."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Baalzebul has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "Baalzebul's slam attacks are magical."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "Baalzebul regains 20 hit points at the start of his turn. If he takes radiant damage, this trait doesn't function at the start of his next turn. Baalzebul dies only if he starts his turn with 0 hit points and is unable to regenerate."
+      ]
+    },
+    {
+      "name": "Stench of the Slug",
+      "entries": [
+        "Any creature that starts its turn within 10 feet of Baalzebul must succeed on a {@dc 21} Constitution saving throw or be {@condition poisoned} until the start of the creature's next turn. On a successful saving throw, the creature is immune to this stench for 1 hour."
+      ]
+    },
+    {
+      "name": "Undead Mastery",
+      "entries": [
+        "When casting animate dead, Baalzebul can summon 10 additional zombies or skeletons as long as sufficient corpses are available."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Baalzebul uses his Fear and Weakness gaze (if available) and then makes two slam attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +17 to hit, reach 10 ft., one target. 14 (1d10 + 9 damage) bludgeoning damage. Baalzebul's attacks wither the limbs of opponents he strikes. Any creature hit by Baalzebul's slam attack must make a DC 21 Constitution saving throw. Failure means the target loses the use of their legs (stuck in the {@condition prone} position) or their arms (unable to cast spells or engage in attacks; lose any AC bonus from shields). Baalzebul decides whether he targets arms or legs before making the attack roll. This withering effect lasts for one minute but at the end of each of their turns the afflicted creature may repeat the saving throw."
+      ]
+    },
+    {
+      "name": "Fear and Weakness Gaze {@recharge 5}",
+      "entries": [
+        "Baalzebul activates a gaze attack and triggers two effects on everyone within 50 feet of him. The first requires a DC 21 Charisma saving throw; failure means the target is {@condition frightened} of Baalzebul as per the {@spell fear} spell. The second effect requires another DC 21 Charisma saving throw. Failure means the target suffers the effects of the {@spell ray of enfeeblement} spell. Both effects last one minute."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "Baalzebul magically teleports, along with any equipment he is wearing and carrying, up to 120 feet to an unoccupied space he can see."
+      ]
+    },
+    {
+      "name": "Summon Allies (1/Day)",
+      "entries": [
+        "Baalzebul summons {@dice 1d6} {@creature horned devil||horned devils}, {@dice 1d4} {@creature ice devil||ice devils}, or 1 {@creature pit fiend}."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Teleport",
+      "entries": [
+        "Baalzebul uses his Teleport action."
+      ]
+    },
+    {
+      "name": "Insect Gorge (Costs 2 Actions)",
+      "entries": [
+        "Baalzebul disgorges a swarm of biting flies (otherwise same as insect plague) that deals 44 ({@damage 8d10}) piercing damage and does not require {@status concentration}."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Baalzebul's innate spellcasting ability is Charisma (spell save {@dc 24}, {@hit 16} to hit with spell attacks). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "animate dead",
+        "detect evil and good",
+        "detect magic",
+        "fireball",
+        "hallow",
+        "hold monster",
+        "suggestion",
+        "teleport",
+        "true seeing"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft.",
+    "tremorsense 10 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

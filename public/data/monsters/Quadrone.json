@@ -1,0 +1,84 @@
+{
+  "name": "Quadrone",
+  "source": "MM",
+  "page": 226,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 11,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Modron"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Axiomatic Mind",
+      "entries": [
+        "The quadrone can't be compelled to act in a manner contrary to its nature or its instructions."
+      ]
+    },
+    {
+      "name": "Disintegration",
+      "entries": [
+        "If the quadrone dies, its body disintegrates into dust, leaving behind its weapons and anything else it was carrying."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The quadrone makes two fist attacks or four shortbow attacks."
+      ]
+    },
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +4 to hit, range 80/320 ft., one target. 5 (1d6 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

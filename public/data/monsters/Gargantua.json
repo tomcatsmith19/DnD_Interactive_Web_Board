@@ -1,0 +1,80 @@
+{
+  "name": "Gargantua",
+  "source": "BGG",
+  "page": 149,
+  "size": [
+    "G"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 388,
+  "speed": {
+    "walk": 60
+  },
+  "str": 27,
+  "dex": 10,
+  "con": 26,
+  "int": 9,
+  "wis": 16,
+  "cha": 18,
+  "skills": {},
+  "passive": 13,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "21",
+  "prof_bonus": 7,
+  "traits": [
+    {
+      "name": "Weird Aura",
+      "entries": [
+        "At the start of each of the gargantua's turns, each creature of the gargantua's choice within 30 feet of it must make a {@dc 19} Wisdom saving throw. On a failed save, a target sees the gargantua as a manifestation of the target's worst fears; it takes 17 ({@damage 5d6}) psychic damage and has the {@condition frightened} condition until the start of the target's next turn. On a successful save, a target is immune to this gargantua's Weird Aura for 24 hours."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gargantua makes two Slam or Rock attacks."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +15 to hit, reach 20 ft., one target. 27 (3d12 + 8 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +15 to hit, range 120/480 ft., one target. 24 (3d10 + 8 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [
+    "force",
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

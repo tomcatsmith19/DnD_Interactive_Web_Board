@@ -1,0 +1,84 @@
+{
+  "name": "Don-Jon Raskin",
+  "source": "DIP",
+  "page": 56,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 44,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 10,
+  "con": 13,
+  "int": 12,
+  "wis": 10,
+  "cha": 14,
+  "skills": {
+    "deception": "+4",
+    "persuasion": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Brave",
+      "entries": [
+        "Don-Jon has advantage on saving throws against being {@condition frightened}."
+      ]
+    },
+    {
+      "name": "Not Dead Yet (Recharges after a Long Rest)",
+      "entries": [
+        "If damage reduces Don-Jon to 0 hit points, he drops to 1 hit point instead and gains advantage on attack rolls until the end of his next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Don-Jon makes three melee attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +2 to hit, reach 5 ft. or range 20/60 ft., one target. 2 (1d4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Sling",
+      "entries": [
+        "Ranged atk +2 to hit, range 30/120 ft., one target. 2 (1d4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

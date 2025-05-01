@@ -1,0 +1,158 @@
+{
+  "name": "Amnizu",
+  "source": "MTF",
+  "page": 164,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "devil"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "21"
+  ],
+  "hp": 202,
+  "speed": {
+    "walk": 30,
+    "fly": 40
+  },
+  "str": 11,
+  "dex": 13,
+  "con": 16,
+  "int": 20,
+  "wis": 12,
+  "cha": 18,
+  "skills": {
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Infernal",
+    "telepathy 1,000 ft."
+  ],
+  "cr": "18",
+  "prof_bonus": 6,
+  "traits": [
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the amnizu's darkvision."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The amnizu has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The amnizu uses Poison Mind. It also makes two attacks: one with its whip and one with its Disruptive Touch."
+      ]
+    },
+    {
+      "name": "Taskmaster Whip",
+      "entries": [
+        "Melee atk +11 to hit, reach 10 ft., one target. 10 (2d4 + 5 damage) slashing damage plus 33 (6d10 damage) force damage."
+      ]
+    },
+    {
+      "name": "Disruptive Touch",
+      "entries": [
+        "{@atk ms} +11 to hit, reach 5 ft., one target. 44 (8d10 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Poison Mind",
+      "entries": [
+        "The amnizu targets one or two creatures that it can see within 60 feet of it. Each target must succeed on a DC 19 Wisdom saving throw or take 26 (4d12 damage) necrotic damage and is {@condition blinded} until the start of the amnizu's next turn."
+      ]
+    },
+    {
+      "name": "Forgetfulness {@recharge}",
+      "entries": [
+        "The amnizu targets one creature it can see within 60 feet of it. That creature must make a DC 18 Intelligence saving throw and on a failure the target is {@condition stunned} for 1 minute. A {@condition stunned} creature repeats the saving throw at the end of each of its turns, ending the effect on itself on a success. If the target remains {@condition stunned} for the full minute, it forgets everything it sensed, experienced, and learned during the last 5 hours."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The amnizu's innate spellcasting ability is Intelligence (spell save {@dc 19}, {@hit 11} to hit with spell attacks). The amnizu can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "charm person",
+        "command"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,149 @@
+{
+  "name": "Yuan-ti Pit Master",
+  "source": "VGM",
+  "page": 206,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [
+    "shapechanger",
+    "yuan-ti"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 88,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 13,
+  "int": 14,
+  "wis": 12,
+  "cha": 16,
+  "skills": {
+    "deception": "+6",
+    "stealth": "+5"
+  },
+  "passive": 11,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "entries": [
+        "The yuan-ti can use its action to polymorph into a Medium snake or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It doesn't change form if it dies."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The yuan-ti has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Poison's Disciple (2/Day)",
+      "entries": [
+        "The first time the yuan-ti hits with a melee attack on its turn, it can deal an extra 16 ({@damage 3d10}) poison damage to the target."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack (Yuan-ti Form Only)",
+      "entries": [
+        "The yuan-ti makes two bite attacks using its snake arms."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 5 (1d4 + 3 damage) piercing damage plus 7 (2d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Merrshaulk's Slumber (1/Day)",
+      "entries": [
+        "The yuan-ti targets up to five creatures that it can see within 60 feet of it. Each target must succeed on a DC 13 Constitution saving throw or fall into a magical sleep and be {@condition unconscious} for 10 minutes. A sleeping target awakens if it takes damage or if someone uses an action to shake or slap it awake. This magical sleep has no effect on a creature immune to being {@condition charmed}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (Yuan-ti Form Only)",
+      "headerEntries": [
+        "The yuan-ti's innate spellcasting ability is Charisma (spell save {@dc 13}). The yuan-ti can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "animal friendship"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft. (penetrates magical darkness)"
+  ],
+  "environment": [
+    "underdark",
+    "forest",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

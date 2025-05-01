@@ -1,0 +1,113 @@
+{
+  "name": "Vampiric Mist",
+  "source": "MTF",
+  "page": 246,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 6,
+  "dex": 16,
+  "con": 16,
+  "int": 6,
+  "wis": 12,
+  "cha": 7,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Life Sense",
+      "entries": [
+        "The mist can sense the location of any creature within 60 feet of it, unless that creature's type is construct or undead."
+      ]
+    },
+    {
+      "name": "Forbiddance",
+      "entries": [
+        "The mist can't enter a residence without an invitation from one of the occupants."
+      ]
+    },
+    {
+      "name": "Misty Form",
+      "entries": [
+        "The mist can occupy another creature's space and vice versa. In addition, if air can pass through a space, the mist can pass through it without squeezing. Each foot of movement in water costs it 2 extra feet, rather than 1 extra foot. The mist can't manipulate objects in any way that requires fingers or manual dexterity."
+      ]
+    },
+    {
+      "name": "Sunlight Hypersensitivity",
+      "entries": [
+        "The mist takes 10 radiant damage whenever it starts its turn in sunlight. While in sunlight, the mist has disadvantage on attack rolls and ability checks."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Life Drain",
+      "entries": [
+        "The mist touches one creature in its space. The target must succeed on a DC 13 Constitution saving throw (undead and constructs automatically succeed), or it takes 10 (2d6 + 3 damage) necrotic damage, the mist regains 10 hit points, and the target's hit point maximum is reduced by an amount equal to the necrotic damage taken. This reduction lasts until the target finishes a long rest. The target dies if its hit point maximum is reduced to 0."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "resist": [
+    "acid",
+    "cold",
+    "lightning",
+    "necrotic",
+    "thunder",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "arctic",
+    "coastal",
+    "forest",
+    "grassland",
+    "mountain",
+    "swamp",
+    "underdark",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

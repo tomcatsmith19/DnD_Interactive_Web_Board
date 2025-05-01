@@ -1,0 +1,143 @@
+{
+  "name": "War Priest",
+  "source": "VGM",
+  "page": 218,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 117,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 10,
+  "con": 14,
+  "int": 11,
+  "wis": 17,
+  "cha": 13,
+  "skills": {
+    "intimidation": "+5",
+    "religion": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "any two languages"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The priest makes two melee attacks."
+      ]
+    },
+    {
+      "name": "Maul",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 10 (2d6 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The priest is a 9th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). It has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "mending",
+            "sacred flame",
+            "spare the dying"
+          ]
+        },
+        "1": {
+          "spells": [
+            "divine favor",
+            "guiding bolt",
+            "healing word",
+            "shield of faith"
+          ]
+        },
+        "2": {
+          "spells": [
+            "lesser restoration",
+            "magic weapon",
+            "prayer of healing",
+            "silence",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "beacon of hope",
+            "crusader's mantle",
+            "dispel magic",
+            "revivify",
+            "spirit guardians",
+            "water walk"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "freedom of movement",
+            "guardian of faith",
+            "stoneskin"
+          ]
+        },
+        "5": {
+          "spells": [
+            "flame strike",
+            "mass cure wounds",
+            "hold monster"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "desert",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

@@ -1,0 +1,92 @@
+{
+  "name": "Boss Augustus",
+  "source": "BMT",
+  "page": 82,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": {
+      "number": 40,
+      "condition": "in wolf or hybrid form"
+    }
+  },
+  "str": 18,
+  "dex": 16,
+  "con": 17,
+  "int": 14,
+  "wis": 15,
+  "cha": 12,
+  "skills": {
+    "perception": "+10",
+    "sleight of hand": "+7",
+    "stealth": "+7"
+  },
+  "passive": 20,
+  "languages": [
+    "Common",
+    "Thieves' cant (can't speak in wolf form)"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Regeneration",
+      "entries": [
+        "Augustus regains 10 hit points at the start of his turn. If he takes damage from a silver weapon, this trait doesn't function at the start of his next turn. Augustus dies only if he starts his turn with 0 hit points and doesn't regenerate."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Augustus wields a +2 Longsword."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Augustus makes any combination of two Bite, Claw, or Magic Longsword attacks."
+      ]
+    },
+    {
+      "name": "Bite (Wolf or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 26 (5d8 + 4 damage) piercing damage. If the target is a Humanoid, it must succeed on a DC 15 Constitution saving throw or be cursed with lycanthropy. While cursed in this way, the target retains its alignment, languages, and equipment but otherwise uses the werewolf stat block, excluding actions that require equipment the target doesn't have. During any night when there's a full moon in the sky, the target becomes an NPC under the DM's control and remains so until the night ends. A {@spell Remove Curse} spell or similar magic ends this curse."
+      ]
+    },
+    {
+      "name": "Claw (Wolf or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 21 (5d6 + 4 damage) piercing damage. If the target is a creature, it must succeed on a DC 16 Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Magic Longsword (Humanoid or Hybrid Form Only)",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 28 (4d10 + 6 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

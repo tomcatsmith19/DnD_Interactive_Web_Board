@@ -1,0 +1,100 @@
+{
+  "name": "Orc Blade of Ilneval",
+  "source": "VGM",
+  "page": 183,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "orc"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 60,
+  "speed": {
+    "walk": 30
+  },
+  "str": 17,
+  "dex": 11,
+  "con": 17,
+  "int": 10,
+  "wis": 12,
+  "cha": 14,
+  "skills": {
+    "insight": "+3",
+    "intimidation": "+4",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see."
+      ]
+    },
+    {
+      "name": "Foe Smiter of Ilneval",
+      "entries": [
+        "The orc deals an extra die of damage when it hits with a longsword attack (included in the attack)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The orc makes two melee attacks with its longsword or two ranged attacks with its javelins. If Ilneval's Command is available to use, the orc can use it after these attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 12 (2d8 + 3 damage) slashing damage, or 14 (2d10 + 3 damage) slashing damage when used with two hands."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 30/120 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Ilneval's Command {@recharge 4}",
+      "entries": [
+        "Up to three allied orcs within 120 feet of this orc that can hear it can use their reactions to each make one weapon attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

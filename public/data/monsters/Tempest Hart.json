@@ -1,0 +1,82 @@
+{
+  "name": "Tempest Hart",
+  "source": "MCV4EC",
+  "page": null,
+  "size": [
+    "H"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 147,
+  "speed": {
+    "walk": 50,
+    "fly": 50
+  },
+  "str": 21,
+  "dex": 17,
+  "con": 18,
+  "int": 3,
+  "wis": 18,
+  "cha": 14,
+  "skills": {
+    "perception": "+12"
+  },
+  "passive": 22,
+  "languages": [],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If the hart fails a saving throw, it can choose to succeed instead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hart makes a Lightning Antlers attack and a Thunder Hooves attack."
+      ]
+    },
+    {
+      "name": "Lightning Antlers",
+      "entries": [
+        "Melee atk +9 to hit, reach 15 ft., one target. 16 (2d10 + 5 damage) lightning damage. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or have the {@condition stunned} condition until the start of the hart's next turn."
+      ]
+    },
+    {
+      "name": "Thunder Hooves",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 14 (2d8 + 5 damage) thunder damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion"
+  ],
+  "resist": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "thunder"
+  ],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

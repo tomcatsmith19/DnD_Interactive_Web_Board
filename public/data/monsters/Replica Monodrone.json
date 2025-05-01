@@ -1,0 +1,76 @@
+{
+  "name": "Replica Monodrone",
+  "source": "OoW",
+  "page": 132,
+  "size": [
+    "M"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 5,
+  "speed": {
+    "walk": 30
+  },
+  "str": 10,
+  "dex": 13,
+  "con": 12,
+  "int": 4,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Modron",
+    "can understand Common but speaks only preprogrammed responses"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Axiomatic Mind",
+      "entries": [
+        "The monodrone can't be compelled to act in a manner contrary to its nature or its instructions."
+      ]
+    },
+    {
+      "name": "Disintegration",
+      "entries": [
+        "If the monodrone dies, its body disintegrates into dust, leaving behind its weapons and anything else it was carrying."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +2 to hit, reach 5 ft. or range 30/120 ft., one target. 3 (1d6 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

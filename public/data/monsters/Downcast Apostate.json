@@ -1,0 +1,126 @@
+{
+  "name": "Downcast Apostate",
+  "source": "GHLoE",
+  "page": 49,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "downcast"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 17,
+  "int": 13,
+  "wis": 12,
+  "cha": 18,
+  "skills": {
+    "deception": "+8",
+    "intimidation": "+8",
+    "perception": "+5",
+    "persuasion": "+8",
+    "religion": "+5",
+    "stealth": "+6"
+  },
+  "passive": 15,
+  "languages": [
+    "Celestial and two other languages"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Apostate's Weapons",
+      "entries": [
+        "The downcast apostate's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Morningstar",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) bludgeoning damage and 18 (4d8 damage) necrotic or radiant damage (downcast apostate's choice)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The downcast apostate's spellcasting ability is Charisma. The apostate can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "alter self",
+        "detect magic",
+        "invisibility",
+        "jump",
+        "mage armor",
+        "thaumaturgy"
+      ],
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft.",
+    "truesight 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

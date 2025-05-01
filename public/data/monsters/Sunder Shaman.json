@@ -1,0 +1,90 @@
+{
+  "name": "Sunder Shaman",
+  "source": "GGR",
+  "page": 202,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 138,
+  "speed": {
+    "walk": 40
+  },
+  "str": 23,
+  "dex": 15,
+  "con": 21,
+  "int": 10,
+  "wis": 12,
+  "cha": 9,
+  "skills": {
+    "athletics": "+10",
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Giant"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Reckless",
+      "entries": [
+        "At the start of its turn, the giant can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn."
+      ]
+    },
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The giant deals double damage to objects and structures."
+      ]
+    },
+    {
+      "name": "Stone Camouflage",
+      "entries": [
+        "The giant has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The giant makes two slam attacks. The first of those attacks that hits deals an extra 18 ({@dice 4d8}) damage if the giant has taken damage since its last turn."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "Melee atk +10 to hit, reach 15 ft., one target. 24 (4d8 + 6 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "Ranged atk +10 to hit, range 60/240 ft., one target. 28 (4d10 + 6 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 18 Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

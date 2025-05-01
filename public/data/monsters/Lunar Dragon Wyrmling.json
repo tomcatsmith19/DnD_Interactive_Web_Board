@@ -1,0 +1,82 @@
+{
+  "name": "Lunar Dragon Wyrmling",
+  "source": "BAM",
+  "page": 35,
+  "size": [
+    "M"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 37,
+  "speed": {
+    "walk": 40,
+    "burrow": 10,
+    "fly": 40
+  },
+  "str": 15,
+  "dex": 12,
+  "con": 16,
+  "int": 6,
+  "wis": 10,
+  "cha": 9,
+  "skills": {
+    "perception": "+4",
+    "stealth": "+5"
+  },
+  "passive": 14,
+  "languages": [
+    "Draconic"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The dragon can burrow through solid rock at half its burrowing speed and leaves a 5-foot-diameter tunnel in its wake."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The dragon doesn't require air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 5 (1d6 + 2 damage) piercing damage plus 3 (1d6 damage) cold damage."
+      ]
+    },
+    {
+      "name": "Cold Breath {@recharge 5}",
+      "entries": [
+        "The dragon exhales a blast of frost in a 15-foot cone. Each creature in the cone must make a DC 13 Constitution saving throw. On a failed save, the creature takes 13 (3d8 damage) cold damage, and its speed is halved until the end of its next turn. On a successful save, the creature takes half as much damage, and its speed isn't reduced."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "cold"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

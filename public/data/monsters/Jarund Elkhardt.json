@@ -1,0 +1,85 @@
+{
+  "name": "Jarund Elkhardt",
+  "source": "IDRotF",
+  "page": 305,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 104,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 10,
+  "con": 15,
+  "int": 12,
+  "wis": 14,
+  "cha": 18,
+  "skills": {
+    "athletics": "+7",
+    "intimidation": "+7",
+    "survival": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Brute",
+      "entries": [
+        "A melee weapon deals one extra die of its damage when Jarund hits with it (included in the attack)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Jarund makes three melee attacks."
+      ]
+    },
+    {
+      "name": "Warhammer",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage, or 15 (2d10 + 4 damage) bludgeoning damage when used with two hands."
+      ]
+    },
+    {
+      "name": "Shield",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 11 (2d6 + 4 damage) bludgeoning damage, and Jarund pushes the target 5 feet away from him if it's Large or smaller. Jarund then enters the space vacated by the target. If the target is pushed to within 5 feet of a creature friendly to Jarund, that creature can make an attack against the target as a reaction."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 30/120 ft., one target. 11 (2d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

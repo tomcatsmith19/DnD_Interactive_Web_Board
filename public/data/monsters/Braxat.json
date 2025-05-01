@@ -1,0 +1,126 @@
+{
+  "name": "Braxat",
+  "source": "BAM",
+  "page": 15,
+  "size": [
+    "H"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 162,
+  "speed": {
+    "walk": 40
+  },
+  "str": 26,
+  "dex": 8,
+  "con": 22,
+  "int": 14,
+  "wis": 13,
+  "cha": 7,
+  "skills": {},
+  "passive": 11,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Intellect Fortress",
+      "entries": [
+        "The braxat's AC includes its Intelligence modifier."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The braxat makes two Greatclub attacks."
+      ]
+    },
+    {
+      "name": "Greatclub",
+      "entries": [
+        "Melee atk +12 to hit, reach 10 ft., one target. 21 (3d8 + 8 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Acid Breath {@recharge}",
+      "entries": [
+        "The braxat exhales a 15-foot cone of acid. Each creature in the cone must make a DC 18 Constitution saving throw, taking 26 (4d12 damage) acid damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The braxat casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 14}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "psychic"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

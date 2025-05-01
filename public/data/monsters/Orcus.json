@@ -1,0 +1,191 @@
+{
+  "name": "Orcus",
+  "source": "MTF",
+  "page": 153,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "17",
+    "20"
+  ],
+  "hp": 405,
+  "speed": {
+    "walk": 40,
+    "fly": 40
+  },
+  "str": 27,
+  "dex": 14,
+  "con": 25,
+  "int": 20,
+  "wis": 20,
+  "cha": 25,
+  "skills": {
+    "arcana": "+13",
+    "perception": "+13"
+  },
+  "passive": 22,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "26",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Wand of Orcus",
+      "entries": [
+        "The wand has 7 charges, and any of its properties that require a saving throw have a save DC of 18. While holding it, Orcus can use an action to cast {@spell animate dead}, {@spell blight}, or {@spell speak with dead}. Alternatively, he can expend 1 or more of the wand's charges to cast one of the following spells from it: {@spell circle of death} (1 charge), {@spell finger of death} (1 charge), or {@spell power word kill} (2 charges). The wand regains {@dice 1d4 + 3} charges daily at dawn.",
+        "While holding the wand, Orcus can use an action to conjure undead creatures whose combined average hit points don't exceed 500. These undead magically rise up from the ground or otherwise form in unoccupied spaces within 300 feet of Orcus and obey his commands until they are destroyed or until he dismisses them as an action. Once this property of the wand is used, the property can't be used again until the next dawn."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Orcus fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Orcus has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "Orcus's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Master of Undeath",
+      "entries": [
+        "When Orcus casts {@spell animate dead} or {@spell create undead}, he chooses the level at which the spell is cast, and the creatures created by the spells remain under his control indefinitely. Additionally, he can cast {@spell create undead} even when it isn't night."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Orcus makes two Wand of Orcus attacks."
+      ]
+    },
+    {
+      "name": "Wand of Orcus",
+      "entries": [
+        "Melee atk +19 to hit, reach 10 ft., one target. 21 (3d8 + 8 damage) bludgeoning damage plus 13 (2d12 damage) necrotic damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +16 to hit, reach 10 ft., one target. 21 (3d8 + 8 damage) piercing damage plus 9 (2d8 damage) poison damage."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Tail",
+      "entries": [
+        "Orcus makes one tail attack."
+      ]
+    },
+    {
+      "name": "A Taste of Undeath",
+      "entries": [
+        "Orcus casts {@spell chill touch} (17th level)."
+      ]
+    },
+    {
+      "name": "Creeping Death (Costs 2 Actions)",
+      "entries": [
+        "Orcus chooses a point on the ground that he can see within 100 feet of him. A cylinder of swirling necrotic energy 60 feet tall and with a 10-foot radius rises from that point and lasts until the end of Orcus's next turn. Creatures in that area have vulnerability to necrotic damage."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Orcus's spellcasting ability is Charisma (spell save {@dc 23}, {@hit 15} to hit with spell attacks). He can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "chill touch",
+        "detect magic"
+      ],
+      "daily": {
+        "1": [
+          "time stop"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "necrotic",
+    "poison",
+    "bludgeoning (that is nonmagical)",
+    "piercing (that is nonmagical)",
+    "slashing (that is nonmagical)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,86 @@
+{
+  "name": "Plasmoid Explorer",
+  "source": "BAM",
+  "page": 43,
+  "size": [
+    "M"
+  ],
+  "type": "ooze",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 12,
+  "con": 12,
+  "int": 10,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "perception": "+4",
+    "survival": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The plasmoid can squeeze through a space as narrow as 1 inch wide, provided it is wearing and carrying nothing. It has advantage on ability checks it makes to initiate or escape a grapple."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The plasmoid can hold its breath for 1 hour."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The plasmoid makes two Pseudopod attacks. It can replace one of those attacks with a Javelin attack."
+      ]
+    },
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 3 (1d4 + 1 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Javelin",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 30/120 ft., one target. 4 (1d6 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

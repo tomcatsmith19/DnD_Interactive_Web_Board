@@ -1,0 +1,115 @@
+{
+  "name": "Knight of Eldraine",
+  "source": "MCV4EC",
+  "page": null,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "20"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 12,
+  "con": 14,
+  "int": 13,
+  "wis": 11,
+  "cha": 13,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Knightly Virtue",
+      "entries": [
+        "The knight has one of the following traits, depending on the court it serves:",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "Courage (Embereth)",
+              "entries": [
+                "The knight has advantage on Wisdom checks and Wisdom saving throws."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "Knowledge (Vantress)",
+              "entries": [
+                "The knight has advantage on Intelligence checks and Intelligence saving throws."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "Loyalty (Ardenvale)",
+              "entries": [
+                "The knight has advantage on Charisma checks and Charisma saving throws."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "Persistence (Locthwain)",
+              "entries": [
+                "The knight has advantage on Constitution saving throws."
+              ]
+            },
+            {
+              "type": "item",
+              "name": "Strength (Garenbrig)",
+              "entries": [
+                "The knight has advantage on Strength checks and Strength saving throws."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Lance",
+      "entries": [
+        "Melee atk +5 to hit, reach 10 ft., one target. 9 (1d12 + 3 damage) piercing damage plus 9 (2d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage if used with two hands, plus 9 (2d8 damage) radiant damage."
+      ]
+    },
+    {
+      "name": "Heavy Crossbow",
+      "entries": [
+        "Ranged atk +3 to hit, range 100/400 ft., one target. 6 (1d10 + 1 damage) piercing damage plus 9 (2d8 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

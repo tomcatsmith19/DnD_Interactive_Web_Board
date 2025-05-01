@@ -1,0 +1,67 @@
+{
+  "name": "Ogre Bolt Launcher",
+  "source": "MTF",
+  "page": 220,
+  "size": [
+    "L"
+  ],
+  "type": "giant",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 59,
+  "speed": {
+    "walk": 40
+  },
+  "str": 19,
+  "dex": 12,
+  "con": 16,
+  "int": 5,
+  "wis": 7,
+  "cha": 7,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Fist",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 9 (2d4 + 4 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Bolt Launcher",
+      "entries": [
+        "Ranged atk +3 to hit, range 120/480 ft., one target. 17 (3d10 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "hill",
+    "mountain"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

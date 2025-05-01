@@ -1,0 +1,203 @@
+{
+  "name": "Tarul Var",
+  "source": "TftYP",
+  "page": 244,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 105,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 16,
+  "con": 16,
+  "int": 19,
+  "wis": 14,
+  "cha": 16,
+  "skills": {
+    "arcana": "+9",
+    "history": "+9",
+    "insight": "+7",
+    "perception": "+7"
+  },
+  "passive": 17,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Infernal",
+    "Primordial",
+    "Thayan"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Focused Conjuration",
+      "entries": [
+        "While Var is {@status concentration||concentrating} on a conjuration spell, his {@status concentration} can't be broken as a result of taking damage."
+      ]
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Var fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Rejuvenation",
+      "entries": [
+        "If Var is destroyed but his phylactery remains intact, Var gains a new body in {@dice 1d10} days, regaining all his hit points and becoming active again. The new body appears within 5 feet of the phylactery."
+      ]
+    },
+    {
+      "name": "Turn Resistance",
+      "entries": [
+        "Var has advantage on saving throws against any effect that turns undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Paralyzing Touch",
+      "entries": [
+        "{@atk ms} +9 to hit, reach 5 ft., one creature. 10 (3d6 damage) cold damage. The target must succeed on a DC 17 Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Benign Transposition",
+      "entries": [
+        "Var teleports up to 30 feet to an unoccupied space he can see. Alternatively, he can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, both creatures teleport, swapping places. Var can use this feature again only after he finishes a long rest or casts a conjuration spell of 1st level or higher."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Cantrip",
+      "entries": [
+        "Var casts a cantrip."
+      ]
+    },
+    {
+      "name": "Paralyzing Touch (Costs 2 Actions)",
+      "entries": [
+        "Var uses Paralyzing Touch."
+      ]
+    },
+    {
+      "name": "Frightening Gaze (Costs 2 Actions)",
+      "entries": [
+        "Var fixes his gaze on one creature he can see within 10 feet of him. The target must succeed on a {@dc 17} Wisdom saving throw against this magic or become {@condition frightened} for 1 minute. The {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to Var's gaze for the next 24 hours."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Var is a 12th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 17}, {@hit 9} to hit with spell attacks). He has the following wizard spells prepared:",
+        "*Conjuration spell of 1st level or higher"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "fire bolt",
+            "mage hand",
+            "minor illusion",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "magic missile",
+            "shield",
+            "unseen servant"
+          ]
+        },
+        "2": {
+          "spells": [
+            "detect thoughts",
+            "flaming sphere",
+            "mirror image",
+            "scorching ray"
+          ]
+        },
+        "3": {
+          "spells": [
+            "counterspell",
+            "dispel magic",
+            "fireball"
+          ]
+        },
+        "4": {
+          "spells": [
+            "dimension door",
+            "Evard's black tentacles"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cloudkill",
+            "scrying"
+          ]
+        },
+        "6": {
+          "spells": [
+            "circle of death"
+          ]
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "lightning",
+    "necrotic",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

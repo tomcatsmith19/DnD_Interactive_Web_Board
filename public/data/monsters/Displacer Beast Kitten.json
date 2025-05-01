@@ -1,0 +1,60 @@
+{
+  "name": "Displacer Beast Kitten",
+  "source": "WBtW",
+  "page": 108,
+  "size": [
+    "S"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 13,
+  "con": 12,
+  "int": 4,
+  "wis": 10,
+  "cha": 6,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Displacement",
+      "entries": [
+        "The displacer beast projects a magical illusion that makes it appear to be standing near its actual location, causing attack rolls against it to have disadvantage. If it is hit by an attack, this trait is disrupted until the end of its next turn. This trait is also disrupted while the displacer beast is {@condition incapacitated} or has a speed of 0."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 2 bludgeoning damage plus 2 piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

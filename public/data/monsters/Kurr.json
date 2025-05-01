@@ -1,0 +1,83 @@
+{
+  "name": "Kurr",
+  "source": "OotA",
+  "page": 179,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "gnoll"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 30
+  },
+  "str": 17,
+  "dex": 15,
+  "con": 15,
+  "int": 10,
+  "wis": 11,
+  "cha": 13,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Abyssal",
+    "Gnoll"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Rampage",
+      "entries": [
+        "When Kurr reduces a creature to 0 hit points with a melee attack on its turn, Kurr can take a bonus action to move up to half its speed and make a bite attack."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gnoll makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one creature. 6 (1d6 + 3 damage) piercing damage, and the target must succeed on a DC 12 Constitution saving throw or take 7 (2d6 damage) poison damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill",
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

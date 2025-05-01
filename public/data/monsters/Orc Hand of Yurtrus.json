@@ -1,0 +1,133 @@
+{
+  "name": "Orc Hand of Yurtrus",
+  "source": "VGM",
+  "page": 184,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "orc"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 30,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 11,
+  "con": 16,
+  "int": 11,
+  "wis": 14,
+  "cha": 9,
+  "skills": {
+    "arcana": "+2",
+    "intimidation": "+1",
+    "medicine": "+4",
+    "religion": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "understands Common and Orc but can't speak"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aggressive",
+      "entries": [
+        "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Touch of the White Hand",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 9 (2d8 damage) necrotic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The orc is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). It requires no verbal components to cast its spells. The orc has the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "guidance",
+            "mending",
+            "resistance",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bane",
+            "detect magic",
+            "inflict wounds",
+            "protection from evil and good"
+          ]
+        },
+        "2": {
+          "spells": [
+            "blindness/deafness",
+            "silence"
+          ]
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "underdark",
+    "mountain",
+    "grassland",
+    "forest",
+    "hill"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

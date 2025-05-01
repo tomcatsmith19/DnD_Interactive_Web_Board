@@ -1,0 +1,84 @@
+{
+  "name": "Ithjar",
+  "source": "GHLoE",
+  "page": 94,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 30,
+    "fly": 90
+  },
+  "str": 18,
+  "dex": 20,
+  "con": 17,
+  "int": 3,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "acrobatics": "+8",
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The ithjar has advantage on Wisdom (Perception) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Slippery Serpent",
+      "entries": [
+        "The ithjar has advantage on ability checks and saving throws made to escape a grapple or saving throws to avoid being {@condition paralyzed} or {@condition restrained}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ithjar attacks once with its bite and once with its tail."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 15 (2d10 + 4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 13 (2d8 + 4 damage) bludgeoning damage. If the target is a Medium or smaller creature, it is {@condition grappled} (escape DC 15). Until this grapple ends, the target is {@condition restrained}, and the ithjar can't use its tail on another target."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

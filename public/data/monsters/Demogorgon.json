@@ -1,0 +1,178 @@
+{
+  "name": "Demogorgon",
+  "source": "MTF",
+  "page": 144,
+  "size": [
+    "H"
+  ],
+  "type": "fiend",
+  "tags": [
+    "demon"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "22"
+  ],
+  "hp": 406,
+  "speed": {
+    "walk": 50,
+    "swim": 50
+  },
+  "str": 29,
+  "dex": 14,
+  "con": 26,
+  "int": 20,
+  "wis": 17,
+  "cha": 25,
+  "skills": {
+    "insight": "+11",
+    "perception": "+19"
+  },
+  "passive": 29,
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "cr": "26",
+  "prof_bonus": 8,
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "entries": [
+        "If Demogorgon fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Demogorgon has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "Demogorgon's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Two Heads",
+      "entries": [
+        "Demogorgon has advantage on saving throws against being {@condition blinded}, {@condition deafened}, {@condition stunned}, or knocked {@condition unconscious}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Demogorgon makes two tentacle attacks."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +17 to hit, reach 10 ft., one target. 28 (3d12 + 9 damage) bludgeoning damage. If the target is a creature, it must succeed on a DC 23 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if its hit point maximum is reduced to 0."
+      ]
+    },
+    {
+      "name": "Gaze",
+      "entries": [
+        "Demogorgon turns his magical gaze toward one creature that he can see within 120 feet of him. That target must make a DC 23 Wisdom saving throw. Unless the target is {@condition incapacitated}, it can avert its eyes to avoid the gaze and to automatically succeed on the save. If the target does so, it can't see Demogorgon until the start of his next turn. If the target looks at him in the meantime, it must immediately make the save.",
+        "If the target fails the save, the target suffers one of the following effects of Demogorgon's choice or at random:",
+        "1. Beguiling Gaze. The target is {@condition stunned} until the start of Demogorgon's next turn or until Demogorgon is no longer within line of sight.",
+        "2. Hypnotic Gaze. The target is {@condition charmed} by Demogorgon until the start of Demogorgon's next turn. Demogorgon chooses how the {@condition charmed} target uses its actions, reactions, and movement. Because this gaze requires Demogorgon to focus both heads on the target, he can't use his Maddening Gaze legendary action until the start of his next turn.",
+        "3. Insanity Gaze. The target suffers the effect of the {@spell confusion} spell without making a saving throw. The effect lasts until the start of Demogorgon's next turn. Demogorgon doesn't need to concentrate on the spell."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Tail",
+      "entries": [
+        "{@atk mw} {@hit 17} to hit, reach 15 ft., one target. {@h}20 ({@damage 2d10 + 9}) bludgeoning damage plus 11 ({@damage 2d10}) necrotic damage."
+      ]
+    },
+    {
+      "name": "Maddening Gaze",
+      "entries": [
+        "Demogorgon uses his Gaze action, and must choose either the Beguiling Gaze or the Insanity Gaze effect."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Demogorgon's spellcasting ability is Charisma (spell save {@dc 23}). Demogorgon can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect magic",
+        "major image"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison",
+    "bludgeoning (that is nonmagical)",
+    "piercing (that is nonmagical)",
+    "slashing (that is nonmagical)"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

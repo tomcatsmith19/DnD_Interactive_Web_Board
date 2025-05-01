@@ -1,0 +1,92 @@
+{
+  "name": "Relentless Slasher",
+  "source": "VRGR",
+  "page": 242,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [],
+  "ac": [
+    "15"
+  ],
+  "hp": 84,
+  "speed": {
+    "walk": 40
+  },
+  "str": 12,
+  "dex": 18,
+  "con": 14,
+  "int": 14,
+  "wis": 15,
+  "cha": 16,
+  "skills": {
+    "athletics": "+7",
+    "perception": "+5",
+    "survival": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "understands all languages but can't speak"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Legendary Resistance (1/Day)",
+      "entries": [
+        "If the slasher fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Shrouded Presence",
+      "entries": [
+        "The slasher is immune to any effect that would sense its emotions or read its thoughts, and it can't be detected by abilities that sense Fiends."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The slasher makes two Slasher's Knife attacks."
+      ]
+    },
+    {
+      "name": "Slasher's Knife",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 30/60 ft., one target. 6 (1d4 + 4 damage) slashing damage plus 21 (6d6 damage) necrotic damage. If the target is a creature, it suffers a lingering wound that causes it to take 7 (2d6 damage) necrotic damage at the start of each of its turns. Each time the slasher hits the wounded target with this attack, the damage dealt by the wound increases by 3 ({@dice 1d6}). The wound ends if the target regains hit points or if a creature uses an action to stanch the wound, which requires a successful DC 15 Wisdom (Medicine) check."
+      ]
+    }
+  ],
+  "legendary": [
+    {
+      "name": "Slice",
+      "entries": [
+        "{@atk mw,rw} {@hit 7} to hit, reach 5 ft. or range 30/60 ft., one target. {@h}7 ({@damage 1d6 + 4}) slashing damage."
+      ]
+    },
+    {
+      "name": "Vanishing Strike (Costs 3 Actions)",
+      "entries": [
+        "The slasher makes one Slasher's Knife attack. After the attack hits or misses, the slasher can teleport up to 30 feet to an unoccupied space it can see."
+      ]
+    }
+  ],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

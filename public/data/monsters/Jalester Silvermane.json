@@ -1,0 +1,85 @@
+{
+  "name": "Jalester Silvermane",
+  "source": "WDH",
+  "page": 205,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "L",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 71,
+  "speed": {
+    "walk": 30
+  },
+  "str": 14,
+  "dex": 14,
+  "con": 13,
+  "int": 12,
+  "wis": 14,
+  "cha": 13,
+  "skills": {
+    "athletics": "+4",
+    "survival": "+4"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Jalester carries a {@item badge of the Watch|wdh}."
+      ]
+    },
+    {
+      "name": "Second Wind (Recharges after a Short or Long Rest)",
+      "entries": [
+        "As a bonus action, Jalester can regain 16 ({@dice 1d10 + 11}) hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Jalester makes two weapon attacks."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) slashing damage, or 7 (1d10 + 2 damage) slashing damage when used with two hands."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage. Or Ranged Weapon Attack: +4 to hit, range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,83 @@
+{
+  "name": "Giant Wolf Spider",
+  "source": "MM",
+  "page": 330,
+  "size": [
+    "M"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 13,
+  "int": 3,
+  "wis": 12,
+  "cha": 4,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+7"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Web Sense",
+      "entries": [
+        "While in contact with a web, the spider knows the exact location of any other creature in contact with the same web."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": [
+        "The spider ignores movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one creature. 4 (1d6 + 1 damage) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 7 (2d6 damage) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but {@condition poisoned} for 1 hour, even after regaining hit points, and is {@condition paralyzed} while {@condition poisoned} in this way."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "grassland",
+    "forest",
+    "hill",
+    "desert",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

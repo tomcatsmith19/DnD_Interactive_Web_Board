@@ -1,0 +1,83 @@
+{
+  "name": "Zarak",
+  "source": "WBtW",
+  "page": 222,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "orc"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 37,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 16,
+  "con": 16,
+  "int": 11,
+  "wis": 15,
+  "cha": 6,
+  "skills": {
+    "acrobatics": "+7",
+    "insight": "+6",
+    "perception": "+6",
+    "stealth": "+7"
+  },
+  "passive": 16,
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Zarak carries a potion of invisibility."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Zarak makes two Dagger attacks."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage, plus an extra 5 (2d4 damage) piercing damage if the target is a creature and Zarak has at least 18 hit points."
+      ]
+    },
+    {
+      "name": "Garrote",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one Humanoid. 8 (2d4 + 3 damage) slashing damage, and the target is {@condition grappled} (escape DC 11). Until this grapple ends, the target takes 8 (2d4 + 3 damage) slashing damage at the start of each of its turns, and Zarak can't grapple another creature or use Assassin's Whim."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

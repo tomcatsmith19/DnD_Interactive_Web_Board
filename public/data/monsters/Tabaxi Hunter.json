@@ -1,0 +1,89 @@
+{
+  "name": "Tabaxi Hunter",
+  "source": "ToA",
+  "page": 232,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "tabaxi"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 40,
+  "speed": {
+    "walk": 30,
+    "climb": 20
+  },
+  "str": 10,
+  "dex": 17,
+  "con": 11,
+  "int": 13,
+  "wis": 14,
+  "cha": 15,
+  "skills": {
+    "athletics": "+2",
+    "perception": "+4",
+    "stealth": "+5",
+    "survival": "+6"
+  },
+  "passive": 14,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Feline Agility",
+      "entries": [
+        "When the tabaxi moves on its turn in combat, it can double its speed until the end of the turn. Once it uses this ability, the tabaxi can't use it again until it moves 0 feet on one of its turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The tabaxi makes two attacks with its claws, its shortsword, or its shortbow."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "Ranged atk +5 to hit, range 80/320 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

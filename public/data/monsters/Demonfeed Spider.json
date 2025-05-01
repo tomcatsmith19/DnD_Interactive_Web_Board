@@ -1,0 +1,100 @@
+{
+  "name": "Demonfeed Spider",
+  "source": "TDCSR",
+  "page": 237,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 40,
+    "climb": 40
+  },
+  "str": 16,
+  "dex": 18,
+  "con": 15,
+  "int": 6,
+  "wis": 10,
+  "cha": 6,
+  "skills": {
+    "perception": "+3",
+    "stealth": "+7"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": [
+        "The spider ignores movement restrictions caused by webbing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The spider makes two melee attacks: one with its bite and one with its stinger; or the spider can make one attack with its web spinner followed by a melee attack."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 8 (1d10 + 3 damage) piercing damage, and the target must make a DC 14 Constitution {@quickref saving throws|PHB|2|1|saving throw}. On a failed save, the target takes 27 (6d8 damage) poison damage and is {@condition poisoned} for 1 minute. On a successful save, the target takes half as much damage and isn't {@condition poisoned}. If this poison damage reduces the target to 0 hit points, the target is stable but {@condition poisoned} for 1 hour, even after regaining hit points, and is {@condition paralyzed} while {@condition poisoned} in this way."
+      ]
+    },
+    {
+      "name": "Stinger",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (1d12 + 3 damage) piercing damage, and the target must succeed on a DC 14 Constitution {@quickref saving throws|PHB|2|1|saving throw} or be {@condition paralyzed} for 1 minute. The target can repeat the {@quickref saving throws|PHB|2|1|saving throw} at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Web Spinner",
+      "entries": [
+        "Ranged atk +7 to hit, reach 40 ft., one target.  The target is pulled 40 feet toward the spider and is {@condition grappled} (escape DC 14). The spider can {@action grapple} only one creature at a time in this way. As an action, the spider can cocoon a creature it has {@condition grappled} in webbing, causing it to be {@condition restrained} and ending the {@condition grappled} condition."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "forest",
+    "underdark"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

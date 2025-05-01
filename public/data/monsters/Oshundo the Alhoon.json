@@ -1,0 +1,162 @@
+{
+  "name": "Oshundo the Alhoon",
+  "source": "PaBTSO",
+  "page": 153,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [
+    "mind flayer",
+    "wizard"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 150,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 15,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 16,
+  "int": 19,
+  "wis": 17,
+  "cha": 17,
+  "skills": {
+    "arcana": "+8",
+    "history": "+8",
+    "insight": "+7",
+    "perception": "+7",
+    "stealth": "+5"
+  },
+  "passive": 17,
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "telepathy 120 ft.",
+    "Undercommon"
+  ],
+  "cr": "10",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Oshundo has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Oshundo makes two Chilling Grasp or Arcane Bolt attacks."
+      ]
+    },
+    {
+      "name": "Chilling Grasp",
+      "entries": [
+        "{@atk ms} +8 to hit, reach 5 ft., one target. 14 (4d6 damage) cold damage, and Oshundo regains 14 hit points if the target is a creature."
+      ]
+    },
+    {
+      "name": "Arcane Bolt",
+      "entries": [
+        "Ranged Spell atk +8 to hit, range 120 ft., one target. 28 (8d6 damage) force damage."
+      ]
+    },
+    {
+      "name": "Thundering Blast {@recharge 5}",
+      "entries": [
+        "Oshundo emits a wave of domineering energy in a 60-foot cone. Each creature in that area must succeed on a DC 16 Intelligence saving throw or take 22 (4d8 + 4 damage) thunder damage and have the {@condition stunned} condition for 1 minute. A {@condition stunned} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Oshundo casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 16}):"
+      ],
+      "will": [
+        "dancing lights",
+        "detect magic",
+        "detect thoughts",
+        "disguise self",
+        "mage hand",
+        "prestidigitation"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "lightning",
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "truesight 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

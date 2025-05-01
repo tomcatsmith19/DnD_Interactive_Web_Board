@@ -1,0 +1,121 @@
+{
+  "name": "Skylla",
+  "source": "WBtW",
+  "page": 220,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human",
+    "warlock"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "10"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 11,
+  "con": 14,
+  "int": 12,
+  "wis": 15,
+  "cha": 17,
+  "skills": {
+    "deception": "+5",
+    "intimidation": "+5",
+    "nature": "+3",
+    "persuasion": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Skylla carries an eldritch staff (see appendix A) with 10 charges. The staff regains {@dice 1d6 + 4} expended charges daily at dawn. If its last charge is expended, roll a {@dice d20}; on a 1, the staff is destroyed."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Skylla makes two Eldritch Staff attacks. She can replace one of the attacks with a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Eldritch Staff",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 3 (1d6 damage) bludgeoning damage, or 4 (1d8 damage) bludgeoning damage when used with two hands, and Skylla can expend up to 3 of the staff's charges, dealing an extra 4 (1d8 damage) lightning damage for each expended charge."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Skylla casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

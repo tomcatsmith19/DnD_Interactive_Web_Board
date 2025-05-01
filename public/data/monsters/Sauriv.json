@@ -1,0 +1,63 @@
+{
+  "name": "Sauriv",
+  "source": "GoS",
+  "page": 79,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "L",
+    "N"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 9,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 12,
+  "con": 11,
+  "int": 12,
+  "wis": 18,
+  "cha": 16,
+  "skills": {
+    "deception": "+7",
+    "insight": "+6",
+    "persuasion": "+7"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 5 (1d8 + 1 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

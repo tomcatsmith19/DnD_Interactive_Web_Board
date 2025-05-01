@@ -1,0 +1,142 @@
+{
+  "name": "Blood Witch",
+  "source": "GGR",
+  "page": 248,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12",
+    "15"
+  ],
+  "hp": 78,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 14,
+  "con": 15,
+  "int": 13,
+  "wis": 9,
+  "cha": 19,
+  "skills": {
+    "arcana": "+4",
+    "intimidation": "+7",
+    "perception": "+2",
+    "stealth": "+5"
+  },
+  "passive": 12,
+  "languages": [
+    "Abyssal plus any one language (usually Common)"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Blood Witch Dance",
+      "entries": [
+        "The witch can use a bonus action to control the movement of one creature cursed by its {@spell hex} spell that it can see within 30 feet of it. The creature must succeed on a {@dc 15} Charisma saving throw or use its reaction to move up to 30 feet in a direction of the witch's choice."
+      ]
+    },
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the witch's darkvision."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The witch makes two attacks: one with its longsword and one with its shortsword."
+      ]
+    },
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +6 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The witch's innate spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). The witch can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "alter self",
+        "detect magic",
+        "eldritch blast",
+        "false life",
+        "levitate",
+        "mage armor"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,87 @@
+{
+  "name": "Awakened Chapped Brute",
+  "source": "GHLoE",
+  "page": 68,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 126,
+  "speed": {
+    "walk": 40
+  },
+  "str": 20,
+  "dex": 10,
+  "con": 20,
+  "int": 5,
+  "wis": 10,
+  "cha": 5,
+  "skills": {
+    "athletics": "+8"
+  },
+  "passive": 10,
+  "languages": [
+    "understands one language but can't speak"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The awakened chapped brute has advantage on Wisdom (Perception) checks that rely on hearing or smell. While {@condition deafened} and unable to smell, the brute can't use its blindsight."
+      ]
+    },
+    {
+      "name": "Sure-Footed",
+      "entries": [
+        "The awakened chapped brute has advantage on Strength and Dexterity saving throws made against effects that would knock it {@condition prone}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The awakened chapped brute makes two tentacle attacks or one tentacle slam."
+      ]
+    },
+    {
+      "name": "Tentacle",
+      "entries": [
+        "Melee atk +8 to hit, reach 15 ft., one target. 18 (3d8 + 5 damage) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC 16). Until this grapple ends, the target is {@condition restrained}, and the brute can't use the tentacle against another target. The awakened chapped brute has two tentacles."
+      ]
+    },
+    {
+      "name": "Tentacle Slam",
+      "entries": [
+        "The awakened chapped brute slams one or two targets {@condition grappled} by it into a solid object or each other. Each target must make a DC 16 Strength saving throw. If the saving throw fails, the target takes 18 (3d8 + 5 damage) bludgeoning damage and is {@condition stunned} until the end of the awakened chapped brute's next turn. On a successful saving throw, the target takes half the damage and isn't {@condition stunned}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded"
+  ],
+  "resist": [
+    "necrotic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

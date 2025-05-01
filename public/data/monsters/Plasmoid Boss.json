@@ -1,0 +1,81 @@
+{
+  "name": "Plasmoid Boss",
+  "source": "BAM",
+  "page": 42,
+  "size": [
+    "L"
+  ],
+  "type": "ooze",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 14,
+  "int": 14,
+  "wis": 13,
+  "cha": 15,
+  "skills": {
+    "deception": "+4",
+    "intimidation": "+4",
+    "persuasion": "+4"
+  },
+  "passive": 13,
+  "languages": [
+    "Common"
+  ],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The plasmoid can squeeze through a space as narrow as 1 inch wide, provided it is wearing and carrying nothing. It has advantage on ability checks it makes to initiate or escape a grapple."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "The plasmoid can hold its breath for 1 hour."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The plasmoid makes three Pseudopod attacks."
+      ]
+    },
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +6 to hit (with advantage if the plasmoid has one or more allies within 10 feet of itself), reach 10 ft., one target. 11 (2d6 + 4 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,126 @@
+{
+  "name": "Jarazoun",
+  "source": "KftGV",
+  "page": 200,
+  "size": [
+    "L"
+  ],
+  "type": "elemental",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 200,
+  "speed": {
+    "walk": 40,
+    "fly": 60
+  },
+  "str": 22,
+  "dex": 12,
+  "con": 24,
+  "int": 16,
+  "wis": 15,
+  "cha": 16,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "Ignan"
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Elemental Demise",
+      "entries": [
+        "If Jarazoun dies, its body disintegrates in a flash of fire and puff of smoke, leaving behind only equipment Jarazoun was wearing or carrying."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The efreeti makes two scimitar attacks or uses its Hurl Flame twice."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 13 (2d6 + 6 damage) slashing damage plus 7 (2d6 damage) fire damage."
+      ]
+    },
+    {
+      "name": "Hurl Flame",
+      "entries": [
+        "Ranged Spell atk +7 to hit, range 120 ft., one target. 17 (5d6 damage) fire damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The efreeti's innate spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "detect magic"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "desert"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

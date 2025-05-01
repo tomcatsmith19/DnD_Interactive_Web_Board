@@ -1,0 +1,84 @@
+{
+  "name": "Skeletal Alchemist",
+  "source": "GoS",
+  "page": 253,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 32,
+  "speed": {
+    "walk": 30
+  },
+  "str": 9,
+  "dex": 13,
+  "con": 15,
+  "int": 14,
+  "wis": 10,
+  "cha": 9,
+  "skills": {
+    "arcana": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "understands all languages it knew in life but can't speak"
+  ],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The skeletal alchemist has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skeletal alchemist makes two Lob Acid attacks."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft. one target. 4 (1d6 + 1 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Lob Acid",
+      "entries": [
+        "Ranged atk +3 to hit, range 30/120 ft., one target. 5 (1d8 + 1 damage) acid damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

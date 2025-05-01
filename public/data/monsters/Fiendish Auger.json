@@ -1,0 +1,80 @@
+{
+  "name": "Fiendish Auger",
+  "source": "PaBTSO",
+  "page": 206,
+  "size": [
+    "H"
+  ],
+  "type": "construct",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 85,
+  "speed": {
+    "walk": 40,
+    "burrow": 30
+  },
+  "str": 23,
+  "dex": 10,
+  "con": 17,
+  "int": 6,
+  "wis": 12,
+  "cha": 5,
+  "skills": {},
+  "passive": 11,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Siege Monster",
+      "entries": [
+        "The auger deals double damage to objects and structures."
+      ]
+    },
+    {
+      "name": "Tunneler",
+      "entries": [
+        "The auger can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Flaming Drill",
+      "entries": [
+        "Melee atk +9 to hit, reach 5 ft., one target. 17 (2d10 + 6 damage) piercing damage plus 7 (2d6 damage) fire damage. If the auger moves at least 20 feet in a straight line toward the target immediately before the hit, the target takes an additional 11 (2d10 damage) piercing damage, and if the target is a creature, it must succeed on a DC 17 Strength saving throw or have the {@condition prone} condition."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "fire",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft. (can't see beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

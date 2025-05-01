@@ -1,0 +1,77 @@
+{
+  "name": "Jaculi",
+  "source": "ToA",
+  "page": 225,
+  "size": [
+    "L"
+  ],
+  "type": "beast",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 16,
+  "speed": {
+    "walk": 30,
+    "climb": 20
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 11,
+  "int": 2,
+  "wis": 8,
+  "cha": 3,
+  "skills": {
+    "athletics": "+4",
+    "perception": "+1",
+    "stealth": "+4"
+  },
+  "passive": 11,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Camouflage",
+      "entries": [
+        "The jaculi has advantage on Dexterity (Stealth) checks made to hide."
+      ]
+    },
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The jaculi has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 9 (2d6 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Spring",
+      "entries": [
+        "The jaculi springs up to 30 feet in a straight line and makes a bite attack against a target within its reach. This attack has advantage if the jaculi springs at least 10 feet. If the attack hits, the bite deals an extra 7 (2d6 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

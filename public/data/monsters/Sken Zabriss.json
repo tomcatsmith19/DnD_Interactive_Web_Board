@@ -1,0 +1,71 @@
+{
+  "name": "Sken Zabriss",
+  "source": "EGW",
+  "page": 221,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "goliath"
+  ],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 45,
+  "speed": {
+    "walk": 30
+  },
+  "str": 16,
+  "dex": 11,
+  "con": 15,
+  "int": 13,
+  "wis": 10,
+  "cha": 12,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Giant"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Powerful Build",
+      "entries": [
+        "Sken counts as one size larger when determining her carrying capacity and the weight she can push, drag, or lift."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Sken wears a ring of obscuring. With it, she can cast the {@spell fog cloud} spell centered on herself three times per day. The cloud lasts for 1 minute (no {@status concentration} required)."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) slashing damage, or 8 (1d10 + 3 damage) slashing damage when used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

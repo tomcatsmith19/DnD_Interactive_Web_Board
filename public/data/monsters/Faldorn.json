@@ -1,0 +1,163 @@
+{
+  "name": "Faldorn",
+  "source": "MaBJoV",
+  "page": 50,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 130,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 12,
+  "con": 14,
+  "int": 12,
+  "wis": 20,
+  "cha": 15,
+  "skills": {
+    "medicine": "+10",
+    "nature": "+11",
+    "perception": "+10",
+    "survival": "+15"
+  },
+  "passive": 20,
+  "languages": [
+    "Common",
+    "Druidic",
+    "Elvish",
+    "Sylvan"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Staff of the Woodlands",
+      "entries": [
+        "This staff can be wielded as a magic quarterstaff that grants a +2 bonus to attack and damage rolls made with it and grants Faldorn a +2 bonus to spell attack rolls (already factored into Faldorn's attacks). The staff has 10 charges. It regains {@dice 1d6 + 4} expended charges daily at dawn. Faldorn can use an action to expend 1 or more of the staff's charges to cast one of the following spells from it, with a spell save DC of 14: {@spell animal friendship} (1 charge), {@spell awaken} (5 charges), {@spell barkskin} (2 charges), {@spell locate animals or plants} (2 charges), {@spell speak with animals} (1 charge), {@spell speak with plants} (3 charges), or {@spell wall of thorns} (6 charges). Faldorn can use an action to cast the {@spell pass without trace} spell without using any charges."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Faldorn makes a melee attack and casts a spell. Or she casts a spell and uses Change Shape if available."
+      ]
+    },
+    {
+      "name": "Staff of the Woodlands",
+      "entries": [
+        "Melee atk +8 to hit, reach 5 ft., one target. 6 (1d6 + 3 damage) bludgeoning damage, or 7 (1d8 + 3 damage) bludgeoning damage if wielded with two hands."
+      ]
+    },
+    {
+      "name": "Change Shape (2/Day)",
+      "entries": [
+        "Faldorn magically polymorphs into a beast or elemental with a challenge rating of 6 or less, and can remain in this form for up to 9 hours. Faldorn reverts to her true form if she dies or falls {@condition unconscious}. She can revert to her true form using a bonus action on her turn.",
+        "While in a new form, Faldorn retains her game statistics and ability to speak, but her AC, movement modes, Strength, and Dexterity are replaced by those of the new form, and she gains any special senses, proficiencies, traits, actions, and reactions (except class features, legendary actions, and lair actions) that the new form has but that she lacks. She can cast her spells with verbal or somatic components in her new form. The new form's attacks count as magical for the purpose of overcoming resistances and immunity to nonmagical attacks."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Faldorn is a 18th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 18}, {@hit 12} to hit with spell attacks). She has the following druid spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "poison spray",
+            "produce flame",
+            "shillelagh"
+          ]
+        },
+        "1": {
+          "spells": [
+            "entangle",
+            "longstrider",
+            "speak with animals",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "animal messenger",
+            "barkskin"
+          ]
+        },
+        "3": {
+          "spells": [
+            "conjure animals",
+            "water breathing"
+          ]
+        },
+        "4": {
+          "spells": [
+            "dominate beast",
+            "locate creature",
+            "stoneskin",
+            "wall of fire"
+          ]
+        },
+        "5": {
+          "spells": [
+            "commune with nature",
+            "mass cure wounds",
+            "tree stride"
+          ]
+        },
+        "6": {
+          "spells": [
+            "heal",
+            "heroes' feast",
+            "sunbeam"
+          ]
+        },
+        "7": {
+          "spells": [
+            "fire storm"
+          ]
+        },
+        "8": {
+          "spells": [
+            "animal shapes"
+          ]
+        },
+        "9": {
+          "spells": [
+            "foresight"
+          ]
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

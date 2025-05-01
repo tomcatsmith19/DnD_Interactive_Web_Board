@@ -1,0 +1,182 @@
+{
+  "name": "Taryon Darrington",
+  "source": "TDCSR",
+  "page": 273,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [],
+  "ac": [
+    "15"
+  ],
+  "hp": 127,
+  "speed": {
+    "walk": 40,
+    "fly": {
+      "number": 50,
+      "condition": "(with {@item broom of flying})"
+    }
+  },
+  "str": 12,
+  "dex": 11,
+  "con": 14,
+  "int": 18,
+  "wis": 8,
+  "cha": 15,
+  "skills": {
+    "arcana": "+9",
+    "history": "+9",
+    "perception": "+4",
+    "survival": "+4"
+  },
+  "passive": 9,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Gnomish",
+    "Sylvan",
+    "Undercommon"
+  ],
+  "cr": "9",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Alchemical Defense",
+      "entries": [
+        "Tary's experimental concoctions have granted him resistance to acid and poison damage, and immunity to the {@condition poisoned} condition."
+      ]
+    },
+    {
+      "name": "Doty",
+      "entries": [
+        "{@creature Doty X|TDCSR|Doty} moves and acts on Tary's turn, and Tary can use a bonus action to command him to use the {@action Dash}, {@action Dodge}, {@action Disengage}, or {@action Attack} action. He can also command him to {@action Attack} as part of his Multitask action (see below). Doty can take only one action on each of Tary's turns."
+      ]
+    },
+    {
+      "name": "Focused",
+      "entries": [
+        "Tary has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on Constitution {@quickref saving throws|PHB|2|1} made to maintain {@condition concentration} on spells."
+      ]
+    },
+    {
+      "name": "Special Equipment",
+      "entries": [
+        "Tary wears a {@item helm of brilliance}, a {@item robe of useful items}, and a {@item ring of the ram}. He carries a {@item rod of mercurial form|TDCSR}, as well as a {@item bag of holding}, {@dice 1d4 + 4} {@item bead of force||beads of force}, a {@item broom of flying}, and a {@item chime of opening}."
+      ]
+    },
+    {
+      "name": "Toughness",
+      "entries": [
+        "Tary has an additional 30 hit points."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multitask",
+      "entries": [
+        "Tary makes two weapon attacks or casts a spell with a casting time of 1 action, and can also command {@creature Doty X|TDCSR|Doty} to use his Empowered Fist or Repair action."
+      ]
+    },
+    {
+      "name": "Mercurial Longsword",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 6 (1d10 + 1 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "{@item Bead of Force}",
+      "entries": [
+        "Tary throws a {@item bead of force} up to 60 feet. Each creature within a 10-foot radius of where the bead landed must succeed on a DC 15 Dexterity {@quickref saving throws|PHB|2|1|saving throw} or take 12 (5d4 damage) force damage. A sphere of transparent force then encloses the area for 1 minute. A creature that fails the save and is completely within the area is trapped inside the sphere."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Tary is a 15th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He has the following spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "mending",
+            "prestidigitation",
+            "ray of frost"
+          ]
+        },
+        "1": {
+          "spells": [
+            "detect magic",
+            "heroism",
+            "identify",
+            "shield"
+          ]
+        },
+        "2": {
+          "spells": [
+            "alter self",
+            "branding smite",
+            "see invisibility",
+            "warding bond"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "fly",
+            "haste",
+            "magic circle",
+            "revivify"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "fabricate",
+            "fire shield"
+          ]
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "acid",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

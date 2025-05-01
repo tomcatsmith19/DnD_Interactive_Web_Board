@@ -1,0 +1,72 @@
+{
+  "name": "Feral Ashenwight",
+  "source": "PaBTSO",
+  "page": 204,
+  "size": [
+    "M"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 65,
+  "speed": {
+    "walk": 25
+  },
+  "str": 19,
+  "dex": 13,
+  "con": 15,
+  "int": 4,
+  "wis": 14,
+  "cha": 6,
+  "skills": {},
+  "passive": 12,
+  "languages": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The ashenwight makes two Necrotic Shard attacks."
+      ]
+    },
+    {
+      "name": "Necrotic Shard",
+      "entries": [
+        "Melee/Ranged atk +7 to hit, reach 5 ft. or range 60 ft., one target. 7 (1d6 + 4 damage) necrotic damage. If the target is a creature, it has disadvantage on the next attack roll it makes before the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "unconscious"
+  ],
+  "resist": [
+    "necrotic",
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,130 @@
+{
+  "name": "Chaplain",
+  "source": "DoDk",
+  "page": 218,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 58,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 10,
+  "con": 14,
+  "int": 11,
+  "wis": 17,
+  "cha": 13,
+  "skills": {
+    "insight": "+6",
+    "persuasion": "+4",
+    "religion": "+3"
+  },
+  "passive": 13,
+  "languages": [
+    "Any two"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Devotion",
+      "entries": [
+        "The chaplain has advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "entries": [
+        "Melee/Ranged atk +3 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d6 + 1 damage) piercing damage or 5 (1d8 + 1 damage) damage when used in two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "The chaplain is a 9th-level spellcaster that uses Wisdom as its spellcasting ability (spell save {@dc 12}; {@hit 4} to hit with spell attacks). They have the following cleric spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "mending",
+            "sacred flame",
+            "spare the dying"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "guiding bolt",
+            "healing word"
+          ]
+        },
+        "2": {
+          "spells": [
+            "lesser restoration",
+            "prayer of healing",
+            "spiritual weapon"
+          ]
+        },
+        "3": {
+          "spells": [
+            "dispel magic",
+            "purge contamination|DoDk",
+            "spirit guardians"
+          ]
+        },
+        "4": {
+          "spells": [
+            "banishment",
+            "divination"
+          ]
+        },
+        "5": {
+          "spells": [
+            "flame strike"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

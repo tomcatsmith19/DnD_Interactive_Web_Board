@@ -1,0 +1,127 @@
+{
+  "name": "Tem Temble",
+  "source": "DSotDQ",
+  "page": 213,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "kender"
+  ],
+  "alignment": [
+    "C",
+    "G"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 30
+  },
+  "str": 8,
+  "dex": 14,
+  "con": 14,
+  "int": 10,
+  "wis": 14,
+  "cha": 14,
+  "skills": {
+    "insight": "+4",
+    "medicine": "+4",
+    "perception": "+4",
+    "sleight of hand": "+4",
+    "stealth": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Common",
+    "Kenderspeak"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Bonus Proficiencies",
+      "entries": [
+        "Tem is proficient with simple weapons and light armor."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hoopak",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 40/160 ft., one target. 4 (1d4 + 2 damage) piercing damage, or 4 (1d4 + 2 damage) bludgeoning damage if Tem used the hoopak's sling to make a ranged attack."
+      ]
+    },
+    {
+      "name": "Taunt",
+      "entries": [
+        "Tem launches an infuriating barrage of insults at a creature she can see within 60 feet of her. If the target can hear Tem, it must succeed on a DC 12 Wisdom saving throw or have disadvantage on attack rolls until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Tem's spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to spell attacks). She has the following druid spells prepared:"
+      ],
+      "will": [
+        "druidcraft",
+        "poison spray"
+      ],
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": [
+            "healing word"
+          ]
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "ability": "wis",
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "frightened"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

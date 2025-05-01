@@ -1,0 +1,68 @@
+{
+  "name": "Pest Mascot",
+  "source": "SCC",
+  "page": 203,
+  "size": [
+    "T"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 14,
+  "con": 17,
+  "int": 5,
+  "wis": 13,
+  "cha": 4,
+  "skills": {
+    "perception": "+3"
+  },
+  "passive": 13,
+  "languages": [],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The pest regains 5 hit points at the start of its turn if it has at least 1 hit point. If it takes fire damage, this trait doesn't function at the start of the pest's next turn."
+      ]
+    },
+    {
+      "name": "Spiny Hide",
+      "entries": [
+        "At the start of each of its turns, the pest deals 2 ({@damage 1d4}) piercing damage to any creature grappling it or that it is grappling."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

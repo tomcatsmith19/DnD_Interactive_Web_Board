@@ -1,0 +1,85 @@
+{
+  "name": "Hellwasp",
+  "source": "BGDIA",
+  "page": 236,
+  "size": [
+    "L"
+  ],
+  "type": "fiend",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "19"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 10,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 18,
+  "dex": 15,
+  "con": 12,
+  "int": 10,
+  "wis": 10,
+  "cha": 7,
+  "skills": {},
+  "passive": 10,
+  "languages": [
+    "Infernal",
+    "telepathy 300 ft. (with other hellwasps only)"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The hellwasp's weapon attacks are magical."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hellwasp makes two attacks: one with its sting and one with its sword talons."
+      ]
+    },
+    {
+      "name": "Sting",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one creature. 8 (1d8 + 4 damage) piercing damage plus 7 (2d6 damage) fire damage, and the target must succeed on a DC 12 Constitution saving throw or be {@condition poisoned} for 1 minute. While {@condition poisoned} in this way, the target is also {@condition paralyzed}. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Sword Talons",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [
+    "cold"
+  ],
+  "immune": [
+    "fire"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

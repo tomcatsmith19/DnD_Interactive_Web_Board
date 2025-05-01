@@ -1,0 +1,139 @@
+{
+  "name": "Panjaian Ilharan",
+  "source": "GHLoE",
+  "page": 96,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race",
+    "elemental"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 55,
+  "speed": {
+    "walk": 30,
+    "fly": 30
+  },
+  "str": 10,
+  "dex": 16,
+  "con": 13,
+  "int": 12,
+  "wis": 15,
+  "cha": 13,
+  "skills": {
+    "acrobatics": "+5",
+    "deception": "+3",
+    "perception": "+4",
+    "sleight of hand": "+5",
+    "stealth": "+5"
+  },
+  "passive": 14,
+  "languages": [
+    "Primordial and two other languages"
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Returning Wind",
+      "entries": [
+        "The panjaian ilharan can take a bonus action to choose up to four objects it can see within 60 feet of it. These objects can't be carried or worn by another creature, and they can weigh up to 5 pounds combined. Those objects fly up to 60 feet toward the ilharan, delivered into its hands or open containers, such as sheathes, once within 5 feet."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The panjaian ilharan makes four dagger attacks. It can draw the daggers as part of this action."
+      ]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +5 to hit, reach 5 ft. or range 20/60 ft., one target. 5 (1d4 + 3 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Storm Wave {@recharge 5}",
+      "entries": [
+        "The panjaian ilharan unleashes lightning, thunder, and strong wind in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 6 (2d4 + 1 damage) lightning damage and 6 (2d4 + 1 damage) thunder damage on a failed save, or half as much damage on a successful one. Those who fail the saving throw are also pushed up to 15 feet to the edge of the area."
+      ]
+    },
+    {
+      "name": "Gift of Flight (1/Day)",
+      "entries": [
+        "The panjaian ilharan touches up to four willing creatures. Each target gains a flying speed of 30 feet for 1 hour. When the effect ends, the target descends at 60 feet per round for 1 minute, taking no falling damage and landing on its feet if on the ground after that minute."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The panjaian ilharan's innate spellcasting ability is Wisdom (spell save {@dc 12}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "lightning",
+    "thunder"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

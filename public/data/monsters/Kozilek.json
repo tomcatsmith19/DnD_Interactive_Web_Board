@@ -1,0 +1,134 @@
+{
+  "name": "Kozilek",
+  "source": "PSZ",
+  "page": 38,
+  "size": [
+    "H"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 230,
+  "speed": {
+    "walk": 30,
+    "swim": 50
+  },
+  "str": 29,
+  "dex": 14,
+  "con": 20,
+  "int": 16,
+  "wis": 18,
+  "cha": 18,
+  "skills": {
+    "athletics": "+14",
+    "perception": "+9"
+  },
+  "passive": 19,
+  "languages": [
+    "Common"
+  ],
+  "cr": "13",
+  "prof_bonus": 5,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The kraken can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The kraken makes two attacks: one with its claw and one with its tentacles."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee atk +14 to hit, reach 10 ft., one target. 30 (6d6 + 9 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +14 to hit, reach 20 ft., one target. 30 (6d6 + 9 damage) bludgeoning damage, and the target is {@condition grappled} (escape DC 17). Until this grapple ends, the target is {@condition restrained}."
+      ]
+    },
+    {
+      "name": "Lightning Strike {@recharge 5}",
+      "entries": [
+        "The kraken hurls a magical lightning bolt at a point it can see within 500 feet of it. Each creature within 10 feet of that point must make a DC 17 Dexterity saving throw, taking 54 (12d8 damage) lightning damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The kraken's innate spellcasting ability is Charisma (spell save {@dc 17}). The kraken can innately cast the following spells, requiring no components:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "lightning",
+    "thunder"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

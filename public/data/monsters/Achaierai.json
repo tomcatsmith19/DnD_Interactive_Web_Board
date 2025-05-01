@@ -1,0 +1,83 @@
+{
+  "name": "Achaierai",
+  "source": "MaBJoV",
+  "page": 131,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "L",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 90,
+  "speed": {
+    "walk": 50
+  },
+  "str": 18,
+  "dex": 14,
+  "con": 14,
+  "int": 10,
+  "wis": 12,
+  "cha": 14,
+  "skills": {
+    "perception": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Infernal"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The achaierai have advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Spring Attack",
+      "entries": [
+        "The achaierai can take the Disengage action as a bonus action on each of its turns."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The achaierai makes two attacks with its talons and one attack with its beak."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 14 (3d6 + 4 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Talon",
+      "entries": [
+        "Melee atk +7 to hit, reach 10 ft., one target. 8 (1d8 + 4 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Kindori",
+  "source": "BAM",
+  "page": 31,
+  "size": [
+    "G"
+  ],
+  "type": "celestial",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 202,
+  "speed": {
+    "walk": 0,
+    "fly": {
+      "number": 60,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 25,
+  "dex": 7,
+  "con": 17,
+  "int": 6,
+  "wis": 14,
+  "cha": 7,
+  "skills": {},
+  "passive": 12,
+  "languages": [],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The kindori doesn't require food, drink, or air."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tail",
+      "entries": [
+        "Melee atk +10 to hit, reach 5 ft., one target. 23 (3d10 + 7 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

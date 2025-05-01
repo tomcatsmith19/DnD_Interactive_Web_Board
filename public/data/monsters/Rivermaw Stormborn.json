@@ -1,0 +1,120 @@
+{
+  "name": "Rivermaw Stormborn",
+  "source": "TDCSR",
+  "page": 254,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any"
+  ],
+  "alignment": [],
+  "ac": [
+    "13"
+  ],
+  "hp": 102,
+  "speed": {
+    "walk": 30
+  },
+  "str": 18,
+  "dex": 12,
+  "con": 18,
+  "int": 11,
+  "wis": 10,
+  "cha": 12,
+  "skills": {
+    "athletics": "+7",
+    "intimidation": "+4"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Reckless",
+      "entries": [
+        "At the start of its turn, the stormborn can gain {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on all melee weapon attack rolls during that turn, but attack rolls against it have {@quickref Advantage and Disadvantage|PHB|2|0|advantage} until the start of its next turn."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The stormborn makes two greataxe attacks. If it is concentrating on {@spell call lightning}, it can also call down a lightning bolt."
+      ]
+    },
+    {
+      "name": "Greataxe",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 10 (1d12 + 4 damage) slashing damage plus 3 (1d6 damage) lightning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The stormborn's innate spellcasting ability is Charisma (spell save {@dc 12}). The stormborn can innately cast the following spells, requiring no material components:"
+      ],
+      "daily": {
+        "1": [
+          "call lightning"
+        ]
+      },
+      "ability": "cha",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "lightning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "grassland"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

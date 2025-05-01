@@ -1,0 +1,117 @@
+{
+  "name": "Miraj Vizann",
+  "source": "PotA",
+  "page": 198,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    {
+      "tag": "genasi",
+      "prefix": "Earth"
+    }
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "10",
+    "13"
+  ],
+  "hp": 82,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 10,
+  "con": 17,
+  "int": 13,
+  "wis": 11,
+  "cha": 18,
+  "skills": {
+    "arcana": "+4",
+    "deception": "+7"
+  },
+  "passive": 10,
+  "languages": [
+    "Common",
+    "Primordial"
+  ],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Earth Walk",
+      "entries": [
+        "Moving through {@quickref difficult terrain||3} made of earth or stone costs Miraj no extra movement."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Staff",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) bludgeoning damage, or 5 (1d8 + 1 damage) bludgeoning damage when used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Miraj's innate spellcasting ability is Constitution (spell save {@dc 14}). He can innately cast the following spell, requiring no material components:"
+      ],
+      "daily": {
+        "1": [
+          "pass without trace"
+        ]
+      },
+      "ability": "con",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

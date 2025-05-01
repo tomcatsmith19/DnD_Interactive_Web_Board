@@ -1,0 +1,116 @@
+{
+  "name": "Githyanki Star Seer",
+  "source": "BAM",
+  "page": 27,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "gith",
+    "warlock"
+  ],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 110,
+  "speed": {
+    "walk": 30
+  },
+  "str": 11,
+  "dex": 11,
+  "con": 14,
+  "int": 19,
+  "wis": 16,
+  "cha": 14,
+  "skills": {
+    "arcana": "+10",
+    "history": "+10"
+  },
+  "passive": 13,
+  "languages": [
+    "Common",
+    "Gith"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The githyanki makes three Astral Bolt attacks."
+      ]
+    },
+    {
+      "name": "Astral Bolt",
+      "entries": [
+        "{@atk ms,rs} +7 to hit, reach 5 ft. or range 60 ft., one target. 20 (3d10 + 4 damage) radiant damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The githyanki casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "light",
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "radiant"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,127 @@
+{
+  "name": "Counterflux Blastseeker",
+  "source": "GGR",
+  "page": 242,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "any race"
+  ],
+  "alignment": [
+    "C",
+    "N"
+  ],
+  "ac": [
+    "13",
+    "16"
+  ],
+  "hp": 39,
+  "speed": {
+    "walk": 30
+  },
+  "str": 13,
+  "dex": 16,
+  "con": 15,
+  "int": 18,
+  "wis": 11,
+  "cha": 14,
+  "skills": {
+    "arcana": "+6",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Common plus any one language"
+  ],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Counterflux Overcast {@recharge 5}",
+      "entries": [
+        "The blastseeker can create an additional effect immediately after casting a spell. Roll a {@dice d6} to determine the effect:",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "type": "item",
+              "name": "1\u00e2\u20ac\u201c3.",
+              "entry": "The blastseeker creates a 15-foot-radius {@condition invisible} sphere centered on itself that lasts until the end of its next turn. Creatures in the sphere have disadvantage on saving throws against spells and other magical effects."
+            },
+            {
+              "type": "item",
+              "name": "4\u00e2\u20ac\u201c6.",
+              "entry": "The blastseeker creates a 15-foot-radius {@condition invisible} sphere centered on itself that lasts until the end of its next turn. Creatures in the sphere have advantage on saving throws against spells and other magical effects."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Rapier",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 7 (1d8 + 3 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The blastseeker's innate spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). The blastseeker can innately cast the following spells, requiring no components other than its Izzet gear, which doesn't function for others:"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

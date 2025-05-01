@@ -1,0 +1,68 @@
+{
+  "name": "Night Blade",
+  "source": "BGDIA",
+  "page": 233,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 11,
+  "speed": {
+    "walk": 40
+  },
+  "str": 11,
+  "dex": 15,
+  "con": 12,
+  "int": 10,
+  "wis": 11,
+  "cha": 14,
+  "skills": {
+    "intimidation": "+4",
+    "stealth": "+6"
+  },
+  "passive": 10,
+  "languages": [
+    "Common"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Aura of Murder",
+      "entries": [
+        "As long as the night blade is not {@condition incapacitated}, hostile creatures within 5 feet of it gain vulnerability to piercing damage unless they have resistance or immunity to such damage."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "entries": [
+        "Melee/Ranged atk +4 to hit, reach 5 ft. or range 20/60 ft., one target. 4 (1d4 + 2 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

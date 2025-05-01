@@ -1,0 +1,126 @@
+{
+  "name": "Thri-kreen Mystic",
+  "source": "BAM",
+  "page": 61,
+  "size": [
+    "M"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "A"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 99,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 15,
+  "con": 13,
+  "int": 12,
+  "wis": 16,
+  "cha": 10,
+  "skills": {
+    "perception": "+6",
+    "stealth": "+5",
+    "survival": "+6"
+  },
+  "passive": 16,
+  "languages": [
+    "telepathy 60 ft.",
+    "Thri-kreen"
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The thri-kreen makes two Gythka attacks or four Psychic Bolt attacks."
+      ]
+    },
+    {
+      "name": "Gythka",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 10 (2d8 + 1 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Psychic Bolt",
+      "entries": [
+        "Ranged Spell atk +6 to hit, range 60 ft., one creature. 6 (1d6 + 3 damage) psychic damage."
+      ]
+    },
+    {
+      "name": "Drain Vitality (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The thri-kreen targets one creature it can see within 30 feet of itself. The target must make a DC 14 Constitution saving throw, taking 32 (5d12 damage) necrotic damage on a failed save, or half as much damage on a successful one. The thri-kreen regains hit points equal to the damage dealt."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The thri-kreen casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability:"
+      ],
+      "will": [
+        "levitate",
+        "mage hand"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "wis",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

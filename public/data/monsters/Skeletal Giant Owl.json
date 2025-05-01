@@ -1,0 +1,84 @@
+{
+  "name": "Skeletal Giant Owl",
+  "source": "IMR",
+  "page": 33,
+  "size": [
+    "L"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 19,
+  "speed": {
+    "walk": 5,
+    "fly": 60
+  },
+  "str": 13,
+  "dex": 15,
+  "con": 12,
+  "int": 8,
+  "wis": 13,
+  "cha": 10,
+  "skills": {
+    "perception": "+5",
+    "stealth": "+4"
+  },
+  "passive": 15,
+  "languages": [
+    "Giant Owl",
+    "understands Common, Elvish, and Sylvan but can't speak them"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Sight",
+      "entries": [
+        "The owl has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 8 (2d6 + 1 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 120 ft."
+  ],
+  "environment": [
+    "forest",
+    "hill",
+    "arctic"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

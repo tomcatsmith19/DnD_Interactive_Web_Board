@@ -1,0 +1,90 @@
+{
+  "name": "Ruxithid the Chosen",
+  "source": "PaBTSO",
+  "page": 99,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [
+    "goblinoid"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 88,
+  "speed": {
+    "walk": 30,
+    "fly": {
+      "number": 30,
+      "condition": "(hover)"
+    },
+    "canHover": true
+  },
+  "str": 14,
+  "dex": 19,
+  "con": 12,
+  "int": 18,
+  "wis": 15,
+  "cha": 12,
+  "skills": {
+    "insight": "+5",
+    "perception": "+5",
+    "stealth": "+10"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Goblin",
+    "telepathy 60 ft."
+  ],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "When Ruxithid fails a saving throw, he can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Mental Fortitude",
+      "entries": [
+        "Ruxithid has advantage on saving throws against the {@condition charmed} and {@condition frightened} conditions."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Ruxithid makes two Psi-Charged Scimitar attacks."
+      ]
+    },
+    {
+      "name": "Psi-Charged Scimitar",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 11 (2d6 + 4 damage) slashing damage plus 7 (2d6 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

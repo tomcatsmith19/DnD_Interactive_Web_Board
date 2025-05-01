@@ -1,0 +1,73 @@
+{
+  "name": "Skyjek Roc",
+  "source": "GGR",
+  "page": 219,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 37,
+  "speed": {
+    "walk": 20,
+    "fly": 90
+  },
+  "str": 20,
+  "dex": 13,
+  "con": 14,
+  "int": 3,
+  "wis": 10,
+  "cha": 8,
+  "skills": {
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The roc has advantage on Wisdom (Perception) checks that rely on sight."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The roc makes two attacks: one with its beak and one with its talons."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 9 (1d8 + 5 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +7 to hit, reach 5 ft., one target. 10 (2d4 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

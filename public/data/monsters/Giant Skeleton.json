@@ -1,0 +1,88 @@
+{
+  "name": "Giant Skeleton",
+  "source": "TftYP",
+  "page": 236,
+  "size": [
+    "H"
+  ],
+  "type": "undead",
+  "tags": [],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "17"
+  ],
+  "hp": 115,
+  "speed": {
+    "walk": 30
+  },
+  "str": 21,
+  "dex": 10,
+  "con": 20,
+  "int": 4,
+  "wis": 6,
+  "cha": 6,
+  "skills": {},
+  "passive": 8,
+  "languages": [
+    "understands Giant but can't speak"
+  ],
+  "cr": "7",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Evasion",
+      "entries": [
+        "If the skeleton is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The skeleton has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Turn Immunity",
+      "entries": [
+        "The skeleton is immune to effects that turn undead."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The skeleton makes three scimitar attacks."
+      ]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "Melee atk +8 to hit, reach 10 ft., one target. 15 (3d6 + 5 damage) slashing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion",
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [
+    "bludgeoning"
+  ],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

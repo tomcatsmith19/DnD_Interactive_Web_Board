@@ -1,0 +1,79 @@
+{
+  "name": "Merfolk Salvager",
+  "source": "GoS",
+  "page": 244,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "merfolk"
+  ],
+  "alignment": [
+    "N"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 22,
+  "speed": {
+    "walk": 10,
+    "swim": 40
+  },
+  "str": 12,
+  "dex": 14,
+  "con": 12,
+  "int": 11,
+  "wis": 10,
+  "cha": 13,
+  "skills": {
+    "athletics": "+3",
+    "perception": "+2"
+  },
+  "passive": 12,
+  "languages": [
+    "Aquan",
+    "Common"
+  ],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The salvager can breathe air and water."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The salvager makes two attacks with its coral rapier."
+      ]
+    },
+    {
+      "name": "Coral Rapier",
+      "entries": [
+        "{@atk m} +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Inject Toxin (2/Day)",
+      "entries": [
+        "{@atk m} +4 to hit, reach 5 ft., one target. 6 (1d8 + 2 damage) piercing damage, and the creature must succeed on a DC 12 Constitution saving throw or be {@condition paralyzed} until the end of its next turn."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": false
+}

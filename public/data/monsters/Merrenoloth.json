@@ -1,0 +1,164 @@
+{
+  "name": "Merrenoloth",
+  "source": "MTF",
+  "page": 250,
+  "size": [
+    "M"
+  ],
+  "type": "fiend",
+  "tags": [
+    "yugoloth"
+  ],
+  "alignment": [
+    "N",
+    "E"
+  ],
+  "ac": [
+    "13"
+  ],
+  "hp": 40,
+  "speed": {
+    "walk": 30,
+    "swim": 40
+  },
+  "str": 8,
+  "dex": 17,
+  "con": 10,
+  "int": 17,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "history": "+5",
+    "nature": "+5",
+    "perception": "+4",
+    "survival": "+4"
+  },
+  "passive": 14,
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "cr": "3",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The merrenoloth has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Magic Weapons",
+      "entries": [
+        "The merrenoloth's weapon attacks are magical."
+      ]
+    },
+    {
+      "name": "Teleport",
+      "entries": [
+        "As a bonus action, the merrenoloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The merrenoloth uses Fear Gaze once and makes one oar attack."
+      ]
+    },
+    {
+      "name": "Oar",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 8 (2d4 + 3 damage) slashing damage."
+      ]
+    },
+    {
+      "name": "Fear Gaze",
+      "entries": [
+        "The merrenoloth targets one creature it can see within 60 feet of it. The target must succeed on a DC 13 Wisdom saving throw or become {@condition frightened} for 1 minute. The {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "The merrenoloth's innate spellcasting ability is Intelligence (spell save {@dc 13}). It can innately cast the following spells, requiring no material components:"
+      ],
+      "will": [
+        "charm person",
+        "darkness",
+        "detect magic",
+        "dispel magic",
+        "gust of wind"
+      ],
+      "daily": {
+        "1": [
+          "control weather"
+        ]
+      },
+      "ability": "int",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [
+    "cold",
+    "fire",
+    "lightning",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "vulnerable": [],
+  "immune": [
+    "acid",
+    "poison"
+  ],
+  "senses": [
+    "blindsight 60 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

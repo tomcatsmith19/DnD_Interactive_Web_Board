@@ -1,0 +1,72 @@
+{
+  "name": "Bag Jelly",
+  "source": "BGG",
+  "page": 120,
+  "size": [
+    "M"
+  ],
+  "type": "ooze",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "8"
+  ],
+  "hp": 42,
+  "speed": {
+    "walk": 10,
+    "climb": 10
+  },
+  "str": 13,
+  "dex": 6,
+  "con": 19,
+  "int": 2,
+  "wis": 7,
+  "cha": 2,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The bag jelly can move through a space as narrow as 1 inch without squeezing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The bag jelly makes two Pseudopod attacks."
+      ]
+    },
+    {
+      "name": "Pseudopod",
+      "entries": [
+        "Melee atk +3 to hit, reach 5 ft., one target. 8 (2d6 + 1 damage) acid damage. If the target is a Medium or smaller creature, it has the {@condition grappled} condition (escape DC 11). Ability checks made to escape this grapple have disadvantage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "exhaustion"
+  ],
+  "resist": [
+    "acid",
+    "bludgeoning"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 60 ft. (can't see beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

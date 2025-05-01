@@ -1,0 +1,70 @@
+{
+  "name": "Jammer Leech",
+  "source": "BAM",
+  "page": 30,
+  "size": [
+    "T"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 27,
+  "speed": {
+    "walk": 10
+  },
+  "str": 11,
+  "dex": 1,
+  "con": 16,
+  "int": 1,
+  "wis": 10,
+  "cha": 1,
+  "skills": {},
+  "passive": 10,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Spelljammer Overload",
+      "entries": [
+        "If the leech is reduced to 0 hit points while attached to a ship that has a spelljamming helm, the creature attuned to that helm must make a {@dc 13} Constitution saving throw. On a failed save, the creature takes 10 ({@damage 4d4}) psychic damage and is {@condition incapacitated} for 1 minute. On a successful save, the creature takes half as much damage and is {@condition incapacitated} until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": [
+        "The leech doesn't require air or sleep."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spiked Tentacle",
+      "entries": [
+        "Melee atk +2 to hit, reach 5 ft., one target. 2 (1d4 damage) piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "charmed",
+    "frightened",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 30 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

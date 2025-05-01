@@ -1,0 +1,70 @@
+{
+  "name": "Decapus",
+  "source": "TTP",
+  "page": 21,
+  "size": [
+    "L"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 75,
+  "speed": {
+    "walk": 15,
+    "climb": 30
+  },
+  "str": 15,
+  "dex": 14,
+  "con": 14,
+  "int": 4,
+  "wis": 10,
+  "cha": 7,
+  "skills": {
+    "athletics": "+4",
+    "perception": "+2",
+    "stealth": "+4"
+  },
+  "passive": 12,
+  "languages": [],
+  "cr": "4",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The decapus makes two attacks: one with its bite and one with its tentacles."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one creature {@condition grappled} by the decapus. 7 (2d4 + 2 damage) piercing damage."
+      ]
+    },
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +4 to hit, reach 10 ft., one target. 24 (9d4 + 2 damage) bludgeoning damage or 14 (5d4 + 2 damage) bludgeoning damage if the decapus is grappling a creature other than the target or if the decapus is on the ground or floor. The target is also {@condition grappled} (escape DC 14) unless the decapus is already grappling a creature. Until this grapple ends, the target is {@condition restrained}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

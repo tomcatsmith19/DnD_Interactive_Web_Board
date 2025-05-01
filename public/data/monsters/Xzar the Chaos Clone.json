@@ -1,0 +1,181 @@
+{
+  "name": "Xzar the Chaos Clone",
+  "source": "MaBJoV",
+  "page": 128,
+  "size": [
+    "M"
+  ],
+  "type": "humanoid",
+  "tags": [
+    "human"
+  ],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "15"
+  ],
+  "hp": 88,
+  "speed": {
+    "walk": 30
+  },
+  "str": 12,
+  "dex": 16,
+  "con": 12,
+  "int": 20,
+  "wis": 10,
+  "cha": 12,
+  "skills": {
+    "arcana": "+13",
+    "history": "+13"
+  },
+  "passive": 10,
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Infernal",
+    "Primordial",
+    "Undercommon",
+    "telepathy 60 ft."
+  ],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "No Soul",
+      "entries": [
+        "Since Xzar doesn't have a soul, resurrection magic is able to work upon him no matter how much time has passed. For example, a revivify would work on Xzar a week after he died. The only drawback is that True Resurrection and Wish are unable to bring Xzar back to life if no body exists."
+      ]
+    },
+    {
+      "name": "Grim Harvest (1/Turn)",
+      "entries": [
+        "When Xzar kills a creature that is neither a construct nor undead with a spell of 1st level or higher, Xzar regains hit points equal to twice the spell's level, or three times if it is a necromancy spell."
+      ]
+    },
+    {
+      "name": "Chaos Phage",
+      "entries": [
+        "Xzar's infusion with the Chaos Phage gives him the following benefits:",
+        {
+          "type": "list",
+          "items": [
+            "Xzar regains 10 hit points at the start of his turn if he has at least 1 hit point",
+            "Xzar has advantage on saving throws against spells and other magical effects",
+            "Xzar has resistance to acid, cold, fire, lightning, thunder",
+            "Xzar has darkvision and telepathy to 60 ft."
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Staff",
+      "entries": [
+        "Melee atk +5 to hit, reach 5 ft., one target. 4 (1d6 + 1 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "headerEntries": [
+        "Xzar is an 16th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 17}, {@hit 12} to hit with spell attacks). Xzar has the following wizard spells prepared:"
+      ],
+      "spells": {
+        "0": {
+          "spells": [
+            "acid splash",
+            "fire bolt",
+            "mage hand",
+            "poison spray"
+          ]
+        },
+        "1": {
+          "spells": [
+            "false life",
+            "mage armor",
+            "ray of sickness"
+          ]
+        },
+        "2": {
+          "spells": [
+            "ray of enfeeblement",
+            "mirror image",
+            "misty step"
+          ]
+        },
+        "3": {
+          "spells": [
+            "animate dead",
+            "counterspell",
+            "dispel magic",
+            "vampiric touch"
+          ]
+        },
+        "4": {
+          "spells": [
+            "blight",
+            "evard's black tentacles"
+          ]
+        },
+        "5": {
+          "spells": [
+            "cloudkill",
+            "conjure elemental",
+            "scrying"
+          ]
+        },
+        "6": {
+          "spells": [
+            "circle of death",
+            "create undead"
+          ]
+        },
+        "7": {
+          "spells": [
+            "finger of death",
+            "teleport"
+          ]
+        },
+        "8": {
+          "spells": [
+            "Abi-Dalzim's Horrid Wilting|XGE",
+            "clone"
+          ]
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "footerEntries": [
+        "*Necromancy spell of 1st level or higher"
+      ],
+      "ability": "int",
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

@@ -1,0 +1,141 @@
+{
+  "name": "Aberrant Zealot",
+  "source": "PaBTSO",
+  "page": 203,
+  "size": [
+    "M"
+  ],
+  "type": "aberration",
+  "tags": [],
+  "alignment": [
+    "C",
+    "E"
+  ],
+  "ac": [
+    "16"
+  ],
+  "hp": 93,
+  "speed": {
+    "walk": 30
+  },
+  "str": 15,
+  "dex": 18,
+  "con": 12,
+  "int": 13,
+  "wis": 8,
+  "cha": 19,
+  "skills": {
+    "perception": "+5"
+  },
+  "passive": 15,
+  "languages": [
+    "Common",
+    "Deep Speech"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Aberrant Form",
+      "entries": [
+        "The zealot exudes the chaos of the Far Realm. Any non-Aberration creature that starts its turn within 5 feet of the zealot must succeed on a {@dc 15} Wisdom saving throw or take 7 ({@damage 2d6}) psychic damage."
+      ]
+    },
+    {
+      "name": "Weirdly Pliable",
+      "entries": [
+        "The zealot, along with any equipment it is wearing or carrying, is unnaturally flexible. The zealot can move through any space as narrow as 1 inch without squeezing."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The zealot makes one Psychic Rend attack and two Shortsword attacks."
+      ]
+    },
+    {
+      "name": "Psychic Rend",
+      "entries": [
+        "{@atk ms,rs} +7 to hit, reach 15 ft. or range 120 ft., one target. 14 (3d6 + 4 damage) psychic damage, and the target must succeed on a DC 15 Wisdom saving throw or have the {@condition stunned} condition until the start of the zealot's next turn."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "Melee atk +7 to hit, reach 15 ft., one target. 7 (1d6 + 4 damage) piercing damage plus 7 (2d6 damage) psychic damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "headerEntries": [
+        "The zealot casts one of the following spells, requiring no components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+      ],
+      "will": [
+        "detect thoughts",
+        "minor illusion"
+      ],
+      "daily": {
+        "1": []
+      },
+      "ability": "cha",
+      "displayAs": "action",
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      }
+    }
+  ],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "grappled",
+    "restrained"
+  ],
+  "resist": [
+    "psychic"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60 ft.",
+    "truesight 10 ft."
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

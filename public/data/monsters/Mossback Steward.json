@@ -1,0 +1,138 @@
+{
+  "name": "Mossback Steward",
+  "source": "EGW",
+  "page": 256,
+  "size": [
+    "G"
+  ],
+  "type": "monstrosity",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "17",
+    "22"
+  ],
+  "hp": 227,
+  "speed": {
+    "walk": 20
+  },
+  "str": 28,
+  "dex": 3,
+  "con": 25,
+  "int": 12,
+  "wis": 17,
+  "cha": 5,
+  "skills": {
+    "arcana": "+5",
+    "insight": "+7",
+    "nature": "+5",
+    "perception": "+7",
+    "persuasion": "+5"
+  },
+  "passive": 10,
+  "languages": [
+    "telepathy 120 ft",
+    "understands Goblin, Common, and Primordial but can't speak"
+  ],
+  "cr": "8",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The tortoise can breathe air and water."
+      ]
+    },
+    {
+      "name": "Massive Frame",
+      "entries": [
+        "The tortoise can carry up to 20,000 pounds of weight atop its shell, but moves at half speed if the weight exceeds 10,000 pounds. Medium or smaller creatures can move underneath Mossback Steward while it's not {@condition prone}.",
+        "Any creature under Mossback Steward when it falls {@condition prone} is {@condition grappled} (escape {@dc 18}). Until the grapple ends, the creature is {@condition prone} and {@condition restrained}."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "entries": [
+        "Melee atk +12 to hit, reach 10 ft., one target. 28 (3d12 + 9 damage) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Shell Defense {@recharge 4}",
+      "entries": [
+        "The tortoise withdraws into its shell, falls {@condition prone}, and gains a +5 bonus to AC. While Mossback Steward is in its shell, its speed is 0 and can't increase. The tortoise can emerge from its shell as an action, whereupon it is no longer {@condition prone}."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "headerEntries": [
+        "Mossback Steward's innate spellcasting ability is Wisdom (spell save {@dc 15}). It can innately cast the following spells, requiring no material components."
+      ],
+      "will": [
+        "friends"
+      ],
+      "rest": {
+        "1": [
+          "{@spell suggestion}",
+          "{@spell divination}"
+        ]
+      },
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      }
+    }
+  ],
+  "conditionImmune": [
+    "poisoned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [
+    "poison"
+  ],
+  "senses": [
+    "darkvision 60 ft"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}

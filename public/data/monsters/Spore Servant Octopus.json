@@ -1,0 +1,72 @@
+{
+  "name": "Spore Servant Octopus",
+  "source": "DoSI",
+  "page": 46,
+  "size": [
+    "L"
+  ],
+  "type": "plant",
+  "tags": [],
+  "alignment": [
+    "U"
+  ],
+  "ac": [
+    "11"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 5,
+    "swim": 50
+  },
+  "str": 17,
+  "dex": 13,
+  "con": 13,
+  "int": 2,
+  "wis": 6,
+  "cha": 1,
+  "skills": {},
+  "passive": 8,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "entries": [
+        "While out of water, the octopus can hold its breath for 1 hour."
+      ]
+    },
+    {
+      "name": "Water Breathing",
+      "entries": [
+        "The octopus can breathe only underwater."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "entries": [
+        "Melee atk +5 to hit, reach 15 ft., one target 7 (1d8 + 3 damage) bludgeoning damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "paralyzed"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30 ft. (blind beyond this radius)"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}
