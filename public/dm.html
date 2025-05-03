@@ -4151,7 +4151,7 @@
                         const id = generateID();
 
                         const monster = {
-                            id,
+                            id: id,
                             name: selectedMonster,
                             hp: avgHp,
                             init: initiative,
@@ -4162,7 +4162,7 @@
                         };
 
                         monsters.push(monster);
-                        addMonsterToken(id, selectedMonster, 100, 100);
+                        addMonsterToken(monster);
                     })
                     .catch(err => {
                         console.error("Error loading monster:", err);
@@ -4410,14 +4410,14 @@
         }
 
 
-        function addMonsterToken(id,name,x,y) {
+        function addMonsterToken(monster) {
             const layer = document.getElementById('mapTokenLayer');
             
             const container = document.createElement('div');
-            container.id = `token-${id}`;
+            container.id = `token-${monster.id}`;
             container.style.position = 'absolute';
-            container.style.left = `${x}px`;
-            container.style.top = `${y}px`;
+            container.style.left = `${monster.x}px`;
+            container.style.top = `${monster.y}px`;
             container.style.width = '100px'; //60px;
             container.style.height = '100px'; //60px;
             container.style.borderRadius = '50%';
@@ -4430,7 +4430,7 @@
             container.style.justifyContent = 'center';
 
             const img = document.createElement('img');
-            img.src = `data/monster_tokens/${name}.webp`;
+            img.src = `data/monster_tokens/${monster.name}.webp`;
             img.style.width = '100%';
             img.style.height = '100%';
             img.style.borderRadius = '50%';
@@ -4641,9 +4641,9 @@
                         const id = generateID();
 
                         const monster = {
-                            id,
-                            name,
-                            hp,
+                            id: id,
+                            name: name,
+                            hp: hp,
                             init: initiative,
                             conditions: [],
                             x: 100,
@@ -4670,7 +4670,7 @@
                         `;
 
                         monsterTableBody.appendChild(newRow);
-                        addMonsterToken(id, name, 100, 100);
+                        addMonsterToken(monster);
 
                         newRow.addEventListener('click', () => loadMonster(name));
                     })
