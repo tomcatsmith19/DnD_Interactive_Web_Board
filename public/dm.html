@@ -4358,7 +4358,7 @@
         function updateMonsterTable() {
             // Remove dead monsters
             for (let i = monsters.length - 1; i >= 0; i--) {
-                if (monsters[i].hp <= 0) {
+                if (monsters[i].hp <= 0 && !monsters[i].isPlayer) {
                     const id = monsters[i].id;
                     document.getElementById(`token-${id}`)?.remove();
                     monsters.splice(i, 1);
