@@ -4175,6 +4175,7 @@
             Promise.all(promises).then(() => {
                 monsterModal.style.display = 'none';
                 updateMonsterTable();
+                syncMonstersToFirebase();
 
             });
         });
@@ -4350,6 +4351,7 @@
             }
 
             updateMonsterTable();
+            syncMonstersToFirebase();
         });
 
         // Update Monster Table
@@ -4406,13 +4408,13 @@
 
                 monsterTableBody.appendChild(row);
             });
-            syncMonstersToFirebase();
+            
         }
 
 
         function addMonsterToken(monster) {
             const layer = document.getElementById('mapTokenLayer');
-            
+
             const container = document.createElement('div');
             container.id = `token-${monster.id}`;
             container.style.position = 'absolute';
@@ -4684,6 +4686,7 @@
 
             Promise.all(promises).then(() => {
                 updateMonsterTable();
+                syncMonstersToFirebase();
             });
         }
 
@@ -4707,7 +4710,34 @@
             });
         }
 
-        
+        // Load monsters from Firebase on page load
+        const monstersRef = db.collection("shared").doc("monsters");
+
+        monstersRef.onSnapshot(doc => {
+            if (!doc.exists) {
+                console.log("No monsters found in Firebase.");
+                return;
+            }
+
+            const data = doc.data();
+            if (!Array.isArray(data.monsters)) return;
+
+            // Clear local array *in-place*
+            monsters.length = 0;
+
+            // Clear existing tokens
+            document.getElementById('mapTokenLayer').innerHTML = '';
+
+            // Rebuild state and tokens
+            data.monsters.forEach(m => {
+                monsters.push({ ...m }); // Keep shared reference
+                addMonsterToken(m);
+            });
+
+            updateMonsterTable();
+        });
+
+
 
 
     </script>
