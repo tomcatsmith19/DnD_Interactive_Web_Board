@@ -503,10 +503,48 @@
     </div>
 
     <!-- SCRIPT###################################################################################################-->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script>
 
+        const firebaseConfig = {
+            apiKey: "AIzaSyDeUJ3781n8fi4QhVWvHAfeW7ueRqaw87E",
+            authDomain: "dnd-interactive-web-board.firebaseapp.com",
+            projectId: "dnd-interactive-web-board",
+            storageBucket: "dnd-interactive-web-board.firebasestorage.app",
+            messagingSenderId: "474147936717",
+            appId: "1:474147936717:web:5a4101401f5bde9a368c84",
+            measurementId: "G-G9KT6WQ5F4"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        auth.onAuthStateChanged(user => {
+            if (!user) {
+                window.location.href = "index.html";
+                return;
+            }
+
+            document.body.style.display = "block";
+            const username = user.email.split("@")[0];
+            userDisplayEl.textContent = `Logged in as: ${user.email}`;
+
+            // Optional: Store username globally for updates
+            window.loggedInUsername = username;
+
+            logoutBtn.addEventListener("click", () => {
+                auth.signOut().then(() => {
+                    window.location.href = "index.html";
+                });
+            });
+        });
+
         // Global monster state array
-        const monsters = []; // Each: { id, name, hp, init, conditions, x, y }
+        const monsters = []; // Each: { id, name, hp, init, conditions, x, y, isplayer }
+
 
         // Monster List
         const allMonsters = [
@@ -4115,13 +4153,16 @@
                         const monster = {
                             id,
                             name: selectedMonster,
-                            init: initiative,
                             hp: avgHp,
+                            init: initiative,
                             conditions: [],
+                            x: 100,
+                            y: 100,
+                            isPlayer: false,
                         };
 
                         monsters.push(monster);
-                        addMonsterToken(selectedMonster, id);
+                        addMonsterToken(id, selectedMonster, 100, 100);
                     })
                     .catch(err => {
                         console.error("Error loading monster:", err);
@@ -4134,6 +4175,7 @@
             Promise.all(promises).then(() => {
                 monsterModal.style.display = 'none';
                 updateMonsterTable();
+
             });
         });
 
@@ -4364,17 +4406,18 @@
 
                 monsterTableBody.appendChild(row);
             });
+            syncMonstersToFirebase();
         }
 
 
-        function addMonsterToken(name, id) {
+        function addMonsterToken(id,name,x,y) {
             const layer = document.getElementById('mapTokenLayer');
-
+            
             const container = document.createElement('div');
             container.id = `token-${id}`;
             container.style.position = 'absolute';
-            container.style.top = '100px';
-            container.style.left = '100px';
+            container.style.left = `${x}px`;
+            container.style.top = `${y}px`;
             container.style.width = '100px'; //60px;
             container.style.height = '100px'; //60px;
             container.style.borderRadius = '50%';
@@ -4450,6 +4493,14 @@
                 if (isDragging) {
                     el.style.cursor = 'grab';
                     isDragging = false;
+
+                    const id = el.id.replace('token-', '');
+                    const monster = monsters.find(m => m.id === id);
+                    if (monster) {
+                        monster.x = parseInt(el.style.left);
+                        monster.y = parseInt(el.style.top);
+                    }
+                    syncMonstersToFirebase();
                 }
             });
         }
@@ -4589,16 +4640,19 @@
                         const hp = typeof data.hp === 'object' ? data.hp.average : data.hp;
                         const id = generateID();
 
-                        // Store in global monsters array
-                        monsters.push({
+                        const monster = {
                             id,
                             name,
                             hp,
                             init: initiative,
                             conditions: [],
                             x: 100,
-                            y: 100
-                        });
+                            y: 100,
+                            isPlayer: false,
+                        };
+
+                        // Store in global monsters array
+                        monsters.push(monster);
 
                         // Create DOM row
                         const newRow = document.createElement('tr');
@@ -4616,7 +4670,7 @@
                         `;
 
                         monsterTableBody.appendChild(newRow);
-                        addMonsterToken(name, id);
+                        addMonsterToken(id, name, 100, 100);
 
                         newRow.addEventListener('click', () => loadMonster(name));
                     })
@@ -4633,8 +4687,27 @@
             });
         }
 
+        // FIREBASE SYNCHRONIZATON
+        function syncMonstersToFirebase() {
+            const monstersRef = db.collection("shared").doc("monsters");
 
+            monstersRef.get().then(doc => {
+                const payload = {
+                    monsters,
+                    updatedAt: Date.now()
+                };
 
+                return doc.exists
+                    ? monstersRef.update(payload)
+                    : monstersRef.set(payload);
+            }).then(() => {
+                console.log("Monsters synced.");
+            }).catch(err => {
+                console.error("Error syncing monsters:", err);
+            });
+        }
+
+        
 
 
     </script>
