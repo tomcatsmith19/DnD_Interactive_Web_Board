@@ -397,7 +397,8 @@
 
                 <!-- Encounter Builder Tab -->
                 <!-- encounter tab---------------------------------------------------------------------------------------->
-                <div id="encounterContent" class="dungeon-tab-content" style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 20px; gap: 20px;">
+                <div id="encounterContent" class="dungeon-tab-content"
+                    style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 20px; gap: 20px;">
 
                     <!-- Left Column: Controls -->
                     <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
@@ -497,77 +498,9 @@
 
     <!-- SCRIPT###################################################################################################-->
     <script>
-        function openTab(tabId) {
-            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
 
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-        }
-
-        // Book dropdown behavior
-        const bookSelect = document.getElementById('bookSelect');
-        const bookViewer = document.getElementById('bookViewer');
-
-        bookSelect?.addEventListener('change', () => {
-            const selected = bookSelect.value;
-            if (selected) {
-                bookViewer.src = `data/books/${selected}`;
-            } else {
-                bookViewer.src = '';
-            }
-        });
-
-        // Map dropdown behavior (updates map image in Map tab)
-        const mapSelect = document.getElementById('mapSelect');
-        const mapImage = document.getElementById('mapImage');  // NEW: reference the map image
-
-        mapSelect?.addEventListener('change', () => {
-            const selectedMap = mapSelect.value;
-            if (selectedMap) {
-                mapImage.src = `data/maps/${selectedMap}`;
-            } else {
-                mapImage.src = '';
-            }
-        });
-
-        // Logout and Menu button behavior
-        const logoutBtn = document.getElementById('logoutBtn');
-        const menuBtn = document.getElementById('menuBtn');
-
-        logoutBtn?.addEventListener('click', () => {
-            // Replace with your Firebase logout code or just redirect
-            window.location.href = "index.html";
-        });
-
-        menuBtn?.addEventListener('click', () => {
-            window.location.href = "menu.html";
-        });
-
-        // Dungeon tab functionality
-        function openDungeonTab(tabId) {
-            document.querySelectorAll('.dungeon-tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[onclick="openDungeonTab('${tabId}')"]`).classList.add('active');
-
-            document.querySelectorAll('.dungeon-tab-content').forEach(content => content.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-        }
-
-        const addMonsterBtn = document.getElementById('addMonsterBtn');
-        const monsterTableBody = document.getElementById('monsterTableBody');
-
-        addMonsterBtn?.addEventListener('click', () => {
-            monsterModal.style.display = 'flex';
-            refreshMonsterList();
-        });
-
-        // Elements
-        const monsterModal = document.getElementById('monsterModal');
-        const monsterSearch = document.getElementById('monsterSearch');
-        const monsterList = document.getElementById('monsterList');
-        const monsterCount = document.getElementById('monsterCount');
-        const confirmMonsterBtn = document.getElementById('confirmMonsterBtn');
-        const closeMonsterModal = document.getElementById('closeMonsterModal');
+        // Global monster state array
+        const monsters = []; // Each: { id, name, hp, init, conditions, x, y }
 
         // Monster List
         const allMonsters = [
@@ -4033,12 +3966,94 @@
         ];
 
 
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
 
-        // Show Modal on "Add Monster" button
-        addMonsterBtn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Book dropdown behavior
+        const bookSelect = document.getElementById('bookSelect');
+        const bookViewer = document.getElementById('bookViewer');
+
+        bookSelect?.addEventListener('change', () => {
+            const selected = bookSelect.value;
+            if (selected) {
+                bookViewer.src = `data/books/${selected}`;
+            } else {
+                bookViewer.src = '';
+            }
+        });
+
+        // Map dropdown behavior (updates map image in Map tab)
+        const mapSelect = document.getElementById('mapSelect');
+        const mapImage = document.getElementById('mapImage');  // NEW: reference the map image
+
+        mapSelect?.addEventListener('change', () => {
+            const selectedMap = mapSelect.value;
+            if (selectedMap) {
+                mapImage.src = `data/maps/${selectedMap}`;
+            } else {
+                mapImage.src = '';
+            }
+        });
+
+        // Logout and Menu button behavior
+        const logoutBtn = document.getElementById('logoutBtn');
+        const menuBtn = document.getElementById('menuBtn');
+
+        logoutBtn?.addEventListener('click', () => {
+            // Replace with your Firebase logout code or just redirect
+            window.location.href = "index.html";
+        });
+
+        menuBtn?.addEventListener('click', () => {
+            window.location.href = "menu.html";
+        });
+
+        // Dungeon tab functionality
+        function openDungeonTab(tabId) {
+            document.querySelectorAll('.dungeon-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[onclick="openDungeonTab('${tabId}')"]`).classList.add('active');
+
+            document.querySelectorAll('.dungeon-tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Zoom map with mouse wheel
+        const mapContainer = document.getElementById('mapContainer');
+        let scale = 1;
+
+        mapContainer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+
+            // Zoom in/out based on wheel delta
+            const delta = e.deltaY > 0 ? -0.1 : 0.1;
+            scale = Math.min(Math.max(0.2, scale + delta), 3);  // Clamp between 0.2 and 3
+
+            mapContainer.style.transform = `scale(${scale})`;
+        });
+
+
+        // initiative tracker functionality
+        const addMonsterBtn = document.getElementById('addMonsterBtn');
+        const monsterTableBody = document.getElementById('monsterTableBody');
+
+        addMonsterBtn?.addEventListener('click', () => {
             monsterModal.style.display = 'flex';
             refreshMonsterList();
         });
+
+        // Elements
+        const monsterModal = document.getElementById('monsterModal');
+        const monsterSearch = document.getElementById('monsterSearch');
+        const monsterList = document.getElementById('monsterList');
+        const monsterCount = document.getElementById('monsterCount');
+        const confirmMonsterBtn = document.getElementById('confirmMonsterBtn');
+        const closeMonsterModal = document.getElementById('closeMonsterModal');
+
 
         // Close Modal
         closeMonsterModal.addEventListener('click', () => {
@@ -4065,12 +4080,11 @@
                 });
         }
 
-        // Search Bar Filters List
+
         monsterSearch.addEventListener('input', (e) => {
             refreshMonsterList(e.target.value);
         });
 
-        // Confirm Button
         confirmMonsterBtn.addEventListener('click', () => {
             const selectedMonster = monsterList.dataset.selected;
             const number = parseInt(monsterCount.value) || 1;
@@ -4080,10 +4094,9 @@
                 return;
             }
 
-            let promises = []; // Track fetch promises
+            let promises = [];
 
             for (let i = 0; i < number; i++) {
-                // Fetch the monster JSON
                 const fetchPromise = fetch(`data/monsters/${selectedMonster}.json`)
                     .then(response => response.json())
                     .then(data => {
@@ -4091,41 +4104,30 @@
                         const dexMod = Math.floor((dex - 10) / 2);
                         const initiative = Math.floor(Math.random() * 20) + 1 + dexMod;
                         const avgHp = typeof data.hp === 'object' ? data.hp.average : data.hp;
+                        const id = generateID();
 
-                        const newRow = document.createElement('tr');
-                        newRow.innerHTML = `
-                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">?</td>
-                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                                <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                            </td>
-                            <td style="padding: 8px; border: 1px solid #555;">${selectedMonster}</td>
-                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                                <input type="number" value="${avgHp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                            </td>
-                            <td style="padding: 8px; border: 1px solid #555;"> </td> <!-- EMPTY CONDITIONS CELL -->
-                        `;
-                        const monsterId = generateID();
-                        newRow.dataset.monsterId = monsterId;
+                        const monster = {
+                            id,
+                            name: selectedMonster,
+                            init: initiative,
+                            hp: avgHp,
+                            conditions: [],
+                        };
 
-                        monsterTableBody.appendChild(newRow);
-                        addMonsterToken(selectedMonster, monsterId);
-
-                        newRow.addEventListener('click', () => {
-                            loadMonster(selectedMonster);
-                        });
+                        monsters.push(monster);
+                        addMonsterToken(selectedMonster, id);
                     })
                     .catch(err => {
-                        console.error("Error loading monster for table:", err);
+                        console.error("Error loading monster:", err);
                         alert(`Could not load monster: ${selectedMonster}`);
                     });
 
-                promises.push(fetchPromise); //  Save promise
+                promises.push(fetchPromise);
             }
 
-            // After all monsters are added
             Promise.all(promises).then(() => {
                 monsterModal.style.display = 'none';
-                updateMonsterTable(); //  Now called AFTER all monsters are actually added
+                updateMonsterTable();
             });
         });
 
@@ -4278,100 +4280,86 @@
             const condition = document.getElementById('conditionSelect').value;
             const amount = parseInt(document.getElementById('amountTurns').value);
 
-            const rows = monsterTableBody.querySelectorAll('tr');
-            if (index < 0 || index >= rows.length) {
+            if (index < 0 || index >= monsters.length) {
                 alert("Invalid target index.");
                 return;
             }
 
-            const row = rows[index];
-            const hpInput = row.children[3].querySelector('input');
-            const conditionsCell = row.children[4];
+            const monster = monsters[index];
 
             if (action === 'heal') {
-                hpInput.value = parseInt(hpInput.value) + amount;
+                monster.hp += amount;
             } else if (action === 'damage') {
-                hpInput.value = Math.max(0, parseInt(hpInput.value) - amount);
+                monster.hp = Math.max(0, monster.hp - amount);
             } else if (action === 'apply') {
-                if (condition === "-- None --") return;
-                const current = conditionsCell.textContent.trim();
-                if (!current.includes(condition)) {
-                    conditionsCell.textContent = current ? `${current}, ${condition}` : condition;
+                if (condition !== "-- None --" && !monster.conditions.includes(condition)) {
+                    monster.conditions.push(condition);
                 }
             } else if (action === 'remove') {
-                if (condition === "-- None --") return;
-                const current = conditionsCell.textContent.split(",").map(s => s.trim());
-                const updated = current.filter(c => c.toLowerCase() !== condition.toLowerCase());
-                conditionsCell.textContent = updated.join(", ");
+                if (condition !== "-- None --") {
+                    monster.conditions = monster.conditions.filter(c => c.toLowerCase() !== condition.toLowerCase());
+                }
             }
 
-            updateMonsterTable(); // <<< Always update table after actions
+            updateMonsterTable();
         });
 
         // Update Monster Table
         function updateMonsterTable() {
-            const rows = Array.from(monsterTableBody.querySelectorAll('tr'));
-
-            // Remove dead monsters (hp = 0)
-            rows.forEach(row => {
-                const hpInput = row.children[3].querySelector('input');
-                if (parseInt(hpInput.value) <= 0) {
-                    const id = row.dataset.monsterId;
+            // Remove dead monsters
+            for (let i = monsters.length - 1; i >= 0; i--) {
+                if (monsters[i].hp <= 0) {
+                    const id = monsters[i].id;
                     document.getElementById(`token-${id}`)?.remove();
-                    row.remove();
+                    monsters.splice(i, 1);
                 }
-            });
+            }
 
-            // Re-get rows after removals
-            const updatedRows = Array.from(monsterTableBody.querySelectorAll('tr'));
-
-            // Sort by Initiative (Descending)
-            updatedRows.sort((a, b) => {
-                const initA = parseInt(a.children[1].querySelector('input').value) || 0;
-                const initB = parseInt(b.children[1].querySelector('input').value) || 0;
-                return initB - initA;
-            });
-
-            // Clear table and re-add sorted rows
+            monsters.sort((a, b) => b.init - a.init);
             monsterTableBody.innerHTML = '';
-            updatedRows.forEach((row, index) => {
-                row.children[0].textContent = index; // Update Index #
-                monsterTableBody.appendChild(row);
-            });
 
-            // Update token labels
-            updatedRows.forEach((row, index) => {
-                row.children[0].textContent = index;
-                monsterTableBody.appendChild(row);
+            monsters.forEach((m, index) => {
+                const row = document.createElement('tr');
+                row.dataset.monsterId = m.id;
 
-                const id = row.dataset.monsterId;
-                const token = document.getElementById(`token-${id}`);
+                row.innerHTML = `
+                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">${index}</td>
+                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                        <input type="number" value="${m.init}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                    </td>
+                    <td style="padding: 8px; border: 1px solid #555;">${m.name}</td>
+                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                        <input type="number" value="${m.hp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                    </td>
+                    <td style="padding: 8px; border: 1px solid #555;">${m.conditions.join(", ")}</td>
+                `;
 
+                row.addEventListener('click', () => loadMonster(m.name));
+
+                const token = document.getElementById(`token-${m.id}`);
                 if (token) {
-                    // Update index label
-                    const indexLabel = token.querySelector('.token-label');
-                    if (indexLabel) indexLabel.textContent = index;
-
-                    // Update condition label
-                    const conditionText = row.children[4].textContent.trim();
-                    const conditionLabel = token.querySelector('.condition-label');
-                    if (conditionLabel) conditionLabel.textContent = conditionText;
+                    token.querySelector('.token-label').textContent = index;
+                    token.querySelector('.condition-label').textContent = m.conditions;
                 }
-            });
 
-            // Attach listeners so manual edits update table too
-            updatedRows.forEach(row => {
+                // Attach listeners for manual updates
                 const initInput = row.children[1].querySelector('input');
                 const hpInput = row.children[3].querySelector('input');
 
                 initInput.addEventListener('input', () => {
+                    m.init = parseInt(initInput.value) || 0;
                     updateMonsterTable();
                 });
+
                 hpInput.addEventListener('input', () => {
+                    m.hp = parseInt(hpInput.value) || 0;
                     updateMonsterTable();
                 });
+
+                monsterTableBody.appendChild(row);
             });
         }
+
 
         function addMonsterToken(name, id) {
             const layer = document.getElementById('mapTokenLayer');
@@ -4464,19 +4452,6 @@
             return '_' + Math.random().toString(36).substr(2, 9);
         }
 
-        // Zoom map with mouse wheel
-        const mapContainer = document.getElementById('mapContainer');
-        let scale = 1;
-
-        mapContainer.addEventListener('wheel', (e) => {
-            e.preventDefault();
-
-            // Zoom in/out based on wheel delta
-            const delta = e.deltaY > 0 ? -0.1 : 0.1;
-            scale = Math.min(Math.max(0.2, scale + delta), 3);  // Clamp between 0.2 and 3
-
-            mapContainer.style.transform = `scale(${scale})`;
-        });
 
         // encounter builder tab
         // XP Table
@@ -4593,7 +4568,8 @@
         }
 
         function sendEncounter() {
-            const names = [...document.querySelectorAll('#encounterMonsterList li')].map(li => li.textContent.split(' (')[0]);
+            const names = [...document.querySelectorAll('#encounterMonsterList li')]
+                .map(li => li.textContent.split(' (')[0]);
 
             let promises = [];
 
@@ -4604,29 +4580,39 @@
                         const dex = data.dex ?? 10;
                         const dexMod = Math.floor((dex - 10) / 2);
                         const initiative = Math.floor(Math.random() * 20) + 1 + dexMod;
-                        const avgHp = typeof data.hp === 'object' ? data.hp.average : data.hp;
+                        const hp = typeof data.hp === 'object' ? data.hp.average : data.hp;
+                        const id = generateID();
 
+                        // Store in global monsters array
+                        monsters.push({
+                            id,
+                            name,
+                            hp,
+                            init: initiative,
+                            conditions: [],
+                            x: 100,
+                            y: 100
+                        });
+
+                        // Create DOM row
                         const newRow = document.createElement('tr');
+                        newRow.dataset.monsterId = id;
                         newRow.innerHTML = `
-                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">?</td>
-                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                        <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                    </td>
-                    <td style="padding: 8px; border: 1px solid #555;">${name}</td>
-                    <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                        <input type="number" value="${avgHp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
-                    </td>
-                    <td style="padding: 8px; border: 1px solid #555;"> </td>
-                `;
-                        const monsterId = generateID();
-                        newRow.dataset.monsterId = monsterId;
+                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">?</td>
+                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                                <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #555;">${name}</td>
+                            <td style="padding: 8px; border: 1px solid #555; text-align: center;">
+                                <input type="number" value="${hp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #555;"> </td>
+                        `;
 
                         monsterTableBody.appendChild(newRow);
-                        addMonsterToken(name, monsterId);
+                        addMonsterToken(name, id);
 
-                        newRow.addEventListener('click', () => {
-                            loadMonster(name);
-                        });
+                        newRow.addEventListener('click', () => loadMonster(name));
                     })
                     .catch(err => {
                         console.error("Error loading monster for table:", err);
@@ -4640,6 +4626,7 @@
                 updateMonsterTable();
             });
         }
+
 
 
 
