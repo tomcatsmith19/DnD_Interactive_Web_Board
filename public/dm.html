@@ -4362,6 +4362,7 @@
                     const id = monsters[i].id;
                     document.getElementById(`token-${id}`)?.remove();
                     monsters.splice(i, 1);
+                    syncMonstersToFirebase();
                 }
             }
 
@@ -4464,7 +4465,7 @@
             conditionLabel.style.padding = '2px 4px';
             conditionLabel.style.borderRadius = '4px';
             conditionLabel.style.pointerEvents = 'none';
-            conditionLabel.textContent = '';  // initially empty
+            conditionLabel.textContent = (monster.conditions || []).join(', ');
 
             container.appendChild(img);
             container.appendChild(label);

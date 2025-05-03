@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Map Viewer</title>
   <!-- Fantasy Font -->
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       overflow: hidden;
@@ -86,41 +88,49 @@
     <div id="menuContent">
       <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
 
-      
+
         <!-- Player Stats Container -->
-        <div style="width: 90%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <div
+          style="width: 90%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
           <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">Player Name</h1>
 
           <label for="levelInput">Level:</label>
-          <input type="number" id="levelInput" min="0" value="1" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+          <input type="number" id="levelInput" min="0" value="1"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
 
           <label for="initiativeInput">Initiative:</label>
-          <input type="number" id="initiativeInput" min="0" value="0" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+          <input type="number" id="initiativeInput" min="0" value="0"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
 
           <label>HP:</label>
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-            <input type="number" id="currentHP" min="0" value="0" style="flex: 1; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+            <input type="number" id="currentHP" min="0" value="0"
+              style="flex: 1; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
             <span style="color: white;">/</span>
-            <input type="number" id="maxHP" min="0" value="0" style="flex: 1; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+            <input type="number" id="maxHP" min="0" value="0"
+              style="flex: 1; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
           </div>
         </div>
-        
+
         <div style="width: 90%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
           <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">Action Interface</h1>
-      
+
           <label for="actionSelect">Action:</label>
-          <select id="actionSelect" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+          <select id="actionSelect"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
             <option value="heal">Heal</option>
             <option value="damage">Damage</option>
             <option value="apply">Apply Condition</option>
             <option value="remove">Remove Condition</option>
           </select>
-      
+
           <label for="targetIndex">Target Index:</label>
-          <input type="number" id="targetIndex" min="0" value="0" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
-      
+          <input type="number" id="targetIndex" min="0" value="0"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+
           <label for="conditionSelect">Condition (if applicable):</label>
-          <select id="conditionSelect" style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+          <select id="conditionSelect"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
             <option>-- None --</option>
             <option>Blinded</option>
             <option>Charmed</option>
@@ -138,25 +148,36 @@
             <option>Unconscious</option>
             <option>Exhaustion</option>
           </select>
-      
+
           <label for="amountTurns">Amount / Turns:</label>
-          <input type="number" id="amountTurns" min="0" value="0" style="width: 100%; padding: 8px; margin-bottom: 20px;  background-color: #333; color: #fff;">
-      
-          <button id="executeBtn" style="width: 100%; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #32CD32; color: white; border: none; border-radius: 5px; cursor: pointer;">Execute</button>
+          <input type="number" id="amountTurns" min="0" value="0"
+            style="width: 100%; padding: 8px; margin-bottom: 20px;  background-color: #333; color: #fff;">
+
+          <button id="executeBtn"
+            style="width: 100%; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #32CD32; color: white; border: none; border-radius: 5px; cursor: pointer;">Execute</button>
         </div>
-      
+
         <div style="margin-top: 30px; width: 90%; display: flex; justify-content: space-between; gap: 10px;">
-          <button id="logoutBtn" style="flex: 1; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #FF4C4C; color: white; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
-        
-          <button id="menuBtn" style="flex: 1; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Menu</button>
+          <button id="logoutBtn"
+            style="flex: 1; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #FF4C4C; color: white; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
+
+          <button id="menuBtn"
+            style="flex: 1; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Menu</button>
         </div>
-      
+
       </div>
     </div>
   </div>
 
   <!-- Floating button when menu is hidden -->
   <button id="toggleMenuStandalone">⇦</button>
+
+  <!-- map -->
+  <div id="mapContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+    <canvas id="mapCanvas" style="position: absolute; width: 100%; height: 100%;"></canvas>
+    <div id="mapTokenLayer" style="position: absolute; width: 100%; height: 100%; pointer-events: none;"></div>
+  </div>
+
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
@@ -176,6 +197,7 @@
 
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
+    const db = firebase.firestore();
 
     auth.onAuthStateChanged(user => {
       if (!user) {
@@ -230,6 +252,170 @@
 
     toggleBtn.addEventListener("click", cycleMenuState);
     toggleBtnStandalone.addEventListener("click", cycleMenuState);
+
+
+    // Global monster state array
+    const monsters = []; // Each: { id, name, hp, init, conditions, x, y, isplayer }
+
+
+    function addMonsterToken(monster) {
+      const layer = document.getElementById('mapTokenLayer');
+
+      const container = document.createElement('div');
+      container.id = `token-${monster.id}`;
+      container.style.position = 'absolute';
+      container.style.left = `${monster.x}px`;
+      container.style.top = `${monster.y}px`;
+      container.style.width = '100px'; //60px;
+      container.style.height = '100px'; //60px;
+      container.style.borderRadius = '50%';
+      container.style.border = '2px solid gold';
+      container.style.pointerEvents = 'auto';
+      container.style.cursor = 'grab';
+      container.style.position = 'absolute';
+      container.style.display = 'flex';
+      container.style.alignItems = 'center';
+      container.style.justifyContent = 'center';
+
+      const img = document.createElement('img');
+      img.src = `data/monster_tokens/${monster.name}.webp`;
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.borderRadius = '50%';
+      img.draggable = false;
+
+      const label = document.createElement('div');
+      label.className = 'token-label';
+      label.style.position = 'absolute';
+      label.style.top = '-5px';  // pull up slightly
+      label.style.right = '-5px'; // pull right slightly
+      label.style.fontSize = '20px';
+      label.style.backgroundColor = 'rgba(0,0,0,0.8)';
+      label.style.color = 'white';
+      label.style.padding = '2px 6px';
+      label.style.borderRadius = '6px';
+      label.style.zIndex = '10';
+      label.style.pointerEvents = 'none';
+      label.textContent = '?';
+
+      const conditionLabel = document.createElement('div');
+      conditionLabel.className = 'condition-label';
+      conditionLabel.style.position = 'absolute';
+      conditionLabel.style.bottom = '-5px';
+      conditionLabel.style.left = '50%';
+      conditionLabel.style.transform = 'translateX(-50%)';
+      conditionLabel.style.fontSize = '12px';
+      conditionLabel.style.backgroundColor = 'rgba(0,0,0,0.7)';
+      conditionLabel.style.color = 'white';
+      conditionLabel.style.padding = '2px 4px';
+      conditionLabel.style.borderRadius = '4px';
+      conditionLabel.style.pointerEvents = 'none';
+      conditionLabel.textContent = (monster.conditions || []).join(', ');
+
+      container.appendChild(img);
+      container.appendChild(label);
+      container.appendChild(conditionLabel);
+      makeDraggable(container);
+      layer.appendChild(container);
+    }
+
+    function makeDraggable(el) {
+      let isDragging = false;
+      let offsetX = 0, offsetY = 0;
+
+      el.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        isDragging = true;
+        offsetX = e.clientX - el.offsetLeft;
+        offsetY = e.clientY - el.offsetTop;
+        el.style.cursor = 'grabbing';
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        el.style.left = `${e.clientX - offsetX}px`;
+        el.style.top = `${e.clientY - offsetY}px`;
+      });
+
+      document.addEventListener('mouseup', () => {
+        if (isDragging) {
+          el.style.cursor = 'grab';
+          isDragging = false;
+
+          const id = el.id.replace('token-', '');
+          const monster = monsters.find(m => m.id === id);
+          if (monster) {
+            monster.x = parseInt(el.style.left);
+            monster.y = parseInt(el.style.top);
+          }
+          syncMonstersToFirebase();
+        }
+      });
+    }
+
+    function generateID() {
+      return '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+
+    // FIREBASE SYNCHRONIZATON
+    function syncMonstersToFirebase() {
+      const monstersRef = db.collection("shared").doc("monsters");
+
+      monstersRef.get().then(doc => {
+        const payload = {
+          monsters,
+          updatedAt: Date.now()
+        };
+
+        return doc.exists
+          ? monstersRef.update(payload)
+          : monstersRef.set(payload);
+      }).then(() => {
+        console.log("Monsters synced.");
+      }).catch(err => {
+        console.error("Error syncing monsters:", err);
+      });
+    }
+
+    // Load monsters from Firebase on page load
+    const monstersRef = db.collection("shared").doc("monsters");
+
+    monstersRef.onSnapshot(doc => {
+      if (!doc.exists) {
+        console.log("No monsters found in Firebase.");
+        return;
+      }
+
+      const data = doc.data();
+      if (!Array.isArray(data.monsters)) return;
+
+      // Clear local array *in-place*
+      monsters.length = 0;
+
+      // Clear existing tokens
+      document.getElementById('mapTokenLayer').innerHTML = '';
+
+      // Rebuild state and tokens
+      data.monsters.forEach(m => {
+        monsters.push({ ...m }); // Keep shared reference
+        addMonsterToken(m);
+      });
+
+      // Update token labels with index
+      monsters.forEach((m, i) => {
+        const token = document.getElementById(`token-${m.id}`);
+        if (token) {
+          const label = token.querySelector('.token-label');
+          if (label) label.textContent = i;
+        }
+      });
+
+    });
+
+
+
   </script>
 </body>
+
 </html>
