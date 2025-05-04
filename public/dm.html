@@ -4035,10 +4035,18 @@
         const mapSelect = document.getElementById('mapSelect');
         const mapImage = document.getElementById('mapImage');  // NEW: reference the map image
 
+        const mapRef = db.collection("shared").doc("map");
+
         mapSelect?.addEventListener('change', () => {
             const selectedMap = mapSelect.value;
             if (selectedMap) {
-                mapImage.src = `data/maps/${selectedMap}`;
+                const newPath = `data/maps/${selectedMap}`;
+                mapImage.src = newPath;
+
+                mapRef.set({
+                    filepath: newPath,
+                    updatedAt: Date.now()
+                });
             } else {
                 mapImage.src = '';
             }
@@ -4400,16 +4408,18 @@
                 initInput.addEventListener('input', () => {
                     m.init = parseInt(initInput.value) || 0;
                     updateMonsterTable();
+                    syncMonstersToFirebase();
                 });
 
                 hpInput.addEventListener('input', () => {
                     m.hp = parseInt(hpInput.value) || 0;
                     updateMonsterTable();
+                    syncMonstersToFirebase();
                 });
 
                 monsterTableBody.appendChild(row);
             });
-            
+
         }
 
 
@@ -4738,6 +4748,11 @@
             updateMonsterTable();
         });
 
+        mapRef.onSnapshot(doc => {
+            if (doc.exists && doc.data()?.filepath) {
+                mapImage.src = doc.data().filepath;
+            }
+        });
 
 
 
