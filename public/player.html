@@ -105,24 +105,29 @@
           style="width: 90%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
           <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">Player Name</h1>
 
-          <label for="levelInput">Level:</label>
-          <input type="number" id="levelInput" min="0" value="1"
-            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+          <label for="playerSelect">Choose Player:</label>
+          <select id="playerSelect"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+            <option value="Anastrianna">Anastrianna</option>
+            <option value="Cowdissius">Cowdissius</option>
+            <option value="Neuromaur">Neuromaur</option>
+            <option value="Null">Null</option>
+            <option value="Prayer">Prayer</option>
+            <option value="Seraphina">Seraphina</option>
+            <option value="Telperil">Telperil</option>
+            <!-- Add more as needed -->
+          </select>
 
           <label for="initiativeInput">Initiative:</label>
           <input type="number" id="initiativeInput" min="0" value="0"
             style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
 
           <label>HP:</label>
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-            <input type="number" id="currentHP" min="0" value="0"
-              style="flex: 1; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
-            <span style="color: white;">/</span>
-            <input type="number" id="maxHP" min="0" value="0"
-              style="flex: 1; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
-          </div>
+          <input type="number" id="currentHP" min="0" value="10"
+            style="width: 100%; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
         </div>
 
+        <!-- Monster Stats Container -->
         <div style="width: 90%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
           <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">Action Interface</h1>
 
@@ -182,8 +187,6 @@
 
   <!-- Floating button when menu is hidden -->
   <button id="toggleMenuStandalone">⇦</button>
-
-
 
 
   <!-- Firebase -->
@@ -285,7 +288,12 @@
       container.style.justifyContent = 'center';
 
       const img = document.createElement('img');
-      img.src = `data/monster_tokens/${monster.name}.webp`;
+      if (!monster.isplayer) {
+        img.src = `data/monster_tokens/${monster.name}.webp`;
+      } else {
+        img.src = `data/player_tokens/${monster.name}.png`;
+      }
+
       img.style.width = '100%';
       img.style.height = '100%';
       img.style.borderRadius = '50%';
@@ -363,6 +371,63 @@
     function generateID() {
       return '_' + Math.random().toString(36).substr(2, 9);
     }
+
+
+    const playerSelect = document.getElementById('playerSelect');
+    const playerNameLabel = document.querySelector('h1');
+
+    let currentPlayerId = null;  // Track currently selected player's ID
+
+    playerSelect.addEventListener('change', () => {
+      const name = playerSelect.value;
+      playerNameLabel.textContent = name;
+
+      // Remove previous token if it exists
+      if (currentPlayerId) {
+        const index = monsters.findIndex(m => m.id === currentPlayerId);
+        if (index !== -1) {
+          monsters.splice(index, 1);
+          const oldEl = document.getElementById(`token-${currentPlayerId}`);
+          if (oldEl) oldEl.remove();
+        }
+      }
+
+      const id = generateID();
+      currentPlayerId = id;
+
+      const token = {
+        id: id,
+        name: name,
+        hp: parseInt(document.getElementById('currentHP').value),
+        init: parseInt(document.getElementById('initiativeInput').value),
+        conditions: [],
+        x: 100,
+        y: 100,
+        isplayer: true
+      };
+
+      monsters.push(token);
+      addMonsterToken(token);
+      syncMonstersToFirebase();
+    });
+
+    // Update HP and initiative on input change
+    document.getElementById('currentHP').addEventListener('input', () => {
+      const m = monsters.find(m => m.id === currentPlayerId);
+      if (m) {
+        m.hp = parseInt(document.getElementById('currentHP').value);
+        syncMonstersToFirebase();
+      }
+    });
+
+    document.getElementById('initiativeInput').addEventListener('input', () => {
+      const m = monsters.find(m => m.id === currentPlayerId);
+      if (m) {
+        m.init = parseInt(document.getElementById('initiativeInput').value);
+        syncMonstersToFirebase();
+      }
+    });
+
 
 
     // FIREBASE SYNCHRONIZATON

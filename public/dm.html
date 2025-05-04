@@ -4166,7 +4166,7 @@
                             conditions: [],
                             x: 100,
                             y: 100,
-                            isPlayer: false,
+                            isplayer: false,
                         };
 
                         monsters.push(monster);
@@ -4366,7 +4366,7 @@
         function updateMonsterTable() {
             // Remove dead monsters
             for (let i = monsters.length - 1; i >= 0; i--) {
-                if (monsters[i].hp <= 0 && !monsters[i].isPlayer) {
+                if (monsters[i].hp <= 0) {
                     const id = monsters[i].id;
                     document.getElementById(`token-${id}`)?.remove();
                     monsters.splice(i, 1);
@@ -4393,7 +4393,9 @@
                     <td style="padding: 8px; border: 1px solid #555;">${m.conditions.join(", ")}</td>
                 `;
 
-                row.addEventListener('click', () => loadMonster(m.name));
+                if (!m.isplayer){
+                    row.addEventListener('click', () => loadMonster(m.name));
+                }
 
                 const token = document.getElementById(`token-${m.id}`);
                 if (token) {
@@ -4443,7 +4445,11 @@
             container.style.justifyContent = 'center';
 
             const img = document.createElement('img');
-            img.src = `data/monster_tokens/${monster.name}.webp`;
+            if (!monster.isplayer) {
+                img.src = `data/monster_tokens/${monster.name}.webp`;
+            } else {
+                img.src = `data/player_tokens/${monster.name}.png`;
+            }
             img.style.width = '100%';
             img.style.height = '100%';
             img.style.borderRadius = '50%';
@@ -4661,7 +4667,7 @@
                             conditions: [],
                             x: 100,
                             y: 100,
-                            isPlayer: false,
+                            isplayer: false,
                         };
 
                         // Store in global monsters array
