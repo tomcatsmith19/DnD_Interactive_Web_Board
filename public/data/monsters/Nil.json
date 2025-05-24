@@ -39,24 +39,6 @@
   "cr": "1/4",
   "prof_bonus": 2,
   "traits": [
-    {
-      "name": "Keen Senses",
-      "entries": [
-        "The pseudodragon has advantage on Wisdom ({@skill Perception}) checks that rely on sight, hearing, or smell."
-      ]
-    },
-    {
-      "name": "Magic Resistance",
-      "entries": [
-        "The pseudodragon has advantage on saving throws against spells and other magical effects."
-      ]
-    },
-    {
-      "name": "Limited Telepathy",
-      "entries": [
-        "The pseudodragon can magically communicate simple ideas, emotions, and images telepathically with any creature within 100 feet of it that can understand a language."
-      ]
-    }
   ],
   "actions": [
     {
