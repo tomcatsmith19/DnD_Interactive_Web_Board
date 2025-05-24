@@ -1,0 +1,90 @@
+{
+  "name": "Nil",
+  "source": "MM",
+  "page": 254,
+  "size": [
+    "T"
+  ],
+  "type": "dragon",
+  "tags": [],
+  "alignment": [
+    "N",
+    "G"
+  ],
+  "ac": [
+    "18"
+  ],
+  "hp": 18,
+  "speed": {
+    "walk": 15,
+    "fly": 60
+  },
+  "str": 0,
+  "dex": 0,
+  "con": 12,
+  "int": 14,
+  "wis": 9,
+  "cha": 10,
+  "skills": {
+    "history": "+4",
+    "religion": "+4"
+  },
+  "passive": 0,
+  "languages": [
+    "Common",
+    "Draconic",
+    "Abyssal",
+    "Deep Speech"
+  ],
+  "cr": "1/4",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Keen Senses",
+      "entries": [
+        "The pseudodragon has advantage on Wisdom ({@skill Perception}) checks that rely on sight, hearing, or smell."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The pseudodragon has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Limited Telepathy",
+      "entries": [
+        "The pseudodragon can magically communicate simple ideas, emotions, and images telepathically with any creature within 100 feet of it that can understand a language."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Concentrate",
+      "entries": [
+        "Nil can concentrate on a spell for its Summoner"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": ["acid", "fire", "lightning","poision","bludgeoning","piercing","slashing"],
+  "vulnerable": [],
+  "immune": ["cold"],
+  "senses": [
+    "blindsight 10 ft.",
+    "darkvision 60 ft."
+  ],
+  "environment": [
+    "mountain",
+    "forest",
+    "hill",
+    "urban",
+    "desert",
+    "coastal"
+  ],
+  "hasToken": true,
+  "hasFluff": true,
+  "hasFluffImages": true
+}
