@@ -55,10 +55,12 @@
         }
 
         .tab-content {
-            flex: 1;
             display: none;
             overflow: auto;
+            height: calc(100vh - 50px);
+            /* Adjust 50px to match your tab-bar height */
         }
+
         .tab-content.active {
             display: flex;
         }
@@ -151,7 +153,7 @@
 
         <!-- Campaign Tab ############################################################################################-->
         <div class="tab-content active" id="campaignTab">
-            <div style="padding: 20px; display: flex; flex: 1; height: 100%; gap: 20px;">
+            <div style="padding: 20px; display: flex; flex: 1; gap: 20px;">
 
                 <!-- Left: Book Viewer -->
                 <div style="flex: 2; display: flex; flex-direction: column; gap: 10px;">
@@ -228,7 +230,7 @@
 
         <!-- Dungeon Tab ############################################################################################-->
         <div class="tab-content" id="dungeonTab">
-            <div style="padding: 20px; display: flex; flex: 1; height: 100%; gap: 20px;">
+            <div style="padding: 20px; display: flex; flex: 1; gap: 20px;">
 
                 <!-- Left Column: Monster Table -->
                 <div
@@ -474,7 +476,7 @@
                 <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image"
                     style="width: 2000px; height: 2000px; object-fit: cover; border: none; position: absolute; top: 0; left: 0;">
                 <div id="mapTokenLayer"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+                    style="position: absolute; top: 0; left: 0; width: 100%; pointer-events: none;"></div>
             </div>
         </div>
 
