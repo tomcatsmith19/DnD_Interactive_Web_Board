@@ -4101,7 +4101,7 @@
 
 
             let isPanning = false;
-            let panStartX, panStartY;
+            let panStartX = 0, panStartY = 0;
             let panOffsetX = 0, panOffsetY = 0;
             let scale = 1;
 
@@ -4109,33 +4109,35 @@
                 mapContainer.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px) scale(${scale})`;
             };
 
-            // PAN
+            // PAN START
             mapTab.addEventListener('mousedown', (e) => {
-                const target = e.target;
-                const isMapBackground = target === mapTab || target === mapContainer || target.id === 'mapImage';
+                // Only start pan if clicking background (not tokens)
+                const isMapBackground = e.target === mapTab || e.target === mapContainer || e.target.id === 'mapImage';
                 if (!isMapBackground) return;
 
                 isPanning = true;
                 panStartX = e.clientX - panOffsetX;
                 panStartY = e.clientY - panOffsetY;
                 mapTab.style.cursor = 'grabbing';
+
+                // Lock dragging to this gesture only
+                e.preventDefault();
             });
 
-            mapTab.addEventListener('mousemove', (e) => {
+            // PAN MOVE
+            document.addEventListener('mousemove', (e) => {
                 if (!isPanning) return;
                 panOffsetX = e.clientX - panStartX;
                 panOffsetY = e.clientY - panStartY;
                 updateTransform();
             });
 
-            mapTab.addEventListener('mouseup', () => {
-                isPanning = false;
-                mapTab.style.cursor = 'default';
-            });
-
-            mapTab.addEventListener('mouseleave', () => {
-                isPanning = false;
-                mapTab.style.cursor = 'default';
+            // PAN END
+            document.addEventListener('mouseup', (e) => {
+                if (isPanning) {
+                    isPanning = false;
+                    mapTab.style.cursor = 'default';
+                }
             });
 
             // ZOOM
