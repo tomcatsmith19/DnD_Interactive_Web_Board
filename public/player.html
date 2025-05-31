@@ -78,6 +78,34 @@
     #menuContent {
       margin-top: 50px;
     }
+
+    @keyframes flashRed {
+      0% {
+        box-shadow: 0 0 10px 5px red;
+      }
+
+      100% {
+        box-shadow: none;
+      }
+    }
+
+    @keyframes flashGreen {
+      0% {
+        box-shadow: 0 0 10px 5px limegreen;
+      }
+
+      100% {
+        box-shadow: none;
+      }
+    }
+
+    .flash-red {
+      animation: flashRed 0.5s ease-out;
+    }
+
+    .flash-green {
+      animation: flashGreen 0.5s ease-out;
+    }
   </style>
 </head>
 
@@ -667,6 +695,18 @@
     }
 
 
+    function flashToken(monsterId, type) {
+      const token = document.getElementById(`token-${monsterId}`);
+      if (!token) return;
+
+      const className = (type === 'heal') ? 'flash-green' : 'flash-red';
+      token.classList.add(className);
+
+      setTimeout(() => {
+        token.classList.remove(className);
+      }, 500);  // Match animation duration
+    }
+
 
     // FIREBASE ACTION HANDLER
 
@@ -682,6 +722,10 @@
       const data = doc.data();
       if (!Array.isArray(data.monsters)) return;
 
+      // Store previous HP for comparison
+      const previousHP = {};
+      monsters.forEach(m => previousHP[m.id] = m.hp);
+
       // Clear local array *in-place*
       monsters.length = 0;
 
@@ -692,6 +736,14 @@
       data.monsters.forEach(m => {
         monsters.push({ ...m }); // Keep shared reference
         addMonsterToken(m);
+
+        // Compare HP for animation
+        const oldHP = previousHP[m.id];
+        if (typeof oldHP === 'number') {
+          if (m.hp > oldHP) flashToken(m.id, 'heal');
+          else if (m.hp < oldHP) flashToken(m.id, 'damage');
+        }
+
       });
 
       // Update token labels with index
