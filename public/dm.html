@@ -147,6 +147,42 @@
         #mapTokenLayer {
             pointer-events: none;
         }
+
+        @keyframes flash-red {
+            0% {
+                box-shadow: 0 0 0px red;
+            }
+
+            50% {
+                box-shadow: 0 0 40px 20px red;
+            }
+
+            100% {
+                box-shadow: 0 0 0px red;
+            }
+        }
+
+        @keyframes flash-green {
+            0% {
+                box-shadow: 0 0 0px limegreen;
+            }
+
+            50% {
+                box-shadow: 0 0 40px 20px limegreen;
+            }
+
+            100% {
+                box-shadow: 0 0 0px limegreen;
+            }
+        }
+
+        .flash-red {
+            animation: flash-red 1s ease-out;
+        }
+
+        .flash-green {
+            animation: flash-green 1s ease-out;
+        }
     </style>
 </head>
 
@@ -4230,6 +4266,23 @@
                 return Math.hypot(dx, dy);
             }
 
+            function flashToken(monsterId, type) {
+                const token = document.getElementById(`token-${monsterId}`);
+                if (!token && attempts > 0) {
+                    // Retry shortly later if token not yet in DOM
+                    setTimeout(() => flashToken(monsterId, type, attempts - 1), 100);
+                    return;
+                }
+                if (!token) return;
+
+                const className = (type === 'heal') ? 'flash-green' : 'flash-red';
+                token.classList.add(className);
+
+                setTimeout(() => {
+                    token.classList.remove(className);
+                }, 1000);  // Match animation duration
+            }
+
 
 
             const tokenLayer = document.getElementById('mapTokenLayer');
@@ -4485,10 +4538,14 @@
                     });
             }
 
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
             // Execute Action Button
             const executeBtn = document.getElementById('executeBtn');
 
-            executeBtn?.addEventListener('click', () => {
+            executeBtn?.addEventListener('click', async () => {
                 const action = document.getElementById('actionSelect').value;
                 const index = parseInt(document.getElementById('targetIndex').value);
                 const condition = document.getElementById('conditionSelect').value;
@@ -4503,8 +4560,14 @@
 
                 if (action === 'heal') {
                     monster.hp += amount;
+                    flashToken(monster.id, 'heal');
+                    await sleep(1000);
+
                 } else if (action === 'damage') {
                     monster.hp = Math.max(0, monster.hp - amount);
+                    flashToken(monster.id, 'heal');
+                    await sleep(1000);
+
                 } else if (action === 'apply') {
                     if (condition !== "-- None --" && !monster.conditions.includes(condition)) {
                         monster.conditions.push(condition);
@@ -4515,8 +4578,10 @@
                     }
                 }
 
+
                 updateMonsterTable();
                 syncMonstersToFirebase();
+
             });
 
             // Update Monster Table
@@ -4952,6 +5017,10 @@
                 const data = doc.data();
                 if (!Array.isArray(data.monsters)) return;
 
+                // Store previous HP for comparison
+                const previousHP = {};
+                monsters.forEach(m => previousHP[m.id] = m.hp);
+
                 // Clear local array *in-place*
                 monsters.length = 0;
 
@@ -4962,6 +5031,14 @@
                 data.monsters.forEach(m => {
                     monsters.push({ ...m }); // Keep shared reference
                     addMonsterToken(m);
+
+                    // Compare HP for animation
+                    const oldHP = previousHP[m.id];
+                    if (typeof oldHP === 'number') {
+                        if (m.hp > oldHP) flashToken(m.id, 'heal');
+                        else if (m.hp < oldHP) flashToken(m.id, 'damage');
+                    }
+
                 });
 
                 updateMonsterTable();

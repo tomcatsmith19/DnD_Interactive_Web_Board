@@ -79,32 +79,40 @@
       margin-top: 50px;
     }
 
-    @keyframes flashRed {
+    @keyframes flash-red {
       0% {
-        box-shadow: 0 0 10px 5px red;
+        box-shadow: 0 0 0px red;
+      }
+
+      50% {
+        box-shadow: 0 0 40px 20px red;
       }
 
       100% {
-        box-shadow: none;
+        box-shadow: 0 0 0px red;
       }
     }
 
-    @keyframes flashGreen {
+    @keyframes flash-green {
       0% {
-        box-shadow: 0 0 10px 5px limegreen;
+        box-shadow: 0 0 0px limegreen;
+      }
+
+      50% {
+        box-shadow: 0 0 40px 20px limegreen;
       }
 
       100% {
-        box-shadow: none;
+        box-shadow: 0 0 0px limegreen;
       }
     }
 
     .flash-red {
-      animation: flashRed 0.5s ease-out;
+      animation: flash-red 1s ease-out;
     }
 
     .flash-green {
-      animation: flashGreen 0.5s ease-out;
+      animation: flash-green 1s ease-out;
     }
   </style>
 </head>
@@ -550,10 +558,14 @@
       });
     }
 
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     // Execute Action Button
     const executeBtn = document.getElementById('executeBtn');
 
-    executeBtn?.addEventListener('click', () => {
+    executeBtn?.addEventListener('click', async () => {
       const action = document.getElementById('actionSelect').value;
       const index = parseInt(document.getElementById('targetIndex').value);
       const condition = document.getElementById('conditionSelect').value;
@@ -564,12 +576,23 @@
         return;
       }
 
+
       const monster = monsters[index];
+      const previousHP = monster.hp;
+  
 
       if (action === 'heal') {
         monster.hp += amount;
+        
+        flashToken(monster.id, 'heal');
+        await sleep(1000);
+
       } else if (action === 'damage') {
         monster.hp = Math.max(0, monster.hp - amount);
+       
+        flashToken(monster.id, 'damage');
+        await sleep(1000);
+
       } else if (action === 'apply') {
         if (condition !== "-- None --" && !monster.conditions.includes(condition)) {
           monster.conditions.push(condition);
@@ -580,7 +603,12 @@
         }
       }
 
+     
       syncMonstersToFirebase();
+
+      
+
+
     });
 
     let isPanning = false;
@@ -697,6 +725,11 @@
 
     function flashToken(monsterId, type) {
       const token = document.getElementById(`token-${monsterId}`);
+      if (!token && attempts > 0) {
+        // Retry shortly later if token not yet in DOM
+        setTimeout(() => flashToken(monsterId, type, attempts - 1), 100);
+        return;
+      }
       if (!token) return;
 
       const className = (type === 'heal') ? 'flash-green' : 'flash-red';
@@ -704,7 +737,7 @@
 
       setTimeout(() => {
         token.classList.remove(className);
-      }, 500);  // Match animation duration
+      }, 1000);  // Match animation duration
     }
 
 
