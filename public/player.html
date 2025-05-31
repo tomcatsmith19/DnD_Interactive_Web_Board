@@ -85,11 +85,30 @@
 
   <!-- Scrollable Map Wrapper -->
   <div id="scrollWrapper" style="position: fixed; inset: 0; overflow: auto; z-index: 0;">
-    <div id="mapContainer" style="position: relative; width: 2000px; height: 2000px; transform-origin: top left;">
-      <img id="mapImage" src="data/maps/blank.jpg" alt="Map"
-        style="width: 2000px; height: 2000px; object-fit: cover; position: absolute; top: 0; left: 0;">
+    <div id="mapContainer" style="position: relative; display: inline-block;">
+      <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image" style="width: 100%; height: auto; display: block;">
       <div id="mapTokenLayer"
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></div>
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+    </div>
+
+    <!-- Token Size Controls -->
+    <div id="tokenSizeControls" style="
+                    position: fixed;
+                    top: 25px;
+                    left: 25px;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    padding: 8px 12px;
+                    border-radius: 8px;
+                    z-index: 1000;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: white;
+                    font-family: 'MedievalSharp', cursive;
+                ">
+      <span>Token Size</span>
+      <button id="decreaseTokenSize" style="font-size: 18px;">-</button>
+      <button id="increaseTokenSize" style="font-size: 18px;">+</button>
     </div>
   </div>
 
@@ -276,8 +295,8 @@
       container.style.position = 'absolute';
       container.style.left = `${monster.x}px`;
       container.style.top = `${monster.y}px`;
-      container.style.width = '100px'; //60px;
-      container.style.height = '100px'; //60px;
+      container.style.width = `${currentTokenSize}px`;
+      container.style.height = `${currentTokenSize}px`;
       container.style.borderRadius = '50%';
       container.style.border = '2px solid gold';
       container.style.pointerEvents = 'auto';
@@ -304,7 +323,7 @@
       label.style.position = 'absolute';
       label.style.top = '-5px';  // pull up slightly
       label.style.right = '-5px'; // pull right slightly
-      label.style.fontSize = '20px';
+      label.style.fontSize = `${currentTokenSize / 5}px`;
       label.style.backgroundColor = 'rgba(0,0,0,0.8)';
       label.style.color = 'white';
       label.style.padding = '2px 6px';
@@ -319,7 +338,7 @@
       conditionLabel.style.bottom = '-5px';
       conditionLabel.style.left = '50%';
       conditionLabel.style.transform = 'translateX(-50%)';
-      conditionLabel.style.fontSize = '12px';
+      conditionLabel.style.fontSize = `${currentTokenSize / 5}px`;
       conditionLabel.style.backgroundColor = 'rgba(0,0,0,0.7)';
       conditionLabel.style.color = 'white';
       conditionLabel.style.padding = '2px 4px';
@@ -366,11 +385,64 @@
           syncMonstersToFirebase();
         }
       });
+
+      // TOUCH support for dragging
+      el.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        isDragging = true;
+        const touch = e.touches[0];
+        offsetX = touch.clientX - el.offsetLeft;
+        offsetY = touch.clientY - el.offsetTop;
+        el.style.cursor = 'grabbing';
+      }, { passive: false });
+
+      el.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const touch = e.touches[0];
+        el.style.left = `${touch.clientX - offsetX}px`;
+        el.style.top = `${touch.clientY - offsetY}px`;
+      }, { passive: false });
+
+      el.addEventListener('touchend', () => {
+        if (isDragging) {
+          el.style.cursor = 'grab';
+          isDragging = false;
+
+          const id = el.id.replace('token-', '');
+          const monster = monsters.find(m => m.id === id);
+          if (monster) {
+            monster.x = parseInt(el.style.left);
+            monster.y = parseInt(el.style.top);
+          }
+          syncMonstersToFirebase();
+        }
+      });
+
     }
 
     function generateID() {
       return '_' + Math.random().toString(36).substr(2, 9);
     }
+
+    let currentTokenSize = 100;  // default size in pixels
+
+    function updateAllTokenSizes() {
+      document.querySelectorAll('.monster-token').forEach(token => {
+        token.style.width = `${currentTokenSize}px`;
+        token.style.height = `${currentTokenSize}px`;
+      });
+      syncMonstersToFirebase();
+    }
+
+    document.getElementById('increaseTokenSize').addEventListener('click', () => {
+      currentTokenSize += 10;
+      updateAllTokenSizes();
+    });
+
+    document.getElementById('decreaseTokenSize').addEventListener('click', () => {
+      currentTokenSize = Math.max(11, currentTokenSize - 10);
+      updateAllTokenSizes();
+    });
 
 
     const playerSelect = document.getElementById('playerSelect');
@@ -483,19 +555,117 @@
       syncMonstersToFirebase();
     });
 
-    // Zoom map with mouse wheel
-    const mapContainer = document.getElementById('mapContainer');
+    let isPanning = false;
+    let panStartX = 0, panStartY = 0;
+    let panOffsetX = 0, panOffsetY = 0;
     let scale = 1;
 
-    mapContainer.addEventListener('wheel', (e) => {
+    const updateTransform = () => {
+      mapContainer.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px) scale(${scale})`;
+    };
+
+    const mapTab = document.getElementById('scrollWrapper');
+
+    // PAN START
+    mapTab.addEventListener('mousedown', (e) => {
+      // Only start pan if clicking background (not tokens)
+      const isMapBackground = e.target === mapTab || e.target === mapContainer || e.target.id === 'mapImage';
+      if (!isMapBackground) return;
+
+      isPanning = true;
+      panStartX = e.clientX - panOffsetX;
+      panStartY = e.clientY - panOffsetY;
+      mapTab.style.cursor = 'grabbing';
+
+      // Lock dragging to this gesture only
+      e.preventDefault();
+    });
+
+    // PAN MOVE
+    document.addEventListener('mousemove', (e) => {
+      if (!isPanning) return;
+      panOffsetX = e.clientX - panStartX;
+      panOffsetY = e.clientY - panStartY;
+      updateTransform();
+    });
+
+    // PAN END
+    document.addEventListener('mouseup', (e) => {
+      if (isPanning) {
+        isPanning = false;
+        mapTab.style.cursor = 'default';
+      }
+    });
+
+    // ZOOM
+    mapTab.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? -0.1 : 0.1;
+      scale = Math.min(Math.max(0.2, scale + delta), 3);
+      updateTransform();
+    });
+
+    // touch support for panning and zooming
+    let isTouchPanning = false;
+    let lastTouchX = 0, lastTouchY = 0;
+    let lastTouchDistance = null;
+
+    // Touch start
+    mapTab.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        const target = e.target;
+        const isMapBackground = target === mapTab || target === mapContainer || target.id === 'mapImage';
+        if (!isMapBackground) return;
+
+        isTouchPanning = true;
+        lastTouchX = e.touches[0].clientX;
+        lastTouchY = e.touches[0].clientY;
+      } else if (e.touches.length === 2) {
+        // Start pinch zoom
+        lastTouchDistance = getTouchDistance(e.touches);
+      }
+    }, { passive: false });
+
+    // Touch move
+    mapTab.addEventListener('touchmove', (e) => {
       e.preventDefault();
 
-      // Zoom in/out based on wheel delta
-      const delta = e.deltaY > 0 ? -0.1 : 0.1;
-      scale = Math.min(Math.max(0.2, scale + delta), 3);  // Clamp between 0.2 and 3
+      if (isTouchPanning && e.touches.length === 1) {
+        const dx = e.touches[0].clientX - lastTouchX;
+        const dy = e.touches[0].clientY - lastTouchY;
 
-      mapContainer.style.transform = `scale(${scale})`;
+        panOffsetX += dx;
+        panOffsetY += dy;
+
+        lastTouchX = e.touches[0].clientX;
+        lastTouchY = e.touches[0].clientY;
+
+        updateTransform();
+      } else if (e.touches.length === 2) {
+        const currentDistance = getTouchDistance(e.touches);
+        if (lastTouchDistance !== null) {
+          const zoomFactor = currentDistance / lastTouchDistance;
+          scale = Math.min(Math.max(0.2, scale * zoomFactor), 3);
+          updateTransform();
+        }
+        lastTouchDistance = currentDistance;
+      }
+    }, { passive: false });
+
+    // Touch end
+    mapTab.addEventListener('touchend', (e) => {
+      if (e.touches.length === 0) {
+        isTouchPanning = false;
+        lastTouchDistance = null;
+      }
     });
+
+    function getTouchDistance(touches) {
+      const dx = touches[0].clientX - touches[1].clientX;
+      const dy = touches[0].clientY - touches[1].clientY;
+      return Math.hypot(dx, dy);
+    }
+
 
 
     // FIREBASE ACTION HANDLER
