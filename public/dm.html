@@ -4148,6 +4148,67 @@
                 updateTransform();
             });
 
+            // touch support for panning and zooming
+            let isTouchPanning = false;
+            let lastTouchX = 0, lastTouchY = 0;
+            let lastTouchDistance = null;
+
+            // Touch start
+            mapTab.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 1) {
+                    const target = e.target;
+                    const isMapBackground = target === mapTab || target === mapContainer || target.id === 'mapImage';
+                    if (!isMapBackground) return;
+
+                    isTouchPanning = true;
+                    lastTouchX = e.touches[0].clientX;
+                    lastTouchY = e.touches[0].clientY;
+                } else if (e.touches.length === 2) {
+                    // Start pinch zoom
+                    lastTouchDistance = getTouchDistance(e.touches);
+                }
+            }, { passive: false });
+
+            // Touch move
+            mapTab.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+
+                if (isTouchPanning && e.touches.length === 1) {
+                    const dx = e.touches[0].clientX - lastTouchX;
+                    const dy = e.touches[0].clientY - lastTouchY;
+
+                    panOffsetX += dx;
+                    panOffsetY += dy;
+
+                    lastTouchX = e.touches[0].clientX;
+                    lastTouchY = e.touches[0].clientY;
+
+                    updateTransform();
+                } else if (e.touches.length === 2) {
+                    const currentDistance = getTouchDistance(e.touches);
+                    if (lastTouchDistance !== null) {
+                        const zoomFactor = currentDistance / lastTouchDistance;
+                        scale = Math.min(Math.max(0.2, scale * zoomFactor), 3);
+                        updateTransform();
+                    }
+                    lastTouchDistance = currentDistance;
+                }
+            }, { passive: false });
+
+            // Touch end
+            mapTab.addEventListener('touchend', (e) => {
+                if (e.touches.length === 0) {
+                    isTouchPanning = false;
+                    lastTouchDistance = null;
+                }
+            });
+
+            function getTouchDistance(touches) {
+                const dx = touches[0].clientX - touches[1].clientX;
+                const dy = touches[0].clientY - touches[1].clientY;
+                return Math.hypot(dx, dy);
+            }
+
 
 
             const tokenLayer = document.getElementById('mapTokenLayer');
@@ -4597,6 +4658,40 @@
                         syncMonstersToFirebase();
                     }
                 });
+
+
+                // TOUCH support for dragging
+                el.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    isDragging = true;
+                    const touch = e.touches[0];
+                    offsetX = touch.clientX - el.offsetLeft;
+                    offsetY = touch.clientY - el.offsetTop;
+                    el.style.cursor = 'grabbing';
+                }, { passive: false });
+
+                el.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    const touch = e.touches[0];
+                    el.style.left = `${touch.clientX - offsetX}px`;
+                    el.style.top = `${touch.clientY - offsetY}px`;
+                }, { passive: false });
+
+                el.addEventListener('touchend', () => {
+                    if (isDragging) {
+                        el.style.cursor = 'grab';
+                        isDragging = false;
+
+                        const id = el.id.replace('token-', '');
+                        const monster = monsters.find(m => m.id === id);
+                        if (monster) {
+                            monster.x = parseInt(el.style.left);
+                            monster.y = parseInt(el.style.top);
+                        }
+                        syncMonstersToFirebase();
+                    }
+                });
+
             }
 
             function generateID() {
