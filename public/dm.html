@@ -138,6 +138,15 @@
             overflow: auto !important;
             /* force scrollbars when needed */
         }
+
+        #mapContainer {
+            position: relative;
+            transform-origin: top left;
+        }
+
+        #mapTokenLayer {
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -470,13 +479,12 @@
 
 
         <!-- Map Tab ##################################################################################################-->
-        <div class="tab-content" id="mapTab" style="overflow: auto; position: relative; flex: 1;">
-            <div id="mapContainer"
-                style="position: relative; width: 2000px; height: 2000px; transform-origin: top left;">
+        <div class="tab-content" id="mapTab" style="overflow: auto; flex: 1;">
+            <div id="mapContainer" style="position: relative; display: inline-block;">
                 <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image"
-                    style="width: 2000px; height: 2000px; object-fit: cover; border: none; position: absolute; top: 0; left: 0;">
+                    style="width: 100%; height: auto; display: block;">
                 <div id="mapTokenLayer"
-                    style="position: absolute; top: 0; left: 0; width: 100%; pointer-events: none;"></div>
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
             </div>
         </div>
 
@@ -4091,19 +4099,67 @@
                 document.getElementById(tabId).classList.add('active');
             }
 
-            // Zoom map with mouse wheel
-            const mapContainer = document.getElementById('mapContainer');
+
+            let isPanning = false;
+            let panStartX, panStartY;
+            let panOffsetX = 0, panOffsetY = 0;
             let scale = 1;
 
-            mapContainer.addEventListener('wheel', (e) => {
-                e.preventDefault();
+            const updateTransform = () => {
+                mapContainer.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px) scale(${scale})`;
+            };
 
-                // Zoom in/out based on wheel delta
-                const delta = e.deltaY > 0 ? -0.1 : 0.1;
-                scale = Math.min(Math.max(0.2, scale + delta), 3);  // Clamp between 0.2 and 3
+            // PAN
+            mapTab.addEventListener('mousedown', (e) => {
+                const target = e.target;
+                const isMapBackground = target === mapTab || target === mapContainer || target.id === 'mapImage';
+                if (!isMapBackground) return;
 
-                mapContainer.style.transform = `scale(${scale})`;
+                isPanning = true;
+                panStartX = e.clientX - panOffsetX;
+                panStartY = e.clientY - panOffsetY;
+                mapTab.style.cursor = 'grabbing';
             });
+
+            mapTab.addEventListener('mousemove', (e) => {
+                if (!isPanning) return;
+                panOffsetX = e.clientX - panStartX;
+                panOffsetY = e.clientY - panStartY;
+                updateTransform();
+            });
+
+            mapTab.addEventListener('mouseup', () => {
+                isPanning = false;
+                mapTab.style.cursor = 'default';
+            });
+
+            mapTab.addEventListener('mouseleave', () => {
+                isPanning = false;
+                mapTab.style.cursor = 'default';
+            });
+
+            // ZOOM
+            mapTab.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? -0.1 : 0.1;
+                scale = Math.min(Math.max(0.2, scale + delta), 3);
+                updateTransform();
+            });
+
+
+
+            const tokenLayer = document.getElementById('mapTokenLayer');
+
+            function resizeTokenLayer() {
+                tokenLayer.style.width = `${mapImage.clientWidth}px`;
+                tokenLayer.style.height = `${mapImage.clientHeight}px`;
+            }
+
+            // Resize on image load
+            mapImage.onload = resizeTokenLayer;
+
+            // Also resize on window resize
+            window.addEventListener('resize', resizeTokenLayer);
 
 
             // initiative tracker functionality
