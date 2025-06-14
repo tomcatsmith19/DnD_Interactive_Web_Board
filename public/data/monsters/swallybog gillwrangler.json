@@ -6,7 +6,7 @@
   "type": null,
   "tags": [],
   "alignment": [],
-  "ac": [],
+  "ac": ["16"],
   "hp": 90,
   "speed": {
     "walk": 20,

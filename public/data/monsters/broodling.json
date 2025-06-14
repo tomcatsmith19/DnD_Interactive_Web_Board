@@ -1,12 +1,12 @@
 {
-  "name": "broodling",
+  "name": "Broodling",
   "source": null,
   "page": null,
   "size": [],
   "type": null,
   "tags": [],
   "alignment": [],
-  "ac": [],
+  "ac": ["12"],
   "hp": 13,
   "speed": {
     "fly": 10,

@@ -6,7 +6,7 @@
   "type": null,
   "tags": [],
   "alignment": [],
-  "ac": [],
+  "ac": ["22"],
   "hp": 312,
   "speed": {
     "fly": 5,
