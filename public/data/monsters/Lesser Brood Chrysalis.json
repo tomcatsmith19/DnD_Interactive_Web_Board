@@ -1,0 +1,123 @@
+{
+  "name": "Lesser Brood Chrysalis",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 171,
+  "speed": {
+    "fly": 5,
+    "swim": 15
+  },
+  "str": 16,
+  "dex": 5,
+  "con": 18,
+  "int": 16,
+  "wis": 14,
+  "cha": 10,
+  "skills": {
+    "con save +7": 0,
+    "wis save +5": 0,
+    "perception +8": 0
+  },
+  "passive": null,
+  "languages": [],
+  "cr": "5",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Amphibious. The chrysalis can breathe air and water"
+    },
+    {
+      "name": "Legendary Resistances (1/Day). If the chrysalis fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Regenerative State. The chrysalis regains all its hit points at the start of its turn."
+    },
+    {
+      "name": "Sticky Mucous. When a creature hits the chrysalis with a melee attack, it must succeed on a DC 15 Strength saving throw or become disarmed as its weapon stays stuck to the creature. A creature can use an action to make a DC 15 Strength (Athletics) check, freeing a stuck weapon within its reach on a success. If the attack requires that the attacker touch the aboleth (GM\u2019s discretion), then the attacker becomes grappled (escape DC 15) on a failed save. While it is grappled, it can\u2019t use that limb. If the natural weapon is a bite, then the creature can\u2019t speak while it is grappled in this way."
+    },
+    {
+      "name": "Transitional State. The chrysalis turns into a lesser aboleth broodmother at the start of its fourth turn after becoming a chrysalis, ending any grapples it is a part of."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The chrysalis makes three sticky ectoplasm\nattacks. Each attack must be against a different target."
+      ]
+    },
+    {
+      "name": "sticky ectoplasm",
+      "entries": [
+        "Ranged Weapon Attack: +7 to hit, range\n30/90 ft., one target. Hit: 11 (2d6 + 4) acid damage and the target\u2019s speed is reduced by 15 feet until the target uses an action\nto remove the ectoplasm. A creature whose speed is reduced\nto 0 feet by this effect is restrained (escape DC 14)."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poision damage",
+    "being poisioned",
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "prone"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 90ft",
+    "passive perception 18",
+    "deep speech",
+    "telepathy 120ft"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

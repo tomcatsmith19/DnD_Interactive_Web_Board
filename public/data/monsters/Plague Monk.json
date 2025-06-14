@@ -1,0 +1,102 @@
+{
+  "name": "Plague Monk",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 15,
+  "speed": {
+    "walk": 40
+  },
+  "str": 10,
+  "dex": 18,
+  "con": 16,
+  "int": 8,
+  "wis": 14,
+  "cha": 6,
+  "skills": {},
+  "passive": null,
+  "languages": [],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Sickle",
+      "entries": [
+        "Melee Weapon Attack: +6 to hit, reach 5ft, one target. Hit 5 (1d4+3) and 4 (1d6) poison"
+      ]
+    },
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Makes two sickle attacks."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "cure wounds",
+            "sanctuary"
+          ]
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "Keen Hearing and Smell (adv. on perc. hear and smell)",
+    "Toxic Spray (5ft spray dc12 con save or 1 min. poison)",
+    "Frantic Frenzy (0hp turns to 1hp instead)"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

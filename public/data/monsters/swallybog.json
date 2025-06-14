@@ -1,0 +1,117 @@
+{
+  "name": "swallybog",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 19,
+  "speed": {
+    "walk": 20,
+    "swim": 30
+  },
+  "str": 12,
+  "dex": 12,
+  "con": 14,
+  "int": 7,
+  "wis": 10,
+  "cha": 6,
+  "skills": {
+    "stealth +3": 0
+  },
+  "passive": null,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "amphibious: can breath air or water"
+    },
+    {
+      "name": "gullible: has disadvantage on insight checks"
+    },
+    {
+      "name": "standing leap: long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+    },
+    {
+      "name": "swamp camoulage: advantage on stealth checks in swamps"
+    }
+  ],
+  "actions": [
+    {
+      "name": "multiattack",
+      "entries": [
+        "The swallybog makes two attacks with either its blowgun or its trident.\r"
+      ]
+    },
+    {
+      "name": "blowgun",
+      "entries": [
+        "Ranged Weapon Attack: +3 to hit, range 25/100 ft. one target Hit: 2 piercing damage plus 5 (2d4) poison damage."
+      ]
+    },
+    {
+      "name": "trident",
+      "entries": [
+        "Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft.one target. Hit: 4 (1d6 + 1) piercing damage, or 5(1d8 + 1) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60ft",
+    "passive perception 10"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

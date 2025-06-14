@@ -1,0 +1,169 @@
+{
+  "name": "Aboleth broodmother",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 153,
+  "speed": {
+    "fly": 15,
+    "swim": 40
+  },
+  "str": 21,
+  "dex": 10,
+  "con": 17,
+  "int": 18,
+  "wis": 14,
+  "cha": 18,
+  "skills": {
+    "athletics +9": 0,
+    "history +12": 0,
+    "perception +10": 0,
+    "con save +7": 0,
+    "int save +8": 0,
+    "wis save +6": 0
+  },
+  "passive": null,
+  "languages": [],
+  "cr": "11",
+  "prof_bonus": 4,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [ "The aboleth can breathe air and water"]
+    },
+    {
+      "name": "Legendary Resistances (3/Day)",
+      "entries": ["If the aboleth fails a saving throw, it can choose to succeed instead"]
+    },
+    {
+      "name": "Infectious Mucous",
+      "entries": ["The aboleth is surrounded by infectious mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 15 Constitution saving throw. On a failure, the creature is diseased. For the first hour of the disease, the creature takes 4 (1d8) necrotic damage each time it ends its turn out of water (it must be at least neck-deep to avoid this damage). After the first hour and until the disease is cured, a creature is unable to gain the benefits of a short or long rest if it does not spend the rest at least neck-deep in water. A creature that fails the saving throw by 5 or more (DC 10) becomes a host for 1d4 broodling eggs that hatch within 3d6 days."]
+    },
+    {
+      "name": "Mother of the Swarm",
+      "entries": ["(Mythic Trait; Recharges after a Short or Long Rest). If the aboleth is reduced to 0 hit points, it doesn\u2019t die or fall unconscious. Instead, it regains 153 hit points. In addition, it births 2 broodlings, gains a +5 bonus to its damage rolls until it finishes a short or long rests, and a flurry of swamp fauna swarms over it to protect it, granting it 100 temporary hit points"]
+    },
+    {
+      "name": "Probing Telepathy",
+      "entries": ["If a creature communicates telepathically with the aboleth, the aboleth learns the creature\u2019s greatest desires if the aboleth can see the creature."]
+    }
+  ],
+  "actions": [
+    {
+      "name": "multiattack",
+      "entries": [
+        "The aboleth makes three tentacle attacks and uses\nBirth, if available."
+      ]
+    },
+    {
+      "name": "tentacle",
+      "entries": [
+        "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage and the target must\nsave against the aboleth\u2019s Infectious Mucous trait."
+      ]
+    },
+    {
+      "name": "birth",
+      "entries": [
+        "(Recharge 4-6). The aboleth produces a broodling in an\nadjacent, unoccupied space.\r"
+      ]
+    },
+    {
+      "name": "entrance",
+      "entries": [
+        " (3/Day). The aboleth targets one creature it can see\nwithin 30 feet of it. The target must succeed on a DC 16 Wisdom\nsaving throw or be magically charmed by the aboleth until the\naboleth dies or until it is on a different plane of existence from\nthe target. The charmed target is under the aboleth\u2019s control\nand can\u2019t take reactions, and the aboleth and the target can\ncommunicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can\nrepeat the saving throw. On a success, the effect ends. No more\nthan once every 24 hours, the target can also repeat the saving\nthrow when it is at least 1 mile away from the aboleth.\r"
+      ]
+    },
+    {
+      "name": "jet (legendary)",
+      "entries": [
+        "The aboleth spurts out a pall of ink, heavily obscuring a\n20-foot-radius sphere of water centred of the aboleth until the\nstart of its next turn. It then moves up to its swimming speed.\r"
+      ]
+    },
+    {
+      "name": "tentacle (legendary)",
+      "entries": [
+        "The aboleth makes one tentacle attack."
+      ]
+    },
+    {
+      "name": "suction drain (legendary)",
+      "entries": [
+        " (Costs 2 Actions). The aboleth attempts to grapple one creature within 10 feet of it with a special tentacle.\nA creature charmed by the aboleth automatically fails this\ncontested check. If the aboleth succeeds, the creature takes 21\n(6d6) necrotic and the aboleth regains hit points equal to half\nthe damage dealt. The target\u2019s hit point maximum is reduced\nby an amount equal to the damage taken. This reduction\nlasts until the target finishes a long rest. The target dies if this\neffect reduces its hit point maximum to 0."
+      ]
+    },
+    {
+      "name": "gestate (mythic)",
+      "entries": [
+        "The aboleth recharges and uses Birth. It must use a\ndifferent legendary action before it can use this one again."
+      ]
+    },
+    {
+      "name": "rapid suction drain (mythic)",
+      "entries": [
+        "The aboleth uses its Suction Drain legendary\naction option costing only 1 legendary action instead of 2. It must\nuse a different legendary action before it uses this one again."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poision damage",
+    "being poisioned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120ft",
+    "pasive perception 20",
+    "telepathy 120 ft",
+    "deep speech"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

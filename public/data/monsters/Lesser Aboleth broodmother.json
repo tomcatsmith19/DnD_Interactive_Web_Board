@@ -1,0 +1,149 @@
+{
+  "name": "Lesser Aboleth broodmother",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 67,
+  "speed": {
+    "fly": 15,
+    "swim": 40
+  },
+  "str": 17,
+  "dex": 10,
+  "con": 15,
+  "int": 17,
+  "wis": 13,
+  "cha": 17,
+  "skills": {
+    "athletics +6": 0,
+    "history +9": 0,
+    "perception +7": 0,
+    "con save +5": 0,
+    "int save +6": 0,
+    "wis save +4": 0
+  },
+  "passive": null,
+  "languages": [],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "Amphibious. The aboleth can breathe air and water"
+    },
+    {
+      "name": "Legendary Resistances (3/Day). If the aboleth fails a saving throw, it can choose to succeed instead"
+    },
+    {
+      "name": "Infectious Mucous. The aboleth is surrounded by infectious mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 13 Constitution saving throw. On a failure, the creature is diseased. For the first hour of the disease, the creature takes 2 (1d4) necrotic damage if it ends its turn out of water (it must be at least neck-deep to avoid this damage). After the first hour and until the disease is cured, a creature is unable to gain the benefits of a short or long rest if it does not spend the rest at least neck-deep in water. A creature that fails the saving throw by 5 or more (DC 7) becomes a host of a broodling egg that hatches in 3d6 days."
+    },
+    {
+      "name": "Probing Telepathy. If a creature communicates telepathically with the aboleth, the aboleth learns the creature\u2019s greatest desires if the aboleth can see the creature."
+    }
+  ],
+  "actions": [
+    {
+      "name": "multiattack",
+      "entries": [
+        "The aboleth makes two tentacle attacks and uses\nBirth, if available."
+      ]
+    },
+    {
+      "name": "tentacle",
+      "entries": [
+        "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage and the target must\nsucceed on a DC 13 Constitution saving throw or be affected as\nper the aboleth\u2019s Infectious Mucous trait."
+      ]
+    },
+    {
+      "name": "birth",
+      "entries": [
+        "(Recharge 4-6). The aboleth produces a broodling in the\nnearest adjacent, unoccupied space to it.\r"
+      ]
+    },
+    {
+      "name": "entrance",
+      "entries": [
+        " (3/Day). The aboleth targets one creature it can see\nwithin 30 feet of it. The target must succeed on a DC 13 Wisdom\nsaving throw or be magically charmed by the aboleth until the\naboleth dies or until it is on a different plane of existence from\nthe target. The charmed target is under the aboleth\u2019s control\nand can\u2019t take reactions, and the aboleth and the target can\ncommunicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can\nrepeat the saving throw. On a success, the effect ends. No more\nthan once every 24 hours, the target can also repeat the saving\nthrow when it is at least 1 mile away from the aboleth."
+      ]
+    },
+    {
+      "name": "jet (legendary)",
+      "entries": [
+        "The aboleth spurts out a pall of ink, heavily obscuring a\n20-foot-radius sphere of water until initiative 0 of the current\nround. It then moves up to its swim speed."
+      ]
+    },
+    {
+      "name": "tentacle (legendary)",
+      "entries": [
+        "The aboleth makes one tentacle attack."
+      ]
+    },
+    {
+      "name": "suction drain (legendary)",
+      "entries": [
+        " (Costs 2 Actions). The aboleth attempts to grapple one creature within 10 feet of it with a special tentacle. A\ncreature charmed by the aboleth automatically fails this check.\nIf the aboleth succeeds on the check, the creature takes 14\n(4d6) necrotic and the aboleth regains a number of hit points\nequal to half the damage dealt. The target\u2019s hit point maximum is reduced by an amount equal to the damage taken. This\nreduction lasts until the target finishes a long rest. The target\ndies if this effect reduces its hit point maximum to 0."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "poision damage",
+    "being poisioned"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 120ft",
+    "pasive perception 17",
+    "telepathy 120 ft",
+    "deep speech"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

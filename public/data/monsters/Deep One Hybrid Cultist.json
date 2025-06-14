@@ -1,0 +1,101 @@
+{
+  "name": "Deep One Hybrid Cultist",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 11,
+  "speed": {
+    "walk": 20
+  },
+  "str": 11,
+  "dex": 10,
+  "con": 12,
+  "int": 10,
+  "wis": 11,
+  "cha": 10,
+  "skills": {
+    "Deception +2": 0,
+    "Religion +2": 0
+  },
+  "passive": null,
+  "languages": [],
+  "cr": "1/8",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Dark Devotion: has advantage on saving throws against being charmed or frightened."
+    },
+    {
+      "name": "Hold Breath: can hold its breath for 1 hour"
+    },
+    {
+      "name": "Sea Longing: has advantage on Strength (Atheletics) checks made to swim. However, every week that it spends more than 10 miles from the sea, it must succeed on a DC 10 Wisdom saving throw or is Wisdom score is reduced by 1 until it travels to the sea."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Trident",
+      "entries": [
+        "Melee or Ranged Weapon ATtack: +2 to hit, reach 5ft. or range 20/60ft. one target. Hit: 1d6 piercing damage, or 1d8 piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60ft",
+    "passive perception 10",
+    "Common"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

@@ -1,0 +1,117 @@
+{
+  "name": "broodling",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 13,
+  "speed": {
+    "fly": 10,
+    "swim": 30
+  },
+  "str": 6,
+  "dex": 14,
+  "con": 15,
+  "int": 3,
+  "wis": 10,
+  "cha": 5,
+  "skills": {},
+  "passive": null,
+  "languages": [],
+  "cr": "1/2",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Amphibious. The broodling can breathe air and water."
+    },
+    {
+      "name": "Hive Mind. Broodlings\u2019 minds connect to other broodlings within 5 feet of them, forming a chain of thought. The broodling gains a +3 bonus to Intelligence checks and saving throws, and to its Entrance save DC for each other broodling in such a chain."
+    }
+  ],
+  "actions": [
+    {
+      "name": "multiattack",
+      "entries": [
+        "The broodling makes two attacks: one with its bite and one with its sting."
+      ]
+    },
+    {
+      "name": "bite",
+      "entries": [
+        "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage."
+      ]
+    },
+    {
+      "name": "sting",
+      "entries": [
+        "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 3 piercing damage and the creature must succeed on a DC 12 Constitution saving throw or have disadvantage on Wisdom saving throws until the end of the broodling\u2019s next turn.\r"
+      ]
+    },
+    {
+      "name": "entrance",
+      "entries": [
+        "e (1/Day). The broodling targets one creature it can\nsee within 10 feet of it. The target must succeed on a DC 6 Wisdom saving throw or be magically charmed by the broodling\nuntil the broodling dies or until it is on a different plane of\nexistence from the target. The charmed target is under the\nbroodling\u2019s control and can\u2019t take reactions.\nWhenever the charmed target takes damage, the target can\nrepeat the saving throw. On a success, the effect ends. No more\nthan once every 24 hours, the target can also repeat the saving\nthrow when it is at least 30 feet away from the broodling."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": []
+        },
+        "1": {
+          "spells": []
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [
+    "charmed"
+  ],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "blindsight 30ft",
+    "passive perception 10ft",
+    "telepathy 120ft",
+    "understands Deep speech but cant speak"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

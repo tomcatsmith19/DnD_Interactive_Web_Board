@@ -1,0 +1,134 @@
+{
+  "name": "swallybog gillwrangler",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 90,
+  "speed": {
+    "walk": 20,
+    "swim": 40
+  },
+  "str": 13,
+  "dex": 14,
+  "con": 16,
+  "int": 9,
+  "wis": 19,
+  "cha": 14,
+  "skills": {
+    "stealth +5": 0,
+    "nature +2": 0,
+    "perception +7": 0,
+    "dex save +5": 0,
+    "con save +6": 0,
+    "wis save +7": 0
+  },
+  "passive": null,
+  "languages": [],
+  "cr": "6",
+  "prof_bonus": 3,
+  "traits": [
+    {
+      "name": "amphibious: can breath air or water"
+    },
+    {
+      "name": "gullible: has disadvantage on insight checks"
+    },
+    {
+      "name": "standing leap: long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+    },
+    {
+      "name": "swamp camoulage: advantage on stealth checks in swamps"
+    }
+  ],
+  "actions": [
+    {
+      "name": "quaterstaff",
+      "entries": [
+        "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage, or 5 (1d8 + 1) bludgeoning damage if used with two hands."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": [
+            "druidcraft",
+            "shillelagh",
+            "swarm",
+            "water whip"
+          ]
+        },
+        "1": {
+          "spells": [
+            "cure wounds",
+            "jump",
+            "thunderwave"
+          ]
+        },
+        "2": {
+          "spells": [
+            "moonbeam",
+            "riptide"
+          ]
+        },
+        "3": {
+          "spells": [
+            "depth charge",
+            "dispel magic",
+            "plant growth"
+          ]
+        },
+        "4": {
+          "spells": [
+            "dominate beast",
+            "control water",
+            "polymorph"
+          ]
+        },
+        "5": {
+          "spells": [
+            "contagion",
+            "insect plague",
+            "mass cure wounds"
+          ]
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [
+    "poison"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "darkvision 60ft",
+    "passive perception 17"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}

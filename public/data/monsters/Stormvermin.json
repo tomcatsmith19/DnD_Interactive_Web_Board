@@ -1,0 +1,101 @@
+{
+  "name": "Stormvermin",
+  "source": null,
+  "page": null,
+  "size": [],
+  "type": null,
+  "tags": [],
+  "alignment": [],
+  "ac": [],
+  "hp": 24,
+  "speed": {
+    "walk": 40
+  },
+  "str": 16,
+  "dex": 16,
+  "con": 14,
+  "int": 10,
+  "wis": 12,
+  "cha": 6,
+  "skills": {},
+  "passive": null,
+  "languages": [],
+  "cr": "2",
+  "prof_bonus": 2,
+  "traits": [],
+  "actions": [
+    {
+      "name": "Halberd",
+      "entries": [
+        "Melee Weapon Attack: +6 to hit, reach 10ft, one target. Hit 5 (1d10+3)"
+      ]
+    },
+    {
+      "name": "Multiattack",
+      "entries": [
+        "Makes two halberd attacks."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "spells": {
+        "0": {
+          "spells": [
+            "light",
+            "sacred flame",
+            "thaumaturgy"
+          ]
+        },
+        "1": {
+          "spells": [
+            "bless",
+            "cure wounds",
+            "sanctuary"
+          ]
+        },
+        "2": {
+          "spells": []
+        },
+        "3": {
+          "spells": []
+        },
+        "4": {
+          "spells": []
+        },
+        "5": {
+          "spells": []
+        },
+        "6": {
+          "spells": []
+        },
+        "7": {
+          "spells": []
+        },
+        "8": {
+          "spells": []
+        },
+        "9": {
+          "spells": []
+        }
+      },
+      "daily": {
+        "1": []
+      },
+      "will": []
+    }
+  ],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [
+    "Keen Hearing and Smell (adv. on perc. hear and smell)",
+    "Pull Rank (when hit, reaction to cause an ally to be hit instead)"
+  ],
+  "environment": [],
+  "hasToken": false,
+  "hasFluff": false,
+  "hasFluffImages": false
+}
