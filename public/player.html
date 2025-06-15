@@ -554,10 +554,23 @@
       const monstersRef = db.collection("shared").doc("monsters");
 
       monstersRef.get().then(doc => {
+
+        const serverData = doc.data();
+        const now = Date.now();
+
+        // // If local data is older, abort
+        // if (serverData?.updatedAt > lastSyncedAt) {
+        //   alert("Sync aborted: Firebase has newer data.");
+        //   forceReloadMonsters();
+        //   return;
+        // }
+
         const payload = {
           monsters,
           updatedAt: Date.now()
         };
+
+        lastSyncedAt = now;
 
         return doc.exists
           ? monstersRef.update(payload)
@@ -572,6 +585,36 @@
     function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
+
+    function forceReloadMonsters() {
+      const monstersRef = db.collection("shared").doc("monsters");
+
+      monstersRef.get().then(doc => {
+        if (!doc.exists) {
+          console.warn("No monster data found in Firebase.");
+          return;
+        }
+
+        const data = doc.data();
+        if (!Array.isArray(data.monsters)) return;
+
+        lastSyncedAt = data.updatedAt;
+
+        monsters.length = 0;
+        document.getElementById('mapTokenLayer').innerHTML = '';
+
+        data.monsters.forEach(m => {
+          monsters.push({ ...m });
+          addMonsterToken(m);
+        });
+
+        updateMonsterTable();
+        console.log("Monsters force-reloaded from Firebase.");
+      }).catch(err => {
+        console.error("Failed to reload monsters from Firebase:", err);
+      });
+    }
+
 
     // Execute Action Button
     const executeBtn = document.getElementById('executeBtn');
@@ -758,6 +801,8 @@
     // Load monsters from Firebase on page load
     const monstersRef = db.collection("shared").doc("monsters");
 
+    let lastSyncedAt = 0;
+
     monstersRef.onSnapshot(doc => {
       if (!doc.exists) {
         console.log("No monsters found in Firebase.");
@@ -766,6 +811,11 @@
 
       const data = doc.data();
       if (!Array.isArray(data.monsters)) return;
+
+      // Only update if Firebase data is newer
+      //if (data.updatedAt <= lastSyncedAt) return;
+
+      lastSyncedAt = data.updatedAt;
 
       // Store previous HP for comparison
       const previousHP = {};
