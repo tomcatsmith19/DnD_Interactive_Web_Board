@@ -530,10 +530,13 @@
         <!-- Map Tab ##################################################################################################-->
         <div class="tab-content" id="mapTab" style="overflow: auto; flex: 1;">
             <div id="mapContainer" style="position: relative; display: inline-block;">
-                <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image"
-                    style="width: 100%; height: auto; display: block;">
-                <div id="mapTokenLayer"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+                <div id="mapTransformLayer" style="transform-origin: top left; position: relative;">
+                    <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image"
+                        style="width: 100%; height: auto; display: block;">
+                    <div id="mapTokenLayer"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                    </div>
+                </div>
             </div>
 
             <!-- Token Size Controls -->
@@ -677,7 +680,7 @@
                 { name: "Abjurer", cr: 9.0 },
                 { name: "Abjurer Wizard", cr: 9.0 },
                 { name: "Aboleth", cr: 10.0 },
-                { name: "Aboleth broodmother", cr: 11.0},
+                { name: "Aboleth broodmother", cr: 11.0 },
                 { name: "Aboleth Spawn", cr: 5.0 },
                 { name: "Abominable Yeti", cr: 9.0 },
                 { name: "Abyssal Chicken", cr: 0.25 },
@@ -1061,7 +1064,7 @@
                 { name: "Black Pudding", cr: 4.0 },
                 { name: "Black Viper", cr: 5.0 },
                 { name: "Blackguard", cr: 8.0 },
-                { name: "Blagden", cr: 1.0},
+                { name: "Blagden", cr: 1.0 },
                 { name: "Blagothkus", cr: 9.0 },
                 { name: "Blaze", cr: 5.0 },
                 { name: "Bleak Cabal Void Soother", cr: 3.0 },
@@ -1137,8 +1140,8 @@
                 { name: "Bronze Sable", cr: 1.0 },
                 { name: "Bronze Scout", cr: 1.0 },
                 { name: "Bronzefume", cr: 13.0 },
-                { name: "Brood Chrysalis",cr: 8},
-                { name: "broodling", cr: 0.5},
+                { name: "Brood Chrysalis", cr: 8 },
+                { name: "broodling", cr: 0.5 },
                 { name: "Broom of Animated Attack", cr: 0.25 },
                 { name: "Brother Adramalech", cr: 21.0 },
                 { name: "Brother Morax", cr: 21.0 },
@@ -1236,7 +1239,7 @@
                 { name: "Chwinga Astronaut", cr: 0.0 },
                 { name: "Cinder Hulk", cr: 7.0 },
                 { name: "Cinderslag Elemental", cr: 8.0 },
-                { name: "Clanrat", cr: 0.5},
+                { name: "Clanrat", cr: 0.5 },
                 { name: "Clapperclaw the Scarecrow", cr: 0.5 },
                 { name: "Clasp Cutthroat", cr: 3.0 },
                 { name: "Clasp Enforcer", cr: 5.0 },
@@ -1396,10 +1399,10 @@
                 { name: "Deep Crow", cr: 9.0 },
                 { name: "Deep Dragon Wyrmling", cr: 1.0 },
                 { name: "Deep Gnome (Svirfneblin)", cr: 0.5 },
-                { name: "Deep One Bishop", cr: 11},
-                { name: "Deep One Hybrid Cultist", cr: 0.125},
-                { name: "Deep One Scion Priest of Cthulhu", cr: 5.0},
-                { name: "Deep One", cr: 1.0},
+                { name: "Deep One Bishop", cr: 11 },
+                { name: "Deep One Hybrid Cultist", cr: 0.125 },
+                { name: "Deep One Scion Priest of Cthulhu", cr: 5.0 },
+                { name: "Deep One", cr: 1.0 },
                 { name: "Deep Scion", cr: 3.0 },
                 { name: "Deep Spider", cr: 7.0 },
                 { name: "Deepking Horgar Steelshadow V", cr: 3.0 },
@@ -2046,7 +2049,7 @@
                 { name: "Great Chief Halric Bonesnapper", cr: 2.0 },
                 { name: "Great Kroom, Purple Worm", cr: 15.0 },
                 { name: "Great Ulfe", cr: 2.0 },
-                { name: "Greater Brood Chrysalis", cr: 12.0},
+                { name: "Greater Brood Chrysalis", cr: 12.0 },
                 { name: "Greater Death Dragon", cr: 14.0 },
                 { name: "Greater Star Spawn Emissary", cr: 21.0 },
                 { name: "Greater Tyrant Shadow", cr: 22.0 },
@@ -2499,9 +2502,9 @@
                 { name: "Lenore von Kessel", cr: 6.0 },
                 { name: "Leonin Iconoclast", cr: 5.0 },
                 { name: "Leosin Erlanthar", cr: 3.0 },
-                { name: "Lesser Aboleth broodmother", cr: 6.0},
+                { name: "Lesser Aboleth broodmother", cr: 6.0 },
                 { name: "Lesser Avarice Seraph", cr: 7.0 },
-                { name: "Lesser Brood Chrysalis", cr: 5.0},
+                { name: "Lesser Brood Chrysalis", cr: 5.0 },
                 { name: "Lesser Death Dragon", cr: 10.0 },
                 { name: "Lesser Gluttony Seraph", cr: 7.0 },
                 { name: "Lesser Mummy Lord", cr: 15.0 },
@@ -2997,7 +3000,7 @@
                 { name: "Pirate First Mate", cr: 1.0 },
                 { name: "Pit Fiend", cr: 20.0 },
                 { name: "Pixie", cr: 0.25 },
-                { name: "Plague Monk", cr: 1.0},
+                { name: "Plague Monk", cr: 1.0 },
                 { name: "Plainscow", cr: 2.0 },
                 { name: "Planar Incarnate", cr: 22.0 },
                 { name: "Planetar", cr: 16.0 },
@@ -3381,7 +3384,7 @@
                 { name: "Sivak Draconian", cr: 4.0 },
                 { name: "Skaab", cr: 5.0 },
                 { name: "Skabatha Nightshade", cr: 8.0 },
-                { name: "Skavenslave", cr: 0.25},
+                { name: "Skavenslave", cr: 0.25 },
                 { name: "Skeemo Weirdbottle", cr: 6.0 },
                 { name: "Skeletal Alchemist", cr: 0.5 },
                 { name: "Skeletal Bloodfin", cr: 9.0 },
@@ -3547,7 +3550,7 @@
                 { name: "Storm Giant Tempest Caller", cr: 20.0 },
                 { name: "Storm Herald", cr: 17.0 },
                 { name: "Stormborn Ithjar", cr: 9.0 },
-                { name: "Stormvermin", cr: 2.0},
+                { name: "Stormvermin", cr: 2.0 },
                 { name: "Strahd Zombie", cr: 1.0 },
                 { name: "Strahd von Zarovich", cr: 15.0 },
                 { name: "Strahd's Animated Armor", cr: 6.0 },
@@ -3567,9 +3570,9 @@
                 { name: "Sunfly", cr: 0.0 },
                 { name: "Surrakar", cr: 0.5 },
                 { name: "Svirfneblin Wererat", cr: 2.0 },
-                { name: "swallybog gillwrangler", cr: 6.0},
-                { name: "swallybog sharpfin", cr: 3.0},
-                { name: "swallybog", cr: 0.5},
+                { name: "swallybog gillwrangler", cr: 6.0 },
+                { name: "swallybog sharpfin", cr: 3.0 },
+                { name: "swallybog", cr: 0.5 },
                 { name: "Swarm of Animated Books", cr: 0.25 },
                 { name: "Swarm of Bats", cr: 0.25 },
                 { name: "Swarm of Beetles", cr: 0.5 },
@@ -4219,7 +4222,8 @@
             let scale = 1;
 
             const updateTransform = () => {
-                mapContainer.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px) scale(${scale})`;
+                const mapTransformLayer = document.getElementById('mapTransformLayer');
+                mapTransformLayer.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px) scale(${scale})`;
             };
 
             // PAN START
@@ -4430,8 +4434,8 @@
                                 hp: avgHp,
                                 init: initiative,
                                 conditions: [],
-                                x: 100,
-                                y: 100,
+                                x: 0.1,
+                                y: 0.1,
                                 isplayer: false,
                             };
 
@@ -4709,8 +4713,10 @@
                 const container = document.createElement('div');
                 container.id = `token-${monster.id}`;
                 container.style.position = 'absolute';
-                container.style.left = `${monster.x}px`;
-                container.style.top = `${monster.y}px`;
+                const left = monster.xRatio * mapImage.clientWidth - currentTokenSize / 2;
+                const top = monster.yRatio * mapImage.clientHeight - currentTokenSize / 2;
+                container.style.left = `${left}px`;
+                container.style.top = `${top}px`;
                 // Use dynamic size
                 container.style.width = `${currentTokenSize}px`;
                 container.style.height = `${currentTokenSize}px`;
@@ -4795,8 +4801,10 @@
                         const id = el.id.replace('token-', '');
                         const monster = monsters.find(m => m.id === id);
                         if (monster) {
-                            monster.x = parseInt(el.style.left);
-                            monster.y = parseInt(el.style.top);
+                            const leftPx = parseInt(el.style.left) + currentTokenSize / 2;
+                            const topPx = parseInt(el.style.top) + currentTokenSize / 2;
+                            monster.xRatio = leftPx / mapImage.clientWidth;
+                            monster.yRatio = topPx / mapImage.clientHeight;
                         }
                         syncMonstersToFirebase();
                     }
@@ -4828,8 +4836,10 @@
                         const id = el.id.replace('token-', '');
                         const monster = monsters.find(m => m.id === id);
                         if (monster) {
-                            monster.x = parseInt(el.style.left);
-                            monster.y = parseInt(el.style.top);
+                            const leftPx = parseInt(el.style.left) + currentTokenSize / 2;
+                            const topPx = parseInt(el.style.top) + currentTokenSize / 2;
+                            monster.xRatio = leftPx / mapImage.clientWidth;
+                            monster.yRatio = topPx / mapImage.clientHeight;
                         }
                         syncMonstersToFirebase();
                     }
