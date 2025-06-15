@@ -558,12 +558,12 @@
         const serverData = doc.data();
         const now = Date.now();
 
-        // // If local data is older, abort
-        // if (serverData?.updatedAt > lastSyncedAt) {
-        //   alert("Sync aborted: Firebase has newer data.");
-        //   forceReloadMonsters();
-        //   return;
-        // }
+        // If local data is older, abort
+        if (serverData?.updatedAt > lastSyncedAt) {
+          alert("Sync aborted: Firebase has newer data.");
+          forceReloadMonsters();
+          return;
+        }
 
         const payload = {
           monsters,
@@ -813,7 +813,7 @@
       if (!Array.isArray(data.monsters)) return;
 
       // Only update if Firebase data is newer
-      //if (data.updatedAt <= lastSyncedAt) return;
+      if (data.updatedAt < lastSyncedAt) return;
 
       lastSyncedAt = data.updatedAt;
 
