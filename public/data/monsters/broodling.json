@@ -1,11 +1,11 @@
 {
-  "name": "Broodling",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "name": "broodling",
+  "source": "Heliana's Guide to Monster Hunting",
+  "page": 524,
+  "size": ["T"],
+  "type": "aberration",
   "tags": [],
-  "alignment": [],
+  "alignment": ["LE"],
   "ac": ["12"],
   "hp": 13,
   "speed": {
@@ -19,16 +19,20 @@
   "wis": 10,
   "cha": 5,
   "skills": {},
-  "passive": null,
-  "languages": [],
+  "passive": 10,
+  "languages": [
+    "telepathy 120ft",
+    "understands Deep speech but cant speak"],
   "cr": "1/2",
   "prof_bonus": 2,
   "traits": [
     {
-      "name": "Amphibious. The broodling can breathe air and water."
+      "name": "Amphibious",
+      "entries": ["The broodling can breathe air and water."]
     },
     {
-      "name": "Hive Mind. Broodlings\u2019 minds connect to other broodlings within 5 feet of them, forming a chain of thought. The broodling gains a +3 bonus to Intelligence checks and saving throws, and to its Entrance save DC for each other broodling in such a chain."
+      "name": "Hive Mind",
+      "entries": ["Broodlings\u2019 minds connect to other broodlings within 5 feet of them, forming a chain of thought. The broodling gains a +3 bonus to Intelligence checks and saving throws, and to its Entrance save DC for each other broodling in such a chain."]
     }
   ],
   "actions": [
@@ -106,9 +110,7 @@
   "immune": [],
   "senses": [
     "blindsight 30ft",
-    "passive perception 10ft",
-    "telepathy 120ft",
-    "understands Deep speech but cant speak"
+    "passive perception 10ft"
   ],
   "environment": [],
   "hasToken": false,

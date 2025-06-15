@@ -1,11 +1,11 @@
 {
   "name": "Aboleth broodmother",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "source": "Heliana's Guide to Monster Hunting",
+  "page": 526,
+  "size": ["L"],
+  "type": "aberration",
   "tags": [],
-  "alignment": [],
+  "alignment": ["LE"],
   "ac": ["17"],
   "hp": 153,
   "speed": {
@@ -19,15 +19,15 @@
   "wis": 14,
   "cha": 18,
   "skills": {
-    "athletics +9": 0,
-    "history +12": 0,
-    "perception +10": 0,
-    "con save +7": 0,
-    "int save +8": 0,
-    "wis save +6": 0
+    "athletics": "+9",
+    "history": "+12",
+    "perception": "+10",
+    "con save": "+7",
+    "int save": "+8",
+    "wis save": "+6"
   },
-  "passive": null,
-  "languages": [],
+  "passive": 12,
+  "languages": ["telepathy 120 ft", "deep speech"],
   "cr": "11",
   "prof_bonus": 4,
   "traits": [
@@ -158,9 +158,7 @@
   "immune": [],
   "senses": [
     "darkvision 120ft",
-    "pasive perception 20",
-    "telepathy 120 ft",
-    "deep speech"
+    "pasive perception 20"
   ],
   "environment": [],
   "hasToken": false,

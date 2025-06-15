@@ -1,11 +1,11 @@
 {
   "name": "Greater Brood Chrysalis",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "source": "Heliana's Guide to Monster Hunting",
+  "page": 529,
+  "size": ["H"],
+  "type": "aberration",
   "tags": [],
-  "alignment": [],
+  "alignment": ["LE"],
   "ac": ["22"],
   "hp": 312,
   "speed": {
@@ -19,30 +19,35 @@
   "wis": 14,
   "cha": 14,
   "skills": {
-    "con save +9": 0,
-    "int save +6": 0,
-    "wis save +5": 0,
-    "perception +8": 0
+    "con save": "+9",
+    "int save": "+6",
+    "wis save": "+5",
+    "perception": "+8"
   },
-  "passive": null,
-  "languages": [],
+  "passive": 12,
+  "languages": ["deep speech", "Telepathy 120 ft"],
   "cr": "12",
   "prof_bonus": 4,
   "traits": [
     {
-      "name": "Amphibious. The chrysalis can breathe air and water"
+      "name": "Amphibious",
+      "entries": ["The chrysalis can breathe air and water"]
     },
     {
-      "name": "Legendary Resistances (3/Day). If the chrysalis fails a saving throw, it can choose to succeed instead."
+      "name": "Legendary Resistances (3/Day)",
+      "entries": ["If the chrysalis fails a saving throw, it can choose to succeed instead."]
     },
     {
-      "name": "Regenerative State. The chrysalis regains all its hit points at the start of its turn."
+      "name": "Regenerative State",
+      "entries": ["The chrysalis regains all its hit points at the start of its turn."]
     },
     {
-      "name": "Sticky Mucous. When a creature hits the chrysalis with a melee attack, it must succeed on a DC 18 Strength saving throw or become disarmed as its weapon stays stuck to the creature. A creature can use an action to make a DC 18 Strength (Athletics) check, freeing a stuck weapon within its reach on a success. If the attack requires that the attacker touch the aboleth (GM\u2019s discretion), then the attacker becomes grappled (escape DC 18) on a failed save. While it is grappled, it can\u2019t use that limb. If the natural weapon is a bite, then the creature can\u2019t speak while it is grappled in this way"
+      "name": "Sticky Mucous",
+      "entries": ["When a creature hits the chrysalis with a melee attack, it must succeed on a DC 18 Strength saving throw or become disarmed as its weapon stays stuck to the creature. A creature can use an action to make a DC 18 Strength (Athletics) check, freeing a stuck weapon within its reach on a success. If the attack requires that the attacker touch the aboleth (GM\u2019s discretion), then the attacker becomes grappled (escape DC 18) on a failed save. While it is grappled, it can\u2019t use that limb. If the natural weapon is a bite, then the creature can\u2019t speak while it is grappled in this way"]
     },
     {
-      "name": "Transitional State. The chrysalis turns into an aboleth broodmother at the start of its fourth turn after becoming a chrysalis, ending any grapples it is a part of."
+      "name": "Transitional State",
+      "entries": ["The chrysalis turns into an aboleth broodmother at the start of its fourth turn after becoming a chrysalis, ending any grapples it is a part of."]
     }
   ],
   "actions": [
@@ -112,9 +117,7 @@
   "immune": [],
   "senses": [
     "blindsight 120ft",
-    "passive perception 20",
-    "deep speech",
-    "telepathy 120ft"
+    "passive perception 20"
   ],
   "environment": [],
   "hasToken": false,

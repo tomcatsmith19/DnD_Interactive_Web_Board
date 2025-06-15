@@ -1,11 +1,11 @@
 {
   "name": "Deep One Scion Priest of Cthulhu",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "source": "Cthulhu Mythos",
+  "page": 299,
+  "size": ["M"],
+  "type": "humanoid",
   "tags": [],
-  "alignment": [],
+  "alignment": ["CE"],
   "ac": ["14"],
   "hp": 60,
   "speed": {
@@ -19,32 +19,37 @@
   "wis": 18,
   "cha": 13,
   "skills": {
-    "WIS Saving Throw +7": 0,
-    "CHA Saving Throw +4": 0,
-    "Arcana +5": 0,
-    "History +5": 0,
-    "Perception +7": 0,
-    "Religion +5": 0
+    "WIS Saving Throw": "+7",
+    "CHA Saving Throw": "+4",
+    "Arcana": "+5",
+    "History": "+5",
+    "Perception": "+7",
+    "Religion": "+5"
   },
-  "passive": null,
-  "languages": [],
+  "passive": 14,
+  "languages": ["common", "deep speech"],
   "cr": "5",
   "prof_bonus": 3,
   "traits": [
     {
-      "name": "Amphibious: The deep one can breath air and water"
+      "name": "Amphibious",
+      "entries": ["The deep one can breath air and water"]
     },
     {
-      "name": "Deep Dweller: The deep one has advantage on stealth checks while underwater. In additon, it can't be harmed by water pressure"
+      "name": "Deep Dweller",
+      "entries": ["The deep one has advantage on stealth checks while underwater. In additon, it can't be harmed by water pressure"]
     },
     {
-      "name": "Use Magic Device: ignores all class requirements on the use of magic items"
+      "name": "Use Magic Device",
+      "entries": ["ignores all class requirements on the use of magic items"]
     },
     {
-      "name": "Eminence of the Void: as a bonus action, the deep one bishop can expend a spell slot to cause its melee weapon attacks to deal an extra 3d6 force damage to a target on a hit. The weapon attack is magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. This benefit lasts until the end of the turn. If the bishop expends a spell slot of 2nd or higher, the extra damage increases by 1d6 for each level above 1st."
+      "name": "Eminence of the Void",
+      "entries": ["as a bonus action, the deep one bishop can expend a spell slot to cause its melee weapon attacks to deal an extra 3d6 force damage to a target on a hit. The weapon attack is magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. This benefit lasts until the end of the turn. If the bishop expends a spell slot of 2nd or higher, the extra damage increases by 1d6 for each level above 1st."]
     },
     {
-      "name": "Spellcasting: is a 8th level spell caste. Its spellcasting ability is Wisdom spell save DC 15, +7 to hitwith spell attacks"
+      "name": "Spellcasting",
+      "entries": ["is a 8th level spell caste. Its spellcasting ability is Wisdom spell save DC 15, +7 to hitwith spell attacks"]
     }
   ],
   "actions": [
@@ -129,9 +134,7 @@
   "immune": [],
   "senses": [
     "darkvision 60ft",
-    "passive perception 17",
-    "Common",
-    "Deep speech"
+    "passive perception 17"
   ],
   "environment": [],
   "hasToken": false,

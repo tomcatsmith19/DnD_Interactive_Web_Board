@@ -1,11 +1,11 @@
 {
   "name": "swallybog gillwrangler",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "source": "Heliana's Guide to Monster Hunting",
+  "page": 582,
+  "size": ["M"],
+  "type": "humanoid",
   "tags": [],
-  "alignment": [],
+  "alignment": ["N"],
   "ac": ["16"],
   "hp": 90,
   "speed": {
@@ -19,29 +19,33 @@
   "wis": 19,
   "cha": 14,
   "skills": {
-    "stealth +5": 0,
-    "nature +2": 0,
-    "perception +7": 0,
-    "dex save +5": 0,
-    "con save +6": 0,
-    "wis save +7": 0
+    "stealth": "+5",
+    "nature": "+2",
+    "perception": "+7",
+    "dex save": "+5",
+    "con save": "+6",
+    "wis save": "+7"
   },
-  "passive": null,
+  "passive": 14,
   "languages": [],
   "cr": "6",
   "prof_bonus": 3,
   "traits": [
     {
-      "name": "amphibious: can breath air or water"
+      "name": "amphibious",
+      "entries": ["can breath air or water"]
     },
     {
-      "name": "gullible: has disadvantage on insight checks"
+      "name": "gullible",
+      "entries": ["has disadvantage on insight checks"]
     },
     {
-      "name": "standing leap: long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      "name": "standing leap",
+      "entries": ["long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."]
     },
     {
-      "name": "swamp camoulage: advantage on stealth checks in swamps"
+      "name": "swamp camoulage",
+      "entries": ["advantage on stealth checks in swamps"]
     }
   ],
   "actions": [

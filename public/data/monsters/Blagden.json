@@ -1,0 +1,96 @@
+{
+  "name": "Blagden",
+  "source": "Grim Hollow",
+  "page": 281,
+  "size": [
+    "S"
+  ],
+  "type": "fey",
+  "tags": [],
+  "alignment": [
+    "CN"
+  ],
+  "ac": [
+    "12"
+  ],
+  "hp": 21,
+  "speed": {
+    "walk": 10,
+    "fly": 50
+  },
+  "str": 7,
+  "dex": 15,
+  "con": 11,
+  "int": 10,
+  "wis": 14,
+  "cha": 11,
+  "skills": {
+    "Deception": "+4",
+    "perception": "+4"
+  },
+  "passive": 13,
+  "languages": ["Elvish", "Sylvan"],
+  "cr": "1",
+  "prof_bonus": 2,
+  "traits": [
+    {
+      "name": "Mimicry",
+      "entries": [
+        "The raven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful {@dc 10} Wisdom (Insight) check."
+      ]
+    },
+    {
+      "name": "Affect Fortunes",
+      "entries": [
+        "As a bonus action, the Blagden can select up to six other creatures it can see within 60ft of it. The raven assigns each creature a bane or boon for 1 minute, until the raven dies, or until it uses this trait again. A creature given a bane must make a DC 12 CHA saving throw. On a failure, when the creature makes an ability check or a saving throw. On a failure, when the creature makes an ability check or a saving throw while the bane lasts, the creature must roll a d4 and subtract the number rolled from the result. When a target given a boon makes an ability check or a saving throw while the boon lasts, the target can roll a d4 and add the number rolled to the result. These effects don't stack with similar ones, such as the BANE or BLESS spells."
+      ]
+    },
+    {
+      "name": "Flyby",
+      "entries": [
+        "The Blagden doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Baneful Attack",
+      "entries": [
+        "The Blagden has advantage on attack rolls against any creature with a bane from its Affect Fortunes trait."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "attacks one with its beak and once with its talons."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 1d4+2 piercing damage."
+      ]
+    },
+    {
+      "name": "Talons",
+      "entries": [
+        "Melee atk +4 to hit, reach 5 ft., one target. 1d6+2 piercing damage."
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [],
+  "conditionImmune": [],
+  "resist": [],
+  "vulnerable": [],
+  "immune": [],
+  "senses": [],
+  "environment": [
+    "swamp",
+    "hill",
+    "urban"
+  ],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": true
+}

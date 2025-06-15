@@ -1,11 +1,11 @@
 {
   "name": "swallybog sharpfin",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "source": "Heliana's Guide to Monster Hunting",
+  "page": 582,
+  "size": ["M"],
+  "type": "humanoid",
   "tags": [],
-  "alignment": [],
+  "alignment": ["N"],
   "ac": ["16"],
   "hp": 90,
   "speed": {
@@ -19,29 +19,34 @@
   "wis": 13,
   "cha": 6,
   "skills": {
-    "stealth +4": 0,
-    "survival +3": 0,
-    "athletics +5": 0
+    "stealth": "+4",
+    "survival": "+3",
+    "athletics": "+5"
   },
-  "passive": null,
+  "passive": 11,
   "languages": [],
   "cr": "3",
   "prof_bonus": 2,
   "traits": [
     {
-      "name": "amphibious: can breath air or water"
+      "name": "amphibious",
+      "entries": ["can breath air or water"]
     },
     {
-      "name": "gullible: has disadvantage on insight checks"
+      "name": "gullible",
+      "entries": ["has disadvantage on insight checks"]
     },
     {
-      "name": "standing leap: long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+      "name": "standing leap",
+      "entries": ["long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."]
     },
     {
-      "name": "swamp camoulage: advantage on stealth checks in swamps"
+      "name": "swamp camoulage",
+      "entries": ["advantage on stealth checks in swamps"]
     },
     {
-      "name": "net master: Being within 5 feet of a hostile creature doesn\u2019t impose disadvantage on the swallybog\u2019s ranged attack rolls. Making an attack with a net doesn\u2019t limit the number of nonnet attacks the swallybog can make (included in actions)."
+      "name": "net master",
+      "entries": ["Being within 5 feet of a hostile creature doesn\u2019t impose disadvantage on the swallybog\u2019s ranged attack rolls. Making an attack with a net doesn\u2019t limit the number of nonnet attacks the swallybog can make (included in actions)."]
     }
   ],
   "actions": [

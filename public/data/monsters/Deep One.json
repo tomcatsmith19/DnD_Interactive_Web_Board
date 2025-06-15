@@ -1,11 +1,11 @@
 {
   "name": "Deep One",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "source": "Cthulhu Mythos",
+  "page": 296,
+  "size": ["M"],
+  "type": "humanoid",
   "tags": [],
-  "alignment": [],
+  "alignment": ["CE"],
   "ac": ["14"],
   "hp": 52,
   "speed": {
@@ -19,23 +19,26 @@
   "wis": 16,
   "cha": 12,
   "skills": {
-    "Perception +5": 0,
-    "Religion +4": 0,
-    "Stealth +1": 0
+    "Perception": "+5",
+    "Religion": "+4",
+    "Stealth": "+1"
   },
-  "passive": null,
-  "languages": [],
+  "passive": 13,
+  "languages": ["common", "deep speech"],
   "cr": "1",
   "prof_bonus": 2,
   "traits": [
     {
-      "name": "Amphibious: The deep one can breath air and water"
+      "name": "Amphibious",
+      "entries": ["The deep one can breath air and water"]
     },
     {
-      "name": "Deep Dweller: The deep one has advantage on stealth checks while underwater. In additon, it can't be harmed by water pressure"
+      "name": "Deep Dweller",
+      "entries": ["The deep one has advantage on stealth checks while underwater. In additon, it can't be harmed by water pressure"]
     },
     {
-      "name": "Use Magic Device: The deep one ignores all class requirements on the use of magic items"
+      "name": "Use Magic Device",
+      "entries": ["The deep one ignores all class requirements on the use of magic items"]
     }
   ],
   "actions": [
@@ -101,9 +104,7 @@
   "immune": [],
   "senses": [
     "darkvision 60ft",
-    "passive perception 15",
-    "Common",
-    "Deep speech"
+    "passive perception 15"
   ],
   "environment": [],
   "hasToken": false,

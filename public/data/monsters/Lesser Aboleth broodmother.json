@@ -1,11 +1,11 @@
 {
   "name": "Lesser Aboleth broodmother",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "source": "Heliana's Guide to Monster Hunting",
+  "page":  525,
+  "size": ["L"],
+  "type": "aberration",
   "tags": [],
-  "alignment": [],
+  "alignment": ["LE"],
   "ac": ["15"],
   "hp": 67,
   "speed": {
@@ -19,29 +19,35 @@
   "wis": 13,
   "cha": 17,
   "skills": {
-    "athletics +6": 0,
-    "history +9": 0,
-    "perception +7": 0,
-    "con save +5": 0,
-    "int save +6": 0,
-    "wis save +4": 0
+    "athletics": "+6",
+    "history": "+9",
+    "perception": "+7",
+    "con save": "+5",
+    "int save": "+6",
+    "wis save": "+4"
   },
-  "passive": null,
-  "languages": [],
+  "passive": 11,
+  "languages": [
+    "telepathy 120 ft",
+    "deep speech"],
   "cr": "6",
   "prof_bonus": 3,
   "traits": [
     {
-      "name": "Amphibious. The aboleth can breathe air and water"
+      "name": "Amphibious",
+      "entries": ["The aboleth can breathe air and water"]
     },
     {
-      "name": "Legendary Resistances (3/Day). If the aboleth fails a saving throw, it can choose to succeed instead"
+      "name": "Legendary Resistances (3/Day)",
+      "entries": ["If the aboleth fails a saving throw, it can choose to succeed instead"]
     },
     {
-      "name": "Infectious Mucous. The aboleth is surrounded by infectious mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 13 Constitution saving throw. On a failure, the creature is diseased. For the first hour of the disease, the creature takes 2 (1d4) necrotic damage if it ends its turn out of water (it must be at least neck-deep to avoid this damage). After the first hour and until the disease is cured, a creature is unable to gain the benefits of a short or long rest if it does not spend the rest at least neck-deep in water. A creature that fails the saving throw by 5 or more (DC 7) becomes a host of a broodling egg that hatches in 3d6 days."
+      "name": "Infectious Mucous",
+      "entries": ["The aboleth is surrounded by infectious mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 13 Constitution saving throw. On a failure, the creature is diseased. For the first hour of the disease, the creature takes 2 (1d4) necrotic damage if it ends its turn out of water (it must be at least neck-deep to avoid this damage). After the first hour and until the disease is cured, a creature is unable to gain the benefits of a short or long rest if it does not spend the rest at least neck-deep in water. A creature that fails the saving throw by 5 or more (DC 7) becomes a host of a broodling egg that hatches in 3d6 days."]
     },
     {
-      "name": "Probing Telepathy. If a creature communicates telepathically with the aboleth, the aboleth learns the creature\u2019s greatest desires if the aboleth can see the creature."
+      "name": "Probing Telepathy",
+      "entries": ["If a creature communicates telepathically with the aboleth, the aboleth learns the creature\u2019s greatest desires if the aboleth can see the creature."]
     }
   ],
   "actions": [
@@ -138,9 +144,7 @@
   "immune": [],
   "senses": [
     "darkvision 120ft",
-    "pasive perception 17",
-    "telepathy 120 ft",
-    "deep speech"
+    "pasive perception 17"
   ],
   "environment": [],
   "hasToken": false,

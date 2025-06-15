@@ -1,11 +1,11 @@
 {
   "name": "Deep One Bishop",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "source": "Cthuluhu Mythos",
+  "page": 296,
+  "size": ["M"],
+  "type": "humanoid",
   "tags": [],
-  "alignment": [],
+  "alignment": ["CE"],
   "ac": ["16"],
   "hp": 176,
   "speed": {
@@ -19,30 +19,35 @@
   "wis": 20,
   "cha": 13,
   "skills": {
-    "Perception +9": 0,
-    "Persuasion +5": 0,
-    "Religion +6": 0,
-    "Stealth +3": 0
+    "Perception": "+9",
+    "Persuasion": "+5",
+    "Religion": "+6",
+    "Stealth": "+3"
   },
-  "passive": null,
-  "languages": [],
+  "passive": 15,
+  "languages": ["common","deep speech"],
   "cr": "11",
   "prof_bonus": 4,
   "traits": [
     {
-      "name": "Amphibious: The deep one can breath air and water"
+      "name": "Amphibious",
+      "entries": ["The deep one can breath air and water"]
     },
     {
-      "name": "Deep Dweller: The deep one has advantage on stealth checks while underwater. In additon, it can't be harmed by water pressure"
+      "name": "Deep Dweller",
+      "entries": ["The deep one has advantage on stealth checks while underwater. In additon, it can't be harmed by water pressure"]
     },
     {
-      "name": "Use Magic Device: The deep one ignores all class requirements on the use of magic items"
+      "name": "Use Magic Device",
+      "entries": [" The deep one ignores all class requirements on the use of magic items"]
     },
     {
-      "name": "Eminence of the Void: as a bonus action, the deep one bishop can expend a spell slot to cause its melee weapon attacks to deal an extra 3d6 force damage to a target on a hit. The weapon attack is magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. This benefit lasts until the end of the turn. If the bishop expends a spell slot of 2nd or higher, the extra damage increases by 1d6 for each level above 1st."
+      "name": "Eminence of the Void",
+      "entries": ["as a bonus action, the deep one bishop can expend a spell slot to cause its melee weapon attacks to deal an extra 3d6 force damage to a target on a hit. The weapon attack is magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. This benefit lasts until the end of the turn. If the bishop expends a spell slot of 2nd or higher, the extra damage increases by 1d6 for each level above 1st."]
     },
     {
-      "name": "Spellcasting: is a 15th level spell caste. Its spellcasting ability is Wisdom spell save DC 17, +9 to hitwith spell attacks"
+      "name": "Spellcasting",
+      "entries": ["is a 15th level spell caste. Its spellcasting ability is Wisdom spell save DC 17, +9 to hitwith spell attacks"]
     }
   ],
   "actions": [
@@ -138,9 +143,7 @@
   "immune": [],
   "senses": [
     "darkvision 60ft",
-    "passive perception 19",
-    "Common",
-    "Deep speech"
+    "passive perception 19"
   ],
   "environment": [],
   "hasToken": false,

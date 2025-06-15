@@ -1,11 +1,11 @@
 {
   "name": "Brood Chrysalis",
-  "source": null,
-  "page": null,
-  "size": [],
-  "type": null,
+  "source": "Heliana's Guide to Monster Hunting",
+  "page": 528,
+  "size": ["H"],
+  "type": "aberration",
   "tags": [],
-  "alignment": [],
+  "alignment": ["LE"],
   "ac": ["20"],
   "hp": 207,
   "speed": {
@@ -19,13 +19,13 @@
   "wis": 14,
   "cha": 10,
   "skills": {
-    "con save +9": 0,
-    "int save +6": 0,
-    "wis save +5": 0,
-    "perception +8": 0
+    "con save": "+9",
+    "int save": "+6",
+    "wis save": "+5",
+    "perception": "+8"
   },
-  "passive": null,
-  "languages": [],
+  "passive": 12,
+  "languages": ["deep speech", "telepathy 120ft"],
   "cr": "8",
   "prof_bonus": 3,
   "traits": [
@@ -118,9 +118,7 @@
   "immune": [],
   "senses": [
     "blindsight 90ft",
-    "passive perception 20",
-    "deep speech",
-    "telepathy 120ft"
+    "passive perception 20"
   ],
   "environment": [],
   "hasToken": false,
