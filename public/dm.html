@@ -528,10 +528,27 @@
                         </div>
                     </div>
 
-                    <!-- creator tab---------------------------------------------------------------------------------------->
-                    <div id="creatorContent" class="dungeon-tab-content"
-                        style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
-                        <p>Monster creator content here...</p>
+                    <!-- Monster creator tab---------------------------------------------------------------------------------------->
+                    <div id="creatorForm" style="display: flex; flex-direction: column; gap: 8px;">
+                        <input type="text" id="monName" placeholder="Name">
+                        <input type="text" id="monSource" placeholder="Source (e.g., MM)">
+                        <input type="number" id="monPage" placeholder="Page Number">
+                        <input type="text" id="monType" placeholder="Type (e.g., humanoid)">
+                        <input type="text" id="monSize" placeholder="Size (e.g., M)">
+                        <input type="text" id="monAlignment" placeholder="Alignment (e.g., A)">
+                        <input type="number" id="monHP" placeholder="Hit Points">
+                        <input type="text" id="monSpeed" placeholder="Speed (e.g., walk:30)">
+
+                        <div style="display: flex; gap: 4px;">
+                            <input type="number" id="str" placeholder="STR">
+                            <input type="number" id="dex" placeholder="DEX">
+                            <input type="number" id="con" placeholder="CON">
+                            <input type="number" id="int" placeholder="INT">
+                            <input type="number" id="wis" placeholder="WIS">
+                            <input type="number" id="cha" placeholder="CHA">
+                        </div>
+
+                        <button onclick="downloadMonsterJSON()">Download Monster JSON</button>
                     </div>
 
                 </div>
@@ -5063,6 +5080,62 @@
                     syncMonstersToFirebase();
                 });
             }
+
+
+            // Monster creator 
+            function downloadMonsterJSON() {
+                const getVal = id => document.getElementById(id).value;
+
+                const monster = {
+                    name: getVal("monName"),
+                    source: getVal("monSource"),
+                    page: parseInt(getVal("monPage")),
+                    size: [getVal("monSize")],
+                    type: getVal("monType"),
+                    tags: [],
+                    alignment: [getVal("monAlignment")],
+                    ac: [],
+                    hp: parseInt(getVal("monHP")),
+                    speed: {
+                        walk: parseInt(getVal("monSpeed").split(":")[1] || 30)
+                    },
+                    str: parseInt(getVal("str")),
+                    dex: parseInt(getVal("dex")),
+                    con: parseInt(getVal("con")),
+                    int: parseInt(getVal("int")),
+                    wis: parseInt(getVal("wis")),
+                    cha: parseInt(getVal("cha")),
+                    skills: {},
+                    passive: 10,
+                    languages: [],
+                    cr: "1",
+                    prof_bonus: 2,
+                    traits: [],
+                    actions: [],
+                    legendary: [],
+                    spellcasting: [],
+                    conditionImmune: [],
+                    resist: [],
+                    vulnerable: [],
+                    immune: [],
+                    senses: [],
+                    environment: [],
+                    hasToken: false,
+                    hasFluff: false,
+                    hasFluffImages: false
+                };
+
+                const blob = new Blob([JSON.stringify(monster, null, 2)], { type: "application/json" });
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `${monster.name || "monster"}.json`;
+                a.click();
+
+                URL.revokeObjectURL(url);
+            }
+
 
             // FIREBASE SYNCHRONIZATON
             let lastSyncedAt = 0;
