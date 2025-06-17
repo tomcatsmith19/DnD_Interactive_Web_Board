@@ -1,0 +1,106 @@
+{
+  "name": "Deep One Child",
+  "source": "Homebrew",
+  "page": 0,
+  "size": [
+    "S"
+  ],
+  "type": "humanoid",
+  "tags": [],
+  "alignment": [
+    "CE"
+  ],
+  "ac": [
+    "14"
+  ],
+  "hp": 52,
+  "speed": {
+    "walk": 20,
+    "swim": 40
+  },
+  "str": 16,
+  "dex": 9,
+  "con": 16,
+  "int": 14,
+  "wis": 16,
+  "cha": 12,
+  "cr": "1",
+  "prof_bonus": 2,
+  "passive": 13,
+  "languages": [
+    "common",
+    "deep speech"
+  ],
+  "skills": {
+    "perception": "+5",
+    "religion": "+4",
+    "stealth": "+1"
+  },
+  "resist": [
+    "cold"
+  ],
+  "vulnerable": [],
+  "immune": [],
+  "conditionImmune": [],
+  "senses": [
+    "darkvision 60ft",
+    "passive perception 15"
+  ],
+  "environment": [],
+  "hasToken": true,
+  "hasFluff": false,
+  "hasFluffImages": false,
+  "traits": [
+    {
+      "name": "Amphibious",
+      "entries": [
+        "The deep one can breath air and water"
+      ]
+    },
+    {
+      "name": "Deep Dweller",
+      "entries": [
+        "The deep one has advantage on stealth checks while underwater. In additon, it can't be harmed by water pressure"
+      ]
+    },
+    {
+      "name": "Use Magic Device",
+      "entries": [
+        "The deep one ignores all class requirements on the use of magic items"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The deep one makes two claw attacks"
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "Melee Weapon Attack: +5 to hit, reach 5ft, one target. Hit: 1d6+3 slashing damage"
+      ]
+    }
+  ],
+  "legendary": [],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "ability": "int",
+      "headerEntries": [],
+      "footerEntries": [
+        ""
+      ],
+      "will": [],
+      "daily": {
+        "1": []
+      },
+      "hidden": [
+        "will"
+      ],
+      "spells": {}
+    }
+  ]
+}
