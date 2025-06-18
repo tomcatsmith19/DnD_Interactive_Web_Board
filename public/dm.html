@@ -183,6 +183,66 @@
         .flash-green {
             animation: flash-green 1s ease-out;
         }
+
+        .monster-tab-btn {
+            padding: 10px;
+            background-color: #444;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .monster-tab-btn:hover {
+            background-color: #555;
+        }
+
+        .monster-tab-btn.active {
+            background-color: #FFD700;
+            color: black;
+        }
+
+        .spell-tab-btn {
+            padding: 8px 12px;
+            background-color: #444;
+            border: none;
+            color: white;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .spell-tab-btn:hover {
+            background-color: #555;
+        }
+
+        .spell-tab-btn.active {
+            background-color: #FFD700;
+            color: black;
+        }
+
+
+        #creatorContent {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #FFD700;
+            font-family: 'MedievalSharp', cursive;
+        }
+
+        #creatorForm label {
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        #creatorForm input[type="text"],
+        #creatorForm input[type="number"],
+        #creatorForm textarea {
+            background-color: #222;
+            color: #FFD700;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 5px;
+        }
     </style>
 </head>
 
@@ -537,73 +597,117 @@
 
                             <!-- Controls -->
                             <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                                <button id="startFromMonsterBtn">Start from Monster</button>
-                                <button id="clearMonsterBtn">Clear Monster Creator</button>
+                                <button id="startFromMonsterBtn"
+                                    style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">
+                                    Start from Monster
+                                </button>
+                                <button id="clearMonsterBtn"
+                                    style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">
+                                    Clear Monster Creator
+                                </button>
                             </div>
 
                             <!-- Top Row -->
                             <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 10px;">
 
-                                <!-- Monster Catagorization-->
-                                <div>
-                                    <label>Monster Name:</label><br>
-                                    <input id="monName" type="text"><br>
-                                    <label>Size:</label><br>
-                                    <input id="monSize" type="text" placeholder="e.g. M"><br>
-                                    <label>Type:</label><br>
-                                    <input id="monType" type="text" placeholder="e.g. humanoid"><br>
-                                    <label>Alignment:</label><br>
-                                    <input id="monAlignment" type="text" placeholder="e.g. CE"><br>
-                                    <label>Passive Perception:</label><br>
-                                    <input id="monPassive" type="number" min="0" max="30" step="1"
-                                        style="width: 80px;"><br>
-                                    <label>Languages:</label><br>
-                                    <input id="monLanguages" type="text" placeholder="comma-separated">
+
+                                <!-- Monster Categorization -->
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">Monster Name:</label>
+                                        <input id="monName" type="text" style="width: 150px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">CR:</label>
+                                        <input id="monCR" type="text" placeholder="e.g. 1/8" style="width: 150px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">Size:</label>
+                                        <input id="monSize" type="text" placeholder="e.g. M" style="width: 150px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">Type:</label>
+                                        <input id="monType" type="text" placeholder="e.g. humanoid"
+                                            style="width: 150px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">Alignment:</label>
+                                        <input id="monAlignment" type="text" placeholder="e.g. CE"
+                                            style="width: 150px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">Languages:</label>
+                                        <input id="monLanguages" type="text" placeholder="comma-separated"
+                                            style="width: 150px;">
+                                    </div>
                                 </div>
 
 
-                                <!-- Name, CR, HP, AC, Speed -->
-                                <div>
-                                    <label>CR:</label><br>
-                                    <input id="monCR" type="text" placeholder="e.g. 1/8" style="width: 80px;"><br>
-                                    <label>HP:</label><br>
-                                    <input id="monHP" type="number" min="0" max="1000" step="1"
-                                        style="width: 80px;"><br>
-                                    <label>AC:</label><br>
-                                    <input id="monAC" type="number" min="0" max="30" step="1" style="width: 80px;"><br>
-                                    <label>Speed:</label><br>
-                                    <textarea id="monSpeed" rows="3" placeholder="walk: 30&#10;swim: 40"
-                                        style="width: 150px;"></textarea>
-
+                                <!-- Basic Info -->
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 140px;">HP:</label>
+                                        <input id="monHP" type="number" min="0" max="1000" step="1"
+                                            style="width: 150px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 140px;">AC:</label>
+                                        <input id="monAC" type="number" min="0" max="30" step="1" style="width: 150px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 140px;">Passive Perception:</label>
+                                        <input id="monPassive" type="number" min="0" max="30" step="1"
+                                            style="width: 150px;">
+                                    </div>
+                                    <div style="display: flex; align-items: flex-start; gap: 10px;">
+                                        <label style="width: 140px;">Speed:</label>
+                                        <textarea id="monSpeed" rows="3" placeholder="walk: 30&#10;swim: 40"
+                                            style="width: 150px;"></textarea>
+                                    </div>
                                 </div>
-
-
 
                                 <!-- Physical Stats -->
-                                <div>
-                                    <label>STR:</label><br>
-                                    <input id="str" type="number" min="0" max="30" step="1" style="width: 80px;"><br>
-                                    <label>DEX:</label><br>
-                                    <input id="dex" type="number" min="0" max="30" step="1" style="width: 80px;"><br>
-                                    <label>CON:</label><br>
-                                    <input id="con" type="number" min="0" max="30" step="1" style="width: 80px;"><br>
-                                    <label>INT:</label><br>
-                                    <input id="int" type="number" min="0" max="30" step="1" style="width: 80px;"><br>
-                                    <label>WIS:</label><br>
-                                    <input id="wis" type="number" min="0" max="30" step="1" style="width: 80px;"><br>
-                                    <label>CHA:</label><br>
-                                    <input id="cha" type="number" min="0" max="30" step="1" style="width: 80px;">
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">STR:</label>
+                                        <input id="str" type="number" min="0" max="30" step="1" style="width: 80px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">DEX:</label>
+                                        <input id="dex" type="number" min="0" max="30" step="1" style="width: 80px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">CON:</label>
+                                        <input id="con" type="number" min="0" max="30" step="1" style="width: 80px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">INT:</label>
+                                        <input id="int" type="number" min="0" max="30" step="1" style="width: 80px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">WIS:</label>
+                                        <input id="wis" type="number" min="0" max="30" step="1" style="width: 80px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="width: 100px;">CHA:</label>
+                                        <input id="cha" type="number" min="0" max="30" step="1" style="width: 80px;">
+                                    </div>
                                 </div>
+
 
 
                                 <!-- Tabs -->
                                 <div>
                                     <div style="display: flex; gap: 10px; margin-bottom: 5px;">
-                                        <button onclick="switchTab('attacksTab')">Attacks</button>
-                                        <button onclick="switchTab('spellsTab')">Spells</button>
-                                        <button onclick="switchTab('conditionsTab')">Conditions & Attributes</button>
-                                        <button onclick="switchTab('traitsTab')">Skills, Traits & Senses</button>
-                                        <button onclick="switchTab('legendaryTab')">Legendary Actions</button>
+                                        <button class="monster-tab-btn active"
+                                            onclick="switchTab('attacksTab')">Attacks</button>
+                                        <button class="monster-tab-btn" onclick="switchTab('spellsTab')">Spells</button>
+                                        <button class="monster-tab-btn" onclick="switchTab('conditionsTab')">Conditions
+                                            & Attributes</button>
+                                        <button class="monster-tab-btn" onclick="switchTab('traitsTab')">Skills, Traits
+                                            & Senses</button>
+                                        <button class="monster-tab-btn" onclick="switchTab('legendaryTab')">Legendary
+                                            Actions</button>
                                     </div>
 
                                     <div id="attacksTab" class="monster-tab" style="display: none;">
@@ -618,17 +722,29 @@
                                             style="width: 80px;">
 
                                         <div style="display: flex; gap: 5px; margin-bottom: 10px;">
-                                            <button onclick="switchSpellLevel('spell0')">Cantrips (0)</button>
-                                            <button onclick="switchSpellLevel('spell1')">1st</button>
-                                            <button onclick="switchSpellLevel('spell2')">2nd</button>
-                                            <button onclick="switchSpellLevel('spell3')">3rd</button>
-                                            <button onclick="switchSpellLevel('spell4')">4th</button>
-                                            <button onclick="switchSpellLevel('spell5')">5th</button>
-                                            <button onclick="switchSpellLevel('spell6')">6th</button>
-                                            <button onclick="switchSpellLevel('spell7')">7th</button>
-                                            <button onclick="switchSpellLevel('spell8')">8th</button>
-                                            <button onclick="switchSpellLevel('spell9')">9th</button>
-                                            <button onclick="switchSpellLevel('spellWill')">At Will</button>
+                                            <button class="spell-tab-btn active"
+                                                onclick="switchSpellLevel('spell0')">Cantrips
+                                                (0)</button>
+                                            <button class="spell-tab-btn"
+                                                onclick="switchSpellLevel('spell1')">1st</button>
+                                            <button class="spell-tab-btn"
+                                                onclick="switchSpellLevel('spell2')">2nd</button>
+                                            <button class="spell-tab-btn"
+                                                onclick="switchSpellLevel('spell3')">3rd</button>
+                                            <button class="spell-tab-btn"
+                                                onclick="switchSpellLevel('spell4')">4th</button>
+                                            <button class="spell-tab-btn"
+                                                onclick="switchSpellLevel('spell5')">5th</button>
+                                            <button class="spell-tab-btn"
+                                                onclick="switchSpellLevel('spell6')">6th</button>
+                                            <button class="spell-tab-btn"
+                                                onclick="switchSpellLevel('spell7')">7th</button>
+                                            <button class="spell-tab-btn"
+                                                onclick="switchSpellLevel('spell8')">8th</button>
+                                            <button class="spell-tab-btn"
+                                                onclick="switchSpellLevel('spell9')">9th</button>
+                                            <button class="spell-tab-btn" onclick="switchSpellLevel('spellWill')">At
+                                                Will</button>
                                         </div>
 
                                         <!-- All spell textareas (initially hidden except one) -->
@@ -688,7 +804,7 @@
 
                             </div>
 
-                            <button onclick="downloadMonsterJSON()">Download Monster JSON</button>
+                            <button onclick="downloadMonsterJSON()" style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">Download Monster JSON</button>
                         </div>
                     </div>
 
@@ -5384,8 +5500,20 @@
 
 
             function switchTab(tabId) {
-                document.querySelectorAll('.monster-tab').forEach(el => el.style.display = 'none');
-                document.getElementById(tabId).style.display = 'block';
+                // Clear active state from buttons
+                document.querySelectorAll('.monster-tab-btn').forEach(btn => btn.classList.remove('active'));
+
+                // Activate the clicked button
+                const button = Array.from(document.querySelectorAll('.monster-tab-btn'))
+                    .find(btn => btn.getAttribute('onclick')?.includes(tabId));
+                if (button) button.classList.add('active');
+
+                // Hide all tab content
+                document.querySelectorAll('.monster-tab').forEach(tab => tab.style.display = 'none');
+
+                // Show the selected tab content
+                const tabContent = document.getElementById(tabId);
+                if (tabContent) tabContent.style.display = 'block';
             }
 
             document.getElementById('clearMonsterBtn').onclick = () => {
@@ -5393,10 +5521,18 @@
                 document.getElementById('monsterImage').src = '';
             };
 
-            function switchSpellLevel(activeId) {
-                document.querySelectorAll(".spellLevelBox").forEach(box => {
-                    box.style.display = box.id === activeId ? "block" : "none";
-                });
+            function switchSpellLevel(id) {
+                // Hide all spell level boxes
+                document.querySelectorAll('.spellLevelBox').forEach(box => box.style.display = 'none');
+
+                // Show the selected one
+                const targetBox = document.getElementById(id);
+                if (targetBox) targetBox.style.display = 'block';
+
+                // Update button styles
+                document.querySelectorAll('.spell-tab-btn').forEach(btn => btn.classList.remove('active'));
+                const activeBtn = Array.from(document.querySelectorAll('.spell-tab-btn')).find(btn => btn.onclick?.toString().includes(id));
+                if (activeBtn) activeBtn.classList.add('active');
             }
 
 
@@ -5508,6 +5644,8 @@
                     }
                 }
             }
+
+
 
 
             // FIREBASE SYNCHRONIZATON-----------------------------------------------------------------------------------------
@@ -5624,7 +5762,8 @@
                 }
             });
 
-
+            switchSpellLevel('spell0');
+            switchTab('attacksTab');
 
         </script>
     </div>
