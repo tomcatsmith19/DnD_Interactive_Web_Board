@@ -114,6 +114,27 @@
     .flash-green {
       animation: flash-green 1s ease-out;
     }
+
+    .sound-button {
+      padding: 10px;
+      background-color: #444;
+      color: #FFD700;
+      border: 1px solid #FFD700;
+      border-radius: 5px;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .sound-button:hover {
+      background-color: #666;
+    }
+
+    .sound-category {
+      color: #FFD700;
+      font-family: 'MedievalSharp', cursive;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
@@ -187,7 +208,7 @@
             style="width: 100%; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
         </div>
 
-        <!-- Monster Stats Container -->
+        <!-- Action Container -->
         <div style="width: 90%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
           <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">Action Interface</h1>
 
@@ -223,6 +244,12 @@
             <option>Stunned</option>
             <option>Unconscious</option>
             <option>Exhaustion</option>
+            <option>Hexed</option>
+            <option>Blessed</option>
+            <option>Baned</option>
+            <option>mark1</option>
+            <option>mark2</option>
+            <option>mark3</option>
           </select>
 
           <label for="amountTurns">Amount / Turns:</label>
@@ -233,6 +260,109 @@
             style="width: 100%; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #32CD32; color: white; border: none; border-radius: 5px; cursor: pointer;">Execute</button>
         </div>
 
+        <!-- Sound Effects & Background Music Container -->
+        <div style="width: 90%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+          <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">Audio Interface</h1>
+
+          <!-- Background Music Selector -->
+          <label for="bgMusicSelect">Background Music:</label>
+          <select id="bgMusicSelect" onchange="handleMusicChange()"
+            style="width: 100%; padding: 8px; margin-bottom: 20px; background-color: #333; color: #fff;">
+
+            <option value="">No Music</option>
+
+            <optgroup label="Civilization">
+              <option value="data/music/camp.mp3">Camp</option>
+              <option value="data/music/tavern.mp3">Tavern</option>
+              <option value="data/music/city.mp3">City</option>
+            </optgroup>
+
+            <optgroup label="Environments">
+              <option value="data/music/desert.mp3">Desert</option>
+              <option value="data/music/swamp.mp3">Swamp</option>
+              <option value="data/music/forest.mp3">Forest</option>
+              <option value="data/music/mountain.mp3">Mountain</option>
+              <option value="data/music/underdark.mp3">Underdark</option>
+              <option value="data/music/far relm.mp3">Far Realm</option>
+            </optgroup>
+
+            <optgroup label="Adventuring">
+              <option value="data/music/dungeon.mp3">Dungeon</option>
+              <option value="data/music/combat.mp3">Combat</option>
+            </optgroup>
+
+
+          </select>
+
+          <!-- Sound Effects Grid with Categories -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+
+            <!-- Reactions -->
+            <div>
+              <h3 class="sound-category">Reactions</h3>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/angry.mp3')">Angry</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/bruh.mp3')">Bruh</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/dumb.mp3')">Dumb</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/evillaugh.mp3')">Evil Laugh</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/scream.mp3')">Scream</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/nooo.mp3')">Noooo</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/suprise.mp3')">Surprise</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/oh_my.mp3')">Oh My</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/awww.mp3')">Awww</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/laugh.mp3')">Laugh</button>
+
+              </div>
+            </div>
+
+            <!-- Combat -->
+            <div>
+              <h3 class="sound-category">Combat</h3>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/yeet.mp3')">Yeet</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/running.mp3')">Running</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/bite.mp3')">Bite</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/punch.mp3')">Punch</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/splat.mp3')">Splat</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/bonk.mp3')">Bonk</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/hammer.mp3')">Hammer</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/sword.mp3')">Sword</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/tentacle.mp3')">Tentacle</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/gunshot.mp3')">Gun Shot</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/Explosion.mp3')">Explosion</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/failed_spell.mp3')">Spell Fail</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/spell attack.mp3')">Spell Attack</button>
+              </div>
+            </div>
+
+            <!-- Ability Checks -->
+            <div>
+              <h3 class="sound-category">Ability Checks
+              </h3>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/died.mp3')">Died</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/item.mp3')">Item</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/sad.mp3')">Fail</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/senses.mp3')">Senses</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/slipandfall.mp3')">Slip and Fall</button>
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/sucess.mp3')">Success</button>
+              </div>
+            </div>
+
+            <!-- Misc -->
+            <div>
+              <h3 class="sound-category">Misc</h3>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <button class="sound-button" onclick="playSoundEffect('data/sounds/spell_whispers.mp3')">Spell Whispers</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <!-- logout and menu buttons-->
         <div style="margin-top: 30px; width: 90%; display: flex; justify-content: space-between; gap: 10px;">
           <button id="logoutBtn"
             style="flex: 1; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #FF4C4C; color: white; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
@@ -794,6 +924,27 @@
         token.classList.remove(className);
       }, 1000);  // Match animation duration
     }
+
+    // sound effects
+    let bgAudio = new Audio();
+    bgAudio.loop = true;
+
+    function handleMusicChange() {
+      const path = document.getElementById("bgMusicSelect").value;
+      if (!path) {
+        bgAudio.pause();
+        bgAudio.src = "";
+      } else {
+        bgAudio.src = path;
+        bgAudio.play();
+      }
+    }
+
+    function playSoundEffect(src) {
+      const sfx = new Audio(src);
+      sfx.play();
+    }
+
 
 
     // FIREBASE ACTION HANDLER
