@@ -681,11 +681,33 @@
 
                         <h2 style="font-family: 'MedievalSharp', cursive; color: #FFD700;">Loot Generator</h2>
 
+                        <!-- Dropdown + CR Input -->
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <select id="lootType" class="npc-input">
+                                <option value="individual">Individual Treasure</option>
+                                <option value="hoard">Treasure Hoard</option>
+                            </select>
+
+                            <label for="lootCR" style="color: #FFD700; font-weight: bold;">Challenge Rating:</label>
+                            <input id="lootCR" type="number" min="0" max="20" value="0" class="npc-input"
+                                style="width: 80px;" />
+                        </div>
+
+                        <!-- Generate Button -->
+                        <button onclick="generateLoot()" class="monster-tab-btn"
+                            style="background-color: #FFD700; color: black; font-weight: bold;">
+                            Generate Loot
+                        </button>
+
+                        <!-- Output Box -->
+                        <textarea id="lootResult" class="npc-textarea" style="width: 100%; height: 300px;"
+                            readonly></textarea>
+
+                        <!-- Donjon Link Button -->
                         <a href="https://donjon.bin.sh/5e/random/#type=treasure" target="_blank"
                             style="padding: 15px 30px; background-color: #FFD700; color: black; font-size: 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s ease;">
                             Open Loot Generator
                         </a>
-
                     </div>
                 </div>
 
@@ -4389,7 +4411,7 @@
             { name: "Weretiger", cr: 4.0 },
             { name: "Werevulture", cr: 4.0 },
             { name: "Werewolf", cr: 3.0 },
-            { name: "Werewolf (Krallenhorde)", cr: 3.0 },
+            { name: "Werewolf (Krallenhoard)", cr: 3.0 },
             { name: "Werewolf Ravager", cr: 7.0 },
             { name: "Wersten Kern", cr: 14.0 },
             { name: "West Wind", cr: 3.0 },
@@ -5662,6 +5684,158 @@
             });
         }
 
+        //------------------------- Loot Table Tab----------------------------------------------------------
+        let LOOT_DATA = null;
+
+        fetch("data/api_data/loot.json")
+            .then(res => res.json())
+            .then(data => {
+                LOOT_DATA = data;
+                console.log("Loot data loaded");
+            })
+            .catch(err => console.error("Failed to load loot.json:", err));
+
+            
+        function generateLoot() {
+            const type = document.getElementById("lootType").value;
+            if (type === "individual") {
+                generateIndividualLoot();
+            } else if (type === "hoard") {
+                document.getElementById("lootResult").value = "hoard selected";
+                generateHoardLoot();
+            }
+        }
+
+        function generateIndividualLoot() {
+            const cr = parseInt(document.getElementById("lootCR").value);
+            if (!LOOT_DATA) {
+                document.getElementById("lootResult").value = "Loot data not loaded.";
+                return;
+            }
+
+            const tables = LOOT_DATA.individual;
+            const crTable = tables.find(t => cr >= t.crMin && cr <= t.crMax);
+            if (!crTable) {
+                document.getElementById("lootResult").value = "No loot table found for this CR.";
+                return;
+            }
+
+            const roll = Math.floor(Math.random() * 100) + 1;
+            const entry = crTable.table.find(row => roll >= row.min && roll <= row.max);
+            if (!entry) {
+                document.getElementById("lootResult").value = `d100 Roll: ${roll}\nNo matching entry.`;
+                return;
+            }
+
+            const parsedCoins = Object.entries(entry.coins).map(([coin, expr]) => {
+                const match = expr.match(/^(\d+)d(\d+)(\*(\d+))?$/);
+                if (!match) return `${coin}: ${expr}`;
+                const [, num, die, , mult] = match.map(x => parseInt(x));
+                let total = 0;
+                for (let i = 0; i < num; i++) {
+                    total += Math.floor(Math.random() * die) + 1;
+                }
+                if (mult) total *= mult;
+                return `${coin}: ${total}`;
+            });
+
+            document.getElementById("lootResult").value =
+                `d100 Roll: ${roll}\n` + parsedCoins.join("\n");
+        }
+
+        function generateHoardLoot() {
+            const cr = parseInt(document.getElementById("lootCR").value);
+            if (!LOOT_DATA) {
+                document.getElementById("lootResult").value = "Loot data not loaded.";
+                return;
+            }
+
+            const tables = LOOT_DATA.hoard;
+            const crTable = tables.find(t => cr >= t.crMin && cr <= t.crMax);
+            if (!crTable) {
+                document.getElementById("lootResult").value = "No hoard table found for this CR.";
+                return;
+            }
+
+            let result = `--- Treasure Hoard (CR ${cr}) ---\n`;
+
+            // Parse coins
+            result += "\nCoins:\n";
+            for (const [coin, expr] of Object.entries(crTable.coins)) {
+                result += `${coin}: ${rollDice(expr)}\n`;
+            }
+
+            // Roll on the hoard table
+            const roll = Math.floor(Math.random() * 100) + 1;
+            const entry = crTable.table.find(row => roll >= row.min && roll <= row.max);
+            result += `\nHoard d100 Roll: ${roll}\n`;
+
+            // Parse optional loot types
+            if (entry.gems) {
+                const items = rollTable(LOOT_DATA.gems, entry.gems.type, entry.gems.amount);
+                result += `\nGems (${entry.gems.type} gp):\n- ${items.join("\n- ")}\n`;
+            }
+
+            if (entry.artObjects) {
+                const items = rollTable(LOOT_DATA.artObjects, entry.artObjects.type, entry.artObjects.amount);
+                result += `\nArt Objects (${entry.artObjects.type} gp):\n- ${items.join("\n- ")}\n`;
+            }
+
+            if (entry.magicItems) {
+                result += `\nMagic Items:\n`;
+                entry.magicItems.forEach(({ type, amount }) => {
+                    const items = rollMagicItems(LOOT_DATA.magicItems, type, amount);
+                    result += `Table ${type}:\n- ${items.join("\n- ")}\n`;
+                });
+            }
+
+            document.getElementById("lootResult").value = result;
+        }
+
+        function rollDice(expr) {
+            const match = expr.match(/^(\d+)d(\d+)(\*(\d+))?$/);
+            if (!match) return expr;
+            const [, num, die, , mult] = match.map(x => parseInt(x) || 1);
+            let total = 0;
+            for (let i = 0; i < num; i++) total += Math.floor(Math.random() * die) + 1;
+            return total * mult;
+        }
+
+        function rollTable(dataArray, type, amountExpr) {
+            const table = dataArray.find(t => t.type === type);
+            const numRolls = rollDice(amountExpr);
+            const results = [];
+            for (let i = 0; i < numRolls; i++) {
+                const index = Math.floor(Math.random() * table.table.length);
+                results.push(cleanItem(table.table[index]));
+            }
+            return results;
+        }
+
+        function rollMagicItems(dataArray, type, amountExpr) {
+            const table = dataArray.find(t => t.type === type);
+            const numRolls = rollDice(amountExpr);
+            const results = [];
+            for (let i = 0; i < numRolls; i++) {
+                const d100 = Math.floor(Math.random() * 100) + 1;
+                const entry = table.table.find(e => d100 >= e.min && d100 <= e.max);
+                if (!entry) {
+                    results.push("Unknown item");
+                } else if (entry.item) {
+                    results.push(cleanItem(entry.item));
+                } else if (entry.choose?.fromGeneric?.length > 0) {
+                    const pick = entry.choose.fromGeneric[Math.floor(Math.random() * entry.choose.fromGeneric.length)];
+                    results.push(cleanItem(pick));
+                } else {
+                    results.push("Unspecified magic item");
+                }
+            }
+            return results;
+        }
+
+        function cleanItem(text) {
+            return text.replace(/{@item (.*?)}/g, "$1");
+        }
 
         // Monster Creator Tab----------------------------------------------------------
         function downloadMonsterJSON() {
