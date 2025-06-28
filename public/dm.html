@@ -735,6 +735,31 @@
                             style="padding: 12px; font-size: 1.1rem; background-color: #FFD700; color: black; border: none; border-radius: 5px; cursor: pointer;">Generate
                             Encounter</button>
 
+                        <!-- Environment Dropdown -->
+                        <label for="encounterEnvironment"><strong>Environment:</strong></label>
+                        <select id="encounterEnvironment"
+                            style="padding: 10px; font-size: 1rem; background-color: #222; color: white; border: 1px solid #555; border-radius: 5px;">
+                            <option value="Arctic">Arctic</option>
+                            <option value="Coastal">Coastal</option>
+                            <option value="Desert">Desert</option>
+                            <option value="Forest">Forest</option>
+                            <option value="Grassland">Grassland</option>
+                            <option value="Hill">Hill</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="Open Water">Open Water</option>
+                            <option value="Swamp">Swamp</option>
+                            <option value="Underdark">Underdark</option>
+                            <option value="Underwater">Underwater</option>
+                            <option value="Urban">Urban</option>
+                        </select>
+
+                        <!-- Generate by Environment Button -->
+                        <button onclick="generateEnvironmentEncounter()"
+                            style="padding: 12px; font-size: 1.1rem; background-color: #1E90FF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                            Generate Environment Encounter
+                        </button>
+
+
                         <button onclick="sendEncounter()"
                             style="padding: 12px; font-size: 1.1rem; background-color: #32CD32; color: white; border: none; border-radius: 5px; cursor: pointer;">Send
                             to Table</button>
@@ -5620,6 +5645,120 @@
             document.getElementById('encounterXP').value = Math.round(totalXP * multiplier);
         }
 
+        let ENV_ENCOUNTER_DATA = null;
+
+        fetch("data/api_data/encounters.json")
+            .then(res => res.json())
+            .then(data => {
+                ENV_ENCOUNTER_DATA = data;
+                console.log("Environment encounter data loaded");
+            })
+            .catch(err => console.error("Failed to load environment encounter data:", err));
+
+        function generateEnvironmentEncounter() {
+            if (!ENV_ENCOUNTER_DATA) {
+                alert("Environment data not loaded yet.");
+                return;
+            }
+
+            const environment = document.getElementById("encounterEnvironment").value;
+            const levels = document.getElementById("partyLevels").value
+                .split(',')
+                .map(l => parseInt(l.trim()))
+                .filter(Boolean);
+
+            if (levels.length === 0) {
+                alert("Please enter valid party levels.");
+                return;
+            }
+
+            const avgLevel = Math.round(levels.reduce((a, b) => a + b, 0) / levels.length);
+            const envTable = ENV_ENCOUNTER_DATA.encounter.find(e => e.name.toLowerCase() === environment.toLowerCase());
+
+            if (!envTable) {
+                alert("No encounter table found for this environment.");
+                return;
+            }
+
+            const levelTable = envTable.tables.find(t => avgLevel >= t.minlvl && avgLevel <= t.maxlvl);
+            if (!levelTable) {
+                alert("No table found for average level in this environment.");
+                return;
+            }
+
+            const roll = Math.floor(Math.random() * 100) + 1;
+            const row = levelTable.table.find(r => roll >= r.min && roll <= r.max);
+
+            if (!row) {
+                alert("No result found for d100 roll.");
+                return;
+            }
+
+            console.log("Rolled:", roll, "| Result:", row.result);
+
+            const monsters = parseEncounterResult(row.result);
+            displayMonsters(monsters);
+        }
+
+        function parseEncounterResult(result) {
+            const regex = /(?:{@dice (.*?)})?\s*{@creature (.*?)(\|\|.*?)?}/g;
+            const matches = [...result.matchAll(regex)];
+            const monsters = [];
+
+            for (const match of matches) {
+                const countExpr = match[1] || "1";
+                const name = match[2];
+
+                let count = 1;
+                try {
+                    count = rollDiceExpression(countExpr);
+                } catch (e) {
+                    console.warn("Failed to parse dice expression:", countExpr);
+                }
+
+                const matchedMonster = allMonsters.find(m => m.name.toLowerCase() === name.toLowerCase());
+                if (!matchedMonster) {
+                    console.warn(`Monster not found in database: ${name}`);
+                    continue; // optionally skip missing
+                }
+
+                for (let i = 0; i < count; i++) {
+                    monsters.push({ name: matchedMonster.name, cr: matchedMonster.cr });
+                }
+            }
+
+            return monsters;
+        }
+
+        function rollDiceExpression(expr) {
+            const match = expr.match(/(\d+)d(\d+)(?:\s*\+\s*(\d+))?/);
+            if (!match) return parseInt(expr);
+
+            const [, num, sides, bonus] = match.map(Number);
+            let total = 0;
+            for (let i = 0; i < num; i++) {
+                total += Math.floor(Math.random() * sides) + 1;
+            }
+            return total + (bonus || 0);
+        }
+
+        function displayMonsters(monsterList) {
+            const list = document.getElementById('encounterMonsterList');
+            list.innerHTML = '';
+
+            monsterList.forEach(mon => {
+                const li = document.createElement('li');
+                li.textContent = `${mon.name} (CR ${mon.cr})`;
+                list.appendChild(li);
+            });
+
+            // Optional: calculate total adjusted XP
+            const totalXP = monsterList.reduce((sum, m) => sum + crToXp(m.cr), 0);
+            const multiplier = multipliers[Math.min(monsterList.length, 20)] || 4;
+            document.getElementById('encounterXP').value = Math.round(totalXP * multiplier);
+        }
+
+
         function sendEncounter() {
             const names = [...document.querySelectorAll('#encounterMonsterList li')]
                 .map(li => li.textContent.split(' (')[0]);
@@ -5695,7 +5834,7 @@
             })
             .catch(err => console.error("Failed to load loot.json:", err));
 
-            
+
         function generateLoot() {
             const type = document.getElementById("lootType").value;
             if (type === "individual") {
