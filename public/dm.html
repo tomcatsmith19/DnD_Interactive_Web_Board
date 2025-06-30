@@ -288,6 +288,7 @@
         <button class="tab-button" onclick="openTab('dungeonTab')">Dungeon</button>
         <button class="tab-button" onclick="openTab('mapTab')">Map</button>
         <button class="tab-button" onclick="openTab('referenceTab')">Reference</button>
+        <button class="tab-button" onclick="openTab('creatorTab')">Creator</button>
     </div>
 
     <!-- Campaign Tab ############################################################################################-->
@@ -497,11 +498,10 @@
                 <div style="display: flex; background-color: #333;">
                     <button class="dungeon-tab-btn active" onclick="openDungeonTab('actionContent')">Action</button>
                     <button class="dungeon-tab-btn" onclick="openDungeonTab('monsterContent')">Monster</button>
-                    <button class="dungeon-tab-btn" onclick="openDungeonTab('lootContent')">Loot</button>
+                    <button class="dungeon-tab-btn" onclick="openDungeonTab('trapContent')">Traps</button>
                     <button class="dungeon-tab-btn" onclick="openDungeonTab('encounterContent')">Encounter
                         Builder</button>
-                    <button class="dungeon-tab-btn" onclick="openDungeonTab('creatorContent')">Monster
-                        Creator</button>
+                    <button class="dungeon-tab-btn" onclick="openDungeonTab('lootContent')">Loot</button>
                 </div>
 
                 <!-- Action tab ------------------------------------------------------------------------------------ -->
@@ -638,6 +638,25 @@
                     </div>
                 </div>
 
+                <!-- trap tab---------------------------------------------------------------------------------------->
+                <div id="trapContent" class="dungeon-tab-content"
+                    style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
+                    <div
+                        style="display: flex; flex-direction: column; flex: 1; padding: 20px; align-items: center; justify-content: center; gap: 20px; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+
+                        <h2 style="font-family: 'MedievalSharp', cursive; color: #FFD700;">Trap Generator</h2>
+
+                        <!-- Donjon Link Button -->
+                        <a href="https://donjon.bin.sh/5e/random/#type=trap" target="_blank"
+                            style="padding: 15px 30px; background-color: #FFD700; color: black; font-size: 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s ease;">
+                            Open Trap Generator
+                        </a>
+                    </div>
+                    
+                </div>
+
+
+
                 <!-- loot tab---------------------------------------------------------------------------------------->
                 <div id="lootContent" class="dungeon-tab-content"
                     style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
@@ -743,214 +762,6 @@
                     </div>
                 </div>
 
-                <!-- Monster creator tab---------------------------------------------------------------------------------------->
-                <div id="creatorContent" class="dungeon-tab-content"
-                    style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
-
-                    <div id="creatorForm"
-                        style="display: flex; flex-direction: column; gap: 15px; flex: 1; padding: 20px; align-items: flex-start; justify-content: flex-start;">
-
-                        <!-- Controls -->
-                        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                            <button id="startFromMonsterBtn"
-                                style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">
-                                Start from Monster
-                            </button>
-                            <button id="clearMonsterBtn"
-                                style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">
-                                Clear Monster Creator
-                            </button>
-                        </div>
-
-                        <!-- Top Row -->
-                        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 10px;">
-
-
-                            <!-- Monster Categorization -->
-                            <div style="display: flex; flex-direction: column; gap: 10px;">
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">Monster Name:</label>
-                                    <input id="monName" type="text" style="width: 150px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">CR:</label>
-                                    <input id="monCR" type="text" placeholder="e.g. 1/8" style="width: 150px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">Size:</label>
-                                    <input id="monSize" type="text" placeholder="e.g. M" style="width: 150px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">Type:</label>
-                                    <input id="monType" type="text" placeholder="e.g. humanoid" style="width: 150px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">Alignment:</label>
-                                    <input id="monAlignment" type="text" placeholder="e.g. CE" style="width: 150px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">Languages:</label>
-                                    <input id="monLanguages" type="text" placeholder="comma-separated"
-                                        style="width: 150px;">
-                                </div>
-                            </div>
-
-
-                            <!-- Basic Info -->
-                            <div style="display: flex; flex-direction: column; gap: 10px;">
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 140px;">HP:</label>
-                                    <input id="monHP" type="number" min="0" max="1000" step="1" style="width: 150px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 140px;">AC:</label>
-                                    <input id="monAC" type="number" min="0" max="30" step="1" style="width: 150px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 140px;">Passive Perception:</label>
-                                    <input id="monPassive" type="number" min="0" max="30" step="1"
-                                        style="width: 150px;">
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: 10px;">
-                                    <label style="width: 140px;">Speed:</label>
-                                    <textarea id="monSpeed" rows="3" placeholder="walk: 30&#10;swim: 40"
-                                        style="width: 150px;"></textarea>
-                                </div>
-                            </div>
-
-                            <!-- Physical Stats -->
-                            <div style="display: flex; flex-direction: column; gap: 10px;">
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">STR:</label>
-                                    <input id="str" type="number" min="0" max="30" step="1" style="width: 80px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">DEX:</label>
-                                    <input id="dex" type="number" min="0" max="30" step="1" style="width: 80px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">CON:</label>
-                                    <input id="con" type="number" min="0" max="30" step="1" style="width: 80px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">INT:</label>
-                                    <input id="int" type="number" min="0" max="30" step="1" style="width: 80px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">WIS:</label>
-                                    <input id="wis" type="number" min="0" max="30" step="1" style="width: 80px;">
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <label style="width: 100px;">CHA:</label>
-                                    <input id="cha" type="number" min="0" max="30" step="1" style="width: 80px;">
-                                </div>
-                            </div>
-
-
-
-                            <!-- Tabs -->
-                            <div>
-                                <div style="display: flex; gap: 10px; margin-bottom: 5px;">
-                                    <button class="monster-tab-btn active"
-                                        onclick="switchTab('attacksTab')">Attacks</button>
-                                    <button class="monster-tab-btn" onclick="switchTab('spellsTab')">Spells</button>
-                                    <button class="monster-tab-btn" onclick="switchTab('conditionsTab')">Conditions
-                                        & Attributes</button>
-                                    <button class="monster-tab-btn" onclick="switchTab('traitsTab')">Skills, Traits
-                                        & Senses</button>
-                                    <button class="monster-tab-btn" onclick="switchTab('legendaryTab')">Legendary
-                                        Actions</button>
-                                </div>
-
-                                <div id="attacksTab" class="monster-tab" style="display: none;">
-                                    <textarea id="attacksBox" placeholder="Attack name: Attack Details" rows="5"
-                                        style="width: 100%;"></textarea>
-                                </div>
-
-                                <!-- Spellcasting Section -->
-                                <div id="spellsTab" class="monster-tab" style="display: none;">
-                                    <label>Spellcasting Modifier:</label><br>
-                                    <input id="spellAbility" type="text" placeholder="e.g. int" style="width: 80px;">
-
-                                    <div style="display: flex; gap: 5px; margin-bottom: 10px;">
-                                        <button class="spell-tab-btn active"
-                                            onclick="switchSpellLevel('spell0')">Cantrips
-                                            (0)</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spell1')">1st</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spell2')">2nd</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spell3')">3rd</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spell4')">4th</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spell5')">5th</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spell6')">6th</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spell7')">7th</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spell8')">8th</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spell9')">9th</button>
-                                        <button class="spell-tab-btn" onclick="switchSpellLevel('spellWill')">At
-                                            Will</button>
-                                    </div>
-
-                                    <!-- All spell textareas (initially hidden except one) -->
-                                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                                        <textarea id="spell0" class="spellLevelBox" rows="3"
-                                            placeholder="Cantrips (0-level spells)" style="display: block;"></textarea>
-                                        <textarea id="spell1" class="spellLevelBox" rows="3"
-                                            placeholder="1st-level spells" style="display: none;"></textarea>
-                                        <textarea id="spell2" class="spellLevelBox" rows="3"
-                                            placeholder="2nd-level spells" style="display: none;"></textarea>
-                                        <textarea id="spell3" class="spellLevelBox" rows="3"
-                                            placeholder="3rd-level spells" style="display: none;"></textarea>
-                                        <textarea id="spell4" class="spellLevelBox" rows="3"
-                                            placeholder="4th-level spells" style="display: none;"></textarea>
-                                        <textarea id="spell5" class="spellLevelBox" rows="3"
-                                            placeholder="5th-level spells" style="display: none;"></textarea>
-                                        <textarea id="spell6" class="spellLevelBox" rows="3"
-                                            placeholder="6th-level spells" style="display: none;"></textarea>
-                                        <textarea id="spell7" class="spellLevelBox" rows="3"
-                                            placeholder="7th-level spells" style="display: none;"></textarea>
-                                        <textarea id="spell8" class="spellLevelBox" rows="3"
-                                            placeholder="8th-level spells" style="display: none;"></textarea>
-                                        <textarea id="spell9" class="spellLevelBox" rows="3"
-                                            placeholder="9th-level spells" style="display: none;"></textarea>
-                                        <textarea id="spellWill" class="spellLevelBox" rows="2"
-                                            placeholder="At Will Spells" style="display: none;"></textarea>
-                                        <textarea id="spellFooter" rows="2"
-                                            placeholder="Footer Notes (e.g., pre-combat buffs)"></textarea>
-                                    </div>
-                                </div>
-
-                                <div id="conditionsTab" class="monster-tab" style="display: none;">
-                                    <textarea id="resistsBox" placeholder="Resistances" rows="2"
-                                        style="width: 100%;"></textarea>
-                                    <textarea id="immunitiesBox" placeholder="Immunities" rows="2"
-                                        style="width: 100%;"></textarea>
-                                    <textarea id="vulnerabilitiesBox" placeholder="Vulnerabilities" rows="2"
-                                        style="width: 100%;"></textarea>
-                                </div>
-
-                                <div id="traitsTab" class="monster-tab" style="display: none;">
-                                    <textarea id="skillsBox" placeholder="Skills" rows="2"
-                                        style="width: 100%;"></textarea>
-                                    <textarea id="traitsBox" placeholder="Traits" rows="2"
-                                        style="width: 100%;"></textarea>
-                                    <textarea id="sensesBox" placeholder="Senses" rows="2"
-                                        style="width: 100%;"></textarea>
-                                </div>
-
-                                <div id="legendaryTab" class="monster-tab" style="display: none;">
-                                    <textarea id="legendaryBox" placeholder="Name: Description" rows="5"
-                                        style="width: 100%;"></textarea>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <button onclick="downloadMonsterJSON()"
-                            style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">Download
-                            Monster JSON</button>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -983,7 +794,7 @@
                     color: white;
                     font-family: 'MedievalSharp', cursive;
                 ">
-             <select id="mapSelect"
+            <select id="mapSelect"
                 style="padding: 10px; background-color: #333; color: white; border: 1px solid #555; border-radius: 5px; font-size: 1rem;">
 
                 <optgroup label="Generic">
@@ -1059,6 +870,239 @@
         </div>
     </div>
 
+
+    <!-- Reference Tab ############################################################################################-->
+    <div class="tab-content" id="referenceTab">
+        <div style="display: flex; flex: 1; padding: 20px; gap: 20px;">
+            <!-- Left Panel -->
+            <div
+                style="width: 20%; background: rgba(255, 255, 255, 0.05); color: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column;">
+                <select id="typeSelect"
+                    style="margin-bottom: 10px; padding: 10px; background: #222; color: white; border: none; border-radius: 5px;"></select>
+                <input id="searchInput" type="text" placeholder="Search..."
+                    style="margin-bottom: 10px; padding: 10px; background: #222; color: white; border: none; border-radius: 5px;">
+                <div id="itemList"
+                    style="flex: 1; overflow-y: auto; background: #111; border-radius: 5px; padding: 10px;">
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div style="width: 80%; display: flex; flex-direction: column;">
+                <label style="color: white; font-weight: bold; margin-bottom: 8px;">Description</label>
+                <pre id="description"
+                    style="flex: 1; background: #1e1e1e; color: #eee; padding: 20px; border-radius: 10px; overflow-y: auto; white-space: pre-wrap; font-family: monospace;"></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- CREATOR TAB ##############################################################################################-->
+    <div class="tab-content" id="creatorTab">
+        <div style="display: flex; flex-direction: column; padding: 20px; gap: 20px;">
+            <!-- Monster creator tab---------------------------------------------------------------------------------------->
+            <div id="creatorContent"
+                style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
+
+                <div id="creatorForm"
+                    style="display: flex; flex-direction: column; gap: 15px; flex: 1; padding: 20px; align-items: flex-start; justify-content: flex-start;">
+
+                    <!-- Controls -->
+                    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <button id="startFromMonsterBtn"
+                            style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">
+                            Start from Monster
+                        </button>
+                        <button id="clearMonsterBtn"
+                            style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">
+                            Clear Monster Creator
+                        </button>
+                    </div>
+
+                    <!-- Top Row -->
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 10px;">
+
+
+                        <!-- Monster Categorization -->
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">Monster Name:</label>
+                                <input id="monName" type="text" style="width: 150px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">CR:</label>
+                                <input id="monCR" type="text" placeholder="e.g. 1/8" style="width: 150px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">Size:</label>
+                                <input id="monSize" type="text" placeholder="e.g. M" style="width: 150px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">Type:</label>
+                                <input id="monType" type="text" placeholder="e.g. humanoid" style="width: 150px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">Alignment:</label>
+                                <input id="monAlignment" type="text" placeholder="e.g. CE" style="width: 150px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">Languages:</label>
+                                <input id="monLanguages" type="text" placeholder="comma-separated"
+                                    style="width: 150px;">
+                            </div>
+                        </div>
+
+
+                        <!-- Basic Info -->
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 140px;">HP:</label>
+                                <input id="monHP" type="number" min="0" max="1000" step="1" style="width: 150px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 140px;">AC:</label>
+                                <input id="monAC" type="number" min="0" max="30" step="1" style="width: 150px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 140px;">Passive Perception:</label>
+                                <input id="monPassive" type="number" min="0" max="30" step="1" style="width: 150px;">
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 10px;">
+                                <label style="width: 140px;">Speed:</label>
+                                <textarea id="monSpeed" rows="3" placeholder="walk: 30&#10;swim: 40"
+                                    style="width: 150px;"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Physical Stats -->
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">STR:</label>
+                                <input id="str" type="number" min="0" max="30" step="1" style="width: 80px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">DEX:</label>
+                                <input id="dex" type="number" min="0" max="30" step="1" style="width: 80px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">CON:</label>
+                                <input id="con" type="number" min="0" max="30" step="1" style="width: 80px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">INT:</label>
+                                <input id="int" type="number" min="0" max="30" step="1" style="width: 80px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">WIS:</label>
+                                <input id="wis" type="number" min="0" max="30" step="1" style="width: 80px;">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">CHA:</label>
+                                <input id="cha" type="number" min="0" max="30" step="1" style="width: 80px;">
+                            </div>
+                        </div>
+
+
+
+                        <!-- Tabs -->
+                        <div>
+                            <div style="display: flex; gap: 10px; margin-bottom: 5px;">
+                                <button class="monster-tab-btn active"
+                                    onclick="switchTab('attacksTab')">Attacks</button>
+                                <button class="monster-tab-btn" onclick="switchTab('spellsTab')">Spells</button>
+                                <button class="monster-tab-btn" onclick="switchTab('conditionsTab')">Conditions
+                                    & Attributes</button>
+                                <button class="monster-tab-btn" onclick="switchTab('traitsTab')">Skills, Traits
+                                    & Senses</button>
+                                <button class="monster-tab-btn" onclick="switchTab('legendaryTab')">Legendary
+                                    Actions</button>
+                            </div>
+
+                            <div id="attacksTab" class="monster-tab" style="display: none;">
+                                <textarea id="attacksBox" placeholder="Attack name: Attack Details" rows="5"
+                                    style="width: 100%;"></textarea>
+                            </div>
+
+                            <!-- Spellcasting Section -->
+                            <div id="spellsTab" class="monster-tab" style="display: none;">
+                                <label>Spellcasting Modifier:</label><br>
+                                <input id="spellAbility" type="text" placeholder="e.g. int" style="width: 80px;">
+
+                                <div style="display: flex; gap: 5px; margin-bottom: 10px;">
+                                    <button class="spell-tab-btn active" onclick="switchSpellLevel('spell0')">Cantrips
+                                        (0)</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spell1')">1st</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spell2')">2nd</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spell3')">3rd</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spell4')">4th</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spell5')">5th</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spell6')">6th</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spell7')">7th</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spell8')">8th</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spell9')">9th</button>
+                                    <button class="spell-tab-btn" onclick="switchSpellLevel('spellWill')">At
+                                        Will</button>
+                                </div>
+
+                                <!-- All spell textareas (initially hidden except one) -->
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <textarea id="spell0" class="spellLevelBox" rows="3"
+                                        placeholder="Cantrips (0-level spells)" style="display: block;"></textarea>
+                                    <textarea id="spell1" class="spellLevelBox" rows="3" placeholder="1st-level spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spell2" class="spellLevelBox" rows="3" placeholder="2nd-level spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spell3" class="spellLevelBox" rows="3" placeholder="3rd-level spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spell4" class="spellLevelBox" rows="3" placeholder="4th-level spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spell5" class="spellLevelBox" rows="3" placeholder="5th-level spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spell6" class="spellLevelBox" rows="3" placeholder="6th-level spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spell7" class="spellLevelBox" rows="3" placeholder="7th-level spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spell8" class="spellLevelBox" rows="3" placeholder="8th-level spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spell9" class="spellLevelBox" rows="3" placeholder="9th-level spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spellWill" class="spellLevelBox" rows="2" placeholder="At Will Spells"
+                                        style="display: none;"></textarea>
+                                    <textarea id="spellFooter" rows="2"
+                                        placeholder="Footer Notes (e.g., pre-combat buffs)"></textarea>
+                                </div>
+                            </div>
+
+                            <div id="conditionsTab" class="monster-tab" style="display: none;">
+                                <textarea id="resistsBox" placeholder="Resistances" rows="2"
+                                    style="width: 100%;"></textarea>
+                                <textarea id="immunitiesBox" placeholder="Immunities" rows="2"
+                                    style="width: 100%;"></textarea>
+                                <textarea id="vulnerabilitiesBox" placeholder="Vulnerabilities" rows="2"
+                                    style="width: 100%;"></textarea>
+                            </div>
+
+                            <div id="traitsTab" class="monster-tab" style="display: none;">
+                                <textarea id="skillsBox" placeholder="Skills" rows="2" style="width: 100%;"></textarea>
+                                <textarea id="traitsBox" placeholder="Traits" rows="2" style="width: 100%;"></textarea>
+                                <textarea id="sensesBox" placeholder="Senses" rows="2" style="width: 100%;"></textarea>
+                            </div>
+
+                            <div id="legendaryTab" class="monster-tab" style="display: none;">
+                                <textarea id="legendaryBox" placeholder="Name: Description" rows="5"
+                                    style="width: 100%;"></textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button onclick="downloadMonsterJSON()"
+                        style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">Download
+                        Monster JSON</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Monster Creator Modal ######################################################################################-->
     <div id="monsterCreatorModal"
         style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 3000;">
@@ -1086,30 +1130,6 @@
             <button id="closeCreatorModal"
                 style="padding: 8px; background: #FF4C4C; color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">Cancel</button>
 
-        </div>
-    </div>
-
-    <!-- Reference Tab ############################################################################################-->
-    <div class="tab-content" id="referenceTab">
-        <div style="display: flex; flex: 1; padding: 20px; gap: 20px;">
-            <!-- Left Panel -->
-            <div
-                style="width: 20%; background: rgba(255, 255, 255, 0.05); color: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column;">
-                <select id="typeSelect"
-                    style="margin-bottom: 10px; padding: 10px; background: #222; color: white; border: none; border-radius: 5px;"></select>
-                <input id="searchInput" type="text" placeholder="Search..."
-                    style="margin-bottom: 10px; padding: 10px; background: #222; color: white; border: none; border-radius: 5px;">
-                <div id="itemList"
-                    style="flex: 1; overflow-y: auto; background: #111; border-radius: 5px; padding: 10px;">
-                </div>
-            </div>
-
-            <!-- Right Panel -->
-            <div style="width: 80%; display: flex; flex-direction: column;">
-                <label style="color: white; font-weight: bold; margin-bottom: 8px;">Description</label>
-                <pre id="description"
-                    style="flex: 1; background: #1e1e1e; color: #eee; padding: 20px; border-radius: 10px; overflow-y: auto; white-space: pre-wrap; font-family: monospace;"></pre>
-            </div>
         </div>
     </div>
 
