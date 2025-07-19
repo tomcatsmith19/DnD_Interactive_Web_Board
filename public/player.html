@@ -650,8 +650,8 @@
         hp: parseInt(document.getElementById('currentHP').value),
         init: parseInt(document.getElementById('initiativeInput').value),
         conditions: [],
-        x: 100,
-        y: 100,
+        xRatio: 0.5,
+        yRatio: 0.5,
         isplayer: true
       };
 
@@ -738,7 +738,7 @@
           addMonsterToken(m);
         });
 
-        updateMonsterTable();
+        //updateMonsterTable();
         console.log("Monsters force-reloaded from Firebase.");
       }).catch(err => {
         console.error("Failed to reload monsters from Firebase:", err);
