@@ -652,7 +652,7 @@
                             Open Trap Generator
                         </a>
                     </div>
-                    
+
                 </div>
 
 
@@ -822,6 +822,10 @@
                     <option value="swamp.jpg">Swamp</option>
                     <option value="swamp hut.jpg">Swamp Hut</option>
                     <option value="Esotaric Cult of Dagon Hideout.webp">Dagon Cult Hideout</option>
+                </optgroup>
+
+                <optgroup label="Chillford">
+                    <option value="chillford.png">Chillford</option>
                 </optgroup>
 
                 <!-- Add more maps here -->
@@ -4896,6 +4900,8 @@
         let panOffsetX = 0, panOffsetY = 0;
         let scale = 1;
 
+
+
         const updateTransform = () => {
             const mapTransformLayer = document.getElementById('mapTransformLayer');
             mapTransformLayer.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px) scale(${scale})`;
@@ -4930,6 +4936,11 @@
                 isPanning = false;
                 mapTab.style.cursor = 'default';
             }
+            if (isMapVisible()) {
+                mapWidth = mapImage.clientWidth;
+                mapHeight = mapImage.clientHeight;
+                console.log(`updated mapImage size: ${mapWidth} x ${mapHeight}`);
+            }
         });
 
         // ZOOM
@@ -4938,6 +4949,11 @@
             const delta = e.deltaY > 0 ? -0.1 : 0.1;
             scale = Math.min(Math.max(0.2, scale + delta), 3);
             updateTransform();
+            if (isMapVisible()) {
+                mapWidth = mapImage.clientWidth;
+                mapHeight = mapImage.clientHeight;
+                console.log(`updated mapImage size: ${mapWidth} x ${mapHeight}`);
+            }
         });
 
         // touch support for panning and zooming
@@ -5030,6 +5046,14 @@
         // Resize on image load
         mapImage.onload = resizeTokenLayer;
 
+        let mapWidth = mapImage.clientWidth;
+        let mapHeight = mapImage.clientHeight;
+        console.log(`initialized mapImage size: ${mapWidth} x ${mapHeight}`);
+
+        function isMapVisible() {
+            return mapImage.offsetParent !== null && mapImage.clientWidth > 0;
+        }
+
         // Also resize on window resize
         window.addEventListener('resize', resizeTokenLayer);
 
@@ -5115,7 +5139,7 @@
                         };
 
                         monsters.push(monster);
-                        addMonsterToken(monster);
+                        //addMonsterToken(monster);
                     })
                     .catch(err => {
                         console.error("Error loading monster:", err);
@@ -5127,8 +5151,9 @@
 
             Promise.all(promises).then(() => {
                 monsterModal.style.display = 'none';
-                updateMonsterTable();
                 syncMonstersToFirebase();
+                updateMonsterTable();
+
 
             });
         });
@@ -5313,23 +5338,13 @@
                 }
             }
 
-
-            updateMonsterTable();
             syncMonstersToFirebase();
+            updateMonsterTable();
 
         });
 
         // Update Monster Table
         function updateMonsterTable() {
-            // Remove dead monsters
-            for (let i = monsters.length - 1; i >= 0; i--) {
-                if (monsters[i].hp <= 0) {
-                    const id = monsters[i].id;
-                    document.getElementById(`token-${id}`)?.remove();
-                    monsters.splice(i, 1);
-                    syncMonstersToFirebase();
-                }
-            }
 
             monsters.sort((a, b) => b.init - a.init);
             monsterTableBody.innerHTML = '';
@@ -5366,14 +5381,16 @@
 
                 initInput.addEventListener('input', () => {
                     m.init = parseInt(initInput.value) || 0;
-                    updateMonsterTable();
                     syncMonstersToFirebase();
+                    updateMonsterTable();
+
                 });
 
                 hpInput.addEventListener('input', () => {
                     m.hp = parseInt(hpInput.value) || 0;
-                    updateMonsterTable();
                     syncMonstersToFirebase();
+                    updateMonsterTable();
+
                 });
 
                 monsterTableBody.appendChild(row);
@@ -5388,8 +5405,9 @@
             const container = document.createElement('div');
             container.id = `token-${monster.id}`;
             container.style.position = 'absolute';
-            const left = monster.xRatio * mapImage.clientWidth - currentTokenSize / 2;
-            const top = monster.yRatio * mapImage.clientHeight - currentTokenSize / 2;
+            console.log(`mapImage size: ${mapWidth} x ${mapHeight}`);
+            const left = monster.xRatio * mapWidth - currentTokenSize / 2;
+            const top = monster.yRatio * mapHeight - currentTokenSize / 2;
             container.style.left = `${left}px`;
             container.style.top = `${top}px`;
             // Use dynamic size
@@ -5478,8 +5496,8 @@
                     if (monster) {
                         const leftPx = parseInt(el.style.left) + currentTokenSize / 2;
                         const topPx = parseInt(el.style.top) + currentTokenSize / 2;
-                        monster.xRatio = leftPx / mapImage.clientWidth;
-                        monster.yRatio = topPx / mapImage.clientHeight;
+                        monster.xRatio = leftPx / mapWidth;
+                        monster.yRatio = topPx / mapHeight;
                     }
                     syncMonstersToFirebase();
                 }
@@ -5513,8 +5531,8 @@
                     if (monster) {
                         const leftPx = parseInt(el.style.left) + currentTokenSize / 2;
                         const topPx = parseInt(el.style.top) + currentTokenSize / 2;
-                        monster.xRatio = leftPx / mapImage.clientWidth;
-                        monster.yRatio = topPx / mapImage.clientHeight;
+                        monster.xRatio = leftPx / mapWidth;
+                        monster.yRatio = topPx / mapHeight;
                     }
                     syncMonstersToFirebase();
                 }
@@ -5835,8 +5853,9 @@
             });
 
             Promise.all(promises).then(() => {
-                updateMonsterTable();
                 syncMonstersToFirebase();
+                updateMonsterTable();
+
             });
         }
 
@@ -6361,18 +6380,21 @@
             monsters.length = 0;
 
             // Clear existing tokens
+            console.log(`before deleting tokens: mapImage size: ${mapWidth} x ${mapHeight}`);
             document.getElementById('mapTokenLayer').innerHTML = '';
 
             // Rebuild state and tokens
             data.monsters.forEach(m => {
-                monsters.push({ ...m }); // Keep shared reference
-                addMonsterToken(m);
+                if (m.hp > 0) {
+                    monsters.push({ ...m }); // Keep shared reference
+                    addMonsterToken(m);
 
-                // Compare HP for animation
-                const oldHP = previousHP[m.id];
-                if (typeof oldHP === 'number') {
-                    if (m.hp > oldHP) flashToken(m.id, 'heal');
-                    else if (m.hp < oldHP) flashToken(m.id, 'damage');
+                    // Compare HP for animation
+                    const oldHP = previousHP[m.id];
+                    if (typeof oldHP === 'number') {
+                        if (m.hp > oldHP) flashToken(m.id, 'heal');
+                        else if (m.hp < oldHP) flashToken(m.id, 'damage');
+                    }
                 }
 
             });
