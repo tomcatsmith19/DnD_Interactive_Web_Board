@@ -383,6 +383,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="map-drawing.js"></script>
 
   <script>
     const firebaseConfig = {
@@ -1005,6 +1006,16 @@
 
     const mapImage = document.getElementById('mapImage');
     const mapRef = db.collection("shared").doc("map");
+    setupSharedMapDrawing({
+      db,
+      mapImage,
+      mapTransformLayer: document.getElementById('mapTransformLayer'),
+      tokenLayer: document.getElementById('mapTokenLayer'),
+      toolbarPosition: {
+        top: '80px',
+        left: '25px'
+      }
+    });
 
     mapRef.onSnapshot(doc => {
       if (doc.exists && doc.data()?.filepath) {

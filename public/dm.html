@@ -1146,6 +1146,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="map-drawing.js"></script>
     <script src="reference.js"></script>
     <script>
 
@@ -4674,12 +4675,20 @@
         ];
 
 
+        let drawingToolbarManager = null;
+
+        function syncDrawingToolbarVisibility() {
+            if (!drawingToolbarManager) return;
+            drawingToolbarManager.setVisible(document.getElementById('mapTab').classList.contains('active'));
+        }
+
         function openTab(tabId) {
             document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
             document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
 
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
+            syncDrawingToolbarVisibility();
         }
 
         // Book dropdown behavior
@@ -4700,6 +4709,17 @@
         const mapImage = document.getElementById('mapImage');  // NEW: reference the map image
 
         const mapRef = db.collection("shared").doc("map");
+        drawingToolbarManager = setupSharedMapDrawing({
+            db,
+            mapImage,
+            mapTransformLayer: document.getElementById('mapTransformLayer'),
+            tokenLayer: document.getElementById('mapTokenLayer'),
+            toolbarPosition: {
+                top: '130px',
+                left: '25px'
+            }
+        });
+        syncDrawingToolbarVisibility();
 
         mapSelect?.addEventListener('change', () => {
             const selectedMap = mapSelect.value;
