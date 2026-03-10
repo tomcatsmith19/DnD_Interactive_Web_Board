@@ -913,6 +913,9 @@
 
                 <div id="creatorForm"
                     style="display: flex; flex-direction: column; gap: 15px; flex: 1; padding: 20px; align-items: flex-start; justify-content: flex-start;">
+                    <input id="customMonsterId" type="hidden">
+                    <input id="existingMonsterTokenUrl" type="hidden">
+                    <input id="existingMonsterTokenPath" type="hidden">
 
                     <!-- Controls -->
                     <div style="display: flex; gap: 10px; margin-bottom: 10px;">
@@ -1006,6 +1009,22 @@
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 100px;">CHA:</label>
                                 <input id="cha" type="number" min="0" max="30" step="1" style="width: 80px;">
+                            </div>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px; min-width: 220px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <label style="width: 100px;">Token:</label>
+                                <input id="monsterTokenUpload" type="file" accept="image/*"
+                                    style="width: 180px; color: white;">
+                            </div>
+                            <div
+                                style="width: 180px; height: 180px; border: 1px solid #555; border-radius: 12px; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                                <img id="monsterImage" alt="Monster token preview"
+                                    style="max-width: 100%; max-height: 100%; object-fit: contain; display: none;">
+                                <span id="monsterImagePlaceholder"
+                                    style="color: #999; font-size: 0.95rem; text-align: center; padding: 12px;">Token
+                                    preview</span>
                             </div>
                         </div>
 
@@ -1104,9 +1123,65 @@
 
                     </div>
 
-                    <button onclick="downloadMonsterJSON()"
-                        style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; width: 100%; font-weight: bold;">Download
-                        Monster JSON</button>
+                    <div style="display: flex; gap: 10px; width: 100%; flex-wrap: wrap;">
+                        <button id="saveCustomMonsterBtn"
+                            style="background-color: #2E8B57; color: white; border: none; border-radius: 5px; padding: 8px 12px; flex: 1; min-width: 220px; font-weight: bold;">Save
+                            Custom Monster</button>
+                        <button onclick="downloadMonsterJSON()"
+                            style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 8px 12px; flex: 1; min-width: 220px; font-weight: bold;">Download
+                            Monster JSON</button>
+                    </div>
+                    <div id="monsterSaveStatus" style="min-height: 24px; color: #FFD700; font-weight: bold;"></div>
+                    <div style="width: 100%; display: flex; flex-direction: column; gap: 8px;">
+                        <strong style="color: #FFD700;">Custom Monster Library</strong>
+                        <div id="customMonsterLibrary"
+                            style="max-height: 240px; overflow-y: auto; background: #222; border: 1px solid #555; border-radius: 8px; padding: 10px; width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 15px;">
+                <h2 style="margin: 0; color: #FFD700;">Custom Maps</h2>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start;">
+                    <div style="display: flex; flex-direction: column; gap: 12px; min-width: 280px; flex: 1;">
+                        <input id="customMapId" type="hidden">
+                        <input id="existingMapImageUrl" type="hidden">
+                        <input id="existingMapImagePath" type="hidden">
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                            <label for="customMapName">Map Name</label>
+                            <input id="customMapName" type="text" placeholder="e.g. Sunken Shrine">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                            <label for="customMapUpload">Map Image</label>
+                            <input id="customMapUpload" type="file" accept="image/*" style="color: white;">
+                        </div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button id="saveCustomMapBtn"
+                                style="background-color: #1E90FF; color: white; border: none; border-radius: 5px; padding: 10px 12px; font-weight: bold; flex: 1; min-width: 160px;">Save
+                                Custom Map</button>
+                            <button id="clearCustomMapBtn"
+                                style="background-color: #444; color: #FFD700; border: 1px solid #FFD700; border-radius: 5px; padding: 10px 12px; font-weight: bold; flex: 1; min-width: 160px;">Clear
+                                Map Form</button>
+                        </div>
+                        <div id="mapSaveStatus" style="min-height: 24px; color: #FFD700; font-weight: bold;"></div>
+                    </div>
+
+                    <div
+                        style="width: min(360px, 100%); min-height: 220px; border: 1px solid #555; border-radius: 12px; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                        <img id="mapPreview" alt="Map preview"
+                            style="max-width: 100%; max-height: 100%; object-fit: contain; display: none;">
+                        <span id="mapPreviewPlaceholder"
+                            style="color: #999; font-size: 0.95rem; text-align: center; padding: 12px;">Map
+                            preview</span>
+                    </div>
+
+                    <div style="min-width: 260px; flex: 1; display: flex; flex-direction: column; gap: 8px;">
+                        <strong style="color: #FFD700;">Custom Map Library</strong>
+                        <div id="customMapLibrary"
+                            style="max-height: 220px; overflow-y: auto; background: #222; border: 1px solid #555; border-radius: 8px; padding: 10px;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1146,6 +1221,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
     <script src="map-drawing.js"></script>
     <script src="reference.js"></script>
     <script>
@@ -1163,6 +1239,7 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
         const db = firebase.firestore();
+        const storage = firebase.storage();
 
         auth.onAuthStateChanged(user => {
             if (!user) {
@@ -4674,6 +4751,406 @@
             { name: "Zythan", cr: 13.0 },
         ];
 
+        const customMonsterDefinitions = new Map();
+        const customMapDefinitions = new Map();
+        const staticMonsterDefinitions = new Map();
+        const customMonstersRef = db.collection("customMonsters");
+        const customMapsRef = db.collection("customMaps");
+        const STATIC_MAP_PREFIX = "data/maps/";
+        const DEFAULT_MONSTER_TOKEN = "data/monster_tokens/Acolyte.webp";
+
+        function slugifyValue(value) {
+            return (value || "item")
+                .toString()
+                .trim()
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "")
+                .slice(0, 80) || `item-${Date.now()}`;
+        }
+
+        function setStatusMessage(elementId, message, isError = false) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            element.textContent = message || "";
+            element.style.color = isError ? "#FF7B7B" : "#FFD700";
+        }
+
+        function setImagePreview(imageId, placeholderId, src) {
+            const image = document.getElementById(imageId);
+            const placeholder = document.getElementById(placeholderId);
+            if (!image || !placeholder) return;
+
+            if (src) {
+                image.src = src;
+                image.style.display = "block";
+                placeholder.style.display = "none";
+            } else {
+                image.removeAttribute("src");
+                image.style.display = "none";
+                placeholder.style.display = "block";
+            }
+        }
+
+        function readFileAsDataUrl(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = () => reject(reader.error || new Error("Failed to read file."));
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function getFileExtension(fileName = "") {
+            const parts = fileName.split(".");
+            return parts.length > 1 ? parts.pop().toLowerCase() : "png";
+        }
+
+        function parseCrValue(cr) {
+            if (typeof cr === "number") return cr;
+            if (typeof cr !== "string") return Number(cr) || 0;
+
+            const cleaned = cr.trim();
+            if (cleaned.includes("/")) {
+                const [numerator, denominator] = cleaned.split("/").map(Number);
+                if (numerator && denominator) {
+                    return numerator / denominator;
+                }
+            }
+
+            return Number(cleaned) || 0;
+        }
+
+        function buildStaticMonsterDataPath(name) {
+            return `data/monsters/${encodeURIComponent(name)}.json`;
+        }
+
+        function buildStaticMonsterTokenPath(name) {
+            return `data/monster_tokens/${encodeURIComponent(name)}.webp`;
+        }
+
+        function getMonsterTokenSrc(monster) {
+            if (monster.isplayer) {
+                return `data/player_tokens/${encodeURIComponent(monster.name)}.png`;
+            }
+
+            return monster.tokenUrl || buildStaticMonsterTokenPath(monster.name);
+        }
+
+        function getMonsterCatalog() {
+            const merged = new Map();
+
+            allMonsters.forEach(monster => {
+                merged.set(monster.name.toLowerCase(), { ...monster, source: "static" });
+            });
+
+            customMonsterDefinitions.forEach(monster => {
+                merged.set(monster.name.toLowerCase(), {
+                    name: monster.name,
+                    cr: monster.cr,
+                    source: "custom"
+                });
+            });
+
+            return Array.from(merged.values()).sort((a, b) => a.name.localeCompare(b.name));
+        }
+
+        function getMonsterLibrary() {
+            return getMonsterCatalog()
+                .map(monster => ({
+                    name: monster.name,
+                    cr: parseCrValue(monster.cr)
+                }))
+                .filter(monster => !isNaN(monster.cr));
+        }
+
+        function upsertCustomMonsterDefinition(definition) {
+            Array.from(customMonsterDefinitions.entries()).forEach(([key, existingDefinition]) => {
+                if (existingDefinition.id === definition.id || key === definition.name.toLowerCase()) {
+                    customMonsterDefinitions.delete(key);
+                }
+            });
+
+            customMonsterDefinitions.set(definition.name.toLowerCase(), definition);
+        }
+
+        function removeCustomMonsterDefinitionById(monsterId) {
+            Array.from(customMonsterDefinitions.entries()).forEach(([key, definition]) => {
+                if (definition.id === monsterId) {
+                    customMonsterDefinitions.delete(key);
+                }
+            });
+        }
+
+        function getCustomMonsterDefinitionById(monsterId) {
+            return Array.from(customMonsterDefinitions.values()).find(definition => definition.id === monsterId) || null;
+        }
+
+        function renderMonsterOptionList(container, filter = "") {
+            container.innerHTML = "";
+
+            getMonsterCatalog()
+                .filter(monster => monster.name.toLowerCase().includes(filter.toLowerCase()))
+                .forEach(monster => {
+                    const div = document.createElement("div");
+                    div.textContent = `${monster.name} (CR ${monster.cr})${monster.source === "custom" ? " [Custom]" : ""}`;
+                    div.style.padding = "5px";
+                    div.style.cursor = "pointer";
+                    div.style.borderBottom = "1px solid #555";
+                    div.addEventListener("click", () => {
+                        container.querySelectorAll("div").forEach(node => node.style.background = "");
+                        div.style.background = "#555";
+                        container.dataset.selected = monster.name;
+                    });
+                    container.appendChild(div);
+                });
+        }
+
+        async function loadMonsterDefinitionByName(name) {
+            const key = name.toLowerCase();
+
+            if (customMonsterDefinitions.has(key)) {
+                return customMonsterDefinitions.get(key);
+            }
+
+            if (staticMonsterDefinitions.has(key)) {
+                return staticMonsterDefinitions.get(key);
+            }
+
+            const response = await fetch(buildStaticMonsterDataPath(name));
+            if (!response.ok) {
+                throw new Error(`Fetch failed: ${response.status}`);
+            }
+
+            const monsterData = await response.json();
+            const definition = {
+                id: key,
+                name: monsterData.name,
+                cr: monsterData.cr,
+                source: "static",
+                tokenUrl: buildStaticMonsterTokenPath(monsterData.name),
+                monsterData
+            };
+
+            staticMonsterDefinitions.set(key, definition);
+            return definition;
+        }
+
+        function buildMonsterInstance(definition) {
+            const data = definition.monsterData;
+            const dex = data.dex ?? 10;
+            const dexMod = Math.floor((dex - 10) / 2);
+            const initiative = Math.floor(Math.random() * 20) + 1 + dexMod;
+            const hp = typeof data.hp === "object" ? data.hp.average : data.hp;
+
+            return {
+                id: generateID(),
+                name: definition.name,
+                hp,
+                init: initiative,
+                conditions: [],
+                xRatio: 0.5,
+                yRatio: 0.5,
+                isplayer: false,
+                tokenUrl: definition.tokenUrl || ""
+            };
+        }
+
+        function initializeStaticMapOptions() {
+            const mapSelectElement = document.getElementById("mapSelect");
+            if (!mapSelectElement || mapSelectElement.dataset.staticMapsInitialized === "true") return;
+
+            mapSelectElement.querySelectorAll("option").forEach(option => {
+                if (!option.value.startsWith(STATIC_MAP_PREFIX) && !/^https?:\/\//i.test(option.value)) {
+                    option.value = `${STATIC_MAP_PREFIX}${option.value}`;
+                }
+            });
+
+            mapSelectElement.dataset.staticMapsInitialized = "true";
+        }
+
+        function refreshCustomMapOptions() {
+            const mapSelectElement = document.getElementById("mapSelect");
+            if (!mapSelectElement) return;
+
+            initializeStaticMapOptions();
+
+            const selectedValue = mapSelectElement.value;
+            const preservedValue = currentSharedMapPath || selectedValue;
+            const existingGroup = mapSelectElement.querySelector('optgroup[data-custom-maps="true"]');
+            if (existingGroup) {
+                existingGroup.remove();
+            }
+
+            if (customMapDefinitions.size > 0) {
+                const customGroup = document.createElement("optgroup");
+                customGroup.label = "Custom";
+                customGroup.dataset.customMaps = "true";
+
+                Array.from(customMapDefinitions.values())
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .forEach(mapDefinition => {
+                        const option = document.createElement("option");
+                        option.value = mapDefinition.imageUrl;
+                        option.textContent = mapDefinition.name;
+                        customGroup.appendChild(option);
+                    });
+
+                mapSelectElement.appendChild(customGroup);
+            }
+
+            if (preservedValue && Array.from(mapSelectElement.options).some(option => option.value === preservedValue)) {
+                mapSelectElement.value = preservedValue;
+            }
+        }
+
+        function renderCustomMapLibrary() {
+            const library = document.getElementById("customMapLibrary");
+            if (!library) return;
+
+            library.innerHTML = "";
+
+            if (customMapDefinitions.size === 0) {
+                library.textContent = "No custom maps saved yet.";
+                library.style.color = "#999";
+                return;
+            }
+
+            library.style.color = "white";
+
+            Array.from(customMapDefinitions.values())
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .forEach(mapDefinition => {
+                    const row = document.createElement("div");
+                    row.style.display = "flex";
+                    row.style.justifyContent = "space-between";
+                    row.style.alignItems = "center";
+                    row.style.gap = "10px";
+                    row.style.padding = "8px 0";
+                    row.style.borderBottom = "1px solid #444";
+
+                    const label = document.createElement("span");
+                    label.textContent = mapDefinition.name;
+
+                    const actions = document.createElement("div");
+                    actions.style.display = "flex";
+                    actions.style.gap = "6px";
+
+                    const useButton = document.createElement("button");
+                    useButton.type = "button";
+                    useButton.textContent = "Use";
+                    useButton.style.width = "70px";
+                    useButton.style.marginTop = "0";
+                    useButton.addEventListener("click", () => {
+                        const mapSelectElement = document.getElementById("mapSelect");
+                        if (!mapSelectElement) return;
+                        mapSelectElement.value = mapDefinition.imageUrl;
+                        mapSelectElement.dispatchEvent(new Event("change"));
+                    });
+
+                    const editButton = document.createElement("button");
+                    editButton.type = "button";
+                    editButton.textContent = "Edit";
+                    editButton.style.width = "70px";
+                    editButton.style.marginTop = "0";
+                    editButton.addEventListener("click", () => {
+                        loadCustomMapIntoForm(mapDefinition.id);
+                    });
+
+                    const deleteButton = document.createElement("button");
+                    deleteButton.type = "button";
+                    deleteButton.textContent = "Delete";
+                    deleteButton.style.width = "80px";
+                    deleteButton.style.marginTop = "0";
+                    deleteButton.style.backgroundColor = "#8B2E2E";
+                    deleteButton.style.color = "white";
+                    deleteButton.addEventListener("click", () => {
+                        deleteCustomMap(mapDefinition.id).catch(error => {
+                            console.error("Failed to delete custom map:", error);
+                            setStatusMessage("mapSaveStatus", "Failed to delete custom map.", true);
+                        });
+                    });
+
+                    actions.appendChild(useButton);
+                    actions.appendChild(editButton);
+                    actions.appendChild(deleteButton);
+
+                    row.appendChild(label);
+                    row.appendChild(actions);
+                    library.appendChild(row);
+                });
+        }
+
+        function renderCustomMonsterLibrary() {
+            const library = document.getElementById("customMonsterLibrary");
+            if (!library) return;
+
+            library.innerHTML = "";
+
+            const customMonsters = Array.from(customMonsterDefinitions.values())
+                .sort((a, b) => a.name.localeCompare(b.name));
+
+            if (customMonsters.length === 0) {
+                library.textContent = "No custom monsters saved yet.";
+                library.style.color = "#999";
+                return;
+            }
+
+            library.style.color = "white";
+
+            customMonsters.forEach(monsterDefinition => {
+                const row = document.createElement("div");
+                row.style.display = "flex";
+                row.style.justifyContent = "space-between";
+                row.style.alignItems = "center";
+                row.style.gap = "10px";
+                row.style.padding = "8px 0";
+                row.style.borderBottom = "1px solid #444";
+
+                const label = document.createElement("span");
+                label.textContent = `${monsterDefinition.name} (CR ${monsterDefinition.cr})`;
+
+                const actions = document.createElement("div");
+                actions.style.display = "flex";
+                actions.style.gap = "6px";
+
+                const editButton = document.createElement("button");
+                editButton.type = "button";
+                editButton.textContent = "Edit";
+                editButton.style.width = "70px";
+                editButton.style.marginTop = "0";
+                editButton.addEventListener("click", () => {
+                    populateMonsterCreatorFields(monsterDefinition.monsterData, {
+                        customMonsterId: monsterDefinition.id,
+                        tokenUrl: monsterDefinition.tokenUrl || "",
+                        tokenPath: monsterDefinition.tokenPath || ""
+                    });
+                    openTab('creatorTab');
+                });
+
+                const deleteButton = document.createElement("button");
+                deleteButton.type = "button";
+                deleteButton.textContent = "Delete";
+                deleteButton.style.width = "80px";
+                deleteButton.style.marginTop = "0";
+                deleteButton.style.backgroundColor = "#8B2E2E";
+                deleteButton.style.color = "white";
+                deleteButton.addEventListener("click", () => {
+                    deleteCustomMonster(monsterDefinition.id).catch(error => {
+                        console.error("Failed to delete custom monster:", error);
+                        setStatusMessage("monsterSaveStatus", "Failed to delete custom monster.", true);
+                    });
+                });
+
+                actions.appendChild(editButton);
+                actions.appendChild(deleteButton);
+
+                row.appendChild(label);
+                row.appendChild(actions);
+                library.appendChild(row);
+            });
+        }
+
 
         let drawingToolbarManager = null;
 
@@ -4711,6 +5188,8 @@
         // Map dropdown behavior (updates map image in Map tab)
         const mapSelect = document.getElementById('mapSelect');
         const mapImage = document.getElementById('mapImage');  // NEW: reference the map image
+        let currentSharedMapPath = mapSelect.value;
+        initializeStaticMapOptions();
 
         const mapRef = db.collection("shared").doc("map");
         drawingToolbarManager = setupSharedMapDrawing({
@@ -4725,14 +5204,65 @@
         });
         syncDrawingToolbarVisibility();
 
+        customMonstersRef.onSnapshot(snapshot => {
+            customMonsterDefinitions.clear();
+
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                if (!data?.name || !data?.monsterData) return;
+
+                upsertCustomMonsterDefinition({
+                    id: doc.id,
+                    name: data.name,
+                    cr: data.cr ?? data.monsterData.cr ?? 0,
+                    tokenUrl: data.tokenUrl || "",
+                    tokenPath: data.tokenPath || "",
+                    source: "custom",
+                    monsterData: {
+                        ...data.monsterData,
+                        name: data.name
+                    }
+                });
+            });
+
+            renderCustomMonsterLibrary();
+
+            if (monsterModal?.style.display === 'flex') {
+                refreshMonsterList(monsterSearch.value);
+            }
+
+            if (creatorMonsterModal?.style.display === 'flex') {
+                refreshCreatorMonsterList(creatorMonsterSearch.value);
+            }
+        });
+
+        customMapsRef.onSnapshot(snapshot => {
+            customMapDefinitions.clear();
+
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                if (!data?.name || !data?.imageUrl) return;
+
+                customMapDefinitions.set(doc.id, {
+                    id: doc.id,
+                    name: data.name,
+                    imageUrl: data.imageUrl,
+                    imagePath: data.imagePath || ""
+                });
+            });
+
+            refreshCustomMapOptions();
+            renderCustomMapLibrary();
+        });
+
         mapSelect?.addEventListener('change', () => {
             const selectedMap = mapSelect.value;
             if (selectedMap) {
-                const newPath = `data/maps/${selectedMap}`;
-                mapImage.src = newPath;
+                currentSharedMapPath = selectedMap;
+                mapImage.src = selectedMap;
 
                 mapRef.set({
-                    filepath: newPath,
+                    filepath: selectedMap,
                     updatedAt: Date.now()
                 });
             } else {
@@ -5159,22 +5689,7 @@
 
         // Refresh Monster List
         function refreshMonsterList(filter = "") {
-            monsterList.innerHTML = "";
-            allMonsters
-                .filter(m => m.name.toLowerCase().includes(filter.toLowerCase()))
-                .forEach(m => {
-                    const div = document.createElement('div');
-                    div.textContent = `${m.name} (CR ${m.cr})`;
-                    div.style.padding = "5px";
-                    div.style.cursor = "pointer";
-                    div.style.borderBottom = "1px solid #555";
-                    div.addEventListener('click', () => {
-                        monsterList.querySelectorAll('div').forEach(d => d.style.background = "");
-                        div.style.background = "#555";
-                        monsterList.dataset.selected = m.name;
-                    });
-                    monsterList.appendChild(div);
-                });
+            renderMonsterOptionList(monsterList, filter);
         }
 
 
@@ -5194,28 +5709,9 @@
             let promises = [];
 
             for (let i = 0; i < number; i++) {
-                const fetchPromise = fetch(`data/monsters/${selectedMonster}.json`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const dex = data.dex ?? 10;
-                        const dexMod = Math.floor((dex - 10) / 2);
-                        const initiative = Math.floor(Math.random() * 20) + 1 + dexMod;
-                        const avgHp = typeof data.hp === 'object' ? data.hp.average : data.hp;
-                        const id = generateID();
-
-                        const monster = {
-                            id: id,
-                            name: selectedMonster,
-                            hp: avgHp,
-                            init: initiative,
-                            conditions: [],
-                            xRatio: 0.5,
-                            yRatio: 0.5,
-                            isplayer: false,
-                        };
-
-                        monsters.push(monster);
-                        //addMonsterToken(monster);
+                const fetchPromise = loadMonsterDefinitionByName(selectedMonster)
+                    .then(definition => {
+                        monsters.push(buildMonsterInstance(definition));
                     })
                     .catch(err => {
                         console.error("Error loading monster:", err);
@@ -5260,18 +5756,13 @@
 
         // Load Monster Data
         function loadMonster(name) {
-            const path = `data/monsters/${name}.json`;
-
-            fetch(path)
-                .then(response => {
-                    if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
-                    return response.json();
-                })
-                .then(data => {
+            loadMonsterDefinitionByName(name)
+                .then(definition => {
+                    const data = definition.monsterData;
                     console.log("Monster loaded:", data);
 
                     // Set image
-                    document.querySelector("#monsterContent img").src = `data/monster_tokens/${data.name}.webp`;
+                    document.querySelector("#monsterContent img").src = definition.tokenUrl || DEFAULT_MONSTER_TOKEN;
 
                     // Name and Type
                     const typeText = typeof data.type === "string" ? data.type : (data.type.type || "unknown");
@@ -5492,11 +5983,7 @@
             container.style.justifyContent = 'center';
 
             const img = document.createElement('img');
-            if (!monster.isplayer) {
-                img.src = `data/monster_tokens/${monster.name}.webp`;
-            } else {
-                img.src = `data/player_tokens/${monster.name}.png`;
-            }
+            img.src = getMonsterTokenSrc(monster);
             img.style.width = '100%';
             img.style.height = '100%';
             img.style.borderRadius = '50%';
@@ -5671,12 +6158,6 @@
             20: { 'easy': 2800, 'medium': 5700, 'hard': 8500, 'deadly': 12700 },
         }
 
-        const monsterLibrary = allMonsters.map(m => ({
-            name: m.name,
-            cr: typeof m.cr === 'string' && m.cr.includes('/') ? eval(m.cr) : parseFloat(m.cr)
-        })).filter(m => !isNaN(m.cr));
-
-
         function calculateThreshold(levels, difficulty) {
             return levels.reduce((sum, lvl) => sum + (thresholds[lvl]?.[difficulty] || 0), 0);
         }
@@ -5694,6 +6175,7 @@
         }
 
         function generateEncounter() {
+            const monsterLibrary = getMonsterLibrary();
             const levels = document.getElementById('partyLevels').value
                 .split(',')
                 .map(l => parseInt(l.trim()))
@@ -5818,7 +6300,7 @@
                     console.warn("Failed to parse dice expression:", countExpr);
                 }
 
-                const matchedMonster = allMonsters.find(m => m.name.toLowerCase() === name.toLowerCase());
+                const matchedMonster = getMonsterCatalog().find(m => m.name.toLowerCase() === name.toLowerCase());
                 if (!matchedMonster) {
                     console.warn(`Monster not found in database: ${name}`);
                     continue; // optionally skip missing
@@ -5868,40 +6350,24 @@
             let promises = [];
 
             names.forEach(name => {
-                const fetchPromise = fetch(`data/monsters/${name}.json`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const dex = data.dex ?? 10;
-                        const dexMod = Math.floor((dex - 10) / 2);
-                        const initiative = Math.floor(Math.random() * 20) + 1 + dexMod;
-                        const hp = typeof data.hp === 'object' ? data.hp.average : data.hp;
-                        const id = generateID();
-
-                        const monster = {
-                            id: id,
-                            name: name,
-                            hp: hp,
-                            init: initiative,
-                            conditions: [],
-                            xRatio: 0.5,
-                            yRatio: 0.5,
-                            isplayer: false,
-                        };
+                const fetchPromise = loadMonsterDefinitionByName(name)
+                    .then(definition => {
+                        const monster = buildMonsterInstance(definition);
 
                         // Store in global monsters array
                         monsters.push(monster);
 
                         // Create DOM row
                         const newRow = document.createElement('tr');
-                        newRow.dataset.monsterId = id;
+                        newRow.dataset.monsterId = monster.id;
                         newRow.innerHTML = `
                             <td style="padding: 8px; border: 1px solid #555; text-align: center;">?</td>
                             <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                                <input type="number" value="${initiative}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                                <input type="number" value="${monster.init}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
                             </td>
                             <td style="padding: 8px; border: 1px solid #555;">${name}</td>
                             <td style="padding: 8px; border: 1px solid #555; text-align: center;">
-                                <input type="number" value="${hp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
+                                <input type="number" value="${monster.hp}" style="width: 60px; padding: 5px; background-color: #222; color: #fff; border: 1px solid #555; border-radius: 4px; text-align: center;">
                             </td>
                             <td style="padding: 8px; border: 1px solid #555;"> </td>
                         `;
@@ -6080,7 +6546,7 @@
         }
 
         // Monster Creator Tab----------------------------------------------------------
-        function downloadMonsterJSON() {
+        function buildMonsterPayloadFromForm() {
             const getVal = id => document.getElementById(id)?.value || "";
 
             const monster = {
@@ -6106,7 +6572,7 @@
                 // Challenge Info
                 cr: getVal("monCR"),
                 prof_bonus: 2,
-                passive: parseInt(getVal("passivePerception")) || 10 + Math.floor((parseInt(getVal("wis")) - 10) / 2),
+                passive: parseInt(getVal("monPassive")) || 10 + Math.floor(((parseInt(getVal("wis")) || 10) - 10) / 2),
                 languages: parseDelimitedList("monLanguages"),
                 skills: parseSkillBlock("skillsBox"),
 
@@ -6149,6 +6615,12 @@
                     monster.spellcasting[0].spells[i.toString()] = { spells };
                 }
             }
+
+            return monster;
+        }
+
+        function downloadMonsterJSON() {
+            const monster = buildMonsterPayloadFromForm();
 
             const blob = new Blob([JSON.stringify(monster, null, 2)], { type: "application/json" });
             const url = URL.createObjectURL(blob);
@@ -6224,10 +6696,29 @@
             if (tabContent) tabContent.style.display = 'block';
         }
 
-        document.getElementById('clearMonsterBtn').onclick = () => {
-            document.querySelectorAll('#creatorContent input, #creatorContent textarea').forEach(el => el.value = '');
-            document.getElementById('monsterImage').src = '';
-        };
+        function resetMonsterCreatorForm() {
+            document.querySelectorAll('#creatorContent input[type="text"], #creatorContent input[type="number"], #creatorContent textarea')
+                .forEach(el => el.value = '');
+            document.getElementById('customMonsterId').value = '';
+            document.getElementById('existingMonsterTokenUrl').value = '';
+            document.getElementById('existingMonsterTokenPath').value = '';
+            document.getElementById('monsterTokenUpload').value = '';
+            setImagePreview('monsterImage', 'monsterImagePlaceholder', '');
+            setStatusMessage('monsterSaveStatus', '');
+        }
+
+        function resetCustomMapForm() {
+            document.getElementById('customMapId').value = '';
+            document.getElementById('existingMapImageUrl').value = '';
+            document.getElementById('existingMapImagePath').value = '';
+            document.getElementById('customMapName').value = '';
+            document.getElementById('customMapUpload').value = '';
+            setImagePreview('mapPreview', 'mapPreviewPlaceholder', '');
+            setStatusMessage('mapSaveStatus', '');
+        }
+
+        document.getElementById('clearMonsterBtn').onclick = resetMonsterCreatorForm;
+        document.getElementById('clearCustomMapBtn').onclick = resetCustomMapForm;
 
         function switchSpellLevel(id) {
             // Hide all spell level boxes
@@ -6244,11 +6735,38 @@
         }
 
 
+        const monsterTokenUpload = document.getElementById('monsterTokenUpload');
+        const saveCustomMonsterBtn = document.getElementById('saveCustomMonsterBtn');
+        const customMapNameInput = document.getElementById('customMapName');
+        const customMapUpload = document.getElementById('customMapUpload');
+        const saveCustomMapBtn = document.getElementById('saveCustomMapBtn');
         const creatorMonsterModal = document.getElementById('monsterCreatorModal');
         const creatorMonsterSearch = document.getElementById('creatorMonsterSearch');
         const creatorMonsterList = document.getElementById('creatorMonsterList');
         const confirmCreatorMonsterBtn = document.getElementById('confirmCreatorMonsterBtn');
         const closeCreatorModal = document.getElementById('closeCreatorModal');
+
+        monsterTokenUpload.addEventListener('change', async () => {
+            const file = monsterTokenUpload.files?.[0];
+            if (!file) {
+                setImagePreview('monsterImage', 'monsterImagePlaceholder', document.getElementById('existingMonsterTokenUrl').value || '');
+                return;
+            }
+
+            const preview = await readFileAsDataUrl(file);
+            setImagePreview('monsterImage', 'monsterImagePlaceholder', preview);
+        });
+
+        customMapUpload.addEventListener('change', async () => {
+            const file = customMapUpload.files?.[0];
+            if (!file) {
+                setImagePreview('mapPreview', 'mapPreviewPlaceholder', '');
+                return;
+            }
+
+            const preview = await readFileAsDataUrl(file);
+            setImagePreview('mapPreview', 'mapPreviewPlaceholder', preview);
+        });
 
         document.getElementById('startFromMonsterBtn').addEventListener('click', () => {
             creatorMonsterModal.style.display = 'flex';
@@ -6264,22 +6782,7 @@
         });
 
         function refreshCreatorMonsterList(filter = "") {
-            creatorMonsterList.innerHTML = "";
-            allMonsters
-                .filter(m => m.name.toLowerCase().includes(filter.toLowerCase()))
-                .forEach(m => {
-                    const div = document.createElement('div');
-                    div.textContent = `${m.name} (CR ${m.cr})`;
-                    div.style.padding = "5px";
-                    div.style.cursor = "pointer";
-                    div.style.borderBottom = "1px solid #555";
-                    div.addEventListener('click', () => {
-                        creatorMonsterList.querySelectorAll('div').forEach(d => d.style.background = "");
-                        div.style.background = "#555";
-                        creatorMonsterList.dataset.selected = m.name;
-                    });
-                    creatorMonsterList.appendChild(div);
-                });
+            renderMonsterOptionList(creatorMonsterList, filter);
         }
 
         confirmCreatorMonsterBtn.addEventListener('click', () => {
@@ -6290,10 +6793,12 @@
                 return;
             }
 
-            fetch(`data/monsters/${selectedMonster}.json`)
-                .then(response => response.json())
-                .then(data => {
-                    populateMonsterCreatorFields(data);
+            loadMonsterDefinitionByName(selectedMonster)
+                .then(definition => {
+                    populateMonsterCreatorFields(definition.monsterData, {
+                        customMonsterId: definition.source === "custom" ? definition.id : "",
+                        tokenUrl: definition.tokenUrl || ""
+                    });
                     creatorMonsterModal.style.display = 'none';
                 })
                 .catch(err => {
@@ -6302,12 +6807,210 @@
                 });
         });
 
-        function populateMonsterCreatorFields(data) {
+        async function saveCustomMonster() {
+            const monsterData = buildMonsterPayloadFromForm();
+            const name = monsterData.name.trim();
+            if (!name) {
+                setStatusMessage('monsterSaveStatus', 'Monster name is required.', true);
+                return;
+            }
+            monsterData.name = name;
+
+            const existingId = document.getElementById('customMonsterId').value || slugifyValue(name);
+            const existingTokenPath = document.getElementById('existingMonsterTokenPath').value || '';
+            const tokenFile = monsterTokenUpload.files?.[0];
+            let tokenUrl = document.getElementById('existingMonsterTokenUrl').value || '';
+            let tokenPath = existingTokenPath;
+
+            setStatusMessage('monsterSaveStatus', 'Saving custom monster...');
+
+            if (tokenFile) {
+                const tokenExtension = getFileExtension(tokenFile.name);
+                tokenPath = `custom-monsters/tokens/${existingId}-${Date.now()}.${tokenExtension}`;
+                const tokenSnapshot = await storage.ref().child(tokenPath).put(tokenFile);
+                tokenUrl = await tokenSnapshot.ref.getDownloadURL();
+                if (existingTokenPath && existingTokenPath !== tokenPath) {
+                    storage.ref().child(existingTokenPath).delete().catch(() => { });
+                }
+            }
+
+            if (!tokenUrl) {
+                setStatusMessage('monsterSaveStatus', 'Select a token image before saving.', true);
+                return;
+            }
+
+            const monsterPayload = {
+                name,
+                cr: monsterData.cr,
+                tokenUrl,
+                monsterData,
+                updatedAt: Date.now()
+            };
+
+            if (tokenPath) {
+                monsterPayload.tokenPath = tokenPath;
+            }
+
+            await customMonstersRef.doc(existingId).set(monsterPayload, { merge: true });
+            upsertCustomMonsterDefinition({
+                id: existingId,
+                name,
+                cr: monsterData.cr,
+                tokenUrl,
+                tokenPath: tokenPath || "",
+                source: "custom",
+                monsterData
+            });
+
+            document.getElementById('customMonsterId').value = existingId;
+            document.getElementById('existingMonsterTokenUrl').value = tokenUrl;
+            document.getElementById('existingMonsterTokenPath').value = tokenPath;
+            setImagePreview('monsterImage', 'monsterImagePlaceholder', tokenUrl);
+            renderCustomMonsterLibrary();
+            setStatusMessage('monsterSaveStatus', `Saved ${name} to the custom monster library.`);
+        }
+
+        async function saveCustomMap() {
+            const name = customMapNameInput.value.trim();
+            const mapFile = customMapUpload.files?.[0];
+            const existingMapId = document.getElementById('customMapId').value || slugifyValue(name);
+            const existingImageUrl = document.getElementById('existingMapImageUrl').value || '';
+            const existingImagePath = document.getElementById('existingMapImagePath').value || '';
+
+            if (!name) {
+                setStatusMessage('mapSaveStatus', 'Map name is required.', true);
+                return;
+            }
+
+            if (!mapFile && !existingImageUrl) {
+                setStatusMessage('mapSaveStatus', 'Choose a map image before saving.', true);
+                return;
+            }
+
+            setStatusMessage('mapSaveStatus', 'Saving custom map...');
+
+            let imagePath = existingImagePath;
+            let imageUrl = existingImageUrl;
+
+            if (mapFile) {
+                const extension = getFileExtension(mapFile.name);
+                imagePath = `custom-maps/images/${existingMapId}-${Date.now()}.${extension}`;
+                const uploadSnapshot = await storage.ref().child(imagePath).put(mapFile);
+                imageUrl = await uploadSnapshot.ref.getDownloadURL();
+                if (existingImagePath && existingImagePath !== imagePath) {
+                    storage.ref().child(existingImagePath).delete().catch(() => { });
+                }
+            }
+
+            await customMapsRef.doc(existingMapId).set({
+                name,
+                imageUrl,
+                imagePath,
+                updatedAt: Date.now()
+            }, { merge: true });
+            customMapDefinitions.set(existingMapId, {
+                id: existingMapId,
+                name,
+                imageUrl,
+                imagePath
+            });
+            refreshCustomMapOptions();
+            renderCustomMapLibrary();
+            document.getElementById('customMapId').value = existingMapId;
+            document.getElementById('existingMapImageUrl').value = imageUrl;
+            document.getElementById('existingMapImagePath').value = imagePath;
+
+            setImagePreview('mapPreview', 'mapPreviewPlaceholder', imageUrl);
+            setStatusMessage('mapSaveStatus', `Saved ${name} to the custom map library.`);
+
+            mapSelect.value = imageUrl;
+            mapSelect.dispatchEvent(new Event('change'));
+        }
+
+        async function deleteCustomMonster(monsterId) {
+            const definition = getCustomMonsterDefinitionById(monsterId);
+            if (!definition) return;
+            if (!confirm(`Delete custom monster "${definition.name}"?`)) return;
+
+            await customMonstersRef.doc(monsterId).delete();
+            if (definition.tokenPath) {
+                storage.ref().child(definition.tokenPath).delete().catch(() => { });
+            }
+
+            removeCustomMonsterDefinitionById(monsterId);
+            renderCustomMonsterLibrary();
+
+            if (document.getElementById('customMonsterId').value === monsterId) {
+                resetMonsterCreatorForm();
+            }
+
+            setStatusMessage('monsterSaveStatus', `Deleted ${definition.name}.`);
+        }
+
+        function loadCustomMapIntoForm(mapId) {
+            const mapDefinition = customMapDefinitions.get(mapId);
+            if (!mapDefinition) return;
+
+            document.getElementById('customMapId').value = mapDefinition.id;
+            document.getElementById('existingMapImageUrl').value = mapDefinition.imageUrl;
+            document.getElementById('existingMapImagePath').value = mapDefinition.imagePath || '';
+            document.getElementById('customMapName').value = mapDefinition.name;
+            document.getElementById('customMapUpload').value = '';
+            setImagePreview('mapPreview', 'mapPreviewPlaceholder', mapDefinition.imageUrl);
+            setStatusMessage('mapSaveStatus', `Editing ${mapDefinition.name}. Save to apply changes.`);
+            openTab('creatorTab');
+        }
+
+        async function deleteCustomMap(mapId) {
+            const mapDefinition = customMapDefinitions.get(mapId);
+            if (!mapDefinition) return;
+            if (!confirm(`Delete custom map "${mapDefinition.name}"?`)) return;
+
+            await customMapsRef.doc(mapId).delete();
+            if (mapDefinition.imagePath) {
+                storage.ref().child(mapDefinition.imagePath).delete().catch(() => { });
+            }
+
+            customMapDefinitions.delete(mapId);
+            refreshCustomMapOptions();
+            renderCustomMapLibrary();
+
+            if (document.getElementById('customMapId').value === mapId) {
+                resetCustomMapForm();
+            }
+
+            if (currentSharedMapPath === mapDefinition.imageUrl) {
+                mapSelect.value = `${STATIC_MAP_PREFIX}blank.jpg`;
+                mapSelect.dispatchEvent(new Event('change'));
+            }
+
+            setStatusMessage('mapSaveStatus', `Deleted ${mapDefinition.name}.`);
+        }
+
+        saveCustomMonsterBtn.addEventListener('click', () => {
+            saveCustomMonster().catch(err => {
+                console.error('Failed to save custom monster:', err);
+                setStatusMessage('monsterSaveStatus', 'Failed to save custom monster.', true);
+            });
+        });
+
+        saveCustomMapBtn.addEventListener('click', () => {
+            saveCustomMap().catch(err => {
+                console.error('Failed to save custom map:', err);
+                setStatusMessage('mapSaveStatus', 'Failed to save custom map.', true);
+            });
+        });
+
+        function populateMonsterCreatorFields(data, options = {}) {
             const set = (id, val) => {
                 const el = document.getElementById(id);
                 if (el) el.value = val ?? "";
             };
 
+            resetMonsterCreatorForm();
+            set("customMonsterId", options.customMonsterId || "");
+            set("existingMonsterTokenUrl", options.tokenUrl || "");
+            set("existingMonsterTokenPath", options.tokenPath || "");
             set("monName", data.name);
             set("monSize", data.size?.[0] ?? "");
             set("monType", typeof data.type === "string" ? data.type : data.type.type);
@@ -6336,6 +7039,9 @@
             set("immunitiesBox", (data.immune || []).join("\n"));
             set("conditionsBox", (data.conditionImmune || []).map(c => typeof c === "string" ? c : c.name).join("\n"));
             set("sensesBox", (data.senses || []).join("\n"));
+            setImagePreview('monsterImage', 'monsterImagePlaceholder', options.tokenUrl || '');
+            document.getElementById('monsterTokenUpload').value = '';
+            setStatusMessage('monsterSaveStatus', options.customMonsterId ? `Editing ${data.name}. Save to apply changes.` : '');
 
             if (data.spellcasting?.[0]) {
                 const sc = data.spellcasting[0];
@@ -6473,7 +7179,11 @@
 
         mapRef.onSnapshot(doc => {
             if (doc.exists && doc.data()?.filepath) {
-                mapImage.src = doc.data().filepath;
+                currentSharedMapPath = doc.data().filepath;
+                mapImage.src = currentSharedMapPath;
+                if (Array.from(mapSelect.options).some(option => option.value === currentSharedMapPath)) {
+                    mapSelect.value = currentSharedMapPath;
+                }
                 scheduleMapLayoutRefresh();
             }
         });
