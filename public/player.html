@@ -457,20 +457,50 @@
 
     // Global monster state array
     const monsters = []; // Each: { id, name, hp, init, conditions, x, y, isplayer }
+    const tokenLayer = document.getElementById('mapTokenLayer');
+
+    function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`)) {
+      if (!element || !mapImage?.clientWidth || !mapImage?.clientHeight) return;
+
+      element.style.left = `${monster.xRatio * mapImage.clientWidth - currentTokenSize / 2}px`;
+      element.style.top = `${monster.yRatio * mapImage.clientHeight - currentTokenSize / 2}px`;
+      element.style.width = `${currentTokenSize}px`;
+      element.style.height = `${currentTokenSize}px`;
+
+      const label = element.querySelector('.token-label');
+      if (label) {
+        label.style.fontSize = `${currentTokenSize / 5}px`;
+      }
+
+      const conditionLabel = element.querySelector('.condition-label');
+      if (conditionLabel) {
+        conditionLabel.style.fontSize = `${currentTokenSize / 5}px`;
+      }
+    }
+
+    function refreshMapLayout() {
+      if (!mapImage?.clientWidth || !mapImage?.clientHeight) return false;
+
+      tokenLayer.style.width = `${mapImage.clientWidth}px`;
+      tokenLayer.style.height = `${mapImage.clientHeight}px`;
+      monsters.forEach(monster => positionTokenElement(monster));
+      return true;
+    }
+
+    function scheduleMapLayoutRefresh(attempts = 12) {
+      requestAnimationFrame(() => {
+        if (!refreshMapLayout() && attempts > 0) {
+          scheduleMapLayoutRefresh(attempts - 1);
+        }
+      });
+    }
 
 
     function addMonsterToken(monster) {
-      const layer = document.getElementById('mapTokenLayer');
-
       const container = document.createElement('div');
       container.id = `token-${monster.id}`;
+      container.className = 'monster-token';
       container.style.position = 'absolute';
-      const left = monster.xRatio * mapImage.clientWidth - currentTokenSize / 2;
-      const top = monster.yRatio * mapImage.clientHeight - currentTokenSize / 2;
-      container.style.left = `${left}px`;
-      container.style.top = `${top}px`;
-      container.style.width = `${currentTokenSize}px`;
-      container.style.height = `${currentTokenSize}px`;
       container.style.borderRadius = '50%';
       container.style.border = '2px solid gold';
       container.style.pointerEvents = 'auto';
@@ -524,7 +554,8 @@
       container.appendChild(label);
       container.appendChild(conditionLabel);
       makeDraggable(container);
-      layer.appendChild(container);
+      tokenLayer.appendChild(container);
+      positionTokenElement(monster, container);
     }
 
     function makeDraggable(el) {
@@ -605,10 +636,7 @@
     let currentTokenSize = 100;  // default size in pixels
 
     function updateAllTokenSizes() {
-      document.querySelectorAll('.monster-token').forEach(token => {
-        token.style.width = `${currentTokenSize}px`;
-        token.style.height = `${currentTokenSize}px`;
-      });
+      refreshMapLayout();
       syncMonstersToFirebase();
     }
 
@@ -739,6 +767,7 @@
           addMonsterToken(m);
         });
 
+        scheduleMapLayoutRefresh();
         //updateMonsterTable();
         console.log("Monsters force-reloaded from Firebase.");
       }).catch(err => {
@@ -993,6 +1022,7 @@
 
       });
 
+      scheduleMapLayoutRefresh();
       // Update token labels with index
       monsters.forEach((m, i) => {
         const token = document.getElementById(`token-${m.id}`);
@@ -1017,9 +1047,27 @@
       }
     });
 
+    mapImage.addEventListener('load', () => {
+      scheduleMapLayoutRefresh();
+    });
+
+    window.addEventListener('resize', () => {
+      scheduleMapLayoutRefresh();
+    });
+
+    if (typeof ResizeObserver === 'function') {
+      const mapResizeObserver = new ResizeObserver(() => {
+        refreshMapLayout();
+      });
+      mapResizeObserver.observe(mapImage);
+    }
+
+    scheduleMapLayoutRefresh();
+
     mapRef.onSnapshot(doc => {
       if (doc.exists && doc.data()?.filepath) {
         mapImage.src = doc.data().filepath;
+        scheduleMapLayoutRefresh();
       }
     });
 

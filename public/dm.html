@@ -4689,6 +4689,10 @@
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             syncDrawingToolbarVisibility();
+
+            if (tabId === 'mapTab') {
+                scheduleMapLayoutRefresh();
+            }
         }
 
         // Book dropdown behavior
@@ -5064,13 +5068,50 @@
 
         const tokenLayer = document.getElementById('mapTokenLayer');
 
-        function resizeTokenLayer() {
-            tokenLayer.style.width = `${mapImage.clientWidth}px`;
-            tokenLayer.style.height = `${mapImage.clientHeight}px`;
+        function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`)) {
+            if (!element || mapWidth <= 0 || mapHeight <= 0) return;
+
+            element.style.left = `${monster.xRatio * mapWidth - currentTokenSize / 2}px`;
+            element.style.top = `${monster.yRatio * mapHeight - currentTokenSize / 2}px`;
+            element.style.width = `${currentTokenSize}px`;
+            element.style.height = `${currentTokenSize}px`;
+
+            const label = element.querySelector('.token-label');
+            if (label) {
+                label.style.fontSize = `${currentTokenSize / 5}px`;
+            }
+
+            const conditionLabel = element.querySelector('.condition-label');
+            if (conditionLabel) {
+                conditionLabel.style.fontSize = `${currentTokenSize / 5}px`;
+            }
+        }
+
+        function refreshMapLayout() {
+            const width = mapImage.clientWidth;
+            const height = mapImage.clientHeight;
+            if (!width || !height) return false;
+
+            mapWidth = width;
+            mapHeight = height;
+            tokenLayer.style.width = `${mapWidth}px`;
+            tokenLayer.style.height = `${mapHeight}px`;
+            monsters.forEach(monster => positionTokenElement(monster));
+            return true;
+        }
+
+        function scheduleMapLayoutRefresh(attempts = 12) {
+            requestAnimationFrame(() => {
+                if (!refreshMapLayout() && attempts > 0) {
+                    scheduleMapLayoutRefresh(attempts - 1);
+                }
+            });
         }
 
         // Resize on image load
-        mapImage.onload = resizeTokenLayer;
+        mapImage.addEventListener('load', () => {
+            scheduleMapLayoutRefresh();
+        });
 
         let mapWidth = mapImage.clientWidth;
         let mapHeight = mapImage.clientHeight;
@@ -5081,7 +5122,16 @@
         }
 
         // Also resize on window resize
-        window.addEventListener('resize', resizeTokenLayer);
+        window.addEventListener('resize', () => {
+            scheduleMapLayoutRefresh();
+        });
+
+        if (typeof ResizeObserver === 'function') {
+            const mapResizeObserver = new ResizeObserver(() => {
+                refreshMapLayout();
+            });
+            mapResizeObserver.observe(mapImage);
+        }
 
 
         // initiative tracker functionality
@@ -5430,15 +5480,8 @@
 
             const container = document.createElement('div');
             container.id = `token-${monster.id}`;
+            container.className = 'monster-token';
             container.style.position = 'absolute';
-            console.log(`mapImage size: ${mapWidth} x ${mapHeight}`);
-            const left = monster.xRatio * mapWidth - currentTokenSize / 2;
-            const top = monster.yRatio * mapHeight - currentTokenSize / 2;
-            container.style.left = `${left}px`;
-            container.style.top = `${top}px`;
-            // Use dynamic size
-            container.style.width = `${currentTokenSize}px`;
-            container.style.height = `${currentTokenSize}px`;
             container.style.borderRadius = '50%';
             container.style.border = '2px solid gold';
             container.style.pointerEvents = 'auto';
@@ -5492,6 +5535,7 @@
             container.appendChild(conditionLabel);
             makeDraggable(container);
             layer.appendChild(container);
+            positionTokenElement(monster, container);
         }
 
         function makeDraggable(el) {
@@ -5574,10 +5618,7 @@
         let currentTokenSize = 100;  // default size in pixels
 
         function updateAllTokenSizes() {
-            document.querySelectorAll('.monster-token').forEach(token => {
-                token.style.width = `${currentTokenSize}px`;
-                token.style.height = `${currentTokenSize}px`;
-            });
+            refreshMapLayout();
             syncMonstersToFirebase();
         }
 
@@ -6372,6 +6413,7 @@
                     addMonsterToken(m);
                 });
 
+                scheduleMapLayoutRefresh();
                 updateMonsterTable();
                 console.log("Monsters force-reloaded from Firebase.");
             }).catch(err => {
@@ -6425,12 +6467,14 @@
 
             });
 
+            scheduleMapLayoutRefresh();
             updateMonsterTable();
         });
 
         mapRef.onSnapshot(doc => {
             if (doc.exists && doc.data()?.filepath) {
                 mapImage.src = doc.data().filepath;
+                scheduleMapLayoutRefresh();
             }
         });
 
