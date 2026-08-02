@@ -135,6 +135,15 @@
             resize: vertical;
         }
 
+        .npc-generator { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 16px; overflow-y: auto; background: #1a1a1a; border: 1px solid #555; border-radius: 8px; }
+        .npc-generator h2 { margin: 0; color: #FFD700; font-family: 'MedievalSharp', cursive; }
+        .npc-generator select, .npc-generator button { width: 100%; box-sizing: border-box; padding: 10px; background: #292929; color: white; border: 1px solid #666; border-radius: 5px; }
+        .npc-generator button { background: #FFD700; color: #111; border: 0; font-weight: bold; cursor: pointer; }
+        .npc-generator-card { padding: 14px; background: #101010; border-left: 4px solid #FFD700; border-radius: 5px; line-height: 1.45; }
+        .npc-generator-card h3 { margin: 0 0 5px; color: #FFD700; }
+        .npc-stat-preview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
+        .npc-stat-preview span { padding: 5px; background: #292929; text-align: center; border-radius: 4px; font-size: .85rem; }
+
         .dungeon-tab-content {
             display: none;
             flex: 1;
@@ -178,8 +187,67 @@
             transform-origin: top left;
         }
 
+        .wilderness-layout { display: grid; grid-template-columns: minmax(340px, .85fr) minmax(480px, 1.4fr); gap: 16px; padding: 16px; width: 100%; box-sizing: border-box; }
+        .wilderness-panel { background: #1d1d1d; border: 1px solid #555; border-radius: 10px; padding: 18px; box-sizing: border-box; }
+        .wilderness-panel h2 { margin: 0 0 6px; color: #FFD700; font-family: 'MedievalSharp', serif; }
+        .wilderness-panel p { color: #ccc; line-height: 1.45; }
+        .wilderness-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .wilderness-controls label { display: flex; flex-direction: column; gap: 6px; font-weight: bold; }
+        .wilderness-controls select, .wilderness-controls input { padding: 10px; background: #292929; color: white; border: 1px solid #666; border-radius: 5px; font-size: 1rem; }
+        .wilderness-roll { grid-column: 1 / -1; padding: 12px; border: 0; border-radius: 5px; background: #FFD700; color: #111; font-size: 1.05rem; font-weight: bold; cursor: pointer; }
+        .travel-result { margin-top: 16px; padding: 16px; min-height: 190px; background: #111; border-left: 4px solid #FFD700; border-radius: 5px; }
+        .travel-result h3 { margin-top: 0; color: #FFD700; }
+        .travel-result dt { margin-top: 10px; color: #e7c96a; font-weight: bold; }
+        .travel-result dd { margin: 3px 0 0; line-height: 1.4; }
+        .foraging-frame { width: 100%; height: calc(100vh - 180px); min-height: 540px; background: white; border-radius: 6px; }
+        .travel-encounter { margin-top: 12px; padding: 12px; background: #251b1b; border: 1px solid #8d4a4a; border-radius: 6px; }
+        .travel-encounter button { margin-top: 8px; padding: 9px 12px; border: 0; border-radius: 5px; background: #32CD32; color: #111; font-weight: bold; cursor: pointer; }
+        .foraging-tools { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 12px 0; }
+        .foraging-tools select, .foraging-tools input { min-width: 0; padding: 8px; background: #292929; color: white; border: 1px solid #666; border-radius: 5px; }
+        .foraging-tools button { padding: 8px; border: 0; border-radius: 5px; background: #3a8f4d; color: white; font-weight: bold; cursor: pointer; }
+        .foraging-output { margin-bottom: 12px; max-height: 320px; overflow: auto; border: 1px solid #555; border-radius: 6px; }
+        .foraging-output table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+        .foraging-output th { position: sticky; top: 0; background: #333; color: #FFD700; text-align: left; }
+        .foraging-output th, .foraging-output td { padding: 8px; border-bottom: 1px solid #444; vertical-align: top; }
+        .foraging-output tr.selected { background: #284530; }
+        .trap-generator { display: flex; flex-direction: column; flex: 1; gap: 14px; padding: 20px; overflow: hidden; }
+        .trap-controls { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: 10px; }
+        .trap-controls select, .trap-controls button { padding: 10px; background: #222; color: white; border: 1px solid #666; border-radius: 5px; font-size: 1rem; }
+        .trap-controls button { background: #FFD700; color: #111; border: 0; font-weight: bold; cursor: pointer; }
+        .trap-result { flex: 1; min-height: 260px; padding: 18px; overflow-y: auto; background: #171717; border: 1px solid #555; border-radius: 8px; }
+        .trap-result h2 { margin-top: 0; color: #FFD700; font-family: 'MedievalSharp', cursive; }
+        .trap-result h3 { color: #e7c96a; margin-bottom: 5px; }
+        .trap-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+        .trap-meta span { padding: 4px 8px; background: #333; border-radius: 12px; color: #ddd; font-size: .85rem; }
+        @media (max-width: 900px) { .trap-controls { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 900px) { .wilderness-layout { grid-template-columns: 1fr; } .foraging-frame { height: 70vh; } .foraging-tools { grid-template-columns: 1fr 1fr; } }
+
         #mapTokenLayer {
             pointer-events: none;
+        }
+
+        .monster-token.is-selected { border-color: #4fc3ff !important; box-shadow: 0 0 0 3px rgba(79,195,255,.8), 0 0 18px #4fc3ff; }
+        .monster-token.is-defeated img { filter: grayscale(1) brightness(.42); }
+        .defeated-token-x { display: none; position: absolute; inset: 0; z-index: 18; align-items: center; justify-content: center; color: #e00000; font-family: Arial, sans-serif; font-weight: 900; line-height: 1; text-shadow: 0 0 4px #000, 2px 2px 0 #330000; pointer-events: none; }
+        .monster-token.is-defeated .defeated-token-x { display: flex; }
+        .token-health-bar { position: absolute; left: 0; bottom: -8px; width: 100%; height: 7px; overflow: hidden; background: #3b1111; border: 1px solid #111; border-radius: 4px; box-sizing: border-box; pointer-events: none; }
+        .token-health-fill { height: 100%; width: 100%; background: #2ecc40; transition: width .25s ease, background-color .25s ease; }
+        .map-action-panel { display: none; position: fixed; z-index: 2200; top: 80px; right: 20px; width: 280px; padding: 14px; background: rgba(20,20,20,.97); border: 2px solid #4fc3ff; border-radius: 9px; box-shadow: 0 8px 30px #000; color: white; }
+        .map-action-panel.is-open { display: block; }
+        .map-action-panel h3 { margin: 0 0 4px; color: #FFD700; }
+        .map-action-panel select, .map-action-panel input, .map-action-panel button { width: 100%; box-sizing: border-box; margin-top: 8px; padding: 9px; background: #333; color: white; border: 1px solid #666; border-radius: 5px; }
+        .map-action-panel button { background: #32CD32; color: #111; border: 0; font-weight: bold; cursor: pointer; }
+        .map-action-panel .map-action-close { position: absolute; top: 4px; right: 7px; width: auto; margin: 0; padding: 3px 7px; background: transparent; color: #bbb; }
+        .token-lasso { position: absolute; z-index: 30; border: 2px dashed #4fc3ff; background: rgba(79,195,255,.16); pointer-events: none; }
+        .combat-flash-effect { position: fixed; z-index: 2900; border-radius: 50%; pointer-events: none; }
+        .combat-flash-effect.flash-red { animation: flash-red 1s ease-out forwards; }
+        .combat-flash-effect.flash-green { animation: flash-green 1s ease-out forwards; }
+        .token-death-effect { position: fixed; z-index: 3000; width: 72px; height: 72px; object-fit: contain; pointer-events: none; animation: token-death-float 1.6s ease-out forwards; }
+
+        @keyframes token-death-float {
+            0% { transform: translate(-50%, 0) scale(.65); opacity: 0; }
+            18% { transform: translate(-50%, -12px) scale(1.1); opacity: 1; }
+            100% { transform: translate(-50%, -130px) scale(.85); opacity: 0; }
         }
 
         @keyframes flash-red {
@@ -330,7 +398,45 @@
 
     <!-- World Tab ###############################################################################################-->
     <div class="tab-content" id="worldTab">
-        <iframe src="https://www.kassoon.com/dnd/wilderness-travel/"></iframe>
+        <div class="wilderness-layout">
+            <section class="wilderness-panel">
+                <h2>Wilderness Travel</h2>
+                <p>Enter the party's Survival check, choose the terrain, and generate a scene for the next leg of the journey.</p>
+                <div class="wilderness-controls">
+                    <label>Survival check
+                        <input id="travelSurvivalCheck" type="number" min="1" max="40" value="12">
+                    </label>
+                    <label>Environment
+                        <select id="travelEnvironment">
+                            <option>Arctic</option><option>Coastal</option><option>Desert</option><option>Forest</option>
+                            <option>Grassland</option><option>Hill</option><option>Mountain</option><option>Open Water</option>
+                            <option>Swamp</option><option>Underdark</option><option>Underwater</option><option>Urban</option>
+                        </select>
+                    </label>
+                    <label>Party levels
+                        <input id="travelPartyLevels" type="text" value="3,3,3,3" aria-label="Party levels, comma separated">
+                    </label>
+                    <button class="wilderness-roll" type="button" onclick="generateWildernessTravel()">Generate Travel Scene</button>
+                </div>
+                <div id="travelResult" class="travel-result" aria-live="polite">
+                    <h3>The road awaits</h3>
+                    <p>Generate a scene when the party begins the next stretch of travel.</p>
+                </div>
+            </section>
+            <section class="wilderness-panel">
+                <h2>Foraging Tables</h2>
+                <p>Choose a season and environment to view its complete Materia Medica table, including every foraging DC.</p>
+                <div class="foraging-tools">
+                    <select id="forageSeason" aria-label="Foraging season" onchange="renderForagingTable()"><option>Summer</option><option>Autumn</option><option>Winter</option><option>Spring</option></select>
+                    <select id="forageRegion" aria-label="Foraging region" onchange="renderForagingTable()"><option>Coast</option><option>Desert</option><option>Forest</option><option>Grassland</option><option>Jungle</option><option>Mountain</option><option>Swamp</option><option>Tundra</option><option>Underdark</option><option>Urban</option></select>
+                </div>
+                <div id="foragingOutput" class="foraging-output"><p style="padding: 10px;">Loading the foraging tables…</p></div>
+                <details>
+                    <summary style="cursor:pointer; color:#FFD700; margin-bottom:10px;">Open original PDF tables</summary>
+                    <iframe class="foraging-frame" src="data/books/foraging.pdf#page=2&view=FitH" title="Materia Medica foraging tables"></iframe>
+                </details>
+            </section>
+        </div>
     </div>
 
     <!-- Town Tab ################################################################################################-->
@@ -349,8 +455,26 @@
             <div id="npcSubTab" class="sub-tab-content" style="display: flex; gap: 20px; flex: 1; overflow: hidden;">
                 <!-- Left Column -->
                 <div style="flex: 0.5; display: flex; flex-direction: column;">
-                    <iframe src="https://www.kassoon.com/dnd/npc-generator/"
-                        style="flex: 1; width: 100%; border: 2px solid #555; border-radius: 8px;"></iframe>
+                    <div class="npc-generator">
+                        <h2>NPC Generator</h2>
+                        <p style="margin:0; color:#ccc;">Create a ready-to-save NPC using the d100 personality table.</p>
+                        <label>Race
+                            <select id="npcGeneratorRace"><option value="all">Any Race</option></select>
+                        </label>
+                        <label>Alignment
+                            <select id="npcGeneratorAlignment"><option value="all">Any Alignment</option></select>
+                        </label>
+                        <label>Occupation
+                            <select id="npcGeneratorOccupation">
+                                <option value="all">Any Occupation</option><option>Artisan</option><option>Farmer</option><option>Guard</option><option>Healer</option><option>Innkeeper</option><option>Laborer</option><option>Merchant</option><option>Noble</option><option>Priest</option><option>Sailor</option><option>Scholar</option><option>Soldier</option><option>Thief</option><option>Wanderer</option>
+                            </select>
+                        </label>
+                        <button type="button" onclick="generateNPC()">Generate NPC &amp; Fill Form</button>
+                        <div id="npcGeneratorResult" class="npc-generator-card" aria-live="polite">
+                            <h3>A stranger approaches…</h3>
+                            <p>Choose any filters, then generate an NPC.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right Column: Styled Form -->
@@ -507,8 +631,13 @@
                 <!-- Action tab ------------------------------------------------------------------------------------ -->
                 <div id="actionContent" class="dungeon-tab-content active"
                     style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
+                    <div style="width:100%; padding:24px; box-sizing:border-box;">
+                        <h1 style="font-family:'MedievalSharp',cursive; color:#FFD700;">Map Token Actions</h1>
+                        <p>Open the Map tab and click a creature token to heal, damage, apply a condition, or remove a condition.</p>
+                        <p><strong>Multi-select:</strong> Ctrl+click additional tokens, or hold Ctrl and drag across the map to lasso a group. The action panel applies to every selected creature.</p>
+                    </div>
                     <div
-                        style="width: 100%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                        style="display:none; width: 100%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
                         <h1 style="font-family: 'MedievalSharp', cursive; font-size: 2rem; text-align: center;">
                             Action
                             Interface</h1>
@@ -641,18 +770,22 @@
                 <!-- trap tab---------------------------------------------------------------------------------------->
                 <div id="trapContent" class="dungeon-tab-content"
                     style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
-                    <div
-                        style="display: flex; flex-direction: column; flex: 1; padding: 20px; align-items: center; justify-content: center; gap: 20px; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
-
-                        <h2 style="font-family: 'MedievalSharp', cursive; color: #FFD700;">Trap Generator</h2>
-
-                        <!-- Donjon Link Button -->
-                        <a href="https://donjon.bin.sh/5e/random/#type=trap" target="_blank"
-                            style="padding: 15px 30px; background-color: #FFD700; color: black; font-size: 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s ease;">
-                            Open Trap Generator
-                        </a>
+                    <div class="trap-generator">
+                        <h2 style="margin:0; font-family:'MedievalSharp',cursive; color:#FFD700;">Traps &amp; Hazards Generator</h2>
+                        <div class="trap-controls">
+                            <select id="trapCategory" aria-label="Category" onchange="updateTrapFilters()">
+                                <option value="all">Traps &amp; Hazards</option><option value="trap">Traps Only</option><option value="hazard">Hazards Only</option>
+                            </select>
+                            <select id="trapType" aria-label="Trap type"><option value="all">Any Type</option></select>
+                            <select id="trapTier" aria-label="Tier"><option value="all">Any Tier</option><option value="1">Tier 1</option><option value="2">Tier 2</option><option value="3">Tier 3</option></select>
+                            <select id="trapThreat" aria-label="Threat"><option value="all">Any Threat</option><option value="setback">Setback</option><option value="moderate">Moderate</option><option value="dangerous">Dangerous</option><option value="deadly">Deadly</option></select>
+                            <button type="button" onclick="generateTrapHazard()">Generate Random Trap or Hazard</button>
+                        </div>
+                        <article id="trapResult" class="trap-result" aria-live="polite">
+                            <h2>The dungeon is quiet… for now</h2>
+                            <p>Choose any filters and generate a trap or environmental hazard.</p>
+                        </article>
                     </div>
-
                 </div>
 
 
@@ -776,7 +909,24 @@
                 <div id="mapTokenLayer"
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
                 </div>
+                <div id="tokenLasso" class="token-lasso" style="display:none;"></div>
             </div>
+        </div>
+
+        <div id="mapActionPanel" class="map-action-panel" role="dialog" aria-label="Token actions">
+            <button class="map-action-close" type="button" onclick="clearMapTokenSelection()" aria-label="Close">×</button>
+            <h3>Token Actions</h3>
+            <div id="mapActionTargets">No tokens selected</div>
+            <select id="mapActionType" onchange="updateMapActionFields()">
+                <option value="damage">Damage</option><option value="heal">Heal</option><option value="apply">Apply Condition</option><option value="remove">Remove Condition</option>
+            </select>
+            <div id="mapActionAmountGroup"><input id="mapActionAmount" type="number" min="0" value="0" placeholder="Amount"></div>
+            <div id="mapActionConditionGroup" style="display:none;">
+                <select id="mapActionCondition">
+                    <option>Blinded</option><option>Charmed</option><option>Deafened</option><option>Frightened</option><option>Grappled</option><option>Incapacitated</option><option>Invisible</option><option>Paralyzed</option><option>Petrified</option><option>Poisoned</option><option>Prone</option><option>Restrained</option><option>Stunned</option><option>Unconscious</option><option>Exhaustion</option><option>Hexed</option><option>Blessed</option><option>Baned</option><option>mark1</option><option>mark2</option><option>mark3</option>
+                </select>
+            </div>
+            <button type="button" onclick="applyMapTokenAction()">Apply to Selected</button>
         </div>
 
         <!-- Token Size Controls -->
@@ -838,6 +988,7 @@
             <span>Token Size</span>
             <button id="decreaseTokenSize" style="font-size: 18px;">-</button>
             <button id="increaseTokenSize" style="font-size: 18px;">+</button>
+            <button id="toggleDrawingToolbar" type="button">Hide Drawing</button>
         </div>
 
     </div>
@@ -4947,12 +5098,23 @@
                 id: generateID(),
                 name: definition.name,
                 hp,
+                maxHp: hp,
                 init: initiative,
                 conditions: [],
                 xRatio: 0.5,
                 yRatio: 0.5,
                 isplayer: false,
                 tokenUrl: definition.tokenUrl || ""
+            };
+        }
+
+        function normalizeMonsterState(monster) {
+            const hp = Number(monster.hp) || 0;
+            return {
+                ...monster,
+                hp,
+                maxHp: Math.max(1, Number(monster.maxHp) || hp || 1),
+                conditions: Array.isArray(monster.conditions) ? monster.conditions : []
             };
         }
 
@@ -5153,11 +5315,18 @@
 
 
         let drawingToolbarManager = null;
+        let drawingToolbarHidden = false;
 
         function syncDrawingToolbarVisibility() {
             if (!drawingToolbarManager) return;
-            drawingToolbarManager.setVisible(document.getElementById('mapTab').classList.contains('active'));
+            drawingToolbarManager.setVisible(document.getElementById('mapTab').classList.contains('active') && !drawingToolbarHidden);
         }
+
+        document.getElementById('toggleDrawingToolbar')?.addEventListener('click', event => {
+            drawingToolbarHidden = !drawingToolbarHidden;
+            event.currentTarget.textContent = drawingToolbarHidden ? 'Show Drawing' : 'Hide Drawing';
+            syncDrawingToolbarVisibility();
+        });
 
         function openTab(tabId) {
             document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
@@ -5287,6 +5456,71 @@
         // town tab functionality
 
         const npcs = [];
+        let NPC_INSPIRATIONS = [];
+
+        const NPC_GENERATOR_DETAILS = {
+            appearances: ['weather-beaten and practical', 'immaculately dressed', 'covered in old scars', 'bright-eyed and restless', 'soft-spoken with an intense stare', 'dusty from the road', 'adorned with inexpensive jewelry', 'dressed in clothes repaired many times', 'noticeably strong and broad-shouldered', 'pale and chronically tired'],
+            manners: ['speaks in a hurried whisper', 'laughs at inappropriate moments', 'avoids direct eye contact', 'uses elaborate hand gestures', 'answers questions with questions', 'frequently forgets names', 'maintains unnerving eye contact', 'constantly checks the nearest exit', 'quotes a proverb for every occasion', 'taps a nervous rhythm with one hand'],
+            motivations: ['protect their family', 'earn enough coin to leave town', 'prove that a persistent rumor is true', 'recover something that was stolen', 'gain the respect of a local rival', 'hide a costly mistake', 'find a trustworthy adventurer', 'repay an old debt', 'be remembered for something important', 'keep the peace at any cost'],
+            occupations: ['Artisan', 'Farmer', 'Guard', 'Healer', 'Innkeeper', 'Laborer', 'Merchant', 'Noble', 'Priest', 'Sailor', 'Scholar', 'Soldier', 'Thief', 'Wanderer'],
+            skills: { Artisan: 'Investigation and artisan tools', Farmer: 'Animal Handling and Nature', Guard: 'Athletics and Perception', Healer: 'Medicine and herbalism kit', Innkeeper: 'Insight and Persuasion', Laborer: 'Athletics and Survival', Merchant: 'Deception and Persuasion', Noble: 'History and Persuasion', Priest: 'Medicine and Religion', Sailor: 'Athletics and water vehicles', Scholar: 'Arcana and History', Soldier: 'Athletics and Intimidation', Thief: 'Sleight of Hand and thieves’ tools', Wanderer: 'Perception and Survival' }
+        };
+
+        function randomNpcItem(items) { return items[Math.floor(Math.random() * items.length)]; }
+        function rollNpcStat() { return Array.from({ length: 3 }, () => Math.floor(Math.random() * 6) + 1).reduce((sum, roll) => sum + roll, 0); }
+
+        function populateNpcGeneratorFilters() {
+            const addOptions = (id, values) => {
+                const select = document.getElementById(id);
+                values.forEach(value => select.add(new Option(value, value)));
+            };
+            addOptions('npcGeneratorRace', [...new Set(NPC_INSPIRATIONS.map(entry => entry.race))].sort());
+            addOptions('npcGeneratorAlignment', [...new Set(NPC_INSPIRATIONS.map(entry => entry.alignment))].sort());
+        }
+
+        function generateNPC() {
+            const raceFilter = document.getElementById('npcGeneratorRace').value;
+            const alignmentFilter = document.getElementById('npcGeneratorAlignment').value;
+            const occupationFilter = document.getElementById('npcGeneratorOccupation').value;
+            const pool = NPC_INSPIRATIONS.filter(entry => (raceFilter === 'all' || entry.race === raceFilter) && (alignmentFilter === 'all' || entry.alignment === alignmentFilter));
+            if (!pool.length) {
+                document.getElementById('npcGeneratorResult').textContent = 'No NPC inspiration matches those filters.';
+                return;
+            }
+            const inspiration = randomNpcItem(pool);
+            const occupation = occupationFilter === 'all' ? randomNpcItem(NPC_GENERATOR_DETAILS.occupations) : occupationFilter;
+            const stats = Array.from({ length: 6 }, rollNpcStat);
+            const fallbackFirst = ['Ari', 'Bryn', 'Corin', 'Dara', 'Eryn', 'Finn', 'Kestrel', 'Mara', 'Nim', 'Toren'];
+            const fallbackLast = ['Ashfall', 'Brightwater', 'Copperhand', 'Duskwood', 'Farfield', 'Greybrook', 'Lightfoot', 'Stoneward'];
+            const name = inspiration.name || `${randomNpcItem(fallbackFirst)} ${randomNpcItem(fallbackLast)}`;
+            const appearance = randomNpcItem(NPC_GENERATOR_DETAILS.appearances);
+            const manner = randomNpcItem(NPC_GENERATOR_DETAILS.manners);
+            const motivation = randomNpcItem(NPC_GENERATOR_DETAILS.motivations);
+            const personal = `${inspiration.alignment} ${inspiration.race}; ${appearance}. ${inspiration.quirk}. They ${manner}, and currently want to ${motivation}.`;
+            const abilities = `Notable proficiencies: ${NPC_GENERATOR_DETAILS.skills[occupation] || 'Insight and Perception'}.\nInspiration roll: d100 result ${inspiration.roll}.`;
+
+            document.querySelector('input[placeholder="Name:"]').value = name;
+            document.querySelector('input[placeholder="Race:"]').value = inspiration.race;
+            document.querySelector('input[placeholder="Occupation:"]').value = occupation;
+            document.querySelector('input[placeholder="Permalink:"]').value = '';
+            document.querySelectorAll('.npc-textarea')[0].value = personal;
+            stats.forEach((stat, index) => { document.querySelectorAll('.npc-input')[index + 4].value = stat; });
+            document.querySelectorAll('.npc-textarea')[1].value = abilities;
+
+            const result = document.getElementById('npcGeneratorResult');
+            result.replaceChildren();
+            const heading = document.createElement('h3'); heading.textContent = name; result.appendChild(heading);
+            const summary = document.createElement('p'); summary.textContent = `${inspiration.race} · ${inspiration.alignment} · ${occupation}`; result.appendChild(summary);
+            const quirk = document.createElement('p'); quirk.textContent = inspiration.quirk; result.appendChild(quirk);
+            const statGrid = document.createElement('div'); statGrid.className = 'npc-stat-preview';
+            ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'].forEach((label, index) => { const stat = document.createElement('span'); stat.textContent = `${label} ${stats[index]}`; statGrid.appendChild(stat); });
+            result.appendChild(statGrid);
+        }
+
+        fetch('data/api_data/npc_quirks.json')
+            .then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
+            .then(data => { NPC_INSPIRATIONS = data.npcs || []; populateNpcGeneratorFilters(); })
+            .catch(error => { document.getElementById('npcGeneratorResult').textContent = `Could not load NPC inspiration data: ${error.message}`; });
 
 
         function showSubTab(id, btn) {
@@ -5577,7 +5811,7 @@
             return Math.hypot(dx, dy);
         }
 
-        function flashToken(monsterId, type) {
+        function flashToken(monsterId, type, attempts = 5) {
             const token = document.getElementById(`token-${monsterId}`);
             if (!token && attempts > 0) {
                 // Retry shortly later if token not yet in DOM
@@ -5586,17 +5820,184 @@
             }
             if (!token) return;
 
-            const className = (type === 'heal') ? 'flash-green' : 'flash-red';
-            token.classList.add(className);
+            const rect = token.getBoundingClientRect();
+            const effect = document.createElement('div');
+            effect.className = `combat-flash-effect ${type === 'heal' ? 'flash-green' : 'flash-red'}`;
+            effect.style.left = `${rect.left}px`;
+            effect.style.top = `${rect.top}px`;
+            effect.style.width = `${rect.width}px`;
+            effect.style.height = `${rect.height}px`;
+            document.body.appendChild(effect);
+            effect.addEventListener('animationend', () => effect.remove(), { once: true });
+        }
 
-            setTimeout(() => {
-                token.classList.remove(className);
-            }, 1000);  // Match animation duration
+        function showTokenDeathEffect(monsterId) {
+            const token = document.getElementById(`token-${monsterId}`);
+            if (!token) return;
+            const rect = token.getBoundingClientRect();
+            const icon = document.createElement('img');
+            icon.className = 'token-death-effect';
+            icon.src = 'data/images/dead_icon.png';
+            icon.alt = '';
+            icon.style.left = `${rect.left + rect.width / 2}px`;
+            icon.style.top = `${rect.top + rect.height / 2 - 36}px`;
+            document.body.appendChild(icon);
+            icon.addEventListener('animationend', () => icon.remove(), { once: true });
+        }
+
+        function removeDefeatedMonster(monsterId) {
+            const index = monsters.findIndex(monster => monster.id === monsterId);
+            const monster = index >= 0 ? monsters[index] : null;
+            if (monster?.isplayer) {
+                updateTokenDefeatedState(monster);
+                return;
+            }
+            if (index >= 0) monsters.splice(index, 1);
+            selectedMapTokenIds.delete(monsterId);
+            document.getElementById(`token-${monsterId}`)?.remove();
         }
 
 
 
         const tokenLayer = document.getElementById('mapTokenLayer');
+        const selectedMapTokenIds = new Set();
+
+        function getHealthTier(monster) {
+            const ratio = Math.max(0, Math.min(1, monster.hp / Math.max(1, monster.maxHp || monster.hp || 1)));
+            if (ratio >= 0.75) return { color: '#2ecc40', label: 'Undamaged / Scratched' };
+            if (ratio >= 0.50) return { color: '#ff8c00', label: 'Bloodied / Hurt' };
+            if (ratio >= 0.25) return { color: '#ffd700', label: 'Battered / Badly Injured' };
+            return { color: '#e32636', label: 'On Its Last Legs / Critical' };
+        }
+
+        function updateTokenHealthBar(monster) {
+            const token = document.getElementById(`token-${monster.id}`);
+            if (!token) return;
+            const fill = token.querySelector('.token-health-fill');
+            const bar = token.querySelector('.token-health-bar');
+            if (!fill || !bar) return;
+            const ratio = Math.max(0, Math.min(1, monster.hp / Math.max(1, monster.maxHp || 1)));
+            const tier = getHealthTier(monster);
+            fill.style.width = `${ratio * 100}%`;
+            fill.style.backgroundColor = tier.color;
+            bar.title = `${tier.label}: ${monster.hp}/${monster.maxHp} HP`;
+            bar.setAttribute('aria-label', bar.title);
+        }
+
+        function updateTokenDefeatedState(monster) {
+            const token = document.getElementById(`token-${monster.id}`);
+            if (!token) return;
+            token.classList.toggle('is-defeated', Boolean(monster.isplayer && monster.hp <= 0));
+            const defeatedX = token.querySelector('.defeated-token-x');
+            if (defeatedX) defeatedX.style.fontSize = `${currentTokenSize * 0.82}px`;
+        }
+
+        function refreshMapTokenSelection() {
+            document.querySelectorAll('.monster-token').forEach(token => token.classList.toggle('is-selected', selectedMapTokenIds.has(token.id.replace('token-', ''))));
+            const selected = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
+            const targetLabel = document.getElementById('mapActionTargets');
+            targetLabel.textContent = selected.length === 1 ? selected[0].name : `${selected.length} tokens selected`;
+            if (!selected.length) document.getElementById('mapActionPanel').classList.remove('is-open');
+        }
+
+        function openMapActionPanel() {
+            const panel = document.getElementById('mapActionPanel');
+            panel.classList.add('is-open');
+        }
+
+        function selectMapToken(monsterId, additive, clientX, clientY) {
+            if (!additive) selectedMapTokenIds.clear();
+            if (additive && selectedMapTokenIds.has(monsterId)) selectedMapTokenIds.delete(monsterId);
+            else selectedMapTokenIds.add(monsterId);
+            refreshMapTokenSelection();
+            if (selectedMapTokenIds.size) openMapActionPanel();
+        }
+
+        function clearMapTokenSelection() {
+            selectedMapTokenIds.clear();
+            refreshMapTokenSelection();
+        }
+
+        function updateMapActionFields() {
+            const usesAmount = ['damage', 'heal'].includes(document.getElementById('mapActionType').value);
+            document.getElementById('mapActionAmountGroup').style.display = usesAmount ? 'block' : 'none';
+            document.getElementById('mapActionConditionGroup').style.display = usesAmount ? 'none' : 'block';
+        }
+
+        function applyMapTokenAction() {
+            const action = document.getElementById('mapActionType').value;
+            const amount = Math.max(0, Number(document.getElementById('mapActionAmount').value) || 0);
+            const condition = document.getElementById('mapActionCondition').value;
+            const targets = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
+            if (!targets.length) return;
+            targets.forEach(monster => {
+                const previousHp = monster.hp;
+                if (action === 'heal') {
+                    monster.hp = Math.min(monster.maxHp, monster.hp + amount);
+                    flashToken(monster.id, 'heal');
+                } else if (action === 'damage') {
+                    monster.hp = Math.max(0, monster.hp - amount);
+                    flashToken(monster.id, 'damage');
+                    if (previousHp > 0 && monster.hp === 0) {
+                        showTokenDeathEffect(monster.id);
+                        removeDefeatedMonster(monster.id);
+                    }
+                } else if (action === 'apply' && !monster.conditions.some(item => item.toLowerCase() === condition.toLowerCase())) {
+                    monster.conditions.push(condition);
+                } else if (action === 'remove') {
+                    monster.conditions = monster.conditions.filter(item => item.toLowerCase() !== condition.toLowerCase());
+                }
+                updateTokenHealthBar(monster);
+                updateTokenDefeatedState(monster);
+            });
+            syncMonstersToFirebase();
+            updateMonsterTable();
+        }
+
+        const mapTransformLayer = document.getElementById('mapTransformLayer');
+        const tokenLasso = document.getElementById('tokenLasso');
+        let lassoStart = null;
+
+        function mapClientToLocal(clientX, clientY) {
+            const rect = mapImage.getBoundingClientRect();
+            return { x: (clientX - rect.left) * (mapWidth / rect.width), y: (clientY - rect.top) * (mapHeight / rect.height) };
+        }
+
+        mapTransformLayer.addEventListener('mousedown', event => {
+            if (!event.ctrlKey || event.button !== 0 || event.target.closest('.monster-token')) return;
+            event.preventDefault();
+            event.stopPropagation();
+            lassoStart = mapClientToLocal(event.clientX, event.clientY);
+            tokenLasso.style.display = 'block';
+            tokenLasso.style.left = `${lassoStart.x}px`;
+            tokenLasso.style.top = `${lassoStart.y}px`;
+            tokenLasso.style.width = '0px';
+            tokenLasso.style.height = '0px';
+        }, true);
+
+        document.addEventListener('mousemove', event => {
+            if (!lassoStart) return;
+            const point = mapClientToLocal(event.clientX, event.clientY);
+            tokenLasso.style.left = `${Math.min(lassoStart.x, point.x)}px`;
+            tokenLasso.style.top = `${Math.min(lassoStart.y, point.y)}px`;
+            tokenLasso.style.width = `${Math.abs(point.x - lassoStart.x)}px`;
+            tokenLasso.style.height = `${Math.abs(point.y - lassoStart.y)}px`;
+        });
+
+        document.addEventListener('mouseup', event => {
+            if (!lassoStart) return;
+            const point = mapClientToLocal(event.clientX, event.clientY);
+            const bounds = { left: Math.min(lassoStart.x, point.x), right: Math.max(lassoStart.x, point.x), top: Math.min(lassoStart.y, point.y), bottom: Math.max(lassoStart.y, point.y) };
+            monsters.forEach(monster => {
+                const x = monster.xRatio * mapWidth;
+                const y = monster.yRatio * mapHeight;
+                if (x >= bounds.left && x <= bounds.right && y >= bounds.top && y <= bounds.bottom) selectedMapTokenIds.add(monster.id);
+            });
+            lassoStart = null;
+            tokenLasso.style.display = 'none';
+            refreshMapTokenSelection();
+            if (selectedMapTokenIds.size) openMapActionPanel();
+        });
 
         function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`)) {
             if (!element || mapWidth <= 0 || mapHeight <= 0) return;
@@ -5615,6 +6016,8 @@
             if (conditionLabel) {
                 conditionLabel.style.fontSize = `${currentTokenSize / 5}px`;
             }
+            updateTokenHealthBar(monster);
+            updateTokenDefeatedState(monster);
         }
 
         function refreshMapLayout() {
@@ -5884,15 +6287,20 @@
             }
 
             const monster = monsters[index];
+            const previousHp = monster.hp;
 
             if (action === 'heal') {
-                monster.hp += amount;
+                monster.hp = Math.min(monster.maxHp || monster.hp + amount, monster.hp + amount);
                 flashToken(monster.id, 'heal');
                 await sleep(1000);
 
             } else if (action === 'damage') {
                 monster.hp = Math.max(0, monster.hp - amount);
-                flashToken(monster.id, 'heal');
+                flashToken(monster.id, 'damage');
+                if (previousHp > 0 && monster.hp === 0) {
+                    showTokenDeathEffect(monster.id);
+                    removeDefeatedMonster(monster.id);
+                }
                 await sleep(1000);
 
             } else if (action === 'apply') {
@@ -5916,7 +6324,12 @@
             monsters.sort((a, b) => b.init - a.init);
             monsterTableBody.innerHTML = '';
 
-            monsters.forEach((m, index) => {
+            monsters.filter(monster => monster.hp <= 0).forEach(monster => {
+                const token = document.getElementById(`token-${monster.id}`);
+                if (token) token.querySelector('.token-label').textContent = '×';
+            });
+
+            monsters.filter(monster => monster.hp > 0).forEach((m, index) => {
                 const row = document.createElement('tr');
                 row.dataset.monsterId = m.id;
 
@@ -5940,6 +6353,8 @@
                 if (token) {
                     token.querySelector('.token-label').textContent = index;
                     token.querySelector('.condition-label').textContent = m.conditions;
+                    token.classList.toggle('is-selected', selectedMapTokenIds.has(m.id));
+                    updateTokenHealthBar(m);
                 }
 
                 // Attach listeners for manual updates
@@ -5954,7 +6369,16 @@
                 });
 
                 hpInput.addEventListener('input', () => {
-                    m.hp = parseInt(hpInput.value) || 0;
+                    const previousHp = m.hp;
+                    m.hp = Math.max(0, parseInt(hpInput.value) || 0);
+                    m.maxHp = Math.max(m.maxHp || 1, m.hp);
+                    updateTokenHealthBar(m);
+                    if (m.hp > previousHp) flashToken(m.id, 'heal');
+                    else if (m.hp < previousHp) flashToken(m.id, 'damage');
+                    if (previousHp > 0 && m.hp === 0) {
+                        showTokenDeathEffect(m.id);
+                        removeDefeatedMonster(m.id);
+                    }
                     syncMonstersToFirebase();
                     updateMonsterTable();
 
@@ -5962,6 +6386,8 @@
 
                 monsterTableBody.appendChild(row);
             });
+
+            refreshMapTokenSelection();
 
         }
 
@@ -6006,7 +6432,7 @@
             const conditionLabel = document.createElement('div');
             conditionLabel.className = 'condition-label';
             conditionLabel.style.position = 'absolute';
-            conditionLabel.style.bottom = '-5px';
+            conditionLabel.style.bottom = '-30px';
             conditionLabel.style.left = '50%';
             conditionLabel.style.transform = 'translateX(-50%)';
             conditionLabel.style.fontSize = `${currentTokenSize / 5}px`;
@@ -6017,9 +6443,26 @@
             conditionLabel.style.pointerEvents = 'none';
             conditionLabel.textContent = (monster.conditions || []).join(', ');
 
+            const healthBar = document.createElement('div');
+            healthBar.className = 'token-health-bar';
+            const healthFill = document.createElement('div');
+            healthFill.className = 'token-health-fill';
+            healthBar.appendChild(healthFill);
+
+            const defeatedX = document.createElement('div');
+            defeatedX.className = 'defeated-token-x';
+            defeatedX.textContent = '×';
+
             container.appendChild(img);
             container.appendChild(label);
+            container.appendChild(healthBar);
+            container.appendChild(defeatedX);
             container.appendChild(conditionLabel);
+            container.addEventListener('click', event => {
+                event.stopPropagation();
+                if (container.dataset.suppressClick === 'true') return;
+                selectMapToken(monster.id, event.ctrlKey, event.clientX, event.clientY);
+            });
             makeDraggable(container);
             layer.appendChild(container);
             positionTokenElement(monster, container);
@@ -6028,10 +6471,15 @@
         function makeDraggable(el) {
             let isDragging = false;
             let offsetX = 0, offsetY = 0;
+            let dragStartX = 0, dragStartY = 0;
+            let didMove = false;
 
             el.addEventListener('mousedown', (e) => {
                 e.preventDefault();
                 isDragging = true;
+                didMove = false;
+                dragStartX = e.clientX;
+                dragStartY = e.clientY;
                 offsetX = e.clientX - el.offsetLeft;
                 offsetY = e.clientY - el.offsetTop;
                 el.style.cursor = 'grabbing';
@@ -6039,6 +6487,7 @@
 
             document.addEventListener('mousemove', (e) => {
                 if (!isDragging) return;
+                if (Math.hypot(e.clientX - dragStartX, e.clientY - dragStartY) > 3) didMove = true;
                 el.style.left = `${e.clientX - offsetX}px`;
                 el.style.top = `${e.clientY - offsetY}px`;
             });
@@ -6057,6 +6506,10 @@
                         monster.yRatio = topPx / mapHeight;
                     }
                     syncMonstersToFirebase();
+                    if (didMove) {
+                        el.dataset.suppressClick = 'true';
+                        setTimeout(() => { el.dataset.suppressClick = 'false'; }, 0);
+                    }
                 }
             });
 
@@ -6065,7 +6518,10 @@
             el.addEventListener('touchstart', (e) => {
                 e.preventDefault();
                 isDragging = true;
+                didMove = false;
                 const touch = e.touches[0];
+                dragStartX = touch.clientX;
+                dragStartY = touch.clientY;
                 offsetX = touch.clientX - el.offsetLeft;
                 offsetY = touch.clientY - el.offsetTop;
                 el.style.cursor = 'grabbing';
@@ -6074,6 +6530,7 @@
             el.addEventListener('touchmove', (e) => {
                 if (!isDragging) return;
                 const touch = e.touches[0];
+                if (Math.hypot(touch.clientX - dragStartX, touch.clientY - dragStartY) > 3) didMove = true;
                 el.style.left = `${touch.clientX - offsetX}px`;
                 el.style.top = `${touch.clientY - offsetY}px`;
             }, { passive: false });
@@ -6119,6 +6576,124 @@
             updateAllTokenSizes();
         });
 
+
+        // traps and hazards generator
+        let TRAPS_HAZARDS_DATA = { trap: [], hazard: [] };
+
+        const TRAP_TYPE_LABELS = {
+            MECH: 'Mechanical', SMPL: 'Simple', MAG: 'Magical', CMPX: 'Complex',
+            ENV: 'Environmental', WTH: 'Weather', WLD: 'Wilderness'
+        };
+
+        function cleanTrapText(value) {
+            return String(value)
+                .replace(/\{@dice ([^}]+)}/g, '$1')
+                .replace(/\{@(?:skill|condition|spell|item|creature|book|quickref) ([^}|]+)(?:\|[^}]*)?}/g, '$1')
+                .replace(/\{@dc ([^}]+)}/g, 'DC $1')
+                .replace(/\{@hit ([^}]+)}/g, '+$1')
+                .replace(/\{@atk ([^}]+)}/g, '$1 attack')
+                .replace(/\{@[^ ]+ ([^}|]+)(?:\|[^}]*)?}/g, '$1');
+        }
+
+        function appendTrapContent(parent, content) {
+            if (content == null) return;
+            if (Array.isArray(content)) {
+                content.forEach(item => appendTrapContent(parent, item));
+                return;
+            }
+            if (typeof content === 'string' || typeof content === 'number') {
+                const paragraph = document.createElement('p');
+                paragraph.textContent = cleanTrapText(content);
+                parent.appendChild(paragraph);
+                return;
+            }
+            if (content.name) {
+                const heading = document.createElement('h3');
+                heading.textContent = cleanTrapText(content.name);
+                parent.appendChild(heading);
+            }
+            if (content.type === 'table' && Array.isArray(content.rows)) {
+                const table = document.createElement('table');
+                table.style.cssText = 'width:100%; border-collapse:collapse; margin:10px 0;';
+                if (content.colLabels) {
+                    const header = table.createTHead().insertRow();
+                    content.colLabels.forEach(label => { const th = document.createElement('th'); th.textContent = cleanTrapText(label); th.style.cssText = 'padding:7px; border:1px solid #555; text-align:left; color:#FFD700;'; header.appendChild(th); });
+                }
+                const body = table.createTBody();
+                content.rows.forEach(values => {
+                    const row = body.insertRow();
+                    (Array.isArray(values) ? values : [values]).forEach(value => { const cell = row.insertCell(); cell.textContent = cleanTrapText(typeof value === 'object' ? value.entry || value.roll?.exact || JSON.stringify(value) : value); cell.style.cssText = 'padding:7px; border:1px solid #555; vertical-align:top;'; });
+                });
+                parent.appendChild(table);
+            }
+            if (content.entries) appendTrapContent(parent, content.entries);
+            if (content.items) {
+                const list = document.createElement('ul');
+                content.items.forEach(item => {
+                    const li = document.createElement('li');
+                    if (typeof item === 'string') li.textContent = cleanTrapText(item);
+                    else {
+                        if (item.name) { const strong = document.createElement('strong'); strong.textContent = `${cleanTrapText(item.name)} `; li.appendChild(strong); }
+                        if (item.entry) li.appendChild(document.createTextNode(cleanTrapText(item.entry)));
+                        if (item.entries) appendTrapContent(li, item.entries);
+                    }
+                    list.appendChild(li);
+                });
+                parent.appendChild(list);
+            }
+        }
+
+        function getTrapPool() {
+            const category = document.getElementById('trapCategory').value;
+            const type = document.getElementById('trapType').value;
+            const tier = document.getElementById('trapTier').value;
+            const threat = document.getElementById('trapThreat').value;
+            const categories = category === 'all' ? ['trap', 'hazard'] : [category];
+            return categories.flatMap(group => TRAPS_HAZARDS_DATA[group].map(item => ({ ...item, category: group })))
+                .filter(item => type === 'all' || item.trapHazType === type)
+                .filter(item => tier === 'all' || String(item.tier) === tier)
+                .filter(item => threat === 'all' || item.threat === threat);
+        }
+
+        function updateTrapFilters() {
+            const category = document.getElementById('trapCategory').value;
+            const groups = category === 'all' ? ['trap', 'hazard'] : [category];
+            const types = [...new Set(groups.flatMap(group => TRAPS_HAZARDS_DATA[group].map(item => item.trapHazType).filter(Boolean)))].sort();
+            const select = document.getElementById('trapType');
+            const previous = select.value;
+            select.replaceChildren(new Option('Any Type', 'all'));
+            types.forEach(type => select.add(new Option(TRAP_TYPE_LABELS[type] || type, type)));
+            select.value = types.includes(previous) ? previous : 'all';
+        }
+
+        function generateTrapHazard() {
+            const result = document.getElementById('trapResult');
+            const pool = getTrapPool();
+            result.replaceChildren();
+            if (!pool.length) {
+                const heading = document.createElement('h2'); heading.textContent = 'No matching results'; result.appendChild(heading);
+                const message = document.createElement('p'); message.textContent = 'Broaden one or more filters and try again.'; result.appendChild(message);
+                return;
+            }
+            const selected = pool[Math.floor(Math.random() * pool.length)];
+            const heading = document.createElement('h2'); heading.textContent = selected.name; result.appendChild(heading);
+            const meta = document.createElement('div'); meta.className = 'trap-meta';
+            const labels = [selected.category === 'trap' ? 'Trap' : 'Hazard', TRAP_TYPE_LABELS[selected.trapHazType] || selected.trapHazType, selected.tier ? `Tier ${selected.tier}` : '', selected.threat ? `${selected.threat[0].toUpperCase()}${selected.threat.slice(1)}` : '', selected.source ? `${selected.source} p. ${selected.page || '?'}` : ''].filter(Boolean);
+            labels.forEach(label => { const badge = document.createElement('span'); badge.textContent = label; meta.appendChild(badge); });
+            result.appendChild(meta);
+            appendTrapContent(result, selected.entries);
+            [['Trigger', selected.trigger], ['Effect', selected.effect], ['Countermeasures', selected.countermeasures]].forEach(([name, entries]) => {
+                if (!entries) return;
+                const section = document.createElement('section');
+                const subheading = document.createElement('h3'); subheading.textContent = name; section.appendChild(subheading);
+                appendTrapContent(section, entries); result.appendChild(section);
+            });
+        }
+
+        fetch('data/api_data/trapshazards.json')
+            .then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
+            .then(data => { TRAPS_HAZARDS_DATA = data; updateTrapFilters(); })
+            .catch(error => { document.getElementById('trapResult').innerHTML = `<h2>Could not load traps and hazards</h2><p>${error.message}</p>`; });
 
         // encounter builder tab
         // XP Table
@@ -6256,32 +6831,35 @@
                 return;
             }
 
+            const encounter = rollEnvironmentEncounter(environment, levels);
+            if (encounter) displayMonsters(encounter.monsters);
+        }
+
+        function rollEnvironmentEncounter(environment, levels) {
+            if (!ENV_ENCOUNTER_DATA || !levels.length) return null;
             const avgLevel = Math.round(levels.reduce((a, b) => a + b, 0) / levels.length);
             const envTable = ENV_ENCOUNTER_DATA.encounter.find(e => e.name.toLowerCase() === environment.toLowerCase());
 
             if (!envTable) {
-                alert("No encounter table found for this environment.");
-                return;
+                return null;
             }
 
             const levelTable = envTable.tables.find(t => avgLevel >= t.minlvl && avgLevel <= t.maxlvl);
             if (!levelTable) {
-                alert("No table found for average level in this environment.");
-                return;
+                return null;
             }
 
             const roll = Math.floor(Math.random() * 100) + 1;
             const row = levelTable.table.find(r => roll >= r.min && roll <= r.max);
 
             if (!row) {
-                alert("No result found for d100 roll.");
-                return;
+                return null;
             }
 
             console.log("Rolled:", roll, "| Result:", row.result);
 
             const monsters = parseEncounterResult(row.result);
-            displayMonsters(monsters);
+            return { monsters, result: row.result, roll };
         }
 
         function parseEncounterResult(result) {
@@ -7115,8 +7693,10 @@
                 document.getElementById('mapTokenLayer').innerHTML = '';
 
                 data.monsters.forEach(m => {
-                    monsters.push({ ...m });
-                    addMonsterToken(m);
+                    const normalized = normalizeMonsterState(m);
+                    if (normalized.hp <= 0 && !normalized.isplayer) return;
+                    monsters.push(normalized);
+                    addMonsterToken(normalized);
                 });
 
                 scheduleMapLayoutRefresh();
@@ -7159,17 +7739,20 @@
 
             // Rebuild state and tokens
             data.monsters.forEach(m => {
-                if (m.hp > 0) {
-                    monsters.push({ ...m }); // Keep shared reference
-                    addMonsterToken(m);
+                    const normalized = normalizeMonsterState(m);
+                    if (normalized.hp <= 0 && !normalized.isplayer) return;
+                    monsters.push(normalized);
+                    addMonsterToken(normalized);
 
                     // Compare HP for animation
-                    const oldHP = previousHP[m.id];
+                    const oldHP = previousHP[normalized.id];
                     if (typeof oldHP === 'number') {
-                        if (m.hp > oldHP) flashToken(m.id, 'heal');
-                        else if (m.hp < oldHP) flashToken(m.id, 'damage');
+                        if (normalized.hp > oldHP) flashToken(normalized.id, 'heal');
+                        else if (normalized.hp < oldHP) {
+                            flashToken(normalized.id, 'damage');
+                            if (oldHP > 0 && normalized.hp === 0) showTokenDeathEffect(normalized.id);
+                        }
                     }
-                }
 
             });
 
@@ -7229,6 +7812,98 @@
             data.npcs.forEach(n => npcs.push({ ...n }));
             updateNpcDropdown();
         });
+
+        const WILDERNESS_TRAVEL = {
+            "Arctic": { sights: ["Wind combs silver streamers from a field of blue ice.", "A pale aurora reveals old tracks beneath fresh snow.", "A glacier groans like a distant horn."], obstacles: ["A concealed snow shelf collapses toward a narrow crevasse.", "Whiteout winds erase the trail and chill exposed travelers.", "Thin ice blocks the direct route across a frozen lake."], finds: ["A sheltered hollow holds dry moss and signs of small game.", "The tracks lead to an abandoned stone cairn with a sealed cache.", "A warm mineral spring offers safe shelter for a short rest."] },
+            "Coastal": { sights: ["Tide pools glitter beneath wheeling gulls.", "A fog bank rolls across black cliffs and muffles the surf.", "A broken mast rises from a reef just offshore."], obstacles: ["The rising tide threatens to cut off the beach route.", "Loose shale gives way above a pounding sea.", "A territorial shoreline predator stalks the party from the rocks."], finds: ["Fresh shellfish and edible sea greens fill a secluded pool.", "A tide-washed lockbox is wedged between the rocks.", "Old marker stones reveal a safe path above the tide line."] },
+            "Desert": { sights: ["Heat haze makes distant pillars appear to float.", "Wind uncovers the tiled roof of a buried ruin.", "A line of beetles marches toward unseen water."], obstacles: ["A dust wall races across the open ground.", "Crusted earth hides a field of sucking mud.", "The landmark ahead proves to be a mirage, costing precious time."], finds: ["Animal trails converge on a shaded seep of clean water.", "A half-buried caravan cache contains intact supplies.", "A cool sandstone overhang provides an excellent campsite."] },
+            "Forest": { sights: ["Sunbeams illuminate drifting seeds beneath the canopy.", "Fresh claw marks score the bark above head height.", "An ancient tree has swallowed the remains of a stone arch."], obstacles: ["Thorny deadfall forces a noisy, exhausting detour.", "A startled beast crashes through the party's route.", "Identical game trails make the true path difficult to hold."], finds: ["The party spots edible berries, herbs, and clean running water.", "A hunter's blind overlooks a safe, defensible clearing.", "Subtle trail marks point toward a forgotten woodland shrine."] },
+            "Grassland": { sights: ["Waves of tall grass roll beneath a vast sky.", "A distant herd suddenly changes direction as one.", "Standing stones break the horizon in a deliberate line."], obstacles: ["A fast-moving brush fire crosses the intended route.", "Hidden burrows make the ground treacherous for mounts.", "Predators use the tall grass to approach unseen."], finds: ["A clear spring bubbles up beside a lone tree.", "The party finds a merchant's lost bundle in the grass.", "A rise in the land offers a commanding view of the route ahead."] },
+            "Hill": { sights: ["Low mist pools between green, wind-bent ridges.", "A ruined watchtower crowns the next hill.", "Circling ravens mark something beyond the ridge."], obstacles: ["A recent slide has carried away the narrow trail.", "Loose stones turn the steep descent into a dangerous scramble.", "A territorial creature watches from higher ground."], finds: ["A shepherd's path cuts hours from the journey.", "A limestone cleft provides water and secure shelter.", "The old watchtower contains a weathered route map."] },
+            "Mountain": { sights: ["Clouds stream below a knife-edged pass.", "An eagle's cry echoes from impossible heights.", "Chiseled steps climb toward an abandoned gate."], obstacles: ["Falling rock sweeps across the exposed trail.", "The high pass is choked with snow and ice.", "Altitude and bitter wind begin to exhaust the party."], finds: ["A marked switchback reveals a safer ascent.", "An empty way-station contains dry fuel and climbing gear.", "A mountain spring spills from a crack in the stone."] },
+            "Open Water": { sights: ["A pod of sleek shapes keeps pace beneath the surface.", "A distant sail vanishes behind a sudden bank of fog.", "Bioluminescent motes trail in the vessel's wake."], obstacles: ["A squall arrives with little warning.", "A hidden reef threatens the vessel's hull.", "An unnatural current pulls the craft away from its heading."], finds: ["Floating wreckage includes a sealed provision chest.", "Seabirds reveal the direction of nearby land.", "A favorable current carries the vessel swiftly onward."] },
+            "Swamp": { sights: ["Cypress knees rise from water covered in green fireflies.", "Bubbles follow the party without revealing their source.", "A vine-draped statue leans from the black water."], obstacles: ["The firm-looking trail dissolves into deep mud.", "Biting insects and foul water threaten exhaustion.", "A camouflaged predator blocks the only dry route."], finds: ["A raised hummock offers dry ground and useful herbs.", "Blazes cut into old trees mark a safe causeway.", "A half-sunken boat still holds a watertight chest."] },
+            "Underdark": { sights: ["Violet fungi pulse in time with distant dripping water.", "The cavern opens over a lightless chasm.", "Tool marks cover a tunnel no map records."], obstacles: ["Spores thicken the air around the only passage.", "A tremor drops stone and opens cracks underfoot.", "Predatory clicks echo from several branching tunnels."], finds: ["A clean underground stream runs through a defensible grotto.", "Phosphorescent trail signs identify the safer tunnel.", "A mineral seam and discarded pack reveal a hidden campsite."] },
+            "Underwater": { sights: ["A forest of kelp bends in the blue-green current.", "A colossal shadow passes far overhead.", "Coral has grown over the columns of a drowned road."], obstacles: ["A strong current drives the party toward jagged coral.", "Silt erupts and reduces visibility to arm's length.", "A hunting creature circles just beyond clear sight."], finds: ["A pocket of breathable air fills a small sea cave.", "The current exposes a sealed coffer among the ruins.", "Schools of fish reveal a calm and navigable channel."] },
+            "Urban": { sights: ["A sudden procession fills the street with bells and banners.", "Rain reveals old symbols painted beneath newer signs.", "A rooftop watcher disappears when noticed."], obstacles: ["A closed gate and suspicious watch patrol block the route.", "A crowd conceals a pickpocket working through the party.", "Construction and tangled alleys turn a shortcut into a delay."], finds: ["A friendly local points out a quiet and much faster route.", "A notice board carries a useful rumor and a paid opportunity.", "The party finds a reputable inn with secure stabling."] }
+        };
+
+        function pickTravelEntry(entries) { return entries[Math.floor(Math.random() * entries.length)]; }
+
+        function generateWildernessTravel() {
+            const check = Number(document.getElementById('travelSurvivalCheck').value);
+            const environment = document.getElementById('travelEnvironment').value;
+            const table = WILDERNESS_TRAVEL[environment];
+            if (!Number.isFinite(check) || check < 1) {
+                document.getElementById('travelResult').innerHTML = '<h3>Enter a valid check</h3><p>The Survival check must be 1 or higher.</p>';
+                return;
+            }
+            const outcome = check < 10
+                ? { title: 'The wilds gain the upper hand', effect: 'The party is surprised by the complication. Lose 1 hour, and the DM may call for a group save or impose one level of exhaustion if the danger is not overcome.' }
+                : check < 15
+                    ? { title: 'A difficult stretch', effect: 'The party notices the danger just in time. Overcoming it costs 30 minutes or one appropriate resource, but no one is automatically harmed.' }
+                    : check < 20
+                        ? { title: 'A sure path', effect: 'The party reads the terrain well, avoids the worst danger, and keeps its planned pace.' }
+                        : { title: 'The land reveals its secrets', effect: 'The party bypasses the complication and gains the discovery. Choose advantage on the next travel check or reduce this leg of the journey by 1 hour.' };
+            const discovery = check >= 15 ? pickTravelEntry(table.finds) : 'The opportunity passes unnoticed while the party deals with the route.';
+            const encounterChance = Math.max(10, Math.min(75, 80 - (check * 3)));
+            const encounterRoll = Math.floor(Math.random() * 100) + 1;
+            let encounterMarkup = `<div class="travel-encounter"><strong>Random encounter:</strong> None (${encounterRoll} vs ${encounterChance}% chance).</div>`;
+            if (encounterRoll <= encounterChance) {
+                const levels = document.getElementById('travelPartyLevels').value.split(',').map(value => parseInt(value.trim())).filter(level => level >= 1 && level <= 20);
+                const generated = rollEnvironmentEncounter(environment, levels);
+                if (generated) {
+                    displayMonsters(generated.monsters);
+                    const readableResult = generated.result
+                        .replace(/\{@dice ([^}]+)}/g, '$1')
+                        .replace(/\{@creature ([^}|]+)(?:\|\|[^}]*)?}/g, '$1');
+                    const sendButton = generated.monsters.length ? '<button type="button" onclick="sendEncounter()">Send Encounter to Table</button>' : '';
+                    encounterMarkup = `<div class="travel-encounter"><strong>Random encounter (d100: ${generated.roll}):</strong><br>${readableResult}<br>${sendButton}</div>`;
+                } else {
+                    encounterMarkup = '<div class="travel-encounter"><strong>Random encounter:</strong> An encounter was indicated, but no matching table exists for the supplied party levels.</div>';
+                }
+            }
+            document.getElementById('travelResult').innerHTML = `<h3>${outcome.title}</h3><dl><dt>What they see</dt><dd>${pickTravelEntry(table.sights)}</dd><dt>Travel complication</dt><dd>${pickTravelEntry(table.obstacles)}</dd><dt>What they discover</dt><dd>${discovery}</dd><dt>Travel effect (Survival ${check})</dt><dd>${outcome.effect}</dd></dl>${encounterMarkup}`;
+        }
+
+        let FORAGING_DATA = [];
+
+        function renderForagingRows(rows, selected) {
+            const output = document.getElementById('foragingOutput');
+            output.replaceChildren();
+            if (!rows.length) {
+                const message = document.createElement('p');
+                message.style.padding = '10px';
+                message.textContent = 'No foraging entries are available for this season and environment.';
+                output.appendChild(message);
+                return;
+            }
+            const table = document.createElement('table');
+            const head = table.createTHead().insertRow();
+            ['Ingredient', 'Appearance', 'Form', 'Effect', 'DC'].forEach(label => { const th = document.createElement('th'); th.textContent = label; head.appendChild(th); });
+            const body = table.createTBody();
+            rows.forEach(item => {
+                const row = body.insertRow();
+                if (item === selected) row.className = 'selected';
+                [item.names, item.appearance, item.forms, item.effect, item.dc].forEach(value => { const cell = row.insertCell(); cell.textContent = value; });
+                row.title = item.appearance;
+            });
+            output.appendChild(table);
+        }
+
+        function renderForagingTable() {
+            const season = document.getElementById('forageSeason').value;
+            const region = document.getElementById('forageRegion').value;
+            const rows = FORAGING_DATA
+                .filter(item => item.season === season && item.environment === region)
+                .sort((a, b) => a.dc - b.dc);
+            renderForagingRows(rows, null);
+        }
+
+        fetch('data/api_data/foraging.json')
+            .then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
+            .then(data => { FORAGING_DATA = data.ingredients || []; renderForagingTable(); })
+            .catch(error => { document.getElementById('foragingOutput').innerHTML = `<p style="padding:10px;">Could not load foraging data: ${error.message}</p>`; });
 
         switchSpellLevel('spell0');
         switchTab('attacksTab');

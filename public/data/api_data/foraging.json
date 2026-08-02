@@ -1,0 +1,4198 @@
+{
+  "seasons": [
+    "Summer",
+    "Autumn",
+    "Winter",
+    "Spring"
+  ],
+  "environments": [
+    "Coast",
+    "Desert",
+    "Forest",
+    "Grassland",
+    "Jungle",
+    "Mountain",
+    "Swamp",
+    "Tundra",
+    "Underdark",
+    "Urban"
+  ],
+  "ingredients": [
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Bluebottle, Man-O-War",
+      "appearance": "Floating on the water like a blue bubble with a sail, its translucent body and long stinging tail are easily stranded",
+      "forms": "Tail (Contact)",
+      "effect": "Poison (2d6/round)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Coastal Jack-Bean, Seaside Jack",
+      "appearance": "Fleshy vines trail along sand dunes, thick leaves matting the area and pink flowers popping up sporadically",
+      "forms": "Leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Yarrow, Milfoil, Littlefeather, Nosebleed, Soldier's Safety, Bloodwort, Woundwort",
+      "appearance": "Sprawling fernlike shrub explodes into bunches of tiny flowers in dozens of colours to form a floral canopy",
+      "forms": "Oil (Tonic); Whole Plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Foxgloves, Dead Men's Bells, Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "King Cobra, Hamadryad",
+      "appearance": "A characteristic dramatic hood stretches over the snake's head and part way down its striped body",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Blinded, Sleep in 1min)",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Blue Ringed Octopus, Reef Killer",
+      "appearance": "A small brown octopus usually hiding amongst a reef's rocks and coral will suddenly flare iridescent blue rings",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (Paralysed, suffocating)",
+      "dc": 19
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Bluebell, Wood Bell, Bell Bottle, Fairy Flower",
+      "appearance": "Delicate, vibrant blue flowers hang like bells from an elegant, curved stem",
+      "forms": "Bulb (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 20
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Coral Branch, Reef Rocks",
+      "appearance": "Red, bone-like porous growths settle in tight colonies to enable the formation of marine reefs",
+      "forms": "Branch (Implant)",
+      "effect": "Broken bone restorative",
+      "dc": 20
+    },
+    {
+      "season": "Summer",
+      "environment": "Coast",
+      "names": "Pearl",
+      "appearance": "Irregular iridescent orbs in white, gold, black, and any number of other opalesque colours",
+      "forms": "Whole pearl (Powder)",
+      "effect": "Blindness curative; Antidote (Contact poisons)",
+      "dc": 22
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Coachwhip, Candlewood, Desert Coral, Slimwood",
+      "appearance": "Appearing as a careful collection of dead sticks until rainfall revives its green body, topped with crimson flowers",
+      "forms": "Flowers, roots (Salve); Flowers, bark (Bath)",
+      "effect": "Healing (4d4 + 4); Healing (1L Exhaustion)",
+      "dc": 12
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Butterfly Weed, Fluxweed, Windroot",
+      "appearance": "Bees and butterflies hover around the orange and yellow blossoms and long pointed leaves",
+      "forms": "Nectar (Injury)",
+      "effect": "Poison (1d6/round, Poisoned)",
+      "dc": 13
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Jojoba, Pignut, Wild Hazel",
+      "appearance": "Broad, waxy leaves stick up like the plates on a stegosaurus, guarding egg shaped nuts which brown over time",
+      "forms": "Nut (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 13
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Curlycup, Gumweed",
+      "appearance": "Tangled green shrub of spiked bulbs which burst into small, bright yellow flowers",
+      "forms": "Flower buds (Tonic); Leaves, flowers (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Aloe Vera",
+      "appearance": "Spiked shards of succulent, each fang of which is lined with a thin serrated edging",
+      "forms": "Jelly (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Joint Pine",
+      "appearance": "A shrub easily mistaken for big, tough clumps of tall, spiny grass",
+      "forms": "Stems (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Arid Monitor, Climbing Monitor",
+      "appearance": "A long, mottled grey monitor lizard which scrambles away up trees or cliffs",
+      "forms": "Skin (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Spitting Fat-Tail, Thick-Tail Scorpion",
+      "appearance": "A dark, wide armoured body gives way to small pale pincers at the head",
+      "forms": "Venom (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Deathstalker, Gold Sand Scorpion",
+      "appearance": "A flattened tan body blends in easily to the sand and stone of a desert",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Desert Rose, Kudu, Sand Star",
+      "appearance": "White star-shaped flowers with bold pink borders droop from succulent stems along with leathery, dark green leaves",
+      "forms": "Sap (Injury)",
+      "effect": "Poison (2d6, 1L Exhaustion/round)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Rattlesnake, Diamondback",
+      "appearance": "Brown, vicious looking viper with a hideous rattle for a tail, which it shakes before striking with deadly speed",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (Blinded, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Gila Monster",
+      "appearance": "A heavy, sluggish lizard covered in orange and black markings, slowly drags itself between places of shade",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6, 1d6/round, poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Redback Spider, Black Widow",
+      "appearance": "A sharp and threatening looking black spider with a striking red hourglass mark on the abdomen",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6, Poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Desert",
+      "names": "Bark Scorpion",
+      "appearance": "A waxy, yellow scorpion hunts at night holding its stinger high, ready to strike any pray that strays into its path",
+      "forms": "Venom (Tonic); Venom (Injury)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Attack disadvantage)",
+      "dc": 22
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Foxgloves, Dead Men's Bells, Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 12
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 13
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "A thick carpet of green cloaks the forest floor and envelopes the rotting wood of fallen trees",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Stone Mint, Frost Mint",
+      "appearance": "Winding stalks laddered with even pairs of leaves, giving way to sparks of lilac coloured flowers near the top",
+      "forms": "Leaves (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "False Earthstar",
+      "appearance": "Small fungal stars on the forest floor trace the path of tree roots beneath the earth",
+      "forms": "Whole fungus (Salve); Whole fungus (Powder)",
+      "effect": "Healing (4d4 + 4); Stabilise the dying",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Heal-All, Self-Help, Carpenter's Herb, Blue Curls",
+      "appearance": "Tiny white or purple flowers cluster around a cylindrical core, fringed by a dramatic collar of two pointed leaves",
+      "forms": "Flowers (Tonic); Flowers, leaves (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Bluebell, Wood Bell, Bell Bottle, Fairy Flower",
+      "appearance": "Delicate, vibrant blue flowers hang like bells from an elegant, curved stem",
+      "forms": "Bulb (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Creeping Charlie, Ground Ivy, Catsfoot, Field Balm, Gil-Over-The-Ground, Run-away-Robin",
+      "appearance": "Crawling to cover every inch of ground in a blanket of dark, fan-shaped leaves, dotted with the blue of minute flowers",
+      "forms": "Leaves (Wash); Leaves (Oil)",
+      "effect": "Blindness curative; Deafness curative",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Lachesis Viper, Bushmaster",
+      "appearance": "An orange-brown snake with bold black diamonds, it shakes its tail like a rattlesnake without a rattle when angry",
+      "forms": "Venom (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Enchanter's Nightshade",
+      "appearance": "Minute white flowers stand, barely visible, above dark pointed leaves, close to the ground",
+      "forms": "Whole plant (Wash)",
+      "effect": "Major wound restorative",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Death Adder",
+      "appearance": "A thick bodied snake in bands of black, brown, and orange, shockingly adept at disappearing into the undergrowth",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (1d6/round, Paralysed)",
+      "dc": 19
+    },
+    {
+      "season": "Summer",
+      "environment": "Forest",
+      "names": "Fraxinella, Burning Bush, Gas Plant",
+      "appearance": "Tall spikes of white flowers flag the location of the volatile leafy bush",
+      "forms": "Flowers, leaves (Contact)",
+      "effect": "Ignites in sunlight",
+      "dc": 20
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "Dandelion",
+      "appearance": "Bright yellow flowerheads and fluffy seed orbs ready to be blown off, lifting up from a bed of weedy jagged leaves",
+      "forms": "Roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 12
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "Curlycup, Gumweed",
+      "appearance": "Tangled green shrub of spiked bulbs which burst into small, bright yellow flowers",
+      "forms": "Flower buds (Tonic), Leaves, flowers (Salve)",
+      "effect": "Healing (2d4 + 2) Healing (4d4 + 4)",
+      "dc": 12
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "Blackroot, Bowman's Plant, Culversphysic",
+      "appearance": "Like spears raised high the lilac flowers taper to a point above sharp leaves",
+      "forms": "Root (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 13
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "Heal-All, Self-Help, Carpenter's Herb, Blue Curls",
+      "appearance": "Tiny white or purple flowers cluster around a cylindrical core, fringed by a dramatic collar of two pointed leaves",
+      "forms": "Flowers (Tonic), Flowers, leaves (Salve)",
+      "effect": "Healing (2d4 + 2) Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "John's Wort, Knight's Friend",
+      "appearance": "Bright star-like blossoms of yellow and gnarled purple fruit",
+      "forms": "Flowers, buds (Salve)",
+      "effect": "Heahing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "Yarrow, Milfoil, Littlefeather, Nosebleed, Soldier's Safety, Bloodwort, Woundwort",
+      "appearance": "Sprawling fernlike shrub explodes into bunches of tiny flowers in dozens of colours to form a floral canopy",
+      "forms": "Oil (Tonic), Whole Plant (Salve)",
+      "effect": "Healing (2d4 + 2) Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "Big Bluestem, Bluejoint",
+      "appearance": "Tall bunches of reedy grass bunched into stalks with red, blue, or purple hues when observed from a distance",
+      "forms": "Leaves, roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "Foxgloves, Dead Men's Bells, Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "Death Adder",
+      "appearance": "A thick bodied snake in bands of black, brown, and orange, shockingly adept at disappearing into the undergrowth",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (1d6/round, paralysed)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Grassland",
+      "names": "Strychnine Tree, Snakewood, Humble Button",
+      "appearance": "A short, thick, crooked, pale tree trunk topped with a full dome of leaves and hard orange fruit",
+      "forms": "Fruit seeds (Inhaled)",
+      "effect": "Poison (4d6/round, paralysed)",
+      "dc": 20
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Passion Vine",
+      "appearance": "A leafy climber bears exotic purple and yellow flowers to match its strange bulbous, purple fruit",
+      "forms": "Flowers (Salve); Flowers (Ingested)",
+      "effect": "Healing (4d4 + 4); Draught (Sleep)",
+      "dc": 13
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Oleander, Nerium",
+      "appearance": "Pink pinwheel flowers stand out from dark heavy leaves on a small tree",
+      "forms": "Sap (Contact); Wood (Inhaled)",
+      "effect": "Poison (Blinded); Poison (Poisoned)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Velvetleaf, Moonseed",
+      "appearance": "Long woody vines stretching between trees, bearing heart-shaped leaves and small dark seed pods",
+      "forms": "Seeds (Injury)",
+      "effect": "Poison (Stunned)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Cat's Claw, Wait-A-Minute",
+      "appearance": "A woody vine spreads across the path and up the trees, hooked thorns outstretched ready to catch anything in reach",
+      "forms": "Bark, roots (Powder)",
+      "effect": "Stabilise the dying",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Angel's Trumpet, Feingold, Devil's Breath Plant",
+      "appearance": "Fragrant, pale-yellow blooms edged in red hang like pendants from an elegant, winding tree",
+      "forms": "Seeds (Inhaled)",
+      "effect": "Poison (As Suggestion spell)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "False Earthstar",
+      "appearance": "Small fungal stars on the forest floor trace the path of tree roots beneath the earth",
+      "forms": "Whole fungus (Salve); Whole fungus (Powder)",
+      "effect": "Healing (4d4 + 4); Stabilise the dying",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Lantern Stinkhorn, Lizard's Claw",
+      "appearance": "A slimy pink rocket stinking of rotting flesh and excrement gets even worse when it splits into several reaching tentacles",
+      "forms": "Whole fungus (Inhaled)",
+      "effect": "Poison (Target spends turn retching)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Arid Monitor, Climbing Monitor",
+      "appearance": "A long, mottled grey monitor lizard which scrambles away up trees or cliffs",
+      "forms": "Skin (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Honeysuckle",
+      "appearance": "Blossoms collect like hummingbirds among the leaves and vines in a variety of bright colours",
+      "forms": "Leaves, Seeds (Tonic); Flowers (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Golden Frog, Poison Arrow Frog, Yellow Blackfoot",
+      "appearance": "A bright yellow amphibian with a black underside, so small that it can still be easily missed in the rainforest",
+      "forms": "Skin (Injury)",
+      "effect": "Poison (Paralysed, death in 3min)",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Miner's Moonlight, Moonshine Mushroom",
+      "appearance": "Climbing in steps up the tree trunk like a natural ladder are orange gilled fungal bodies",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Okay Gecko, Uh-Oh, Fuck-You Lizard",
+      "appearance": "With a call like a squeaky toy, the red-speckled turquoise of its body can change colours to blend in with its surroundings",
+      "forms": "Whole lizard (Pill); Whole lizard (Wine)",
+      "effect": "Healing (8d8 + 8); Major wound restorative",
+      "dc": 20
+    },
+    {
+      "season": "Summer",
+      "environment": "Jungle",
+      "names": "Tiger's Milk Mushroom",
+      "appearance": "A strange looking toadstool with a flattened brown cap sitting atop a thin, squiggly stem",
+      "forms": "Whole fungus (Pill); Whole fungus (Ingested); Whole fungus (Dressing)",
+      "effect": "Healing (8d4 + 8); Antidote (Ingested poisons); Major wound curative",
+      "dc": 22
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Curlycup, Gumweed",
+      "appearance": "Tangled green shrub of spiked bulbs which burst into small, bright yellow flowers",
+      "forms": "Flower buds (Tonic); Leaves, flowers (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Stone Mint, Frost Mint",
+      "appearance": "Winding stalks laddered with even pairs of leaves, giving way to sparks of lilac coloured flowers near the top",
+      "forms": "Leaves (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Wolfsbane, Monkshood, Devil's Helmet, Love's Chariot, Aconite",
+      "appearance": "Dark purple flowers burst and curl, foxglove like, from all sides of a tall central stalk",
+      "forms": "Whole Plant (Contact); Roots (Ingested)",
+      "effect": "Poison (2d6/round); Poison (Death in 4hrs)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Foxgloves, Dead Men's Bells, Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Funnel-Web Spider, Atrax",
+      "appearance": "Strong, shining legs branch off a fat black body, the spider squeezes itself into a small ground burrow to hide",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Lachesis Viper, Bushmaster",
+      "appearance": "An orange-brown snake with bold black diamonds, it shakes its tail like a rattlesnake without a rattle when angry",
+      "forms": "Venom (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Jojoba, Pignut, Wild Hazel",
+      "appearance": "Broad, waxy leaves stick up like the plates on a stegosaurus, guarding egg shaped nuts which brown over time",
+      "forms": "Nut (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Eyebright, Gladness",
+      "appearance": "Hardy green stems host small jagged leaves and petit, pale-purple and white flowers, rising above the grass",
+      "forms": "Stem (Tonic); Leaves, flowers (Wash)",
+      "effect": "Healing (2d4 + 2); Blindness curative",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Hooded Shrike, Black-Headed Pitohui",
+      "appearance": "A striking combination of black and orange plumage flutters between trees",
+      "forms": "Skin, feathers (Contact)",
+      "effect": "Poison (1d6/round)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Rattlesnake, Diamondback",
+      "appearance": "Brown, vicious looking viper with a hideous rattle for a tail, which it shakes before striking with deadly speed",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (Blinded, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Gila Monster",
+      "appearance": "A heavy, sluggish lizard covered in orange and black markings, slowly drags itself between places of shade",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6, 1d6/round, poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "King Cobra, Hamadryad",
+      "appearance": "A characteristic dramatic hood stretches over the snake's head and part way down its striped body",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Blinded, Sleep in 1min)",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Mountain",
+      "names": "Mountain Dittany, Erontas, Love's Promise",
+      "appearance": "Velvety silver small, round leaves and pink flowers, growing wild on only the most difficult to reach cliffsides and gorges",
+      "forms": "Leaves (Elixir)",
+      "effect": "Healing (10d4 + 20)",
+      "dc": 25
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 12
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 13
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Velvetleaf, Moonseed",
+      "appearance": "Long woody vines stretching between trees, bearing heart-shaped leaves and small dark seed pods",
+      "forms": "Seeds (Injury)",
+      "effect": "Poison (Stunned)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "A thick layer of yellow-green peat blankets the surface of the water, disguising it as though it were a grassy clearing",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Vervain, Simpler's Joy, Holy Herb, Wild Hyssop",
+      "appearance": "A number of elegant violet flowered spikes branch up from thin wooden stems",
+      "forms": "Whole plant (Tonic)",
+      "effect": "Healing (2d4 +2)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Paperbark, Punk Tree",
+      "appearance": "The trunk and branches twist unpredictably, the pale bark peeling off in thin, silky sheets",
+      "forms": "Bark, oil (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Willow, Sallow, Salix",
+      "appearance": "A twisting trunk and blossoms that droop from branches, bursting forth before the leaves grow back in",
+      "forms": "Bark (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Swamp",
+      "names": "Water Hemlock, Muskrat Weed",
+      "appearance": "A spindly knee-high plant with distinct tufts of tiny white flowers growing by the waterside",
+      "forms": "Whole plant (Injury)",
+      "effect": "Poison (Poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Blackroot, Bowman's Plant, Culversphysic",
+      "appearance": "Like spears raised high the lilac flowers taper to a point above sharp leaves",
+      "forms": "Root (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Eyebright, Gladness",
+      "appearance": "Hardy green stems host small jagged leaves and petit, pale-purple and white flowers, rising above the grass",
+      "forms": "Stem (Tonic); Leaves, flowers (Wash)",
+      "effect": "Healing (2d4 + 2); Blindness curative",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Wormwood, Sagewort, Absinthe",
+      "appearance": "A stunted flowering weed low to the ground with round yellow buds not quite open enough to be regarded flowers",
+      "forms": "Leaves (Salve); Oil (Ingested)",
+      "effect": "Healing (4d4 + 4); Poison (2d6)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Deer Lichen, Caribou Moss",
+      "appearance": "Silver green lichen in tangled lumps huddling together into larger mounds like nature's dust bunnies",
+      "forms": "Juice (Tonic); Whole fungus (Pill)",
+      "effect": "Healing (2d4 + 2); Healing (8d4 + 8)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Pasque Flower, Wind Flower",
+      "appearance": "Stars of pink and purple bowed in the frost open to the sunlight to soak up what they can, fuzzy fruit like something from Dr Seuss",
+      "forms": "Juice (Draught)",
+      "effect": "Poison (Sleep in 1min)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Bearberry Bush",
+      "appearance": "Growing low to the ground to keep out of the wind, bright green leaves and shiny, red berries attract critters",
+      "forms": "Leaves (Tonic); Berries (Ingested)",
+      "effect": "Healing (2d4 + 2); Poison (Deafened, poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Willow, Sallow, Salix",
+      "appearance": "A much smaller twisting trunk than usually displayed by a tree of the species, its leaves hang in mournful tresses",
+      "forms": "Bark (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Alder",
+      "appearance": "Gnarled lumpy trunk spreading uneven branches over an otherwise bare landscape",
+      "forms": "Bark (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "Rolling mounds of the yellow-green moss hide amongst the toughened grass of the tundra",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Beaver",
+      "appearance": "A large structure built from branches obstructs the flow of water as round brown rodents with large flat tails busy themselves",
+      "forms": "Testicles (Pill)",
+      "effect": "Healing (8d4 + 8)",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Tundra",
+      "names": "Wolfsbane, Monkshood, Devil's Helmet, Love's Chariot, Aconite",
+      "appearance": "Dark purple flowers burst and curl, foxglove like, from all sides of a tall central stalk",
+      "forms": "Whole Plant (Contact); Roots (Ingested)",
+      "effect": "Poison (2d6/round); Poison (Death in 4hrs)",
+      "dc": 20
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "Miner's Moonlight, Moonshine Mushroom",
+      "appearance": "Climbing in steps up the cave wall in the dark are faintly green glowing half-cup fungal bodies",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "Devil's Fingers, Octopus Stinkhorn, Illithid Egg",
+      "appearance": "A round white bulb erupts into pale meaty tentacles which attract insects to absorb in their stinking slime",
+      "forms": "Whole fungus (Inhaled)",
+      "effect": "Poison (Target spends turn retching)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "Ghost Fungus",
+      "appearance": "A funnel shaped mushroom shining brightly enough in the dark to read by",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "Witch's Heart, Red Cage, Lattice Stinkhorn",
+      "appearance": "A supposedly carnivorous hollow cage of pink, fleshy fungus riddled with holes that resemble bloody wounds",
+      "forms": "Whole fungus (Contact); Whole fungus (Ingested)",
+      "effect": "Poison (2d6/round); Poison (3d6, Stunned)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "False Earthstar",
+      "appearance": "Small fungal stars clinging to the damp of boulders like barnacles to a ship",
+      "forms": "Whole fungus (Salve); Whole fungus (Powder)",
+      "effect": "Healing (4d4 + 4); Stabilise the dying",
+      "dc": 18
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "Arsenic Ore, Mispickel",
+      "appearance": "Flaking silver crystalline rock which releases a garlic smell when struck",
+      "forms": "Mineral (Inhaled)",
+      "effect": "Poison (Poisoned, sleep in 10min, death in 3days)",
+      "dc": 19
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "Blue Vitriol, Chalcanthite",
+      "appearance": "Brilliant blue gems growing in tight knit threads from copper deposits, dissolves quickly in liquid",
+      "forms": "Mineral (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "Okay Gecko, Uh-Oh, Fuck-You Lizard",
+      "appearance": "With a call like a squeaky toy, the red-speckled turquoise of its body can change colours to blend in with its surroundings",
+      "forms": "Whole lizard (Pill); Whole lizard (Wine)",
+      "effect": "Healing (8d8 + 8); Major wound restorative",
+      "dc": 20
+    },
+    {
+      "season": "Summer",
+      "environment": "Underdark",
+      "names": "Cinnabar, Dragon's Blood",
+      "appearance": "Nuggets of gleaming red crystal stick out from the other gem clusters in chunks",
+      "forms": "Mineral (Contact)",
+      "effect": "Poison (Poisoned)",
+      "dc": 22
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Dandelion",
+      "appearance": "Bright yellow flowerheads and fluffy seed orbs ready to be blown off, above a weedy bed of jagged leaves",
+      "forms": "Roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 12
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Creeping Charlie, Ground Ivy, Catsfoot, Field Balm, Gil-Over-The-Ground, Run-away-Robin",
+      "appearance": "Crawling to cover every inch of ground in a blanket of dark, fan-shaped leaves, dotted with the blue of minute flowers",
+      "forms": "Leaves (Wash); Leaves (Oil)",
+      "effect": "Blindness curative; Deafness curative",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Scotch Marigold, Sun Glow, Jane Harmony, Ruddles",
+      "appearance": "Brilliant yellow and orange puffballs on weedlike green stems",
+      "forms": "Leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Vervain, Simpler's Joy, Holy Herb, Wild Hyssop",
+      "appearance": "A number of elegant violet flowered spikes branch up from thin wooden stems",
+      "forms": "Whole plant (Tonic)",
+      "effect": "Healing (2d4 +2)",
+      "dc": 14
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Foxgloves, Dead Men's Bells, Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Redback Spider, Black Widow",
+      "appearance": "A sharp and threatening looking black spider with a striking red hourglass mark on the abdomen",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6, Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Cone Flower, Echinacea, Hedgehog Flower",
+      "appearance": "Wide circles of purple stand tall, holding aloft spiny, conical centres",
+      "forms": "Whole plant (Tonic); Whole plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Fer-de-Lance, Spearhead, Yellow Beard",
+      "appearance": "Black and brown markings are defined into tessellating diamonds by bright white borders and dark spots",
+      "forms": "Venom (Injured)",
+      "effect": "Poison (4d6, Poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Summer",
+      "environment": "Urban",
+      "names": "Okay Gecko, Uh-Oh, Fuck-You Lizard",
+      "appearance": "With a call like a squeaky toy, the red-speckled turquoise of its body can change colours to blend in with its surroundings",
+      "forms": "Whole lizard (Pill); Whole lizard (Wine)",
+      "effect": "Healing (8d8 + 8); Major wound restorative",
+      "dc": 23
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Coastal Jack-Bean, Seaside Jack",
+      "appearance": "Fleshy vines trail along sand dunes, thick leaves matting the area and pink flowers popping up sporadically",
+      "forms": "Leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Bluebottle, Man-O-War",
+      "appearance": "Floating on the water like a blue bubble with a sail, its translucent body and long stinging tail are easily stranded ashore",
+      "forms": "Tail (Contact)",
+      "effect": "Poison (2d6/round)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Staggerweed, Stagger Mint",
+      "appearance": "Tiny unassuming white flowers stick up from lightly fuzzy stalks",
+      "forms": "Whole Plant (Pill)",
+      "effect": "Healing (8d4 + 8)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Yarrow, Milfoil, Littlefeather, Nosebleed, Soldier's Safety, Bloodwort, Woundwort",
+      "appearance": "Sprawling fernlike shrub explodes into bunches of tiny flowers in dozens of colours to form a floral canopy",
+      "forms": "Oil (Tonic); Whole Plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "King Cobra, Hamadryad",
+      "appearance": "A characteristic dramatic hood stretches over the snake's head and part way down its striped body",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Blinded, Sleep in 1min)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Mugwort, Felon Herb, Sailor's Tobacco, Artemisia",
+      "appearance": "Broad sprawling ground cover, feathery green leaves with silvery undersides hide dark purplish stems from view",
+      "forms": "Leaves (Salve); Leaves (Pill); Roots (Decoction)",
+      "effect": "Healing (4d4 + 4); Healing (8d4 + 8); Healing (1L Exhaust.)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Lion's Mane Jellyfish, Hair Jelly",
+      "appearance": "A massive translucent peach presence in the cold waters, thousands of stringy smoky tentacles filling the space",
+      "forms": "Venom (Contact)",
+      "effect": "Poison (1d6/round)",
+      "dc": 19
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Coral Branch, Reef Rocks",
+      "appearance": "Red, bone-like porous growths settle in tight colonies to enable the formation of marine reefs",
+      "forms": "Whole branch (Ash)",
+      "effect": "Broken bone restorative",
+      "dc": 20
+    },
+    {
+      "season": "Autumn",
+      "environment": "Coast",
+      "names": "Pearl",
+      "appearance": "Irregular iridescent orbs in white, gold, black, and any number of other opalesque colours",
+      "forms": "Whole pearl (Powder)",
+      "effect": "Antidote (Contact poisons), Blindness curative",
+      "dc": 22
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Coachwhip, Candlewood, Slimwood, Desert Coral",
+      "appearance": "Appearing as a careful collection of dead sticks until rainfall revives its green body, topped with crimson flowers",
+      "forms": "Flowers, roots (Salve); Flowers, bark (Bath)",
+      "effect": "Healing (4d4 + 4); Healing (1L Exhaustion)",
+      "dc": 12
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Aloe Vera",
+      "appearance": "Spiked shards of succulent, each fang of which is lined with a thin serrated edging",
+      "forms": "Jelly (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Joint Pine",
+      "appearance": "A shrub easily mistaken for big, tough clumps of tall, spiny grass",
+      "forms": "Stems (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Arid Monitor, Climbing Monitor",
+      "appearance": "A long, mottled grey monitor lizard which scrambles away up trees or cliffs",
+      "forms": "Skin (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Butterfly Weed, Fluxweed, Windroot",
+      "appearance": "Bees and butterflies hover around the orange and yellow blossoms and long pointed leaves",
+      "forms": "Nectar (Injury)",
+      "effect": "Poison (1d6/round, Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Spitting Fat-Tail, Thick-Tail Scorpion",
+      "appearance": "A dark, wide armoured body gives way to small pale pincers at the head",
+      "forms": "Venom (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Deathstalker, Gold Sand Scorpion",
+      "appearance": "A flattened tan body blends in easily to the sand and stone of a desert",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Rattlesnake, Diamondback",
+      "appearance": "Brown, vicious looking viper with a hideous rattle for a tail, which it shakes before striking with deadly speed",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (Blinded, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Desert Rose, Kudu, Sand Star",
+      "appearance": "White star-shaped flowers with bold pink borders droop from succulent stems along with leathery, dark leaves",
+      "forms": "Sap (Injury)",
+      "effect": "Poison (2d6, 1L Exhaustion/Round)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Gila Monster",
+      "appearance": "A heavy, sluggish lizard covered in orange and black markings, slowly drags itself between places of shade",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6, 1d6/round, poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Redback Spider, Black Widow",
+      "appearance": "A sharp and threatening looking black spider with a striking red hourglass mark on the abdomen",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6, Poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Desert",
+      "names": "Bark Scorpion",
+      "appearance": "A waxy, yellow scorpion creeping about at night holding its stinger high, ready to strike any pray that strays into its path",
+      "forms": "Venom (Tonic); Venom (Injury)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Attack disadvantage)",
+      "dc": 20
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 13
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Destroying Angel, Death Cap, Deadly Amonita",
+      "appearance": "A city of sweet-smelling mushrooms growing at the base of hardwood trees, some heads rounded, some flat, all stained brown in the centre and paling at the fringes",
+      "forms": "Poison (Inhaled); Whole fungus (Ingested)",
+      "effect": "Poison (2d6/round); Poison (1L Exh./12hrs)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "A thick carpet of green cloaks the forest floor and envelopes the rotting wood of fallen trees",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Sweetroot, Sweet Cicely",
+      "appearance": "Long, straight stems lift delicate clusters of white flowers above an unassuming leafy shrub",
+      "forms": "Roots (Tonic); Roots (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Autumn Crocus, Naked Ladies, Meadow Saffron",
+      "appearance": "Pastel, cup-shaped flowers in pink, white and purple appear out of the ground long before their leaves join them",
+      "forms": "Flowers, seeds (Ingested)",
+      "effect": "Poison (Incapacitated in 12hrs)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "White Baneberry, Doll's Eyes",
+      "appearance": "White and black berries bulge like alien eyes, growing from blood red stems by the hundreds",
+      "forms": "Berries (Ingested)",
+      "effect": "Poison (Unconscious in 1min, death in 6hrs)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Beehive",
+      "appearance": "The buzzing of the hive draws attention to a partially hollow trunk and guides steadily to its golden core",
+      "forms": "Wax, honey (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Heal-All, Self-Help, Carpenter's Herb, Blue Curls",
+      "appearance": "Tiny white or purple flowers cluster around a cylindrical core, fringed by a dramatic collar of two pointed leaves",
+      "forms": "Flowers (Tonic); Flowers, leaves (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Primrose",
+      "appearance": "Small dome of green leaves and butter coloured petals",
+      "forms": "Flowers (Wine)",
+      "effect": "Major wound restorative",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Belladonna, Deadly Nightshade",
+      "appearance": "Dull purple flowers and large pointed leaves are outshone by juicy, appealing black berries",
+      "forms": "Berries (Ingested)",
+      "effect": "Poison (Paralysed, death in 4hrs)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Fly Agaric, Fairy Stool",
+      "appearance": "A wide spread ring of bright red toadstools with white polka dots mark a circle on the forest floor",
+      "forms": "Whole fungus (Ingested); Whole fungus (Inhaled)",
+      "effect": "Poison (Poisoned, Sleep in 5min); Poison (Sleep)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Forest",
+      "names": "Death Adder",
+      "appearance": "A thick bodied snake in bands of black, brown, and orange, shockingly adept at disappearing into the undergrowth",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (1d6/round, Paralysed)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Thornapple, Moonflower, Jimsonweed, Devil's Trumpet, Hell's Bells, Stinkweed",
+      "appearance": "Ghostly pinwheel blooms of white distract from jagged, threatening leaves and large, dangerously spiny fruit pods",
+      "forms": "Fruit seeds, roots (Ingested)",
+      "effect": "Poison (Blinded, Stunned)",
+      "dc": 13
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Hellebore, Winter Rose",
+      "appearance": "Small muted flowers in pinks, greys, blues and blacks, standing proud from the frost on hardy stems with twisted leaves",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Autumn Crocus, Naked Ladies, Meadow Saffron",
+      "appearance": "Pastel, cup-shaped flowers in pink, white and purple appear out of the turf long before their leaves join them",
+      "forms": "Flowers, seeds (Ingested)",
+      "effect": "Poison (Incapacitated in 12hrs)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Big Bluestem, Bluejoint",
+      "appearance": "Tall bunches of reedy grass bunched into stalks with red, blue, or purple hues when observed from a distance",
+      "forms": "Leaves, roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Heal-All, Self-Help, Carpenter's Herb, Blue Curls",
+      "appearance": "Tiny white or purple flowers cluster around a cylindrical core, fringed by a dramatic collar of two pointed leaves",
+      "forms": "Flowers (Tonic); Flowers, leaves (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Blackroot, Bowman's Plant, Culversphysic",
+      "appearance": "Like spears raised high the lilac flowers taper to a point above sharp leaves",
+      "forms": "Root (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Pennyroyal, Pudding Grass",
+      "appearance": "Rings of fluffy pink or white flowers climb steadily up a sturdy central stem, giving off a minty odor",
+      "forms": "Leaves (Tonic); Oil (Ingested)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Incapacitated)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Death Adder",
+      "appearance": "A thick bodied snake in bands of black, brown, and orange, shockingly adept at disappearing into the undergrowth",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (1d6/round, Paralysed)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Yarrow, Milfoil, Littlefeather, Nosebleed, Soldier's Safety, Bloodwort, Woundwort",
+      "appearance": "Sprawling fernlike shrub explodes into bunches of tiny flowers in dozens of colours to form a floral canopy",
+      "forms": "Oil (Tonic); Whole Plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Mugwort, Felon Herb, Sailor's Tobacco, Artemisia",
+      "appearance": "Broad sprawling ground cover, feathery green leaves with silvery undersides hide dark purplish stems from view",
+      "forms": "Leaves (Salve); Leaves (Pill); Roots (Decoction)",
+      "effect": "Healing (4d4 + 4); Healing (8d4 + 8); Healing (1L Exhaustion)",
+      "dc": 19
+    },
+    {
+      "season": "Autumn",
+      "environment": "Grassland",
+      "names": "Strychnine Tree, Snakewood, Humble Button",
+      "appearance": "A short, thick, crooked, pale tree trunk topped with a full dome of leaves and hard orange fruit",
+      "forms": "Fruit seeds (Inhaled)",
+      "effect": "Poison (5d6/round, paralysed)",
+      "dc": 20
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Arrowroot, Obedience Plant",
+      "appearance": "Lush leafy shafts grow straight out of the rainforest floor like a bright green arrow fired directly into the ground",
+      "forms": "Root (Salve); Root (Poultice)",
+      "effect": "Healing (4d4 + 4); Antidote (Injury Poisons)",
+      "dc": 13
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Velvetleaf, Moonseed",
+      "appearance": "Long woody vines stretching between trees, bearing heart-shaped leaves and small dark seed pods",
+      "forms": "Seeds (Injury)",
+      "effect": "Poison (Stunned)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Ghost Fungus",
+      "appearance": "A funnel shaped mushroom shining brightly enough in the dark to read by",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Cat's Claw, Wait-A-Minute",
+      "appearance": "A woody vine spreads across the path and up the trees, hooked thorns outstretched ready to catch anything in reach",
+      "forms": "Bark, roots (Powder)",
+      "effect": "Stabilise the dying",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Oleander, Nerium",
+      "appearance": "Pink pinwheel flowers stand out from dark heavy leaves on a small tree",
+      "forms": "Sap (Contact); Wood (Inhaled)",
+      "effect": "Poison (Blinded); Poison (Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Lantern Stinkhorn, Lizard's Claw",
+      "appearance": "A slimy pink rocket stinking of rotting flesh and excrement gets even worse when it splits into several reaching tentacles",
+      "forms": "Whole fungus (Inhaled)",
+      "effect": "Poison (Target spends turn retching)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Arid Monitor, Climbing Monitor",
+      "appearance": "A long, mottled grey monitor lizard which scrambles away up trees or cliffs",
+      "forms": "Skin (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "False Earthstar",
+      "appearance": "Small fungal stars on the forest floor trace the path of tree roots beneath the earth",
+      "forms": "Whole fungus (Salve); Whole fungus (Powder)",
+      "effect": "Healing (4d4 + 4); Stabilise the dying",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Strawberry Dart Frog, Rainbow Dart Frog",
+      "appearance": "Tiny amphibians ranging in colour from vivid blues to greens with polka dots to panda splotches to bright reds with inky black legs",
+      "forms": "Skin (Contact); Skin (Ingested)",
+      "effect": "Poison (Poisoned); Poison (Paralysed)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Golden Frog, Poison Arrow Frog, Yellow Blackfoot",
+      "appearance": "A bright yellow amphibian with a black underside, so small that it can still be easily missed in the rainforest",
+      "forms": "Skin (Injury)",
+      "effect": "Poison (Paralysed, death in 3min)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Lantern Chilli, Bonnet Pepper",
+      "appearance": "Shining fruitsranging from yellow to red hang like pendants from a low bush",
+      "forms": "Powdered seeds (Inhaled)",
+      "effect": "Poison (Blinded)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Yellow-Banded Dart Frog, Bumblebee Frog",
+      "appearance": "Bold stripes of black and yellow warn predators of the poison in its slimy skin",
+      "forms": "Skin (Injury)",
+      "effect": "Poison (2d6/round, Paralysed)",
+      "dc": 19
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Red-Tailed Scorpion, Red Sting, Hot Sting",
+      "appearance": "Nocturnal hunter difficult to find but easily identified by the bright red sting on the end of its segmented tail",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6/round, poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Autumn",
+      "environment": "Jungle",
+      "names": "Tiger's Milk Mushroom",
+      "appearance": "A strange looking toadstool with a flattened brown cap sitting atop a thin, squiggly stem",
+      "forms": "Whole fungus (Pill); Whole fungus (Ingested); Whole fungus (Dressing)",
+      "effect": "Healing (8d4 + 8); Antidote (Ingested poisons); Major wound curative",
+      "dc": 22
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Savin Juniper",
+      "appearance": "Mounded shrub of pine-like foliage in blue-green hues",
+      "forms": "Oil (Contact)",
+      "effect": "Poison (1d6/round)",
+      "dc": 13
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Lachesis Viper, Bushmaster",
+      "appearance": "An orange-brown snake with bold black diamonds, it shakes its tail like a rattlesnake without a rattle when angry",
+      "forms": "Venom (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Beehive",
+      "appearance": "The buzzing of the hive draws attention to the crevice between rocks and guides steadily to its golden core",
+      "forms": "Wax, honey (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Wolfsbane, Monkshood, Devil's Helmet, Love's Chariot, Aconite",
+      "appearance": "Dark purple flowers burst and curl, foxglove like, from all sides of a tall central stalk",
+      "forms": "Whole Plant (Contact); Roots (Ingested)",
+      "effect": "Poison (2d6/round); Poison (Death in4hrs)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Cone Flower, Echinacea, Hedgehog Flower",
+      "appearance": "Wide circles of purple stand tall, holding aloft spiny, conical centres",
+      "forms": "Whole plant (Tonic); Whole plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Funnel-Web Spider, Atrax",
+      "appearance": "Strong, shining legs branch off a fat black body, the spider squeezes itself into a small ground burrow to hide",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Hooded Shrike, Black-Headed Pitohui",
+      "appearance": "A striking combination of black and orange plumage flutters between trees",
+      "forms": "Skin, feathers (Contact)",
+      "effect": "Poison (1d6/round)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Rattlesnake, Diamondback",
+      "appearance": "Brown, vicious looking viper with a hideous rattle for a tail, which it shakes before striking with deadly speed",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (Blinded, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Gila Monster",
+      "appearance": "A heavy, sluggish lizard covered in orange and black markings, slowly drags itself between places of shade",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6, 1d6/round, poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "King Cobra, Hamadryad",
+      "appearance": "A characteristic dramatic hood stretches over the snake's head and part way down its striped body",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Blinded, Sleep in 1min)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Mountain",
+      "names": "Hedge Nettle, Betony, Lamb's Ears",
+      "appearance": "A plant spreading ground cover like an army, raising banners of bold purple flowers",
+      "forms": "Whole plant (Salve); Whole plant (Pill)",
+      "effect": "Healing (4d4 + 4); Healing (8d8 + 8)",
+      "dc": 19
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Milky Mangrove, River Poison Tree, Blind-Your-Eye",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 12
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Thornapple, Moonflower, Jimsonweed, Devil's Trumpet, Hell's Bells, Stinkweed",
+      "appearance": "Ghostly pinwheel blooms of white distract from jagged, threatening leaves and large, dangerously spiny fruit pods",
+      "forms": "Fruit seeds, roots (Ingested)",
+      "effect": "Poison (Blinded, Stunned)",
+      "dc": 13
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Ghost Fungus",
+      "appearance": "A funnel shaped mushroom shining brightly enough in the dark to read by",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Pennyroyal, Pudding Grass",
+      "appearance": "Rings of fluffy pink or white flowers climb steadily up a sturdy central stem, giving off a minty odor",
+      "forms": "Leaves (Tonic); Oil (Ingested)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Incapacitated)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "A thick layer of yellow-green peat blankets the surface of the water, disguising it as though it were a grassy clearing",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Heal-All, Self-Help, Carpenter's Herb, Blue Curls",
+      "appearance": "Tiny white or purple flowers cluster around a cylindrical core, fringed by a dramatic collar of two pointed leaves",
+      "forms": "Flowers (Tonic); Flowers, leaves (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Paperbark, Punk Tree",
+      "appearance": "The trunk and branches twist unpredictably, the pale bark peeling off in thin, silky sheets",
+      "forms": "Bark, oil (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Willow, Sallow, Salix",
+      "appearance": "A twisting trunk and blossoms that droop from branches, bursting forth before the leaves grow back in",
+      "forms": "Bark (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Swamp",
+      "names": "Mugwort, Felon Herb, Sailor's Tobacco, Artemisia",
+      "appearance": "Broad sprawling ground cover, feathery green leaves with silvery undersides hide dark purplish stems from view",
+      "forms": "Leaves (Salve); Leaves (Pill); Roots (Decoction)",
+      "effect": "Healing (4d4 + 4);Healing (8d4 + 8); Healing (1L Exhaustion)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Cottongrass, Cottonsedge",
+      "appearance": "A grasslike plant system with fluffy white seed heads buffeted about in the wind",
+      "forms": "Leaves, roots (Salve); Cotton (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound curative",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Wormwood, Sagewort, Absinthe",
+      "appearance": "A stunted flowering weed low to the ground with round yellow buds not quite open enough to be regarded flowers",
+      "forms": "Leaves (Salve); Oil (Ingested)",
+      "effect": "Healing (4d4 + 4); Poison (2d6)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Deer Lichen, Caribou Moss",
+      "appearance": "Silver green lichen in tangled lumps huddling together into larger mounds like nature's dust bunnies",
+      "forms": "Juice (Tonic); Whole fungus (Pill)",
+      "effect": "Healing (2d4 + 2); Healing (8d4 + 8)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Pasque Flower, Wind Flower",
+      "appearance": "Stars of pink and purple bowed in the frost open to the sunlight to soak up what they can, fuzzy fruit like something from Dr Seuss",
+      "forms": "Juice (Draught)",
+      "effect": "Poison (Sleep in 1min)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Bearberry Bush",
+      "appearance": "Growing low to the ground to keep out of the wind, bright and shiny red berries attract critters",
+      "forms": "Berries (Ingested)",
+      "effect": "Poison (Deafened, poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Willow, Sallow, Salix",
+      "appearance": "A much smaller twisting trunk than usually displayed by a tree of the species, its leaves hang in mournful tresses",
+      "forms": "Bark (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Alder",
+      "appearance": "Gnarled lumpy trunk spreading uneven branches over an otherwise bare landscape",
+      "forms": "Bark (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Blackroot, Bowman's Plant, Culversphysic",
+      "appearance": "Like spears raised high the lilac flowers taper to a point above sharp leaves",
+      "forms": "Root (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "A thick carpet of green cloaks the forest floor and envelopes the rotting wood of fallen trees",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Arctic Moss, Giant Spearmoss",
+      "appearance": "Under the ice, at the bottom of an arctic lake, the aquatic moss has spread slowly absorbing nutrients where and when it can",
+      "forms": "Moss (Dressing)",
+      "effect": "Blindness curative, Major wound restorative",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Tundra",
+      "names": "Beaver",
+      "appearance": "A large structure built from branches obstructs the flow of water as round brown rodents with large flat tails busy themselves",
+      "forms": "Testicles (Pill)",
+      "effect": "Healing (8d4 + 8)",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "Miner's Moonlight, Moonshine Mushroom",
+      "appearance": "Climbing in steps up the cave wall in the dark are faintly green glowing half-cup fungal bodies",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "Devil's Fingers, Octopus Stinkhorn, Illithid Egg",
+      "appearance": "A round white bulb erupts into pale meaty tentacles which attract insects to absorb in their stinking slime",
+      "forms": "Whole fungus (Inhaled)",
+      "effect": "Poison (Target spends turn retching)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "Ghost Fungus",
+      "appearance": "A funnel shaped mushroom shining brightly enough in the dark to read by",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "Witch's Heart, Red Cage, Lattice Stinkhorn",
+      "appearance": "A supposedly carnivorous hollow cage of pink, fleshy fungus riddled with holes that resemble bloody wounds",
+      "forms": "Whole fungus (Contact); Whole fungus (Ingested)",
+      "effect": "Poison (2d6/round); Poison (3d6, Stunned)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "False Earthstar",
+      "appearance": "Small fungal stars clinging to the damp of boulders like barnacles to a ship",
+      "forms": "Whole fungus (Salve); Whole fungus (Powder)",
+      "effect": "Healing (4d4 + 4); Stabilise the dying",
+      "dc": 18
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "Arsenic Ore, Mispickel",
+      "appearance": "Flaking silver crystalline rock which releases a garlic smell when struck",
+      "forms": "Mineral (Inhaled)",
+      "effect": "Poison (Poisoned, sleep in 10min, death in 3days)",
+      "dc": 19
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "Blue Vitriol, Chalcanthite",
+      "appearance": "Brilliant blue gems growing in tight knit threads from copper deposits, dissolves quickly in liquid",
+      "forms": "Mineral (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "Okay Gecko, Uh-Oh, Fuck-You Lizard",
+      "appearance": "With a call like a squeaky toy, the red-speckled turquoise of its body can change colours to blend in with its surroundings",
+      "forms": "Whole lizard (Pill); Whole lizard (Wine)",
+      "effect": "Healing (8d8 + 8); Major wound restorative",
+      "dc": 20
+    },
+    {
+      "season": "Autumn",
+      "environment": "Underdark",
+      "names": "Cinnabar, Dragon's Blood",
+      "appearance": "Nuggets of gleaming red crystal stick out from the other gem clusters in chunks",
+      "forms": "Mineral (Contact)",
+      "effect": "Poison (Poisoned)",
+      "dc": 22
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Dandelion",
+      "appearance": "Bright yellow flowerheads and fluffy seed orbs ready to be blown off, above a weedy bed of ragged leaves",
+      "forms": "Roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 12
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Thornapple, Moonflower, Jimsonweed, Devil's Trumpet, Hell's Bells, Stinkweed",
+      "appearance": "Ghostly pinwheel blooms of white distract from jagged, threatening leaves and large, dangerously spiny fruit pods",
+      "forms": "Fruit seeds, roots (Ingested)",
+      "effect": "Poison (Blinded, Stunned)",
+      "dc": 13
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Scotch Marigold, Sun Glow, Jane Harmony, Ruddles",
+      "appearance": "Brilliant yellow and orange puffballs on weedlike green stems",
+      "forms": "Leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Burdock, Orb Arctium",
+      "appearance": "A group of unusual, purplish spheres, covered in spines, look as though they've been wrapped thoroughly in cobwebs",
+      "forms": "Roots (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Staggerweed, Stagger Mint",
+      "appearance": "Tiny unassuming white flowers stick up from lightly fuzzy stalks",
+      "forms": "Whole Plant (Pill)",
+      "effect": "Healing (8d4 + 8)",
+      "dc": 15
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Beehive",
+      "appearance": "The buzzing of the apiarist's hive draws attention and guides steadily to its golden core",
+      "forms": "Wax, honey (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Redback Spider, Black Widow",
+      "appearance": "A sharp and threatening looking black spider with a striking red hourglass mark on the abdomen",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6, Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Lantern Chilli, Bonnet Pepper",
+      "appearance": "Shining fruitsranging from yellow to red hang like pendants from a low bush",
+      "forms": "Powdered seeds (Inhaled)",
+      "effect": "Poison (Blinded)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Cone Flower, Echinacea, Hedgehog Flower",
+      "appearance": "Wide circles of purple stand tall, holding aloft spiny, conical centres",
+      "forms": "Whole plant (Tonic); Whole plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Bark Scorpion",
+      "appearance": "A waxy, yellow scorpion creeping about at night holding its stinger high, ready to strike any pray that strays into its path",
+      "forms": "Venom (Tonic); Venom (Injury)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Attack disadvantage)",
+      "dc": 20
+    },
+    {
+      "season": "Autumn",
+      "environment": "Urban",
+      "names": "Fer-de-Lance, Spearhead, Yellow Beard",
+      "appearance": "Black and brown markings are defined into tessellating diamonds by bright white borders and dark spots",
+      "forms": "Venom (Injured)",
+      "effect": "Poison (4d6, Poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "Coastal Jack-Bean, Seaside Jack",
+      "appearance": "Fleshy vines trail along sand dunes, thick leaves matting the area and pink flowers popping up sporadically",
+      "forms": "Leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "Beard Lichen, Methuselah’s Beard, Old Man's Whiskers, Witch's Hair",
+      "appearance": "Strung between the limbs of a tree like huge cobwebs, adding an eerie ambiance to the environment around",
+      "forms": "Whole Fungus (Tonic); Whole Fungus (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "Bluebottle, Man-O-War",
+      "appearance": "Floating on the water like a blue bubble with a sail, its translucent body and long stinging tail are easily stranded ashore",
+      "forms": "Tail (Contact)",
+      "effect": "Poison (2d6/round)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "Staggerweed, Stagger Mint",
+      "appearance": "Tiny unassuming white flowers stick up from lightly fuzzy stalks",
+      "forms": "Whole Plant (Pill)",
+      "effect": "Healing (8d4 + 8)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "Heartsease, Johnny Jump Up, Tickle-My-Fancy, Love-In-Idleness",
+      "appearance": "Tiny wild pansies form ribbons of violet or blue tucked between the grass",
+      "forms": "Whole plant (Salve); Juice (Philtre)",
+      "effect": "Healing (4d4 + 4); Poison (As Friends spell)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "Lion's Mane Jellyfish, Hair Jelly",
+      "appearance": "A massive, translucent peach presence in the cold waters, thousands of stringy smoky tentacles filling the space",
+      "forms": "Venom (Contact)",
+      "effect": "Poison (1d6/round)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "Coral Branch, Reef Rocks",
+      "appearance": "Red, bone-like porous growths settle in tight colonies to enable the formation of marine reefs",
+      "forms": "Whole branch (Ash)",
+      "effect": "Broken bone restorative",
+      "dc": 20
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "King Cobra, Hamadryad",
+      "appearance": "A characteristic dramatic hood stretches over the snake's head and part way down its striped body",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Blinded, Sleep in 1min)",
+      "dc": 20
+    },
+    {
+      "season": "Winter",
+      "environment": "Coast",
+      "names": "Pearl",
+      "appearance": "Irregular iridescent orbs in white, gold, black, and any number of other opalesque colours",
+      "forms": "Whole pearl (Powder)",
+      "effect": "Antidote (Contact poisons), Blindness curative",
+      "dc": 22
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Coachwhip, Candlewood, Slimwood, Desert Coral",
+      "appearance": "Appearing as a careful collection of dead sticks until rainfall revives its green body, topped with crimson flowers",
+      "forms": "Flowers, roots (Salve); Flowers, bark (Bath)",
+      "effect": "Healing (4d4 + 4); Healing (1L Exhaustion)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Zigadenus, Sandbog Death Camus",
+      "appearance": "Dozens of tiny delicate white or pinkish flowers gathered on stalks with a grassy bass, a natural bouquet",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (1d6/round)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Aloe Vera",
+      "appearance": "Spiked shards of succulent, each fang of which is lined with a thin serrated edging",
+      "forms": "Jelly (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Joint Pine",
+      "appearance": "A shrub easily mistaken for big, tough clumps of tall, spiny grass",
+      "forms": "Stems (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Arid Monitor, Climbing Monitor",
+      "appearance": "A long, mottled grey monitor lizard which scrambles away up trees or cliffs",
+      "forms": "Skin (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Globemallow, Hollyhock, Apricot Mallow",
+      "appearance": "Spiny, unfriendly looking shrub covered in cup shaped orange blooms",
+      "forms": "Leaves, roots (Tonic)",
+      "effect": "Healing (2d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Deathstalker, Gold Sand Scorpion",
+      "appearance": "A flattened tan body blends in easily to the sand and stone of a desert",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Bark Scorpion",
+      "appearance": "Waxy, yellow scorpions gathering in large colony groups against the cold huddling in gaps or under any shelter",
+      "forms": "Venom (Tonic); Venom (Injury)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Attack disadvantage)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Gila Monster",
+      "appearance": "A heavy, sluggish lizard covered in orange and black markings, slowly drags itself between places of shade",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6, 1d6/round, poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Desert",
+      "names": "Redback Spider, Black Widow",
+      "appearance": "A sharp and threatening looking black spider with a striking red hourglass mark on the abdomen",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6, Poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Forest",
+      "names": "Dog's Mercury",
+      "appearance": "A green blanket of serrated leaves stretches across the forest floor",
+      "forms": "Leaves (Ingested)",
+      "effect": "Draught (Sleep)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Forest",
+      "names": "Wintergreen, Checkerberry, Youngsters, Wax Cluster, Drunkards",
+      "appearance": "A lush bush of waxy, oval leaves, bursting with the bright red of shining berries",
+      "forms": "Oil (Contact); Leaves (Tonic)",
+      "effect": "Poison (Deafened, Incapacitated); Healing (2d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Forest",
+      "names": "Autumn Crocus, Naked Ladies, Meadow Saffron",
+      "appearance": "Pastel, cup-shaped flowers in pink, white and purple appear out of the ground long before their leaves join them",
+      "forms": "Flowers, seeds (Ingested)",
+      "effect": "Poison (Incapacitated in 12hrs)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Forest",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Forest",
+      "names": "Beard Lichen, Methuselah’s Beard, Old Man's Whiskers, Witch's Hair",
+      "appearance": "Strung between the limbs of a tree like huge cobwebs, adding an eerie ambiance to the environment around",
+      "forms": "Fungus (Tonic); Fungus (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Forest",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Forest",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "A thick carpet of green cloaks the forest floor and envelopes the rotting wood of fallen trees",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Forest",
+      "names": "Destroying Angel, Death Cap, Deadly Amonita",
+      "appearance": "A city of sweet-smelling mushrooms growing at the base of hardwood trees, some heads rounded, some flat, all stained brown in the centre and paling at the fringes",
+      "forms": "Poison (Inhaled); Whole fungus (Ingested)",
+      "effect": "Poison (2d6/round); Poison (1L Exh./12hrs)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Forest",
+      "names": "Fly Agaric, Fairy Stool",
+      "appearance": "A wide spread ring of bright red toadstools with white polka dots mark a circle on the forest floor",
+      "forms": "Whole fungus (Ingested); Whole fungus (Inhaled)",
+      "effect": "Poison (Poisoned, Sleep in 5min), Poison (Sleep)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Dandelion",
+      "appearance": "Bright yellow flowerheads and fluffy seed orbs ready to be blown off, lifting up from a bed of weedy jagged leaves",
+      "forms": "Roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 12
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Amaryllis",
+      "appearance": "Star shaped flowers lightly coloured in the centre and transitioning to red at the borders, looking to the horizon",
+      "forms": "Whole plant (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Hellebore, Winter Rose",
+      "appearance": "Small muted flowers in pinks, greys, blues and blacks, standing proud from the frost on hardy stems with twisted leaves",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Big Bluestem, Bluejoint",
+      "appearance": "Tall bunches of reedy grass bunched into stalks with red, blue, or purple hues when observed from a distance",
+      "forms": "Leaves, roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Opium Poppy, Laudanum, Sleep Bringer",
+      "appearance": "Vast fields of coloured blooms ranging from white to red to deep purple, the buds and seed pods oozing a potent juice",
+      "forms": "Juice (Tonic); Seeds (Pill); Juice (Draught)",
+      "effect": "Healing (2d4 + 2); Healing (8d8 + 8); Poison (Sleep)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Blackroot, Bowman's Plant, Culversphysic",
+      "appearance": "Like spears raised high the spines where flowers would be stab above sharp leaves",
+      "forms": "Root (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Pennyroyal, Pudding Grass",
+      "appearance": "Rings of fluffy pink or white flowers climb steadily up a sturdy central stem, giving off a minty odor",
+      "forms": "Leaves (Tonic); Oil (Ingested)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Incapacitated)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Heartsease, Johnny Jump Up, Tickle-My-Fancy, Love-In-Idleness",
+      "appearance": "Tiny wild pansies form ribbons of violet or blue tucked between the grass",
+      "forms": "Whole plant (Salve); Juice (Philtre)",
+      "effect": "Healing (4d4 + 4); Poison (As Friends spell)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Autumn Crocus, Naked Ladies, Meadow Saffron",
+      "appearance": "Pastel, cup-shaped flowers in pink, white and purple appear out of the ground long before their leaves join them",
+      "forms": "Flowers, seeds (Ingested)",
+      "effect": "Poison (Incapacitated in 12hrs)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Grassland",
+      "names": "Strychnine Tree, Snakewood, Humble Button",
+      "appearance": "A short, thick, crooked, pale tree trunk topped with a full dome of leaves and hard orange fruit",
+      "forms": "Fruit seeds (Inhaled)",
+      "effect": "Poison (6d6/round, paralysed)",
+      "dc": 20
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Velvetleaf, Moonseed",
+      "appearance": "Long woody vines stretching between trees, bearing heart-shaped leaves and small dark seed pods",
+      "forms": "Seeds (Injury)",
+      "effect": "Poison (Stunned)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Cat's Claw, Wait-A-Minute",
+      "appearance": "A woody vine spreads across the path and up the trees, hooked thorns outstretched ready to catch anything in reach",
+      "forms": "Bark, roots (Powder)",
+      "effect": "Stabilise the dying",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Ghost Fungus",
+      "appearance": "A funnel shaped mushroom shining brightly enough in the dark to read by",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Arrowroot, Obedience Plant",
+      "appearance": "Lush leafy shafts grow straight out of the rainforest floor like a bright green arrow fired directly into the ground",
+      "forms": "Root (Salve); Root (Poultice)",
+      "effect": "Healing (4d4 + 4); Antidote (Injury Poisons)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Lantern Stinkhorn, Lizard's Claw",
+      "appearance": "A slimy pink rocket stinking of rotting flesh and excrement gets even worse when it splits into several reaching tentacles",
+      "forms": "Whole fungus (Inhaled)",
+      "effect": "Poison (Target spends turn retching)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Arid Monitor, Climbing Monitor",
+      "appearance": "A long, mottled grey monitor lizard which scrambles away up trees or cliffs",
+      "forms": "Skin (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Strawberry Dart Frog, Rainbow Dart Frog",
+      "appearance": "Tiny amphibians ranging in colour from vivid blues to greens with polka dots to panda splotches to bright reds with inky black legs",
+      "forms": "Skin (Contact); Skin (Ingested)",
+      "effect": "Poison (Poisoned); Poison (Paralysed)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Golden Frog, Poison Arrow Frog, Yellow Blackfoot",
+      "appearance": "A bright yellow amphibian with a black underside, so small that it can still be easily missed in the rainforest",
+      "forms": "Skin (Injury)",
+      "effect": "Poison (Paralysed, death in 3min)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Lantern Chilli, Bonnet Pepper",
+      "appearance": "Shining fruitsranging from yellow to red hang like pendants from a low bush",
+      "forms": "Powdered seeds (Inhaled)",
+      "effect": "Poison (Blinded)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Miner's Moonlight, Moonshine Mushroom",
+      "appearance": "Climbing in steps up the tree trunk in the dark are orange gilled fungal bodies",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Red-Tailed Scorpion, Red Sting, Hot Sting",
+      "appearance": "Nocturnal hunter difficult to find but easily identified by the bright red sting on the end of its segmented tail",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6/round, poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Winter",
+      "environment": "Jungle",
+      "names": "Platypus",
+      "appearance": "Like a beaver the size of a forearm with a bill like a duck and wide, fanning webbed feet, of which the male's are adorned with venomous spurs",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6, Incapacitated)",
+      "dc": 25
+    },
+    {
+      "season": "Winter",
+      "environment": "Mountain",
+      "names": "Savin Juniper",
+      "appearance": "Mounded shrub of pine-like foliage in blue-green hues",
+      "forms": "Oil (Contact)",
+      "effect": "Poison (1d6/round)",
+      "dc": 13
+    },
+    {
+      "season": "Winter",
+      "environment": "Mountain",
+      "names": "Amaryllis",
+      "appearance": "Star shaped flowers lightly coloured in the centre and transitioning to red at the borders, looking to the horizon",
+      "forms": "Whole plant (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Mountain",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Mountain",
+      "names": "Cone Flower, Echinacea, Hedgehog Flower",
+      "appearance": "Wide circles of purple stand tall, holding aloft spiny, conical centres",
+      "forms": "Whole plant (Tonic); Whole plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Mountain",
+      "names": "Hooded Shrike, Black-Headed Pitohui",
+      "appearance": "A striking combination of black and orange plumage flutters between trees",
+      "forms": "Skin, feathers (Contact)",
+      "effect": "Poison (1d6/round)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Mountain",
+      "names": "Deer Lichen, Caribou Moss",
+      "appearance": "Silver green lichen in tangled lumps huddling together into larger mounds like nature's dust bunnies",
+      "forms": "Juice (Tonic); Whole fungus (Pill)",
+      "effect": "Healing (2d4 + 2); Healing (8d4 + 8)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Mountain",
+      "names": "Hedge Nettle, Betony, Lamb's Ears",
+      "appearance": "A plant spreading ground cover like an army, raising banners of bold purple flowers",
+      "forms": "Whole plant (Salve); Whole plant (Pill)",
+      "effect": "Healing (4d4 + 4); Healing (8d8 + 8)",
+      "dc": 19
+    },
+    {
+      "season": "Winter",
+      "environment": "Mountain",
+      "names": "King Cobra, Hamadryad",
+      "appearance": "A characteristic dramatic hood stretches over the snake's head and part way down its striped body",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Blinded, Sleep in 1min)",
+      "dc": 20
+    },
+    {
+      "season": "Winter",
+      "environment": "Mountain",
+      "names": "Gila Monster",
+      "appearance": "A heavy, sluggish lizard covered in orange and black markings, slowly drags itself between places of shade",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6, 1d6/round, poisoned)",
+      "dc": 23
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Beard Lichen, Witch's Hair, Methuselah’s Beard, Old Man's Whiskers",
+      "appearance": "Strung between the limbs of a tree like huge cobwebs, adding an eerie ambiance to the environment around",
+      "forms": "Whole Fungus (Tonic); Whole Fungus (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 12
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 12
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 13
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Pennyroyal, Pudding Grass",
+      "appearance": "Rings of fluffy pink or white flowers climb steadily up a sturdy central stem, giving off a minty odor",
+      "forms": "Leaves (Tonic); Oil (Ingested)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Incapacitated)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "A thick layer of yellow-green peat blankets the surface of the water, disguising it as though it were a grassy clearing",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Willow, Sallow, Salix",
+      "appearance": "A twisting trunk and leaves that droop mournfully from winding branches",
+      "forms": "Bark (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Wintergreen, Checkerberry, Youngsters, Wax Cluster, Drunkards",
+      "appearance": "A lush bush of waxy, oval leaves, bursting with the bright red of shining berries",
+      "forms": "Oil (Contact); Leaves (Tonic)",
+      "effect": "Poison (Deafened, Incapacitated); Healing (2d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Paperbark, Punk Tree",
+      "appearance": "The trunk and branches twist unpredictably, the pale bark peeling off in thin, silky sheets",
+      "forms": "Bark, oil (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Swamp",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Cottongrass, Cottonsedge",
+      "appearance": "A grasslike plant system with fluffy white seed heads buffeted about in the wind",
+      "forms": "Leaves, roots (Salve); Cotton (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound curative",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Deer Lichen, Caribou Moss",
+      "appearance": "Silver green lichen in tangled lumps huddling together into larger mounds like nature's dust bunnies",
+      "forms": "Juice (Tonic); Whole fungus (Pill)",
+      "effect": "Healing (2d4 + 2); Healing (8d4 + 8)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Pasque Flower, Wind Flower",
+      "appearance": "Stars of pink and purple bowed in the frost open to the sunlight to soak up what they can, fuzzy fruit like something from Dr Seuss",
+      "forms": "Juice (Draught)",
+      "effect": "Poison (Sleep in 1min)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Bearberry Bush",
+      "appearance": "Growing low to the ground to keep out of the wind, bright and shiny red berries attract critters",
+      "forms": "Berries (Ingested)",
+      "effect": "Poison (Deafened, poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Beaver",
+      "appearance": "A large structure built from branches sits in the middle of the water, round brown rodents with large flat tails shelter inside",
+      "forms": "Testicles (Pill)",
+      "effect": "Healing (8d4 + 8)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Willow, Sallow, Salix",
+      "appearance": "A much smaller twisting trunk than usually displayed by a tree of the species, its bare limbs stand stark against the snow",
+      "forms": "Bark (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Alder",
+      "appearance": "Gnarled lumpy trunk spreading uneven branches over an otherwise bare landscape",
+      "forms": "Bark (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Wormwood, Sagewort, Absinthe",
+      "appearance": "A stunted flowering weed low to the ground with round yellow buds not quite open enough to be regarded flowers",
+      "forms": "Leaves (Salve); Oil (Ingested)",
+      "effect": "Healing (4d4 + 4); Poison (2d6)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Tundra",
+      "names": "Arctic Moss, Giant Spearmoss",
+      "appearance": "Under the ice, at the bottom of an arctic lake, the aquatic moss has spread slowly absorbing nutrients where and when it can",
+      "forms": "Moss (Dressing)",
+      "effect": "Blindness curative, Major wound restorative",
+      "dc": 19
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "Miner's Moonlight, Moonshine Mushroom",
+      "appearance": "Climbing in steps up the cave wall in the dark are faintly green glowing half-cup fungal bodies",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "Devil's Fingers, Octopus Stinkhorn, Illithid Egg",
+      "appearance": "A round white bulb erupts into pale meaty tentacles which attract insects to absorb in their stinking slime",
+      "forms": "Whole fungus (Inhaled)",
+      "effect": "Poison (Target spends turn retching)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "Ghost Fungus",
+      "appearance": "A funnel shaped mushroom shining brightly enough in the dark to read by",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "Witch's Heart, Red Cage, Lattice Stinkhorn",
+      "appearance": "A supposedly carnivorous hollow cage of pink, fleshy fungus riddled with holes that resemble bloody wounds",
+      "forms": "Whole fungus (Contact); Whole fungus (Ingested)",
+      "effect": "Poison (2d6/round); Poison (3d6, Stunned)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "False Earthstar",
+      "appearance": "Small fungal stars clinging to the damp of boulders like barnacles to a ship",
+      "forms": "Whole fungus (Salve); Whole fungus (Powder)",
+      "effect": "Healing (4d4 + 4); Stabilise the dying",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "Arsenic Ore, Mispickel",
+      "appearance": "Flaking silver crystalline rock which releases a garlic smell when struck",
+      "forms": "Mineral (Inhaled)",
+      "effect": "Poison (Poisoned, sleep in 10min, death in 3days)",
+      "dc": 19
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "Blue Vitriol, Chalcanthite",
+      "appearance": "Brilliant blue gems growing in tight knit threads from copper deposits, dissolves quickly in liquid",
+      "forms": "Mineral (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "Okay Gecko, Uh-Oh, Fuck-You Lizard",
+      "appearance": "With a call like a squeaky toy, the red-speckled turquoise of its body can change colours to blend in with its surroundings",
+      "forms": "Whole lizard (Pill); Whole lizard (Wine)",
+      "effect": "Healing (8d8 + 8); Major wound restorative",
+      "dc": 20
+    },
+    {
+      "season": "Winter",
+      "environment": "Underdark",
+      "names": "Cinnabar, Dragon's Blood",
+      "appearance": "Nuggets of gleaming red crystal stick out from the other gem clusters in chunks",
+      "forms": "Mineral (Contact)",
+      "effect": "Poison (Poisoned)",
+      "dc": 22
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Dandelion",
+      "appearance": "Bright yellow flowerheads and fluffy seed orbs ready to be blown off, lifting up from a bed of weedy jagged leaves",
+      "forms": "Roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 12
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Scotch Marigold, Sun Glow, Jane Harmony, Ruddles",
+      "appearance": "Brilliant yellow and orange puffballs on weedlike green stems",
+      "forms": "Leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Staggerweed, Stagger Mint",
+      "appearance": "Tiny unassuming white flowers stick up from lightly fuzzy stalks",
+      "forms": "Whole Plant (Pill)",
+      "effect": "Healing (8d4 + 8)",
+      "dc": 15
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Redback Spider, Black Widow",
+      "appearance": "A sharp and threatening looking black spider with a striking red hourglass mark on the abdomen",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6, Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Cone Flower, Echinacea, Hedgehog Flower",
+      "appearance": "Wide circles of purple stand tall, holding aloft spiny, conical centres",
+      "forms": "Whole plant (Tonic); Whole plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Heartsease, Johnny Jump Up, Tickle-My-Fancy, Love-In-Idleness",
+      "appearance": "Tiny wild pansies form ribbons of violet or blue tucked between the grass",
+      "forms": "Whole plant (Salve); Juice (Philtre)",
+      "effect": "Healing (4d4 + 4); Poison (As Friends spell)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Lantern Chilli, Bonnet Pepper",
+      "appearance": "Shining fruitsranging from yellow to red hang like pendants from a low bush",
+      "forms": "Powdered seeds (Inhaled)",
+      "effect": "Poison (Blinded)",
+      "dc": 17
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Bark Scorpion",
+      "appearance": "Waxy, yellow scorpions gathering in large colony groups against the cold huddling in gaps or under any shelter",
+      "forms": "Venom (Tonic); Venom (Injury)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Attack disadvantage)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Red-Tailed Scorpion, Red Sting, Hot Sting",
+      "appearance": "Nocturnal hunter difficult to find but easily identified by the bright red sting on the end of its segmented tail",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6/round, poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Winter",
+      "environment": "Urban",
+      "names": "Fer-de-Lance, Spearhead, Yellow Beard",
+      "appearance": "Black and brown markings are defined into tessellating diamonds by bright white borders and dark spots",
+      "forms": "Venom (Injured)",
+      "effect": "Poison (4d6, Poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Coastal Jack-Bean, Seaside Jack",
+      "appearance": "Fleshy vines trail along sand dunes, thick leaves matting the area and pink flowers popping up sporadically",
+      "forms": "Leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Dog Violet",
+      "appearance": "Bright purple flower petals stand proud surrounded by the salt hardened grass at the edge of the shore line",
+      "forms": "Flowers, leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Staggerweed, Stagger Mint",
+      "appearance": "Tiny unassuming white flowers stick up from lightly fuzzy stalks",
+      "forms": "Whole Plant (Pill)",
+      "effect": "Healing (8d4 + 8)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Yarrow, Milfoil, Littlefeather, Nosebleed, Soldier's Safety, Bloodwort, Woundwort",
+      "appearance": "Sprawling fernlike shrub explodes into bunches of tiny flowers in dozens >of colours to form a floral canopy",
+      "forms": "Oil (Tonic); Whole Plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Foxgloves, Dead Men's Bells; Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Heartsease, Johnny Jump Up, Tickle-My-Fancy, Love-In-Idleness",
+      "appearance": "Tiny wild pansies form ribbons of violet or blue tucked between the grass",
+      "forms": "Whole plant (Salve); Juice (Philtre)",
+      "effect": "Healing (4d4 + 4); Poison (As Friends spell)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Bluebell, Wood Bell, Bell Bottle, Fairy Flower",
+      "appearance": "Delicate, vibrant blue flowers hang like bells from an elegant, curved stem",
+      "forms": "Bulb (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Blue Ringed Octopus, Reef Killer",
+      "appearance": "A small brown octopus usually hiding amongst a reef's rocks and coral will suddenly flare iridescent blue rings",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (Paralysed, suffocating)",
+      "dc": 19
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Coral Branch, Reef Rocks",
+      "appearance": "Red, bone-like porous growths settle in tight colonies to enable the formation of marine reefs",
+      "forms": "Whole branch (Ash)",
+      "effect": "Broken bone restorative",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Coast",
+      "names": "Pearl",
+      "appearance": "Irregular iridescent orbs in white, gold, black, and any number of other opalesque colours",
+      "forms": "Whole pearl (Powder)",
+      "effect": "Antidote (Contact poisons), Blindness curative",
+      "dc": 22
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Coachwhip, Desert Coral, Candlewood, Slimwood",
+      "appearance": "Appearing as a careful collection of dead sticks until rainfall revives its green body, topped with crimson flowers",
+      "forms": "Flowers, roots (Salve); Flowers, bark (Bath)",
+      "effect": "Healing (4d4 + 4); Healing (1L Exhaustion)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Globemallow, Hollyhock, Apricot Mallow",
+      "appearance": "Spiny, unfriendly looking shrub covered in cup shaped orange blooms",
+      "forms": "Leaves, roots (Tonic)",
+      "effect": "Healing (2d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Zigadenus, Sandbog, Death Camus",
+      "appearance": "Dozens of tiny delicate white or pinkish flowers gathered on stalks with a grassy bass, a natural bouquet",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (1d6/round)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Aloe Vera",
+      "appearance": "Spiked shards of succulent, each fang of which is lined with a thin serrated edging",
+      "forms": "Jelly (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Joint Pine",
+      "appearance": "A shrub easily mistaken for big, tough clumps of tall, spiny grass",
+      "forms": "Stems (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Arid Monitor, Climbing Monitor",
+      "appearance": "A long, mottled grey monitor lizard which scrambles away up trees or cliffs",
+      "forms": "Skin (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Spitting Fat-Tail, Thick-Tail Scorpion",
+      "appearance": "A dark, wide armoured body gives way to small pale pincers at the head",
+      "forms": "Venom (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Deathstalker, Gold Sand Scorpion",
+      "appearance": "A flattened tan body blends in easily to the sand and stone of a desert",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Rattlesnake, Diamondback",
+      "appearance": "Brown, vicious looking viper with a hideous rattle for a tail, which it shakes before striking with deadly speed",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (Blinded, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Desert Rose, Kudu, Sand Star",
+      "appearance": "White star-shaped flowers with bold pink borders droop from succulent stems along with leathery, dark green leaves",
+      "forms": "Sap (Injury)",
+      "effect": "Poison (2d6, 1L Exhaustion/Round)",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Gila Monster",
+      "appearance": "A heavy, sluggish lizard covered in orange and black markings, slowly drags itself between places of shade",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6, 1d6/round, poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Redback Spider, Black Widow",
+      "appearance": "A sharp and threatening looking black spider with a striking red hourglass mark on the abdomen",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6, Poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Desert",
+      "names": "Bark Scorpion",
+      "appearance": "A waxy, yellow scorpion creeping about at night holding its stinger high, ready to strike any pray that strays into its path",
+      "forms": "Venom (Tonic); Venom (Injury)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Attack disadvantage)",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 13
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Bluebell, Wood Bell, Bell Bottle, Fairy Flower",
+      "appearance": "Delicate, vibrant blue flowers hang like bells from an elegant, curved stem",
+      "forms": "Bulb (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Foxgloves, Dead Men's Bells, Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Beard Lichen, Witch's Hair, Methuselah’s Beard, Old Man's Whiskers",
+      "appearance": "Strung between the limbs of a tree like huge cobwebs, adding an eerie ambiance to the environment around",
+      "forms": "Whole Fungus (Tonic); Whole Fungus (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Dog's Mercury",
+      "appearance": "A green blanket of serrated leaves stretches across the forest floor",
+      "forms": "Leaves (Ingested)",
+      "effect": "Draught (Sleep)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "A thick carpet of green cloaks the forest floor and envelopes the rotting wood of fallen trees",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Creeping Charlie, Ground Ivy, Catsfoot, Field Balm, Gil-Over-The-Ground, Run-away-Robin",
+      "appearance": "Crawling to cover every inch of ground in a blanket of dark, fan-shaped leaves, dotted with the blue of minute flowers",
+      "forms": "Leaves (Wash); Leaves (Oil)",
+      "effect": "Blindness curative; Deafness curative",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "False Earthstar",
+      "appearance": "Small fungal stars on the forest floor trace the path of tree roots beneath the earth",
+      "forms": "Whole fungus (Salve); Whole fungus (Powder)",
+      "effect": "Healing (4d4 + 4); Stabilise the dying",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Primrose",
+      "appearance": "Small dome of green leaves and butter coloured petals",
+      "forms": "Flowers (Wine)",
+      "effect": "Major wound restorative",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Dog Violet",
+      "appearance": "Delicate purple flower petals stand out from the wild spread of flat, round leaves, tucked in amongst the greenery of the forest",
+      "forms": "Flowers, leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Enchanter's Nightshade",
+      "appearance": "Minute white flowers stand, barely visible, above dark pointed leaves, close to the ground",
+      "forms": "Whole plant (Wash)",
+      "effect": "Major wound restorative",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Forest",
+      "names": "Fraxinella, Burning Bush, Gas Plant",
+      "appearance": "Tall spikes of white flowers flag the location of the volatile leafy bush",
+      "forms": "Flowers, seeds (Contact)",
+      "effect": "Ignites in sunlight",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "Dandelion",
+      "appearance": "Bright yellow flowerheads and fluffy seed orbs ready to be blown off, lifting up from a bed of weedy jagged leaves",
+      "forms": "Roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 12
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "Blackroot, Bowman's Plant, Culversphysic",
+      "appearance": "Like spears raised high the lilac flowers taper to a point above sharp leaves",
+      "forms": "Root (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "Big Bluestem, Bluejoint",
+      "appearance": "Tall bunches of reedy grass bunched into stalks with red, blue, or purple hues when observed from a distance",
+      "forms": "Leaves, roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "John's Wort, Knight's Friend",
+      "appearance": "Bright star-like blossoms of yellow and gnarled purple fruit",
+      "forms": "Flowers, buds (Salve)",
+      "effect": "Heahing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "Opium Poppy, Laudanum, Sleep Bringer",
+      "appearance": "Vast fields of coloured blooms ranging from white to red to deep purple, the buds and seed pods oozing a potent juice",
+      "forms": "Juice (Tonic); Seeds (Pill); Juice (Draught)",
+      "effect": "Healing (2d4 + 2); Healing (8d8 + 8); Poison (Sleep)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "Dog Violet",
+      "appearance": "Delicate purple flower petals stand out from the wild spread of flat, round leaves, bursting out of the turf",
+      "forms": "Flowers, leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "Yarrow, Milfoil, Littlefeather, Nosebleed, Soldier's Safety, Bloodwort, Woundwort",
+      "appearance": "Sprawling fernlike shrub explodes into bunches of tiny flowers in dozens of colours to form a floral canopy",
+      "forms": "Oil (Tonic); Whole Plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "Foxgloves, Dead Men's Bells, Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "Heartsease, Johnny Jump Up, Tickle-My-Fancy, Love-In-Idleness",
+      "appearance": "Tiny wild pansies form ribbons of violet or blue tucked between the grass",
+      "forms": "Whole plant (Salve); Juice (Philtre)",
+      "effect": "Healing (4d4 + 4); Poison (As Friends spell)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Grassland",
+      "names": "Strychnine Tree, Snakewood, Humble Button",
+      "appearance": "A short, thick, crooked, pale tree trunk topped with a full dome of leaves and hard orange fruit",
+      "forms": "Fruit seeds (Inhaled)",
+      "effect": "Poison (4d6/round, paralysed)",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 13
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Velvetleaf, Moonseed",
+      "appearance": "Long woody vines stretching between trees, bearing heart-shaped leaves and small dark seed pods",
+      "forms": "Seeds (Injury)",
+      "effect": "Poison (Stunned)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Cat's Claw, Wait-A-Minute",
+      "appearance": "A woody vine spreads across the path and up the trees, hooked thorns outstretched ready to catch anything in reach",
+      "forms": "Bark, roots (Powder)",
+      "effect": "Stabilise the dying",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Passion Vine",
+      "appearance": "A leafy climber bears exotic purple and yellow flowers to match it's strange bulbous, purple fruit",
+      "forms": "Flowers (Salve); Flowers (Ingested)",
+      "effect": "Healing (4d4 + 4); Draught (Sleep)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "False Earthstar",
+      "appearance": "Small fungal stars on the forest floor trace the path of tree roots beneath the earth",
+      "forms": "Whole fungus (Salve); Whole fungus (Powder)",
+      "effect": "Healing (4d4 + 4); Stabilise the dying",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Lantern Stinkhorn, Lizard's Claw",
+      "appearance": "A slimy pink rocket stinking of rotting flesh and excrement gets even worse when it splits into several reaching tentacles",
+      "forms": "Whole fungus (Inhaled)",
+      "effect": "Poison (Target spends turn retching)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Arid Monitor, Climbing Monitor",
+      "appearance": "A long, mottled grey monitor lizard which scrambles away up trees or cliffs",
+      "forms": "Skin (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Angel's Trumpet, Feingold, Devil's Breath Plant",
+      "appearance": "Fragrant, pale-yellow blooms edged in red hang like pendants from an elegant, winding tree",
+      "forms": "Seeds (Inhaled)",
+      "effect": "Poison (As Suggestion spell)",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Golden Frog, Poison Arrow Frog, Yellow Blackfoot",
+      "appearance": "A bright yellow amphibian with a black underside, so small that it can still be easily missed in the rainforest",
+      "forms": "Skin (Injury)",
+      "effect": "Poison (Paralysed, suffocating)",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Yellow-Banded Dart Frog, Bumblebee Frog",
+      "appearance": "Bold stripes of black and yellow warn predators of the poison in its slimy skin",
+      "forms": "Skin (Injury)",
+      "effect": "Poison (2d6/round, Paralysed)",
+      "dc": 19
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Okay Gecko, Uh-Oh, Fuck-You Lizard",
+      "appearance": "With a call like a squeaky toy, the red-speckled turquoise of its body can change colours to blend in with its surroundings",
+      "forms": "Whole lizard (Pill); Whole lizard (Wine)",
+      "effect": "Healing (8d8 + 8); Major wound restorative",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Jungle",
+      "names": "Platypus",
+      "appearance": "Like a beaver the size of a forearm with a bill like a duck and wide, fanning webbed feet, of which the male's are adorned with venomous spurs",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6, Incapacitated)",
+      "dc": 25
+    },
+    {
+      "season": "Spring",
+      "environment": "Mountain",
+      "names": "Lachesis Viper, Bushmaster",
+      "appearance": "An orange-brown snake with bold black diamonds, it shakes its tail like a rattlesnake without a rattle when angry",
+      "forms": "Venom (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Mountain",
+      "names": "Amaryllis",
+      "appearance": "Star shaped flowers lightly coloured in the centre and transitioning to red at the borders, looking to the horizon",
+      "forms": "Whole plant (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Mountain",
+      "names": "Foxgloves, Dead Men's Bells, Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Mountain",
+      "names": "Hedge Nettle, Betony, Lamb's Ears",
+      "appearance": "A plant spreading ground cover like an army, raising banners of bold purple flowers",
+      "forms": "Whole plant (Salve); Whole plant (Pill)",
+      "effect": "Healing (4d4 + 4); Healing (8d8 + 8)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Mountain",
+      "names": "Funnel-Web Spider, Atrax",
+      "appearance": "Strong, shining legs branch off a fat black body, the spider squeezes itself into a small ground burrow to hide",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Mountain",
+      "names": "Hooded Shrike, Black-Headed Pitohui",
+      "appearance": "A striking combination of black and orange plumage flutters between trees",
+      "forms": "Skin, feathers (Contact)",
+      "effect": "Poison (1d6/round)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Mountain",
+      "names": "Rattlesnake, Diamondback",
+      "appearance": "Brown, vicious looking viper with a hideous rattle for a tail, which it shakes before striking with deadly speed",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (Blinded, Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Mountain",
+      "names": "Gila Monster",
+      "appearance": "A heavy, sluggish lizard covered in orange and black markings, slowly drags itself between places of shade",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (6d6, 1d6/round, poisoned)",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Mountain",
+      "names": "King Cobra, Hamadryad",
+      "appearance": "A characteristic dramatic hood stretches over the snake's head and part way down its striped body",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (2d6, Blinded, Sleep in 1min)",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Beard Lichen, Witch's Hair, Methuselah’s Beard, Old Man's Whiskers",
+      "appearance": "Strung between the limbs of a tree like huge cobwebs, adding an eerie ambiance to the environment around",
+      "forms": "Whole Fungus (Tonic); Whole Fungus (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 12
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Milky Mangrove, Blind-Your-Eye, River Poison Tree",
+      "appearance": "A tangled root system lifts the tree half out of the water while its heavy leaves dangle into the water's edge",
+      "forms": "Sap (Contact)",
+      "effect": "Poison (Blinded)",
+      "dc": 12
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Cottonmouth, Gaper",
+      "appearance": "A mottled brown and black snake with a habit of baring its fangs and exposing the bright white interior of its mouth when threatened",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (5d6/round)",
+      "dc": 13
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Sulphur Tuft, Clustered Woodlover",
+      "appearance": "Clumps of clustered yellow toadstools clamber to consume the dead matter of stumps and branches",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Blinded, Paralysed)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "A thick layer of yellow-green peat blankets the surface of the water, disguising it as though it were a grassy clearing",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Water Hemlock, Muskrat Weed",
+      "appearance": "A spindly knee-high plant with distinct tufts of tiny white flowers growing by the waterside",
+      "forms": "Whole plant (Injury)",
+      "effect": "Poison (Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Vervain, Simpler's Joy, Holy Herb, Wild Hyssop",
+      "appearance": "A number of elegant violet flowered spikes branch up from thin wooden stems",
+      "forms": "Whole plant (Tonic)",
+      "effect": "Healing (2d4 +2)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Paperbark, Punk Tree",
+      "appearance": "The trunk and branches twist unpredictably, the pale bark peeling off in thin, silky sheets",
+      "forms": "Bark, oil (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Swamp",
+      "names": "Willow, Sallow, Salix",
+      "appearance": "A twisting trunk and blossoms that droop from branches, bursting forth before the leaves grow back in",
+      "forms": "Bark (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Blackroot, Bowman's Plant, Culversphysic",
+      "appearance": "Like spears raised high the lilac flowers taper to a point above sharp leaves",
+      "forms": "Root (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Cottongrass, Cottonsedge",
+      "appearance": "A grasslike plant system with fluffy white seed heads buffeted about in the wind",
+      "forms": "Leaves, roots (Salve); Cotton (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound curative",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Wormwood, Sagewort, Absinthe",
+      "appearance": "A stunted flowering weed low to the ground with round yellow buds not quite open enough to be regarded flowers",
+      "forms": "Leaves (Salve); Oil (Ingested)",
+      "effect": "Healing (4d4 + 4); Poison (2d6)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Deer Lichen, Caribou Moss",
+      "appearance": "Silver green lichen in tangled lumps huddling together into larger mounds like nature's dust bunnies",
+      "forms": "Juice (Tonic); Whole fungus (Pill)",
+      "effect": "Healing (2d4 + 2); Healing (8d4 + 8)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Pasque Flower, Wind Flower",
+      "appearance": "Stars of pink and purple bowed in the frost open to the sunlight to soak up what they can, fuzzy fruit like something from Dr Seuss",
+      "forms": "Juice (Draught)",
+      "effect": "Poison (Sleep in 1min)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Arctic Moss, Giant Spearmoss",
+      "appearance": "Under the ice, at the bottom of an arctic lake, the aquatic moss has spread slowly absorbing nutrients where and when it can",
+      "forms": "Moss (Dressing)",
+      "effect": "Blindness curative, Major wound restorative",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Bearberry Bush",
+      "appearance": "Growing low to the ground to keep out of the wind, bright and shiny red berries attract critters",
+      "forms": "Berries (Ingested)",
+      "effect": "Poison (Deafened, poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Willow, Sallow, Salix",
+      "appearance": "A much smaller twisting trunk than usually displayed by a tree of the species, its branches burst with the blossoms before its leaves grow back in",
+      "forms": "Bark (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Alder",
+      "appearance": "Gnarled lumpy trunk spreading uneven branches over an otherwise bare landscape",
+      "forms": "Bark (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Sphagnum Moss, Blood Blanket",
+      "appearance": "Rolling mounds of the yellow-green moss hide amongst the toughened grass of the tundra",
+      "forms": "Dried (Salve); Dried (Dressing)",
+      "effect": "Healing (4d4 + 4); Major wound restorative",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Beaver",
+      "appearance": "A large structure built from branches obstructs the flow of water as round brown rodents with large flat tails busy themselves",
+      "forms": "Testicles (Pill)",
+      "effect": "Healing (8d4 + 8)",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Tundra",
+      "names": "Mistletoe, Tree Thief",
+      "appearance": "Spiked green leaves and blood red berries cluster around and strangle the boughs of a host tree",
+      "forms": "Berries (Injury)",
+      "effect": "Poison (1d6/round)",
+      "dc": 19
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "Miner's Moonlight, Moonshine Mushroom",
+      "appearance": "Climbing in steps up the cave wall in the dark are faintly green glowing half-cup fungal bodies",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "Devil's Fingers, Octopus Stinkhorn, Illithid Egg",
+      "appearance": "A round white bulb erupts into pale meaty tentacles which attract insects to absorb in their stinking slime",
+      "forms": "Whole fungus (Inhaled)",
+      "effect": "Poison (Target spends turn retching)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "Ghost Fungus",
+      "appearance": "A funnel shaped mushroom shining brightly enough in the dark to read by",
+      "forms": "Whole fungus (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "Witch's Heart, Red Cage, Lattice Stinkhorn",
+      "appearance": "A supposedly carnivorous hollow cage of pink, fleshy fungus riddled with holes that resemble bloody wounds",
+      "forms": "Whole fungus (Contact); Whole fungus (Ingested)",
+      "effect": "Poison (2d6/round); Poison (3d6, Stunned)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "False Earthstar",
+      "appearance": "Small fungal stars clinging to the damp of boulders like barnacles to a ship",
+      "forms": "Whole fungus (Salve); Whole fungus (Powder)",
+      "effect": "Healing (4d4 + 4); Stabilise the dying",
+      "dc": 18
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "Arsenic Ore, Mispickel",
+      "appearance": "Flaking silver crystalline rock which releases a garlic smell when struck",
+      "forms": "Mineral (Inhaled)",
+      "effect": "Poison (Poisoned, sleep in 10min, death in 3days)",
+      "dc": 19
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "Blue Vitriol, Chalcanthite",
+      "appearance": "Brilliant blue gems growing in tight knit threads from copper deposits, dissolves quickly in liquid",
+      "forms": "Mineral (Ingested)",
+      "effect": "Poison (Poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "Okay Gecko, Uh-Oh, Fuck-You Lizard",
+      "appearance": "With a call like a squeaky toy, the red-speckled turquoise of its body can change colours to blend in with its surroundings",
+      "forms": "Whole lizard (Pill); Whole lizard (Wine)",
+      "effect": "Healing (8d8 + 8); Major wound restorative",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Underdark",
+      "names": "Cinnabar, Dragon's Blood",
+      "appearance": "Nuggets of gleaming red crystal stick out from the other gem clusters in chunks",
+      "forms": "Mineral (Contact)",
+      "effect": "Poison (Poisoned)",
+      "dc": 22
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Dandelion",
+      "appearance": "Bright yellow flowerheads and fluffy seed orbs ready to be blown off, lifting up from a bed of weedy jagged leaves",
+      "forms": "Roots (Tonic)",
+      "effect": "Healing (2d4 + 2)",
+      "dc": 12
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Cobwebs",
+      "appearance": "Silvery gossamer thread stretched between surfaces and across pathways in elaborate nets",
+      "forms": "Whole web (Dressing)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Creeping Charlie, Ground Ivy, Catsfoot, Field Balm, Gil-Over-The-Ground, Run-away-Robin",
+      "appearance": "Crawling to cover every inch of ground in a blanket of dark, fan-shaped leaves, dotted with the blue of minute flowers",
+      "forms": "Leaves (Wash); Leaves (Oil)",
+      "effect": "Blindness curative; Deafness curative",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Scotch Marigold, Sun Glow, Jane Harmony, Ruddles",
+      "appearance": "Brilliant yellow and orange puffballs on weedlike green stems",
+      "forms": "Leaves (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 14
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Burdock, Orb Arctium",
+      "appearance": "A group of unusual, purplish spheres, covered in spines, look as though they've been wrapped thoroughly in cobwebs",
+      "forms": "Roots (Salve)",
+      "effect": "Healing (4d4 + 4)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Vervain, Simpler's Joy, Holy Herb, Wild Hyssop",
+      "appearance": "A number of elegant violet flowered spikes branch up from thin wooden stems",
+      "forms": "Whole plant (Tonic)",
+      "effect": "Healing (2d4 +2)",
+      "dc": 15
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Foxgloves, Dead Men's Bells, Bloody Fingers, Fairy Thimbles",
+      "appearance": "Vibrantly coloured and patterned bell shaped flowers bloom by the dozens from a single tall spike",
+      "forms": "Whole plant (Ingested)",
+      "effect": "Poison (2d6, Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Redback Spider, Black Widow",
+      "appearance": "A sharp and threatening looking black spider with a striking red hourglass mark on the abdomen",
+      "forms": "Venom (Injury)",
+      "effect": "Poison (3d6, Poisoned)",
+      "dc": 16
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Cone Flower, Echinacea, Hedgehog Flower",
+      "appearance": "Wide circles of purple stand tall, holding aloft spiny, conical centres",
+      "forms": "Whole plant (Tonic); Whole plant (Salve)",
+      "effect": "Healing (2d4 + 2); Healing (4d4 + 4)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Heartsease, Johnny Jump Up, Tickle-My-Fancy, Love-In-Idleness",
+      "appearance": "Tiny wild pansies form ribbons of violet or blue tucked between the grass",
+      "forms": "Whole plant (Salve), Juice (Philtre)",
+      "effect": "Healing (4d4 + 4), Poison (As Friends spell)",
+      "dc": 17
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Bark Scorpion",
+      "appearance": "A waxy, yellow scorpion creeping about at night holding its stinger high, ready to strike any pray that strays into its path",
+      "forms": "Venom (Tonic); Venom (Injury)",
+      "effect": "Healing (2d4 + 2); Poison (3d6, Attack disadvantage)",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Fer-de-Lance, Spearhead, Yellow Beard",
+      "appearance": "Black and brown markings are defined into tessellating diamonds by bright white borders and dark spots",
+      "forms": "Venom (Injured)",
+      "effect": "Poison (4d6, Poisoned)",
+      "dc": 20
+    },
+    {
+      "season": "Spring",
+      "environment": "Urban",
+      "names": "Okay Gecko, Uh-Oh, Fuck-You Lizard",
+      "appearance": "With a call like a squeaky toy, the red-speckled turquoise of its body can change colours to blend in with its surroundings",
+      "forms": "Whole lizard (Pill); Whole lizard (Wine)",
+      "effect": "Healing (8d8 + 8); Major wound restorative",
+      "dc": 23
+    }
+  ]
+}

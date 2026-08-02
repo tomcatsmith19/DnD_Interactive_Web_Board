@@ -1,0 +1,705 @@
+{
+  "source": "User-provided 1d100 NPC inspiration table",
+  "npcs": [
+    {
+      "roll": 1,
+      "race": "Human",
+      "alignment": "True Neutral",
+      "name": "Boq Duff",
+      "quirk": "family man, worried about his sick daughter, needs some flowers that grow in the meadows"
+    },
+    {
+      "roll": 2,
+      "race": "Elf",
+      "alignment": "True Neutral",
+      "name": "Lalariele",
+      "quirk": "elf of few words, a perfectionist who dresses impeccably"
+    },
+    {
+      "roll": 3,
+      "race": "Dwarf",
+      "alignment": "True Neutral",
+      "name": "Blass Anvil",
+      "quirk": "heavy beer lover and local darts champion"
+    },
+    {
+      "roll": 4,
+      "race": "Half-Elf",
+      "alignment": "True Neutral",
+      "name": "Norvert Starsight",
+      "quirk": "a superstitious guy who reads cards, palms and stars"
+    },
+    {
+      "roll": 5,
+      "race": "Gnome",
+      "alignment": "True Neutral",
+      "name": "Leslie Thumberstock",
+      "quirk": "self-conscious about his height, he always carries a stool to stand on when interacting with medium-sized or larger creatures"
+    },
+    {
+      "roll": 6,
+      "race": "Halfling",
+      "alignment": "True Neutral",
+      "name": "Billy Meadows",
+      "quirk": "proud of the pumpkins he grows, he always carries one with him to show it off"
+    },
+    {
+      "roll": 7,
+      "race": "Tiefling",
+      "alignment": "True Neutral",
+      "name": "Leonardo Leslerei",
+      "quirk": "lonely poet who is writing a collection of poems"
+    },
+    {
+      "roll": 8,
+      "race": "Half-Orc",
+      "alignment": "True Neutral",
+      "name": "Atlas Arthus",
+      "quirk": "arm wrestling champion, has a arm-shaped tattoo on his arm"
+    },
+    {
+      "roll": 9,
+      "race": "Dragonborn",
+      "alignment": "True Neutral",
+      "name": "Seregios Goldenscale",
+      "quirk": "ancient coin collector"
+    },
+    {
+      "roll": 10,
+      "race": "Aaracokra",
+      "alignment": "True Neutral",
+      "name": "Bo Beaky",
+      "quirk": "embarrassed by his fear of heights"
+    },
+    {
+      "roll": 11,
+      "race": "Human",
+      "alignment": "Lawful Good",
+      "name": "Lionel Graysteel",
+      "quirk": "he is training to enlist as a soldier for the neighboring city"
+    },
+    {
+      "roll": 12,
+      "race": "Elf",
+      "alignment": "Lawful Good",
+      "name": "Meriele Homilion",
+      "quirk": "idealistic than always advocates for minorities and believes that a better world is possible"
+    },
+    {
+      "roll": 13,
+      "race": "Dwarf",
+      "alignment": "Lawful Good",
+      "name": "Helge Yonkam",
+      "quirk": "honorable dwarf, with a fixation on protecting children"
+    },
+    {
+      "roll": 14,
+      "race": "Half-Elf",
+      "alignment": "Lawful Good",
+      "name": "Simbelmyne",
+      "quirk": "she adorns her hair with flowers and three chirping birds always accompany her"
+    },
+    {
+      "roll": 15,
+      "race": "Gnome",
+      "alignment": "Lawful Good",
+      "name": "Totsie Twerk",
+      "quirk": "he wears glasses made of cogwheels and is proud of a device of his own invention with which he measures time (he calls it a “watch”)"
+    },
+    {
+      "roll": 16,
+      "race": "Halfling",
+      "alignment": "Lawful Good",
+      "name": "Ernie Cornhorn",
+      "quirk": "obsessed with creating the perfect scarecrow, he currently owns one that he can animate thanks to a wizard."
+    },
+    {
+      "roll": 17,
+      "race": "Tiefling",
+      "alignment": "Lawful Good",
+      "name": "Majesty",
+      "quirk": "she’s a musician who charms travelers for their gold"
+    },
+    {
+      "roll": 18,
+      "race": "Half-Orc",
+      "alignment": "Lawful Good",
+      "name": "Bagrak Doom",
+      "quirk": "he claims to be the messenger from the Gods since he “sees” devine omens in everything"
+    },
+    {
+      "roll": 19,
+      "race": "Dragonborn",
+      "alignment": "Lawful Good",
+      "name": "Verthica",
+      "quirk": "she’s an older dragonborn who enjoys telling her old adventures to the children in her village"
+    },
+    {
+      "roll": 20,
+      "race": "Firbolg",
+      "alignment": "Lawful Good",
+      "name": "LeBranch Jones",
+      "quirk": "one of his fingers is in danger because of a colony of termins that he has not yet managed to eradicate"
+    },
+    {
+      "roll": 21,
+      "race": "Human",
+      "alignment": "Chaotic Good",
+      "name": "Carac Brooks",
+      "quirk": "he’s a helpless romantic looking everywhere for the love of his life"
+    },
+    {
+      "roll": 22,
+      "race": "Elf",
+      "alignment": "Chaotic Good",
+      "name": "Alffy Solarys",
+      "quirk": "addicted to chewing petals of a flower that grows on the slopes of the mountains"
+    },
+    {
+      "roll": 23,
+      "race": "Dwarf",
+      "alignment": "Chaotic Good",
+      "name": "Sanzir Brightmaster",
+      "quirk": "she’s the blacksmith apprentice who secretly wishes to go on an adventure, giving adventurers a little discount without her teacher’s consent"
+    },
+    {
+      "roll": 24,
+      "race": "Half-Elf",
+      "alignment": "Chaotic Good",
+      "name": "Philory Leaf",
+      "quirk": "Guardian of trees, because “someone has to take care of the trees”"
+    },
+    {
+      "roll": 25,
+      "race": "Gnome",
+      "alignment": "Chaotic Good",
+      "name": "Jerome Jun",
+      "quirk": "he suspects that he is really an android created by his “father”"
+    },
+    {
+      "roll": 26,
+      "race": "Halfling",
+      "alignment": "Chaotic Good",
+      "name": "Mira Greenhill",
+      "quirk": "she’s a master baker who won’t let you leave town without trying her famous apple pies."
+    },
+    {
+      "roll": 27,
+      "race": "Tiefling",
+      "alignment": "Chaotic Good",
+      "name": "Raphael Marveli",
+      "quirk": "former court harlequin of a major city, he still keeps his uniform and likes to wear it every Friday"
+    },
+    {
+      "roll": 28,
+      "race": "Half-Orc",
+      "alignment": "Chaotic Good",
+      "name": "Kraboon Killaxes",
+      "quirk": "he owns a wolf that he thinks is a dog"
+    },
+    {
+      "roll": 29,
+      "race": "Dragonborn",
+      "alignment": "Chaotic Good",
+      "name": "Tulvir",
+      "quirk": "she doesn’t know the difference between insulting and sarcasm so you’ll mostly find her in a tavern fight"
+    },
+    {
+      "roll": 30,
+      "race": "Harengon",
+      "alignment": "Chaotic Good",
+      "name": "Maribelle Poofyn",
+      "quirk": "she lost a tooth biting into a cob that was too hard, since then he distrusts vegetables"
+    },
+    {
+      "roll": 31,
+      "race": "Human",
+      "alignment": "Neutral Good",
+      "name": "Arabella True",
+      "quirk": "she’s the innkeeper who’s secretly planning how to leave her village life for an adventure"
+    },
+    {
+      "roll": 32,
+      "race": "Elf",
+      "alignment": "Neutral Good",
+      "name": "",
+      "quirk": "Eleneth Mithanmyr is exploring the world looking for new creatures to publish on a book compendium"
+    },
+    {
+      "roll": 33,
+      "race": "Dwarf",
+      "alignment": "Neutral Good",
+      "name": "Hank Terrato passionate about cartography",
+      "quirk": "can replicate maps with great precision"
+    },
+    {
+      "roll": 34,
+      "race": "Half-Elf",
+      "alignment": "Neutral Good",
+      "name": "Arianna Keenseeker",
+      "quirk": "she holds weekly meetings in the tavern to convince everyone that dragonborns are plotting to destroy the world"
+    },
+    {
+      "roll": 35,
+      "race": "Gnome",
+      "alignment": "Neutral Good",
+      "name": "Xaphina Jomila Qitra Banceli",
+      "quirk": "is a paladin who will write down EVERYTHING she sees in a locked journal"
+    },
+    {
+      "roll": 36,
+      "race": "Halfling",
+      "alignment": "Neutral Good",
+      "name": "Doris Blossom",
+      "quirk": "healer who uses plants and fungi to make miraculous ointments"
+    },
+    {
+      "roll": 37,
+      "race": "Tiefling",
+      "alignment": "Neutral Good",
+      "name": "Zorcius Ashes",
+      "quirk": "she’s a very shy tiefling who always dresses in very expensive clothes and will ruin yours if you dare to dress better than her"
+    },
+    {
+      "roll": 38,
+      "race": "Half-Orc",
+      "alignment": "Neutral Good",
+      "name": "Theodora Boulder",
+      "quirk": "she’s a retired mercenary who lost an arm fighting a giant snapping turtle"
+    },
+    {
+      "roll": 39,
+      "race": "Dragonborn",
+      "alignment": "Neutral Good",
+      "name": "Dancalagon",
+      "quirk": "stocky and tall, proud of his dragon blood, always looking for attention"
+    },
+    {
+      "roll": 40,
+      "race": "Kenku",
+      "alignment": "Neutral Good",
+      "name": "Big Bell",
+      "quirk": "she loves to declaim poems about eating fruits even though no one understands her"
+    },
+    {
+      "roll": 41,
+      "race": "Human",
+      "alignment": "Lawful Neutral",
+      "name": "Lando Silverfox",
+      "quirk": "retired soldier, worried about bandits prowling the roads and endangering their pantries"
+    },
+    {
+      "roll": 42,
+      "race": "Elf",
+      "alignment": "Lawful Neutral",
+      "name": "Aninyel Talthanryl",
+      "quirk": "she collects pet rocks that are secretly talismans for mastering different skills"
+    },
+    {
+      "roll": 43,
+      "race": "Dwarf",
+      "alignment": "Lawful Neutral",
+      "name": "Alin Noblebringer",
+      "quirk": "she knows all the gossip in town and she’ll overshare it with anyone"
+    },
+    {
+      "roll": 44,
+      "race": "Half-Elf",
+      "alignment": "Lawful Neutral",
+      "name": "Atheena Cloud",
+      "quirk": "knows every book in the library… even the secret section"
+    },
+    {
+      "roll": 45,
+      "race": "Gnome",
+      "alignment": "Lawful Neutral",
+      "name": "Bebeto Blips",
+      "quirk": "he owns a metal detector and usually goes looking for treasures in the afternoons"
+    },
+    {
+      "roll": 46,
+      "race": "Halfling",
+      "alignment": "Lawful Neutral",
+      "name": "Hilly Bophubb",
+      "quirk": "she knows everything about farms and foraging. She grows special plants that can heal adventurers"
+    },
+    {
+      "roll": 47,
+      "race": "Tiefling",
+      "alignment": "Lawful Neutral",
+      "name": "Innocence",
+      "quirk": "she tries to prove everyone that she makes justice to her name… no one believes her"
+    },
+    {
+      "roll": 48,
+      "race": "Half-Orc",
+      "alignment": "Lawful Neutral",
+      "name": "Kaylein Laughtingstock",
+      "quirk": "she loves training people how to swing an ax"
+    },
+    {
+      "roll": 49,
+      "race": "Dragonborn",
+      "alignment": "Lawful Neutral",
+      "name": "Porath Fire",
+      "quirk": "she doesn’t bathe and will hold a grudge if you say something about it"
+    },
+    {
+      "roll": 50,
+      "race": "Owlin",
+      "alignment": "Lawful Neutral",
+      "name": "Owlmer",
+      "quirk": "magic student, dreams of creating a spell to put his name and go down in history"
+    },
+    {
+      "roll": 51,
+      "race": "Human",
+      "alignment": "Chaotic Neutral",
+      "name": "Rudolph Monty",
+      "quirk": "former adventurer retired when he lost his right arm, likes to reminisce about his good old days as an adventurer"
+    },
+    {
+      "roll": 52,
+      "race": "Elf",
+      "alignment": "Chaotic Neutral",
+      "name": "Lyniath Orren",
+      "quirk": "she’s disgusted by humans so she’s secretly spying on them (very poorly)"
+    },
+    {
+      "roll": 53,
+      "race": "Dwarf",
+      "alignment": "Chaotic Neutral",
+      "name": "Askad Hammermail",
+      "quirk": "he’ll communicate in old dwarven songs"
+    },
+    {
+      "roll": 54,
+      "race": "Half-Elf",
+      "alignment": "Chaotic Neutral",
+      "name": "Diana Morningfall",
+      "quirk": "legend says that everything she draws comes to life at night"
+    },
+    {
+      "roll": 55,
+      "race": "Gnome",
+      "alignment": "Chaotic Neutral",
+      "name": "Panaziver Brijin",
+      "quirk": "he’ll endlessly talk about his nightmares that turn out to be well-known fairy tales"
+    },
+    {
+      "roll": 56,
+      "race": "Halfling",
+      "alignment": "Chaotic Neutral",
+      "name": "Fido Faux",
+      "quirk": "bard’s apprentice but the only thing he has successfully learned has been Vicious Mockery"
+    },
+    {
+      "roll": 57,
+      "race": "Tiefling",
+      "alignment": "Chaotic Neutral",
+      "name": "Arrias Lock",
+      "quirk": "he’s a very greedy nobleman who enjoys leaving farmers without a home"
+    },
+    {
+      "roll": 58,
+      "race": "Half-Orc",
+      "alignment": "Chaotic Neutral",
+      "name": "Sazha Redrage",
+      "quirk": "she’s very close to her sisters and always carries what appears to be a very large dragon’s egg"
+    },
+    {
+      "roll": 59,
+      "race": "Dragonborn",
+      "alignment": "Chaotic Neutral",
+      "name": "Ja’aled Aldath",
+      "quirk": "he’s a sorcerer who’ll sell you overpriced potions that most of the time don’t work"
+    },
+    {
+      "roll": 60,
+      "race": "Sea Elf",
+      "alignment": "Chaotic Neutral",
+      "name": "Bastian Bluesky",
+      "quirk": "his best friend is a dolphin which is rumored to be in his own house, in a bathtub."
+    },
+    {
+      "roll": 61,
+      "race": "Human",
+      "alignment": "Neutral Evil",
+      "name": "Willy “Whispers”",
+      "quirk": "is a coward who sells information to soldiers and criminals, whoever pays more"
+    },
+    {
+      "roll": 62,
+      "race": "Elf",
+      "alignment": "Neutral Evil",
+      "name": "Lyriannah widow of a human",
+      "quirk": "now she is a lonely elf who tries to ruin all the local dating relationships"
+    },
+    {
+      "roll": 63,
+      "race": "Dwarf",
+      "alignment": "Neutral Evil",
+      "name": "Targeen Battlehammer",
+      "quirk": "he’s the heir to the throne since he secretly killed his brother for it"
+    },
+    {
+      "roll": 64,
+      "race": "Half-Elf",
+      "alignment": "Neutral Evil",
+      "name": "Finde Lithaurn",
+      "quirk": "she enjoys kidnapping rangers and eating their pets"
+    },
+    {
+      "roll": 65,
+      "race": "Gnome",
+      "alignment": "Neutral Evil",
+      "name": "Betthany Orros",
+      "quirk": "she was raised by humans and often believes she’s one of them"
+    },
+    {
+      "roll": 66,
+      "race": "Halfling",
+      "alignment": "Neutral Evil",
+      "name": "Molto Balzac",
+      "quirk": "he has a network of secret caves under the town, in which he moves to spy on all his neighbors."
+    },
+    {
+      "roll": 67,
+      "race": "Tiefling",
+      "alignment": "Neutral Evil",
+      "name": "Lynn Phabala",
+      "quirk": "enjoys scaring the village children with his thaumaturgy"
+    },
+    {
+      "roll": 68,
+      "race": "Half-Orc",
+      "alignment": "Neutral Evil",
+      "name": "Helga Ragia",
+      "quirk": "goes into a rage and runs across the prairies as part of his daily routine"
+    },
+    {
+      "roll": 69,
+      "race": "Dragonborn",
+      "alignment": "Neutral Evil",
+      "name": "Lord Blackthorn",
+      "quirk": "former courtier who was expelled from court for “improper conduct”"
+    },
+    {
+      "roll": 70,
+      "race": "Tabaxi",
+      "alignment": "Neutral Evil",
+      "name": "Sabele Purrlys",
+      "quirk": "collector of perfumes… and poisons, but it’s a secret"
+    },
+    {
+      "roll": 71,
+      "race": "Human",
+      "alignment": "Lawful Evil",
+      "name": "Truman Rayhan",
+      "quirk": "Stuttering singer who writes and sings songs for an ancient god only he seems to know"
+    },
+    {
+      "roll": 72,
+      "race": "Elf",
+      "alignment": "Lawful Evil",
+      "name": "Elphaias Spok",
+      "quirk": "he assures that he comes from space and that one day “his people” will come looking for him. Always looking at the sky."
+    },
+    {
+      "roll": 73,
+      "race": "Dwarf",
+      "alignment": "Lawful Evil",
+      "name": "Tonia Blossombeard",
+      "quirk": "tavern cook who cooks very spicy food but always says that her food is not spicy"
+    },
+    {
+      "roll": 74,
+      "race": "Half-Elf",
+      "alignment": "Lawful Evil",
+      "name": "Jahalax Iajoo",
+      "quirk": "jealous of pureblood elves, whom he hates (secretly lengthens his ears with the help of a device an artificer sold him)"
+    },
+    {
+      "roll": 75,
+      "race": "Gnome",
+      "alignment": "Lawful Evil",
+      "name": "Vikoto Fingerflash",
+      "quirk": "unsuccessful inventor, all his inventions for some reason end up exploding"
+    },
+    {
+      "roll": 76,
+      "race": "Halfling",
+      "alignment": "Lawful Evil",
+      "name": "Tony Tobacco",
+      "quirk": "once known as the beer baron, is the former owner of a distribution network for illegal substances"
+    },
+    {
+      "roll": 77,
+      "race": "Tiefling",
+      "alignment": "Lawful Evil",
+      "name": "Lysiantus",
+      "quirk": "renowned village witch, exchanges magic potions for cats and dogs that anyone brings her in exchange"
+    },
+    {
+      "roll": 78,
+      "race": "Half-Orc",
+      "alignment": "Lawful Evil",
+      "name": "Brut Squarejaw",
+      "quirk": "he wears a heavy owlbear cloak which is his pride and says a lot of bad words"
+    },
+    {
+      "roll": 79,
+      "race": "Dragonborn",
+      "alignment": "Lawful Evil",
+      "name": "Vicious Viktor",
+      "quirk": "spits acid at chirping birds, holds record of 77 dead birds"
+    },
+    {
+      "roll": 80,
+      "race": "Tortle",
+      "alignment": "Lawful Evil",
+      "name": "retired assistant to an evil wizard",
+      "quirk": "which he remembers as the best job he’s ever had and the highest paying"
+    },
+    {
+      "roll": 81,
+      "race": "Human",
+      "alignment": "Chaotic Evil",
+      "name": "Plop Jhonson",
+      "quirk": "famous in the town for facing a bear with a bare fist, (he lost the fight and a leg, but fame is not taken away)"
+    },
+    {
+      "roll": 82,
+      "race": "Elf",
+      "alignment": "Chaotic Evil",
+      "name": "Taax Kelpied",
+      "quirk": "vendor of consciousness-altering magic potions, popular with local teenagers"
+    },
+    {
+      "roll": 83,
+      "race": "Dwarf",
+      "alignment": "Chaotic Evil",
+      "name": "Smi Blackaxe",
+      "quirk": "right hand of a criminal who is in jail, patiently awaits his release to continue his old ways"
+    },
+    {
+      "roll": 84,
+      "race": "Half-Elf",
+      "alignment": "Chaotic Evil",
+      "name": "Villies Vance",
+      "quirk": "petty thief, always gets nervous in the presence of people in armor"
+    },
+    {
+      "roll": 85,
+      "race": "Gnome",
+      "alignment": "Chaotic Evil",
+      "name": "Leprecharm",
+      "quirk": "manipulative and evil gnome who dresses as a garden gnome and has a cute appearance"
+    },
+    {
+      "roll": 86,
+      "race": "Halfling",
+      "alignment": "Chaotic Evil",
+      "name": "Ronnie “Rott” Apple",
+      "quirk": "he hates cats, he always carries rocks in his pocket in case he bumps into one"
+    },
+    {
+      "roll": 87,
+      "race": "Tiefling",
+      "alignment": "Chaotic Evil",
+      "name": "Baphy Baal",
+      "quirk": "he lives alone with seven black cats whom he trained to scare children to go into the woods"
+    },
+    {
+      "roll": 88,
+      "race": "Half-Orc",
+      "alignment": "Chaotic Evil",
+      "name": "Stu Strongfang",
+      "quirk": "he collects recipe books with illustrations, but he can’t read, so he improvises the ingredients with stolen goods"
+    },
+    {
+      "roll": 89,
+      "race": "Dragonborn",
+      "alignment": "Chaotic Evil",
+      "name": "Melvin Malakaias",
+      "quirk": "His scales are falling off from playing with a book of forbidden magic, he covers his body in a black robe"
+    },
+    {
+      "roll": 90,
+      "race": "Goblin",
+      "alignment": "Chaotic Evil",
+      "name": "Explosive lover",
+      "quirk": "he can’t pronounce the “s” so their enemies don’t take him seriously until he explodes their houses"
+    },
+    {
+      "roll": 91,
+      "race": "Human",
+      "alignment": "True Neutral",
+      "name": "Laura Rosalie",
+      "quirk": "grows flowers and experiments with the mixture of species, is in search of the “perfect flower”"
+    },
+    {
+      "roll": 92,
+      "race": "Elf",
+      "alignment": "True Neutral",
+      "name": "Leios Solarleaf",
+      "quirk": "wizard apprentice with pronunciation problems, so his spells with a vocal component don’t come out as well"
+    },
+    {
+      "roll": 93,
+      "race": "Dwarf",
+      "alignment": "True Neutral",
+      "name": "Tros Hammersmith",
+      "quirk": "blacksmith looking for the perfect craft"
+    },
+    {
+      "roll": 94,
+      "race": "Half-Elf",
+      "alignment": "True Neutral",
+      "name": "Carat Laramie",
+      "quirk": "lover of games of chance and bets, a gambler who decides his life with some dice that he always carries with him"
+    },
+    {
+      "roll": 95,
+      "race": "Gnome",
+      "alignment": "True Neutral",
+      "name": "Leroy Gomez",
+      "quirk": "does not believe that magic exists, and always looks for a far-fetched explanation to justify its effects"
+    },
+    {
+      "roll": 96,
+      "race": "Halfling",
+      "alignment": "True Neutral",
+      "name": "Boris Lil´hand",
+      "quirk": "managed to mix tobacco seeds with tomato and it has been a great success in the locality, although its fruits seem to cause addiction"
+    },
+    {
+      "roll": 97,
+      "race": "Tiefling",
+      "alignment": "True Neutral",
+      "name": "Lucellie Dreslenius",
+      "quirk": "historian who keeps records of events in and around the town"
+    },
+    {
+      "roll": 98,
+      "race": "Half-Orc",
+      "alignment": "True Neutral",
+      "name": "Momo Emerage",
+      "quirk": "proud of his roots, she dresses like a barbarian and prefers to speak in orcish than in common"
+    },
+    {
+      "roll": 99,
+      "race": "Dragonborn",
+      "alignment": "True Neutral",
+      "name": "Dandy Hotmouth",
+      "quirk": "he has a meat stand that he cooks himself with his breath weapon."
+    },
+    {
+      "roll": 100,
+      "race": "Warforged",
+      "alignment": "True Neutral",
+      "name": "P-3.1416",
+      "quirk": "he has a perfect memory, he is fond of keeping track of how many inhabitants, trees and stones there are in the town."
+    }
+  ]
+}

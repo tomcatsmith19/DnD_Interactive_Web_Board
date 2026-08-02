@@ -25,6 +25,10 @@
       font-family: Arial, sans-serif;
     }
 
+    .monster-token.is-defeated img { filter: grayscale(1) brightness(.42); }
+    .defeated-token-x { display: none; position: absolute; inset: 0; z-index: 18; align-items: center; justify-content: center; color: #e00000; font-family: Arial, sans-serif; font-weight: 900; line-height: 1; text-shadow: 0 0 4px #000, 2px 2px 0 #330000; pointer-events: none; }
+    .monster-token.is-defeated .defeated-token-x { display: flex; }
+
     #menu {
       position: absolute;
       top: 0;
@@ -476,6 +480,9 @@
       if (conditionLabel) {
         conditionLabel.style.fontSize = `${currentTokenSize / 5}px`;
       }
+      element.classList.toggle('is-defeated', Boolean(monster.isplayer && monster.hp <= 0));
+      const defeatedX = element.querySelector('.defeated-token-x');
+      if (defeatedX) defeatedX.style.fontSize = `${currentTokenSize * 0.82}px`;
     }
 
     function refreshMapLayout() {
@@ -550,8 +557,13 @@
       conditionLabel.style.pointerEvents = 'none';
       conditionLabel.textContent = (monster.conditions || []).join(', ');
 
+      const defeatedX = document.createElement('div');
+      defeatedX.className = 'defeated-token-x';
+      defeatedX.textContent = '×';
+
       container.appendChild(img);
       container.appendChild(label);
+      container.appendChild(defeatedX);
       container.appendChild(conditionLabel);
       makeDraggable(container);
       tokenLayer.appendChild(container);

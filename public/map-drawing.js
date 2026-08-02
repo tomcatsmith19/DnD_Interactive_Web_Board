@@ -175,6 +175,7 @@
     let activePointerId = null;
     let currentDraft = null;
     let isPointerDown = false;
+    let triangleClickStage = 0;
 
     const drawingLayer = createSvgElement("svg", {
       id: "mapDrawingLayer",
@@ -304,21 +305,29 @@
     function getCircleGeometry(drawing) {
       const start = ratioPointToPixels(drawing.start);
       const end = ratioPointToPixels(drawing.end);
-      const center = {
-        x: (start.x + end.x) / 2,
-        y: (start.y + end.y) / 2
-      };
-      const radius = Math.min(Math.abs(end.x - start.x), Math.abs(end.y - start.y)) / 2;
+      const center = start;
+      const radius = distanceBetweenPoints(start, end);
 
       return { center, radius };
     }
 
     function getTrianglePixels(drawing) {
-      const bounds = getRectangleBounds(drawing);
+      const tip = ratioPointToPixels(drawing.start);
+      const baseCenter = ratioPointToPixels(drawing.end);
+      if (!drawing.widthPoint) {
+        const baseCorner = baseCenter;
+        return [tip, baseCorner, { x: tip.x - (baseCorner.x - tip.x), y: baseCorner.y }];
+      }
+      const widthPoint = ratioPointToPixels(drawing.widthPoint);
+      const axisX = baseCenter.x - tip.x;
+      const axisY = baseCenter.y - tip.y;
+      const axisLength = Math.max(0.001, Math.hypot(axisX, axisY));
+      const perpendicular = { x: -axisY / axisLength, y: axisX / axisLength };
+      const halfWidth = Math.abs((widthPoint.x - baseCenter.x) * perpendicular.x + (widthPoint.y - baseCenter.y) * perpendicular.y);
       return [
-        { x: (bounds.left + bounds.right) / 2, y: bounds.top },
-        { x: bounds.left, y: bounds.bottom },
-        { x: bounds.right, y: bounds.bottom }
+        tip,
+        { x: baseCenter.x + perpendicular.x * halfWidth, y: baseCenter.y + perpendicular.y * halfWidth },
+        { x: baseCenter.x - perpendicular.x * halfWidth, y: baseCenter.y - perpendicular.y * halfWidth }
       ];
     }
 
@@ -394,6 +403,17 @@
       }
 
       if (drawing.type === "triangle") {
+        if (isPreview && !drawing.widthPoint) {
+          const tip = ratioPointToPixels(drawing.start);
+          const baseCenter = ratioPointToPixels(drawing.end);
+          return createSvgElement("line", {
+            ...sharedAttributes,
+            x1: String(roundPixels(tip.x)),
+            y1: String(roundPixels(tip.y)),
+            x2: String(roundPixels(baseCenter.x)),
+            y2: String(roundPixels(baseCenter.y))
+          });
+        }
         const points = getTrianglePixels(drawing)
           .map(point => `${roundPixels(point.x)},${roundPixels(point.y)}`)
           .join(" ");
@@ -445,6 +465,13 @@
     }
 
     function setTool(tool) {
+      if (tool !== currentTool) {
+        currentDraft = null;
+        triangleClickStage = 0;
+        activePointerId = null;
+        isPointerDown = false;
+        renderPreview();
+      }
       currentTool = tool;
       activeButtons.forEach((button, name) => {
         button.classList.toggle("is-active", name === tool);
@@ -502,6 +529,12 @@
           x: roundRatio(drawing.end.x),
           y: roundRatio(drawing.end.y)
         };
+        if (drawing.type === "triangle" && drawing.widthPoint) {
+          sanitized.widthPoint = {
+            x: roundRatio(drawing.widthPoint.x),
+            y: roundRatio(drawing.widthPoint.y)
+          };
+        }
       }
 
       return sanitized;
@@ -514,6 +547,12 @@
 
       if (drawing.type === "pen") {
         return (drawing.points || []).length > 1;
+      }
+
+      if (drawing.type === "triangle") {
+        if (!drawing.widthPoint) return false;
+        const points = getTrianglePixels(drawing);
+        return distanceBetweenPoints(points[0], ratioPointToPixels(drawing.end)) > 6 && distanceBetweenPoints(points[1], points[2]) > 6;
       }
 
       const start = ratioPointToPixels(drawing.start);
@@ -669,7 +708,15 @@
         return;
       }
 
-      if (currentTool === "pen") {
+      if (currentTool === "triangle") {
+        if (triangleClickStage === 0) {
+          currentDraft = createBaseDrawing("triangle", point);
+          triangleClickStage = 1;
+        } else if (triangleClickStage === 2) {
+          currentDraft.widthPoint = point;
+          triangleClickStage = 3;
+        }
+      } else if (currentTool === "pen") {
         currentDraft = {
           id: generateDrawingId(),
           type: "pen",
@@ -685,6 +732,15 @@
     });
 
     previewLayer.addEventListener("pointermove", event => {
+      if (currentTool === "triangle" && triangleClickStage === 2 && !isPointerDown && currentDraft) {
+        const previewPoint = getPointerRatioPoint(event);
+        if (previewPoint) {
+          currentDraft.widthPoint = previewPoint;
+          renderPreview();
+        }
+        return;
+      }
+
       if (!isPointerDown || event.pointerId !== activePointerId) {
         return;
       }
@@ -705,7 +761,9 @@
         return;
       }
 
-      if (currentDraft.type === "pen") {
+      if (currentDraft.type === "triangle") {
+        if (triangleClickStage === 1) currentDraft.end = point;
+      } else if (currentDraft.type === "pen") {
         const lastPoint = currentDraft.points[currentDraft.points.length - 1];
         if (!lastPoint || Math.abs(lastPoint.x - point.x) >= 0.002 || Math.abs(lastPoint.y - point.y) >= 0.002) {
           currentDraft.points.push(point);
@@ -732,7 +790,23 @@
       isPointerDown = false;
       activePointerId = null;
 
-      if (currentTool !== "eraser") {
+      if (currentTool === "triangle") {
+        if (triangleClickStage === 1) {
+          const start = ratioPointToPixels(currentDraft.start);
+          const end = ratioPointToPixels(currentDraft.end);
+          if (distanceBetweenPoints(start, end) <= 6) {
+            currentDraft = null;
+            triangleClickStage = 0;
+          } else {
+            currentDraft.widthPoint = { ...currentDraft.end };
+            triangleClickStage = 2;
+          }
+          renderPreview();
+        } else if (triangleClickStage >= 3) {
+          finishCurrentDrawing();
+          triangleClickStage = 0;
+        }
+      } else if (currentTool !== "eraser") {
         finishCurrentDrawing();
       }
     }
