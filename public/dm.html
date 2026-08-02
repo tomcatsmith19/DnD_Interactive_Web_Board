@@ -187,6 +187,96 @@
             transform-origin: top left;
         }
 
+        .dm-map-ui[hidden] { display:none !important; }
+        .dm-initiative-panel { position:fixed; top:140px; left:18px; z-index:1120; width:430px; max-height:58vh; overflow:visible; padding:12px; color:white; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:9px; transition:transform .25s ease; box-sizing:border-box; }
+        .dm-initiative-panel.is-collapsed { transform:translateX(calc(-100% - 18px)); }
+        .dm-initiative-content { max-height:calc(62vh - 24px); overflow:auto; }
+        .dm-initiative-panel h2 { margin:0 0 8px; color:#FFD700; font-family:'MedievalSharp',cursive; }
+        .dm-initiative-collapse { position:absolute; top:50%; right:-29px; transform:translateY(-50%); width:29px; height:105px; padding:0; border-radius:0 7px 7px 0; background:#111; color:#FFD700; border:1px solid #FFD700; cursor:pointer; font-size:20px; }
+        .dm-initiative-table { width:100%; border-collapse:collapse; background:#333; color:white; font-size:.82rem; }
+        .dm-initiative-table th,.dm-initiative-table td { padding:6px; border:1px solid #555; }
+        .dm-add-monster { width:100%; margin-top:8px; padding:9px; background:#FFD700; border:0; color:#111; font-weight:bold; border-radius:5px; cursor:pointer; }
+        .dm-audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; padding:8px; color:white; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:9px; }
+        .dm-audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
+        .dm-audio-dock.is-collapsed .dm-audio-content { display:none; }
+        .dm-audio-content { display:grid; grid-template-columns:minmax(105px,.4fr) repeat(3,minmax(0,1fr)); gap:8px 12px; align-items:start; flex:1; }
+        .dm-audio-music { display:flex; flex-direction:column; gap:8px; }
+        .dm-audio-music::before { content:'Background Music'; color:#FFD700; font-weight:bold; font-size:.78rem; text-align:center; }
+        .dm-audio-music select { padding:6px 9px; background:#111; color:#FFD700; border:1px solid #FFD700; border-radius:4px; }
+        .dm-audio-volumes { display:flex; flex-direction:column; gap:7px; color:#FFD700; font-size:.72rem; }
+        .dm-audio-volumes input { accent-color:#FFD700; }
+        .dm-audio-group { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); align-items:center; gap:5px; }
+        .dm-audio-group + .dm-audio-group { border-left:1px solid rgba(255,215,0,.55); padding-left:12px; }
+        .dm-audio-group strong { grid-column:1/-1; color:#FFD700; font-size:.78rem; text-align:center; }
+        .dm-audio-group button { padding:6px 9px; font-size:.76rem; background:#111; border:1px solid; border-radius:4px; cursor:pointer; }
+        .dm-audio-group.reactions button { color:#55d66b; border-color:#55d66b; }
+        .dm-audio-group.combat button { color:#ff5959; border-color:#ff5959; }
+        .dm-audio-group.checks button { color:#55a8ff; border-color:#55a8ff; }
+        .dm-audio-group.reactions button:hover { background:#55d66b; color:#081b0c; }
+        .dm-audio-group.combat button:hover { background:#ff5959; color:#210606; }
+        .dm-audio-group.checks button:hover { background:#55a8ff; color:#06172a; }
+        .dm-audio-collapse { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; }
+        .generator-panel { position:fixed; top:70px; right:18px; bottom:42px; z-index:1130; width:min(570px,calc(100vw - 42px)); padding:12px; box-sizing:border-box; overflow:visible; color:white; background:rgba(15,15,15,.96); border:1px solid #666; border-radius:9px; transition:transform .25s ease; }
+        .generator-panel.is-collapsed { transform:translateX(calc(100% + 18px)); }
+        .generator-collapse { position:absolute; top:50%; left:-29px; transform:translateY(-50%); width:29px; height:105px; padding:0; border-radius:7px 0 0 7px; background:#111; color:#FFD700; border:1px solid #FFD700; cursor:pointer; font-size:20px; }
+        .generator-panel-inner { height:100%; display:flex; flex-direction:column; min-height:0; }
+        .generator-panel h2 { margin:0 0 8px; color:#FFD700; font-family:'MedievalSharp',cursive; }
+        .generator-shared-controls { display:grid; grid-template-columns:1.25fr .8fr 1fr; gap:7px; margin-bottom:9px; }
+        .generator-shared-controls label { display:flex; flex-direction:column; gap:4px; color:#e7c96a; font-size:.74rem; font-weight:bold; }
+        .generator-shared-controls input,.generator-shared-controls select { min-width:0; padding:7px; background:#222; color:white; border:1px solid #666; border-radius:4px; }
+        .generator-main-tabs,.generator-subtabs { display:grid; grid-template-columns:repeat(3,1fr); gap:5px; margin-bottom:8px; }
+        .generator-main-tab,.generator-banner { padding:8px; color:white; background:#292929; border:1px solid currentColor; border-radius:5px; font-weight:bold; cursor:pointer; }
+        .generator-main-tab.wild { color:#55d66b; }.generator-main-tab.town { color:#55a8ff; }.generator-main-tab.dungeon { color:#ff5959; }
+        .generator-main-tab.wild.is-active { background:#55d66b; color:#111; }
+        .generator-main-tab.town.is-active { background:#55a8ff; color:#111; }
+        .generator-main-tab.dungeon.is-active { background:#ff5959; color:#111; }
+        .generator-banner { color:#FFD700; border-color:#665b24; }
+        .generator-banner.is-active { background:#FFD700; color:#111; }
+        .generator-scroll { flex:1; min-height:0; overflow:auto; padding-right:3px; }
+        .generator-mode { display:none; }
+        .generator-subcontent { display:none !important; }
+        .generator-mode.is-active { display:block; }
+        .generator-subcontent.is-active { display:flex !important; }
+        .generator-panel .wilderness-layout { display:flex; flex-direction:column; min-width:0; padding:0; gap:10px; }
+        .generator-panel .wilderness-panel { padding:12px; }
+        .generator-panel .wilderness-controls { display:block; }
+        .generator-panel .wilderness-controls label { margin-bottom:8px; }
+        .generator-panel label:has(#travelEnvironment),.generator-panel label:has(#travelPartyLevels),.generator-panel .foraging-tools { display:none; }
+        .generator-panel .travel-result { min-height:0; }
+        .generator-panel .foraging-frame { min-height:420px; height:55vh; }
+        .generator-panel #partyLevels,.generator-panel #encounterEnvironment,.generator-panel label[for="partyLevels"],.generator-panel label[for="encounterEnvironment"] { display:none !important; }
+        .generator-panel #npcSubTab { flex-direction:column; overflow:visible !important; }
+        .generator-panel #npcSubTab > div { flex:auto !important; overflow:visible !important; }
+        .generator-panel #encounterContent { flex-direction:column; }
+        .generator-panel #trapContent,.generator-panel #lootContent,.generator-panel #carousingSubTab,.generator-panel #magicShopSubTab { min-height:0; }
+        .generator-panel .generator-subcontent { box-sizing:border-box; width:100%; padding:12px !important; background:rgba(255,255,255,.05) !important; border-radius:10px; }
+        .generator-panel #wildTravelPanel.is-active,.generator-panel #wildForagingPanel.is-active { display:block !important; }
+        .generator-panel #wildTravelPanel > * + *,.generator-panel #wildForagingPanel > * + * { margin-top:10px; }
+        .generator-panel #wildForagingPanel.is-active { display:flex !important; flex-direction:column; min-height:calc(100vh - 325px); }
+        .generator-panel #wildForagingPanel .foraging-output { flex:1; height:calc(100vh - 405px); min-height:300px; max-height:none; margin-bottom:0; }
+        .generator-panel #wildForagingPanel details { display:none; }
+        .generator-panel #wildTravelPanel .wilderness-controls { display:grid; grid-template-columns:minmax(120px,.7fr) minmax(190px,1.3fr); align-items:end; gap:8px; }
+        .generator-panel #wildTravelPanel .wilderness-controls label { margin:0; }
+        .generator-panel #wildTravelPanel .wilderness-roll { grid-column:auto; height:39px; padding:8px; }
+        .generator-panel .encounter-generate-row { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+        .generator-panel .encounter-generate-row button { min-width:0; padding:10px !important; font-size:.86rem !important; }
+        .generator-panel .trap-controls button { grid-column:1/-1; width:100%; white-space:nowrap; }
+        .generator-panel .trap-controls { grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; }
+        .generator-panel .trap-controls select { min-width:0; padding:7px 3px; font-size:.72rem; }
+        .npc-manager-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:6px; }
+        .npc-manager-row select,.npc-manager-row button { min-width:0; padding:8px; border-radius:5px; }
+        .npc-manager-row select { background:#111; color:#FFD700; border:1px solid #FFD700; }
+        .npc-manager-row button { border:0; cursor:pointer; font-weight:bold; }
+        .npc-editor-card { padding:12px; background:#101010; border-left:4px solid #55a8ff; border-radius:6px; }
+        .npc-identity-grid { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-bottom:8px; }
+        .npc-identity-grid label,.npc-editor-card > label { display:flex; flex-direction:column; gap:4px; color:#e7c96a; font-size:.78rem; }
+        .npc-editor-card input,.npc-editor-card textarea { box-sizing:border-box; width:100%; padding:7px; background:#222; color:white; border:1px solid #666; border-radius:4px; }
+        .npc-editable-stats { display:grid; grid-template-columns:repeat(6,1fr); gap:5px; margin:8px 0; }
+        .npc-editable-stats label { color:#FFD700; font-size:.7rem; text-align:center; }
+        .npc-editable-stats input { margin-top:3px; text-align:center; padding:5px 2px; }
+        .npc-generator-flavor { margin:8px 0; color:#ccc; font-size:.86rem; }
+        .npc-generation-controls { margin-top:10px; padding:10px; background:rgba(255,255,255,.05); border-radius:8px; }
+
         .wilderness-layout { display: grid; grid-template-columns: minmax(340px, .85fr) minmax(480px, 1.4fr); gap: 16px; padding: 16px; width: 100%; box-sizing: border-box; }
         .wilderness-panel { background: #1d1d1d; border: 1px solid #555; border-radius: 10px; padding: 18px; box-sizing: border-box; }
         .wilderness-panel h2 { margin: 0 0 6px; color: #FFD700; font-family: 'MedievalSharp', serif; }
@@ -352,9 +442,6 @@
 <div class="main-layout">
     <div class="tab-bar">
         <button class="tab-button active" onclick="openTab('campaignTab')">Campaign</button>
-        <button class="tab-button" onclick="openTab('worldTab')">World</button>
-        <button class="tab-button" onclick="openTab('townTab')">Town</button>
-        <button class="tab-button" onclick="openTab('dungeonTab')">Dungeon</button>
         <button class="tab-button" onclick="openTab('mapTab')">Map</button>
         <button class="tab-button" onclick="openTab('referenceTab')">Reference</button>
         <button class="tab-button" onclick="openTab('creatorTab')">Creator</button>
@@ -401,8 +488,6 @@
     <div class="tab-content" id="worldTab">
         <div class="wilderness-layout">
             <section class="wilderness-panel">
-                <h2>Wilderness Travel</h2>
-                <p>Enter the party's Survival check, choose the terrain, and generate a scene for the next leg of the journey.</p>
                 <div class="wilderness-controls">
                     <label>Survival check
                         <input id="travelSurvivalCheck" type="number" min="1" max="40" value="12">
@@ -425,8 +510,6 @@
                 </div>
             </section>
             <section class="wilderness-panel">
-                <h2>Foraging Tables</h2>
-                <p>Choose a season and environment to view its complete Materia Medica table, including every foraging DC.</p>
                 <div class="foraging-tools">
                     <select id="forageSeason" aria-label="Foraging season" onchange="renderForagingTable()"><option>Summer</option><option>Autumn</option><option>Winter</option><option>Spring</option></select>
                     <select id="forageRegion" aria-label="Foraging region" onchange="renderForagingTable()"><option>Coast</option><option>Desert</option><option>Forest</option><option>Grassland</option><option>Jungle</option><option>Mountain</option><option>Swamp</option><option>Tundra</option><option>Underdark</option><option>Urban</option></select>
@@ -592,32 +675,8 @@
     <div class="tab-content" id="dungeonTab">
         <div style="padding: 20px; display: flex; flex: 1; gap: 20px;">
 
-            <!-- Left Column: Monster Table -->
-            <div
-                style="flex: 1; display: flex; flex-direction: column; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px; gap: 10px;">
-
-                <table style="width: 100%; border-collapse: collapse; background-color: #333; color: white;">
-                    <thead>
-                        <tr style="background-color: #444;">
-                            <th style="padding: 10px; border: 1px solid #555;">#</th>
-                            <th style="padding: 10px; border: 1px solid #555;">INIT</th>
-                            <th style="padding: 10px; border: 1px solid #555;">NAME</th>
-                            <th style="padding: 10px; border: 1px solid #555;">HP</th>
-                            <th style="padding: 10px; border: 1px solid #555;">Conditions</th> <!-- NEW COLUMN -->
-                        </tr>
-                    </thead>
-                    <tbody id="monsterTableBody">
-                        <!-- Monsters will be added here -->
-                    </tbody>
-                </table>
-
-                <button id="addMonsterBtn"
-                    style="margin-top: 10px; padding: 10px; background-color: #FFD700; border: none; color: black; font-weight: bold; border-radius: 5px; cursor: pointer;">Add
-                    Monster</button>
-            </div>
-
             <!-- Right Column: Tab Widget -->
-            <div style="flex: 2; display: flex; flex-direction: column; gap: 10px;">
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
 
                 <!-- Tabs Header -->
                 <div style="display: flex; background-color: #333;">
@@ -635,7 +694,7 @@
                     <div style="width:100%; padding:24px; box-sizing:border-box;">
                         <h1 style="font-family:'MedievalSharp',cursive; color:#FFD700;">Map Token Actions</h1>
                         <p>Open the Map tab and click a creature token to heal, damage, apply a condition, or remove a condition.</p>
-                        <p><strong>Multi-select:</strong> Ctrl+click additional tokens, or hold Ctrl and drag across the map to lasso a group. The action panel applies to every selected creature.</p>
+                        <p><strong>Multi-select:</strong> Right-click and drag across the map to lasso a group. The action panel applies to every selected creature.</p>
                     </div>
                     <div
                         style="display:none; width: 100%; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
@@ -772,7 +831,6 @@
                 <div id="trapContent" class="dungeon-tab-content"
                     style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
                     <div class="trap-generator">
-                        <h2 style="margin:0; font-family:'MedievalSharp',cursive; color:#FFD700;">Traps &amp; Hazards Generator</h2>
                         <div class="trap-controls">
                             <select id="trapCategory" aria-label="Category" onchange="updateTrapFilters()">
                                 <option value="all">Traps &amp; Hazards</option><option value="trap">Traps Only</option><option value="hazard">Hazards Only</option>
@@ -797,8 +855,6 @@
                     <div
                         style="display: flex; flex-direction: column; flex: 1; padding: 20px; align-items: center; justify-content: center; gap: 20px; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
 
-                        <h2 style="font-family: 'MedievalSharp', cursive; color: #FFD700;">Loot Generator</h2>
-
                         <!-- Dropdown + CR Input -->
                         <div style="display: flex; gap: 10px; align-items: center;">
                             <select id="lootType" class="npc-input">
@@ -821,11 +877,6 @@
                         <textarea id="lootResult" class="npc-textarea" style="width: 100%; height: 300px;"
                             readonly></textarea>
 
-                        <!-- Donjon Link Button -->
-                        <a href="https://donjon.bin.sh/5e/random/#type=treasure" target="_blank"
-                            style="padding: 15px 30px; background-color: #FFD700; color: black; font-size: 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s ease;">
-                            Open Loot Generator
-                        </a>
                     </div>
                 </div>
 
@@ -885,14 +936,11 @@
 
                     <!-- Right Column: Monster List -->
                     <div style="flex: 2; display: flex; flex-direction: column; gap: 10px;">
-                        <label><strong>Monsters:</strong></label>
+                        <label id="encounterMonsterHeading"><strong>Monsters (0 of 0 XP):</strong></label>
                         <ul id="encounterMonsterList"
                             style="flex: 1; list-style: none; padding: 10px; background-color: #222; color: white; border-radius: 5px; overflow-y: auto; border: 1px solid #555;">
                         </ul>
 
-                        <label><strong>Total Adjusted XP:</strong></label>
-                        <input id="encounterXP" type="text" readonly
-                            style="padding: 10px; font-size: 1rem; background-color: #222; color: white; border: 1px solid #555; border-radius: 5px;">
                     </div>
                 </div>
 
@@ -989,8 +1037,63 @@
             <span>Token Size</span>
             <button id="decreaseTokenSize" style="font-size: 18px;">-</button>
             <button id="increaseTokenSize" style="font-size: 18px;">+</button>
-            <button id="toggleDrawingToolbar" type="button">Hide Drawing</button>
         </div>
+
+        <aside id="dmInitiativePanel" class="dm-map-ui dm-initiative-panel is-collapsed" hidden>
+            <button id="dmInitiativeCollapse" class="dm-initiative-collapse" type="button" onclick="toggleDmInitiativePanel()" aria-label="Show initiative tracker">&#8250;</button>
+            <div class="dm-initiative-content">
+                <h2>Initiative</h2>
+                <table class="dm-initiative-table">
+                    <thead><tr><th>#</th><th>INIT</th><th>NAME</th><th>HP</th><th>Conditions</th></tr></thead>
+                    <tbody id="monsterTableBody"></tbody>
+                </table>
+                <button id="addMonsterBtn" class="dm-add-monster" type="button">Add Monster</button>
+            </div>
+        </aside>
+
+        <section id="dmAudioDock" class="dm-map-ui dm-audio-dock is-collapsed" hidden>
+            <button id="dmAudioCollapse" class="dm-audio-collapse" type="button" onclick="toggleDmAudioDock()">&#8963;</button>
+            <div class="dm-audio-content">
+                <div class="dm-audio-music">
+                    <select id="dmMusicSelect" onchange="handleDmMusicChange(this.value)"><option value="">No Music</option><option value="data/music/camp.mp3">Camp</option><option value="data/music/tavern.mp3">Tavern</option><option value="data/music/city.mp3">City</option><option value="data/music/desert.mp3">Desert</option><option value="data/music/swamp.mp3">Swamp</option><option value="data/music/forest.mp3">Forest</option><option value="data/music/mountain.mp3">Mountain</option><option value="data/music/underdark.mp3">Underdark</option><option value="data/music/dungeon.mp3">Dungeon</option><option value="data/music/combat.mp3">Combat</option></select>
+                    <div class="dm-audio-volumes"><label>Music <input type="range" min="0" max="1" step="0.05" value="1" oninput="setDmMusicVolume(this.value)"></label><label>SFX <input type="range" min="0" max="1" step="0.05" value="1" oninput="setDmSfxVolume(this.value)"></label></div>
+                </div>
+                <div class="dm-audio-group reactions"><strong>Reactions</strong><button onclick="playDmSoundEffect('data/sounds/angry.mp3')">Angry</button><button onclick="playDmSoundEffect('data/sounds/bruh.mp3')">Bruh</button><button onclick="playDmSoundEffect('data/sounds/dumb.mp3')">Dumb</button><button onclick="playDmSoundEffect('data/sounds/evillaugh.mp3')">Evil Laugh</button><button onclick="playDmSoundEffect('data/sounds/scream.mp3')">Scream</button><button onclick="playDmSoundEffect('data/sounds/nooo.mp3')">Nooo</button><button onclick="playDmSoundEffect('data/sounds/suprise.mp3')">Surprise</button><button onclick="playDmSoundEffect('data/sounds/oh_my.mp3')">Oh My</button><button onclick="playDmSoundEffect('data/sounds/awww.mp3')">Awww</button><button onclick="playDmSoundEffect('data/sounds/laugh.mp3')">Laugh</button></div>
+                <div class="dm-audio-group combat"><strong>Combat</strong><button onclick="playDmSoundEffect('data/sounds/yeet.mp3')">Yeet</button><button onclick="playDmSoundEffect('data/sounds/running.mp3')">Run</button><button onclick="playDmSoundEffect('data/sounds/bite.mp3')">Bite</button><button onclick="playDmSoundEffect('data/sounds/punch.mp3')">Punch</button><button onclick="playDmSoundEffect('data/sounds/splat.mp3')">Splat</button><button onclick="playDmSoundEffect('data/sounds/bonk.mp3')">Bonk</button><button onclick="playDmSoundEffect('data/sounds/hammer.mp3')">Hammer</button><button onclick="playDmSoundEffect('data/sounds/sword.mp3')">Sword</button><button onclick="playDmSoundEffect('data/sounds/tentacle.mp3')">Tentacle</button><button onclick="playDmSoundEffect('data/sounds/gunshot.mp3')">Gun</button><button onclick="playDmSoundEffect('data/sounds/Explosion.mp3')">Blast</button><button onclick="playDmSoundEffect('data/sounds/failed_spell.mp3')">Spell Fail</button><button onclick="playDmSoundEffect('data/sounds/spell attack.mp3')">Spell</button></div>
+                <div class="dm-audio-group checks"><strong>Checks</strong><button onclick="playDmSoundEffect('data/sounds/died.mp3')">Died</button><button onclick="playDmSoundEffect('data/sounds/item.mp3')">Item</button><button onclick="playDmSoundEffect('data/sounds/sad.mp3')">Fail</button><button onclick="playDmSoundEffect('data/sounds/senses.mp3')">Senses</button><button onclick="playDmSoundEffect('data/sounds/slipandfall.mp3')">Fall</button><button onclick="playDmSoundEffect('data/sounds/sucess.mp3')">Success</button><button onclick="playDmSoundEffect('data/sounds/spell_whispers.mp3')">Whispers</button></div>
+            </div>
+        </section>
+
+        <aside id="generatorPanel" class="dm-map-ui generator-panel is-collapsed" hidden>
+            <button id="generatorCollapse" class="generator-collapse" type="button" onclick="toggleGeneratorPanel()" aria-label="Show generators">&#8249;</button>
+            <div class="generator-panel-inner">
+                <h2>Generators</h2>
+                <div class="generator-shared-controls">
+                    <label>Party <input id="generatorPartyLevels" type="text" value="3,3,3,3" aria-label="Party levels, comma separated"></label>
+                    <label>Season <select id="generatorSeason"><option>Summer</option><option>Autumn</option><option>Winter</option><option>Spring</option></select></label>
+                    <label>Environment <select id="generatorEnvironment"><option>Desert</option><option selected>Forest</option><option>Grassland</option><option>Mountain</option><option>Swamp</option><option>Underdark</option><option>Urban</option></select></label>
+                </div>
+                <div class="generator-main-tabs">
+                    <button class="generator-main-tab wild is-active" type="button" onclick="showGeneratorMode('wild',this)">Wild</button>
+                    <button class="generator-main-tab town" type="button" onclick="showGeneratorMode('town',this)">Town</button>
+                    <button class="generator-main-tab dungeon" type="button" onclick="showGeneratorMode('dungeon',this)">Dungeon</button>
+                </div>
+                <div class="generator-scroll">
+                    <section id="generatorWild" class="generator-mode is-active">
+                        <div class="generator-subtabs"><button class="generator-banner is-active" type="button" onclick="showGeneratorSubcontent('wild','wildTravelPanel',this)">Travel</button><button class="generator-banner" type="button" onclick="showGeneratorSubcontent('wild','wildForagingPanel',this)">Foraging</button></div>
+                        <div id="generatorWildHost"></div>
+                    </section>
+                    <section id="generatorTown" class="generator-mode">
+                        <div class="generator-subtabs"><button class="generator-banner is-active" type="button" onclick="showGeneratorSubcontent('town','npcSubTab',this)">NPC</button><button class="generator-banner" type="button" onclick="showGeneratorSubcontent('town','magicShopSubTab',this)">Magic Shop</button><button class="generator-banner" type="button" onclick="showGeneratorSubcontent('town','carousingSubTab',this)">Carousing Event</button></div>
+                        <div id="generatorTownHost"></div>
+                    </section>
+                    <section id="generatorDungeon" class="generator-mode">
+                        <div class="generator-subtabs"><button class="generator-banner is-active" type="button" onclick="showGeneratorSubcontent('dungeon','encounterContent',this)">Encounter Builder</button><button class="generator-banner" type="button" onclick="showGeneratorSubcontent('dungeon','trapContent',this)">Traps</button><button class="generator-banner" type="button" onclick="showGeneratorSubcontent('dungeon','lootContent',this)">Loot</button></div>
+                        <div id="generatorDungeonHost"></div>
+                    </section>
+                </div>
+            </div>
+        </aside>
 
     </div>
 
@@ -1405,8 +1508,42 @@
         let lastSharedSfxEventId = null;
         let sharedAudioSnapshotSeen = false;
 
+        function makeSharedAudioEventId() {
+            return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+        }
+
+        function handleDmMusicChange(path) {
+            sharedAudioRef.set({
+                musicPath: path || '',
+                musicEventId: makeSharedAudioEventId(),
+                musicChangedAt: firebase.firestore.FieldValue.serverTimestamp()
+            }, { merge: true }).catch(error => console.error('Failed to sync background music:', error));
+        }
+
+        function playDmSoundEffect(src) {
+            sharedAudioRef.set({
+                sfxPath: src,
+                sfxEventId: makeSharedAudioEventId(),
+                sfxSentAt: Date.now(),
+                sfxChangedAt: firebase.firestore.FieldValue.serverTimestamp()
+            }, { merge: true }).catch(error => console.error('Failed to sync sound effect:', error));
+        }
+
+        function setDmMusicVolume(value) {
+            sharedMusicVolume = Number(value);
+            sharedBackgroundAudio.volume = sharedMusicVolume;
+        }
+
+        function setDmSfxVolume(value) {
+            sharedSfxVolume = Number(value);
+        }
+
         function applySharedMusic(path) {
             const nextPath = path || '';
+            const musicSelect = document.getElementById('dmMusicSelect');
+            if (musicSelect && [...musicSelect.options].some(option => option.value === nextPath)) {
+                musicSelect.value = nextPath;
+            }
             if (!nextPath) {
                 sharedBackgroundAudio.pause();
                 sharedBackgroundAudio.removeAttribute('src');
@@ -5375,6 +5512,157 @@
         let drawingToolbarManager = null;
         let drawingToolbarHidden = false;
 
+        function toggleDmInitiativePanel() {
+            const panel = document.getElementById('dmInitiativePanel');
+            const button = document.getElementById('dmInitiativeCollapse');
+            panel.classList.toggle('is-collapsed');
+            const collapsed = panel.classList.contains('is-collapsed');
+            button.textContent = collapsed ? '\u203a' : '\u2039';
+            button.setAttribute('aria-label', collapsed ? 'Show initiative tracker' : 'Hide initiative tracker');
+        }
+
+        function toggleDmAudioDock() {
+            const dock = document.getElementById('dmAudioDock');
+            const button = document.getElementById('dmAudioCollapse');
+            dock.classList.toggle('is-collapsed');
+            button.textContent = dock.classList.contains('is-collapsed') ? '\u2303' : '\u2304';
+        }
+
+        function toggleGeneratorPanel() {
+            const panel = document.getElementById('generatorPanel');
+            const button = document.getElementById('generatorCollapse');
+            panel.classList.toggle('is-collapsed');
+            const collapsed = panel.classList.contains('is-collapsed');
+            button.textContent = collapsed ? '\u2039' : '\u203a';
+            button.setAttribute('aria-label', collapsed ? 'Show generators' : 'Hide generators');
+        }
+
+        function showGeneratorMode(mode, button) {
+            document.querySelectorAll('.generator-main-tab').forEach(tab => tab.classList.remove('is-active'));
+            document.querySelectorAll('.generator-mode').forEach(section => section.classList.remove('is-active'));
+            button?.classList.add('is-active');
+            document.getElementById(`generator${mode[0].toUpperCase()}${mode.slice(1)}`)?.classList.add('is-active');
+        }
+
+        function showGeneratorSubcontent(group, contentId, button) {
+            const hostIds = { wild: 'generatorWildHost', town: 'generatorTownHost', dungeon: 'generatorDungeonHost' };
+            const host = document.getElementById(hostIds[group]);
+            host?.querySelectorAll('.generator-subcontent').forEach(content => content.classList.remove('is-active'));
+            button?.parentElement.querySelectorAll('.generator-banner').forEach(tab => tab.classList.remove('is-active'));
+            document.getElementById(contentId)?.classList.add('is-active');
+            button?.classList.add('is-active');
+        }
+
+        function rebuildNpcGeneratorLayout() {
+            const container = document.getElementById('npcSubTab');
+            if (!container) return;
+            container.innerHTML = `
+                <div class="npc-manager-row">
+                    <select id="npcDropdown" onchange="loadNpcToForm()" aria-label="Saved NPC"></select>
+                    <button type="button" onclick="saveNPC()" style="background:#228B22;color:white;border-radius:5px;">Save NPC</button>
+                    <button type="button" onclick="deleteNPC()" style="background:#900;color:white;border-radius:5px;">Delete NPC</button>
+                </div>
+                <div class="npc-generator">
+                    <div id="npcGeneratorResult" class="npc-editor-card" aria-live="polite">
+                        <span id="npcGeneratorFlavor" hidden></span>
+                        <div class="npc-identity-grid">
+                            <label>Name<input id="npcName" type="text"></label><label>Race<input id="npcRace" type="text"></label>
+                            <label>Occupation<input id="npcOccupation" type="text"></label>
+                        </div>
+                        <div class="npc-editable-stats">
+                            <label>STR<input id="npcStr" type="number"></label><label>DEX<input id="npcDex" type="number"></label><label>CON<input id="npcCon" type="number"></label><label>INT<input id="npcInt" type="number"></label><label>WIS<input id="npcWis" type="number"></label><label>CHA<input id="npcCha" type="number"></label>
+                        </div>
+                        <label>Notes &amp; Abilities<textarea id="npcNotes" rows="10"></textarea></label>
+                    </div>
+                    <div class="npc-generation-controls">
+                        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+                            <label>Race<select id="npcGeneratorRace"><option value="all">Any Race</option></select></label>
+                            <label>Alignment<select id="npcGeneratorAlignment"><option value="all">Any Alignment</option></select></label>
+                            <label>Occupation<select id="npcGeneratorOccupation"><option value="all">Any Occupation</option><option>Artisan</option><option>Farmer</option><option>Guard</option><option>Healer</option><option>Innkeeper</option><option>Laborer</option><option>Merchant</option><option>Noble</option><option>Priest</option><option>Sailor</option><option>Scholar</option><option>Soldier</option><option>Thief</option><option>Wanderer</option></select></label>
+                        </div>
+                        <button type="button" onclick="generateNPC()" style="margin-top:7px;">Generate New NPC</button>
+                    </div>
+                </div>`;
+        }
+
+        function syncGeneratorSharedInputs(updateForaging = false) {
+            const levels = document.getElementById('generatorPartyLevels')?.value || '3,3,3,3';
+            const season = document.getElementById('generatorSeason')?.value || 'Summer';
+            const environment = document.getElementById('generatorEnvironment')?.value || 'Forest';
+            const assignments = [
+                ['travelPartyLevels', levels], ['partyLevels', levels],
+                ['travelEnvironment', environment], ['encounterEnvironment', environment],
+                ['forageSeason', season], ['forageRegion', environment]
+            ];
+            assignments.forEach(([id, value]) => {
+                const control = document.getElementById(id);
+                if (control) control.value = value;
+            });
+            if (updateForaging && typeof renderForagingTable === 'function') renderForagingTable();
+        }
+
+        function initializeGeneratorPanel() {
+            const wildHost = document.getElementById('generatorWildHost');
+            const wildernessPanels = [...document.querySelectorAll('#worldTab .wilderness-panel')];
+            wildernessPanels.forEach((panel, index) => {
+                panel.id = index === 0 ? 'wildTravelPanel' : 'wildForagingPanel';
+                panel.classList.add('generator-subcontent');
+                panel.classList.toggle('is-active', index === 0);
+                wildHost.appendChild(panel);
+            });
+
+            const townHost = document.getElementById('generatorTownHost');
+            rebuildNpcGeneratorLayout();
+            ['npcSubTab', 'magicShopSubTab', 'carousingSubTab'].forEach((id, index) => {
+                const content = document.getElementById(id);
+                if (!content) return;
+                content.classList.add('generator-subcontent');
+                content.classList.toggle('is-active', index === 0);
+                townHost.appendChild(content);
+            });
+
+            const dungeonHost = document.getElementById('generatorDungeonHost');
+            ['encounterContent', 'trapContent', 'lootContent'].forEach((id, index) => {
+                const content = document.getElementById(id);
+                if (!content) return;
+                content.classList.add('generator-subcontent');
+                content.classList.toggle('is-active', index === 0);
+                dungeonHost.appendChild(content);
+            });
+
+            const encounterButton = document.querySelector('#encounterContent button[onclick="generateEncounter()"]');
+            const environmentButton = document.querySelector('#encounterContent button[onclick="generateEnvironmentEncounter()"]');
+            if (encounterButton && environmentButton) {
+                const row = document.createElement('div');
+                row.className = 'encounter-generate-row';
+                encounterButton.parentElement.insertBefore(row, encounterButton);
+                row.append(encounterButton, environmentButton);
+            }
+            syncGeneratorSharedInputs(false);
+            document.getElementById('generatorPartyLevels')?.addEventListener('input', () => {
+                syncGeneratorSharedInputs(false);
+                if (typeof updateEncounterXpHeading === 'function') updateEncounterXpHeading(0);
+            });
+            document.getElementById('generatorSeason')?.addEventListener('change', () => syncGeneratorSharedInputs(true));
+            document.getElementById('generatorEnvironment')?.addEventListener('change', () => syncGeneratorSharedInputs(true));
+            document.querySelectorAll('.generator-panel, .dm-initiative-panel').forEach(panel => {
+                panel.addEventListener('wheel', event => {
+                    const scroller = panel.querySelector('.generator-scroll, .dm-initiative-content');
+                    if (scroller) scroller.scrollTop += event.deltaY;
+                    event.preventDefault();
+                    event.stopPropagation();
+                }, { passive: false });
+            });
+        }
+
+        function syncDmMapPanels(tabId) {
+            document.querySelectorAll('.dm-map-ui').forEach(panel => {
+                panel.hidden = tabId !== 'mapTab';
+            });
+        }
+
+        initializeGeneratorPanel();
+
         function syncDrawingToolbarVisibility() {
             if (!drawingToolbarManager) return;
             drawingToolbarManager.setVisible(document.getElementById('mapTab').classList.contains('active') && !drawingToolbarHidden);
@@ -5399,6 +5687,7 @@
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             syncDrawingToolbarVisibility();
+            syncDmMapPanels(tabId);
 
             if (tabId === 'mapTab') {
                 scheduleMapLayoutRefresh();
@@ -5428,6 +5717,8 @@
         drawingToolbarManager = setupSharedMapDrawing({
             db,
             mapImage,
+            compact: true,
+            startCollapsed: true,
             mapTransformLayer: document.getElementById('mapTransformLayer'),
             tokenLayer: document.getElementById('mapTokenLayer'),
             toolbarPosition: {
@@ -5548,7 +5839,7 @@
             const occupationFilter = document.getElementById('npcGeneratorOccupation').value;
             const pool = NPC_INSPIRATIONS.filter(entry => (raceFilter === 'all' || entry.race === raceFilter) && (alignmentFilter === 'all' || entry.alignment === alignmentFilter));
             if (!pool.length) {
-                document.getElementById('npcGeneratorResult').textContent = 'No NPC inspiration matches those filters.';
+                document.getElementById('npcGeneratorFlavor').textContent = 'No NPC inspiration matches those filters.';
                 return;
             }
             const inspiration = randomNpcItem(pool);
@@ -5563,28 +5854,21 @@
             const personal = `${inspiration.alignment} ${inspiration.race}; ${appearance}. ${inspiration.quirk}. They ${manner}, and currently want to ${motivation}.`;
             const abilities = `Notable proficiencies: ${NPC_GENERATOR_DETAILS.skills[occupation] || 'Insight and Perception'}.\nInspiration roll: d100 result ${inspiration.roll}.`;
 
-            document.querySelector('input[placeholder="Name:"]').value = name;
-            document.querySelector('input[placeholder="Race:"]').value = inspiration.race;
-            document.querySelector('input[placeholder="Occupation:"]').value = occupation;
-            document.querySelector('input[placeholder="Permalink:"]').value = '';
-            document.querySelectorAll('.npc-textarea')[0].value = personal;
-            stats.forEach((stat, index) => { document.querySelectorAll('.npc-input')[index + 4].value = stat; });
-            document.querySelectorAll('.npc-textarea')[1].value = abilities;
+            document.getElementById('npcName').value = name;
+            document.getElementById('npcRace').value = inspiration.race;
+            document.getElementById('npcOccupation').value = occupation;
+            document.getElementById('npcNotes').value = `${personal}\n\n${abilities}`;
+            ['npcStr', 'npcDex', 'npcCon', 'npcInt', 'npcWis', 'npcCha'].forEach((id, index) => {
+                document.getElementById(id).value = stats[index];
+            });
 
-            const result = document.getElementById('npcGeneratorResult');
-            result.replaceChildren();
-            const heading = document.createElement('h3'); heading.textContent = name; result.appendChild(heading);
-            const summary = document.createElement('p'); summary.textContent = `${inspiration.race} · ${inspiration.alignment} · ${occupation}`; result.appendChild(summary);
-            const quirk = document.createElement('p'); quirk.textContent = inspiration.quirk; result.appendChild(quirk);
-            const statGrid = document.createElement('div'); statGrid.className = 'npc-stat-preview';
-            ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'].forEach((label, index) => { const stat = document.createElement('span'); stat.textContent = `${label} ${stats[index]}`; statGrid.appendChild(stat); });
-            result.appendChild(statGrid);
+            document.getElementById('npcGeneratorFlavor').textContent = `${inspiration.race} · ${inspiration.alignment} · ${occupation} — ${inspiration.quirk}`;
         }
 
         fetch('data/api_data/npc_quirks.json')
             .then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
             .then(data => { NPC_INSPIRATIONS = data.npcs || []; populateNpcGeneratorFilters(); })
-            .catch(error => { document.getElementById('npcGeneratorResult').textContent = `Could not load NPC inspiration data: ${error.message}`; });
+            .catch(error => { document.getElementById('npcGeneratorFlavor').textContent = `Could not load NPC inspiration data: ${error.message}`; });
 
 
         function showSubTab(id, btn) {
@@ -5606,18 +5890,17 @@
         function getNpcFromForm() {
             return {
                 id: Date.now().toString(), // simple unique ID
-                name: document.querySelector('input[placeholder="Name:"]').value,
-                race: document.querySelector('input[placeholder="Race:"]').value,
-                occupation: document.querySelector('input[placeholder="Occupation:"]').value,
-                permalink: document.querySelector('input[placeholder="Permalink:"]').value,
-                personal: document.querySelectorAll('.npc-textarea')[0].value,
-                str: document.querySelectorAll('.npc-input')[4].value,
-                dex: document.querySelectorAll('.npc-input')[5].value,
-                con: document.querySelectorAll('.npc-input')[6].value,
-                int: document.querySelectorAll('.npc-input')[7].value,
-                wis: document.querySelectorAll('.npc-input')[8].value,
-                cha: document.querySelectorAll('.npc-input')[9].value,
-                abilities: document.querySelectorAll('.npc-textarea')[1].value
+                name: document.getElementById('npcName').value,
+                race: document.getElementById('npcRace').value,
+                occupation: document.getElementById('npcOccupation').value,
+                personal: document.getElementById('npcNotes').value,
+                str: document.getElementById('npcStr').value,
+                dex: document.getElementById('npcDex').value,
+                con: document.getElementById('npcCon').value,
+                int: document.getElementById('npcInt').value,
+                wis: document.getElementById('npcWis').value,
+                cha: document.getElementById('npcCha').value,
+                abilities: ''
             };
         }
 
@@ -5633,6 +5916,7 @@
 
             syncNPCsToFirebase();
             updateNpcDropdown();
+            document.getElementById('npcDropdown').value = npc.name;
         }
 
         function deleteNPC() {
@@ -5663,18 +5947,17 @@
             const npc = npcs.find(n => n.name === selectedName);
             if (!npc) return;
 
-            document.querySelector('input[placeholder="Name:"]').value = npc.name || '';
-            document.querySelector('input[placeholder="Race:"]').value = npc.race || '';
-            document.querySelector('input[placeholder="Occupation:"]').value = npc.occupation || '';
-            document.querySelector('input[placeholder="Permalink:"]').value = npc.permalink || '';
-            document.querySelectorAll('.npc-textarea')[0].value = npc.personal || '';
-            document.querySelectorAll('.npc-input')[4].value = npc.str || '';
-            document.querySelectorAll('.npc-input')[5].value = npc.dex || '';
-            document.querySelectorAll('.npc-input')[6].value = npc.con || '';
-            document.querySelectorAll('.npc-input')[7].value = npc.int || '';
-            document.querySelectorAll('.npc-input')[8].value = npc.wis || '';
-            document.querySelectorAll('.npc-input')[9].value = npc.cha || '';
-            document.querySelectorAll('.npc-textarea')[1].value = npc.abilities || '';
+            document.getElementById('npcName').value = npc.name || '';
+            document.getElementById('npcRace').value = npc.race || '';
+            document.getElementById('npcOccupation').value = npc.occupation || '';
+            document.getElementById('npcNotes').value = [npc.personal, npc.abilities].filter(Boolean).join('\n\n');
+            document.getElementById('npcStr').value = npc.str || '';
+            document.getElementById('npcDex').value = npc.dex || '';
+            document.getElementById('npcCon').value = npc.con || '';
+            document.getElementById('npcInt').value = npc.int || '';
+            document.getElementById('npcWis').value = npc.wis || '';
+            document.getElementById('npcCha').value = npc.cha || '';
+            document.getElementById('npcGeneratorFlavor').textContent = 'Loaded saved NPC. Edit any field, then choose Save NPC to update it.';
         }
 
 
@@ -5767,6 +6050,7 @@
 
         // PAN START
         mapTab.addEventListener('mousedown', (e) => {
+            if (e.button !== 0) return;
             // Only start pan if clicking background (not tokens)
             const isMapBackground = e.target === mapTab || e.target === mapContainer || e.target.id === 'mapImage';
             if (!isMapBackground) return;
@@ -5803,6 +6087,7 @@
 
         // ZOOM
         mapTab.addEventListener('wheel', (e) => {
+            if (e.target.closest('.generator-panel, .dm-initiative-panel')) return;
             e.preventDefault();
             const delta = e.deltaY > 0 ? -0.1 : 0.1;
             scale = Math.min(Math.max(0.2, scale + delta), 3);
@@ -6080,7 +6365,7 @@
         }
 
         mapTransformLayer.addEventListener('mousedown', event => {
-            if (!event.ctrlKey || event.button !== 0 || event.target.closest('.monster-token')) return;
+            if (event.button !== 2 || event.target.closest('.monster-token')) return;
             event.preventDefault();
             event.stopPropagation();
             lassoPoints = [mapClientToLocal(event.clientX, event.clientY)];
@@ -6088,6 +6373,7 @@
             tokenLasso.setAttribute('viewBox', `0 0 ${mapWidth} ${mapHeight}`);
             renderTokenLasso();
         }, true);
+        mapTransformLayer.addEventListener('contextmenu', event => event.preventDefault());
 
         document.addEventListener('mousemove', event => {
             if (!lassoPoints.length) return;
@@ -6862,6 +7148,15 @@
             return levels.reduce((sum, lvl) => sum + (thresholds[lvl]?.[difficulty] || 0), 0);
         }
 
+        function updateEncounterXpHeading(totalAdjustedXP = 0) {
+            const levels = document.getElementById('partyLevels').value.split(',').map(value => parseInt(value.trim())).filter(Boolean);
+            const targetXP = calculateThreshold(levels, document.getElementById('encounterDifficulty').value);
+            const heading = document.getElementById('encounterMonsterHeading');
+            if (heading) heading.innerHTML = `<strong>Monsters (${Math.round(totalAdjustedXP)} of ${Math.round(targetXP)} XP):</strong>`;
+        }
+        document.getElementById('encounterDifficulty')?.addEventListener('change', () => updateEncounterXpHeading(0));
+        setTimeout(() => updateEncounterXpHeading(0), 0);
+
         function crToXp(cr) {
             if (cr in crToXP) return crToXP[cr];
             const keys = Object.keys(crToXP).map(Number);
@@ -6926,7 +7221,7 @@
 
             const totalXP = bestGroup.reduce((sum, m) => sum + m.xp, 0);
             const multiplier = multipliers[Math.min(bestGroup.length, 20)] || 4;
-            document.getElementById('encounterXP').value = Math.round(totalXP * multiplier);
+            updateEncounterXpHeading(totalXP * multiplier);
         }
 
         let ENV_ENCOUNTER_DATA = null;
@@ -7042,7 +7337,7 @@
             // Optional: calculate total adjusted XP
             const totalXP = monsterList.reduce((sum, m) => sum + crToXp(m.cr), 0);
             const multiplier = multipliers[Math.min(monsterList.length, 20)] || 4;
-            document.getElementById('encounterXP').value = Math.round(totalXP * multiplier);
+            updateEncounterXpHeading(totalXP * multiplier);
         }
 
 

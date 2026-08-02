@@ -591,6 +591,11 @@
     function renderPartyChoices(filter='') {const list=document.getElementById('partyChoiceList');list.replaceChildren();partyCatalog.filter(item=>item.name.toLowerCase().includes(filter.toLowerCase())).forEach(item=>{const button=document.createElement('button');button.className='party-choice';button.type='button';button.textContent=`${item.name} — ${item.kind}`;button.addEventListener('click',()=>addPartyMember(item));list.appendChild(button);});}
     function togglePartyPanel(){const panel=document.getElementById('partyPanel'),button=document.getElementById('partyCollapseButton');panel.classList.toggle('is-collapsed');button.textContent=panel.classList.contains('is-collapsed')?'›':'‹';}
     function toggleAudioDock(){const dock=document.getElementById('audioDock'),button=document.getElementById('audioCollapseButton');dock.classList.toggle('is-collapsed');button.textContent=dock.classList.contains('is-collapsed')?'⌃':'⌄';}
+    document.getElementById('partyPanel')?.addEventListener('wheel', event => {
+      document.querySelector('.party-panel-content').scrollTop += event.deltaY;
+      event.preventDefault();
+      event.stopPropagation();
+    }, { passive:false });
     function openPartyPicker(){document.getElementById('partyPicker').classList.add('is-open');renderPartyChoices(document.getElementById('partySearch').value);}
     function closePartyPicker(){document.getElementById('partyPicker').classList.remove('is-open');}
     async function addPartyMember(choice){let member;if(choice.kind==='Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;member.partyOwnerAccount=sessionAccountId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();syncMonstersToFirebase();closePartyPicker();}
@@ -1153,7 +1158,7 @@
     function renderTokenLasso(){tokenLassoPath.setAttribute('points',lassoPoints.map(point=>`${point.x},${point.y}`).join(' '));}
 
     playerMapTransformLayer.addEventListener('mousedown', event => {
-      if (!event.ctrlKey || event.button !== 0 || event.target.closest('.monster-token')) return;
+      if (event.button !== 2 || event.target.closest('.monster-token')) return;
       event.preventDefault(); event.stopPropagation();
       lassoPoints=[mapClientToLocal(event.clientX,event.clientY)];
       tokenLasso.style.display='block'; tokenLasso.setAttribute('viewBox',`0 0 ${mapImage.clientWidth} ${mapImage.clientHeight}`); renderTokenLasso();
@@ -1164,6 +1169,7 @@
       const point=mapClientToLocal(event.clientX,event.clientY);
       const previous=lassoPoints[lassoPoints.length-1]; if(Math.hypot(point.x-previous.x,point.y-previous.y)>=3)lassoPoints.push(point); renderTokenLasso();
     });
+    playerMapTransformLayer.addEventListener('contextmenu', event => event.preventDefault());
 
     document.addEventListener('mouseup', event => {
       if (!lassoPoints.length) return;
@@ -1174,6 +1180,7 @@
 
     // PAN START
     mapTab.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
       // Only start pan if clicking background (not tokens)
       const isMapBackground = e.target === mapTab || e.target === mapContainer || e.target.id === 'mapImage';
       if (!isMapBackground) return;
@@ -1205,6 +1212,7 @@
 
     // ZOOM
     mapTab.addEventListener('wheel', (e) => {
+      if (e.target.closest('.party-panel')) return;
       e.preventDefault();
       const delta = e.deltaY > 0 ? -0.1 : 0.1;
       scale = Math.min(Math.max(0.2, scale + delta), 3);
