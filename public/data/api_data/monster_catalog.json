@@ -1,0 +1,13930 @@
+[
+  {
+    "name": "Aarakocra",
+    "cr": 0.25
+  },
+  {
+    "name": "Aarakocra Simulacrum",
+    "cr": 0.125
+  },
+  {
+    "name": "Aarakocra Spelljammer",
+    "cr": 6
+  },
+  {
+    "name": "Aartuk Elder",
+    "cr": 3
+  },
+  {
+    "name": "Aartuk Starhorror",
+    "cr": 2
+  },
+  {
+    "name": "Aartuk Weedling",
+    "cr": 2
+  },
+  {
+    "name": "Aberrant Zealot",
+    "cr": 8
+  },
+  {
+    "name": "Abhorrent Overlord",
+    "cr": 9
+  },
+  {
+    "name": "Abigor",
+    "cr": 22
+  },
+  {
+    "name": "Abjurer",
+    "cr": 9
+  },
+  {
+    "name": "Abjurer Wizard",
+    "cr": 9
+  },
+  {
+    "name": "Aboleth",
+    "cr": 10
+  },
+  {
+    "name": "Aboleth broodmother",
+    "cr": 11
+  },
+  {
+    "name": "Aboleth Spawn",
+    "cr": 5
+  },
+  {
+    "name": "Abominable Yeti",
+    "cr": 9
+  },
+  {
+    "name": "Abyssal Chicken",
+    "cr": 0.25
+  },
+  {
+    "name": "Abyssal Wretch",
+    "cr": 0.25
+  },
+  {
+    "name": "Acererak",
+    "cr": 23
+  },
+  {
+    "name": "Achaierai",
+    "cr": 5
+  },
+  {
+    "name": "Acidic Mist Apparition",
+    "cr": 5
+  },
+  {
+    "name": "Acolyte",
+    "cr": 0.25
+  },
+  {
+    "name": "Adranach",
+    "cr": 12
+  },
+  {
+    "name": "Adult Amethyst Dragon",
+    "cr": 16
+  },
+  {
+    "name": "Adult Amonkhet Dragon",
+    "cr": 17
+  },
+  {
+    "name": "Adult Black Dragon",
+    "cr": 14
+  },
+  {
+    "name": "Adult Blue Dracolich",
+    "cr": 17
+  },
+  {
+    "name": "Adult Blue Dragon",
+    "cr": 16
+  },
+  {
+    "name": "Adult Brass Dragon",
+    "cr": 13
+  },
+  {
+    "name": "Adult Bronze Dragon",
+    "cr": 15
+  },
+  {
+    "name": "Adult Copper Dragon",
+    "cr": 14
+  },
+  {
+    "name": "Adult Crystal Dragon",
+    "cr": 12
+  },
+  {
+    "name": "Adult Deep Dragon",
+    "cr": 11
+  },
+  {
+    "name": "Adult Emerald Dragon",
+    "cr": 14
+  },
+  {
+    "name": "Adult Gold Dragon",
+    "cr": 17
+  },
+  {
+    "name": "Adult Green Dragon",
+    "cr": 15
+  },
+  {
+    "name": "Adult Kruthik",
+    "cr": 2
+  },
+  {
+    "name": "Adult Lunar Dragon",
+    "cr": 13
+  },
+  {
+    "name": "Adult Moonstone Dragon",
+    "cr": 15
+  },
+  {
+    "name": "Adult Oblex",
+    "cr": 5
+  },
+  {
+    "name": "Adult Red Dracolich",
+    "cr": 17
+  },
+  {
+    "name": "Adult Red Dragon",
+    "cr": 17
+  },
+  {
+    "name": "Adult Sapphire Dragon",
+    "cr": 15
+  },
+  {
+    "name": "Adult Silver Dragon",
+    "cr": 16
+  },
+  {
+    "name": "Adult Solar Dragon",
+    "cr": 14
+  },
+  {
+    "name": "Adult Time Dragon",
+    "cr": 18
+  },
+  {
+    "name": "Adult Topaz Dragon",
+    "cr": 13
+  },
+  {
+    "name": "Adult White Dragon",
+    "cr": 13
+  },
+  {
+    "name": "Advanced Detention Drone",
+    "cr": 7
+  },
+  {
+    "name": "Aegisaur",
+    "cr": 3
+  },
+  {
+    "name": "Aeorian Absorber",
+    "cr": 10
+  },
+  {
+    "name": "Aeorian Nullifier",
+    "cr": 12
+  },
+  {
+    "name": "Aeorian Reverser",
+    "cr": 8
+  },
+  {
+    "name": "Aerisi Kalinoth",
+    "cr": 7
+  },
+  {
+    "name": "Aerosaur",
+    "cr": 10
+  },
+  {
+    "name": "Aerosaur (Large)",
+    "cr": 2
+  },
+  {
+    "name": "Aerosaur (Small)",
+    "cr": 0.25
+  },
+  {
+    "name": "Aeshma",
+    "cr": 2
+  },
+  {
+    "name": "Affliction Devil (Kocrachon)",
+    "cr": 10
+  },
+  {
+    "name": "Afsoun Ghorbani",
+    "cr": 12
+  },
+  {
+    "name": "Agathe Silverspoon",
+    "cr": 0.5
+  },
+  {
+    "name": "Agdon Longscarf",
+    "cr": 2
+  },
+  {
+    "name": "Agony",
+    "cr": 4
+  },
+  {
+    "name": "Ahmaergo",
+    "cr": 9
+  },
+  {
+    "name": "Air Elemental",
+    "cr": 5
+  },
+  {
+    "name": "Air Elemental Myrmidon",
+    "cr": 7
+  },
+  {
+    "name": "Air Totem Elemental",
+    "cr": 5
+  },
+  {
+    "name": "Akroan Hoplite",
+    "cr": 3
+  },
+  {
+    "name": "Al'chaia",
+    "cr": 8
+  },
+  {
+    "name": "Alagarthas",
+    "cr": 3
+  },
+  {
+    "name": "Alastrah",
+    "cr": 0
+  },
+  {
+    "name": "Albino Dwarf Spirit Warrior",
+    "cr": 1
+  },
+  {
+    "name": "Albino Dwarf Warrior",
+    "cr": 0.25
+  },
+  {
+    "name": "Aldani (Lobsterfolk)",
+    "cr": 1
+  },
+  {
+    "name": "Alhoon",
+    "cr": 10
+  },
+  {
+    "name": "Aljanor Keenblade",
+    "cr": 3
+  },
+  {
+    "name": "Alkilith",
+    "cr": 11
+  },
+  {
+    "name": "Allip",
+    "cr": 5
+  },
+  {
+    "name": "Allosaurus",
+    "cr": 2
+  },
+  {
+    "name": "Allowak Abominable Yeti",
+    "cr": 9
+  },
+  {
+    "name": "Allowak Yeti",
+    "cr": 3
+  },
+  {
+    "name": "Almiraj",
+    "cr": 0
+  },
+  {
+    "name": "Aloysia Telfan",
+    "cr": 2
+  },
+  {
+    "name": "Alseid",
+    "cr": 1
+  },
+  {
+    "name": "Altisaur",
+    "cr": 5
+  },
+  {
+    "name": "Alyxian Aboleth",
+    "cr": 12
+  },
+  {
+    "name": "Alyxian the Absolved",
+    "cr": 14
+  },
+  {
+    "name": "Alyxian the Callous",
+    "cr": 12
+  },
+  {
+    "name": "Alyxian the Dispossessed",
+    "cr": 13
+  },
+  {
+    "name": "Alyxian the Hunter",
+    "cr": 10
+  },
+  {
+    "name": "Alyxian the Tormented",
+    "cr": 11
+  },
+  {
+    "name": "Amalgamation",
+    "cr": 23
+  },
+  {
+    "name": "Amanisha Manivarshi",
+    "cr": 1
+  },
+  {
+    "name": "Amarith Coppervein",
+    "cr": 3
+  },
+  {
+    "name": "Amber Golem",
+    "cr": 10
+  },
+  {
+    "name": "Ambitious Assassin",
+    "cr": 5
+  },
+  {
+    "name": "Amble",
+    "cr": 10
+  },
+  {
+    "name": "Ambush Drake",
+    "cr": 0.5
+  },
+  {
+    "name": "Amelia Ghallen",
+    "cr": 3
+  },
+  {
+    "name": "Amethyst Dragon Wyrmling",
+    "cr": 4
+  },
+  {
+    "name": "Amethyst Greatwyrm",
+    "cr": 26
+  },
+  {
+    "name": "Ameyali",
+    "cr": 2
+  },
+  {
+    "name": "Amidor the Dandelion",
+    "cr": 0.5
+  },
+  {
+    "name": "Ammalia Cassalanter",
+    "cr": 5
+  },
+  {
+    "name": "Ammit",
+    "cr": 5
+  },
+  {
+    "name": "Amnizu",
+    "cr": 18
+  },
+  {
+    "name": "Amonkhet Dragon Wyrmling",
+    "cr": 4
+  },
+  {
+    "name": "Amonkhet Hydra",
+    "cr": 8
+  },
+  {
+    "name": "Amonkhet Mummy",
+    "cr": 3
+  },
+  {
+    "name": "Amonkhet Mummy Lord",
+    "cr": 15
+  },
+  {
+    "name": "Amonkhet Sphinx",
+    "cr": 17
+  },
+  {
+    "name": "Amphisbaena",
+    "cr": 3
+  },
+  {
+    "name": "Amrik Vanthampur",
+    "cr": 3
+  },
+  {
+    "name": "Anacreda",
+    "cr": 17
+  },
+  {
+    "name": "Anagwendol",
+    "cr": 16
+  },
+  {
+    "name": "Anarch",
+    "cr": 0.25
+  },
+  {
+    "name": "Anastrasya Karelova",
+    "cr": 5
+  },
+  {
+    "name": "Anchorite of Talos",
+    "cr": 3
+  },
+  {
+    "name": "Ancient Amethyst Dragon",
+    "cr": 23
+  },
+  {
+    "name": "Ancient Amonkhet Dragon",
+    "cr": 24
+  },
+  {
+    "name": "Ancient Black Dragon",
+    "cr": 21
+  },
+  {
+    "name": "Ancient Blue Dragon",
+    "cr": 23
+  },
+  {
+    "name": "Ancient Brass Dragon",
+    "cr": 20
+  },
+  {
+    "name": "Ancient Bronze Dragon",
+    "cr": 22
+  },
+  {
+    "name": "Ancient Copper Dragon",
+    "cr": 21
+  },
+  {
+    "name": "Ancient Corpse Walker",
+    "cr": 10
+  },
+  {
+    "name": "Ancient Crystal Dragon",
+    "cr": 19
+  },
+  {
+    "name": "Ancient Deep Crow",
+    "cr": 15
+  },
+  {
+    "name": "Ancient Deep Dragon",
+    "cr": 18
+  },
+  {
+    "name": "Ancient Dragon Turtle",
+    "cr": 24
+  },
+  {
+    "name": "Ancient Emerald Dragon",
+    "cr": 21
+  },
+  {
+    "name": "Ancient Gold Dragon",
+    "cr": 24
+  },
+  {
+    "name": "Ancient Green Dragon",
+    "cr": 22
+  },
+  {
+    "name": "Ancient Lunar Dragon",
+    "cr": 19
+  },
+  {
+    "name": "Ancient Moonstone Dragon",
+    "cr": 21
+  },
+  {
+    "name": "Ancient Red Dragon",
+    "cr": 24
+  },
+  {
+    "name": "Ancient Sapphire Dragon",
+    "cr": 22
+  },
+  {
+    "name": "Ancient Sea Serpent",
+    "cr": 14
+  },
+  {
+    "name": "Ancient Silver Dragon",
+    "cr": 23
+  },
+  {
+    "name": "Ancient Solar Dragon",
+    "cr": 21
+  },
+  {
+    "name": "Ancient Time Dragon",
+    "cr": 26
+  },
+  {
+    "name": "Ancient Topaz Dragon",
+    "cr": 20
+  },
+  {
+    "name": "Ancient White Dragon",
+    "cr": 20
+  },
+  {
+    "name": "Andras",
+    "cr": 8
+  },
+  {
+    "name": "Androsphinx",
+    "cr": 17
+  },
+  {
+    "name": "Angel",
+    "cr": 10
+  },
+  {
+    "name": "Angel of Amonkhet",
+    "cr": 10
+  },
+  {
+    "name": "Angel of Empyreus",
+    "cr": 22
+  },
+  {
+    "name": "Angry Sorrowsworn",
+    "cr": 13
+  },
+  {
+    "name": "Anhkolox",
+    "cr": 9
+  },
+  {
+    "name": "Animated Armor",
+    "cr": 1
+  },
+  {
+    "name": "Animated Armor Detention Drone",
+    "cr": 1
+  },
+  {
+    "name": "Animated Ballista",
+    "cr": 2
+  },
+  {
+    "name": "Animated Breath",
+    "cr": 6
+  },
+  {
+    "name": "Animated Broom",
+    "cr": 0.25
+  },
+  {
+    "name": "Animated Chained Library",
+    "cr": 1
+  },
+  {
+    "name": "Animated Coffin",
+    "cr": 3
+  },
+  {
+    "name": "Animated Delerium Sludge",
+    "cr": 5
+  },
+  {
+    "name": "Animated Drow Statue",
+    "cr": 1
+  },
+  {
+    "name": "Animated Furniture",
+    "cr": 10
+  },
+  {
+    "name": "Animated Glass Statue",
+    "cr": 1
+  },
+  {
+    "name": "Animated Halberd",
+    "cr": 0.25
+  },
+  {
+    "name": "Animated Jade Serpent",
+    "cr": 0.25
+  },
+  {
+    "name": "Animated Knife",
+    "cr": 0.125
+  },
+  {
+    "name": "Animated Object (Huge)",
+    "cr": 4
+  },
+  {
+    "name": "Animated Object (Large)",
+    "cr": 2
+  },
+  {
+    "name": "Animated Object (Medium)",
+    "cr": 1
+  },
+  {
+    "name": "Animated Object (Small)",
+    "cr": 0.25
+  },
+  {
+    "name": "Animated Object (Tiny)",
+    "cr": 0.125
+  },
+  {
+    "name": "Animated Staff",
+    "cr": 1
+  },
+  {
+    "name": "Animated Statue of Lolth",
+    "cr": 11
+  },
+  {
+    "name": "Animated Stove",
+    "cr": 3
+  },
+  {
+    "name": "Animated Table",
+    "cr": 2
+  },
+  {
+    "name": "Animated Tile Chimera",
+    "cr": 6
+  },
+  {
+    "name": "Animated Tree",
+    "cr": 9
+  },
+  {
+    "name": "Animated Wand",
+    "cr": 0.125
+  },
+  {
+    "name": "Animatronic Allosaurus",
+    "cr": 2
+  },
+  {
+    "name": "Ankheg",
+    "cr": 2
+  },
+  {
+    "name": "Ankylosaurus",
+    "cr": 3
+  },
+  {
+    "name": "Ankylosaurus Zombie",
+    "cr": 3
+  },
+  {
+    "name": "Annis Hag",
+    "cr": 6
+  },
+  {
+    "name": "Anointed",
+    "cr": 0.25
+  },
+  {
+    "name": "Anvilwrought Raptor",
+    "cr": 0.5
+  },
+  {
+    "name": "Ape",
+    "cr": 0.5
+  },
+  {
+    "name": "Aphemia",
+    "cr": 5
+  },
+  {
+    "name": "Apprentice",
+    "cr": 0.125
+  },
+  {
+    "name": "Apprentice Wizard",
+    "cr": 0.25
+  },
+  {
+    "name": "Aquatic Ghoul",
+    "cr": 1
+  },
+  {
+    "name": "Aquatic Troll",
+    "cr": 5
+  },
+  {
+    "name": "Arabelle",
+    "cr": 0
+  },
+  {
+    "name": "Aradrine the Owl",
+    "cr": 8
+  },
+  {
+    "name": "Arasta",
+    "cr": 21
+  },
+  {
+    "name": "Arcanaloth",
+    "cr": 12
+  },
+  {
+    "name": "Arcane Wraith",
+    "cr": 6
+  },
+  {
+    "name": "Archaic",
+    "cr": 18
+  },
+  {
+    "name": "Archdruid",
+    "cr": 12
+  },
+  {
+    "name": "Archduke Zariel of Avernus",
+    "cr": 26
+  },
+  {
+    "name": "Archer",
+    "cr": 3
+  },
+  {
+    "name": "Archfiend of Ifnir",
+    "cr": 13
+  },
+  {
+    "name": "Archmage",
+    "cr": 12
+  },
+  {
+    "name": "Archon of Boundaries",
+    "cr": 15
+  },
+  {
+    "name": "Archon of Falling Stars",
+    "cr": 12
+  },
+  {
+    "name": "Archon of Redemption",
+    "cr": 10
+  },
+  {
+    "name": "Archon of the Triumvirate",
+    "cr": 14
+  },
+  {
+    "name": "Arclight Phoenix",
+    "cr": 12
+  },
+  {
+    "name": "Arcturia",
+    "cr": 21
+  },
+  {
+    "name": "Aribeth de Tylmarande",
+    "cr": 10
+  },
+  {
+    "name": "Arkhan the Cruel",
+    "cr": 16
+  },
+  {
+    "name": "Arlo Kettletoe (Levels 1-4)",
+    "cr": 2
+  },
+  {
+    "name": "Arlo Kettletoe (Levels 5-8)",
+    "cr": 3
+  },
+  {
+    "name": "Arlo Kettletoe (Levels 9-11)",
+    "cr": 6
+  },
+  {
+    "name": "Armanite",
+    "cr": 7
+  },
+  {
+    "name": "Armasaur",
+    "cr": 4
+  },
+  {
+    "name": "Armored Saber-Toothed Tiger",
+    "cr": 3
+  },
+  {
+    "name": "Arrant Quill",
+    "cr": 11
+  },
+  {
+    "name": "Arrigal",
+    "cr": 8
+  },
+  {
+    "name": "Art Elemental Mascot",
+    "cr": 0.25
+  },
+  {
+    "name": "Artus Cimber",
+    "cr": 7
+  },
+  {
+    "name": "Aruk Thundercaller Thuunlakalaga",
+    "cr": 3
+  },
+  {
+    "name": "Ash Zombie",
+    "cr": 0.25
+  },
+  {
+    "name": "Asha Vandree",
+    "cr": 2
+  },
+  {
+    "name": "Ashann",
+    "cr": 2
+  },
+  {
+    "name": "Ashari Firetamer",
+    "cr": 7
+  },
+  {
+    "name": "Ashari Skydancer",
+    "cr": 5
+  },
+  {
+    "name": "Ashari Stoneguard",
+    "cr": 7
+  },
+  {
+    "name": "Ashari Waverider",
+    "cr": 5
+  },
+  {
+    "name": "Asharra",
+    "cr": 2
+  },
+  {
+    "name": "Ashdra",
+    "cr": 0
+  },
+  {
+    "name": "Ashen Animated Armor",
+    "cr": 1
+  },
+  {
+    "name": "Ashen Flying Sword",
+    "cr": 0.25
+  },
+  {
+    "name": "Ashen Heir Anarchist",
+    "cr": 2
+  },
+  {
+    "name": "Ashen Heir Assassin",
+    "cr": 8
+  },
+  {
+    "name": "Ashen Heir Mage",
+    "cr": 6
+  },
+  {
+    "name": "Ashen Heir Veteran",
+    "cr": 3
+  },
+  {
+    "name": "Ashen Knight",
+    "cr": 3
+  },
+  {
+    "name": "Ashen Rider",
+    "cr": 16
+  },
+  {
+    "name": "Ashen Shambling Mound",
+    "cr": 5
+  },
+  {
+    "name": "Ashen Veteran",
+    "cr": 3
+  },
+  {
+    "name": "Ashen Warhorse",
+    "cr": 0.5
+  },
+  {
+    "name": "Ashtyrranthor",
+    "cr": 17
+  },
+  {
+    "name": "Asmodeus",
+    "cr": 30
+  },
+  {
+    "name": "Aspect of Bahamut",
+    "cr": 30
+  },
+  {
+    "name": "Aspect of Tiamat",
+    "cr": 30
+  },
+  {
+    "name": "Aspirant of the Comet",
+    "cr": 0.5
+  },
+  {
+    "name": "Assassin",
+    "cr": 8
+  },
+  {
+    "name": "Assassin Bug",
+    "cr": 3
+  },
+  {
+    "name": "Assassin Vine",
+    "cr": 3
+  },
+  {
+    "name": "Asteria",
+    "cr": 18
+  },
+  {
+    "name": "Asteroid Spider",
+    "cr": 15
+  },
+  {
+    "name": "Astral Blight",
+    "cr": 1
+  },
+  {
+    "name": "Astral Dreadnought",
+    "cr": 21
+  },
+  {
+    "name": "Astral Elf Aristocrat",
+    "cr": 8
+  },
+  {
+    "name": "Astral Elf Commander",
+    "cr": 7
+  },
+  {
+    "name": "Astral Elf Honor Guard",
+    "cr": 5
+  },
+  {
+    "name": "Astral Elf Star Priest",
+    "cr": 5
+  },
+  {
+    "name": "Astral Elf Warrior",
+    "cr": 3
+  },
+  {
+    "name": "Atash",
+    "cr": 21
+  },
+  {
+    "name": "Athar Null",
+    "cr": 5
+  },
+  {
+    "name": "Atiba-Pa",
+    "cr": 2
+  },
+  {
+    "name": "Atropal",
+    "cr": 13
+  },
+  {
+    "name": "Augrek Brighthelm",
+    "cr": 2
+  },
+  {
+    "name": "Aunt Dellie",
+    "cr": 0
+  },
+  {
+    "name": "Aurak Draconian",
+    "cr": 6
+  },
+  {
+    "name": "Aurelia",
+    "cr": 23
+  },
+  {
+    "name": "Auril (First Form)",
+    "cr": 9
+  },
+  {
+    "name": "Auril (Second Form)",
+    "cr": 10
+  },
+  {
+    "name": "Auril (Third Form)",
+    "cr": 11
+  },
+  {
+    "name": "Aurinax",
+    "cr": 17
+  },
+  {
+    "name": "Aurnozci",
+    "cr": 22
+  },
+  {
+    "name": "Aurochs",
+    "cr": 2
+  },
+  {
+    "name": "Aurumach Rilmani",
+    "cr": 17
+  },
+  {
+    "name": "Aurumvorax",
+    "cr": 2
+  },
+  {
+    "name": "Aurumvorax Den Leader",
+    "cr": 4
+  },
+  {
+    "name": "Auspicia Dran",
+    "cr": 2
+  },
+  {
+    "name": "Autognome",
+    "cr": 2
+  },
+  {
+    "name": "Autumn Eladrin",
+    "cr": 10
+  },
+  {
+    "name": "Avacyn",
+    "cr": 21
+  },
+  {
+    "name": "Avarice",
+    "cr": 7
+  },
+  {
+    "name": "Avarice Seraph",
+    "cr": 14
+  },
+  {
+    "name": "Avatar of Baalzebul",
+    "cr": 18
+  },
+  {
+    "name": "Avatar of Death",
+    "cr": 5
+  },
+  {
+    "name": "Avi",
+    "cr": 2
+  },
+  {
+    "name": "Avoral Guardinal",
+    "cr": 9
+  },
+  {
+    "name": "Awa",
+    "cr": 0
+  },
+  {
+    "name": "Awakened Brown Bear",
+    "cr": 1
+  },
+  {
+    "name": "Awakened Chapped Brute",
+    "cr": 7
+  },
+  {
+    "name": "Awakened Elk",
+    "cr": 0.25
+  },
+  {
+    "name": "Awakened Giant Wasp",
+    "cr": 0.5
+  },
+  {
+    "name": "Awakened Rat",
+    "cr": 0
+  },
+  {
+    "name": "Awakened Shrub",
+    "cr": 0
+  },
+  {
+    "name": "Awakened Shrub Totem Elemental",
+    "cr": 0
+  },
+  {
+    "name": "Awakened Tree",
+    "cr": 2
+  },
+  {
+    "name": "Awakened White Moose",
+    "cr": 3
+  },
+  {
+    "name": "Awakened Zurkhwood",
+    "cr": 2
+  },
+  {
+    "name": "Awful Fisher",
+    "cr": 18
+  },
+  {
+    "name": "Axe Beak",
+    "cr": 0.25
+  },
+  {
+    "name": "Axe of Mirabar Soldier",
+    "cr": 3
+  },
+  {
+    "name": "Ayik Ur",
+    "cr": 1
+  },
+  {
+    "name": "Ayo Jabe (Tier 1)",
+    "cr": 3
+  },
+  {
+    "name": "Ayo Jabe (Tier 2)",
+    "cr": 5
+  },
+  {
+    "name": "Ayo Jabe (Tier 3)",
+    "cr": 8
+  },
+  {
+    "name": "Ayperobo Swarm",
+    "cr": 12
+  },
+  {
+    "name": "Aza Dowling",
+    "cr": 3
+  },
+  {
+    "name": "Azaka Stormfang",
+    "cr": 4
+  },
+  {
+    "name": "Azbara Jos",
+    "cr": 4
+  },
+  {
+    "name": "Azer",
+    "cr": 2
+  },
+  {
+    "name": "Azra Nir",
+    "cr": 0.25
+  },
+  {
+    "name": "B'rohg",
+    "cr": 6
+  },
+  {
+    "name": "Baalzebul",
+    "cr": 26
+  },
+  {
+    "name": "Baaz Draconian",
+    "cr": 0.5
+  },
+  {
+    "name": "Baba Lysaga",
+    "cr": 11
+  },
+  {
+    "name": "Baba Lysaga's Creeping Hut",
+    "cr": 11
+  },
+  {
+    "name": "Babau",
+    "cr": 4
+  },
+  {
+    "name": "Baboon",
+    "cr": 0
+  },
+  {
+    "name": "Badger",
+    "cr": 0
+  },
+  {
+    "name": "Bael",
+    "cr": 19
+  },
+  {
+    "name": "Baernaloth",
+    "cr": 17
+  },
+  {
+    "name": "Bag Jelly",
+    "cr": 1
+  },
+  {
+    "name": "Bag of Nails",
+    "cr": 8
+  },
+  {
+    "name": "Bak Mei",
+    "cr": 13
+  },
+  {
+    "name": "Bakaris Uth Estide",
+    "cr": 0.125
+  },
+  {
+    "name": "Bakaris the Younger",
+    "cr": 0.125
+  },
+  {
+    "name": "Bakunawa",
+    "cr": 12
+  },
+  {
+    "name": "Balhannoth",
+    "cr": 11
+  },
+  {
+    "name": "Balor",
+    "cr": 19
+  },
+  {
+    "name": "Baloth",
+    "cr": 5
+  },
+  {
+    "name": "Bandagh",
+    "cr": 0.5
+  },
+  {
+    "name": "Banderhobb",
+    "cr": 5
+  },
+  {
+    "name": "Bandit",
+    "cr": 0.125
+  },
+  {
+    "name": "Bandit Captain",
+    "cr": 2
+  },
+  {
+    "name": "Banrion",
+    "cr": 5
+  },
+  {
+    "name": "Banshee",
+    "cr": 4
+  },
+  {
+    "name": "Baphomet",
+    "cr": 23
+  },
+  {
+    "name": "Barachiel",
+    "cr": 13
+  },
+  {
+    "name": "Barbatos",
+    "cr": 6
+  },
+  {
+    "name": "Barbed Devil",
+    "cr": 5
+  },
+  {
+    "name": "Bard",
+    "cr": 2
+  },
+  {
+    "name": "Barghest",
+    "cr": 4
+  },
+  {
+    "name": "Bariaur Wanderer",
+    "cr": 3
+  },
+  {
+    "name": "Barlgura",
+    "cr": 5
+  },
+  {
+    "name": "Barnacle Bess",
+    "cr": 0.125
+  },
+  {
+    "name": "Barnibus Blastwind",
+    "cr": 2
+  },
+  {
+    "name": "Baron Vargas Vallakovich",
+    "cr": 0.125
+  },
+  {
+    "name": "Barovian Commoner",
+    "cr": 0
+  },
+  {
+    "name": "Barovian Scout",
+    "cr": 0.5
+  },
+  {
+    "name": "Barovian Witch",
+    "cr": 0.5
+  },
+  {
+    "name": "Barrowghast",
+    "cr": 7
+  },
+  {
+    "name": "Basilisk",
+    "cr": 3
+  },
+  {
+    "name": "Bastian Thermandar",
+    "cr": 8
+  },
+  {
+    "name": "Bat",
+    "cr": 0
+  },
+  {
+    "name": "Battleforce Angel",
+    "cr": 5
+  },
+  {
+    "name": "Battlehammer Dwarf",
+    "cr": 0.5
+  },
+  {
+    "name": "Bavlorna Blightstraw",
+    "cr": 7
+  },
+  {
+    "name": "Beanstalk Wurm",
+    "cr": 18
+  },
+  {
+    "name": "Bearded Devil",
+    "cr": 3
+  },
+  {
+    "name": "Beast Gnoll",
+    "cr": 0.125
+  },
+  {
+    "name": "Bebilith",
+    "cr": 12
+  },
+  {
+    "name": "Becklin Uth Viharin",
+    "cr": 3
+  },
+  {
+    "name": "Behir",
+    "cr": 11
+  },
+  {
+    "name": "Beholder",
+    "cr": 13
+  },
+  {
+    "name": "Beholder Zombie",
+    "cr": 5
+  },
+  {
+    "name": "Bel",
+    "cr": 25
+  },
+  {
+    "name": "Belak the Outcast",
+    "cr": 2
+  },
+  {
+    "name": "Belashyrra",
+    "cr": 22
+  },
+  {
+    "name": "Beldora",
+    "cr": 0.25
+  },
+  {
+    "name": "Beledros Witherbloom",
+    "cr": 24
+  },
+  {
+    "name": "Belephaion",
+    "cr": 9
+  },
+  {
+    "name": "Belial",
+    "cr": 25
+  },
+  {
+    "name": "Bepis Honeymaker",
+    "cr": 0
+  },
+  {
+    "name": "Berbalang",
+    "cr": 2
+  },
+  {
+    "name": "Berlain Shadowdusk",
+    "cr": 12
+  },
+  {
+    "name": "Berserker",
+    "cr": 2
+  },
+  {
+    "name": "Beucephalus",
+    "cr": 3
+  },
+  {
+    "name": "Bhaal, Ravager",
+    "cr": 24
+  },
+  {
+    "name": "Bhaal, Slayer",
+    "cr": 20
+  },
+  {
+    "name": "Bheur Hag",
+    "cr": 7
+  },
+  {
+    "name": "Big Linda",
+    "cr": 9
+  },
+  {
+    "name": "Big Momma",
+    "cr": 11
+  },
+  {
+    "name": "Big Water Slurpent",
+    "cr": 3
+  },
+  {
+    "name": "Big Xorn",
+    "cr": 8
+  },
+  {
+    "name": "Billy Beaver",
+    "cr": 3
+  },
+  {
+    "name": "Biomancer",
+    "cr": 10
+  },
+  {
+    "name": "Birdsquirrel",
+    "cr": 0.25
+  },
+  {
+    "name": "Bitter Breath",
+    "cr": 11
+  },
+  {
+    "name": "Bjornhild Solvigsdottir",
+    "cr": 5
+  },
+  {
+    "name": "Black Abishai",
+    "cr": 7
+  },
+  {
+    "name": "Black Bear",
+    "cr": 0.5
+  },
+  {
+    "name": "Black Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "Black Earth Guard",
+    "cr": 2
+  },
+  {
+    "name": "Black Earth Priest",
+    "cr": 3
+  },
+  {
+    "name": "Black Gauntlet of Bane",
+    "cr": 6
+  },
+  {
+    "name": "Black Greatwyrm",
+    "cr": 27
+  },
+  {
+    "name": "Black Guard Drake",
+    "cr": 2
+  },
+  {
+    "name": "Black King",
+    "cr": 10
+  },
+  {
+    "name": "Black Pudding",
+    "cr": 4
+  },
+  {
+    "name": "Black Viper",
+    "cr": 5
+  },
+  {
+    "name": "Blackguard",
+    "cr": 8
+  },
+  {
+    "name": "Blagden",
+    "cr": 1
+  },
+  {
+    "name": "Blagothkus",
+    "cr": 9
+  },
+  {
+    "name": "Blaze",
+    "cr": 5
+  },
+  {
+    "name": "Bleak Cabal Void Soother",
+    "cr": 3
+  },
+  {
+    "name": "Blight Totem Elemental",
+    "cr": 0.5
+  },
+  {
+    "name": "Blinded Troll",
+    "cr": 4
+  },
+  {
+    "name": "Blindheim",
+    "cr": 2
+  },
+  {
+    "name": "Blink Dog",
+    "cr": 0.25
+  },
+  {
+    "name": "Blistercoil Weird",
+    "cr": 4
+  },
+  {
+    "name": "Blood Drinker Vampire",
+    "cr": 8
+  },
+  {
+    "name": "Blood Hawk",
+    "cr": 0.125
+  },
+  {
+    "name": "Blood Hunter",
+    "cr": 5
+  },
+  {
+    "name": "Blood Witch",
+    "cr": 7
+  },
+  {
+    "name": "Blood-Toll Harpy",
+    "cr": 0.125
+  },
+  {
+    "name": "Bloodbonded",
+    "cr": 4
+  },
+  {
+    "name": "Bloodfray Giant",
+    "cr": 6
+  },
+  {
+    "name": "Blue Abishai",
+    "cr": 17
+  },
+  {
+    "name": "Blue Dragon Wyrmling",
+    "cr": 3
+  },
+  {
+    "name": "Blue Greatwyrm",
+    "cr": 27
+  },
+  {
+    "name": "Blue Guard Drake",
+    "cr": 2
+  },
+  {
+    "name": "Blue Slaad",
+    "cr": 7
+  },
+  {
+    "name": "Blurg",
+    "cr": 2
+  },
+  {
+    "name": "Bluto Krogarov",
+    "cr": 0
+  },
+  {
+    "name": "Boar",
+    "cr": 0.25
+  },
+  {
+    "name": "Bodak",
+    "cr": 6
+  },
+  {
+    "name": "Bodhi Irenicus",
+    "cr": 15
+  },
+  {
+    "name": "Bodytaker Plant",
+    "cr": 7
+  },
+  {
+    "name": "Boggle",
+    "cr": 0.125
+  },
+  {
+    "name": "Bol'bara",
+    "cr": 3
+  },
+  {
+    "name": "Bone Devil",
+    "cr": 9
+  },
+  {
+    "name": "Bone Knight",
+    "cr": 5
+  },
+  {
+    "name": "Bone Naga (Guardian)",
+    "cr": 4
+  },
+  {
+    "name": "Bone Naga (Spirit)",
+    "cr": 4
+  },
+  {
+    "name": "Bone Trader",
+    "cr": 1
+  },
+  {
+    "name": "Bone Whelk",
+    "cr": 0.25
+  },
+  {
+    "name": "Boneclaw",
+    "cr": 12
+  },
+  {
+    "name": "Boneless",
+    "cr": 1
+  },
+  {
+    "name": "Bonnie",
+    "cr": 4
+  },
+  {
+    "name": "Boontu Monkey",
+    "cr": 0
+  },
+  {
+    "name": "Booyahg Booyahg Booyahg",
+    "cr": 6
+  },
+  {
+    "name": "Booyahg Caster",
+    "cr": 0.25
+  },
+  {
+    "name": "Booyahg Slave of the Archfey",
+    "cr": 4
+  },
+  {
+    "name": "Booyahg Slave of the Fiend",
+    "cr": 7
+  },
+  {
+    "name": "Booyahg Slave of the Great Old One",
+    "cr": 6
+  },
+  {
+    "name": "Booyahg Whip",
+    "cr": 0.25
+  },
+  {
+    "name": "Booyahg Wielder",
+    "cr": 0.25
+  },
+  {
+    "name": "Borborygmos",
+    "cr": 18
+  },
+  {
+    "name": "Bore Worm",
+    "cr": 16
+  },
+  {
+    "name": "Borivik Windheim",
+    "cr": 10
+  },
+  {
+    "name": "Bosco Daggerhand",
+    "cr": 0.5
+  },
+  {
+    "name": "Boss Augustus",
+    "cr": 9
+  },
+  {
+    "name": "Boss Delour",
+    "cr": 9
+  },
+  {
+    "name": "Boulderfoot Giant",
+    "cr": 7
+  },
+  {
+    "name": "Bozak Draconian",
+    "cr": 2
+  },
+  {
+    "name": "Brackish Trudge",
+    "cr": 3
+  },
+  {
+    "name": "Brahma Lutier",
+    "cr": 2
+  },
+  {
+    "name": "Brain Breaker",
+    "cr": 12
+  },
+  {
+    "name": "Brain in Iron",
+    "cr": 3
+  },
+  {
+    "name": "Brain in a Jar",
+    "cr": 3
+  },
+  {
+    "name": "Brass Dragon Wyrmling",
+    "cr": 1
+  },
+  {
+    "name": "Brass Greatwyrm",
+    "cr": 28
+  },
+  {
+    "name": "Braxat",
+    "cr": 9
+  },
+  {
+    "name": "Braxow",
+    "cr": 7
+  },
+  {
+    "name": "Bray Martikov",
+    "cr": 2
+  },
+  {
+    "name": "Breath Drinker",
+    "cr": 14
+  },
+  {
+    "name": "Bridesmaid of Zuggtmoy",
+    "cr": 0.125
+  },
+  {
+    "name": "Brigganock",
+    "cr": 0.125
+  },
+  {
+    "name": "Bristled Moorbounder",
+    "cr": 3
+  },
+  {
+    "name": "Broken King Antigonos",
+    "cr": 3
+  },
+  {
+    "name": "Brontodon",
+    "cr": 5
+  },
+  {
+    "name": "Brontosaurus",
+    "cr": 5
+  },
+  {
+    "name": "Bronze Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "Bronze Greatwyrm",
+    "cr": 28
+  },
+  {
+    "name": "Bronze Sable",
+    "cr": 1
+  },
+  {
+    "name": "Bronze Scout",
+    "cr": 1
+  },
+  {
+    "name": "Bronzefume",
+    "cr": 13
+  },
+  {
+    "name": "Brood Chrysalis",
+    "cr": 8
+  },
+  {
+    "name": "broodling",
+    "cr": 0.5
+  },
+  {
+    "name": "Broom of Animated Attack",
+    "cr": 0.25
+  },
+  {
+    "name": "Brother Adramalech",
+    "cr": 21
+  },
+  {
+    "name": "Brother Morax",
+    "cr": 21
+  },
+  {
+    "name": "Brown Bear",
+    "cr": 1
+  },
+  {
+    "name": "Brown Scavver",
+    "cr": 4
+  },
+  {
+    "name": "Bruna",
+    "cr": 16
+  },
+  {
+    "name": "Brusipha",
+    "cr": 3
+  },
+  {
+    "name": "Buer",
+    "cr": 21
+  },
+  {
+    "name": "Bugbear",
+    "cr": 1
+  },
+  {
+    "name": "Bugbear Chief",
+    "cr": 3
+  },
+  {
+    "name": "Bugbear Gardener",
+    "cr": 1
+  },
+  {
+    "name": "Bugbear Lieutenant",
+    "cr": 1
+  },
+  {
+    "name": "Bulette",
+    "cr": 5
+  },
+  {
+    "name": "Bulezau",
+    "cr": 3
+  },
+  {
+    "name": "Bullywug",
+    "cr": 0.25
+  },
+  {
+    "name": "Bullywug Croaker",
+    "cr": 2
+  },
+  {
+    "name": "Bullywug Knight",
+    "cr": 3
+  },
+  {
+    "name": "Bullywug Royal",
+    "cr": 3
+  },
+  {
+    "name": "Buppido",
+    "cr": 0.25
+  },
+  {
+    "name": "Burney the Barber",
+    "cr": 21
+  },
+  {
+    "name": "Burnished Hart",
+    "cr": 2
+  },
+  {
+    "name": "Burrowshark",
+    "cr": 4
+  },
+  {
+    "name": "Buster the Bear",
+    "cr": 1
+  },
+  {
+    "name": "Cackler",
+    "cr": 0.5
+  },
+  {
+    "name": "Cadaver Collector",
+    "cr": 14
+  },
+  {
+    "name": "Cairnwight",
+    "cr": 9
+  },
+  {
+    "name": "Calcryx",
+    "cr": 2
+  },
+  {
+    "name": "Cambion",
+    "cr": 5
+  },
+  {
+    "name": "Camel",
+    "cr": 0.125
+  },
+  {
+    "name": "Campestri",
+    "cr": 0
+  },
+  {
+    "name": "Candlelight Daemon",
+    "cr": 11
+  },
+  {
+    "name": "Canoloth",
+    "cr": 8
+  },
+  {
+    "name": "Canopic Golem",
+    "cr": 13
+  },
+  {
+    "name": "Caprathorn",
+    "cr": 21
+  },
+  {
+    "name": "Captain Hask",
+    "cr": 6
+  },
+  {
+    "name": "Captain N'ghathrod",
+    "cr": 8
+  },
+  {
+    "name": "Captain Othelstan",
+    "cr": 5
+  },
+  {
+    "name": "Captain Xendros",
+    "cr": 2
+  },
+  {
+    "name": "Caradoc",
+    "cr": 8
+  },
+  {
+    "name": "Carnivorous Flower",
+    "cr": 5
+  },
+  {
+    "name": "Carrion Crawler",
+    "cr": 2
+  },
+  {
+    "name": "Carrion Ogre",
+    "cr": 2
+  },
+  {
+    "name": "Carrion Stalker",
+    "cr": 3
+  },
+  {
+    "name": "Carrionette",
+    "cr": 1
+  },
+  {
+    "name": "Cassiok Shadowdusk",
+    "cr": 12
+  },
+  {
+    "name": "Cat",
+    "cr": 0
+  },
+  {
+    "name": "Category 1 Krasis",
+    "cr": 1
+  },
+  {
+    "name": "Category 2 Krasis",
+    "cr": 6
+  },
+  {
+    "name": "Category 3 Krasis",
+    "cr": 16
+  },
+  {
+    "name": "Catoblepas",
+    "cr": 5
+  },
+  {
+    "name": "Caustic Crawler",
+    "cr": 2
+  },
+  {
+    "name": "Cavalier",
+    "cr": 5
+  },
+  {
+    "name": "Cave Badger",
+    "cr": 0.25
+  },
+  {
+    "name": "Cave Bear",
+    "cr": 2
+  },
+  {
+    "name": "Cave Fisher",
+    "cr": 3
+  },
+  {
+    "name": "Cavil Zaltobar",
+    "cr": 6
+  },
+  {
+    "name": "Celeste",
+    "cr": 4
+  },
+  {
+    "name": "Centaur",
+    "cr": 2
+  },
+  {
+    "name": "Centaur Mummy",
+    "cr": 6
+  },
+  {
+    "name": "Centaur Skeleton",
+    "cr": 2
+  },
+  {
+    "name": "Ceratops",
+    "cr": 5
+  },
+  {
+    "name": "Cerodon",
+    "cr": 6
+  },
+  {
+    "name": "Chain Devil",
+    "cr": 8
+  },
+  {
+    "name": "Chamberlain of Zuggtmoy",
+    "cr": 2
+  },
+  {
+    "name": "Champion",
+    "cr": 9
+  },
+  {
+    "name": "Champion of Ravens",
+    "cr": 21
+  },
+  {
+    "name": "Changeling",
+    "cr": 0.5
+  },
+  {
+    "name": "Chaos Quadrapod",
+    "cr": 4
+  },
+  {
+    "name": "Chaplain",
+    "cr": 6
+  },
+  {
+    "name": "Chapped Brute",
+    "cr": 4
+  },
+  {
+    "name": "Chapped Brute Abomination",
+    "cr": 9
+  },
+  {
+    "name": "Chardalyn Berserker",
+    "cr": 4
+  },
+  {
+    "name": "Chardalyn Dragon",
+    "cr": 11
+  },
+  {
+    "name": "Charmayne Daymore",
+    "cr": 10
+  },
+  {
+    "name": "Chasme",
+    "cr": 6
+  },
+  {
+    "name": "Chief Guh",
+    "cr": 5
+  },
+  {
+    "name": "Chief Kartha-Kaya",
+    "cr": 4
+  },
+  {
+    "name": "Chimera",
+    "cr": 6
+  },
+  {
+    "name": "Chimeric Baboon",
+    "cr": 0
+  },
+  {
+    "name": "Chimeric Cat",
+    "cr": 0
+  },
+  {
+    "name": "Chimeric Fox",
+    "cr": 0
+  },
+  {
+    "name": "Chimeric Hare",
+    "cr": 0
+  },
+  {
+    "name": "Chimeric Rat",
+    "cr": 0
+  },
+  {
+    "name": "Chimeric Weasel",
+    "cr": 0
+  },
+  {
+    "name": "Chishinix",
+    "cr": 11
+  },
+  {
+    "name": "Chishinix' Head",
+    "cr": 3
+  },
+  {
+    "name": "Chitine",
+    "cr": 0.5
+  },
+  {
+    "name": "Choker",
+    "cr": 1
+  },
+  {
+    "name": "Choldrith",
+    "cr": 3
+  },
+  {
+    "name": "Chukka",
+    "cr": 0.25
+  },
+  {
+    "name": "Chupacabra",
+    "cr": 3
+  },
+  {
+    "name": "Chuul",
+    "cr": 4
+  },
+  {
+    "name": "Chuul Spore Servant",
+    "cr": 4
+  },
+  {
+    "name": "Chwinga",
+    "cr": 0
+  },
+  {
+    "name": "Chwinga Astronaut",
+    "cr": 0
+  },
+  {
+    "name": "Cinder Hulk",
+    "cr": 7
+  },
+  {
+    "name": "Cinderslag Elemental",
+    "cr": 8
+  },
+  {
+    "name": "Clanrat",
+    "cr": 0.5
+  },
+  {
+    "name": "Clapperclaw the Scarecrow",
+    "cr": 0.5
+  },
+  {
+    "name": "Clasp Cutthroat",
+    "cr": 3
+  },
+  {
+    "name": "Clasp Enforcer",
+    "cr": 5
+  },
+  {
+    "name": "Claugiyliamatar",
+    "cr": 22
+  },
+  {
+    "name": "Clawfoot",
+    "cr": 1
+  },
+  {
+    "name": "Clay Gladiator",
+    "cr": 5
+  },
+  {
+    "name": "Clay Golem",
+    "cr": 9
+  },
+  {
+    "name": "Cloaker",
+    "cr": 8
+  },
+  {
+    "name": "Cloaker Mutate",
+    "cr": 10
+  },
+  {
+    "name": "Clockwork Behir",
+    "cr": 11
+  },
+  {
+    "name": "Clockwork Bronze Scout",
+    "cr": 1
+  },
+  {
+    "name": "Clockwork Defender",
+    "cr": 1
+  },
+  {
+    "name": "Clockwork Dragon",
+    "cr": 1
+  },
+  {
+    "name": "Clockwork Horror",
+    "cr": 2
+  },
+  {
+    "name": "Clockwork Iron Cobra",
+    "cr": 4
+  },
+  {
+    "name": "Clockwork Kraken",
+    "cr": 10
+  },
+  {
+    "name": "Clockwork Mule",
+    "cr": 0.125
+  },
+  {
+    "name": "Clockwork Oaken Bolter",
+    "cr": 5
+  },
+  {
+    "name": "Clockwork Observer",
+    "cr": 0
+  },
+  {
+    "name": "Clockwork Stone Defender",
+    "cr": 4
+  },
+  {
+    "name": "Clonk",
+    "cr": 0.25
+  },
+  {
+    "name": "Cloud Giant",
+    "cr": 9
+  },
+  {
+    "name": "Cloud Giant Destiny Gambler",
+    "cr": 19
+  },
+  {
+    "name": "Cloud Giant Ghost",
+    "cr": 9
+  },
+  {
+    "name": "Cloud Giant Noble",
+    "cr": 9
+  },
+  {
+    "name": "Cloud Giant Smiling One",
+    "cr": 11
+  },
+  {
+    "name": "Cloud Giant of Evil Air",
+    "cr": 12
+  },
+  {
+    "name": "Clovin Belview",
+    "cr": 0.25
+  },
+  {
+    "name": "Clystran",
+    "cr": 0.5
+  },
+  {
+    "name": "Coatl",
+    "cr": 4
+  },
+  {
+    "name": "Cobalt Golem",
+    "cr": 18
+  },
+  {
+    "name": "Cockatrice",
+    "cr": 0.5
+  },
+  {
+    "name": "Cog",
+    "cr": 5
+  },
+  {
+    "name": "Cogwork Archivist",
+    "cr": 4
+  },
+  {
+    "name": "Cold Snap Spirit",
+    "cr": 5
+  },
+  {
+    "name": "Coldlight Walker",
+    "cr": 5
+  },
+  {
+    "name": "Colossus of Akros",
+    "cr": 23
+  },
+  {
+    "name": "Commodore Krux",
+    "cr": 3
+  },
+  {
+    "name": "Commoner",
+    "cr": 0
+  },
+  {
+    "name": "Conclave Dryad",
+    "cr": 9
+  },
+  {
+    "name": "Conjurer",
+    "cr": 6
+  },
+  {
+    "name": "Conjurer Wizard",
+    "cr": 6
+  },
+  {
+    "name": "Conservatory Student",
+    "cr": 0.125
+  },
+  {
+    "name": "Constrictor Snake",
+    "cr": 0.25
+  },
+  {
+    "name": "Construct (Animated Armor)",
+    "cr": 1
+  },
+  {
+    "name": "Construct (Helmed Horror)",
+    "cr": 4
+  },
+  {
+    "name": "Construct (Modron)",
+    "cr": 0.125
+  },
+  {
+    "name": "Construct (Shield Guardian)",
+    "cr": 7
+  },
+  {
+    "name": "Constructed Commoner",
+    "cr": 0
+  },
+  {
+    "name": "Copper Dragon Wyrmling",
+    "cr": 1
+  },
+  {
+    "name": "Copper Greatwyrm",
+    "cr": 28
+  },
+  {
+    "name": "Copper Stormforge",
+    "cr": 0.5
+  },
+  {
+    "name": "Coral",
+    "cr": 9
+  },
+  {
+    "name": "Core Spawn Crawler",
+    "cr": 1
+  },
+  {
+    "name": "Core Spawn Emissary",
+    "cr": 6
+  },
+  {
+    "name": "Core Spawn Seer",
+    "cr": 13
+  },
+  {
+    "name": "Core Spawn Worm",
+    "cr": 15
+  },
+  {
+    "name": "Cornelius Watson",
+    "cr": 12
+  },
+  {
+    "name": "Corpse Flower",
+    "cr": 8
+  },
+  {
+    "name": "Corpse Walker",
+    "cr": 6
+  },
+  {
+    "name": "Corpsejaw",
+    "cr": 0.25
+  },
+  {
+    "name": "Corrin Delmaco",
+    "cr": 1
+  },
+  {
+    "name": "Corrupted Avatar of Lurue",
+    "cr": 8
+  },
+  {
+    "name": "Corrupted Giant Shark",
+    "cr": 9
+  },
+  {
+    "name": "Corruption Devil (Paeliryon)",
+    "cr": 14
+  },
+  {
+    "name": "Cosmic Horror",
+    "cr": 18
+  },
+  {
+    "name": "Cosmotronic Blastseeker",
+    "cr": 4
+  },
+  {
+    "name": "Couatl",
+    "cr": 4
+  },
+  {
+    "name": "Count Thullen",
+    "cr": 10
+  },
+  {
+    "name": "Counterflux Blastseeker",
+    "cr": 2
+  },
+  {
+    "name": "Countess Sansuri",
+    "cr": 11
+  },
+  {
+    "name": "Cow",
+    "cr": 0.25
+  },
+  {
+    "name": "Crab",
+    "cr": 0
+  },
+  {
+    "name": "Crab Folk",
+    "cr": 3
+  },
+  {
+    "name": "Cradle of the Cloud Scion",
+    "cr": 26
+  },
+  {
+    "name": "Cradle of the Fire Scion",
+    "cr": 25
+  },
+  {
+    "name": "Cradle of the Frost Scion",
+    "cr": 24
+  },
+  {
+    "name": "Cradle of the Hill Scion",
+    "cr": 22
+  },
+  {
+    "name": "Cradle of the Stone Scion",
+    "cr": 23
+  },
+  {
+    "name": "Cradle of the Storm Scion",
+    "cr": 27
+  },
+  {
+    "name": "Crag Cat",
+    "cr": 1
+  },
+  {
+    "name": "Cranium Rat",
+    "cr": 0
+  },
+  {
+    "name": "Cranium Rat Squeaker",
+    "cr": 0
+  },
+  {
+    "name": "Cranium Rat Squeaker Swarm",
+    "cr": 5
+  },
+  {
+    "name": "Crater Wurm",
+    "cr": 15
+  },
+  {
+    "name": "Crawling Claw",
+    "cr": 0
+  },
+  {
+    "name": "Creeper",
+    "cr": 0.5
+  },
+  {
+    "name": "Creepy Doll",
+    "cr": 2
+  },
+  {
+    "name": "Cressaro",
+    "cr": 9
+  },
+  {
+    "name": "Crimson Countess",
+    "cr": 8
+  },
+  {
+    "name": "Criosphinx",
+    "cr": 13
+  },
+  {
+    "name": "Crocodile",
+    "cr": 0.5
+  },
+  {
+    "name": "Crokek'toeck",
+    "cr": 14
+  },
+  {
+    "name": "Crow",
+    "cr": 0
+  },
+  {
+    "name": "Crushing Wave Priest",
+    "cr": 2
+  },
+  {
+    "name": "Crushing Wave Reaver",
+    "cr": 0.5
+  },
+  {
+    "name": "Cryonax",
+    "cr": 22
+  },
+  {
+    "name": "Cryovain",
+    "cr": 13
+  },
+  {
+    "name": "Crystal Battleaxe",
+    "cr": 0.25
+  },
+  {
+    "name": "Crystal Cave Merfolk",
+    "cr": 0.125
+  },
+  {
+    "name": "Crystal Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "Crystal Golem",
+    "cr": 10
+  },
+  {
+    "name": "Crystal Greatwyrm",
+    "cr": 26
+  },
+  {
+    "name": "Ctenmiir the Vampire",
+    "cr": 13
+  },
+  {
+    "name": "Cudgel Ironsmile",
+    "cr": 3
+  },
+  {
+    "name": "Cult Fanatic",
+    "cr": 2
+  },
+  {
+    "name": "Cultist",
+    "cr": 0.125
+  },
+  {
+    "name": "Cuprilach Rilmani",
+    "cr": 12
+  },
+  {
+    "name": "Curran Corvalin",
+    "cr": 0
+  },
+  {
+    "name": "Cyclops",
+    "cr": 6
+  },
+  {
+    "name": "Cyclops Stormcaller",
+    "cr": 10
+  },
+  {
+    "name": "Cyrus Belview",
+    "cr": 0.25
+  },
+  {
+    "name": "Dabus",
+    "cr": 2
+  },
+  {
+    "name": "Daemogoth",
+    "cr": 10
+  },
+  {
+    "name": "Daemogoth Titan",
+    "cr": 16
+  },
+  {
+    "name": "Dagdra Deepforge",
+    "cr": 2
+  },
+  {
+    "name": "Dagryn",
+    "cr": 4
+  },
+  {
+    "name": "Dalamar",
+    "cr": 6
+  },
+  {
+    "name": "Damaged Flesh Golem",
+    "cr": 1
+  },
+  {
+    "name": "Dancing Flame",
+    "cr": 4
+  },
+  {
+    "name": "Dancing Item",
+    "cr": 1
+  },
+  {
+    "name": "Dandylion",
+    "cr": 6
+  },
+  {
+    "name": "Danika Dorakova",
+    "cr": 2
+  },
+  {
+    "name": "Dankwood Duergar",
+    "cr": 2
+  },
+  {
+    "name": "Dankwood Grung",
+    "cr": 1
+  },
+  {
+    "name": "Dankwood Hag",
+    "cr": 3
+  },
+  {
+    "name": "Dao",
+    "cr": 11
+  },
+  {
+    "name": "Darien",
+    "cr": 9
+  },
+  {
+    "name": "Dark Tide Knight",
+    "cr": 3
+  },
+  {
+    "name": "Darkling",
+    "cr": 0.5
+  },
+  {
+    "name": "Darkling Elder",
+    "cr": 2
+  },
+  {
+    "name": "Darkmantle",
+    "cr": 0.5
+  },
+  {
+    "name": "Darkweaver",
+    "cr": 10
+  },
+  {
+    "name": "Darrett Highwater",
+    "cr": 3
+  },
+  {
+    "name": "Davian Martikov",
+    "cr": 2
+  },
+  {
+    "name": "Davil Starsong",
+    "cr": 6
+  },
+  {
+    "name": "Dawndrinker",
+    "cr": 5
+  },
+  {
+    "name": "Deadstone Cleft Stone Giant",
+    "cr": 7
+  },
+  {
+    "name": "Death Dog",
+    "cr": 1
+  },
+  {
+    "name": "Death Embrace",
+    "cr": 11
+  },
+  {
+    "name": "Death Giant Reaper",
+    "cr": 12
+  },
+  {
+    "name": "Death Giant Shrouded One",
+    "cr": 15
+  },
+  {
+    "name": "Death Kiss",
+    "cr": 10
+  },
+  {
+    "name": "Death Knight",
+    "cr": 17
+  },
+  {
+    "name": "Death Slaad",
+    "cr": 10
+  },
+  {
+    "name": "Death Tyrant",
+    "cr": 14
+  },
+  {
+    "name": "Death's Head",
+    "cr": 0.5
+  },
+  {
+    "name": "Death's Head of Bhaal",
+    "cr": 5
+  },
+  {
+    "name": "Deathless Rider",
+    "cr": 5
+  },
+  {
+    "name": "Deathlock",
+    "cr": 4
+  },
+  {
+    "name": "Deathlock Mastermind",
+    "cr": 8
+  },
+  {
+    "name": "Deathlock Wight",
+    "cr": 3
+  },
+  {
+    "name": "Deathpact Angel",
+    "cr": 14
+  },
+  {
+    "name": "Decapus",
+    "cr": 4
+  },
+  {
+    "name": "Decaton Modron",
+    "cr": 8
+  },
+  {
+    "name": "Deck Defender",
+    "cr": 1
+  },
+  {
+    "name": "Deep Crow",
+    "cr": 9
+  },
+  {
+    "name": "Deep Dragon Wyrmling",
+    "cr": 1
+  },
+  {
+    "name": "Deep Gnome (Svirfneblin)",
+    "cr": 0.5
+  },
+  {
+    "name": "Deep One Bishop",
+    "cr": 11
+  },
+  {
+    "name": "Deep One Hybrid Cultist",
+    "cr": 0.125
+  },
+  {
+    "name": "Deep One Child",
+    "cr": 1
+  },
+  {
+    "name": "Deep One Scion Priest of Cthulhu",
+    "cr": 5
+  },
+  {
+    "name": "Deep One",
+    "cr": 1
+  },
+  {
+    "name": "Deep Scion",
+    "cr": 3
+  },
+  {
+    "name": "Deep Spider",
+    "cr": 7
+  },
+  {
+    "name": "Deepking Horgar Steelshadow V",
+    "cr": 3
+  },
+  {
+    "name": "Deer",
+    "cr": 0
+  },
+  {
+    "name": "Deformed Duergar",
+    "cr": 1
+  },
+  {
+    "name": "Deinonychus",
+    "cr": 1
+  },
+  {
+    "name": "Delerium Dreg",
+    "cr": 0.5
+  },
+  {
+    "name": "Demelin",
+    "cr": 12
+  },
+  {
+    "name": "Demilich",
+    "cr": 18
+  },
+  {
+    "name": "Demogorgon",
+    "cr": 26
+  },
+  {
+    "name": "Demon",
+    "cr": 6
+  },
+  {
+    "name": "Demon Ichor",
+    "cr": 4
+  },
+  {
+    "name": "Demonfeed Spider",
+    "cr": 8
+  },
+  {
+    "name": "Demonfeed Spiderling",
+    "cr": 1
+  },
+  {
+    "name": "Demonlord of Ashmouth",
+    "cr": 11
+  },
+  {
+    "name": "Demos Magen",
+    "cr": 2
+  },
+  {
+    "name": "Dermot Wurder (Tier 1)",
+    "cr": 3
+  },
+  {
+    "name": "Dermot Wurder (Tier 2)",
+    "cr": 5
+  },
+  {
+    "name": "Dermot Wurder (Tier 3)",
+    "cr": 8
+  },
+  {
+    "name": "Derro",
+    "cr": 0.25
+  },
+  {
+    "name": "Derro Savant",
+    "cr": 3
+  },
+  {
+    "name": "Detached Shadow",
+    "cr": 0.5
+  },
+  {
+    "name": "Deva",
+    "cr": 10
+  },
+  {
+    "name": "Devil Dog",
+    "cr": 0.25
+  },
+  {
+    "name": "Devkarin Lich",
+    "cr": 14
+  },
+  {
+    "name": "Devorastus",
+    "cr": 20
+  },
+  {
+    "name": "Devourer",
+    "cr": 13
+  },
+  {
+    "name": "Dezmyr Shadowdusk",
+    "cr": 17
+  },
+  {
+    "name": "Dhergoloth",
+    "cr": 7
+  },
+  {
+    "name": "Diatryma",
+    "cr": 0.25
+  },
+  {
+    "name": "Diderius",
+    "cr": 15
+  },
+  {
+    "name": "Dimetrodon",
+    "cr": 0.25
+  },
+  {
+    "name": "Dining Table Mimic",
+    "cr": 3
+  },
+  {
+    "name": "Dinosaur Skeleton",
+    "cr": 2
+  },
+  {
+    "name": "Dire Corby",
+    "cr": 0.5
+  },
+  {
+    "name": "Dire Troll",
+    "cr": 13
+  },
+  {
+    "name": "Dire Wolf",
+    "cr": 1
+  },
+  {
+    "name": "Disciple",
+    "cr": 0.25
+  },
+  {
+    "name": "Diseased Grick",
+    "cr": 2
+  },
+  {
+    "name": "Dispater",
+    "cr": 27
+  },
+  {
+    "name": "Displacer Beast",
+    "cr": 3
+  },
+  {
+    "name": "Displacer Beast Kitten",
+    "cr": 0.125
+  },
+  {
+    "name": "Displacer Fiend",
+    "cr": 9
+  },
+  {
+    "name": "Distended Corpse",
+    "cr": 0
+  },
+  {
+    "name": "Diva",
+    "cr": 0.5
+  },
+  {
+    "name": "Diva Luma",
+    "cr": 8
+  },
+  {
+    "name": "Diviner",
+    "cr": 8
+  },
+  {
+    "name": "Diviner Wizard",
+    "cr": 8
+  },
+  {
+    "name": "Djeneba",
+    "cr": 6
+  },
+  {
+    "name": "Djinni",
+    "cr": 11
+  },
+  {
+    "name": "Dohwar",
+    "cr": 0
+  },
+  {
+    "name": "Dolgaunt",
+    "cr": 3
+  },
+  {
+    "name": "Dolgrim",
+    "cr": 0.5
+  },
+  {
+    "name": "Dolphin",
+    "cr": 0.125
+  },
+  {
+    "name": "Dolphin Delighter",
+    "cr": 3
+  },
+  {
+    "name": "Don-Jon Raskin",
+    "cr": 0.5
+  },
+  {
+    "name": "Donaar Blit'zen",
+    "cr": 3
+  },
+  {
+    "name": "Donavich",
+    "cr": 0.25
+  },
+  {
+    "name": "Doomcaller",
+    "cr": 15
+  },
+  {
+    "name": "Doomguard Doom Lord",
+    "cr": 12
+  },
+  {
+    "name": "Doomguard Rot Blade",
+    "cr": 6
+  },
+  {
+    "name": "Doomwake Giant",
+    "cr": 11
+  },
+  {
+    "name": "Doppelganger",
+    "cr": 3
+  },
+  {
+    "name": "Doric",
+    "cr": 5
+  },
+  {
+    "name": "Doru",
+    "cr": 5
+  },
+  {
+    "name": "Doty X",
+    "cr": 6
+  },
+  {
+    "name": "Downcast Apostate",
+    "cr": 11
+  },
+  {
+    "name": "Downcast Mercenary",
+    "cr": 5
+  },
+  {
+    "name": "Dr. Cassee Dannell",
+    "cr": 0
+  },
+  {
+    "name": "Dracohydra",
+    "cr": 11
+  },
+  {
+    "name": "Draconian Dreadnought",
+    "cr": 4
+  },
+  {
+    "name": "Draconian Foot Soldier",
+    "cr": 0.5
+  },
+  {
+    "name": "Draconian Infiltrator",
+    "cr": 3
+  },
+  {
+    "name": "Draconian Mage",
+    "cr": 2
+  },
+  {
+    "name": "Draconian Mastermind",
+    "cr": 6
+  },
+  {
+    "name": "Draconic Shard",
+    "cr": 17
+  },
+  {
+    "name": "Dracophage Subject",
+    "cr": 3
+  },
+  {
+    "name": "Draegloth",
+    "cr": 7
+  },
+  {
+    "name": "Draft Horse",
+    "cr": 0.25
+  },
+  {
+    "name": "Dragon",
+    "cr": 17
+  },
+  {
+    "name": "Dragon Army Dragonnel",
+    "cr": 3
+  },
+  {
+    "name": "Dragon Army Officer",
+    "cr": 3
+  },
+  {
+    "name": "Dragon Army Soldier",
+    "cr": 1
+  },
+  {
+    "name": "Dragon Blessed",
+    "cr": 5
+  },
+  {
+    "name": "Dragon Chosen",
+    "cr": 3
+  },
+  {
+    "name": "Dragon Hunter",
+    "cr": 3
+  },
+  {
+    "name": "Dragon Speaker",
+    "cr": 2
+  },
+  {
+    "name": "Dragon Tortoise",
+    "cr": 17
+  },
+  {
+    "name": "Dragon Turtle",
+    "cr": 17
+  },
+  {
+    "name": "Dragon Turtle Wyrmling",
+    "cr": 4
+  },
+  {
+    "name": "Dragonbait",
+    "cr": 5
+  },
+  {
+    "name": "Dragonblood Ooze",
+    "cr": 5
+  },
+  {
+    "name": "Dragonbone Golem",
+    "cr": 11
+  },
+  {
+    "name": "Dragonborn of Bahamut",
+    "cr": 8
+  },
+  {
+    "name": "Dragonborn of Sardior",
+    "cr": 6
+  },
+  {
+    "name": "Dragonborn of Tiamat",
+    "cr": 7
+  },
+  {
+    "name": "Dragonclaw",
+    "cr": 1
+  },
+  {
+    "name": "Dragonfang",
+    "cr": 5
+  },
+  {
+    "name": "Dragonflesh Abomination",
+    "cr": 6
+  },
+  {
+    "name": "Dragonflesh Grafter",
+    "cr": 3
+  },
+  {
+    "name": "Dragonnel",
+    "cr": 2
+  },
+  {
+    "name": "Dragonpriest",
+    "cr": 5
+  },
+  {
+    "name": "Dragonsoul",
+    "cr": 7
+  },
+  {
+    "name": "Dragonwing",
+    "cr": 2
+  },
+  {
+    "name": "Drake (Large)",
+    "cr": 1
+  },
+  {
+    "name": "Drake (Small)",
+    "cr": 0.25
+  },
+  {
+    "name": "Dralmorrer Borngray",
+    "cr": 3
+  },
+  {
+    "name": "Drannin Splithelm",
+    "cr": 7
+  },
+  {
+    "name": "Dread Doppelganger",
+    "cr": 5
+  },
+  {
+    "name": "Dread Warrior",
+    "cr": 1
+  },
+  {
+    "name": "Dream Eater",
+    "cr": 7
+  },
+  {
+    "name": "Dretch",
+    "cr": 0.25
+  },
+  {
+    "name": "Drevin",
+    "cr": 1
+  },
+  {
+    "name": "Drider",
+    "cr": 6
+  },
+  {
+    "name": "Drivvin Freth",
+    "cr": 12
+  },
+  {
+    "name": "Droki",
+    "cr": 2
+  },
+  {
+    "name": "Drow",
+    "cr": 0.25
+  },
+  {
+    "name": "Drow Acolyte",
+    "cr": 0.25
+  },
+  {
+    "name": "Drow Arachnomancer",
+    "cr": 13
+  },
+  {
+    "name": "Drow Bandit",
+    "cr": 0.125
+  },
+  {
+    "name": "Drow Commander",
+    "cr": 5
+  },
+  {
+    "name": "Drow Commoner",
+    "cr": 0
+  },
+  {
+    "name": "Drow Cultist",
+    "cr": 0.125
+  },
+  {
+    "name": "Drow Elite Warrior",
+    "cr": 5
+  },
+  {
+    "name": "Drow Favored Consort",
+    "cr": 18
+  },
+  {
+    "name": "Drow Guard",
+    "cr": 0.125
+  },
+  {
+    "name": "Drow Gunslinger",
+    "cr": 4
+  },
+  {
+    "name": "Drow House Captain",
+    "cr": 9
+  },
+  {
+    "name": "Drow Inquisitor",
+    "cr": 14
+  },
+  {
+    "name": "Drow Mage",
+    "cr": 7
+  },
+  {
+    "name": "Drow Matron Mother",
+    "cr": 20
+  },
+  {
+    "name": "Drow Noble",
+    "cr": 0.125
+  },
+  {
+    "name": "Drow Priestess of Lolth",
+    "cr": 8
+  },
+  {
+    "name": "Drow Scout",
+    "cr": 0.5
+  },
+  {
+    "name": "Drow Shadowblade",
+    "cr": 11
+  },
+  {
+    "name": "Drow Spore Servant",
+    "cr": 0.125
+  },
+  {
+    "name": "Drow Spy",
+    "cr": 1
+  },
+  {
+    "name": "Drowned Ascetic",
+    "cr": 3
+  },
+  {
+    "name": "Drowned Assassin",
+    "cr": 4
+  },
+  {
+    "name": "Drowned Blade",
+    "cr": 2
+  },
+  {
+    "name": "Drowned Master",
+    "cr": 9
+  },
+  {
+    "name": "Drufi",
+    "cr": 8
+  },
+  {
+    "name": "Druid",
+    "cr": 2
+  },
+  {
+    "name": "Druid of the Old Ways",
+    "cr": 7
+  },
+  {
+    "name": "Dryad",
+    "cr": 1
+  },
+  {
+    "name": "Dryad Spirit",
+    "cr": 4
+  },
+  {
+    "name": "Drynna Hydra",
+    "cr": 8
+  },
+  {
+    "name": "Duchess Brimskarda",
+    "cr": 9
+  },
+  {
+    "name": "Duergar",
+    "cr": 1
+  },
+  {
+    "name": "Duergar Alchemist",
+    "cr": 1
+  },
+  {
+    "name": "Duergar Darkhaft",
+    "cr": 2
+  },
+  {
+    "name": "Duergar Despot",
+    "cr": 12
+  },
+  {
+    "name": "Duergar Hammerer",
+    "cr": 2
+  },
+  {
+    "name": "Duergar Kavalrachni",
+    "cr": 2
+  },
+  {
+    "name": "Duergar Keeper of the Flame",
+    "cr": 2
+  },
+  {
+    "name": "Duergar Mind Master",
+    "cr": 2
+  },
+  {
+    "name": "Duergar Screamer",
+    "cr": 3
+  },
+  {
+    "name": "Duergar Soulblade",
+    "cr": 1
+  },
+  {
+    "name": "Duergar Spore Servant",
+    "cr": 0.5
+  },
+  {
+    "name": "Duergar Spy",
+    "cr": 2
+  },
+  {
+    "name": "Duergar Stone Guard",
+    "cr": 2
+  },
+  {
+    "name": "Duergar Warlord",
+    "cr": 6
+  },
+  {
+    "name": "Duergar Xarrorn",
+    "cr": 2
+  },
+  {
+    "name": "Duke Thalamra Vanthampur",
+    "cr": 4
+  },
+  {
+    "name": "Duke Zalto",
+    "cr": 9
+  },
+  {
+    "name": "Dukha Bhatiyali",
+    "cr": 4
+  },
+  {
+    "name": "Dullahan",
+    "cr": 10
+  },
+  {
+    "name": "Dum-Dum Goblin",
+    "cr": 0.25
+  },
+  {
+    "name": "Dunbarrow Witch",
+    "cr": 5
+  },
+  {
+    "name": "Duodrone",
+    "cr": 0.25
+  },
+  {
+    "name": "Durnan",
+    "cr": 9
+  },
+  {
+    "name": "Durnn",
+    "cr": 1
+  },
+  {
+    "name": "Durstan Rial",
+    "cr": 3
+  },
+  {
+    "name": "Dusk Hag",
+    "cr": 6
+  },
+  {
+    "name": "Duskwalker",
+    "cr": 9
+  },
+  {
+    "name": "Dust Hulk",
+    "cr": 5
+  },
+  {
+    "name": "Dust Mephit",
+    "cr": 0.5
+  },
+  {
+    "name": "Dwarf",
+    "cr": 0.25
+  },
+  {
+    "name": "Dwarf Skeleton",
+    "cr": 0.5
+  },
+  {
+    "name": "Dwarven Worker",
+    "cr": 0.125
+  },
+  {
+    "name": "Dybbuk",
+    "cr": 4
+  },
+  {
+    "name": "Dyrrn",
+    "cr": 24
+  },
+  {
+    "name": "Dzaan's Simulacrum",
+    "cr": 1
+  },
+  {
+    "name": "Eagle",
+    "cr": 0
+  },
+  {
+    "name": "Earth Elemental",
+    "cr": 5
+  },
+  {
+    "name": "Earth Elemental Myrmidon",
+    "cr": 7
+  },
+  {
+    "name": "Earth Totem Elemental",
+    "cr": 5
+  },
+  {
+    "name": "East Wind",
+    "cr": 3
+  },
+  {
+    "name": "Eater of Hope",
+    "cr": 6
+  },
+  {
+    "name": "Eater of Knowledge",
+    "cr": 6
+  },
+  {
+    "name": "Eblis",
+    "cr": 1
+  },
+  {
+    "name": "Ebonclaw",
+    "cr": 2
+  },
+  {
+    "name": "Ebondeath",
+    "cr": 4
+  },
+  {
+    "name": "Echo of Demogorgon",
+    "cr": 6
+  },
+  {
+    "name": "Edgin Darvis",
+    "cr": 5
+  },
+  {
+    "name": "Edwin Odesseiron",
+    "cr": 15
+  },
+  {
+    "name": "Efreeti",
+    "cr": 11
+  },
+  {
+    "name": "Egg Hunter Adult",
+    "cr": 5
+  },
+  {
+    "name": "Egg Hunter Hatchling",
+    "cr": 2
+  },
+  {
+    "name": "Eidolon",
+    "cr": 12
+  },
+  {
+    "name": "Eigeron's Ghost",
+    "cr": 4
+  },
+  {
+    "name": "Eira",
+    "cr": 2
+  },
+  {
+    "name": "Ekene-Afa",
+    "cr": 5
+  },
+  {
+    "name": "Ekengarik",
+    "cr": 16
+  },
+  {
+    "name": "Eku",
+    "cr": 4
+  },
+  {
+    "name": "Elaina Sartell",
+    "cr": 2
+  },
+  {
+    "name": "Elder Black Pudding",
+    "cr": 4
+  },
+  {
+    "name": "Elder Brain",
+    "cr": 14
+  },
+  {
+    "name": "Elder Brain Dragon",
+    "cr": 22
+  },
+  {
+    "name": "Elder Dinosaur",
+    "cr": 30
+  },
+  {
+    "name": "Elder Dinosaur (Etali, Primal Storm)",
+    "cr": 30
+  },
+  {
+    "name": "Elder Dinosaur (Ghalta, Primal Hunger)",
+    "cr": 30
+  },
+  {
+    "name": "Elder Dinosaur (Nezahal, Primal Tide)",
+    "cr": 30
+  },
+  {
+    "name": "Elder Dinosaur (Tetzimoc, Primal Death)",
+    "cr": 30
+  },
+  {
+    "name": "Elder Dinosaur (Zacama, Primal Calamity)",
+    "cr": 30
+  },
+  {
+    "name": "Elder Dinosaur (Zetalpa, Primal Dawn)",
+    "cr": 30
+  },
+  {
+    "name": "Elder Giant Lizard",
+    "cr": 5
+  },
+  {
+    "name": "Elder Monastery of the Distressed Body Monk",
+    "cr": 2
+  },
+  {
+    "name": "Elder Oblex",
+    "cr": 10
+  },
+  {
+    "name": "Elder Tempest",
+    "cr": 23
+  },
+  {
+    "name": "Eldeth Feldrun",
+    "cr": 0.5
+  },
+  {
+    "name": "Eldrick Runeweaver",
+    "cr": 17
+  },
+  {
+    "name": "Eldritch Herald",
+    "cr": 5
+  },
+  {
+    "name": "Eldritch Horror Hatchling",
+    "cr": 2
+  },
+  {
+    "name": "Eldritch Lich",
+    "cr": 15
+  },
+  {
+    "name": "Eldritch Priest",
+    "cr": 2
+  },
+  {
+    "name": "Elephant",
+    "cr": 4
+  },
+  {
+    "name": "Elf Vampire (Ancient)",
+    "cr": 19
+  },
+  {
+    "name": "Eliphas Adulare",
+    "cr": 5
+  },
+  {
+    "name": "Elise",
+    "cr": 5
+  },
+  {
+    "name": "Elister",
+    "cr": 2
+  },
+  {
+    "name": "Elizar Dryflagon",
+    "cr": 5
+  },
+  {
+    "name": "Elk",
+    "cr": 0.25
+  },
+  {
+    "name": "Elkhorn",
+    "cr": 2
+  },
+  {
+    "name": "Elliach",
+    "cr": 6
+  },
+  {
+    "name": "Elok Jaharwon",
+    "cr": 4
+  },
+  {
+    "name": "Elzerina Cassalanter",
+    "cr": 0
+  },
+  {
+    "name": "Ember",
+    "cr": 22
+  },
+  {
+    "name": "Ember Roc",
+    "cr": 14
+  },
+  {
+    "name": "Emberhorn Minotaur",
+    "cr": 3
+  },
+  {
+    "name": "Emberosa",
+    "cr": 9
+  },
+  {
+    "name": "Embric",
+    "cr": 2
+  },
+  {
+    "name": "Emerald Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "Emerald Enclave Scout",
+    "cr": 0.5
+  },
+  {
+    "name": "Emerald Greatwyrm",
+    "cr": 26
+  },
+  {
+    "name": "Emil Toranescu",
+    "cr": 3
+  },
+  {
+    "name": "Emmek Frewn",
+    "cr": 0
+  },
+  {
+    "name": "Emo",
+    "cr": 13
+  },
+  {
+    "name": "Empyrean",
+    "cr": 23
+  },
+  {
+    "name": "Empyrean Brazen Bull",
+    "cr": 10
+  },
+  {
+    "name": "Emrakul",
+    "cr": 30
+  },
+  {
+    "name": "Encephalon Cluster",
+    "cr": 10
+  },
+  {
+    "name": "Encephalon Gemmule",
+    "cr": 3
+  },
+  {
+    "name": "Enchanter",
+    "cr": 5
+  },
+  {
+    "name": "Enchanter Wizard",
+    "cr": 5
+  },
+  {
+    "name": "Enchanting Infiltrator",
+    "cr": 11
+  },
+  {
+    "name": "Endelyn Moongrave",
+    "cr": 6
+  },
+  {
+    "name": "Ender Dragon",
+    "cr": 19
+  },
+  {
+    "name": "Enderman",
+    "cr": 6
+  },
+  {
+    "name": "Engineer",
+    "cr": 0.25
+  },
+  {
+    "name": "Enhanced Medusa",
+    "cr": 6
+  },
+  {
+    "name": "Enna Galakiir (Levels 1-4)",
+    "cr": 0.125
+  },
+  {
+    "name": "Enna Galakiir (Levels 5-8)",
+    "cr": 1
+  },
+  {
+    "name": "Enna Galakiir (Levels 9-11)",
+    "cr": 8
+  },
+  {
+    "name": "Enormous Tentacle",
+    "cr": 2
+  },
+  {
+    "name": "Entropic Flame",
+    "cr": 5
+  },
+  {
+    "name": "Envy",
+    "cr": 5
+  },
+  {
+    "name": "Eo Ashmajiir",
+    "cr": 11
+  },
+  {
+    "name": "Eoghan Ghostweaver",
+    "cr": 12
+  },
+  {
+    "name": "Equinal Guardinal",
+    "cr": 6
+  },
+  {
+    "name": "Eriflamme",
+    "cr": 28
+  },
+  {
+    "name": "Erinyes",
+    "cr": 12
+  },
+  {
+    "name": "Erky Timbers",
+    "cr": 0.25
+  },
+  {
+    "name": "Escher",
+    "cr": 5
+  },
+  {
+    "name": "Esthetic",
+    "cr": 12
+  },
+  {
+    "name": "Eternal",
+    "cr": 3
+  },
+  {
+    "name": "Eternal Flame Guardian",
+    "cr": 2
+  },
+  {
+    "name": "Eternal Flame Priest",
+    "cr": 3
+  },
+  {
+    "name": "Ettercap",
+    "cr": 2
+  },
+  {
+    "name": "Ettin",
+    "cr": 4
+  },
+  {
+    "name": "Ettin Ceremorph",
+    "cr": 8
+  },
+  {
+    "name": "Euryale",
+    "cr": 18
+  },
+  {
+    "name": "Evil Mage",
+    "cr": 1
+  },
+  {
+    "name": "Evoker",
+    "cr": 9
+  },
+  {
+    "name": "Evoker Wizard",
+    "cr": 9
+  },
+  {
+    "name": "Executioner",
+    "cr": 20
+  },
+  {
+    "name": "Exethanter",
+    "cr": 10
+  },
+  {
+    "name": "Expeditious Messenger",
+    "cr": 0.125
+  },
+  {
+    "name": "Expert",
+    "cr": 3
+  },
+  {
+    "name": "Eye Crawler",
+    "cr": 0
+  },
+  {
+    "name": "Eye Crow",
+    "cr": 0
+  },
+  {
+    "name": "Eye Monger",
+    "cr": 10
+  },
+  {
+    "name": "Eye of Fear and Flame",
+    "cr": 9
+  },
+  {
+    "name": "Eyedrake",
+    "cr": 8
+  },
+  {
+    "name": "Eyestalk of Gzemnid",
+    "cr": 15
+  },
+  {
+    "name": "Ezmerelda d'Avenir",
+    "cr": 8
+  },
+  {
+    "name": "Ezzat",
+    "cr": 21
+  },
+  {
+    "name": "Factol Skall",
+    "cr": 17
+  },
+  {
+    "name": "Faerie Borrower",
+    "cr": 0.5
+  },
+  {
+    "name": "Faerie Dragon (Blue)",
+    "cr": 2
+  },
+  {
+    "name": "Faerie Dragon (Green)",
+    "cr": 2
+  },
+  {
+    "name": "Faerie Dragon (Indigo)",
+    "cr": 2
+  },
+  {
+    "name": "Faerie Dragon (Orange)",
+    "cr": 1
+  },
+  {
+    "name": "Faerie Dragon (Red)",
+    "cr": 1
+  },
+  {
+    "name": "Faerie Dragon (Violet)",
+    "cr": 2
+  },
+  {
+    "name": "Faerie Dragon (Yellow)",
+    "cr": 1
+  },
+  {
+    "name": "Faerie Pathlighter",
+    "cr": 2
+  },
+  {
+    "name": "Faerie Pest",
+    "cr": 1
+  },
+  {
+    "name": "Faerl",
+    "cr": 0.125
+  },
+  {
+    "name": "Faevlin",
+    "cr": 0.25
+  },
+  {
+    "name": "Fala Lefaliir",
+    "cr": 2
+  },
+  {
+    "name": "Falcon",
+    "cr": 0
+  },
+  {
+    "name": "Falcon the Hunter",
+    "cr": 4
+  },
+  {
+    "name": "Faldorn",
+    "cr": 13
+  },
+  {
+    "name": "Farastu Demodand",
+    "cr": 11
+  },
+  {
+    "name": "Farmer",
+    "cr": 0.125
+  },
+  {
+    "name": "Faroul",
+    "cr": 0.5
+  },
+  {
+    "name": "Farrow",
+    "cr": 1
+  },
+  {
+    "name": "Fastieth",
+    "cr": 0.25
+  },
+  {
+    "name": "Fate Hag",
+    "cr": 4
+  },
+  {
+    "name": "Fated Shaker",
+    "cr": 5
+  },
+  {
+    "name": "Fathomer",
+    "cr": 2
+  },
+  {
+    "name": "Fazrian",
+    "cr": 16
+  },
+  {
+    "name": "Feathergale Knight",
+    "cr": 1
+  },
+  {
+    "name": "Fel Ardra",
+    "cr": 2
+  },
+  {
+    "name": "Fel'rekt Lafeen",
+    "cr": 4
+  },
+  {
+    "name": "Felbarren Dwarf",
+    "cr": 0.125
+  },
+  {
+    "name": "Felgolos",
+    "cr": 15
+  },
+  {
+    "name": "Felidar",
+    "cr": 5
+  },
+  {
+    "name": "Female Steeder",
+    "cr": 1
+  },
+  {
+    "name": "Fennor",
+    "cr": 3
+  },
+  {
+    "name": "Fensir Devourer",
+    "cr": 8
+  },
+  {
+    "name": "Fensir Skirmisher",
+    "cr": 6
+  },
+  {
+    "name": "Fenthaza",
+    "cr": 4
+  },
+  {
+    "name": "Feonor",
+    "cr": 12
+  },
+  {
+    "name": "Feral Ashenwight",
+    "cr": 5
+  },
+  {
+    "name": "Ferocidon",
+    "cr": 2
+  },
+  {
+    "name": "Ferol Sal",
+    "cr": 3
+  },
+  {
+    "name": "Ferrumach Rilmani",
+    "cr": 9
+  },
+  {
+    "name": "Fewmaster Gholcag",
+    "cr": 2
+  },
+  {
+    "name": "Feyr",
+    "cr": 5
+  },
+  {
+    "name": "Fhenimore",
+    "cr": 5
+  },
+  {
+    "name": "Fidelio",
+    "cr": 4
+  },
+  {
+    "name": "Fiendish Auger",
+    "cr": 5
+  },
+  {
+    "name": "Fiendish Flesh Golem",
+    "cr": 8
+  },
+  {
+    "name": "Fiendish Formian",
+    "cr": 4
+  },
+  {
+    "name": "Fiendish Giant Spider",
+    "cr": 0.5
+  },
+  {
+    "name": "Fiendish Orc",
+    "cr": 4
+  },
+  {
+    "name": "Fierna",
+    "cr": 25
+  },
+  {
+    "name": "Firbolg Primeval Warden",
+    "cr": 4
+  },
+  {
+    "name": "Firbolg Wanderer",
+    "cr": 5
+  },
+  {
+    "name": "Fire Elemental",
+    "cr": 5
+  },
+  {
+    "name": "Fire Elemental Myrmidon",
+    "cr": 7
+  },
+  {
+    "name": "Fire Giant",
+    "cr": 9
+  },
+  {
+    "name": "Fire Giant Dreadnought",
+    "cr": 14
+  },
+  {
+    "name": "Fire Giant Forgecaller",
+    "cr": 18
+  },
+  {
+    "name": "Fire Giant Royal Headsman",
+    "cr": 9
+  },
+  {
+    "name": "Fire Giant Servant",
+    "cr": 5
+  },
+  {
+    "name": "Fire Giant of Evil Fire",
+    "cr": 10
+  },
+  {
+    "name": "Fire Guardian",
+    "cr": 5
+  },
+  {
+    "name": "Fire Hellion",
+    "cr": 11
+  },
+  {
+    "name": "Fire Kraken",
+    "cr": 21
+  },
+  {
+    "name": "Fire Snake",
+    "cr": 1
+  },
+  {
+    "name": "Firefist",
+    "cr": 7
+  },
+  {
+    "name": "Firegaunt",
+    "cr": 11
+  },
+  {
+    "name": "Firemane Angel",
+    "cr": 12
+  },
+  {
+    "name": "Firenewt Warlock of Imix",
+    "cr": 1
+  },
+  {
+    "name": "Firenewt Warrior",
+    "cr": 0.5
+  },
+  {
+    "name": "First-Year Student",
+    "cr": 0.5
+  },
+  {
+    "name": "Fist of Bane",
+    "cr": 0.5
+  },
+  {
+    "name": "Five-Armed Troll",
+    "cr": 8
+  },
+  {
+    "name": "Flabbergast",
+    "cr": 4
+  },
+  {
+    "name": "Flail Snail",
+    "cr": 3
+  },
+  {
+    "name": "Flameskull",
+    "cr": 4
+  },
+  {
+    "name": "Flamewrath",
+    "cr": 6
+  },
+  {
+    "name": "Flaming Skeleton",
+    "cr": 0.5
+  },
+  {
+    "name": "Flapjack",
+    "cr": 0.125
+  },
+  {
+    "name": "Flask of Wine",
+    "cr": 1
+  },
+  {
+    "name": "Fleecemane Lion",
+    "cr": 3
+  },
+  {
+    "name": "Flesh Colossus",
+    "cr": 20
+  },
+  {
+    "name": "Flesh Golem",
+    "cr": 5
+  },
+  {
+    "name": "Flesh Meld",
+    "cr": 7
+  },
+  {
+    "name": "Flight Alabaster Angel",
+    "cr": 10
+  },
+  {
+    "name": "Flight Goldnight Angel",
+    "cr": 11
+  },
+  {
+    "name": "Flight of Moonsilver Angel",
+    "cr": 10
+  },
+  {
+    "name": "Flimp Shagglecran",
+    "cr": 9
+  },
+  {
+    "name": "Flind",
+    "cr": 9
+  },
+  {
+    "name": "Flitterstep Eidolon",
+    "cr": 3
+  },
+  {
+    "name": "Floon Blagmaar",
+    "cr": 0
+  },
+  {
+    "name": "Flumph",
+    "cr": 0.125
+  },
+  {
+    "name": "Flux Blastseeker",
+    "cr": 5
+  },
+  {
+    "name": "Fluxcharger",
+    "cr": 7
+  },
+  {
+    "name": "Flying Dagger",
+    "cr": 0.125
+  },
+  {
+    "name": "Flying Horror",
+    "cr": 3
+  },
+  {
+    "name": "Flying Monkey",
+    "cr": 0
+  },
+  {
+    "name": "Flying Rocking Horse",
+    "cr": 0.125
+  },
+  {
+    "name": "Flying Snake",
+    "cr": 0.125
+  },
+  {
+    "name": "Flying Staff",
+    "cr": 0.25
+  },
+  {
+    "name": "Flying Sword",
+    "cr": 0.25
+  },
+  {
+    "name": "Flying Trident",
+    "cr": 0.25
+  },
+  {
+    "name": "Fog Giant",
+    "cr": 11
+  },
+  {
+    "name": "Foghome",
+    "cr": 2
+  },
+  {
+    "name": "Fomorian",
+    "cr": 8
+  },
+  {
+    "name": "Fomorian Deep Crawler",
+    "cr": 10
+  },
+  {
+    "name": "Fomorian Noble",
+    "cr": 15
+  },
+  {
+    "name": "Fomorian Warlock of the Dark",
+    "cr": 12
+  },
+  {
+    "name": "Forest Master",
+    "cr": 8
+  },
+  {
+    "name": "Foresworn",
+    "cr": 6
+  },
+  {
+    "name": "Forge Fitzwilliam",
+    "cr": 8
+  },
+  {
+    "name": "Forge Guardian",
+    "cr": 27
+  },
+  {
+    "name": "Forlarren",
+    "cr": 3
+  },
+  {
+    "name": "Four-Armed Gargoyle",
+    "cr": 2
+  },
+  {
+    "name": "Four-Armed Statue",
+    "cr": 10
+  },
+  {
+    "name": "Four-Armed Troll",
+    "cr": 6
+  },
+  {
+    "name": "Fox",
+    "cr": 0
+  },
+  {
+    "name": "Fractal Mascot",
+    "cr": 0.25
+  },
+  {
+    "name": "Fractine",
+    "cr": 9
+  },
+  {
+    "name": "Fragment of Krokulmar",
+    "cr": 0
+  },
+  {
+    "name": "Fraternity of Order Law Bender",
+    "cr": 9
+  },
+  {
+    "name": "Fraz-Urb'luu",
+    "cr": 23
+  },
+  {
+    "name": "Frilled Deathspitter",
+    "cr": 0.5
+  },
+  {
+    "name": "Frody Dartwild",
+    "cr": 0.25
+  },
+  {
+    "name": "Frog",
+    "cr": 0
+  },
+  {
+    "name": "Froghemoth",
+    "cr": 10
+  },
+  {
+    "name": "Frontline Medic",
+    "cr": 0.25
+  },
+  {
+    "name": "Frost Druid",
+    "cr": 5
+  },
+  {
+    "name": "Frost Giant",
+    "cr": 8
+  },
+  {
+    "name": "Frost Giant Everlasting One",
+    "cr": 12
+  },
+  {
+    "name": "Frost Giant Ice Shaper",
+    "cr": 17
+  },
+  {
+    "name": "Frost Giant Servant",
+    "cr": 5
+  },
+  {
+    "name": "Frost Giant Skeleton",
+    "cr": 6
+  },
+  {
+    "name": "Frost Giant Zombie",
+    "cr": 9
+  },
+  {
+    "name": "Frost Giant of Evil Water",
+    "cr": 11
+  },
+  {
+    "name": "Frost Salamander",
+    "cr": 9
+  },
+  {
+    "name": "Frost Worm",
+    "cr": 17
+  },
+  {
+    "name": "Frostmourn",
+    "cr": 10
+  },
+  {
+    "name": "Frozen Golem",
+    "cr": 16
+  },
+  {
+    "name": "Frulam Mondath",
+    "cr": 2
+  },
+  {
+    "name": "Fume Drake",
+    "cr": 0.25
+  },
+  {
+    "name": "Fungal Servant",
+    "cr": 15
+  },
+  {
+    "name": "Fury of Kostchtchie",
+    "cr": 14
+  },
+  {
+    "name": "Fzeg",
+    "cr": 16
+  },
+  {
+    "name": "Fzeglaich",
+    "cr": 7
+  },
+  {
+    "name": "Gadabout",
+    "cr": 0.125
+  },
+  {
+    "name": "Gadof Blinsky",
+    "cr": 0
+  },
+  {
+    "name": "Gaj",
+    "cr": 4
+  },
+  {
+    "name": "Galazeth Prismari",
+    "cr": 23
+  },
+  {
+    "name": "Galeb Duhr",
+    "cr": 6
+  },
+  {
+    "name": "Galeokaerda",
+    "cr": 6
+  },
+  {
+    "name": "Gallows Speaker",
+    "cr": 6
+  },
+  {
+    "name": "Galsariad Ardyth (Tier 1)",
+    "cr": 3
+  },
+  {
+    "name": "Galsariad Ardyth (Tier 2)",
+    "cr": 5
+  },
+  {
+    "name": "Galsariad Ardyth (Tier 3)",
+    "cr": 8
+  },
+  {
+    "name": "Galvan",
+    "cr": 7
+  },
+  {
+    "name": "Galvan Magen",
+    "cr": 3
+  },
+  {
+    "name": "Galvanic Blastseeker",
+    "cr": 5
+  },
+  {
+    "name": "Galvanice Weird",
+    "cr": 1
+  },
+  {
+    "name": "Gammon Xungoon",
+    "cr": 0
+  },
+  {
+    "name": "Gar Shatterkeel",
+    "cr": 9
+  },
+  {
+    "name": "Gargantua",
+    "cr": 21
+  },
+  {
+    "name": "Gargantuan Rug of Smothering",
+    "cr": 2
+  },
+  {
+    "name": "Gargoyle",
+    "cr": 2
+  },
+  {
+    "name": "Garmyr",
+    "cr": 0.5
+  },
+  {
+    "name": "Garra",
+    "cr": 1
+  },
+  {
+    "name": "Garret Levistusson",
+    "cr": 2
+  },
+  {
+    "name": "Gas Spore",
+    "cr": 0.5
+  },
+  {
+    "name": "Gash",
+    "cr": 0.5
+  },
+  {
+    "name": "Gauth",
+    "cr": 6
+  },
+  {
+    "name": "Gazer",
+    "cr": 0.5
+  },
+  {
+    "name": "Gearbox",
+    "cr": 0.125
+  },
+  {
+    "name": "Gearkeeper Construct",
+    "cr": 10
+  },
+  {
+    "name": "Gegazol",
+    "cr": 24
+  },
+  {
+    "name": "Geist",
+    "cr": 4
+  },
+  {
+    "name": "Gelatinous Cube",
+    "cr": 2
+  },
+  {
+    "name": "Gem Stalker",
+    "cr": 5
+  },
+  {
+    "name": "Geonid",
+    "cr": 0.25
+  },
+  {
+    "name": "Gertrube",
+    "cr": 0.5
+  },
+  {
+    "name": "Gertruda",
+    "cr": 0
+  },
+  {
+    "name": "Geryon",
+    "cr": 22
+  },
+  {
+    "name": "Ghald",
+    "cr": 7
+  },
+  {
+    "name": "Ghast",
+    "cr": 2
+  },
+  {
+    "name": "Ghazrim DuLoc",
+    "cr": 0.125
+  },
+  {
+    "name": "Ghost",
+    "cr": 4
+  },
+  {
+    "name": "Ghost Dragon",
+    "cr": 17
+  },
+  {
+    "name": "Ghostblade Eidolon",
+    "cr": 5
+  },
+  {
+    "name": "Ghoul",
+    "cr": 1
+  },
+  {
+    "name": "Giant",
+    "cr": 7
+  },
+  {
+    "name": "Giant Ape",
+    "cr": 7
+  },
+  {
+    "name": "Giant Badger",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Bat",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Boar",
+    "cr": 2
+  },
+  {
+    "name": "Giant Canary",
+    "cr": 0.5
+  },
+  {
+    "name": "Giant Centipede",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Child",
+    "cr": 0
+  },
+  {
+    "name": "Giant Constrictor Snake",
+    "cr": 2
+  },
+  {
+    "name": "Giant Coral Snake",
+    "cr": 4
+  },
+  {
+    "name": "Giant Crab",
+    "cr": 0.125
+  },
+  {
+    "name": "Giant Crayfish",
+    "cr": 2
+  },
+  {
+    "name": "Giant Crocodile",
+    "cr": 5
+  },
+  {
+    "name": "Giant Dragonfly",
+    "cr": 0.5
+  },
+  {
+    "name": "Giant Eagle",
+    "cr": 1
+  },
+  {
+    "name": "Giant Elk",
+    "cr": 2
+  },
+  {
+    "name": "Giant Fire Beetle",
+    "cr": 0
+  },
+  {
+    "name": "Giant Fly",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Flying Spider",
+    "cr": 1
+  },
+  {
+    "name": "Giant Four-Armed Gargoyle",
+    "cr": 10
+  },
+  {
+    "name": "Giant Frog",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Goat",
+    "cr": 0.5
+  },
+  {
+    "name": "Giant Goose",
+    "cr": 3
+  },
+  {
+    "name": "Giant Hyena",
+    "cr": 1
+  },
+  {
+    "name": "Giant Ice Toad",
+    "cr": 3
+  },
+  {
+    "name": "Giant Lightning Eel",
+    "cr": 3
+  },
+  {
+    "name": "Giant Lizard",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Lynx",
+    "cr": 0.5
+  },
+  {
+    "name": "Giant Mutated Drow",
+    "cr": 9
+  },
+  {
+    "name": "Giant Octopus",
+    "cr": 1
+  },
+  {
+    "name": "Giant Owl",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Ox",
+    "cr": 3
+  },
+  {
+    "name": "Giant Poisonous Snake",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Ram",
+    "cr": 1
+  },
+  {
+    "name": "Giant Rat",
+    "cr": 0.125
+  },
+  {
+    "name": "Giant Raven",
+    "cr": 1
+  },
+  {
+    "name": "Giant Riding Lizard",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant River Serpent",
+    "cr": 11
+  },
+  {
+    "name": "Giant Rocktopus",
+    "cr": 1
+  },
+  {
+    "name": "Giant Scorpion",
+    "cr": 3
+  },
+  {
+    "name": "Giant Sea Eel",
+    "cr": 0.5
+  },
+  {
+    "name": "Giant Sea Horse",
+    "cr": 0.5
+  },
+  {
+    "name": "Giant Shark",
+    "cr": 5
+  },
+  {
+    "name": "Giant Shark Skeleton",
+    "cr": 5
+  },
+  {
+    "name": "Giant Skeleton",
+    "cr": 7
+  },
+  {
+    "name": "Giant Slug",
+    "cr": 3
+  },
+  {
+    "name": "Giant Snail",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Snapping Turtle",
+    "cr": 3
+  },
+  {
+    "name": "Giant Space Hamster",
+    "cr": 0.25
+  },
+  {
+    "name": "Giant Spider",
+    "cr": 1
+  },
+  {
+    "name": "Giant Strider",
+    "cr": 1
+  },
+  {
+    "name": "Giant Subterranean Lizard",
+    "cr": 4
+  },
+  {
+    "name": "Giant Swan",
+    "cr": 1
+  },
+  {
+    "name": "Giant Tick",
+    "cr": 2
+  },
+  {
+    "name": "Giant Toad",
+    "cr": 1
+  },
+  {
+    "name": "Giant Vulture",
+    "cr": 1
+  },
+  {
+    "name": "Giant Walrus",
+    "cr": 4
+  },
+  {
+    "name": "Giant Wasp",
+    "cr": 0.5
+  },
+  {
+    "name": "Giant Weasel",
+    "cr": 0.125
+  },
+  {
+    "name": "Giant Whirlwyrm",
+    "cr": 11
+  },
+  {
+    "name": "Giant White Moray Eel",
+    "cr": 2
+  },
+  {
+    "name": "Giant Wolf Spider",
+    "cr": 0.25
+  },
+  {
+    "name": "Gibbering Mouther",
+    "cr": 2
+  },
+  {
+    "name": "Gibberling",
+    "cr": 0.25
+  },
+  {
+    "name": "Gideon Lightward",
+    "cr": 6
+  },
+  {
+    "name": "Giff",
+    "cr": 3
+  },
+  {
+    "name": "Giff Shipmate",
+    "cr": 3
+  },
+  {
+    "name": "Giff Shock Trooper",
+    "cr": 6
+  },
+  {
+    "name": "Giff Warlord",
+    "cr": 10
+  },
+  {
+    "name": "Gigant",
+    "cr": 20
+  },
+  {
+    "name": "Gildha Duhn",
+    "cr": 0.25
+  },
+  {
+    "name": "Gingerbrute",
+    "cr": 0.5
+  },
+  {
+    "name": "Gingwatzim",
+    "cr": 2
+  },
+  {
+    "name": "Girallon",
+    "cr": 4
+  },
+  {
+    "name": "Girallon Zombie",
+    "cr": 3
+  },
+  {
+    "name": "Gisela",
+    "cr": 16
+  },
+  {
+    "name": "Gishath, Sun's Avatar",
+    "cr": 10
+  },
+  {
+    "name": "Githyanki Buccaneer",
+    "cr": 3
+  },
+  {
+    "name": "Githyanki Gish",
+    "cr": 10
+  },
+  {
+    "name": "Githyanki Kith'rak",
+    "cr": 12
+  },
+  {
+    "name": "Githyanki Knight",
+    "cr": 8
+  },
+  {
+    "name": "Githyanki Star Seer",
+    "cr": 7
+  },
+  {
+    "name": "Githyanki Supreme Commander",
+    "cr": 14
+  },
+  {
+    "name": "Githyanki Warrior",
+    "cr": 3
+  },
+  {
+    "name": "Githyanki Xenomancer",
+    "cr": 9
+  },
+  {
+    "name": "Githzerai Anarch",
+    "cr": 16
+  },
+  {
+    "name": "Githzerai Enlightened",
+    "cr": 10
+  },
+  {
+    "name": "Githzerai Futurist",
+    "cr": 9
+  },
+  {
+    "name": "Githzerai Monk",
+    "cr": 2
+  },
+  {
+    "name": "Githzerai Traveler",
+    "cr": 3
+  },
+  {
+    "name": "Githzerai Uniter",
+    "cr": 7
+  },
+  {
+    "name": "Githzerai Zerth",
+    "cr": 6
+  },
+  {
+    "name": "Glabbagool",
+    "cr": 2
+  },
+  {
+    "name": "Glabrezu",
+    "cr": 9
+  },
+  {
+    "name": "Gladiator",
+    "cr": 5
+  },
+  {
+    "name": "Glass Pegasus",
+    "cr": 2
+  },
+  {
+    "name": "Glasswork Golem",
+    "cr": 2
+  },
+  {
+    "name": "Glasya",
+    "cr": 25
+  },
+  {
+    "name": "Gloam",
+    "cr": 0
+  },
+  {
+    "name": "Gloamwing",
+    "cr": 8
+  },
+  {
+    "name": "Gloine Nathair-Nathair",
+    "cr": 6
+  },
+  {
+    "name": "Gloom Weaver",
+    "cr": 9
+  },
+  {
+    "name": "Gloomstalker",
+    "cr": 6
+  },
+  {
+    "name": "Gluttony Seraph",
+    "cr": 14
+  },
+  {
+    "name": "Glyster",
+    "cr": 15
+  },
+  {
+    "name": "Gnarlid",
+    "cr": 1
+  },
+  {
+    "name": "Gnoll",
+    "cr": 0.5
+  },
+  {
+    "name": "Gnoll Brute",
+    "cr": 2
+  },
+  {
+    "name": "Gnoll Fang of Yeenoghu",
+    "cr": 4
+  },
+  {
+    "name": "Gnoll Flesh Gnawer",
+    "cr": 1
+  },
+  {
+    "name": "Gnoll Hunter",
+    "cr": 0.5
+  },
+  {
+    "name": "Gnoll Pack Lord",
+    "cr": 2
+  },
+  {
+    "name": "Gnoll Vampire",
+    "cr": 8
+  },
+  {
+    "name": "Gnoll Witherling",
+    "cr": 0.25
+  },
+  {
+    "name": "Gnome Ceremorph",
+    "cr": 5
+  },
+  {
+    "name": "Gnome Squidling",
+    "cr": 0.5
+  },
+  {
+    "name": "Goat",
+    "cr": 0
+  },
+  {
+    "name": "Goat-Knight Steed",
+    "cr": 0.5
+  },
+  {
+    "name": "Goblin",
+    "cr": 0.25
+  },
+  {
+    "name": "Goblin Boss",
+    "cr": 1
+  },
+  {
+    "name": "Goblin Boss Archer",
+    "cr": 1
+  },
+  {
+    "name": "Goblin Commoner",
+    "cr": 0
+  },
+  {
+    "name": "Goblin Gang Member",
+    "cr": 0.25
+  },
+  {
+    "name": "Goblin Psi Brawler",
+    "cr": 2
+  },
+  {
+    "name": "Goblin Psi Commander",
+    "cr": 4
+  },
+  {
+    "name": "Gold Dragon Wyrmling",
+    "cr": 3
+  },
+  {
+    "name": "Gold Greatwyrm",
+    "cr": 28
+  },
+  {
+    "name": "Gold-Forged Sentinel",
+    "cr": 5
+  },
+  {
+    "name": "Golden Stag",
+    "cr": 0.25
+  },
+  {
+    "name": "Golgari Shaman",
+    "cr": 5
+  },
+  {
+    "name": "Goliath Giant-Kin",
+    "cr": 3
+  },
+  {
+    "name": "Goliath Warrior",
+    "cr": 3
+  },
+  {
+    "name": "Goliath Werebear",
+    "cr": 8
+  },
+  {
+    "name": "Gomazoa",
+    "cr": 5
+  },
+  {
+    "name": "Gondolo",
+    "cr": 0.5
+  },
+  {
+    "name": "Goon",
+    "cr": 0.125
+  },
+  {
+    "name": "Goon Balloon",
+    "cr": 0.125
+  },
+  {
+    "name": "Goose Mother",
+    "cr": 7
+  },
+  {
+    "name": "Gorgon",
+    "cr": 5
+  },
+  {
+    "name": "Goristro",
+    "cr": 17
+  },
+  {
+    "name": "Gorka Tharn",
+    "cr": 15
+  },
+  {
+    "name": "Gorthok the Thunder Boar",
+    "cr": 6
+  },
+  {
+    "name": "Gorvan Ironheart",
+    "cr": 2
+  },
+  {
+    "name": "Gorzil's Gang Troglodyte",
+    "cr": 0.25
+  },
+  {
+    "name": "Grabstab",
+    "cr": 1
+  },
+  {
+    "name": "Grandfather Oak",
+    "cr": 9
+  },
+  {
+    "name": "Grandfather Zitembe",
+    "cr": 2
+  },
+  {
+    "name": "Grandlejaw",
+    "cr": 8
+  },
+  {
+    "name": "Grandolpha Muzgardt",
+    "cr": 2
+  },
+  {
+    "name": "Gravekeeper",
+    "cr": 13
+  },
+  {
+    "name": "Gray Ooze",
+    "cr": 0.5
+  },
+  {
+    "name": "Gray Render",
+    "cr": 12
+  },
+  {
+    "name": "Gray Scavver",
+    "cr": 0.25
+  },
+  {
+    "name": "Gray Slaad",
+    "cr": 9
+  },
+  {
+    "name": "Graz'zt",
+    "cr": 24
+  },
+  {
+    "name": "Grazilaxx",
+    "cr": 7
+  },
+  {
+    "name": "Great Cat",
+    "cr": 2
+  },
+  {
+    "name": "Great Chief Halric Bonesnapper",
+    "cr": 2
+  },
+  {
+    "name": "Great Kroom, Purple Worm",
+    "cr": 15
+  },
+  {
+    "name": "Great Ulfe",
+    "cr": 2
+  },
+  {
+    "name": "Greater Brood Chrysalis",
+    "cr": 12
+  },
+  {
+    "name": "Greater Death Dragon",
+    "cr": 14
+  },
+  {
+    "name": "Greater Star Spawn Emissary",
+    "cr": 21
+  },
+  {
+    "name": "Greater Tyrant Shadow",
+    "cr": 22
+  },
+  {
+    "name": "Greater Zombie",
+    "cr": 5
+  },
+  {
+    "name": "Green Abishai",
+    "cr": 15
+  },
+  {
+    "name": "Green Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "Green Greatwyrm",
+    "cr": 27
+  },
+  {
+    "name": "Green Guard Drake",
+    "cr": 2
+  },
+  {
+    "name": "Green Hag",
+    "cr": 3
+  },
+  {
+    "name": "Green Slaad",
+    "cr": 8
+  },
+  {
+    "name": "Gregir Fendelsohn (Levels 1-4)",
+    "cr": 0.125
+  },
+  {
+    "name": "Gregir Fendelsohn (Levels 5-8)",
+    "cr": 0.5
+  },
+  {
+    "name": "Gregir Fendelsohn (Levels 9-11)",
+    "cr": 3
+  },
+  {
+    "name": "Grell",
+    "cr": 3
+  },
+  {
+    "name": "Grell Psychic",
+    "cr": 4
+  },
+  {
+    "name": "Gremishka",
+    "cr": 0.125
+  },
+  {
+    "name": "Gremlin",
+    "cr": 0.5
+  },
+  {
+    "name": "Gremorly's Ghost",
+    "cr": 9
+  },
+  {
+    "name": "Grenl",
+    "cr": 0.25
+  },
+  {
+    "name": "Grick",
+    "cr": 2
+  },
+  {
+    "name": "Grick Alpha",
+    "cr": 7
+  },
+  {
+    "name": "Griffin",
+    "cr": 2
+  },
+  {
+    "name": "Griffin (Type 1)",
+    "cr": 2
+  },
+  {
+    "name": "Griffin (Type 2)",
+    "cr": 1
+  },
+  {
+    "name": "Griffon",
+    "cr": 2
+  },
+  {
+    "name": "Griffon Cavalry Rider",
+    "cr": 2
+  },
+  {
+    "name": "Grim Champion of Bloodshed",
+    "cr": 20
+  },
+  {
+    "name": "Grim Champion of Desolation",
+    "cr": 25
+  },
+  {
+    "name": "Grim Champion of Pestilence",
+    "cr": 15
+  },
+  {
+    "name": "Grimlock",
+    "cr": 0.25
+  },
+  {
+    "name": "Grimzod Gargenhale",
+    "cr": 6
+  },
+  {
+    "name": "Grinda Garloth",
+    "cr": 6
+  },
+  {
+    "name": "Grinning Cat",
+    "cr": 1
+  },
+  {
+    "name": "Grippli Warrior",
+    "cr": 0.25
+  },
+  {
+    "name": "Grisha",
+    "cr": 2
+  },
+  {
+    "name": "Groff",
+    "cr": 4
+  },
+  {
+    "name": "Grog Strongjaw",
+    "cr": 18
+  },
+  {
+    "name": "Grotesque Gargant",
+    "cr": 8
+  },
+  {
+    "name": "Grotesque Tentacle",
+    "cr": 10
+  },
+  {
+    "name": "Grum'shar",
+    "cr": 0.25
+  },
+  {
+    "name": "Grumink the Renegade",
+    "cr": 8
+  },
+  {
+    "name": "Grung",
+    "cr": 0.25
+  },
+  {
+    "name": "Grung Elite Warrior",
+    "cr": 2
+  },
+  {
+    "name": "Grung Wildling",
+    "cr": 1
+  },
+  {
+    "name": "Grunka",
+    "cr": 0.5
+  },
+  {
+    "name": "Grutha",
+    "cr": 5
+  },
+  {
+    "name": "Gryz Alakritos",
+    "cr": 5
+  },
+  {
+    "name": "Guard",
+    "cr": 0.125
+  },
+  {
+    "name": "Guard Drake",
+    "cr": 2
+  },
+  {
+    "name": "Guardian Giant",
+    "cr": 8
+  },
+  {
+    "name": "Guardian Naga",
+    "cr": 10
+  },
+  {
+    "name": "Guardian Portrait",
+    "cr": 1
+  },
+  {
+    "name": "Guardian Wolf",
+    "cr": 4
+  },
+  {
+    "name": "Gundren Rockseeker",
+    "cr": 0
+  },
+  {
+    "name": "Gunvald Halraggson",
+    "cr": 5
+  },
+  {
+    "name": "Guthash",
+    "cr": 0.25
+  },
+  {
+    "name": "Gwyn Oresong",
+    "cr": 0.25
+  },
+  {
+    "name": "Gynosphinx",
+    "cr": 11
+  },
+  {
+    "name": "Hadozee Explorer",
+    "cr": 2
+  },
+  {
+    "name": "Hadozee Shipmate",
+    "cr": 0.125
+  },
+  {
+    "name": "Hadozee Warrior",
+    "cr": 0.5
+  },
+  {
+    "name": "Hadrosaur",
+    "cr": 0.25
+  },
+  {
+    "name": "Hadrosaurus",
+    "cr": 0.25
+  },
+  {
+    "name": "Hag of the Fetid Gaze",
+    "cr": 3
+  },
+  {
+    "name": "Haint",
+    "cr": 7
+  },
+  {
+    "name": "Halaster Blackcloak",
+    "cr": 23
+  },
+  {
+    "name": "Halaster Horror",
+    "cr": 4
+  },
+  {
+    "name": "Halaster Puppet",
+    "cr": 0.25
+  },
+  {
+    "name": "Half-Blue Dragon Gladiator",
+    "cr": 5
+  },
+  {
+    "name": "Half-Green Dragon Assassin",
+    "cr": 8
+  },
+  {
+    "name": "Half-Ogre (Ogrillon)",
+    "cr": 1
+  },
+  {
+    "name": "Half-Red Dragon Gladiator",
+    "cr": 5
+  },
+  {
+    "name": "Half-Red Dragon Veteran",
+    "cr": 5
+  },
+  {
+    "name": "Halog",
+    "cr": 7
+  },
+  {
+    "name": "Hamadryad",
+    "cr": 2
+  },
+  {
+    "name": "Hammerskull",
+    "cr": 0.5
+  },
+  {
+    "name": "Hands of Havoc Fire Starter",
+    "cr": 4
+  },
+  {
+    "name": "Hangry Otyugh",
+    "cr": 5
+  },
+  {
+    "name": "Hanne Hallen",
+    "cr": 0.25
+  },
+  {
+    "name": "Hare",
+    "cr": 0
+  },
+  {
+    "name": "Harengon Brigand",
+    "cr": 0.125
+  },
+  {
+    "name": "Harengon Sniper",
+    "cr": 0.25
+  },
+  {
+    "name": "Harkina Hunt",
+    "cr": 0
+  },
+  {
+    "name": "Harmonium Captain",
+    "cr": 8
+  },
+  {
+    "name": "Harmonium Peacekeeper",
+    "cr": 3
+  },
+  {
+    "name": "Harpy",
+    "cr": 1
+  },
+  {
+    "name": "Harpy Matriarch",
+    "cr": 5
+  },
+  {
+    "name": "Harrow Hawk",
+    "cr": 1
+  },
+  {
+    "name": "Harrow Hound",
+    "cr": 3
+  },
+  {
+    "name": "Harshnag",
+    "cr": 9
+  },
+  {
+    "name": "Harvester of Lies",
+    "cr": 9
+  },
+  {
+    "name": "Hashalaq Quori",
+    "cr": 9
+  },
+  {
+    "name": "Hashutu",
+    "cr": 11
+  },
+  {
+    "name": "Hastain",
+    "cr": 8
+  },
+  {
+    "name": "Haungharassk",
+    "cr": 0
+  },
+  {
+    "name": "Hawk",
+    "cr": 0
+  },
+  {
+    "name": "Haze Hulk",
+    "cr": 4
+  },
+  {
+    "name": "Haze Husk",
+    "cr": 0.25
+  },
+  {
+    "name": "Haze Wight",
+    "cr": 3
+  },
+  {
+    "name": "Headless Body",
+    "cr": 3
+  },
+  {
+    "name": "Headless Iron Golem",
+    "cr": 10
+  },
+  {
+    "name": "Heartstabber Mosquito",
+    "cr": 0.125
+  },
+  {
+    "name": "Hedge Mage",
+    "cr": 1
+  },
+  {
+    "name": "Hedrun Arnsfirth",
+    "cr": 3
+  },
+  {
+    "name": "Helga Ruvak",
+    "cr": 5
+  },
+  {
+    "name": "Hell Hound",
+    "cr": 3
+  },
+  {
+    "name": "Hellcat (Bezekira)",
+    "cr": 10
+  },
+  {
+    "name": "Hellenhild",
+    "cr": 8
+  },
+  {
+    "name": "Hellenrae",
+    "cr": 5
+  },
+  {
+    "name": "Hellfire Engine",
+    "cr": 16
+  },
+  {
+    "name": "Hellion",
+    "cr": 11
+  },
+  {
+    "name": "Hellion (Huge)",
+    "cr": 11
+  },
+  {
+    "name": "Hellion (Large)",
+    "cr": 5
+  },
+  {
+    "name": "Hellwasp",
+    "cr": 5
+  },
+  {
+    "name": "Hellwasp Grub",
+    "cr": 0.25
+  },
+  {
+    "name": "Helmed Horror",
+    "cr": 4
+  },
+  {
+    "name": "Helmed Horror Detention Drone",
+    "cr": 4
+  },
+  {
+    "name": "Hengar Aesnvaard",
+    "cr": 5
+  },
+  {
+    "name": "Henrik van der Voort",
+    "cr": 0
+  },
+  {
+    "name": "Heralds of Dust Exorcist",
+    "cr": 6
+  },
+  {
+    "name": "Heralds of Dust Remnant",
+    "cr": 4
+  },
+  {
+    "name": "Hester Barch",
+    "cr": 0.25
+  },
+  {
+    "name": "Hew Hackinstone",
+    "cr": 2
+  },
+  {
+    "name": "Hexton Modron",
+    "cr": 13
+  },
+  {
+    "name": "Hezrou",
+    "cr": 8
+  },
+  {
+    "name": "Hierophant Medusa",
+    "cr": 17
+  },
+  {
+    "name": "Hierophant of the Comet",
+    "cr": 11
+  },
+  {
+    "name": "High Fae Impostor",
+    "cr": 11
+  },
+  {
+    "name": "High Fae Kindguard",
+    "cr": 12
+  },
+  {
+    "name": "High Fae Mage",
+    "cr": 12
+  },
+  {
+    "name": "High Fae Noble",
+    "cr": 13
+  },
+  {
+    "name": "Hill Giant",
+    "cr": 5
+  },
+  {
+    "name": "Hill Giant Avalancher",
+    "cr": 12
+  },
+  {
+    "name": "Hill Giant Sergeant",
+    "cr": 5
+  },
+  {
+    "name": "Hill Giant Servant",
+    "cr": 2
+  },
+  {
+    "name": "Hill Giant Subchief",
+    "cr": 7
+  },
+  {
+    "name": "Hill Giant, Blorbo",
+    "cr": 4
+  },
+  {
+    "name": "Hippocamp",
+    "cr": 0.5
+  },
+  {
+    "name": "Hippogriff",
+    "cr": 1
+  },
+  {
+    "name": "Hippopotamus",
+    "cr": 4
+  },
+  {
+    "name": "Hjoldak Hollowhelm",
+    "cr": 7
+  },
+  {
+    "name": "Hlam",
+    "cr": 16
+  },
+  {
+    "name": "Hoard Mimic",
+    "cr": 8
+  },
+  {
+    "name": "Hoard Scarab",
+    "cr": 0.125
+  },
+  {
+    "name": "Hobgoblin",
+    "cr": 0.5
+  },
+  {
+    "name": "Hobgoblin Captain",
+    "cr": 3
+  },
+  {
+    "name": "Hobgoblin Devastator",
+    "cr": 4
+  },
+  {
+    "name": "Hobgoblin Iron Shadow",
+    "cr": 2
+  },
+  {
+    "name": "Hobgoblin Warlord",
+    "cr": 6
+  },
+  {
+    "name": "Holga Kilgore",
+    "cr": 5
+  },
+  {
+    "name": "Hollow Dragon",
+    "cr": 18
+  },
+  {
+    "name": "Hollyphant",
+    "cr": 5
+  },
+  {
+    "name": "Homarid",
+    "cr": 1
+  },
+  {
+    "name": "Homunculus",
+    "cr": 0
+  },
+  {
+    "name": "Homunculus Servant",
+    "cr": 0.25
+  },
+  {
+    "name": "Honna",
+    "cr": 6
+  },
+  {
+    "name": "Hook Horror",
+    "cr": 3
+  },
+  {
+    "name": "Hook Horror Spore Servant",
+    "cr": 3
+  },
+  {
+    "name": "Horizonback Tortoise",
+    "cr": 8
+  },
+  {
+    "name": "Horncaller",
+    "cr": 1
+  },
+  {
+    "name": "Horned Devil",
+    "cr": 11
+  },
+  {
+    "name": "Horned Frog",
+    "cr": 0.25
+  },
+  {
+    "name": "Horned Sister",
+    "cr": 6
+  },
+  {
+    "name": "Horror Flit Hunter",
+    "cr": 2
+  },
+  {
+    "name": "Host of Herons Angel",
+    "cr": 10
+  },
+  {
+    "name": "Hound Archon",
+    "cr": 4
+  },
+  {
+    "name": "Hourglass Widow",
+    "cr": 20
+  },
+  {
+    "name": "Howler",
+    "cr": 8
+  },
+  {
+    "name": "Howling Hatred Initiate",
+    "cr": 0.125
+  },
+  {
+    "name": "Howling Hatred Priest",
+    "cr": 2
+  },
+  {
+    "name": "Hrabbaz",
+    "cr": 5
+  },
+  {
+    "name": "Hraptnon",
+    "cr": 18
+  },
+  {
+    "name": "Huge Giant Crab",
+    "cr": 8
+  },
+  {
+    "name": "Huge Gray Ooze",
+    "cr": 8
+  },
+  {
+    "name": "Huge Ochre Jelly",
+    "cr": 2
+  },
+  {
+    "name": "Huge Polar Bear",
+    "cr": 2
+  },
+  {
+    "name": "Huge Stone Golem",
+    "cr": 10
+  },
+  {
+    "name": "Hulgaz",
+    "cr": 14
+  },
+  {
+    "name": "Hulil Lutan",
+    "cr": 2
+  },
+  {
+    "name": "Hulking Crab",
+    "cr": 5
+  },
+  {
+    "name": "Hulking Shadow",
+    "cr": 9
+  },
+  {
+    "name": "Humanoid Mutate",
+    "cr": 4
+  },
+  {
+    "name": "Hundred-Handed One",
+    "cr": 15
+  },
+  {
+    "name": "Hungry Sorrowsworn",
+    "cr": 11
+  },
+  {
+    "name": "Hunter Shark",
+    "cr": 2
+  },
+  {
+    "name": "Hurda",
+    "cr": 5
+  },
+  {
+    "name": "Hurricane",
+    "cr": 2
+  },
+  {
+    "name": "Husk Zombie",
+    "cr": 1
+  },
+  {
+    "name": "Hutijin",
+    "cr": 21
+  },
+  {
+    "name": "Hybrid Brute",
+    "cr": 2
+  },
+  {
+    "name": "Hybrid Flier",
+    "cr": 2
+  },
+  {
+    "name": "Hybrid Poisoner",
+    "cr": 1
+  },
+  {
+    "name": "Hybrid Shocker",
+    "cr": 1
+  },
+  {
+    "name": "Hybrid Spy",
+    "cr": 0.5
+  },
+  {
+    "name": "Hydia Moonmusk",
+    "cr": 5
+  },
+  {
+    "name": "Hydra",
+    "cr": 8
+  },
+  {
+    "name": "Hydroloth",
+    "cr": 9
+  },
+  {
+    "name": "Hyena",
+    "cr": 0
+  },
+  {
+    "name": "Hypnos Magen",
+    "cr": 1
+  },
+  {
+    "name": "Hypnotic Eldritch Blossom",
+    "cr": 1
+  },
+  {
+    "name": "Hythonia",
+    "cr": 17
+  },
+  {
+    "name": "Ice Devil",
+    "cr": 14
+  },
+  {
+    "name": "Ice Mephit",
+    "cr": 0.5
+  },
+  {
+    "name": "Ice Piercer",
+    "cr": 0.5
+  },
+  {
+    "name": "Ice Spider",
+    "cr": 1
+  },
+  {
+    "name": "Ice Spider Queen",
+    "cr": 2
+  },
+  {
+    "name": "Ice Toad",
+    "cr": 1
+  },
+  {
+    "name": "Ice Troll",
+    "cr": 5
+  },
+  {
+    "name": "Icewind Kobold",
+    "cr": 0.125
+  },
+  {
+    "name": "Icewind Kobold Zombie",
+    "cr": 0.125
+  },
+  {
+    "name": "Icy Simulacrum",
+    "cr": 3
+  },
+  {
+    "name": "Ifan Talro'a",
+    "cr": 0.125
+  },
+  {
+    "name": "Iggwilv the Witch Queen",
+    "cr": 20
+  },
+  {
+    "name": "Ignatius Inkblot",
+    "cr": 7
+  },
+  {
+    "name": "Ignia",
+    "cr": 10
+  },
+  {
+    "name": "Illithilich",
+    "cr": 22
+  },
+  {
+    "name": "Illusionist",
+    "cr": 3
+  },
+  {
+    "name": "Illusionist Wizard",
+    "cr": 3
+  },
+  {
+    "name": "Ilvara Mizzrym",
+    "cr": 8
+  },
+  {
+    "name": "Imix",
+    "cr": 19
+  },
+  {
+    "name": "Immortal Lotus Monk",
+    "cr": 5
+  },
+  {
+    "name": "Imoen",
+    "cr": 8
+  },
+  {
+    "name": "Imp",
+    "cr": 1
+  },
+  {
+    "name": "Imperator Uthor",
+    "cr": 13
+  },
+  {
+    "name": "Incomplete Dragon Skeleton",
+    "cr": 4
+  },
+  {
+    "name": "Incubus",
+    "cr": 4
+  },
+  {
+    "name": "Indentured Spirit",
+    "cr": 1
+  },
+  {
+    "name": "Infant Basilisk",
+    "cr": 0
+  },
+  {
+    "name": "Infant Hook Horror",
+    "cr": 0
+  },
+  {
+    "name": "Infected Elder Brain",
+    "cr": 11
+  },
+  {
+    "name": "Infected Townsperson",
+    "cr": 2
+  },
+  {
+    "name": "Infernal Tormentor",
+    "cr": 6
+  },
+  {
+    "name": "Initiate of the Comet",
+    "cr": 4
+  },
+  {
+    "name": "Inkling Mascot",
+    "cr": 0.25
+  },
+  {
+    "name": "Inquisitor of the Mind Fire",
+    "cr": 8
+  },
+  {
+    "name": "Inquisitor of the Sword",
+    "cr": 8
+  },
+  {
+    "name": "Inquisitor of the Tome",
+    "cr": 8
+  },
+  {
+    "name": "Insight Acuere",
+    "cr": 5
+  },
+  {
+    "name": "Inspired",
+    "cr": 2
+  },
+  {
+    "name": "Intellect Devourer",
+    "cr": 2
+  },
+  {
+    "name": "Intellect Snare",
+    "cr": 8
+  },
+  {
+    "name": "Intelligent Black Pudding",
+    "cr": 4
+  },
+  {
+    "name": "Invisible Stalker",
+    "cr": 6
+  },
+  {
+    "name": "Iona",
+    "cr": 21
+  },
+  {
+    "name": "Irda Seeker",
+    "cr": 1
+  },
+  {
+    "name": "Irda Veil Keeper",
+    "cr": 4
+  },
+  {
+    "name": "Ireena Kolyana",
+    "cr": 0.125
+  },
+  {
+    "name": "Irisoth",
+    "cr": 0
+  },
+  {
+    "name": "Iron Cobra",
+    "cr": 4
+  },
+  {
+    "name": "Iron Consul",
+    "cr": 2
+  },
+  {
+    "name": "Iron Defender",
+    "cr": 1
+  },
+  {
+    "name": "Iron Golem",
+    "cr": 16
+  },
+  {
+    "name": "Ironscale Hydra",
+    "cr": 12
+  },
+  {
+    "name": "Irvan Wastewalker (Tier 1)",
+    "cr": 3
+  },
+  {
+    "name": "Irvan Wastewalker (Tier 2)",
+    "cr": 5
+  },
+  {
+    "name": "Irvan Wastewalker (Tier 3)",
+    "cr": 8
+  },
+  {
+    "name": "Isarr Kronenstrom",
+    "cr": 8
+  },
+  {
+    "name": "Isendraug",
+    "cr": 13
+  },
+  {
+    "name": "Ishel",
+    "cr": 0.5
+  },
+  {
+    "name": "Ishvern",
+    "cr": 0.5
+  },
+  {
+    "name": "Iskander",
+    "cr": 6
+  },
+  {
+    "name": "Ismark Kolyanovich",
+    "cr": 3
+  },
+  {
+    "name": "Isolde",
+    "cr": 5
+  },
+  {
+    "name": "Isperia",
+    "cr": 21
+  },
+  {
+    "name": "Istarian Drone",
+    "cr": 6
+  },
+  {
+    "name": "Istrid Horn",
+    "cr": 8
+  },
+  {
+    "name": "Ithjar",
+    "cr": 5
+  },
+  {
+    "name": "Ixitxachitl",
+    "cr": 0.25
+  },
+  {
+    "name": "Ixitxachitl Cleric",
+    "cr": 0.25
+  },
+  {
+    "name": "Iymrith",
+    "cr": 23
+  },
+  {
+    "name": "Izek Strazni",
+    "cr": 5
+  },
+  {
+    "name": "Jabberwock",
+    "cr": 13
+  },
+  {
+    "name": "Jackal",
+    "cr": 0
+  },
+  {
+    "name": "Jackalwere",
+    "cr": 0.5
+  },
+  {
+    "name": "Jaculi",
+    "cr": 0.5
+  },
+  {
+    "name": "Jade Giant Spider",
+    "cr": 10
+  },
+  {
+    "name": "Jade Statue",
+    "cr": 10
+  },
+  {
+    "name": "Jade Tigress",
+    "cr": 8
+  },
+  {
+    "name": "Jaheira",
+    "cr": 13
+  },
+  {
+    "name": "Jalester Silvermane",
+    "cr": 4
+  },
+  {
+    "name": "Jalynvyr Nir'Thinn",
+    "cr": 0.25
+  },
+  {
+    "name": "James Cryon",
+    "cr": 5
+  },
+  {
+    "name": "Jamil A'alithiya",
+    "cr": 10
+  },
+  {
+    "name": "Jammer Leech",
+    "cr": 1
+  },
+  {
+    "name": "Jamna Gleamsilver",
+    "cr": 1
+  },
+  {
+    "name": "Jandar Chergoba",
+    "cr": 2
+  },
+  {
+    "name": "Jarad Vod Savo",
+    "cr": 22
+  },
+  {
+    "name": "Jarazoun",
+    "cr": 11
+  },
+  {
+    "name": "Jarl Grugnur",
+    "cr": 9
+  },
+  {
+    "name": "Jarl Storvald",
+    "cr": 8
+  },
+  {
+    "name": "Jarlaxle Baenre",
+    "cr": 15
+  },
+  {
+    "name": "Jarund Elkhardt",
+    "cr": 5
+  },
+  {
+    "name": "Jasper Dimmerchasm",
+    "cr": 3
+  },
+  {
+    "name": "Jelayne",
+    "cr": 0.25
+  },
+  {
+    "name": "Jenevere",
+    "cr": 17
+  },
+  {
+    "name": "Jenks",
+    "cr": 0
+  },
+  {
+    "name": "Jermlaine",
+    "cr": 0.125
+  },
+  {
+    "name": "Jessamine",
+    "cr": 8
+  },
+  {
+    "name": "Jeyev Veldrews",
+    "cr": 2
+  },
+  {
+    "name": "Jiangshi",
+    "cr": 9
+  },
+  {
+    "name": "Jijibisha Manivarshi",
+    "cr": 13
+  },
+  {
+    "name": "Jim Darkmagic",
+    "cr": 5
+  },
+  {
+    "name": "Jimjar",
+    "cr": 1
+  },
+  {
+    "name": "Jingle Jangle",
+    "cr": 0.25
+  },
+  {
+    "name": "Jobal",
+    "cr": 0.5
+  },
+  {
+    "name": "Jon Irenicus",
+    "cr": 22
+  },
+  {
+    "name": "Josbert Plum",
+    "cr": 3
+  },
+  {
+    "name": "Joster Mareet",
+    "cr": 4
+  },
+  {
+    "name": "Jot",
+    "cr": 1
+  },
+  {
+    "name": "Jourrael, the Caedogeist",
+    "cr": 15
+  },
+  {
+    "name": "Juiblex",
+    "cr": 23
+  },
+  {
+    "name": "Junior Drow Priestess of Lolth",
+    "cr": 2
+  },
+  {
+    "name": "Juvenile Eldritch Horror",
+    "cr": 11
+  },
+  {
+    "name": "Juvenile Hook Horror",
+    "cr": 2
+  },
+  {
+    "name": "Juvenile Kraken",
+    "cr": 14
+  },
+  {
+    "name": "Juvenile Mimic",
+    "cr": 0
+  },
+  {
+    "name": "K'Tulah",
+    "cr": 2
+  },
+  {
+    "name": "K'thriss Drow'b",
+    "cr": 3
+  },
+  {
+    "name": "Kaaltar",
+    "cr": 0
+  },
+  {
+    "name": "Kaarghaz",
+    "cr": 2
+  },
+  {
+    "name": "Kadroth",
+    "cr": 2
+  },
+  {
+    "name": "Kaevja Cynavern",
+    "cr": 6
+  },
+  {
+    "name": "Kagain",
+    "cr": 11
+  },
+  {
+    "name": "Kal the Crisp",
+    "cr": 4
+  },
+  {
+    "name": "Kala Mabarin",
+    "cr": 2
+  },
+  {
+    "name": "Kalain",
+    "cr": 2
+  },
+  {
+    "name": "Kalaman Soldier",
+    "cr": 0.5
+  },
+  {
+    "name": "Kalaraq Quori",
+    "cr": 19
+  },
+  {
+    "name": "Kalashtar",
+    "cr": 0.25
+  },
+  {
+    "name": "Kalka-Kylla",
+    "cr": 3
+  },
+  {
+    "name": "Kamadan",
+    "cr": 4
+  },
+  {
+    "name": "Kansaldi Fire-Eyes",
+    "cr": 11
+  },
+  {
+    "name": "Kapak Draconian",
+    "cr": 3
+  },
+  {
+    "name": "Karavarix",
+    "cr": 14
+  },
+  {
+    "name": "Karkethzerethzerus, the Sable Despoiler",
+    "cr": 23
+  },
+  {
+    "name": "Karrnathi Undead Soldier",
+    "cr": 3
+  },
+  {
+    "name": "Kasem Aroon",
+    "cr": 0.125
+  },
+  {
+    "name": "Kasimir Velikov",
+    "cr": 6
+  },
+  {
+    "name": "Kavil",
+    "cr": 6
+  },
+  {
+    "name": "Kavoda",
+    "cr": 0.5
+  },
+  {
+    "name": "Kavu Predator",
+    "cr": 2
+  },
+  {
+    "name": "Kedjou Kamal",
+    "cr": 2
+  },
+  {
+    "name": "Keeper of the Feather",
+    "cr": 2
+  },
+  {
+    "name": "Keg Robot",
+    "cr": 2
+  },
+  {
+    "name": "Kelek",
+    "cr": 5
+  },
+  {
+    "name": "Kella Darkhope",
+    "cr": 1
+  },
+  {
+    "name": "Kellikilli",
+    "cr": 3
+  },
+  {
+    "name": "Kelpie",
+    "cr": 4
+  },
+  {
+    "name": "Kelson Darktreader",
+    "cr": 0
+  },
+  {
+    "name": "Kelubar Demodand",
+    "cr": 13
+  },
+  {
+    "name": "Kender Skirmisher",
+    "cr": 0.25
+  },
+  {
+    "name": "Kenku",
+    "cr": 0.25
+  },
+  {
+    "name": "Keresta Delvingstone",
+    "cr": 13
+  },
+  {
+    "name": "Kettlesteam the Kenku",
+    "cr": 1
+  },
+  {
+    "name": "Keyleth, Voice of the Tempest",
+    "cr": 18
+  },
+  {
+    "name": "Khalessa Draga",
+    "cr": 1
+  },
+  {
+    "name": "Khargra",
+    "cr": 0.125
+  },
+  {
+    "name": "Khaspere Drylund",
+    "cr": 0.125
+  },
+  {
+    "name": "Ki-rin",
+    "cr": 12
+  },
+  {
+    "name": "Kianna",
+    "cr": 0
+  },
+  {
+    "name": "Kiddywidget",
+    "cr": 0.5
+  },
+  {
+    "name": "Kieren",
+    "cr": 0
+  },
+  {
+    "name": "Killer Whale",
+    "cr": 3
+  },
+  {
+    "name": "Killmoulis",
+    "cr": 0
+  },
+  {
+    "name": "Kindori",
+    "cr": 7
+  },
+  {
+    "name": "King Hekaton",
+    "cr": 13
+  },
+  {
+    "name": "King Jhaeros",
+    "cr": 9
+  },
+  {
+    "name": "King Robbit the Slimy",
+    "cr": 2
+  },
+  {
+    "name": "King Snurre",
+    "cr": 11
+  },
+  {
+    "name": "King of Feathers",
+    "cr": 8
+  },
+  {
+    "name": "Kingsport",
+    "cr": 0
+  },
+  {
+    "name": "Kinyel Druu'giir",
+    "cr": 8
+  },
+  {
+    "name": "Kiril Stoyanovich",
+    "cr": 3
+  },
+  {
+    "name": "Kivan",
+    "cr": 7
+  },
+  {
+    "name": "Klauth",
+    "cr": 25
+  },
+  {
+    "name": "Knifewing",
+    "cr": 0.125
+  },
+  {
+    "name": "Knight",
+    "cr": 3
+  },
+  {
+    "name": "Knight of Eldraine",
+    "cr": 3
+  },
+  {
+    "name": "Knight of the Black Sword",
+    "cr": 2
+  },
+  {
+    "name": "Knight of the Mithral Shield",
+    "cr": 3
+  },
+  {
+    "name": "Knight of the Order",
+    "cr": 5
+  },
+  {
+    "name": "Knight-Captain Theodore Marshal",
+    "cr": 15
+  },
+  {
+    "name": "Knucklehead Trout",
+    "cr": 0
+  },
+  {
+    "name": "Koalinth",
+    "cr": 0.5
+  },
+  {
+    "name": "Koalinth Sergeant",
+    "cr": 2
+  },
+  {
+    "name": "Kobold",
+    "cr": 0.125
+  },
+  {
+    "name": "Kobold Commoner",
+    "cr": 0
+  },
+  {
+    "name": "Kobold Dragonshield",
+    "cr": 1
+  },
+  {
+    "name": "Kobold Elite",
+    "cr": 0.125
+  },
+  {
+    "name": "Kobold Inventor",
+    "cr": 0.25
+  },
+  {
+    "name": "Kobold Scale Sorcerer",
+    "cr": 1
+  },
+  {
+    "name": "Kobold Tinkerer",
+    "cr": 0.25
+  },
+  {
+    "name": "Kobold Underling",
+    "cr": 0.125
+  },
+  {
+    "name": "Kobold Vampire Spawn",
+    "cr": 3
+  },
+  {
+    "name": "Koh Tam",
+    "cr": 10
+  },
+  {
+    "name": "Koi Prawn",
+    "cr": 0.5
+  },
+  {
+    "name": "Kol'daan",
+    "cr": 0.25
+  },
+  {
+    "name": "Kolyarut",
+    "cr": 20
+  },
+  {
+    "name": "Kopoha",
+    "cr": 23
+  },
+  {
+    "name": "Koris",
+    "cr": 8
+  },
+  {
+    "name": "Korred",
+    "cr": 7
+  },
+  {
+    "name": "Kostchtchie",
+    "cr": 25
+  },
+  {
+    "name": "Kozilek",
+    "cr": 13
+  },
+  {
+    "name": "Kraghammer Goat-Knight",
+    "cr": 3
+  },
+  {
+    "name": "Kraken",
+    "cr": 13
+  },
+  {
+    "name": "Kraken Priest",
+    "cr": 5
+  },
+  {
+    "name": "Kraul Death Priest",
+    "cr": 4
+  },
+  {
+    "name": "Kraul Warrior",
+    "cr": 0.5
+  },
+  {
+    "name": "Krebbyg Masq'il'yr",
+    "cr": 4
+  },
+  {
+    "name": "Krell Grohlg",
+    "cr": 2
+  },
+  {
+    "name": "Krenko",
+    "cr": 1
+  },
+  {
+    "name": "Krull",
+    "cr": 6
+  },
+  {
+    "name": "Kruthik Hive Lord",
+    "cr": 5
+  },
+  {
+    "name": "Kun Ahn-Jun",
+    "cr": 0.125
+  },
+  {
+    "name": "Kuo-toa",
+    "cr": 0.25
+  },
+  {
+    "name": "Kuo-toa Archpriest",
+    "cr": 6
+  },
+  {
+    "name": "Kuo-toa Heretic",
+    "cr": 3
+  },
+  {
+    "name": "Kuo-toa Monitor",
+    "cr": 3
+  },
+  {
+    "name": "Kuo-toa Whip",
+    "cr": 1
+  },
+  {
+    "name": "Kurr",
+    "cr": 4
+  },
+  {
+    "name": "Kusa Xungoon",
+    "cr": 0.125
+  },
+  {
+    "name": "Kysh",
+    "cr": 1
+  },
+  {
+    "name": "Lacedon",
+    "cr": 1
+  },
+  {
+    "name": "Lady Dre",
+    "cr": 0.5
+  },
+  {
+    "name": "Lady Fiona Wachter",
+    "cr": 2
+  },
+  {
+    "name": "Lady Gondafrey",
+    "cr": 2
+  },
+  {
+    "name": "Lady Illmarrow",
+    "cr": 22
+  },
+  {
+    "name": "Lady Lydia Petrovna",
+    "cr": 0
+  },
+  {
+    "name": "Laeral Silverhand",
+    "cr": 17
+  },
+  {
+    "name": "Lahnis",
+    "cr": 9
+  },
+  {
+    "name": "Laleh Ghorbani",
+    "cr": 0.5
+  },
+  {
+    "name": "Lamai Tyenmo",
+    "cr": 0
+  },
+  {
+    "name": "Lamia",
+    "cr": 4
+  },
+  {
+    "name": "Lampad",
+    "cr": 3
+  },
+  {
+    "name": "Langdedrosa Cyanwrath",
+    "cr": 4
+  },
+  {
+    "name": "Lantern Archon",
+    "cr": 2
+  },
+  {
+    "name": "Large Drake",
+    "cr": 1
+  },
+  {
+    "name": "Large Mimic",
+    "cr": 2
+  },
+  {
+    "name": "Larva",
+    "cr": 0
+  },
+  {
+    "name": "Laskilar",
+    "cr": 2
+  },
+  {
+    "name": "Laurin Ophidas",
+    "cr": 2
+  },
+  {
+    "name": "Lava Child",
+    "cr": 3
+  },
+  {
+    "name": "Lawmage",
+    "cr": 6
+  },
+  {
+    "name": "Layla the Lizard",
+    "cr": 1
+  },
+  {
+    "name": "Lazav",
+    "cr": 17
+  },
+  {
+    "name": "Leedara",
+    "cr": 4
+  },
+  {
+    "name": "Left Hand of Manshoon",
+    "cr": 12
+  },
+  {
+    "name": "Lemure",
+    "cr": 0
+  },
+  {
+    "name": "Lenchtahg",
+    "cr": 5
+  },
+  {
+    "name": "Lenore von Kessel",
+    "cr": 6
+  },
+  {
+    "name": "Leonin Iconoclast",
+    "cr": 5
+  },
+  {
+    "name": "Leosin Erlanthar",
+    "cr": 3
+  },
+  {
+    "name": "Lesser Aboleth broodmother",
+    "cr": 6
+  },
+  {
+    "name": "Lesser Avarice Seraph",
+    "cr": 7
+  },
+  {
+    "name": "Lesser Brood Chrysalis",
+    "cr": 5
+  },
+  {
+    "name": "Lesser Death Dragon",
+    "cr": 10
+  },
+  {
+    "name": "Lesser Gluttony Seraph",
+    "cr": 7
+  },
+  {
+    "name": "Lesser Mummy Lord",
+    "cr": 15
+  },
+  {
+    "name": "Lesser Star Spawn Emissary",
+    "cr": 19
+  },
+  {
+    "name": "Lesser Tyrant Shadow",
+    "cr": 10
+  },
+  {
+    "name": "Leucrotta",
+    "cr": 3
+  },
+  {
+    "name": "Leviathan",
+    "cr": 20
+  },
+  {
+    "name": "Levistus",
+    "cr": 26
+  },
+  {
+    "name": "Lhammaruntosz",
+    "cr": 16
+  },
+  {
+    "name": "Liara Portyr",
+    "cr": 4
+  },
+  {
+    "name": "Lich",
+    "cr": 21
+  },
+  {
+    "name": "Lich Troll",
+    "cr": 14
+  },
+  {
+    "name": "Lichen Lich",
+    "cr": 18
+  },
+  {
+    "name": "Lief Lipsiege",
+    "cr": 0
+  },
+  {
+    "name": "Lifecraft Elephant",
+    "cr": 4
+  },
+  {
+    "name": "Lifferlas",
+    "cr": 4
+  },
+  {
+    "name": "Light Devourer",
+    "cr": 6
+  },
+  {
+    "name": "Lightning Golem",
+    "cr": 5
+  },
+  {
+    "name": "Lightning Hulk",
+    "cr": 9
+  },
+  {
+    "name": "Linan Swift",
+    "cr": 0
+  },
+  {
+    "name": "Lindwyrm",
+    "cr": 14
+  },
+  {
+    "name": "Linvala",
+    "cr": 16
+  },
+  {
+    "name": "Lion",
+    "cr": 1
+  },
+  {
+    "name": "Liondrake",
+    "cr": 7
+  },
+  {
+    "name": "Living Bigby's Hand",
+    "cr": 4
+  },
+  {
+    "name": "Living Blade of Disaster",
+    "cr": 8
+  },
+  {
+    "name": "Living Burning Hands",
+    "cr": 1
+  },
+  {
+    "name": "Living Cloudkill",
+    "cr": 7
+  },
+  {
+    "name": "Living Deep Haze",
+    "cr": 5
+  },
+  {
+    "name": "Living Demiplane",
+    "cr": 0
+  },
+  {
+    "name": "Living Doll",
+    "cr": 2
+  },
+  {
+    "name": "Living Iron Statue",
+    "cr": 5
+  },
+  {
+    "name": "Living Lightning Bolt",
+    "cr": 5
+  },
+  {
+    "name": "Living Portent",
+    "cr": 3
+  },
+  {
+    "name": "Living Unseen Servant",
+    "cr": 0
+  },
+  {
+    "name": "Lizard",
+    "cr": 0
+  },
+  {
+    "name": "Lizard King",
+    "cr": 4
+  },
+  {
+    "name": "Lizard Queen",
+    "cr": 4
+  },
+  {
+    "name": "Lizardfolk",
+    "cr": 0.5
+  },
+  {
+    "name": "Lizardfolk Commoner",
+    "cr": 0.25
+  },
+  {
+    "name": "Lizardfolk Render",
+    "cr": 3
+  },
+  {
+    "name": "Lizardfolk Scaleshield",
+    "cr": 1
+  },
+  {
+    "name": "Lizardfolk Shaman",
+    "cr": 2
+  },
+  {
+    "name": "Lizardfolk Subchief",
+    "cr": 3
+  },
+  {
+    "name": "Loading Rig",
+    "cr": 1
+  },
+  {
+    "name": "Locathah",
+    "cr": 0.5
+  },
+  {
+    "name": "Locathah Hunter",
+    "cr": 2
+  },
+  {
+    "name": "Lohezet",
+    "cr": 12
+  },
+  {
+    "name": "Lonely Sorrowsworn",
+    "cr": 9
+  },
+  {
+    "name": "Lonelywood Banshee",
+    "cr": 4
+  },
+  {
+    "name": "Lord Commander Elias Drexel",
+    "cr": 15
+  },
+  {
+    "name": "Lord Soth",
+    "cr": 19
+  },
+  {
+    "name": "Lord of the Feast",
+    "cr": 15
+  },
+  {
+    "name": "Lords' Alliance Guard",
+    "cr": 0.25
+  },
+  {
+    "name": "Lords' Alliance Spy",
+    "cr": 1
+  },
+  {
+    "name": "Lorehold Apprentice",
+    "cr": 2
+  },
+  {
+    "name": "Lorehold Pledgemage",
+    "cr": 4
+  },
+  {
+    "name": "Lorehold Professor of Chaos",
+    "cr": 7
+  },
+  {
+    "name": "Lorehold Professor of Order",
+    "cr": 7
+  },
+  {
+    "name": "Lorry Wanwillow",
+    "cr": 13
+  },
+  {
+    "name": "Lorthuun",
+    "cr": 9
+  },
+  {
+    "name": "Losser Mirklav",
+    "cr": 6
+  },
+  {
+    "name": "Lost Sorrowsworn",
+    "cr": 7
+  },
+  {
+    "name": "Lothar",
+    "cr": 9
+  },
+  {
+    "name": "Loup Garou",
+    "cr": 13
+  },
+  {
+    "name": "Lowarnizel",
+    "cr": 9
+  },
+  {
+    "name": "Lu Zhong Yin",
+    "cr": 1
+  },
+  {
+    "name": "Lucretia Mathias",
+    "cr": 15
+  },
+  {
+    "name": "Ludmilla Vilisevic",
+    "cr": 5
+  },
+  {
+    "name": "Lulu",
+    "cr": 5
+  },
+  {
+    "name": "Lumalia",
+    "cr": 10
+  },
+  {
+    "name": "Lunar Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "Lungtian",
+    "cr": 1
+  },
+  {
+    "name": "Lupilisk",
+    "cr": 3
+  },
+  {
+    "name": "Lupilisk Elder",
+    "cr": 6
+  },
+  {
+    "name": "Lupilisk Whelp",
+    "cr": 1
+  },
+  {
+    "name": "Luvash",
+    "cr": 2
+  },
+  {
+    "name": "Lycanthropickle",
+    "cr": 0.125
+  },
+  {
+    "name": "Lynx Creatlach",
+    "cr": 5
+  },
+  {
+    "name": "Lyra",
+    "cr": 16
+  },
+  {
+    "name": "Macaw",
+    "cr": 0
+  },
+  {
+    "name": "Maccath the Crimson",
+    "cr": 6
+  },
+  {
+    "name": "Machine Gunner",
+    "cr": 1
+  },
+  {
+    "name": "Mad Golem",
+    "cr": 12
+  },
+  {
+    "name": "Mad Maggie",
+    "cr": 5
+  },
+  {
+    "name": "Mad Mary",
+    "cr": 0
+  },
+  {
+    "name": "Madam Eva",
+    "cr": 10
+  },
+  {
+    "name": "Madam Kulp",
+    "cr": 0.125
+  },
+  {
+    "name": "Maddgoth's Homunculus",
+    "cr": 2
+  },
+  {
+    "name": "Maegera the Dawn Titan",
+    "cr": 23
+  },
+  {
+    "name": "Maegla Tarnlar",
+    "cr": 0
+  },
+  {
+    "name": "Maelephant",
+    "cr": 10
+  },
+  {
+    "name": "Maelephant Nomad",
+    "cr": 14
+  },
+  {
+    "name": "Mage",
+    "cr": 6
+  },
+  {
+    "name": "Mage Hunter",
+    "cr": 5
+  },
+  {
+    "name": "Mage Hunter Golem",
+    "cr": 15
+  },
+  {
+    "name": "Magewright",
+    "cr": 0
+  },
+  {
+    "name": "Maggie Keeneyes (Tier 1)",
+    "cr": 3
+  },
+  {
+    "name": "Maggie Keeneyes (Tier 2)",
+    "cr": 5
+  },
+  {
+    "name": "Maggie Keeneyes (Tier 3)",
+    "cr": 8
+  },
+  {
+    "name": "Magister Umbero Zastro",
+    "cr": 0
+  },
+  {
+    "name": "Magma Landshark",
+    "cr": 14
+  },
+  {
+    "name": "Magma Mephit",
+    "cr": 0.5
+  },
+  {
+    "name": "Magmin",
+    "cr": 0.5
+  },
+  {
+    "name": "Mahadi the Rakshasa",
+    "cr": 14
+  },
+  {
+    "name": "Majesto",
+    "cr": 1
+  },
+  {
+    "name": "Malaxxix",
+    "cr": 18
+  },
+  {
+    "name": "Male Steeder",
+    "cr": 0.25
+  },
+  {
+    "name": "Malformed Kraken",
+    "cr": 10
+  },
+  {
+    "name": "Malikirian Imp",
+    "cr": 1
+  },
+  {
+    "name": "Malinia",
+    "cr": 4
+  },
+  {
+    "name": "Mammon",
+    "cr": 26
+  },
+  {
+    "name": "Mammoth",
+    "cr": 6
+  },
+  {
+    "name": "Manafret Cherryport",
+    "cr": 6
+  },
+  {
+    "name": "Manes",
+    "cr": 0.125
+  },
+  {
+    "name": "Manshoon",
+    "cr": 13
+  },
+  {
+    "name": "Manshoon Simulacrum",
+    "cr": 8
+  },
+  {
+    "name": "Manticore",
+    "cr": 3
+  },
+  {
+    "name": "Manticore, Heart-Piercer",
+    "cr": 5
+  },
+  {
+    "name": "Mantrap",
+    "cr": 1
+  },
+  {
+    "name": "Marfulb",
+    "cr": 1
+  },
+  {
+    "name": "Marid",
+    "cr": 11
+  },
+  {
+    "name": "Marilith",
+    "cr": 16
+  },
+  {
+    "name": "Marisa",
+    "cr": 4
+  },
+  {
+    "name": "Markos Delphi",
+    "cr": 3
+  },
+  {
+    "name": "Marlos Urnrayle",
+    "cr": 8
+  },
+  {
+    "name": "Marta Moonshadow",
+    "cr": 6
+  },
+  {
+    "name": "Martial Arts Adept",
+    "cr": 3
+  },
+  {
+    "name": "Marut",
+    "cr": 25
+  },
+  {
+    "name": "Mary Greymalkin",
+    "cr": 2
+  },
+  {
+    "name": "Marzena Belview",
+    "cr": 0.25
+  },
+  {
+    "name": "Master Adranach",
+    "cr": 21
+  },
+  {
+    "name": "Master Refrum",
+    "cr": 2
+  },
+  {
+    "name": "Master Sage",
+    "cr": 5
+  },
+  {
+    "name": "Master Thief",
+    "cr": 5
+  },
+  {
+    "name": "Master of Cruelties",
+    "cr": 9
+  },
+  {
+    "name": "Master of Souls",
+    "cr": 4
+  },
+  {
+    "name": "Mastiff",
+    "cr": 0.125
+  },
+  {
+    "name": "Maude",
+    "cr": 3
+  },
+  {
+    "name": "Maurezhi",
+    "cr": 7
+  },
+  {
+    "name": "Maw Demon",
+    "cr": 1
+  },
+  {
+    "name": "Maw of Sekolah",
+    "cr": 7
+  },
+  {
+    "name": "Maw of Yeenoghu",
+    "cr": 10
+  },
+  {
+    "name": "Maxeene",
+    "cr": 0.25
+  },
+  {
+    "name": "Meazel",
+    "cr": 1
+  },
+  {
+    "name": "Mechachimera",
+    "cr": 6
+  },
+  {
+    "name": "Mechanical Bird",
+    "cr": 0
+  },
+  {
+    "name": "Medusa",
+    "cr": 6
+  },
+  {
+    "name": "Meenlock",
+    "cr": 2
+  },
+  {
+    "name": "Meera Raheer",
+    "cr": 0
+  },
+  {
+    "name": "Meeseeks",
+    "cr": 0
+  },
+  {
+    "name": "Megapede",
+    "cr": 11
+  },
+  {
+    "name": "Melannor Fellbranch",
+    "cr": 2
+  },
+  {
+    "name": "Meletian Hoplite",
+    "cr": 3
+  },
+  {
+    "name": "Melissara Shadowdusk",
+    "cr": 12
+  },
+  {
+    "name": "Meloon Wardragon",
+    "cr": 9
+  },
+  {
+    "name": "Mend-nets",
+    "cr": 0.125
+  },
+  {
+    "name": "Mennek Ariz",
+    "cr": 5
+  },
+  {
+    "name": "Mephistopheles",
+    "cr": 27
+  },
+  {
+    "name": "Mercane",
+    "cr": 5
+  },
+  {
+    "name": "Mercion",
+    "cr": 3
+  },
+  {
+    "name": "Mercykiller Bloodhound",
+    "cr": 7
+  },
+  {
+    "name": "Merfolk",
+    "cr": 0.125
+  },
+  {
+    "name": "Merfolk Salvager",
+    "cr": 1
+  },
+  {
+    "name": "Merfolk Scout",
+    "cr": 0.5
+  },
+  {
+    "name": "Meri",
+    "cr": 4
+  },
+  {
+    "name": "Merregon",
+    "cr": 4
+  },
+  {
+    "name": "Merrenoloth",
+    "cr": 3
+  },
+  {
+    "name": "Merrow",
+    "cr": 2
+  },
+  {
+    "name": "Merrow Extortionist",
+    "cr": 1
+  },
+  {
+    "name": "Merrow Shallowpriest",
+    "cr": 4
+  },
+  {
+    "name": "Metal Wasp",
+    "cr": 0.5
+  },
+  {
+    "name": "Metallic Peacekeeper",
+    "cr": 4
+  },
+  {
+    "name": "Metallic Warbler",
+    "cr": 0.25
+  },
+  {
+    "name": "Mev Flintknapper",
+    "cr": 3
+  },
+  {
+    "name": "Mezzoloth",
+    "cr": 5
+  },
+  {
+    "name": "Miasmorne",
+    "cr": 16
+  },
+  {
+    "name": "Mighty Servant of Leuk-o",
+    "cr": 4
+  },
+  {
+    "name": "Miirym",
+    "cr": 22
+  },
+  {
+    "name": "Milivoj",
+    "cr": 0
+  },
+  {
+    "name": "Mimic",
+    "cr": 2
+  },
+  {
+    "name": "Mimic Chair",
+    "cr": 2
+  },
+  {
+    "name": "Minazorond",
+    "cr": 22
+  },
+  {
+    "name": "Mind Drinker Vampire",
+    "cr": 4
+  },
+  {
+    "name": "Mind Flayer",
+    "cr": 7
+  },
+  {
+    "name": "Mind Flayer Arcanist",
+    "cr": 8
+  },
+  {
+    "name": "Mind Flayer Clairvoyant",
+    "cr": 11
+  },
+  {
+    "name": "Mind Flayer Nothic",
+    "cr": 2
+  },
+  {
+    "name": "Mind Flayer Prophet",
+    "cr": 8
+  },
+  {
+    "name": "Mind Flayer Psion",
+    "cr": 8
+  },
+  {
+    "name": "Mind Mage",
+    "cr": 5
+  },
+  {
+    "name": "Mind's Eye Matter Smith",
+    "cr": 4
+  },
+  {
+    "name": "Mindwitness",
+    "cr": 5
+  },
+  {
+    "name": "Minotaur",
+    "cr": 3
+  },
+  {
+    "name": "Minotaur Archaeologist",
+    "cr": 0.25
+  },
+  {
+    "name": "Minotaur Infiltrator",
+    "cr": 2
+  },
+  {
+    "name": "Minotaur Living Crystal Statue",
+    "cr": 6
+  },
+  {
+    "name": "Minotaur Skeleton",
+    "cr": 2
+  },
+  {
+    "name": "Minsc and Boo!",
+    "cr": 10
+  },
+  {
+    "name": "Miraj Vizann",
+    "cr": 6
+  },
+  {
+    "name": "Mirran",
+    "cr": 13
+  },
+  {
+    "name": "Mirt",
+    "cr": 9
+  },
+  {
+    "name": "Mishka Belview",
+    "cr": 0.25
+  },
+  {
+    "name": "Mist Hulk",
+    "cr": 6
+  },
+  {
+    "name": "Mister Light",
+    "cr": 3
+  },
+  {
+    "name": "Mister Threadneedle",
+    "cr": 1
+  },
+  {
+    "name": "Mister Witch",
+    "cr": 3
+  },
+  {
+    "name": "Mite",
+    "cr": 0.25
+  },
+  {
+    "name": "Mjenir",
+    "cr": 2
+  },
+  {
+    "name": "Mjork",
+    "cr": 3
+  },
+  {
+    "name": "Mjork Asher",
+    "cr": 6
+  },
+  {
+    "name": "Mjork Burner",
+    "cr": 6
+  },
+  {
+    "name": "Mjork Charger",
+    "cr": 7
+  },
+  {
+    "name": "Mjork Sootling",
+    "cr": 0.25
+  },
+  {
+    "name": "Mjork Sootling Swarm",
+    "cr": 2
+  },
+  {
+    "name": "Mobar",
+    "cr": 2
+  },
+  {
+    "name": "Modron Planar Incarnate",
+    "cr": 22
+  },
+  {
+    "name": "Moghadam",
+    "cr": 12
+  },
+  {
+    "name": "Mold Spider",
+    "cr": 0
+  },
+  {
+    "name": "Molliver",
+    "cr": 3
+  },
+  {
+    "name": "Moloch",
+    "cr": 21
+  },
+  {
+    "name": "Molten Magma Roper",
+    "cr": 5
+  },
+  {
+    "name": "Molydeus",
+    "cr": 21
+  },
+  {
+    "name": "Monastery of the Distressed Body Grand Master",
+    "cr": 9
+  },
+  {
+    "name": "Monastery of the Distressed Body Monk",
+    "cr": 0.125
+  },
+  {
+    "name": "Monastic High Curator",
+    "cr": 10
+  },
+  {
+    "name": "Monastic Infiltrator",
+    "cr": 6
+  },
+  {
+    "name": "Monastic Operative",
+    "cr": 5
+  },
+  {
+    "name": "Mongrelfolk",
+    "cr": 0.25
+  },
+  {
+    "name": "Monodrone",
+    "cr": 0.125
+  },
+  {
+    "name": "Monstrous Peryton",
+    "cr": 11
+  },
+  {
+    "name": "Montaron and the Laughing Skull",
+    "cr": 11
+  },
+  {
+    "name": "Moonshark",
+    "cr": 5
+  },
+  {
+    "name": "Moonstone Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "Moorbounder",
+    "cr": 1
+  },
+  {
+    "name": "Morak Ur'gray",
+    "cr": 0
+  },
+  {
+    "name": "Morbus Kobold",
+    "cr": 0.125
+  },
+  {
+    "name": "Mordakhesh",
+    "cr": 15
+  },
+  {
+    "name": "Morgantha",
+    "cr": 5
+  },
+  {
+    "name": "Morkoth",
+    "cr": 11
+  },
+  {
+    "name": "Mormesk the Wraith",
+    "cr": 5
+  },
+  {
+    "name": "Morte",
+    "cr": 0.25
+  },
+  {
+    "name": "Mortlock Vanthampur",
+    "cr": 3
+  },
+  {
+    "name": "Mossback Steward",
+    "cr": 8
+  },
+  {
+    "name": "Mountain Goat",
+    "cr": 0.125
+  },
+  {
+    "name": "Mouth of Grolantor",
+    "cr": 6
+  },
+  {
+    "name": "Mr. Dory",
+    "cr": 10
+  },
+  {
+    "name": "Mr. Greystone",
+    "cr": 5
+  },
+  {
+    "name": "Mr. Honeycutt",
+    "cr": 2
+  },
+  {
+    "name": "Mud Hulk",
+    "cr": 3
+  },
+  {
+    "name": "Mud Mephit",
+    "cr": 0.25
+  },
+  {
+    "name": "Muiral",
+    "cr": 13
+  },
+  {
+    "name": "Mule",
+    "cr": 0.125
+  },
+  {
+    "name": "Mummy",
+    "cr": 3
+  },
+  {
+    "name": "Mummy Lord",
+    "cr": 15
+  },
+  {
+    "name": "Murder Comet",
+    "cr": 5
+  },
+  {
+    "name": "Murgaxor",
+    "cr": 9
+  },
+  {
+    "name": "Musharib",
+    "cr": 1
+  },
+  {
+    "name": "Musteval Guardinal",
+    "cr": 2
+  },
+  {
+    "name": "MwaxanarÃ©",
+    "cr": 0.125
+  },
+  {
+    "name": "Myconid Adult",
+    "cr": 0.5
+  },
+  {
+    "name": "Myconid Sovereign",
+    "cr": 2
+  },
+  {
+    "name": "Myconid Sprout",
+    "cr": 0
+  },
+  {
+    "name": "Myla",
+    "cr": 0.25
+  },
+  {
+    "name": "Myx Nargis Ruba",
+    "cr": 0.125
+  },
+  {
+    "name": "Na",
+    "cr": 0
+  },
+  {
+    "name": "Nabassu",
+    "cr": 15
+  },
+  {
+    "name": "Naergoth Bladelord",
+    "cr": 11
+  },
+  {
+    "name": "Naes Inuus",
+    "cr": 13
+  },
+  {
+    "name": "Naevys Tharesso",
+    "cr": 3
+  },
+  {
+    "name": "Nagpa",
+    "cr": 17
+  },
+  {
+    "name": "Nahual",
+    "cr": 3
+  },
+  {
+    "name": "Naiad",
+    "cr": 2
+  },
+  {
+    "name": "Nalfeshnee",
+    "cr": 13
+  },
+  {
+    "name": "Nanny Pu'pu",
+    "cr": 3
+  },
+  {
+    "name": "Nar'l Xibrindas",
+    "cr": 7
+  },
+  {
+    "name": "Narbeck Horn",
+    "cr": 3
+  },
+  {
+    "name": "Narrak",
+    "cr": 2
+  },
+  {
+    "name": "Narzugon",
+    "cr": 13
+  },
+  {
+    "name": "Nass Lantomir's Ghost",
+    "cr": 6
+  },
+  {
+    "name": "Nat",
+    "cr": 0
+  },
+  {
+    "name": "Nauk",
+    "cr": 9
+  },
+  {
+    "name": "Navid",
+    "cr": 11
+  },
+  {
+    "name": "Necrichor",
+    "cr": 7
+  },
+  {
+    "name": "Necro-Alchemist",
+    "cr": 6
+  },
+  {
+    "name": "Necromancer",
+    "cr": 9
+  },
+  {
+    "name": "Necromancer Wizard",
+    "cr": 9
+  },
+  {
+    "name": "Necromite of Myrkul",
+    "cr": 0.5
+  },
+  {
+    "name": "Necrotic Centipede",
+    "cr": 11
+  },
+  {
+    "name": "Nedylene",
+    "cr": 8
+  },
+  {
+    "name": "Needle Blight",
+    "cr": 0.25
+  },
+  {
+    "name": "Needle Lord",
+    "cr": 3
+  },
+  {
+    "name": "Needle Spawn",
+    "cr": 0.5
+  },
+  {
+    "name": "Neh-thalggu",
+    "cr": 4
+  },
+  {
+    "name": "Nellik",
+    "cr": 9
+  },
+  {
+    "name": "Nene",
+    "cr": 0
+  },
+  {
+    "name": "Neo-Otyugh",
+    "cr": 7
+  },
+  {
+    "name": "Neogi",
+    "cr": 3
+  },
+  {
+    "name": "Neogi Hatchling",
+    "cr": 0.125
+  },
+  {
+    "name": "Neogi Hatchling Swarm",
+    "cr": 3
+  },
+  {
+    "name": "Neogi Master",
+    "cr": 4
+  },
+  {
+    "name": "Neogi Pirate",
+    "cr": 3
+  },
+  {
+    "name": "Neogi Void Hunter",
+    "cr": 4
+  },
+  {
+    "name": "Neothelid",
+    "cr": 13
+  },
+  {
+    "name": "Nepartak",
+    "cr": 4
+  },
+  {
+    "name": "Nereid",
+    "cr": 2
+  },
+  {
+    "name": "Nergaliid",
+    "cr": 3
+  },
+  {
+    "name": "Neronvain",
+    "cr": 9
+  },
+  {
+    "name": "Nerozar the Defeated",
+    "cr": 5
+  },
+  {
+    "name": "Nester",
+    "cr": 12
+  },
+  {
+    "name": "Nevermind Gnome Inventor",
+    "cr": 2
+  },
+  {
+    "name": "Nevermind Gnome Mastermind",
+    "cr": 5
+  },
+  {
+    "name": "Nezznar the Black Spider",
+    "cr": 2
+  },
+  {
+    "name": "Nezznar the Spider",
+    "cr": 2
+  },
+  {
+    "name": "Night Blade",
+    "cr": 0.25
+  },
+  {
+    "name": "Night Hag",
+    "cr": 5
+  },
+  {
+    "name": "Night Scavver",
+    "cr": 5
+  },
+  {
+    "name": "Nightmare",
+    "cr": 3
+  },
+  {
+    "name": "Nightmare Beast",
+    "cr": 16
+  },
+  {
+    "name": "Nightmare Haunt",
+    "cr": 5
+  },
+  {
+    "name": "Nightmare Shepherd",
+    "cr": 11
+  },
+  {
+    "name": "Nightsea chil-liren",
+    "cr": 0.125
+  },
+  {
+    "name": "Nightveil Specter",
+    "cr": 10
+  },
+  {
+    "name": "Nightwalker",
+    "cr": 20
+  },
+  {
+    "name": "Nihiloor",
+    "cr": 7
+  },
+  {
+    "name": "Nikolai Wachter",
+    "cr": 0.125
+  },
+  {
+    "name": "Nilbog",
+    "cr": 1
+  },
+  {
+    "name": "Niles Breakbone",
+    "cr": 0.125
+  },
+  {
+    "name": "Nil",
+    "cr": 0.25
+  },
+  {
+    "name": "Nimblewright",
+    "cr": 4
+  },
+  {
+    "name": "Nimir",
+    "cr": 13
+  },
+  {
+    "name": "Nimira",
+    "cr": 3
+  },
+  {
+    "name": "Nimuel",
+    "cr": 6
+  },
+  {
+    "name": "Nine-Fingers Keene",
+    "cr": 5
+  },
+  {
+    "name": "Nintra Siotta",
+    "cr": 16
+  },
+  {
+    "name": "Niv-Mizzet",
+    "cr": 26
+  },
+  {
+    "name": "Nivix Cyclops",
+    "cr": 8
+  },
+  {
+    "name": "Nixylanna Vidorant",
+    "cr": 8
+  },
+  {
+    "name": "Noble",
+    "cr": 0.125
+  },
+  {
+    "name": "Nonaton Modron",
+    "cr": 10
+  },
+  {
+    "name": "Noori",
+    "cr": 2
+  },
+  {
+    "name": "Norker",
+    "cr": 0.5
+  },
+  {
+    "name": "Norker War Leader",
+    "cr": 3
+  },
+  {
+    "name": "Nosferatu",
+    "cr": 8
+  },
+  {
+    "name": "Noska Ur'gray",
+    "cr": 0.5
+  },
+  {
+    "name": "Nothic",
+    "cr": 2
+  },
+  {
+    "name": "Nundro Rockseeker",
+    "cr": 0
+  },
+  {
+    "name": "Nupperibo",
+    "cr": 0.5
+  },
+  {
+    "name": "Nurvureem, The Dark Lady",
+    "cr": 14
+  },
+  {
+    "name": "Nycaloth",
+    "cr": 9
+  },
+  {
+    "name": "Nym",
+    "cr": 13
+  },
+  {
+    "name": "Nythalyn Henlifel",
+    "cr": 5
+  },
+  {
+    "name": "Nyx-Fleece Ram",
+    "cr": 1
+  },
+  {
+    "name": "Oak Truestrike",
+    "cr": 2
+  },
+  {
+    "name": "Oaken Bolter",
+    "cr": 5
+  },
+  {
+    "name": "Obaya Uday",
+    "cr": 2
+  },
+  {
+    "name": "Oblex Spawn",
+    "cr": 0.25
+  },
+  {
+    "name": "Obliteros",
+    "cr": 5
+  },
+  {
+    "name": "Oblivion Brute",
+    "cr": 5
+  },
+  {
+    "name": "Oblivion Juggernaut",
+    "cr": 8
+  },
+  {
+    "name": "Oblivion Leaper",
+    "cr": 1
+  },
+  {
+    "name": "Oblivion Whistler",
+    "cr": 2
+  },
+  {
+    "name": "Obmi",
+    "cr": 8
+  },
+  {
+    "name": "Obzedat Ghost",
+    "cr": 8
+  },
+  {
+    "name": "Occult Extollant",
+    "cr": 6
+  },
+  {
+    "name": "Occult Initiate",
+    "cr": 2
+  },
+  {
+    "name": "Occult Silvertongue",
+    "cr": 8
+  },
+  {
+    "name": "Oceanus",
+    "cr": 0.5
+  },
+  {
+    "name": "Ochre Jelly",
+    "cr": 2
+  },
+  {
+    "name": "Octon Modron",
+    "cr": 11
+  },
+  {
+    "name": "Octopus",
+    "cr": 0
+  },
+  {
+    "name": "Oculorb",
+    "cr": 9
+  },
+  {
+    "name": "Oddlewin",
+    "cr": 2
+  },
+  {
+    "name": "Ogre",
+    "cr": 2
+  },
+  {
+    "name": "Ogre Battering Ram",
+    "cr": 4
+  },
+  {
+    "name": "Ogre Bolt Launcher",
+    "cr": 2
+  },
+  {
+    "name": "Ogre Chain Brute",
+    "cr": 3
+  },
+  {
+    "name": "Ogre Channeler",
+    "cr": 7
+  },
+  {
+    "name": "Ogre Chitterlord",
+    "cr": 3
+  },
+  {
+    "name": "Ogre Goblin Hucker",
+    "cr": 2
+  },
+  {
+    "name": "Ogre Howdah",
+    "cr": 2
+  },
+  {
+    "name": "Ogre Lord Buhfal II",
+    "cr": 2
+  },
+  {
+    "name": "Ogre Skeleton",
+    "cr": 2
+  },
+  {
+    "name": "Ogre Zombie",
+    "cr": 2
+  },
+  {
+    "name": "OgrÃ©moch",
+    "cr": 20
+  },
+  {
+    "name": "Oinoloth",
+    "cr": 12
+  },
+  {
+    "name": "Olara",
+    "cr": 0.5
+  },
+  {
+    "name": "Old Croaker",
+    "cr": 1
+  },
+  {
+    "name": "Old Troglodyte",
+    "cr": 0.125
+  },
+  {
+    "name": "Olhydra",
+    "cr": 18
+  },
+  {
+    "name": "Ollin",
+    "cr": 2
+  },
+  {
+    "name": "Omin Dran",
+    "cr": 5
+  },
+  {
+    "name": "One-Eyed Shiver",
+    "cr": 3
+  },
+  {
+    "name": "Oneirovore",
+    "cr": 11
+  },
+  {
+    "name": "Oni",
+    "cr": 7
+  },
+  {
+    "name": "Ontharr Frume",
+    "cr": 9
+  },
+  {
+    "name": "Ontharyx",
+    "cr": 4
+  },
+  {
+    "name": "Onyx",
+    "cr": 0
+  },
+  {
+    "name": "Ooze Master",
+    "cr": 10
+  },
+  {
+    "name": "Ooze-Folk",
+    "cr": 0.5
+  },
+  {
+    "name": "Oozing Vulture",
+    "cr": 2
+  },
+  {
+    "name": "Ophelia",
+    "cr": 4
+  },
+  {
+    "name": "Oracle",
+    "cr": 4
+  },
+  {
+    "name": "Oracle of Strixhaven",
+    "cr": 15
+  },
+  {
+    "name": "Oracs the Enduring",
+    "cr": 21
+  },
+  {
+    "name": "Orc",
+    "cr": 0.5
+  },
+  {
+    "name": "Orc Blade of Ilneval",
+    "cr": 4
+  },
+  {
+    "name": "Orc Claw of Luthic",
+    "cr": 2
+  },
+  {
+    "name": "Orc Commoner",
+    "cr": 0
+  },
+  {
+    "name": "Orc Eye of Gruumsh",
+    "cr": 2
+  },
+  {
+    "name": "Orc Hand of Yurtrus",
+    "cr": 2
+  },
+  {
+    "name": "Orc Nurtured One of Yurtrus",
+    "cr": 0.5
+  },
+  {
+    "name": "Orc Red Fang of Shargaas",
+    "cr": 3
+  },
+  {
+    "name": "Orc War Chief",
+    "cr": 4
+  },
+  {
+    "name": "Orcus",
+    "cr": 26
+  },
+  {
+    "name": "Ordeal Tree",
+    "cr": 12
+  },
+  {
+    "name": "Oread",
+    "cr": 4
+  },
+  {
+    "name": "Oreioth",
+    "cr": 2
+  },
+  {
+    "name": "Oriq Blood Mage",
+    "cr": 9
+  },
+  {
+    "name": "Oriq Recruiter",
+    "cr": 4
+  },
+  {
+    "name": "Orlekto",
+    "cr": 13
+  },
+  {
+    "name": "Orog",
+    "cr": 2
+  },
+  {
+    "name": "Orok",
+    "cr": 0.125
+  },
+  {
+    "name": "Orond Gralhund",
+    "cr": 0.125
+  },
+  {
+    "name": "Orthon",
+    "cr": 10
+  },
+  {
+    "name": "Ortimay Swift and Dark",
+    "cr": 2
+  },
+  {
+    "name": "Orvex Ocrammas",
+    "cr": 1
+  },
+  {
+    "name": "Orzhov Giant",
+    "cr": 6
+  },
+  {
+    "name": "Oscar Yoren",
+    "cr": 6
+  },
+  {
+    "name": "Oshundo the Alhoon",
+    "cr": 10
+  },
+  {
+    "name": "Osvaldo Cassalanter",
+    "cr": 8
+  },
+  {
+    "name": "Otherworldly Corrupter",
+    "cr": 17
+  },
+  {
+    "name": "Othokent",
+    "cr": 4
+  },
+  {
+    "name": "Ott Steeltoes",
+    "cr": 0.125
+  },
+  {
+    "name": "Otto",
+    "cr": 3
+  },
+  {
+    "name": "Otto Belview",
+    "cr": 0.25
+  },
+  {
+    "name": "Otyugh",
+    "cr": 5
+  },
+  {
+    "name": "Otyugh Mutate",
+    "cr": 6
+  },
+  {
+    "name": "Ougalop",
+    "cr": 0.25
+  },
+  {
+    "name": "Oussa",
+    "cr": 3
+  },
+  {
+    "name": "Owl",
+    "cr": 0
+  },
+  {
+    "name": "Owlbear",
+    "cr": 3
+  },
+  {
+    "name": "Ox",
+    "cr": 0.25
+  },
+  {
+    "name": "Oxen",
+    "cr": 0.5
+  },
+  {
+    "name": "Padraich",
+    "cr": 2
+  },
+  {
+    "name": "Pain Devil (Excruciarch)",
+    "cr": 12
+  },
+  {
+    "name": "Pale Man",
+    "cr": 13
+  },
+  {
+    "name": "Paloma",
+    "cr": 8
+  },
+  {
+    "name": "Panjaian Ilharan",
+    "cr": 3
+  },
+  {
+    "name": "Panopticus Wizard",
+    "cr": 0.25
+  },
+  {
+    "name": "Panther",
+    "cr": 0.25
+  },
+  {
+    "name": "Paper Bird",
+    "cr": 0
+  },
+  {
+    "name": "Paper Whirlwind",
+    "cr": 0.25
+  },
+  {
+    "name": "Parasite-infested Behir",
+    "cr": 11
+  },
+  {
+    "name": "Pari",
+    "cr": 13
+  },
+  {
+    "name": "Parriwimple",
+    "cr": 5
+  },
+  {
+    "name": "Parrot",
+    "cr": 0
+  },
+  {
+    "name": "Parson Pellinost",
+    "cr": 2
+  },
+  {
+    "name": "Parvaz",
+    "cr": 1
+  },
+  {
+    "name": "Patrina Velikovna",
+    "cr": 12
+  },
+  {
+    "name": "Pazrodine",
+    "cr": 21
+  },
+  {
+    "name": "Pazuzu",
+    "cr": 25
+  },
+  {
+    "name": "Peacock",
+    "cr": 0
+  },
+  {
+    "name": "Peebles",
+    "cr": 1
+  },
+  {
+    "name": "Pegasus",
+    "cr": 2
+  },
+  {
+    "name": "Pelyious Avhoste",
+    "cr": 9
+  },
+  {
+    "name": "Pendragon Beestinger",
+    "cr": 2
+  },
+  {
+    "name": "Pentadrone",
+    "cr": 2
+  },
+  {
+    "name": "Percival de Rolo",
+    "cr": 18
+  },
+  {
+    "name": "Perigee",
+    "cr": 10
+  },
+  {
+    "name": "Peryton",
+    "cr": 2
+  },
+  {
+    "name": "Pest Mascot",
+    "cr": 0.25
+  },
+  {
+    "name": "Pestilence Demon",
+    "cr": 6
+  },
+  {
+    "name": "Phaerimm",
+    "cr": 15
+  },
+  {
+    "name": "Phaia",
+    "cr": 9
+  },
+  {
+    "name": "Phantom Warrior",
+    "cr": 3
+  },
+  {
+    "name": "Phantom Warrior (Archer)",
+    "cr": 3
+  },
+  {
+    "name": "Pharblex Spattergoo",
+    "cr": 3
+  },
+  {
+    "name": "Phase Spider",
+    "cr": 3
+  },
+  {
+    "name": "Phoenix",
+    "cr": 16
+  },
+  {
+    "name": "Phoenix Anvil",
+    "cr": 2
+  },
+  {
+    "name": "Phylaskia",
+    "cr": 9
+  },
+  {
+    "name": "Piccolo",
+    "cr": 0
+  },
+  {
+    "name": "Pidlwick II",
+    "cr": 0.25
+  },
+  {
+    "name": "Piercer",
+    "cr": 0.5
+  },
+  {
+    "name": "Pig",
+    "cr": 0
+  },
+  {
+    "name": "Piggy Wiggle Butt",
+    "cr": 0.5
+  },
+  {
+    "name": "Pike Trickfoot",
+    "cr": 17
+  },
+  {
+    "name": "Piranha",
+    "cr": 0
+  },
+  {
+    "name": "Pirate Bosun",
+    "cr": 0.5
+  },
+  {
+    "name": "Pirate Captain",
+    "cr": 2
+  },
+  {
+    "name": "Pirate Deck Wizard",
+    "cr": 1
+  },
+  {
+    "name": "Pirate First Mate",
+    "cr": 1
+  },
+  {
+    "name": "Pit Fiend",
+    "cr": 20
+  },
+  {
+    "name": "Pixie",
+    "cr": 0.25
+  },
+  {
+    "name": "Plague Monk",
+    "cr": 1
+  },
+  {
+    "name": "Plainscow",
+    "cr": 2
+  },
+  {
+    "name": "Planar Incarnate",
+    "cr": 22
+  },
+  {
+    "name": "Planetar",
+    "cr": 16
+  },
+  {
+    "name": "Plasmoid Boss",
+    "cr": 4
+  },
+  {
+    "name": "Plasmoid Explorer",
+    "cr": 0.25
+  },
+  {
+    "name": "Plasmoid Warrior",
+    "cr": 3
+  },
+  {
+    "name": "Platinum Golem",
+    "cr": 16
+  },
+  {
+    "name": "Play-by-Play Generator",
+    "cr": 1
+  },
+  {
+    "name": "Plesiosaurus",
+    "cr": 2
+  },
+  {
+    "name": "Podling",
+    "cr": 0.5
+  },
+  {
+    "name": "Poison Weird",
+    "cr": 4
+  },
+  {
+    "name": "Poisonous Snake",
+    "cr": 0.125
+  },
+  {
+    "name": "Polar Bear",
+    "cr": 2
+  },
+  {
+    "name": "Pollenella the Honeybee",
+    "cr": 0
+  },
+  {
+    "name": "Poltergeist",
+    "cr": 2
+  },
+  {
+    "name": "Polukranos",
+    "cr": 19
+  },
+  {
+    "name": "Pony",
+    "cr": 0.125
+  },
+  {
+    "name": "Portentia Dran",
+    "cr": 3
+  },
+  {
+    "name": "Portia Dzuth",
+    "cr": 9
+  },
+  {
+    "name": "Pow Ming",
+    "cr": 6
+  },
+  {
+    "name": "Precognitive Mage",
+    "cr": 3
+  },
+  {
+    "name": "Preeta Kreepa",
+    "cr": 6
+  },
+  {
+    "name": "Priest",
+    "cr": 2
+  },
+  {
+    "name": "Priest of Osybus",
+    "cr": 6
+  },
+  {
+    "name": "Prince Derendil",
+    "cr": 2
+  },
+  {
+    "name": "Prince Kirina",
+    "cr": 3
+  },
+  {
+    "name": "Prince Simbon",
+    "cr": 3
+  },
+  {
+    "name": "Prince Xeleth",
+    "cr": 8
+  },
+  {
+    "name": "Princeps Kovik",
+    "cr": 8
+  },
+  {
+    "name": "Princess Ebonmire",
+    "cr": 4
+  },
+  {
+    "name": "Princess Serissa",
+    "cr": 13
+  },
+  {
+    "name": "Princess Xedalli",
+    "cr": 8
+  },
+  {
+    "name": "Prismari Apprentice",
+    "cr": 2
+  },
+  {
+    "name": "Prismari Pledgemage",
+    "cr": 4
+  },
+  {
+    "name": "Prismari Professor of Expression",
+    "cr": 7
+  },
+  {
+    "name": "Prismari Professor of Perfection",
+    "cr": 7
+  },
+  {
+    "name": "Prisoner 13",
+    "cr": 5
+  },
+  {
+    "name": "Prisoner 237",
+    "cr": 1
+  },
+  {
+    "name": "Prolix Yusaf",
+    "cr": 1
+  },
+  {
+    "name": "Prophetess Dran",
+    "cr": 2
+  },
+  {
+    "name": "Protean Abomination",
+    "cr": 6
+  },
+  {
+    "name": "Pseudodragon",
+    "cr": 0.25
+  },
+  {
+    "name": "Psionic Ashenwight",
+    "cr": 7
+  },
+  {
+    "name": "Psionic Shambling Mound",
+    "cr": 5
+  },
+  {
+    "name": "Psurlon",
+    "cr": 2
+  },
+  {
+    "name": "Psurlon Leader",
+    "cr": 6
+  },
+  {
+    "name": "Psurlon Ringer",
+    "cr": 1
+  },
+  {
+    "name": "Psychic Fragment",
+    "cr": 0
+  },
+  {
+    "name": "Psychic Fragment Swarm",
+    "cr": 3
+  },
+  {
+    "name": "Pterafolk",
+    "cr": 1
+  },
+  {
+    "name": "Pteranodon",
+    "cr": 0.25
+  },
+  {
+    "name": "Puppeteer Parasite",
+    "cr": 3
+  },
+  {
+    "name": "Purple Worm",
+    "cr": 15
+  },
+  {
+    "name": "Purple Wormling",
+    "cr": 2
+  },
+  {
+    "name": "Qawasha",
+    "cr": 2
+  },
+  {
+    "name": "Quadrone",
+    "cr": 1
+  },
+  {
+    "name": "Quadrone Detention Drone",
+    "cr": 1
+  },
+  {
+    "name": "Quaggoth",
+    "cr": 2
+  },
+  {
+    "name": "Quaggoth Spore Servant",
+    "cr": 1
+  },
+  {
+    "name": "Quaggoth Thonot",
+    "cr": 3
+  },
+  {
+    "name": "Quandrix Apprentice",
+    "cr": 2
+  },
+  {
+    "name": "Quandrix Pledgemage",
+    "cr": 4
+  },
+  {
+    "name": "Quandrix Professor of Substance",
+    "cr": 7
+  },
+  {
+    "name": "Quandrix Professor of Theory",
+    "cr": 7
+  },
+  {
+    "name": "Quasit",
+    "cr": 1
+  },
+  {
+    "name": "Queen of Thieves",
+    "cr": 15
+  },
+  {
+    "name": "Quenthel Baenre",
+    "cr": 22
+  },
+  {
+    "name": "Quetzalcoatlus",
+    "cr": 2
+  },
+  {
+    "name": "Quickling",
+    "cr": 1
+  },
+  {
+    "name": "Quipper",
+    "cr": 0
+  },
+  {
+    "name": "Qunbraxel",
+    "cr": 9
+  },
+  {
+    "name": "R04M",
+    "cr": 0.125
+  },
+  {
+    "name": "Rabbithead",
+    "cr": 0
+  },
+  {
+    "name": "Radiant Idol",
+    "cr": 11
+  },
+  {
+    "name": "Raegrin Mau",
+    "cr": 0.125
+  },
+  {
+    "name": "Raezil",
+    "cr": 1
+  },
+  {
+    "name": "Raggadragga",
+    "cr": 4
+  },
+  {
+    "name": "Raggnar Redtooth",
+    "cr": 3
+  },
+  {
+    "name": "Rahadin",
+    "cr": 10
+  },
+  {
+    "name": "Rain",
+    "cr": 5
+  },
+  {
+    "name": "Rak Tulkhesh",
+    "cr": 28
+  },
+  {
+    "name": "Rakdos",
+    "cr": 24
+  },
+  {
+    "name": "Rakdos Lampooner",
+    "cr": 2
+  },
+  {
+    "name": "Rakdos Performer, Blade Juggler",
+    "cr": 1
+  },
+  {
+    "name": "Rakdos Performer, Fire Eater",
+    "cr": 1
+  },
+  {
+    "name": "Rakdos Performer, High-Wire Acrobat",
+    "cr": 1
+  },
+  {
+    "name": "Rakshasa",
+    "cr": 13
+  },
+  {
+    "name": "Ram Sugar",
+    "cr": 2
+  },
+  {
+    "name": "Ramius",
+    "cr": 14
+  },
+  {
+    "name": "Ras Nsi",
+    "cr": 7
+  },
+  {
+    "name": "Rat",
+    "cr": 0
+  },
+  {
+    "name": "Rat Prince",
+    "cr": 3
+  },
+  {
+    "name": "Rath Modar",
+    "cr": 6
+  },
+  {
+    "name": "Ratling",
+    "cr": 0.125
+  },
+  {
+    "name": "Ravager Slaughter Lord",
+    "cr": 9
+  },
+  {
+    "name": "Ravager Stabby-Stabber",
+    "cr": 3
+  },
+  {
+    "name": "Raven",
+    "cr": 0
+  },
+  {
+    "name": "Raven Uth Vogler",
+    "cr": 0.5
+  },
+  {
+    "name": "Razerblast",
+    "cr": 5
+  },
+  {
+    "name": "Razorvine Blight",
+    "cr": 1
+  },
+  {
+    "name": "Reaper Spirit",
+    "cr": 4
+  },
+  {
+    "name": "Reaper of Bhaal",
+    "cr": 2
+  },
+  {
+    "name": "Reckoner",
+    "cr": 4
+  },
+  {
+    "name": "Red Abishai",
+    "cr": 19
+  },
+  {
+    "name": "Red Dragon Wyrmling",
+    "cr": 4
+  },
+  {
+    "name": "Red Greatwyrm",
+    "cr": 27
+  },
+  {
+    "name": "Red Guard Drake",
+    "cr": 2
+  },
+  {
+    "name": "Red Ruin",
+    "cr": 10
+  },
+  {
+    "name": "Red Slaad",
+    "cr": 5
+  },
+  {
+    "name": "Red Wizard",
+    "cr": 6
+  },
+  {
+    "name": "Redbrand Ruffian",
+    "cr": 0.5
+  },
+  {
+    "name": "Redcap",
+    "cr": 3
+  },
+  {
+    "name": "Redtooth Werefox",
+    "cr": 3
+  },
+  {
+    "name": "Reduced-Threat Aboleth",
+    "cr": 10
+  },
+  {
+    "name": "Reduced-Threat Basilisk",
+    "cr": 3
+  },
+  {
+    "name": "Reduced-Threat Behir",
+    "cr": 11
+  },
+  {
+    "name": "Reduced-Threat Beholder",
+    "cr": 13
+  },
+  {
+    "name": "Reduced-Threat Black Pudding",
+    "cr": 4
+  },
+  {
+    "name": "Reduced-Threat Carrion Crawler",
+    "cr": 2
+  },
+  {
+    "name": "Reduced-Threat Clay Golem",
+    "cr": 9
+  },
+  {
+    "name": "Reduced-Threat Darkmantle",
+    "cr": 0.5
+  },
+  {
+    "name": "Reduced-Threat Displacer Beast",
+    "cr": 3
+  },
+  {
+    "name": "Reduced-Threat Dragon Turtle",
+    "cr": 17
+  },
+  {
+    "name": "Reduced-Threat Ettercap",
+    "cr": 2
+  },
+  {
+    "name": "Reduced-Threat Flesh Golem",
+    "cr": 5
+  },
+  {
+    "name": "Reduced-Threat Glabrezu",
+    "cr": 9
+  },
+  {
+    "name": "Reduced-Threat Gray Ooze",
+    "cr": 0.5
+  },
+  {
+    "name": "Reduced-Threat Helmed Horror",
+    "cr": 4
+  },
+  {
+    "name": "Reduced-Threat Hezrou",
+    "cr": 8
+  },
+  {
+    "name": "Reduced-Threat Hook Horror",
+    "cr": 3
+  },
+  {
+    "name": "Reduced-Threat Ochre Jelly",
+    "cr": 2
+  },
+  {
+    "name": "Reduced-Threat Otyugh",
+    "cr": 5
+  },
+  {
+    "name": "Reduced-Threat Owlbear",
+    "cr": 3
+  },
+  {
+    "name": "Reduced-Threat Peryton",
+    "cr": 2
+  },
+  {
+    "name": "Reduced-Threat Remorhaz",
+    "cr": 11
+  },
+  {
+    "name": "Reduced-Threat Stone Golem",
+    "cr": 10
+  },
+  {
+    "name": "Reduced-Threat Vrock",
+    "cr": 6
+  },
+  {
+    "name": "Reduced-Threat Wight",
+    "cr": 3
+  },
+  {
+    "name": "Reduced-Threat Wyvern",
+    "cr": 6
+  },
+  {
+    "name": "Reef Shark",
+    "cr": 0.5
+  },
+  {
+    "name": "Reflection",
+    "cr": 0.5
+  },
+  {
+    "name": "Refraction of Ilvaash",
+    "cr": 15
+  },
+  {
+    "name": "Regenerating Black Pudding",
+    "cr": 5
+  },
+  {
+    "name": "Reghed Chieftain",
+    "cr": 5
+  },
+  {
+    "name": "Reghed Great Warrior",
+    "cr": 5
+  },
+  {
+    "name": "Reghed Shaman",
+    "cr": 2
+  },
+  {
+    "name": "Reghed Warrior",
+    "cr": 0.125
+  },
+  {
+    "name": "Regisaur",
+    "cr": 14
+  },
+  {
+    "name": "Regular Orthoclath",
+    "cr": 16
+  },
+  {
+    "name": "Reigar",
+    "cr": 8
+  },
+  {
+    "name": "Reindeer",
+    "cr": 0.25
+  },
+  {
+    "name": "Relentless Juggernaut",
+    "cr": 12
+  },
+  {
+    "name": "Relentless Slasher",
+    "cr": 8
+  },
+  {
+    "name": "Relic Sloth",
+    "cr": 2
+  },
+  {
+    "name": "Remallia Haventree",
+    "cr": 9
+  },
+  {
+    "name": "Remnant Chosen",
+    "cr": 12
+  },
+  {
+    "name": "Remnant Cultist",
+    "cr": 7
+  },
+  {
+    "name": "Remorhaz",
+    "cr": 11
+  },
+  {
+    "name": "Renaer Neverember",
+    "cr": 3
+  },
+  {
+    "name": "Renwick",
+    "cr": 21
+  },
+  {
+    "name": "Replica Duodrone",
+    "cr": 0.25
+  },
+  {
+    "name": "Replica Monodrone",
+    "cr": 0.125
+  },
+  {
+    "name": "Replica Pentadrone",
+    "cr": 2
+  },
+  {
+    "name": "Replica Quadrone",
+    "cr": 1
+  },
+  {
+    "name": "Replica Tridrone",
+    "cr": 0.5
+  },
+  {
+    "name": "Retriever",
+    "cr": 14
+  },
+  {
+    "name": "Returned Drifter",
+    "cr": 0.25
+  },
+  {
+    "name": "Returned Kakomantis",
+    "cr": 4
+  },
+  {
+    "name": "Returned Palamnite",
+    "cr": 4
+  },
+  {
+    "name": "Returned Sentry",
+    "cr": 1
+  },
+  {
+    "name": "Revenant",
+    "cr": 5
+  },
+  {
+    "name": "Rezmir",
+    "cr": 7
+  },
+  {
+    "name": "Rhinoceros",
+    "cr": 2
+  },
+  {
+    "name": "Rhundorth",
+    "cr": 0.125
+  },
+  {
+    "name": "Rictavio",
+    "cr": 5
+  },
+  {
+    "name": "Riding Horse",
+    "cr": 0.25
+  },
+  {
+    "name": "Riffler",
+    "cr": 5
+  },
+  {
+    "name": "Rifleman",
+    "cr": 0.25
+  },
+  {
+    "name": "Rilago",
+    "cr": 4
+  },
+  {
+    "name": "Rilsa Rael",
+    "cr": 3
+  },
+  {
+    "name": "Rime Hulk",
+    "cr": 5
+  },
+  {
+    "name": "Rimmon",
+    "cr": 20
+  },
+  {
+    "name": "Ringlerun",
+    "cr": 5
+  },
+  {
+    "name": "Rip Tide Priest",
+    "cr": 2
+  },
+  {
+    "name": "Rishaal the Page-Turner",
+    "cr": 6
+  },
+  {
+    "name": "River Mist",
+    "cr": 1
+  },
+  {
+    "name": "River Serpent",
+    "cr": 2
+  },
+  {
+    "name": "Riverine",
+    "cr": 12
+  },
+  {
+    "name": "Rivermaw Brawler",
+    "cr": 4
+  },
+  {
+    "name": "Rivermaw Stormborn",
+    "cr": 5
+  },
+  {
+    "name": "Rivibiddel",
+    "cr": 0.5
+  },
+  {
+    "name": "Roc",
+    "cr": 11
+  },
+  {
+    "name": "Rock Gnome Recluse",
+    "cr": 0.25
+  },
+  {
+    "name": "Ront",
+    "cr": 0.5
+  },
+  {
+    "name": "Rool",
+    "cr": 8
+  },
+  {
+    "name": "Rooster",
+    "cr": 0
+  },
+  {
+    "name": "Roper",
+    "cr": 5
+  },
+  {
+    "name": "Rosie Beestinger",
+    "cr": 3
+  },
+  {
+    "name": "Rot Troll",
+    "cr": 9
+  },
+  {
+    "name": "Rowboat Mimic",
+    "cr": 2
+  },
+  {
+    "name": "Rubblebelt Stalker",
+    "cr": 0.5
+  },
+  {
+    "name": "Rug of Smothering",
+    "cr": 2
+  },
+  {
+    "name": "Ruidium Elephant",
+    "cr": 8
+  },
+  {
+    "name": "Ruin Grinder",
+    "cr": 5
+  },
+  {
+    "name": "Ruin Spider",
+    "cr": 5
+  },
+  {
+    "name": "Rumpadump",
+    "cr": 0
+  },
+  {
+    "name": "Runara",
+    "cr": 13
+  },
+  {
+    "name": "Runed Behir",
+    "cr": 11
+  },
+  {
+    "name": "Runic Colossus",
+    "cr": 21
+  },
+  {
+    "name": "Rust Monster",
+    "cr": 0.5
+  },
+  {
+    "name": "Rutterkin",
+    "cr": 2
+  },
+  {
+    "name": "Ruxithid the Chosen",
+    "cr": 5
+  },
+  {
+    "name": "Rystia Zav",
+    "cr": 1
+  },
+  {
+    "name": "Saber-Toothed Tiger",
+    "cr": 2
+  },
+  {
+    "name": "Sabrina Kilgore (Levels 1-4)",
+    "cr": 0.125
+  },
+  {
+    "name": "Sabrina Kilgore (Levels 5-8)",
+    "cr": 0.5
+  },
+  {
+    "name": "Sabrina Kilgore (Levels 9-11)",
+    "cr": 3
+  },
+  {
+    "name": "Sacred Statue",
+    "cr": 10
+  },
+  {
+    "name": "Sacred Stone Monk",
+    "cr": 0.5
+  },
+  {
+    "name": "Saemon Havarian",
+    "cr": 10
+  },
+  {
+    "name": "Saeth Cromley",
+    "cr": 3
+  },
+  {
+    "name": "Sagacitous Erusaire",
+    "cr": 10
+  },
+  {
+    "name": "Sage",
+    "cr": 0.5
+  },
+  {
+    "name": "Sahuagin",
+    "cr": 0.5
+  },
+  {
+    "name": "Sahuagin Baron",
+    "cr": 5
+  },
+  {
+    "name": "Sahuagin Blademaster",
+    "cr": 6
+  },
+  {
+    "name": "Sahuagin Champion",
+    "cr": 3
+  },
+  {
+    "name": "Sahuagin Coral Smasher",
+    "cr": 1
+  },
+  {
+    "name": "Sahuagin Deep Diver",
+    "cr": 4
+  },
+  {
+    "name": "Sahuagin Hatchling Swarm",
+    "cr": 3
+  },
+  {
+    "name": "Sahuagin High Priestess",
+    "cr": 5
+  },
+  {
+    "name": "Sahuagin Priestess",
+    "cr": 2
+  },
+  {
+    "name": "Sahuagin Warlock of Uk'otoa",
+    "cr": 3
+  },
+  {
+    "name": "Sahuagin Wave Shaper",
+    "cr": 5
+  },
+  {
+    "name": "Sailback",
+    "cr": 5
+  },
+  {
+    "name": "Saint Gresha",
+    "cr": 6
+  },
+  {
+    "name": "Salamander",
+    "cr": 5
+  },
+  {
+    "name": "Saleeth the Couatl",
+    "cr": 4
+  },
+  {
+    "name": "Salida",
+    "cr": 1
+  },
+  {
+    "name": "Samara Strongbones",
+    "cr": 1
+  },
+  {
+    "name": "Samira Arah",
+    "cr": 1
+  },
+  {
+    "name": "Sanbalet",
+    "cr": 1
+  },
+  {
+    "name": "Sandesyl Morgia",
+    "cr": 13
+  },
+  {
+    "name": "Sandwurm",
+    "cr": 15
+  },
+  {
+    "name": "Sangzor",
+    "cr": 1
+  },
+  {
+    "name": "Sapphire Dragon Wyrmling",
+    "cr": 3
+  },
+  {
+    "name": "Sapphire Greatwyrm",
+    "cr": 26
+  },
+  {
+    "name": "Sapphire Sentinel",
+    "cr": 10
+  },
+  {
+    "name": "Sarevok",
+    "cr": 15
+  },
+  {
+    "name": "Sarith Kzekarit",
+    "cr": 0.25
+  },
+  {
+    "name": "Sarlamir",
+    "cr": 7
+  },
+  {
+    "name": "Satyr",
+    "cr": 0.5
+  },
+  {
+    "name": "Satyr Reveler",
+    "cr": 1
+  },
+  {
+    "name": "Satyr Thornbearer",
+    "cr": 2
+  },
+  {
+    "name": "Sauriv",
+    "cr": 0.125
+  },
+  {
+    "name": "Savid",
+    "cr": 0.5
+  },
+  {
+    "name": "Scaladar",
+    "cr": 8
+  },
+  {
+    "name": "Scanlan Shorthalt",
+    "cr": 15
+  },
+  {
+    "name": "Scarecrow",
+    "cr": 1
+  },
+  {
+    "name": "Scholarly Agent",
+    "cr": 1
+  },
+  {
+    "name": "Scholarly Excavator",
+    "cr": 3
+  },
+  {
+    "name": "Scholarly Mastermind",
+    "cr": 5
+  },
+  {
+    "name": "Scion of Grolantor",
+    "cr": 22
+  },
+  {
+    "name": "Scion of Memnor",
+    "cr": 26
+  },
+  {
+    "name": "Scion of Skoraeus",
+    "cr": 23
+  },
+  {
+    "name": "Scion of Stronmaus",
+    "cr": 27
+  },
+  {
+    "name": "Scion of Surtur",
+    "cr": 25
+  },
+  {
+    "name": "Scion of Thrym",
+    "cr": 24
+  },
+  {
+    "name": "Scorchbringer Guard",
+    "cr": 0.5
+  },
+  {
+    "name": "Scorpion",
+    "cr": 0
+  },
+  {
+    "name": "Scoundrel",
+    "cr": 3
+  },
+  {
+    "name": "Scout",
+    "cr": 0.5
+  },
+  {
+    "name": "Scrag",
+    "cr": 5
+  },
+  {
+    "name": "Scrapper",
+    "cr": 8
+  },
+  {
+    "name": "Scream Thief",
+    "cr": 3
+  },
+  {
+    "name": "Screaming Devilkin",
+    "cr": 1
+  },
+  {
+    "name": "Scribble",
+    "cr": 1
+  },
+  {
+    "name": "Scufflecup Teacup",
+    "cr": 0
+  },
+  {
+    "name": "Scuttling Serpentmaw",
+    "cr": 4
+  },
+  {
+    "name": "Sea Drake",
+    "cr": 2
+  },
+  {
+    "name": "Sea Elf",
+    "cr": 0.125
+  },
+  {
+    "name": "Sea Elf Scout",
+    "cr": 0.5
+  },
+  {
+    "name": "Sea Fury",
+    "cr": 12
+  },
+  {
+    "name": "Sea Hag",
+    "cr": 2
+  },
+  {
+    "name": "Sea Horse",
+    "cr": 0
+  },
+  {
+    "name": "Sea Lion",
+    "cr": 5
+  },
+  {
+    "name": "Sea Spawn",
+    "cr": 1
+  },
+  {
+    "name": "Seal",
+    "cr": 0
+  },
+  {
+    "name": "Sekelok",
+    "cr": 9
+  },
+  {
+    "name": "Selenelion Twin",
+    "cr": 2
+  },
+  {
+    "name": "Sentient Gray Ooze",
+    "cr": 0.5
+  },
+  {
+    "name": "Sentient Ochre Jelly",
+    "cr": 2
+  },
+  {
+    "name": "Seodra",
+    "cr": 0.125
+  },
+  {
+    "name": "Sephek Kaltro",
+    "cr": 3
+  },
+  {
+    "name": "Septon Modron",
+    "cr": 12
+  },
+  {
+    "name": "Serapio",
+    "cr": 5
+  },
+  {
+    "name": "Sergeant",
+    "cr": 0.125
+  },
+  {
+    "name": "Serpopard",
+    "cr": 3
+  },
+  {
+    "name": "Serra Angel",
+    "cr": 10
+  },
+  {
+    "name": "Servitor Thrull",
+    "cr": 0.25
+  },
+  {
+    "name": "Servo",
+    "cr": 0
+  },
+  {
+    "name": "Setessan Hoplite",
+    "cr": 4
+  },
+  {
+    "name": "Seth the Shapeshifting Dragon",
+    "cr": 10
+  },
+  {
+    "name": "Severin",
+    "cr": 11
+  },
+  {
+    "name": "Sewer King",
+    "cr": 2
+  },
+  {
+    "name": "Shadar-kai Gloom Weaver",
+    "cr": 9
+  },
+  {
+    "name": "Shadar-kai Shadow Dancer",
+    "cr": 7
+  },
+  {
+    "name": "Shadar-kai Soul Monger",
+    "cr": 11
+  },
+  {
+    "name": "Shade",
+    "cr": 0.5
+  },
+  {
+    "name": "Shadow",
+    "cr": 0.5
+  },
+  {
+    "name": "Shadow Assassin",
+    "cr": 9
+  },
+  {
+    "name": "Shadow Dancer",
+    "cr": 7
+  },
+  {
+    "name": "Shadow Demon",
+    "cr": 4
+  },
+  {
+    "name": "Shadow Horror",
+    "cr": 9
+  },
+  {
+    "name": "Shadow Mastiff",
+    "cr": 2
+  },
+  {
+    "name": "Shadow Mastiff Alpha",
+    "cr": 3
+  },
+  {
+    "name": "Shadow Spirit",
+    "cr": 3
+  },
+  {
+    "name": "Shadowghast",
+    "cr": 5
+  },
+  {
+    "name": "Shadowsteel Ghast",
+    "cr": 7
+  },
+  {
+    "name": "Shadowsteel Ghoul",
+    "cr": 4
+  },
+  {
+    "name": "Shadrix Silverquill",
+    "cr": 22
+  },
+  {
+    "name": "Shago",
+    "cr": 5
+  },
+  {
+    "name": "Shalai",
+    "cr": 21
+  },
+  {
+    "name": "Shaldoor",
+    "cr": 13
+  },
+  {
+    "name": "Shalendra Floshin",
+    "cr": 3
+  },
+  {
+    "name": "Shalfi Lewin",
+    "cr": 8
+  },
+  {
+    "name": "Shambling Mound",
+    "cr": 5
+  },
+  {
+    "name": "Shambling Mound Totem Elemental",
+    "cr": 5
+  },
+  {
+    "name": "Shapechanged Roper",
+    "cr": 5
+  },
+  {
+    "name": "Shard Shunner",
+    "cr": 2
+  },
+  {
+    "name": "Sharda",
+    "cr": 2
+  },
+  {
+    "name": "Shariel",
+    "cr": 10
+  },
+  {
+    "name": "Sharkbody Abomination",
+    "cr": 2
+  },
+  {
+    "name": "Sharwyn Hucrele",
+    "cr": 0.5
+  },
+  {
+    "name": "Shator Demodand",
+    "cr": 16
+  },
+  {
+    "name": "Shatter Corpse",
+    "cr": 1
+  },
+  {
+    "name": "Shatterskull Giant",
+    "cr": 7
+  },
+  {
+    "name": "Shedrak of the Eyes",
+    "cr": 6
+  },
+  {
+    "name": "Sheep",
+    "cr": 0
+  },
+  {
+    "name": "Sheldon the Blueberry Dragon",
+    "cr": 7
+  },
+  {
+    "name": "Shell Shark",
+    "cr": 2
+  },
+  {
+    "name": "Shemeshka",
+    "cr": 14
+  },
+  {
+    "name": "Shemshime",
+    "cr": 4
+  },
+  {
+    "name": "Shield Dwarf Guard",
+    "cr": 0.125
+  },
+  {
+    "name": "Shield Dwarf Noble",
+    "cr": 0.125
+  },
+  {
+    "name": "Shield Guardian",
+    "cr": 7
+  },
+  {
+    "name": "Shieldhead",
+    "cr": 0.5
+  },
+  {
+    "name": "Shifter",
+    "cr": 0.5
+  },
+  {
+    "name": "Shira",
+    "cr": 0
+  },
+  {
+    "name": "Shoal Serpent",
+    "cr": 2
+  },
+  {
+    "name": "Shoalar Quanderil",
+    "cr": 4
+  },
+  {
+    "name": "Shockerstomper",
+    "cr": 14
+  },
+  {
+    "name": "Sholeh",
+    "cr": 20
+  },
+  {
+    "name": "Shoosuva",
+    "cr": 8
+  },
+  {
+    "name": "Shredwing",
+    "cr": 12
+  },
+  {
+    "name": "Shrieker",
+    "cr": 0
+  },
+  {
+    "name": "Shunn Shurreth",
+    "cr": 5
+  },
+  {
+    "name": "Shuushar the Awakened",
+    "cr": 0.25
+  },
+  {
+    "name": "Sibriex",
+    "cr": 18
+  },
+  {
+    "name": "Sigarda",
+    "cr": 16
+  },
+  {
+    "name": "Sildar Hallwinter",
+    "cr": 1
+  },
+  {
+    "name": "Silver Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "Silver Greatwyrm",
+    "cr": 28
+  },
+  {
+    "name": "Silverquill Apprentice",
+    "cr": 2
+  },
+  {
+    "name": "Silverquill Pledgemage",
+    "cr": 4
+  },
+  {
+    "name": "Silverquill Professor of Radiance",
+    "cr": 7
+  },
+  {
+    "name": "Silverquill Professor of Shadow",
+    "cr": 7
+  },
+  {
+    "name": "Simic Merfolk",
+    "cr": 0.125
+  },
+  {
+    "name": "Simon Aumar",
+    "cr": 5
+  },
+  {
+    "name": "Sinensa",
+    "cr": 2
+  },
+  {
+    "name": "Sing-Along",
+    "cr": 0
+  },
+  {
+    "name": "Sir Braford",
+    "cr": 0.5
+  },
+  {
+    "name": "Sir Godfrey Gwilym",
+    "cr": 6
+  },
+  {
+    "name": "Sir Jared",
+    "cr": 5
+  },
+  {
+    "name": "Sir Talavar",
+    "cr": 2
+  },
+  {
+    "name": "Sir Ursas",
+    "cr": 5
+  },
+  {
+    "name": "Sire of Insanity",
+    "cr": 12
+  },
+  {
+    "name": "Siren",
+    "cr": 3
+  },
+  {
+    "name": "Sirene",
+    "cr": 3
+  },
+  {
+    "name": "Sitri Cat",
+    "cr": 0
+  },
+  {
+    "name": "Sivak Draconian",
+    "cr": 4
+  },
+  {
+    "name": "Skaab",
+    "cr": 5
+  },
+  {
+    "name": "Skabatha Nightshade",
+    "cr": 8
+  },
+  {
+    "name": "Skavenslave",
+    "cr": 0.25
+  },
+  {
+    "name": "Skeemo Weirdbottle",
+    "cr": 6
+  },
+  {
+    "name": "Skeletal Alchemist",
+    "cr": 0.5
+  },
+  {
+    "name": "Skeletal Bloodfin",
+    "cr": 9
+  },
+  {
+    "name": "Skeletal Giant Owl",
+    "cr": 0.25
+  },
+  {
+    "name": "Skeletal Juggernaut",
+    "cr": 5
+  },
+  {
+    "name": "Skeletal Knight",
+    "cr": 7
+  },
+  {
+    "name": "Skeletal Owlbear",
+    "cr": 3
+  },
+  {
+    "name": "Skeletal Polar Bear",
+    "cr": 2
+  },
+  {
+    "name": "Skeletal Rats",
+    "cr": 0.25
+  },
+  {
+    "name": "Skeletal Riding Horse",
+    "cr": 0.25
+  },
+  {
+    "name": "Skeletal Swarm",
+    "cr": 2
+  },
+  {
+    "name": "Skeletal Two-Headed Owlbear",
+    "cr": 3
+  },
+  {
+    "name": "Skeleton",
+    "cr": 0.25
+  },
+  {
+    "name": "Skeleton Cannoneer",
+    "cr": 2
+  },
+  {
+    "name": "Skeleton Commander",
+    "cr": 3
+  },
+  {
+    "name": "Skeleton Key",
+    "cr": 0.25
+  },
+  {
+    "name": "Skeleton Lord",
+    "cr": 9
+  },
+  {
+    "name": "Skeleton Rifler",
+    "cr": 0.5
+  },
+  {
+    "name": "Skeleton Warrior",
+    "cr": 5
+  },
+  {
+    "name": "Sken Zabriss",
+    "cr": 1
+  },
+  {
+    "name": "Skinweaver",
+    "cr": 3
+  },
+  {
+    "name": "Skittering Horror",
+    "cr": 15
+  },
+  {
+    "name": "Skitterwidget",
+    "cr": 5
+  },
+  {
+    "name": "Skr'a S'orsk",
+    "cr": 2
+  },
+  {
+    "name": "Skriss",
+    "cr": 0.25
+  },
+  {
+    "name": "Skulk",
+    "cr": 0.5
+  },
+  {
+    "name": "Skull Flier",
+    "cr": 0.5
+  },
+  {
+    "name": "Skull Lasher of Myrkul",
+    "cr": 1
+  },
+  {
+    "name": "Skull Lord",
+    "cr": 15
+  },
+  {
+    "name": "Skum",
+    "cr": 5
+  },
+  {
+    "name": "Sky Drake",
+    "cr": 4
+  },
+  {
+    "name": "Sky Leviathan",
+    "cr": 10
+  },
+  {
+    "name": "Sky Whale",
+    "cr": 5
+  },
+  {
+    "name": "Skyjek Roc",
+    "cr": 2
+  },
+  {
+    "name": "Skylla",
+    "cr": 2
+  },
+  {
+    "name": "Skyswimmer",
+    "cr": 13
+  },
+  {
+    "name": "Skyweaver",
+    "cr": 3
+  },
+  {
+    "name": "Slaad Tadpole",
+    "cr": 0.125
+  },
+  {
+    "name": "Sladis Vadir",
+    "cr": 2
+  },
+  {
+    "name": "Slarkrethel",
+    "cr": 25
+  },
+  {
+    "name": "Slayer",
+    "cr": 12
+  },
+  {
+    "name": "Sled Dog",
+    "cr": 0.25
+  },
+  {
+    "name": "Slithering Bloodfin",
+    "cr": 9
+  },
+  {
+    "name": "Slithering Tracker",
+    "cr": 3
+  },
+  {
+    "name": "Sloopidoop",
+    "cr": 6
+  },
+  {
+    "name": "Sloth Galloper",
+    "cr": 1
+  },
+  {
+    "name": "Sludge Hag",
+    "cr": 3
+  },
+  {
+    "name": "Slurmy",
+    "cr": 0.125
+  },
+  {
+    "name": "Small Drake",
+    "cr": 0.25
+  },
+  {
+    "name": "Smiler the Defiler",
+    "cr": 7
+  },
+  {
+    "name": "Smoke Mephit",
+    "cr": 0.25
+  },
+  {
+    "name": "Snake Horror",
+    "cr": 4
+  },
+  {
+    "name": "Snapjaw",
+    "cr": 5
+  },
+  {
+    "name": "Snapping Hydra",
+    "cr": 11
+  },
+  {
+    "name": "Snarla",
+    "cr": 5
+  },
+  {
+    "name": "Sneak",
+    "cr": 0.125
+  },
+  {
+    "name": "Snow Golem",
+    "cr": 3
+  },
+  {
+    "name": "Snow Leopard",
+    "cr": 1
+  },
+  {
+    "name": "Snow Maiden",
+    "cr": 1
+  },
+  {
+    "name": "Snowy Owlbear",
+    "cr": 3
+  },
+  {
+    "name": "Snurrevin",
+    "cr": 2
+  },
+  {
+    "name": "Society of Sensation Muse",
+    "cr": 3
+  },
+  {
+    "name": "Sofina",
+    "cr": 15
+  },
+  {
+    "name": "Solar",
+    "cr": 21
+  },
+  {
+    "name": "Solar Bastion Knight",
+    "cr": 9
+  },
+  {
+    "name": "Solar Dragon Wyrmling",
+    "cr": 3
+  },
+  {
+    "name": "Soldier",
+    "cr": 0.5
+  },
+  {
+    "name": "Soluun Xibrindas",
+    "cr": 4
+  },
+  {
+    "name": "Sorrowfish",
+    "cr": 0
+  },
+  {
+    "name": "Soul Monger",
+    "cr": 11
+  },
+  {
+    "name": "Soul Shaker",
+    "cr": 4
+  },
+  {
+    "name": "Soulstinger Demon",
+    "cr": 9
+  },
+  {
+    "name": "Sovereign Basidia",
+    "cr": 2
+  },
+  {
+    "name": "Space Clown",
+    "cr": 2
+  },
+  {
+    "name": "Space Eel",
+    "cr": 0.5
+  },
+  {
+    "name": "Space Guppy",
+    "cr": 0
+  },
+  {
+    "name": "Space Hamster",
+    "cr": 0
+  },
+  {
+    "name": "Space Mollymawk",
+    "cr": 0
+  },
+  {
+    "name": "Space Swine",
+    "cr": 0.25
+  },
+  {
+    "name": "Spawn of Kyuss",
+    "cr": 5
+  },
+  {
+    "name": "Spectator",
+    "cr": 3
+  },
+  {
+    "name": "Specter",
+    "cr": 1
+  },
+  {
+    "name": "Specter of Night",
+    "cr": 12
+  },
+  {
+    "name": "Spectral Cloud",
+    "cr": 13
+  },
+  {
+    "name": "Spellcaster",
+    "cr": 0.5
+  },
+  {
+    "name": "Spellcaster (Healer)",
+    "cr": 2
+  },
+  {
+    "name": "Spellcaster (Mage)",
+    "cr": 2
+  },
+  {
+    "name": "Spellix Romwod",
+    "cr": 0.5
+  },
+  {
+    "name": "Sperm Whale",
+    "cr": 8
+  },
+  {
+    "name": "Sphinx (Type 1)",
+    "cr": 17
+  },
+  {
+    "name": "Sphinx (Type 2)",
+    "cr": 11
+  },
+  {
+    "name": "Sphinx of Judgment",
+    "cr": 11
+  },
+  {
+    "name": "Spider",
+    "cr": 0
+  },
+  {
+    "name": "Spider King",
+    "cr": 1
+  },
+  {
+    "name": "Spiderbait",
+    "cr": 0.25
+  },
+  {
+    "name": "Spiderfrog",
+    "cr": 0.25
+  },
+  {
+    "name": "Spiked Tomb Guardian",
+    "cr": 6
+  },
+  {
+    "name": "Spined Devil",
+    "cr": 2
+  },
+  {
+    "name": "Spirit",
+    "cr": 4
+  },
+  {
+    "name": "Spirit Naga",
+    "cr": 8
+  },
+  {
+    "name": "Spirit Statue Mascot",
+    "cr": 0.25
+  },
+  {
+    "name": "Spirit Troll",
+    "cr": 11
+  },
+  {
+    "name": "Spitting Mimic",
+    "cr": 5
+  },
+  {
+    "name": "Splugoth the Returned",
+    "cr": 2
+  },
+  {
+    "name": "Spore Servant Octopus",
+    "cr": 1
+  },
+  {
+    "name": "Spotted Lion",
+    "cr": 3
+  },
+  {
+    "name": "Spring Eladrin",
+    "cr": 10
+  },
+  {
+    "name": "Sprite",
+    "cr": 0.25
+  },
+  {
+    "name": "Spy",
+    "cr": 1
+  },
+  {
+    "name": "Spythronar Sac",
+    "cr": 0
+  },
+  {
+    "name": "Spythronar Swarm",
+    "cr": 2
+  },
+  {
+    "name": "Spythronar Web",
+    "cr": 2
+  },
+  {
+    "name": "Squiddly",
+    "cr": 0
+  },
+  {
+    "name": "Squire",
+    "cr": 0.25
+  },
+  {
+    "name": "Squirt the Oilcan",
+    "cr": 0.25
+  },
+  {
+    "name": "Ssendam, Lord of Madness",
+    "cr": 23
+  },
+  {
+    "name": "Ssurran Defiler",
+    "cr": 3
+  },
+  {
+    "name": "Ssurran Poisoner",
+    "cr": 0.5
+  },
+  {
+    "name": "Stalagma Steelshadow",
+    "cr": 16
+  },
+  {
+    "name": "Stalker of Baphomet",
+    "cr": 12
+  },
+  {
+    "name": "Stanimir",
+    "cr": 6
+  },
+  {
+    "name": "Star Lancer",
+    "cr": 2
+  },
+  {
+    "name": "Star Spawn Grue",
+    "cr": 0.25
+  },
+  {
+    "name": "Star Spawn Hulk",
+    "cr": 10
+  },
+  {
+    "name": "Star Spawn Larva Mage",
+    "cr": 16
+  },
+  {
+    "name": "Star Spawn Mangler",
+    "cr": 5
+  },
+  {
+    "name": "Star Spawn Seer",
+    "cr": 13
+  },
+  {
+    "name": "Starlight Apparition",
+    "cr": 5
+  },
+  {
+    "name": "Statue of Talos",
+    "cr": 10
+  },
+  {
+    "name": "Statue of Vergadain",
+    "cr": 10
+  },
+  {
+    "name": "Steam Mephit",
+    "cr": 0.25
+  },
+  {
+    "name": "Steel Crane",
+    "cr": 8
+  },
+  {
+    "name": "Steel Leaf Kavu",
+    "cr": 4
+  },
+  {
+    "name": "Steel Predator",
+    "cr": 16
+  },
+  {
+    "name": "Stegosaurus",
+    "cr": 4
+  },
+  {
+    "name": "Stella Wachter",
+    "cr": 0
+  },
+  {
+    "name": "Stench Kow",
+    "cr": 0.25
+  },
+  {
+    "name": "Stirge",
+    "cr": 0.125
+  },
+  {
+    "name": "Stolos",
+    "cr": 6
+  },
+  {
+    "name": "Stomping Foot",
+    "cr": 0
+  },
+  {
+    "name": "Stone Cursed",
+    "cr": 1
+  },
+  {
+    "name": "Stone Defender",
+    "cr": 4
+  },
+  {
+    "name": "Stone Dragon Statue",
+    "cr": 10
+  },
+  {
+    "name": "Stone Giant",
+    "cr": 7
+  },
+  {
+    "name": "Stone Giant Dreamwalker",
+    "cr": 10
+  },
+  {
+    "name": "Stone Giant Rockspeaker",
+    "cr": 16
+  },
+  {
+    "name": "Stone Giant Statue",
+    "cr": 0
+  },
+  {
+    "name": "Stone Giant of Evil Earth",
+    "cr": 9
+  },
+  {
+    "name": "Stone Golem",
+    "cr": 10
+  },
+  {
+    "name": "Stone Guardian (Animated Armor)",
+    "cr": 1
+  },
+  {
+    "name": "Stone Guardian (Helmed Horror)",
+    "cr": 4
+  },
+  {
+    "name": "Stone Guardian (Shield Guardian)",
+    "cr": 7
+  },
+  {
+    "name": "Stone Guardian (Stone Golem)",
+    "cr": 10
+  },
+  {
+    "name": "Stone Juggernaut",
+    "cr": 12
+  },
+  {
+    "name": "Stone Warrior",
+    "cr": 4
+  },
+  {
+    "name": "Stonecloak",
+    "cr": 10
+  },
+  {
+    "name": "Stonemelder",
+    "cr": 4
+  },
+  {
+    "name": "Stool",
+    "cr": 0
+  },
+  {
+    "name": "Storm Crab",
+    "cr": 11
+  },
+  {
+    "name": "Storm Giant",
+    "cr": 13
+  },
+  {
+    "name": "Storm Giant Quintessent",
+    "cr": 16
+  },
+  {
+    "name": "Storm Giant Skeleton",
+    "cr": 16
+  },
+  {
+    "name": "Storm Giant Tempest Caller",
+    "cr": 20
+  },
+  {
+    "name": "Storm Herald",
+    "cr": 17
+  },
+  {
+    "name": "Stormborn Ithjar",
+    "cr": 9
+  },
+  {
+    "name": "Stormvermin",
+    "cr": 2
+  },
+  {
+    "name": "Strahd Zombie",
+    "cr": 1
+  },
+  {
+    "name": "Strahd von Zarovich",
+    "cr": 15
+  },
+  {
+    "name": "Strahd's Animated Armor",
+    "cr": 6
+  },
+  {
+    "name": "Strefan Maurer",
+    "cr": 15
+  },
+  {
+    "name": "Strigoi",
+    "cr": 4
+  },
+  {
+    "name": "Strixhaven Campus Guide",
+    "cr": 1
+  },
+  {
+    "name": "Strongheart",
+    "cr": 4
+  },
+  {
+    "name": "Styx Dragon",
+    "cr": 20
+  },
+  {
+    "name": "Su-monster",
+    "cr": 1
+  },
+  {
+    "name": "Succubus",
+    "cr": 4
+  },
+  {
+    "name": "Sul Khatesh",
+    "cr": 28
+  },
+  {
+    "name": "Suldil Baldoriel",
+    "cr": 10
+  },
+  {
+    "name": "Summer Eladrin",
+    "cr": 10
+  },
+  {
+    "name": "Sunbird",
+    "cr": 13
+  },
+  {
+    "name": "Sunder Shaman",
+    "cr": 10
+  },
+  {
+    "name": "Sundeth",
+    "cr": 9
+  },
+  {
+    "name": "Sunfly",
+    "cr": 0
+  },
+  {
+    "name": "Surrakar",
+    "cr": 0.5
+  },
+  {
+    "name": "Svirfneblin Wererat",
+    "cr": 2
+  },
+  {
+    "name": "swallybog gillwrangler",
+    "cr": 6
+  },
+  {
+    "name": "swallybog sharpfin",
+    "cr": 3
+  },
+  {
+    "name": "swallybog",
+    "cr": 0.5
+  },
+  {
+    "name": "Swarm of Animated Books",
+    "cr": 0.25
+  },
+  {
+    "name": "Swarm of Bats",
+    "cr": 0.25
+  },
+  {
+    "name": "Swarm of Beetles",
+    "cr": 0.5
+  },
+  {
+    "name": "Swarm of Books",
+    "cr": 0.25
+  },
+  {
+    "name": "Swarm of Campestris",
+    "cr": 1
+  },
+  {
+    "name": "Swarm of Centipedes",
+    "cr": 0.5
+  },
+  {
+    "name": "Swarm of Cranium Rats",
+    "cr": 5
+  },
+  {
+    "name": "Swarm of Gremishkas",
+    "cr": 2
+  },
+  {
+    "name": "Swarm of Hoard Scarabs",
+    "cr": 2
+  },
+  {
+    "name": "Swarm of Insects",
+    "cr": 0.5
+  },
+  {
+    "name": "Swarm of Maggots",
+    "cr": 2
+  },
+  {
+    "name": "Swarm of Mechanical Spiders",
+    "cr": 0.5
+  },
+  {
+    "name": "Swarm of Piranhas",
+    "cr": 1
+  },
+  {
+    "name": "Swarm of Poisonous Snakes",
+    "cr": 2
+  },
+  {
+    "name": "Swarm of Quippers",
+    "cr": 1
+  },
+  {
+    "name": "Swarm of Rats",
+    "cr": 0.25
+  },
+  {
+    "name": "Swarm of Ravens",
+    "cr": 0.25
+  },
+  {
+    "name": "Swarm of Rot Grubs",
+    "cr": 0.5
+  },
+  {
+    "name": "Swarm of Scarabs",
+    "cr": 3
+  },
+  {
+    "name": "Swarm of Sorrowfish",
+    "cr": 6
+  },
+  {
+    "name": "Swarm of Spiders",
+    "cr": 0.5
+  },
+  {
+    "name": "Swarm of Sunflies",
+    "cr": 1
+  },
+  {
+    "name": "Swarm of Undead Snakes",
+    "cr": 2
+  },
+  {
+    "name": "Swarm of Wasps",
+    "cr": 0.5
+  },
+  {
+    "name": "Swarm of Zombie Limbs",
+    "cr": 1
+  },
+  {
+    "name": "Swashbuckler",
+    "cr": 3
+  },
+  {
+    "name": "Swavain Basilisk",
+    "cr": 7
+  },
+  {
+    "name": "Sweettooth Horror",
+    "cr": 4
+  },
+  {
+    "name": "Sword Spider",
+    "cr": 3
+  },
+  {
+    "name": "Sword Wraith Commander",
+    "cr": 8
+  },
+  {
+    "name": "Sword Wraith Warrior",
+    "cr": 3
+  },
+  {
+    "name": "Sylgar",
+    "cr": 0
+  },
+  {
+    "name": "Sylvira Savikas",
+    "cr": 12
+  },
+  {
+    "name": "Syndra Silvane",
+    "cr": 12
+  },
+  {
+    "name": "Sythian Skalderang",
+    "cr": 7
+  },
+  {
+    "name": "Szoldar Szoldarovich",
+    "cr": 0.5
+  },
+  {
+    "name": "Tabaxi Hunter",
+    "cr": 1
+  },
+  {
+    "name": "Tabaxi Minstrel",
+    "cr": 0.25
+  },
+  {
+    "name": "Talis the White",
+    "cr": 5
+  },
+  {
+    "name": "Talon Beast",
+    "cr": 7
+  },
+  {
+    "name": "Tanarukk",
+    "cr": 5
+  },
+  {
+    "name": "Tanazir Quandrix",
+    "cr": 24
+  },
+  {
+    "name": "Tarak",
+    "cr": 1
+  },
+  {
+    "name": "Tarkanan Assassin",
+    "cr": 2
+  },
+  {
+    "name": "Tarnhem",
+    "cr": 19
+  },
+  {
+    "name": "Tarrasque",
+    "cr": 30
+  },
+  {
+    "name": "Tartha",
+    "cr": 9
+  },
+  {
+    "name": "Tarul Var",
+    "cr": 13
+  },
+  {
+    "name": "Taryon Darrington",
+    "cr": 9
+  },
+  {
+    "name": "Tashlyn Yafeera",
+    "cr": 9
+  },
+  {
+    "name": "Tasloi",
+    "cr": 0.25
+  },
+  {
+    "name": "Tasloi Sniper",
+    "cr": 1
+  },
+  {
+    "name": "Tatina Rookledust",
+    "cr": 0.25
+  },
+  {
+    "name": "Tau",
+    "cr": 2
+  },
+  {
+    "name": "Tecuziztecatl",
+    "cr": 4
+  },
+  {
+    "name": "Telepathic Pentacle",
+    "cr": 8
+  },
+  {
+    "name": "Tem Temble",
+    "cr": 0.25
+  },
+  {
+    "name": "Tempest Hart",
+    "cr": 11
+  },
+  {
+    "name": "Tempest Spirit",
+    "cr": 15
+  },
+  {
+    "name": "Terastodon",
+    "cr": 6
+  },
+  {
+    "name": "Terenzio Cassalanter",
+    "cr": 0
+  },
+  {
+    "name": "Terra Stomper",
+    "cr": 8
+  },
+  {
+    "name": "Terracotta Warrior",
+    "cr": 1
+  },
+  {
+    "name": "Thane Kayalithica",
+    "cr": 7
+  },
+  {
+    "name": "Thanoi Hunter",
+    "cr": 1
+  },
+  {
+    "name": "Thavius Kreeg",
+    "cr": 0.5
+  },
+  {
+    "name": "Thayan Apprentice",
+    "cr": 2
+  },
+  {
+    "name": "Thayan Warrior",
+    "cr": 2
+  },
+  {
+    "name": "The Abbot",
+    "cr": 10
+  },
+  {
+    "name": "The Angry",
+    "cr": 13
+  },
+  {
+    "name": "The Bagman",
+    "cr": 5
+  },
+  {
+    "name": "The Hungry",
+    "cr": 11
+  },
+  {
+    "name": "The Keeper",
+    "cr": 7
+  },
+  {
+    "name": "The Lonely",
+    "cr": 9
+  },
+  {
+    "name": "The Lord of Blades",
+    "cr": 18
+  },
+  {
+    "name": "The Lost",
+    "cr": 7
+  },
+  {
+    "name": "The Mad Mage of Mount Baratok",
+    "cr": 12
+  },
+  {
+    "name": "The Pudding King",
+    "cr": 4
+  },
+  {
+    "name": "The Stranger",
+    "cr": 12
+  },
+  {
+    "name": "The Weevil",
+    "cr": 2
+  },
+  {
+    "name": "The Wretched",
+    "cr": 0.25
+  },
+  {
+    "name": "Themberchaud",
+    "cr": 17
+  },
+  {
+    "name": "Theran Chimera",
+    "cr": 7
+  },
+  {
+    "name": "Therzt",
+    "cr": 0
+  },
+  {
+    "name": "Thessalar",
+    "cr": 12
+  },
+  {
+    "name": "Thessalar's Homunculus",
+    "cr": 0
+  },
+  {
+    "name": "Thessalheart Construct",
+    "cr": 0
+  },
+  {
+    "name": "Thessalkraken",
+    "cr": 14
+  },
+  {
+    "name": "Thinnings",
+    "cr": 1
+  },
+  {
+    "name": "Tholtz Daggerdark",
+    "cr": 12
+  },
+  {
+    "name": "Thomas T. Toad",
+    "cr": 2
+  },
+  {
+    "name": "Thopter (Bat)",
+    "cr": 0
+  },
+  {
+    "name": "Thopter (Blood Hawk)",
+    "cr": 0.125
+  },
+  {
+    "name": "Thopter (Eagle)",
+    "cr": 0
+  },
+  {
+    "name": "Thopter (Hawk)",
+    "cr": 0
+  },
+  {
+    "name": "Thopter (Owl)",
+    "cr": 0
+  },
+  {
+    "name": "Thopter (Pseudodragon)",
+    "cr": 0.25
+  },
+  {
+    "name": "Thopter (Raven)",
+    "cr": 0
+  },
+  {
+    "name": "Thopter (Vulture)",
+    "cr": 0
+  },
+  {
+    "name": "Thorn Slinger",
+    "cr": 0.5
+  },
+  {
+    "name": "Thornlamm",
+    "cr": 0.25
+  },
+  {
+    "name": "Thorny",
+    "cr": 1
+  },
+  {
+    "name": "Thorny Vegepygmy",
+    "cr": 1
+  },
+  {
+    "name": "Thorvin Twinbeard",
+    "cr": 0
+  },
+  {
+    "name": "Thought Spy",
+    "cr": 1
+  },
+  {
+    "name": "Thousand Teeth",
+    "cr": 6
+  },
+  {
+    "name": "Thrakkus",
+    "cr": 2
+  },
+  {
+    "name": "Three Earrings",
+    "cr": 2
+  },
+  {
+    "name": "Thri-kreen",
+    "cr": 1
+  },
+  {
+    "name": "Thri-kreen Gladiator",
+    "cr": 7
+  },
+  {
+    "name": "Thri-kreen Hunter",
+    "cr": 2
+  },
+  {
+    "name": "Thri-kreen Mystic",
+    "cr": 5
+  },
+  {
+    "name": "Thug",
+    "cr": 0.5
+  },
+  {
+    "name": "Thunderbeast Skeleton",
+    "cr": 3
+  },
+  {
+    "name": "Thurl Merosska",
+    "cr": 3
+  },
+  {
+    "name": "Thurstwell Vanthampur",
+    "cr": 0.125
+  },
+  {
+    "name": "Thwad Underbrew",
+    "cr": 9
+  },
+  {
+    "name": "Tiamat",
+    "cr": 30
+  },
+  {
+    "name": "Tiax",
+    "cr": 9
+  },
+  {
+    "name": "Tiberius Inuus",
+    "cr": 9
+  },
+  {
+    "name": "Tiefling Acrobat",
+    "cr": 0
+  },
+  {
+    "name": "Tiefling Muralist",
+    "cr": 0.125
+  },
+  {
+    "name": "Tiger",
+    "cr": 1
+  },
+  {
+    "name": "Timbermaw",
+    "cr": 2
+  },
+  {
+    "name": "Time Dragon Wyrmling",
+    "cr": 5
+  },
+  {
+    "name": "Tin Soldier",
+    "cr": 1
+  },
+  {
+    "name": "Tiny Servant",
+    "cr": 0.25
+  },
+  {
+    "name": "Tissina Khyret",
+    "cr": 2
+  },
+  {
+    "name": "Titanothere",
+    "cr": 5
+  },
+  {
+    "name": "Titivilus",
+    "cr": 16
+  },
+  {
+    "name": "Tixie Tockworth",
+    "cr": 7
+  },
+  {
+    "name": "Tixie's Shield Guardian",
+    "cr": 7
+  },
+  {
+    "name": "Tlacatecolo",
+    "cr": 5
+  },
+  {
+    "name": "Tlexolotl",
+    "cr": 10
+  },
+  {
+    "name": "Tlincalli",
+    "cr": 5
+  },
+  {
+    "name": "Tloques-Popolocas",
+    "cr": 5
+  },
+  {
+    "name": "Tomb Dwarf",
+    "cr": 3
+  },
+  {
+    "name": "Tomb Guardian",
+    "cr": 5
+  },
+  {
+    "name": "Tomb Tapper",
+    "cr": 10
+  },
+  {
+    "name": "Tommy Two-Butts",
+    "cr": 1
+  },
+  {
+    "name": "Tonalli",
+    "cr": 2
+  },
+  {
+    "name": "Tooth-N-Claw",
+    "cr": 3
+  },
+  {
+    "name": "Topaz Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "Topaz Greatwyrm",
+    "cr": 26
+  },
+  {
+    "name": "Topi",
+    "cr": 0.5
+  },
+  {
+    "name": "Topolah",
+    "cr": 6
+  },
+  {
+    "name": "Topsy",
+    "cr": 2
+  },
+  {
+    "name": "Torbit",
+    "cr": 8
+  },
+  {
+    "name": "Torcheater",
+    "cr": 0
+  },
+  {
+    "name": "Torgja Stonecrusher (Levels 1-4)",
+    "cr": 0.125
+  },
+  {
+    "name": "Torgja Stonecrusher (Levels 5-8)",
+    "cr": 0.5
+  },
+  {
+    "name": "Torgja Stonecrusher (Levels 9-11)",
+    "cr": 3
+  },
+  {
+    "name": "Torlin Silvershield",
+    "cr": 3
+  },
+  {
+    "name": "Tornscale",
+    "cr": 0.5
+  },
+  {
+    "name": "Torogar Steelfist",
+    "cr": 11
+  },
+  {
+    "name": "Tortle",
+    "cr": 0.25
+  },
+  {
+    "name": "Tortle Druid",
+    "cr": 2
+  },
+  {
+    "name": "Tosh Starling (Levels 1-4)",
+    "cr": 0.5
+  },
+  {
+    "name": "Tosh Starling (Levels 5-8)",
+    "cr": 1
+  },
+  {
+    "name": "Tosh Starling (Levels 9-11)",
+    "cr": 3
+  },
+  {
+    "name": "Tower Dragon",
+    "cr": 10
+  },
+  {
+    "name": "Traag Draconian",
+    "cr": 5
+  },
+  {
+    "name": "Transcendent Order Conduit",
+    "cr": 8
+  },
+  {
+    "name": "Transcendent Order Instinct",
+    "cr": 3
+  },
+  {
+    "name": "Transmuter",
+    "cr": 5
+  },
+  {
+    "name": "Transmuter Wizard",
+    "cr": 5
+  },
+  {
+    "name": "Trapper",
+    "cr": 3
+  },
+  {
+    "name": "Traxigor",
+    "cr": 12
+  },
+  {
+    "name": "Treant",
+    "cr": 9
+  },
+  {
+    "name": "Treant Sapling",
+    "cr": 2
+  },
+  {
+    "name": "Treant Totem Elemental",
+    "cr": 9
+  },
+  {
+    "name": "Tree Blight",
+    "cr": 7
+  },
+  {
+    "name": "Treefolk",
+    "cr": 11
+  },
+  {
+    "name": "Trench Giant",
+    "cr": 8
+  },
+  {
+    "name": "Trenzia",
+    "cr": 4
+  },
+  {
+    "name": "Trepsin",
+    "cr": 6
+  },
+  {
+    "name": "Tressym",
+    "cr": 0
+  },
+  {
+    "name": "Tri-flower Frond",
+    "cr": 0.5
+  },
+  {
+    "name": "Tribal Warrior",
+    "cr": 0.125
+  },
+  {
+    "name": "Tribal Warrior Spore Servant",
+    "cr": 0.125
+  },
+  {
+    "name": "Triceratops",
+    "cr": 5
+  },
+  {
+    "name": "Tridrone",
+    "cr": 0.5
+  },
+  {
+    "name": "Trilobite",
+    "cr": 0
+  },
+  {
+    "name": "Trilobite (Giant)",
+    "cr": 0.125
+  },
+  {
+    "name": "Trinket",
+    "cr": 5
+  },
+  {
+    "name": "Triton Master of Waves",
+    "cr": 8
+  },
+  {
+    "name": "Triton Shorestalker",
+    "cr": 2
+  },
+  {
+    "name": "Trobriand",
+    "cr": 22
+  },
+  {
+    "name": "Troglodyte",
+    "cr": 0.25
+  },
+  {
+    "name": "Troglodyte Champion of Laogzed",
+    "cr": 3
+  },
+  {
+    "name": "Troll",
+    "cr": 5
+  },
+  {
+    "name": "Troll Amalgam",
+    "cr": 17
+  },
+  {
+    "name": "Troll Mutate",
+    "cr": 7
+  },
+  {
+    "name": "Tromokratis",
+    "cr": 26
+  },
+  {
+    "name": "Trostani",
+    "cr": 18
+  },
+  {
+    "name": "Tsucora Quori",
+    "cr": 7
+  },
+  {
+    "name": "Tug",
+    "cr": 5
+  },
+  {
+    "name": "Tungsten Ward",
+    "cr": 0.25
+  },
+  {
+    "name": "Turlang",
+    "cr": 9
+  },
+  {
+    "name": "Turntimber Giant",
+    "cr": 9
+  },
+  {
+    "name": "Turvy",
+    "cr": 2
+  },
+  {
+    "name": "Twig Blight",
+    "cr": 0.125
+  },
+  {
+    "name": "Two Dry Cloaks",
+    "cr": 1
+  },
+  {
+    "name": "Two-Headed Cerberus",
+    "cr": 2
+  },
+  {
+    "name": "Two-Headed Crocodile",
+    "cr": 1
+  },
+  {
+    "name": "Two-Headed Owlbear",
+    "cr": 3
+  },
+  {
+    "name": "Two-Headed Plesiosaurus",
+    "cr": 4
+  },
+  {
+    "name": "Typhon",
+    "cr": 15
+  },
+  {
+    "name": "Tyrannosaurus Rex",
+    "cr": 8
+  },
+  {
+    "name": "Tyrannosaurus Zombie",
+    "cr": 8
+  },
+  {
+    "name": "Tyrant",
+    "cr": 8
+  },
+  {
+    "name": "Tyrant Shadow",
+    "cr": 17
+  },
+  {
+    "name": "Udaak",
+    "cr": 16
+  },
+  {
+    "name": "Ulamog",
+    "cr": 23
+  },
+  {
+    "name": "Ulder Ravengard",
+    "cr": 5
+  },
+  {
+    "name": "Ulitharid",
+    "cr": 9
+  },
+  {
+    "name": "Ultroloth",
+    "cr": 13
+  },
+  {
+    "name": "Umber Hulk",
+    "cr": 5
+  },
+  {
+    "name": "Umbraxakar",
+    "cr": 15
+  },
+  {
+    "name": "Undead Bulette",
+    "cr": 5
+  },
+  {
+    "name": "Undead Cockatrice",
+    "cr": 0.5
+  },
+  {
+    "name": "Undead Shambling Mound",
+    "cr": 5
+  },
+  {
+    "name": "Undead Soldier",
+    "cr": 3
+  },
+  {
+    "name": "Undead Tree",
+    "cr": 9
+  },
+  {
+    "name": "Undercity Medusa",
+    "cr": 6
+  },
+  {
+    "name": "Underworld Cerberus",
+    "cr": 6
+  },
+  {
+    "name": "Undying Councilor",
+    "cr": 10
+  },
+  {
+    "name": "Undying Soldier",
+    "cr": 2
+  },
+  {
+    "name": "Unicorn",
+    "cr": 5
+  },
+  {
+    "name": "Unspeakable Horror",
+    "cr": 8
+  },
+  {
+    "name": "Urban Ranger",
+    "cr": 3
+  },
+  {
+    "name": "Urstul Floxin",
+    "cr": 8
+  },
+  {
+    "name": "Urwin Martikov",
+    "cr": 2
+  },
+  {
+    "name": "Uthgardt Barbarian Leader",
+    "cr": 2
+  },
+  {
+    "name": "Uthgardt Shaman",
+    "cr": 2
+  },
+  {
+    "name": "Uzoma Baten",
+    "cr": 0.125
+  },
+  {
+    "name": "Vaal",
+    "cr": 9
+  },
+  {
+    "name": "Vaasha",
+    "cr": 13
+  },
+  {
+    "name": "Vacos",
+    "cr": 1
+  },
+  {
+    "name": "Vajra Safahr",
+    "cr": 13
+  },
+  {
+    "name": "Valenar Hawk",
+    "cr": 0.125
+  },
+  {
+    "name": "Valenar Hound",
+    "cr": 0.5
+  },
+  {
+    "name": "Valenar Steed",
+    "cr": 0.5
+  },
+  {
+    "name": "Valetta",
+    "cr": 2
+  },
+  {
+    "name": "Valin Sarnaster",
+    "cr": 16
+  },
+  {
+    "name": "Valindra Shadowmantle",
+    "cr": 21
+  },
+  {
+    "name": "Valtagar Steelshadow",
+    "cr": 12
+  },
+  {
+    "name": "Valygar",
+    "cr": 9
+  },
+  {
+    "name": "Vampirate",
+    "cr": 2
+  },
+  {
+    "name": "Vampirate Captain",
+    "cr": 6
+  },
+  {
+    "name": "Vampirate Mage",
+    "cr": 5
+  },
+  {
+    "name": "Vampire",
+    "cr": 13
+  },
+  {
+    "name": "Vampire Neonate",
+    "cr": 5
+  },
+  {
+    "name": "Vampire Null",
+    "cr": 0.25
+  },
+  {
+    "name": "Vampire Spawn",
+    "cr": 5
+  },
+  {
+    "name": "Vampire Spellcaster",
+    "cr": 15
+  },
+  {
+    "name": "Vampire Warrior",
+    "cr": 15
+  },
+  {
+    "name": "Vampiric Ixitxachitl",
+    "cr": 2
+  },
+  {
+    "name": "Vampiric Ixitxachitl Cleric",
+    "cr": 2
+  },
+  {
+    "name": "Vampiric Jade Statue",
+    "cr": 8
+  },
+  {
+    "name": "Vampiric Mind Flayer",
+    "cr": 5
+  },
+  {
+    "name": "Vampiric Mist",
+    "cr": 3
+  },
+  {
+    "name": "Vanifer",
+    "cr": 9
+  },
+  {
+    "name": "Varakkta",
+    "cr": 8
+  },
+  {
+    "name": "Vargouille",
+    "cr": 1
+  },
+  {
+    "name": "Vargouille Reflection",
+    "cr": 1
+  },
+  {
+    "name": "Varnoth",
+    "cr": 2
+  },
+  {
+    "name": "Varnyr",
+    "cr": 0.125
+  },
+  {
+    "name": "Varram",
+    "cr": 7
+  },
+  {
+    "name": "Vasilka",
+    "cr": 5
+  },
+  {
+    "name": "Vecna Impersonator",
+    "cr": 3
+  },
+  {
+    "name": "Vecna the Archlich",
+    "cr": 26
+  },
+  {
+    "name": "Vegepygmy",
+    "cr": 0.25
+  },
+  {
+    "name": "Vegepygmy Chief",
+    "cr": 2
+  },
+  {
+    "name": "Veiled Presence",
+    "cr": 21
+  },
+  {
+    "name": "Veldyskar",
+    "cr": 3
+  },
+  {
+    "name": "Vellin Farstride",
+    "cr": 9
+  },
+  {
+    "name": "Vellynne Harpell",
+    "cr": 4
+  },
+  {
+    "name": "Velociraptor",
+    "cr": 0.25
+  },
+  {
+    "name": "Velomachus Lorehold",
+    "cr": 25
+  },
+  {
+    "name": "Venom Troll",
+    "cr": 7
+  },
+  {
+    "name": "Venomfang",
+    "cr": 8
+  },
+  {
+    "name": "Venomous Gnoll",
+    "cr": 1
+  },
+  {
+    "name": "Verbeeg Longstrider",
+    "cr": 5
+  },
+  {
+    "name": "Verbeeg Marauder",
+    "cr": 4
+  },
+  {
+    "name": "Verin Thelyss",
+    "cr": 5
+  },
+  {
+    "name": "Verminaard",
+    "cr": 17
+  },
+  {
+    "name": "Vertrand Shadowdusk",
+    "cr": 12
+  },
+  {
+    "name": "Vessel",
+    "cr": 0.25
+  },
+  {
+    "name": "Veteran",
+    "cr": 3
+  },
+  {
+    "name": "Veteran of the Gauntlet",
+    "cr": 3
+  },
+  {
+    "name": "Vex'ahlia",
+    "cr": 18
+  },
+  {
+    "name": "Vi Aroon",
+    "cr": 0.125
+  },
+  {
+    "name": "Viari",
+    "cr": 5
+  },
+  {
+    "name": "Viconia DeVir",
+    "cr": 13
+  },
+  {
+    "name": "Victor Vallakovich",
+    "cr": 6
+  },
+  {
+    "name": "Victoro Cassalanter",
+    "cr": 10
+  },
+  {
+    "name": "Viktor",
+    "cr": 9
+  },
+  {
+    "name": "Viln Tirin",
+    "cr": 5
+  },
+  {
+    "name": "Vilnius",
+    "cr": 6
+  },
+  {
+    "name": "Vincent Trench",
+    "cr": 13
+  },
+  {
+    "name": "Vine Blight",
+    "cr": 0.5
+  },
+  {
+    "name": "Violet Fungus",
+    "cr": 0.25
+  },
+  {
+    "name": "Virruza",
+    "cr": 8
+  },
+  {
+    "name": "Vistana Assassin",
+    "cr": 8
+  },
+  {
+    "name": "Vistana Bandit",
+    "cr": 0.125
+  },
+  {
+    "name": "Vistana Bandit Captain",
+    "cr": 2
+  },
+  {
+    "name": "Vistana Commoner",
+    "cr": 0
+  },
+  {
+    "name": "Vistana Guard",
+    "cr": 0.125
+  },
+  {
+    "name": "Vistana Spy",
+    "cr": 1
+  },
+  {
+    "name": "Vistana Thug",
+    "cr": 0.5
+  },
+  {
+    "name": "Vitebriate",
+    "cr": 2
+  },
+  {
+    "name": "Vizeran DeVir",
+    "cr": 12
+  },
+  {
+    "name": "Vladimir Horngaard",
+    "cr": 7
+  },
+  {
+    "name": "Voalsh",
+    "cr": 11
+  },
+  {
+    "name": "Vocath",
+    "cr": 5
+  },
+  {
+    "name": "Void Scavver",
+    "cr": 11
+  },
+  {
+    "name": "Void",
+    "cr": 0.25
+  },
+  {
+    "name": "Volenta Popofsky",
+    "cr": 5
+  },
+  {
+    "name": "Vorvolaka",
+    "cr": 14
+  },
+  {
+    "name": "Vos'skyriss Serpentfolk",
+    "cr": 3
+  },
+  {
+    "name": "Vos'skyriss Serpentfolk Ghost",
+    "cr": 4
+  },
+  {
+    "name": "Vox Seeker",
+    "cr": 0.125
+  },
+  {
+    "name": "Vrock",
+    "cr": 6
+  },
+  {
+    "name": "Vulture",
+    "cr": 0
+  },
+  {
+    "name": "Waeloquay",
+    "cr": 18
+  },
+  {
+    "name": "Wakanga O'tamu",
+    "cr": 6
+  },
+  {
+    "name": "Walking Corpse",
+    "cr": 0
+  },
+  {
+    "name": "Walking Delerium Geode",
+    "cr": 5
+  },
+  {
+    "name": "Walking Statue of Waterdeep",
+    "cr": 18
+  },
+  {
+    "name": "Wall Gargoyle",
+    "cr": 2
+  },
+  {
+    "name": "Walnut Dankgrass",
+    "cr": 3
+  },
+  {
+    "name": "Walrus",
+    "cr": 0.25
+  },
+  {
+    "name": "War Devil",
+    "cr": 16
+  },
+  {
+    "name": "War Priest",
+    "cr": 9
+  },
+  {
+    "name": "Warden Archon",
+    "cr": 8
+  },
+  {
+    "name": "Warduke",
+    "cr": 5
+  },
+  {
+    "name": "Warforged Colossus",
+    "cr": 25
+  },
+  {
+    "name": "Warforged Soldier",
+    "cr": 1
+  },
+  {
+    "name": "Warforged Titan",
+    "cr": 8
+  },
+  {
+    "name": "Warhorse",
+    "cr": 0.5
+  },
+  {
+    "name": "Warhorse Skeleton",
+    "cr": 0.5
+  },
+  {
+    "name": "Warlock of the Archfey",
+    "cr": 4
+  },
+  {
+    "name": "Warlock of the Fiend",
+    "cr": 7
+  },
+  {
+    "name": "Warlock of the Great Old One",
+    "cr": 6
+  },
+  {
+    "name": "Warlock of the Rat God",
+    "cr": 2
+  },
+  {
+    "name": "Warlord",
+    "cr": 12
+  },
+  {
+    "name": "Warp Witch",
+    "cr": 4
+  },
+  {
+    "name": "Warrior",
+    "cr": 3
+  },
+  {
+    "name": "Warwyck Blastimoff",
+    "cr": 3
+  },
+  {
+    "name": "Wasteland Dragonnel",
+    "cr": 3
+  },
+  {
+    "name": "Wastrilith",
+    "cr": 13
+  },
+  {
+    "name": "Water Elemental",
+    "cr": 5
+  },
+  {
+    "name": "Water Elemental Myrmidon",
+    "cr": 7
+  },
+  {
+    "name": "Water Totem Elemental",
+    "cr": 5
+  },
+  {
+    "name": "Water Weird",
+    "cr": 3
+  },
+  {
+    "name": "Weasel",
+    "cr": 0
+  },
+  {
+    "name": "Wei Feng Ying",
+    "cr": 12
+  },
+  {
+    "name": "Werebat",
+    "cr": 2
+  },
+  {
+    "name": "Werebear",
+    "cr": 5
+  },
+  {
+    "name": "Werebear Ascetic",
+    "cr": 12
+  },
+  {
+    "name": "Wereboar",
+    "cr": 4
+  },
+  {
+    "name": "Werejaguar",
+    "cr": 4
+  },
+  {
+    "name": "Wererat",
+    "cr": 2
+  },
+  {
+    "name": "Wereraven",
+    "cr": 2
+  },
+  {
+    "name": "Weretiger",
+    "cr": 4
+  },
+  {
+    "name": "Werevulture",
+    "cr": 4
+  },
+  {
+    "name": "Werewolf",
+    "cr": 3
+  },
+  {
+    "name": "Werewolf (Krallenhoard)",
+    "cr": 3
+  },
+  {
+    "name": "Werewolf Ravager",
+    "cr": 7
+  },
+  {
+    "name": "Wersten Kern",
+    "cr": 14
+  },
+  {
+    "name": "West Wind",
+    "cr": 3
+  },
+  {
+    "name": "Whirlwyrm",
+    "cr": 5
+  },
+  {
+    "name": "Whistler",
+    "cr": 9
+  },
+  {
+    "name": "White Abishai",
+    "cr": 6
+  },
+  {
+    "name": "White Dragon Wyrmling",
+    "cr": 2
+  },
+  {
+    "name": "White Greatwyrm",
+    "cr": 27
+  },
+  {
+    "name": "White Guard Drake",
+    "cr": 2
+  },
+  {
+    "name": "White Jade Emperor",
+    "cr": 0.125
+  },
+  {
+    "name": "White Maw",
+    "cr": 10
+  },
+  {
+    "name": "Whymsee",
+    "cr": 5
+  },
+  {
+    "name": "Wiggan Nettlebee",
+    "cr": 2
+  },
+  {
+    "name": "Wight",
+    "cr": 3
+  },
+  {
+    "name": "Wild Dog",
+    "cr": 0
+  },
+  {
+    "name": "Will-o'-Wells",
+    "cr": 2
+  },
+  {
+    "name": "Will-o'-Wisp",
+    "cr": 2
+  },
+  {
+    "name": "Willifort Crowelle",
+    "cr": 3
+  },
+  {
+    "name": "Windharrow",
+    "cr": 3
+  },
+  {
+    "name": "Wine Weird",
+    "cr": 3
+  },
+  {
+    "name": "Winged Bull",
+    "cr": 4
+  },
+  {
+    "name": "Winged Kobold",
+    "cr": 0.25
+  },
+  {
+    "name": "Winged Lion",
+    "cr": 4
+  },
+  {
+    "name": "Winged Thrull",
+    "cr": 0.5
+  },
+  {
+    "name": "Winter Eladrin",
+    "cr": 10
+  },
+  {
+    "name": "Winter Wolf",
+    "cr": 3
+  },
+  {
+    "name": "Wiri Fleagol",
+    "cr": 0
+  },
+  {
+    "name": "Witchkite",
+    "cr": 15
+  },
+  {
+    "name": "Witchlight Hand (Medium)",
+    "cr": 0.125
+  },
+  {
+    "name": "Witchlight Hand (Small)",
+    "cr": 0.125
+  },
+  {
+    "name": "Witchstalker",
+    "cr": 6
+  },
+  {
+    "name": "Witherbloom Apprentice",
+    "cr": 2
+  },
+  {
+    "name": "Witherbloom Pledgemage",
+    "cr": 4
+  },
+  {
+    "name": "Witherbloom Professor of Decay",
+    "cr": 7
+  },
+  {
+    "name": "Witherbloom Professor of Growth",
+    "cr": 7
+  },
+  {
+    "name": "Withers",
+    "cr": 4
+  },
+  {
+    "name": "Woe Strider",
+    "cr": 7
+  },
+  {
+    "name": "Wolf",
+    "cr": 0.25
+  },
+  {
+    "name": "Wolf of the Overworld",
+    "cr": 0.25
+  },
+  {
+    "name": "Wolfwere",
+    "cr": 4
+  },
+  {
+    "name": "Wolfwere Alpha",
+    "cr": 6
+  },
+  {
+    "name": "Wood Elf",
+    "cr": 0.5
+  },
+  {
+    "name": "Wood Elf Wizard",
+    "cr": 7
+  },
+  {
+    "name": "Wood Woad",
+    "cr": 5
+  },
+  {
+    "name": "Woodcrasher Baloth",
+    "cr": 5
+  },
+  {
+    "name": "Wooden Donkey",
+    "cr": 0.125
+  },
+  {
+    "name": "Worg",
+    "cr": 0.5
+  },
+  {
+    "name": "Wraith",
+    "cr": 5
+  },
+  {
+    "name": "Wraithroot Tree",
+    "cr": 14
+  },
+  {
+    "name": "Wretched Sorrowsworn",
+    "cr": 0.25
+  },
+  {
+    "name": "Wurm",
+    "cr": 15
+  },
+  {
+    "name": "Wyhan",
+    "cr": 6
+  },
+  {
+    "name": "Wyllow",
+    "cr": 12
+  },
+  {
+    "name": "Wynling",
+    "cr": 0.5
+  },
+  {
+    "name": "Wyvern",
+    "cr": 6
+  },
+  {
+    "name": "X01",
+    "cr": 13
+  },
+  {
+    "name": "Xakalonus",
+    "cr": 8
+  },
+  {
+    "name": "Xan Moonblade",
+    "cr": 8
+  },
+  {
+    "name": "Xanathar",
+    "cr": 13
+  },
+  {
+    "name": "Xandala",
+    "cr": 7
+  },
+  {
+    "name": "Xardorok Sunblight",
+    "cr": 5
+  },
+  {
+    "name": "Xazax the Eyemonger",
+    "cr": 13
+  },
+  {
+    "name": "Xenk Yendar",
+    "cr": 10
+  },
+  {
+    "name": "Xill",
+    "cr": 3
+  },
+  {
+    "name": "Xilonen",
+    "cr": 5
+  },
+  {
+    "name": "Xocopol",
+    "cr": 9
+  },
+  {
+    "name": "Xolkin Alassandar",
+    "cr": 2
+  },
+  {
+    "name": "Xorn",
+    "cr": 5
+  },
+  {
+    "name": "Xot",
+    "cr": 3
+  },
+  {
+    "name": "Xvart",
+    "cr": 0.125
+  },
+  {
+    "name": "Xvart Speaker",
+    "cr": 0.125
+  },
+  {
+    "name": "Xvart Warlock of Raxivort",
+    "cr": 1
+  },
+  {
+    "name": "Xzar the Chaos Clone",
+    "cr": 11
+  },
+  {
+    "name": "Y",
+    "cr": 3
+  },
+  {
+    "name": "Y'demi",
+    "cr": 9
+  },
+  {
+    "name": "Yagnoloth",
+    "cr": 11
+  },
+  {
+    "name": "Yagra Stonefist",
+    "cr": 0.5
+  },
+  {
+    "name": "Yak",
+    "cr": 0.25
+  },
+  {
+    "name": "Yakfolk Priest",
+    "cr": 4
+  },
+  {
+    "name": "Yakfolk Warrior",
+    "cr": 3
+  },
+  {
+    "name": "Yalaga Maladwyn",
+    "cr": 8
+  },
+  {
+    "name": "Yalah Gralhund",
+    "cr": 0.125
+  },
+  {
+    "name": "Yan-C-Bin",
+    "cr": 18
+  },
+  {
+    "name": "Yanthdel Henlifel",
+    "cr": 5
+  },
+  {
+    "name": "Yarana",
+    "cr": 0.5
+  },
+  {
+    "name": "Yarnspinner",
+    "cr": 10
+  },
+  {
+    "name": "Yeenoghu",
+    "cr": 24
+  },
+  {
+    "name": "Yellow Musk Creeper",
+    "cr": 2
+  },
+  {
+    "name": "Yellow Musk Zombie",
+    "cr": 0.25
+  },
+  {
+    "name": "Yestabrod",
+    "cr": 4
+  },
+  {
+    "name": "Yeth Hound",
+    "cr": 4
+  },
+  {
+    "name": "Yeti",
+    "cr": 3
+  },
+  {
+    "name": "Yeti Leader",
+    "cr": 3
+  },
+  {
+    "name": "Yeti Tyke",
+    "cr": 0.125
+  },
+  {
+    "name": "Yevgeni Krushkin",
+    "cr": 0.5
+  },
+  {
+    "name": "Yggdrasti",
+    "cr": 7
+  },
+  {
+    "name": "Ygorl, Lord of Entropy",
+    "cr": 23
+  },
+  {
+    "name": "Yinra Emberwind",
+    "cr": 0.5
+  },
+  {
+    "name": "Yochlol",
+    "cr": 10
+  },
+  {
+    "name": "Yorb",
+    "cr": 2
+  },
+  {
+    "name": "Yorn",
+    "cr": 0.5
+  },
+  {
+    "name": "Young Amethyst Dragon",
+    "cr": 9
+  },
+  {
+    "name": "Young Amonkhet Dragon",
+    "cr": 10
+  },
+  {
+    "name": "Young Basilisk",
+    "cr": 1
+  },
+  {
+    "name": "Young Black Dragon",
+    "cr": 7
+  },
+  {
+    "name": "Young Blightscale Dragon",
+    "cr": 8
+  },
+  {
+    "name": "Young Blue Dragon",
+    "cr": 9
+  },
+  {
+    "name": "Young Brass Dragon",
+    "cr": 6
+  },
+  {
+    "name": "Young Bronze Dragon",
+    "cr": 8
+  },
+  {
+    "name": "Young Bulette",
+    "cr": 2
+  },
+  {
+    "name": "Young Cloud Giant",
+    "cr": 5
+  },
+  {
+    "name": "Young Copper Dragon",
+    "cr": 7
+  },
+  {
+    "name": "Young Crystal Dragon",
+    "cr": 5
+  },
+  {
+    "name": "Young Deep Dragon",
+    "cr": 5
+  },
+  {
+    "name": "Young Dragon Turtle",
+    "cr": 10
+  },
+  {
+    "name": "Young Emerald Dragon",
+    "cr": 8
+  },
+  {
+    "name": "Young Fire Giant",
+    "cr": 2
+  },
+  {
+    "name": "Young Frost Giant",
+    "cr": 2
+  },
+  {
+    "name": "Young Gold Dragon",
+    "cr": 10
+  },
+  {
+    "name": "Young Green Dragon",
+    "cr": 8
+  },
+  {
+    "name": "Young Griffon (Medium)",
+    "cr": 1
+  },
+  {
+    "name": "Young Griffon (Small)",
+    "cr": 0.25
+  },
+  {
+    "name": "Young Griffon (Tiny)",
+    "cr": 0
+  },
+  {
+    "name": "Young Hill Giant",
+    "cr": 0.5
+  },
+  {
+    "name": "Young Hook Horror",
+    "cr": 0.25
+  },
+  {
+    "name": "Young Horizonback Tortoise",
+    "cr": 3
+  },
+  {
+    "name": "Young Kraken",
+    "cr": 14
+  },
+  {
+    "name": "Young Kruthik",
+    "cr": 0.125
+  },
+  {
+    "name": "Young Lunar Dragon",
+    "cr": 7
+  },
+  {
+    "name": "Young Magma Landshark",
+    "cr": 9
+  },
+  {
+    "name": "Young Moonstone Dragon",
+    "cr": 8
+  },
+  {
+    "name": "Young Ogre Servant",
+    "cr": 0.5
+  },
+  {
+    "name": "Young Purple Worm",
+    "cr": 13
+  },
+  {
+    "name": "Young Red Dragon",
+    "cr": 10
+  },
+  {
+    "name": "Young Red Shadow Dragon",
+    "cr": 13
+  },
+  {
+    "name": "Young Remorhaz",
+    "cr": 5
+  },
+  {
+    "name": "Young Sapphire Dragon",
+    "cr": 9
+  },
+  {
+    "name": "Young Sea Serpent",
+    "cr": 8
+  },
+  {
+    "name": "Young Silver Dragon",
+    "cr": 9
+  },
+  {
+    "name": "Young Solar Dragon",
+    "cr": 9
+  },
+  {
+    "name": "Young Time Dragon",
+    "cr": 11
+  },
+  {
+    "name": "Young Topaz Dragon",
+    "cr": 7
+  },
+  {
+    "name": "Young Troglodyte",
+    "cr": 0.125
+  },
+  {
+    "name": "Young Wereraven",
+    "cr": 2
+  },
+  {
+    "name": "Young White Dragon",
+    "cr": 6
+  },
+  {
+    "name": "Young Winter Wolf",
+    "cr": 1
+  },
+  {
+    "name": "Young-Gi",
+    "cr": 0.125
+  },
+  {
+    "name": "Yuan-ti Abomination",
+    "cr": 7
+  },
+  {
+    "name": "Yuan-ti Anathema",
+    "cr": 12
+  },
+  {
+    "name": "Yuan-ti Broodguard",
+    "cr": 2
+  },
+  {
+    "name": "Yuan-ti Malison (Type 1)",
+    "cr": 3
+  },
+  {
+    "name": "Yuan-ti Malison (Type 2)",
+    "cr": 3
+  },
+  {
+    "name": "Yuan-ti Malison (Type 3)",
+    "cr": 3
+  },
+  {
+    "name": "Yuan-ti Malison (Type 4)",
+    "cr": 3
+  },
+  {
+    "name": "Yuan-ti Malison (Type 5)",
+    "cr": 3
+  },
+  {
+    "name": "Yuan-ti Mind Whisperer",
+    "cr": 4
+  },
+  {
+    "name": "Yuan-ti Nightmare Speaker",
+    "cr": 4
+  },
+  {
+    "name": "Yuan-ti Pit Master",
+    "cr": 5
+  },
+  {
+    "name": "Yuan-ti Priest",
+    "cr": 3
+  },
+  {
+    "name": "Yuan-ti Pureblood",
+    "cr": 1
+  },
+  {
+    "name": "Yuk Yuk",
+    "cr": 0.25
+  },
+  {
+    "name": "Yusdrayl",
+    "cr": 1
+  },
+  {
+    "name": "Zagum",
+    "cr": 20
+  },
+  {
+    "name": "Zakya Rakshasa",
+    "cr": 5
+  },
+  {
+    "name": "Zala Morphus",
+    "cr": 2
+  },
+  {
+    "name": "Zaltember",
+    "cr": 1
+  },
+  {
+    "name": "Zalthar Shadowdusk",
+    "cr": 17
+  },
+  {
+    "name": "Zarak",
+    "cr": 2
+  },
+  {
+    "name": "Zaratan",
+    "cr": 22
+  },
+  {
+    "name": "Zargash",
+    "cr": 3
+  },
+  {
+    "name": "Zariel",
+    "cr": 26
+  },
+  {
+    "name": "Zaroum Al-Saryak",
+    "cr": 2
+  },
+  {
+    "name": "Zaythir",
+    "cr": 7
+  },
+  {
+    "name": "Zebra",
+    "cr": 0.25
+  },
+  {
+    "name": "Zegana",
+    "cr": 16
+  },
+  {
+    "name": "Zegdar",
+    "cr": 3
+  },
+  {
+    "name": "Zendikar Dragon",
+    "cr": 10
+  },
+  {
+    "name": "Zendikar Golem",
+    "cr": 10
+  },
+  {
+    "name": "Zeond",
+    "cr": 1
+  },
+  {
+    "name": "Zephyros",
+    "cr": 13
+  },
+  {
+    "name": "Zhanthi",
+    "cr": 0.125
+  },
+  {
+    "name": "Zhent Martial Arts Adept",
+    "cr": 3
+  },
+  {
+    "name": "Zhentarim Thug",
+    "cr": 0.5
+  },
+  {
+    "name": "Zikran",
+    "cr": 12
+  },
+  {
+    "name": "Zikzokrishka",
+    "cr": 17
+  },
+  {
+    "name": "Zilchyn Q'Leptin",
+    "cr": 7
+  },
+  {
+    "name": "Zindar",
+    "cr": 8
+  },
+  {
+    "name": "Ziraj the Hunter",
+    "cr": 8
+  },
+  {
+    "name": "Zodar",
+    "cr": 16
+  },
+  {
+    "name": "Zombie",
+    "cr": 0.25
+  },
+  {
+    "name": "Zombie Cat",
+    "cr": 0
+  },
+  {
+    "name": "Zombie Clot",
+    "cr": 6
+  },
+  {
+    "name": "Zombie Horse",
+    "cr": 0.25
+  },
+  {
+    "name": "Zombie Plague Spreader",
+    "cr": 4
+  },
+  {
+    "name": "Zombie Rat",
+    "cr": 0
+  },
+  {
+    "name": "Zombie Snake",
+    "cr": 0.125
+  },
+  {
+    "name": "Zombie Troll",
+    "cr": 4
+  },
+  {
+    "name": "Zorak Lightdrinker",
+    "cr": 13
+  },
+  {
+    "name": "Zorbo",
+    "cr": 0.5
+  },
+  {
+    "name": "Zorhanna Adulare",
+    "cr": 12
+  },
+  {
+    "name": "Zorhanna's Simulacrum",
+    "cr": 12
+  },
+  {
+    "name": "Zox Clammersham",
+    "cr": 12
+  },
+  {
+    "name": "Zress Orlezziir",
+    "cr": 9
+  },
+  {
+    "name": "Zuggtmoy",
+    "cr": 23
+  },
+  {
+    "name": "Zuleika Toranescu",
+    "cr": 3
+  },
+  {
+    "name": "Zygfrek Belview",
+    "cr": 0.25
+  },
+  {
+    "name": "Zythan",
+    "cr": 13
+  }
+]

@@ -138,6 +138,18 @@
         background: #4b2424;
       }
 
+      .drawing-toolbar.is-compact { left: 50% !important; top: 12px !important; transform: translateX(-50%); flex-direction: row; align-items: center; width: auto; max-width: calc(100vw - 220px); padding: 5px; gap: 4px; }
+      .drawing-toolbar.is-compact button { width: 32px; min-width: 32px; height: 30px; padding: 3px; font-size: 16px; }
+      .drawing-toolbar.is-compact button svg { width: 19px; height: 19px; vertical-align: middle; }
+      .drawing-toolbar.is-compact .drawing-toolbar-danger { width: auto; min-width: 74px; padding: 3px 8px; white-space: nowrap; font-size: 12px; }
+      .drawing-toolbar.is-compact input[type="color"] { width: 30px; height: 30px; }
+      .drawing-toolbar.is-compact .drawing-toolbar-label { display: none; }
+      .drawing-toolbar.is-collapsed > :not(.drawing-collapse-toggle) { display: none !important; }
+      .drawing-toolbar.is-compact .drawing-collapse-toggle { position: absolute; left: 50%; bottom: -23px; transform: translateX(-50%); width: 92px; min-width: 92px; height: 23px; padding: 0; border-radius: 0 0 7px 7px; background: #111; color: #FFD700; border: 1px solid #FFD700; border-top: 0; font-size: 15px; }
+      .drawing-toolbar.is-compact.is-collapsed { height: 0; min-height: 0; padding: 0; border: 0; box-shadow: none; }
+      .drawing-toolbar.is-compact.is-collapsed { top: 0 !important; }
+      .drawing-toolbar.is-compact.is-collapsed .drawing-collapse-toggle { top: 0; bottom: auto; }
+
       .map-drawing-overlay,
       .map-drawing-preview {
         position: absolute;
@@ -201,6 +213,24 @@
     toolbar.style.left = toolbarPosition?.left || "25px";
     toolbar.style.top = toolbarPosition?.top || "80px";
 
+    if (options.compact) {
+      toolbar.classList.add("is-compact");
+      const collapseToggle = document.createElement("button");
+      collapseToggle.type = "button";
+      collapseToggle.className = "drawing-collapse-toggle";
+      collapseToggle.textContent = "⌃";
+      collapseToggle.title = "Hide drawing tools";
+      collapseToggle.addEventListener("click", () => {
+        toolbar.classList.toggle("is-collapsed");
+        collapseToggle.textContent = toolbar.classList.contains("is-collapsed") ? "⌄" : "⌃";
+      });
+      toolbar.appendChild(collapseToggle);
+      if (options.startCollapsed) {
+        toolbar.classList.add("is-collapsed");
+        collapseToggle.textContent = "⌄";
+      }
+    }
+
     const toolLabel = document.createElement("span");
     toolLabel.className = "drawing-toolbar-label";
     toolLabel.textContent = "Draw";
@@ -209,7 +239,11 @@
     function addToolButton(label, tool) {
       const button = document.createElement("button");
       button.type = "button";
-      button.textContent = label;
+      const compactIcons = { pan: "✥", pen: "✎", rectangle: "▭", circle: "○", triangle: "△", line: "╱" };
+      if (options.compact && tool === "eraser") {
+        button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.24 3.56 21 8.32a2 2 0 0 1 0 2.83l-8.49 8.49a2 2 0 0 1-2.83 0L3 12.96a2 2 0 0 1 0-2.83l8.49-8.49a2 2 0 0 1 2.83 0l1.92 1.92ZM5.12 11.55l5.97 5.97 6.79-6.79-5.97-5.97-6.79 6.79ZM13.93 19H21v2h-9.07l2-2Z"/></svg>';
+      } else button.textContent = options.compact ? compactIcons[tool] : label;
+      button.title = label;
       button.addEventListener("click", () => setTool(tool));
       toolbar.appendChild(button);
       activeButtons.set(tool, button);

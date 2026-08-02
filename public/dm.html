@@ -919,7 +919,7 @@
             <h3>Token Actions</h3>
             <div id="mapActionTargets">No tokens selected</div>
             <select id="mapActionType" onchange="updateMapActionFields()">
-                <option value="damage">Damage</option><option value="heal">Heal</option><option value="apply">Apply Condition</option><option value="remove">Remove Condition</option>
+                <option value="damage">Damage</option><option value="heal">Heal</option><option value="apply">Apply Condition</option><option value="remove">Remove Condition</option><option value="removeCreature">Remove Creature</option>
             </select>
             <div id="mapActionAmountGroup"><input id="mapActionAmount" type="number" min="0" value="0" placeholder="Amount"></div>
             <div id="mapActionConditionGroup" style="display:none;">
@@ -1392,6 +1392,63 @@
         const auth = firebase.auth();
         const db = firebase.firestore();
         const storage = firebase.storage();
+
+        // Receive the same music and sound-effect events as every player.
+        // These volume values are deliberately local to this DM browser.
+        const sharedAudioRef = db.collection("shared").doc("audio");
+        const sharedBackgroundAudio = new Audio();
+        sharedBackgroundAudio.loop = true;
+        let sharedMusicVolume = 1;
+        let sharedSfxVolume = 1;
+        let currentSharedMusicPath = '';
+        let pendingSharedMusicPath = '';
+        let lastSharedSfxEventId = null;
+        let sharedAudioSnapshotSeen = false;
+
+        function applySharedMusic(path) {
+            const nextPath = path || '';
+            if (!nextPath) {
+                sharedBackgroundAudio.pause();
+                sharedBackgroundAudio.removeAttribute('src');
+                sharedBackgroundAudio.load();
+                currentSharedMusicPath = '';
+                pendingSharedMusicPath = '';
+                return;
+            }
+            if (currentSharedMusicPath !== nextPath) {
+                sharedBackgroundAudio.src = nextPath;
+                currentSharedMusicPath = nextPath;
+            }
+            sharedBackgroundAudio.volume = sharedMusicVolume;
+            const playRequest = sharedBackgroundAudio.play();
+            if (playRequest) playRequest.then(() => { pendingSharedMusicPath = ''; }).catch(() => { pendingSharedMusicPath = nextPath; });
+        }
+
+        function applySharedSfx(src) {
+            if (!src) return;
+            const sfx = new Audio(src);
+            sfx.volume = sharedSfxVolume;
+            const playRequest = sfx.play();
+            if (playRequest) playRequest.catch(error => console.warn('Sound effect playback was blocked:', error));
+        }
+
+        sharedAudioRef.onSnapshot(snapshot => {
+            if (!snapshot.exists) return;
+            const audioState = snapshot.data() || {};
+            applySharedMusic(audioState.musicPath || '');
+
+            const eventId = audioState.sfxEventId || null;
+            if (eventId && eventId !== lastSharedSfxEventId) {
+                const isRecent = Date.now() - Number(audioState.sfxSentAt || 0) < 5000;
+                if (sharedAudioSnapshotSeen || isRecent) applySharedSfx(audioState.sfxPath);
+                lastSharedSfxEventId = eventId;
+            }
+            sharedAudioSnapshotSeen = true;
+        }, error => console.error('Failed to receive shared audio:', error));
+
+        document.addEventListener('pointerdown', () => {
+            if (pendingSharedMusicPath) applySharedMusic(pendingSharedMusicPath);
+        }, { passive: true });
 
         auth.onAuthStateChanged(user => {
             if (!user) {
@@ -5926,9 +5983,18 @@
         }
 
         function updateMapActionFields() {
-            const usesAmount = ['damage', 'heal'].includes(document.getElementById('mapActionType').value);
+            const action = document.getElementById('mapActionType').value;
+            const usesAmount = ['damage', 'heal'].includes(action);
             document.getElementById('mapActionAmountGroup').style.display = usesAmount ? 'block' : 'none';
-            document.getElementById('mapActionConditionGroup').style.display = usesAmount ? 'none' : 'block';
+            document.getElementById('mapActionConditionGroup').style.display = ['apply','remove'].includes(action) ? 'block' : 'none';
+        }
+
+        function removeCreatureById(monsterId, sync = true) {
+            const index = monsters.findIndex(monster => monster.id === monsterId);
+            if (index >= 0) monsters.splice(index, 1);
+            selectedMapTokenIds.delete(monsterId);
+            document.getElementById(`token-${monsterId}`)?.remove();
+            if (sync) { syncMonstersToFirebase(); updateMonsterTable(); }
         }
 
         function applyMapTokenAction() {
@@ -5953,6 +6019,8 @@
                     monster.conditions.push(condition);
                 } else if (action === 'remove') {
                     monster.conditions = monster.conditions.filter(item => item.toLowerCase() !== condition.toLowerCase());
+                } else if (action === 'removeCreature') {
+                    removeCreatureById(monster.id, false);
                 }
                 updateTokenHealthBar(monster);
                 updateTokenDefeatedState(monster);
@@ -6359,6 +6427,17 @@
                     </td>
                     <td style="padding: 8px; border: 1px solid #555;">${m.conditions.join(", ")}</td>
                 `;
+
+                const removeButton = document.createElement('button');
+                removeButton.type = 'button';
+                removeButton.textContent = '×';
+                removeButton.title = 'Remove creature';
+                removeButton.style.cssText = 'margin-right:6px; padding:1px 6px; background:#c62828; color:white; border:0; border-radius:4px; cursor:pointer;';
+                removeButton.addEventListener('click', event => {
+                    event.stopPropagation();
+                    removeCreatureById(m.id);
+                });
+                row.children[2].prepend(removeButton);
 
                 if (!m.isplayer) {
                     row.addEventListener('click', () => loadMonster(m.name));

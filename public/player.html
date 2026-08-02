@@ -43,6 +43,42 @@
     .combat-flash-effect.flash-red { animation:flash-red 1s ease-out forwards; }
     .combat-flash-effect.flash-green { animation:flash-green 1s ease-out forwards; }
     .token-death-effect { position:fixed; z-index:3000; width:72px; height:72px; object-fit:contain; pointer-events:none; animation:token-death-float 1.6s ease-out forwards; }
+    #menu, #toggleMenuStandalone { display:none !important; }
+    .party-panel { position:fixed; top:70px; left:20px; z-index:1100; width:390px; max-height:55vh; overflow:visible; padding:12px; color:white; background:rgba(15,15,15,.92); border:1px solid #666; border-radius:9px; transition:transform .25s ease; }
+    .party-panel.is-collapsed { transform:translateX(calc(-100% - 20px)); }
+    .party-panel-content { max-height:50vh; overflow:auto; }
+    .party-collapse { position:absolute; top:50%; right:-29px; transform:translateY(-50%); width:29px; height:105px; padding:0 !important; border-radius:0 7px 7px 0 !important; writing-mode:horizontal-tb; background:#111 !important; color:#FFD700; border:1px solid #FFD700 !important; }
+    .party-panel h2 { margin:0 0 8px; color:#FFD700; font-family:'MedievalSharp',cursive; }
+    .party-table { width:100%; border-collapse:collapse; font-size:.85rem; }
+    .party-table th,.party-table td { padding:5px; border:1px solid #555; }
+    .party-table input { width:58px; box-sizing:border-box; background:#292929; color:white; border:1px solid #666; }
+    .party-panel button,.party-modal button { padding:8px; background:#FFD700; border:0; border-radius:5px; font-weight:bold; cursor:pointer; }
+    .audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; gap:10px; padding:8px; color:white; background:rgba(15,15,15,.92); border:1px solid #666; border-radius:9px; }
+    .audio-dock.is-collapsed .audio-dock-content { display:none; }
+    .audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
+    .audio-dock-content { display:grid; grid-template-columns:minmax(105px,.4fr) repeat(3,minmax(0,1fr)); gap:8px 12px; align-items:start; flex:1; }
+    .audio-music-controls { display:flex; flex-direction:column; align-items:stretch; gap:8px; }
+    .audio-music-controls::before { content:'Background Music'; color:#FFD700; font-weight:bold; font-size:.78rem; text-align:center; }
+    .audio-controls { display:flex; flex-direction:column; gap:7px; font-size:.72rem; color:#FFD700; }
+    .audio-controls input[type="range"] { accent-color:#FFD700; }
+    #dockMusicSelect { padding:6px 9px; background:#111; color:#FFD700; border:1px solid #FFD700; border-radius:4px; }
+    .audio-group { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); align-items:center; gap:5px; }
+    .audio-group strong { grid-column:1/-1; color:#FFD700; font-size:.78rem; text-align:center; }
+    .audio-group button { padding:6px 9px; font-size:.76rem; background:#111; color:#FFD700; border:1px solid #FFD700; border-radius:4px; cursor:pointer; }
+    .audio-group button:hover { background:#FFD700; color:#111; }
+    .audio-group + .audio-group { border-left:1px solid rgba(255,215,0,.55); padding-left:12px; }
+    .audio-group.reactions button { color:#55d66b; border-color:#55d66b; }
+    .audio-group.reactions button:hover { color:#081b0c; background:#55d66b; }
+    .audio-group.combat button { color:#ff5959; border-color:#ff5959; }
+    .audio-group.combat button:hover { color:#210606; background:#ff5959; }
+    .audio-group.checks button { color:#55a8ff; border-color:#55a8ff; }
+    .audio-group.checks button:hover { color:#06172a; background:#55a8ff; }
+    .audio-collapse-tab { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; }
+    .party-modal { display:none; position:fixed; inset:0; z-index:3500; align-items:center; justify-content:center; background:rgba(0,0,0,.8); }
+    .party-modal.is-open { display:flex; }
+    .party-modal-card { width:min(620px,90vw); max-height:80vh; overflow:auto; padding:18px; background:#222; color:white; border-radius:10px; }
+    .party-choice-list { max-height:55vh; overflow:auto; margin:10px 0; }
+    .party-choice { display:flex; justify-content:space-between; width:100%; margin:3px 0; color:white; background:#333 !important; }
     @keyframes token-death-float { 0%{transform:translate(-50%,0) scale(.65);opacity:0} 18%{transform:translate(-50%,-12px) scale(1.1);opacity:1} 100%{transform:translate(-50%,-130px) scale(.85);opacity:0} }
 
     #menu {
@@ -175,7 +211,7 @@
       <button class="map-action-close" type="button" onclick="clearMapTokenSelection()" aria-label="Close">×</button>
       <h3>Token Actions</h3>
       <div id="mapActionTargets">No tokens selected</div>
-      <select id="mapActionType" onchange="updateMapActionFields()"><option value="damage">Damage</option><option value="heal">Heal</option><option value="apply">Apply Condition</option><option value="remove">Remove Condition</option></select>
+      <select id="mapActionType" onchange="updateMapActionFields()"><option value="damage">Damage</option><option value="heal">Heal</option><option value="apply">Apply Condition</option><option value="remove">Remove Condition</option><option value="removeCreature">Remove Creature</option></select>
       <div id="mapActionAmountGroup"><input id="mapActionAmount" type="number" min="0" value="0" placeholder="Amount"></div>
       <div id="mapActionConditionGroup" style="display:none;"><select id="mapActionCondition"><option>Blinded</option><option>Charmed</option><option>Deafened</option><option>Frightened</option><option>Grappled</option><option>Incapacitated</option><option>Invisible</option><option>Paralyzed</option><option>Petrified</option><option>Poisoned</option><option>Prone</option><option>Restrained</option><option>Stunned</option><option>Unconscious</option><option>Exhaustion</option><option>Hexed</option><option>Blessed</option><option>Baned</option><option>mark1</option><option>mark2</option><option>mark3</option></select></div>
       <button type="button" onclick="applyMapTokenAction()">Apply to Selected</button>
@@ -199,9 +235,29 @@
       <span>Token Size</span>
       <button id="decreaseTokenSize" style="font-size: 18px;">-</button>
       <button id="increaseTokenSize" style="font-size: 18px;">+</button>
-      <button id="toggleDrawingToolbar" type="button">Hide Drawing</button>
     </div>
   </div>
+
+  <aside id="partyPanel" class="party-panel is-collapsed">
+    <button id="partyCollapseButton" class="party-collapse" type="button" onclick="togglePartyPanel()">›</button>
+    <div class="party-panel-content"><h2>Party</h2>
+    <table class="party-table"><thead><tr><th>Name</th><th>Init</th><th>HP</th><th>Max HP</th></tr></thead><tbody id="partyTableBody"></tbody></table>
+    <button type="button" style="width:100%;margin-top:8px;" onclick="openPartyPicker()">Add to Party</button>
+    <div style="display:flex;gap:6px;margin-top:6px;"><button type="button" style="flex:1;background:#1976d2;color:white;" onclick="document.getElementById('menuBtn').click()">Menu</button><button type="button" style="flex:1;background:#b33;color:white;" onclick="document.getElementById('logoutBtn').click()">Logout</button></div></div>
+  </aside>
+
+  <div id="partyPicker" class="party-modal"><div class="party-modal-card"><h2>Add to Party</h2><input id="partySearch" type="search" placeholder="Search monsters or player characters" style="width:100%;padding:9px;"><div id="partyChoiceList" class="party-choice-list"></div><button type="button" onclick="closePartyPicker()">Close</button></div></div>
+
+  <section id="audioDock" class="audio-dock is-collapsed">
+    <button id="audioCollapseButton" class="audio-collapse-tab" type="button" onclick="toggleAudioDock()">⌃</button>
+    <div class="audio-dock-content">
+      <div class="audio-music-controls"><select id="dockMusicSelect" onchange="handleDockMusicChange(this.value)"><option value="">No Music</option><option value="data/music/camp.mp3">Camp</option><option value="data/music/tavern.mp3">Tavern</option><option value="data/music/city.mp3">City</option><option value="data/music/desert.mp3">Desert</option><option value="data/music/swamp.mp3">Swamp</option><option value="data/music/forest.mp3">Forest</option><option value="data/music/mountain.mp3">Mountain</option><option value="data/music/underdark.mp3">Underdark</option><option value="data/music/dungeon.mp3">Dungeon</option><option value="data/music/combat.mp3">Combat</option></select>
+      <div class="audio-controls"><label>Music <input id="musicVolume" type="range" min="0" max="1" step="0.05" value="1" oninput="setMusicVolume(this.value)"></label><label>SFX <input id="sfxVolume" type="range" min="0" max="1" step="0.05" value="1" oninput="setSfxVolume(this.value)"></label></div></div>
+      <div class="audio-group reactions"><strong>Reactions</strong><button onclick="playSoundEffect('data/sounds/angry.mp3')">Angry</button><button onclick="playSoundEffect('data/sounds/bruh.mp3')">Bruh</button><button onclick="playSoundEffect('data/sounds/dumb.mp3')">Dumb</button><button onclick="playSoundEffect('data/sounds/evillaugh.mp3')">Evil Laugh</button><button onclick="playSoundEffect('data/sounds/scream.mp3')">Scream</button><button onclick="playSoundEffect('data/sounds/nooo.mp3')">Nooo</button><button onclick="playSoundEffect('data/sounds/suprise.mp3')">Surprise</button><button onclick="playSoundEffect('data/sounds/oh_my.mp3')">Oh My</button><button onclick="playSoundEffect('data/sounds/awww.mp3')">Awww</button><button onclick="playSoundEffect('data/sounds/laugh.mp3')">Laugh</button></div>
+      <div class="audio-group combat"><strong>Combat</strong><button onclick="playSoundEffect('data/sounds/yeet.mp3')">Yeet</button><button onclick="playSoundEffect('data/sounds/running.mp3')">Run</button><button onclick="playSoundEffect('data/sounds/bite.mp3')">Bite</button><button onclick="playSoundEffect('data/sounds/punch.mp3')">Punch</button><button onclick="playSoundEffect('data/sounds/splat.mp3')">Splat</button><button onclick="playSoundEffect('data/sounds/bonk.mp3')">Bonk</button><button onclick="playSoundEffect('data/sounds/hammer.mp3')">Hammer</button><button onclick="playSoundEffect('data/sounds/sword.mp3')">Sword</button><button onclick="playSoundEffect('data/sounds/tentacle.mp3')">Tentacle</button><button onclick="playSoundEffect('data/sounds/gunshot.mp3')">Gun</button><button onclick="playSoundEffect('data/sounds/Explosion.mp3')">Blast</button><button onclick="playSoundEffect('data/sounds/failed_spell.mp3')">Spell Fail</button><button onclick="playSoundEffect('data/sounds/spell attack.mp3')">Spell</button></div>
+      <div class="audio-group checks"><strong>Checks</strong><button onclick="playSoundEffect('data/sounds/died.mp3')">Died</button><button onclick="playSoundEffect('data/sounds/item.mp3')">Item</button><button onclick="playSoundEffect('data/sounds/sad.mp3')">Fail</button><button onclick="playSoundEffect('data/sounds/senses.mp3')">Senses</button><button onclick="playSoundEffect('data/sounds/slipandfall.mp3')">Fall</button><button onclick="playSoundEffect('data/sounds/sucess.mp3')">Success</button><button onclick="playSoundEffect('data/sounds/spell_whispers.mp3')">Whispers</button></div>
+    </div>
+  </section>
 
   <!-- Menu -->
   <div id="menu" class="fullscreen">
@@ -431,6 +487,7 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
+    let sessionOwnerId = '';
 
     auth.onAuthStateChanged(user => {
       if (!user) {
@@ -438,10 +495,11 @@
         return;
       }
 
+      sessionOwnerId = user.uid;
       // Setup logout button after login
       const logoutBtn = document.getElementById("logoutBtn");
       logoutBtn.addEventListener("click", () => {
-        auth.signOut().then(() => {
+        cleanupSessionParty().finally(() => auth.signOut()).then(() => {
           window.location.href = "index.html";
         });
       });
@@ -492,6 +550,39 @@
     const tokenLayer = document.getElementById('mapTokenLayer');
     const mapImage = document.getElementById('mapImage');
     const selectedMapTokenIds = new Set();
+    let partyCatalog = [];
+
+    function updatePlayerTokenInitiativeLabels() {
+      const ordered = [...monsters].sort((a,b)=>(Number(b.init)||0)-(Number(a.init)||0));
+      ordered.filter(monster=>monster.hp>0||monster.isplayer).forEach((monster,index)=>{
+        const label=document.querySelector(`#token-${CSS.escape(monster.id)} .token-label`);
+        if(label)label.textContent=index;
+      });
+      ordered.filter(monster=>monster.hp<=0&&!monster.isplayer).forEach(monster=>{
+        const label=document.querySelector(`#token-${CSS.escape(monster.id)} .token-label`);
+        if(label)label.textContent='×';
+      });
+    }
+
+    function renderPartyTracker() {
+      const body=document.getElementById('partyTableBody'); if(!body)return; body.replaceChildren();
+      monsters.filter(monster=>monster.partyManaged&&monster.partyOwner===sessionOwnerId).forEach(monster=>{
+        const row=body.insertRow(),nameCell=row.insertCell(),removeButton=document.createElement('button');removeButton.type='button';removeButton.textContent='×';removeButton.title='Remove from party';removeButton.style.cssText='margin-right:5px;padding:1px 5px;background:#c62828;color:white;';removeButton.addEventListener('click',()=>removeCreatureById(monster.id));nameCell.appendChild(removeButton);nameCell.appendChild(document.createTextNode(monster.name));
+        ['init','hp','maxHp'].forEach(field=>{const cell=row.insertCell(),input=document.createElement('input');input.type='number';input.value=monster[field]??0;input.addEventListener('change',()=>{monster[field]=Number(input.value)||0;if(field==='maxHp')monster.maxHp=Math.max(1,monster.maxHp);if(field==='hp'&&!monster.isplayer)monster.hp=Math.max(0,monster.hp);updateTokenHealthBar(monster);updateTokenDefeatedState(monster);updatePlayerTokenInitiativeLabels();syncMonstersToFirebase();});cell.appendChild(input);});
+      });
+    }
+
+    function renderPartyChoices(filter='') {const list=document.getElementById('partyChoiceList');list.replaceChildren();partyCatalog.filter(item=>item.name.toLowerCase().includes(filter.toLowerCase())).forEach(item=>{const button=document.createElement('button');button.className='party-choice';button.type='button';button.textContent=`${item.name} — ${item.kind}`;button.addEventListener('click',()=>addPartyMember(item));list.appendChild(button);});}
+    function togglePartyPanel(){const panel=document.getElementById('partyPanel'),button=document.getElementById('partyCollapseButton');panel.classList.toggle('is-collapsed');button.textContent=panel.classList.contains('is-collapsed')?'›':'‹';}
+    function toggleAudioDock(){const dock=document.getElementById('audioDock'),button=document.getElementById('audioCollapseButton');dock.classList.toggle('is-collapsed');button.textContent=dock.classList.contains('is-collapsed')?'⌃':'⌄';}
+    function openPartyPicker(){document.getElementById('partyPicker').classList.add('is-open');renderPartyChoices(document.getElementById('partySearch').value);}
+    function closePartyPicker(){document.getElementById('partyPicker').classList.remove('is-open');}
+    async function addPartyMember(choice){let member;if(choice.kind==='Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();syncMonstersToFirebase();closePartyPicker();}
+    function cleanupSessionParty(){if(!sessionOwnerId)return Promise.resolve();for(let i=monsters.length-1;i>=0;i--)if(monsters[i].partyManaged&&monsters[i].partyOwner===sessionOwnerId)monsters.splice(i,1);renderPartyTracker();return Promise.resolve(syncMonstersToFirebase());}
+    document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
+    const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
+    fetch('data/api_data/monster_catalog.json').then(response=>response.json()).then(data=>{partyCatalog=[...playerCharacterNames.map(name=>({name,kind:'Player'})),...data.map(monster=>({name:monster.name,kind:'Monster'}))];});
+    window.addEventListener('pagehide',()=>cleanupSessionParty());
 
     function normalizeMonsterState(monster) {
       const hp = Number(monster.hp) || 0;
@@ -535,10 +626,13 @@
 
     function clearMapTokenSelection() { selectedMapTokenIds.clear(); refreshMapTokenSelection(); }
     function updateMapActionFields() {
-      const usesAmount = ['damage','heal'].includes(document.getElementById('mapActionType').value);
+      const action=document.getElementById('mapActionType').value;
+      const usesAmount = ['damage','heal'].includes(action);
       document.getElementById('mapActionAmountGroup').style.display = usesAmount ? 'block' : 'none';
-      document.getElementById('mapActionConditionGroup').style.display = usesAmount ? 'none' : 'block';
+      document.getElementById('mapActionConditionGroup').style.display = ['apply','remove'].includes(action) ? 'block' : 'none';
     }
+
+    function removeCreatureById(monsterId,sync=true){const index=monsters.findIndex(monster=>monster.id===monsterId);if(index>=0)monsters.splice(index,1);selectedMapTokenIds.delete(monsterId);document.getElementById(`token-${monsterId}`)?.remove();updatePlayerTokenInitiativeLabels();renderPartyTracker();refreshMapTokenSelection();if(sync)syncMonstersToFirebase();}
 
     function showTokenDeathEffect(monsterId) {
       const token = document.getElementById(`token-${monsterId}`);
@@ -570,6 +664,7 @@
         else if (action === 'damage') { monster.hp = monster.isplayer ? monster.hp-amount : Math.max(0,monster.hp-amount); flashToken(monster.id,'damage'); if (previousHp > 0 && monster.hp <= 0) { showTokenDeathEffect(monster.id); removeDefeatedMonster(monster.id); } }
         else if (action === 'apply' && !monster.conditions.some(item => item.toLowerCase() === condition.toLowerCase())) monster.conditions.push(condition);
         else if (action === 'remove') monster.conditions = monster.conditions.filter(item => item.toLowerCase() !== condition.toLowerCase());
+        else if (action === 'removeCreature') removeCreatureById(monster.id,false);
         updateTokenHealthBar(monster); updateTokenDefeatedState(monster);
         const conditionLabel = document.querySelector(`#token-${CSS.escape(monster.id)} .condition-label`);
         if (conditionLabel) conditionLabel.textContent = monster.conditions.join(', ');
@@ -577,6 +672,7 @@
       });
       refreshMapTokenSelection();
       syncMonstersToFirebase();
+      renderPartyTracker();
     }
 
     function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`)) {
@@ -867,7 +963,7 @@
     function syncMonstersToFirebase() {
       const monstersRef = db.collection("shared").doc("monsters");
 
-      monstersRef.get().then(doc => {
+      return monstersRef.get().then(doc => {
 
         const serverData = doc.data();
         const now = Date.now();
@@ -925,6 +1021,8 @@
         });
 
         scheduleMapLayoutRefresh();
+        updatePlayerTokenInitiativeLabels();
+        renderPartyTracker();
         //updateMonsterTable();
         console.log("Monsters force-reloaded from Firebase.");
       }).catch(err => {
@@ -1147,25 +1245,98 @@
       document.body.appendChild(effect); effect.addEventListener('animationend',()=>effect.remove(),{once:true});
     }
 
-    // sound effects
+    // Shared audio. Track/effect choices are synchronized through Firestore;
+    // volume remains local to this browser instance.
+    const sharedAudioRef = db.collection("shared").doc("audio");
     let bgAudio = new Audio();
     bgAudio.loop = true;
+    let sfxVolume = 1;
+    let currentMusicPath = '';
+    let pendingMusicPath = '';
+    let lastSharedSfxEventId = null;
+    let sharedAudioSnapshotSeen = false;
+
+    function makeAudioEventId() {
+      return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    }
+
+    function publishSharedMusic(path) {
+      return sharedAudioRef.set({
+        musicPath: path || '',
+        musicEventId: makeAudioEventId(),
+        musicChangedAt: firebase.firestore.FieldValue.serverTimestamp()
+      }, { merge: true }).catch(error => console.error('Failed to sync background music:', error));
+    }
+
+    function publishSharedSfx(src) {
+      return sharedAudioRef.set({
+        sfxPath: src,
+        sfxEventId: makeAudioEventId(),
+        sfxSentAt: Date.now(),
+        sfxChangedAt: firebase.firestore.FieldValue.serverTimestamp()
+      }, { merge: true }).catch(error => console.error('Failed to sync sound effect:', error));
+    }
+
+    function applySharedMusic(path) {
+      const nextPath = path || '';
+      document.querySelectorAll('#dockMusicSelect, #bgMusicSelect').forEach(select => {
+        if ([...select.options].some(option => option.value === nextPath)) select.value = nextPath;
+      });
+      if (!nextPath) {
+        bgAudio.pause();
+        bgAudio.removeAttribute('src');
+        bgAudio.load();
+        currentMusicPath = '';
+        pendingMusicPath = '';
+        return;
+      }
+      if (currentMusicPath !== nextPath) {
+        bgAudio.src = nextPath;
+        currentMusicPath = nextPath;
+      }
+      const playRequest = bgAudio.play();
+      if (playRequest) playRequest.then(() => { pendingMusicPath = ''; }).catch(() => { pendingMusicPath = nextPath; });
+    }
+
+    function applySharedSfx(src) {
+      if (!src) return;
+      const sfx = new Audio(src);
+      sfx.volume = sfxVolume;
+      const playRequest = sfx.play();
+      if (playRequest) playRequest.catch(error => console.warn('Sound effect playback was blocked:', error));
+    }
 
     function handleMusicChange() {
-      const path = document.getElementById("bgMusicSelect").value;
-      if (!path) {
-        bgAudio.pause();
-        bgAudio.src = "";
-      } else {
-        bgAudio.src = path;
-        bgAudio.play();
-      }
+      publishSharedMusic(document.getElementById("bgMusicSelect").value);
     }
 
-    function playSoundEffect(src) {
-      const sfx = new Audio(src);
-      sfx.play();
+    function handleDockMusicChange(path) {
+      publishSharedMusic(path);
     }
+    function setMusicVolume(value) { bgAudio.volume = Number(value); }
+    function setSfxVolume(value) { sfxVolume = Number(value); }
+
+    function playSoundEffect(src) { publishSharedSfx(src); }
+
+    sharedAudioRef.onSnapshot(snapshot => {
+      if (!snapshot.exists) return;
+      const audioState = snapshot.data() || {};
+      applySharedMusic(audioState.musicPath || '');
+
+      const eventId = audioState.sfxEventId || null;
+      if (eventId && eventId !== lastSharedSfxEventId) {
+        // Do not replay an old stored effect when a page first opens. A newly
+        // sent effect is still accepted if it arrives with the first snapshot.
+        const isRecent = Date.now() - Number(audioState.sfxSentAt || 0) < 5000;
+        if (sharedAudioSnapshotSeen || isRecent) applySharedSfx(audioState.sfxPath);
+        lastSharedSfxEventId = eventId;
+      }
+      sharedAudioSnapshotSeen = true;
+    }, error => console.error('Failed to receive shared audio:', error));
+
+    document.addEventListener('pointerdown', () => {
+      if (pendingMusicPath) applySharedMusic(pendingMusicPath);
+    }, { passive: true });
 
 
 
@@ -1225,7 +1396,9 @@
           if (label) label.textContent = i;
         }
       });
+      updatePlayerTokenInitiativeLabels();
       refreshMapTokenSelection();
+      renderPartyTracker();
 
     });
 
@@ -1233,6 +1406,8 @@
     const drawingToolbarManager = setupSharedMapDrawing({
       db,
       mapImage,
+      compact: true,
+      startCollapsed: true,
       mapTransformLayer: document.getElementById('mapTransformLayer'),
       tokenLayer: document.getElementById('mapTokenLayer'),
       toolbarPosition: {
