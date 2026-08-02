@@ -487,7 +487,23 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
-    let sessionOwnerId = '';
+    // Firebase UID identifies the account, not an individual browser instance.
+    // sessionStorage gives each browser tab its own stable owner across reloads.
+    function getPlayerInstanceId() {
+      const storageKey = 'dndPlayerInstanceId';
+      try {
+        let instanceId = sessionStorage.getItem(storageKey);
+        if (!instanceId) {
+          instanceId = crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+          sessionStorage.setItem(storageKey, instanceId);
+        }
+        return instanceId;
+      } catch (_) {
+        return crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+      }
+    }
+    const sessionOwnerId = `player-instance:${getPlayerInstanceId()}`;
+    let sessionAccountId = '';
 
     auth.onAuthStateChanged(user => {
       if (!user) {
@@ -495,7 +511,7 @@
         return;
       }
 
-      sessionOwnerId = user.uid;
+      sessionAccountId = user.uid;
       // Setup logout button after login
       const logoutBtn = document.getElementById("logoutBtn");
       logoutBtn.addEventListener("click", () => {
@@ -577,7 +593,7 @@
     function toggleAudioDock(){const dock=document.getElementById('audioDock'),button=document.getElementById('audioCollapseButton');dock.classList.toggle('is-collapsed');button.textContent=dock.classList.contains('is-collapsed')?'⌃':'⌄';}
     function openPartyPicker(){document.getElementById('partyPicker').classList.add('is-open');renderPartyChoices(document.getElementById('partySearch').value);}
     function closePartyPicker(){document.getElementById('partyPicker').classList.remove('is-open');}
-    async function addPartyMember(choice){let member;if(choice.kind==='Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();syncMonstersToFirebase();closePartyPicker();}
+    async function addPartyMember(choice){let member;if(choice.kind==='Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;member.partyOwnerAccount=sessionAccountId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();syncMonstersToFirebase();closePartyPicker();}
     function cleanupSessionParty(){if(!sessionOwnerId)return Promise.resolve();for(let i=monsters.length-1;i>=0;i--)if(monsters[i].partyManaged&&monsters[i].partyOwner===sessionOwnerId)monsters.splice(i,1);renderPartyTracker();return Promise.resolve(syncMonstersToFirebase());}
     document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
     const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
@@ -634,15 +650,43 @@
 
     function removeCreatureById(monsterId,sync=true){const index=monsters.findIndex(monster=>monster.id===monsterId);if(index>=0)monsters.splice(index,1);selectedMapTokenIds.delete(monsterId);document.getElementById(`token-${monsterId}`)?.remove();updatePlayerTokenInitiativeLabels();renderPartyTracker();refreshMapTokenSelection();if(sync)syncMonstersToFirebase();}
 
-    function showTokenDeathEffect(monsterId) {
+    const deathEffectRef = db.collection('shared').doc('deathEffect');
+    const deathEffectClientId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    const activeDeathEffects = new Set();
+    let lastDeathEffectEventId = null;
+    let deathEffectSnapshotSeen = false;
+    function showTokenDeathEffect(monsterId, broadcast = true) {
+      if (activeDeathEffects.has(monsterId)) return;
       const token = document.getElementById(`token-${monsterId}`);
       if (!token) return;
+      activeDeathEffects.add(monsterId);
       const rect = token.getBoundingClientRect();
       const icon = document.createElement('img');
       icon.className = 'token-death-effect'; icon.src = 'data/images/dead_icon.png'; icon.alt = '';
       icon.style.left = `${rect.left + rect.width / 2}px`; icon.style.top = `${rect.top + rect.height / 2 - 36}px`;
-      document.body.appendChild(icon); icon.addEventListener('animationend', () => icon.remove(), { once:true });
+      document.body.appendChild(icon);
+      icon.addEventListener('animationend', () => {
+        icon.remove();
+        activeDeathEffects.delete(monsterId);
+      }, { once:true });
+      if (broadcast) {
+        deathEffectRef.set({
+          monsterId,
+          eventId: `${deathEffectClientId}-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+          sentAt: Date.now()
+        }).catch(error => console.error('Failed to sync death effect:', error));
+      }
     }
+
+    deathEffectRef.onSnapshot(snapshot => {
+      if (!snapshot.exists) return;
+      const event = snapshot.data() || {};
+      if (!event.eventId || event.eventId === lastDeathEffectEventId) return;
+      const isRecent = Date.now() - Number(event.sentAt || 0) < 5000;
+      if (deathEffectSnapshotSeen || isRecent) showTokenDeathEffect(event.monsterId, false);
+      lastDeathEffectEventId = event.eventId;
+      deathEffectSnapshotSeen = true;
+    }, error => console.error('Failed to receive death effect:', error));
 
     function removeDefeatedMonster(monsterId) {
       const index = monsters.findIndex(monster => monster.id === monsterId);
@@ -1364,6 +1408,15 @@
       // Store previous HP for comparison
       const previousHP = {};
       monsters.forEach(m => previousHP[m.id] = m.hp);
+
+      // Animate deaths before rebuilding the layer; defeated monster tokens are
+      // omitted below, so their old DOM position is only available right now.
+      data.monsters.forEach(incoming => {
+        const oldHP = previousHP[incoming.id];
+        if (typeof oldHP === 'number' && oldHP > 0 && Number(incoming.hp) <= 0) {
+          showTokenDeathEffect(incoming.id, false);
+        }
+      });
 
       // Clear local array *in-place*
       monsters.length = 0;

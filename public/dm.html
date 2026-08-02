@@ -5895,9 +5895,16 @@
             effect.addEventListener('animationend', () => effect.remove(), { once: true });
         }
 
-        function showTokenDeathEffect(monsterId) {
+        const deathEffectRef = db.collection('shared').doc('deathEffect');
+        const deathEffectClientId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+        const activeDeathEffects = new Set();
+        let lastDeathEffectEventId = null;
+        let deathEffectSnapshotSeen = false;
+        function showTokenDeathEffect(monsterId, broadcast = true) {
+            if (activeDeathEffects.has(monsterId)) return;
             const token = document.getElementById(`token-${monsterId}`);
             if (!token) return;
+            activeDeathEffects.add(monsterId);
             const rect = token.getBoundingClientRect();
             const icon = document.createElement('img');
             icon.className = 'token-death-effect';
@@ -5906,8 +5913,28 @@
             icon.style.left = `${rect.left + rect.width / 2}px`;
             icon.style.top = `${rect.top + rect.height / 2 - 36}px`;
             document.body.appendChild(icon);
-            icon.addEventListener('animationend', () => icon.remove(), { once: true });
+            icon.addEventListener('animationend', () => {
+                icon.remove();
+                activeDeathEffects.delete(monsterId);
+            }, { once: true });
+            if (broadcast) {
+                deathEffectRef.set({
+                    monsterId,
+                    eventId: `${deathEffectClientId}-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+                    sentAt: Date.now()
+                }).catch(error => console.error('Failed to sync death effect:', error));
+            }
         }
+
+        deathEffectRef.onSnapshot(snapshot => {
+            if (!snapshot.exists) return;
+            const event = snapshot.data() || {};
+            if (!event.eventId || event.eventId === lastDeathEffectEventId) return;
+            const isRecent = Date.now() - Number(event.sentAt || 0) < 5000;
+            if (deathEffectSnapshotSeen || isRecent) showTokenDeathEffect(event.monsterId, false);
+            lastDeathEffectEventId = event.eventId;
+            deathEffectSnapshotSeen = true;
+        }, error => console.error('Failed to receive death effect:', error));
 
         function removeDefeatedMonster(monsterId) {
             const index = monsters.findIndex(monster => monster.id === monsterId);
@@ -7828,6 +7855,15 @@
             const previousHP = {};
             monsters.forEach(m => previousHP[m.id] = m.hp);
 
+            // Animate deaths while the previous token still exists. Non-player
+            // defeated tokens are filtered out when the layer is rebuilt.
+            data.monsters.forEach(incoming => {
+                const oldHP = previousHP[incoming.id];
+                if (typeof oldHP === 'number' && oldHP > 0 && Number(incoming.hp) <= 0) {
+                    showTokenDeathEffect(incoming.id, false);
+                }
+            });
+
             // Clear local array *in-place*
             monsters.length = 0;
 
@@ -7848,7 +7884,7 @@
                         if (normalized.hp > oldHP) flashToken(normalized.id, 'heal');
                         else if (normalized.hp < oldHP) {
                             flashToken(normalized.id, 'damage');
-                            if (oldHP > 0 && normalized.hp === 0) showTokenDeathEffect(normalized.id);
+                            if (oldHP > 0 && normalized.hp === 0) showTokenDeathEffect(normalized.id, false);
                         }
                     }
 
