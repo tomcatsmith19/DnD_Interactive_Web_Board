@@ -238,7 +238,8 @@
         .map-action-panel select, .map-action-panel input, .map-action-panel button { width: 100%; box-sizing: border-box; margin-top: 8px; padding: 9px; background: #333; color: white; border: 1px solid #666; border-radius: 5px; }
         .map-action-panel button { background: #32CD32; color: #111; border: 0; font-weight: bold; cursor: pointer; }
         .map-action-panel .map-action-close { position: absolute; top: 4px; right: 7px; width: auto; margin: 0; padding: 3px 7px; background: transparent; color: #bbb; }
-        .token-lasso { position: absolute; z-index: 30; border: 2px dashed #4fc3ff; background: rgba(79,195,255,.16); pointer-events: none; }
+        .token-lasso { position: absolute; inset: 0; z-index: 30; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+        .token-lasso polyline { fill: rgba(79,195,255,.16); stroke: #4fc3ff; stroke-width: 3; stroke-dasharray: 9 6; stroke-linejoin: round; }
         .combat-flash-effect { position: fixed; z-index: 2900; border-radius: 50%; pointer-events: none; }
         .combat-flash-effect.flash-red { animation: flash-red 1s ease-out forwards; }
         .combat-flash-effect.flash-green { animation: flash-green 1s ease-out forwards; }
@@ -909,7 +910,7 @@
                 <div id="mapTokenLayer"
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
                 </div>
-                <div id="tokenLasso" class="token-lasso" style="display:none;"></div>
+                <svg id="tokenLasso" class="token-lasso" style="display:none;"><polyline id="tokenLassoPath" points=""></polyline></svg>
             </div>
         </div>
 
@@ -5328,6 +5329,12 @@
             syncDrawingToolbarVisibility();
         });
 
+        document.addEventListener('keydown', event => {
+            if (event.key !== 'Escape') return;
+            drawingToolbarManager?.setTool('pan');
+            clearMapTokenSelection();
+        });
+
         function openTab(tabId) {
             document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
             document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
@@ -5936,9 +5943,9 @@
                     monster.hp = Math.min(monster.maxHp, monster.hp + amount);
                     flashToken(monster.id, 'heal');
                 } else if (action === 'damage') {
-                    monster.hp = Math.max(0, monster.hp - amount);
+                    monster.hp = monster.isplayer ? monster.hp - amount : Math.max(0, monster.hp - amount);
                     flashToken(monster.id, 'damage');
-                    if (previousHp > 0 && monster.hp === 0) {
+                    if (previousHp > 0 && monster.hp <= 0) {
                         showTokenDeathEffect(monster.id);
                         removeDefeatedMonster(monster.id);
                     }
@@ -5956,44 +5963,52 @@
 
         const mapTransformLayer = document.getElementById('mapTransformLayer');
         const tokenLasso = document.getElementById('tokenLasso');
-        let lassoStart = null;
+        const tokenLassoPath = document.getElementById('tokenLassoPath');
+        let lassoPoints = [];
 
         function mapClientToLocal(clientX, clientY) {
             const rect = mapImage.getBoundingClientRect();
             return { x: (clientX - rect.left) * (mapWidth / rect.width), y: (clientY - rect.top) * (mapHeight / rect.height) };
         }
 
+        function isPointInsideLasso(point, polygon) {
+            let inside = false;
+            for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+                const a = polygon[i], b = polygon[j];
+                if (((a.y > point.y) !== (b.y > point.y)) && point.x < (b.x - a.x) * (point.y - a.y) / ((b.y - a.y) || 0.00001) + a.x) inside = !inside;
+            }
+            return inside;
+        }
+
+        function renderTokenLasso() {
+            tokenLassoPath.setAttribute('points', lassoPoints.map(point => `${point.x},${point.y}`).join(' '));
+        }
+
         mapTransformLayer.addEventListener('mousedown', event => {
             if (!event.ctrlKey || event.button !== 0 || event.target.closest('.monster-token')) return;
             event.preventDefault();
             event.stopPropagation();
-            lassoStart = mapClientToLocal(event.clientX, event.clientY);
+            lassoPoints = [mapClientToLocal(event.clientX, event.clientY)];
             tokenLasso.style.display = 'block';
-            tokenLasso.style.left = `${lassoStart.x}px`;
-            tokenLasso.style.top = `${lassoStart.y}px`;
-            tokenLasso.style.width = '0px';
-            tokenLasso.style.height = '0px';
+            tokenLasso.setAttribute('viewBox', `0 0 ${mapWidth} ${mapHeight}`);
+            renderTokenLasso();
         }, true);
 
         document.addEventListener('mousemove', event => {
-            if (!lassoStart) return;
+            if (!lassoPoints.length) return;
             const point = mapClientToLocal(event.clientX, event.clientY);
-            tokenLasso.style.left = `${Math.min(lassoStart.x, point.x)}px`;
-            tokenLasso.style.top = `${Math.min(lassoStart.y, point.y)}px`;
-            tokenLasso.style.width = `${Math.abs(point.x - lassoStart.x)}px`;
-            tokenLasso.style.height = `${Math.abs(point.y - lassoStart.y)}px`;
+            const previous = lassoPoints[lassoPoints.length - 1];
+            if (Math.hypot(point.x - previous.x, point.y - previous.y) >= 3) lassoPoints.push(point);
+            renderTokenLasso();
         });
 
         document.addEventListener('mouseup', event => {
-            if (!lassoStart) return;
-            const point = mapClientToLocal(event.clientX, event.clientY);
-            const bounds = { left: Math.min(lassoStart.x, point.x), right: Math.max(lassoStart.x, point.x), top: Math.min(lassoStart.y, point.y), bottom: Math.max(lassoStart.y, point.y) };
-            monsters.forEach(monster => {
-                const x = monster.xRatio * mapWidth;
-                const y = monster.yRatio * mapHeight;
-                if (x >= bounds.left && x <= bounds.right && y >= bounds.top && y <= bounds.bottom) selectedMapTokenIds.add(monster.id);
+            if (!lassoPoints.length) return;
+            if (lassoPoints.length >= 3) monsters.forEach(monster => {
+                if (isPointInsideLasso({ x: monster.xRatio * mapWidth, y: monster.yRatio * mapHeight }, lassoPoints)) selectedMapTokenIds.add(monster.id);
             });
-            lassoStart = null;
+            lassoPoints = [];
+            tokenLassoPath.setAttribute('points', '');
             tokenLasso.style.display = 'none';
             refreshMapTokenSelection();
             if (selectedMapTokenIds.size) openMapActionPanel();
@@ -6295,9 +6310,9 @@
                 await sleep(1000);
 
             } else if (action === 'damage') {
-                monster.hp = Math.max(0, monster.hp - amount);
+                monster.hp = monster.isplayer ? monster.hp - amount : Math.max(0, monster.hp - amount);
                 flashToken(monster.id, 'damage');
-                if (previousHp > 0 && monster.hp === 0) {
+                if (previousHp > 0 && monster.hp <= 0) {
                     showTokenDeathEffect(monster.id);
                     removeDefeatedMonster(monster.id);
                 }
@@ -6329,7 +6344,7 @@
                 if (token) token.querySelector('.token-label').textContent = '×';
             });
 
-            monsters.filter(monster => monster.hp > 0).forEach((m, index) => {
+            monsters.filter(monster => monster.hp > 0 || monster.isplayer).forEach((m, index) => {
                 const row = document.createElement('tr');
                 row.dataset.monsterId = m.id;
 
@@ -6370,12 +6385,13 @@
 
                 hpInput.addEventListener('input', () => {
                     const previousHp = m.hp;
-                    m.hp = Math.max(0, parseInt(hpInput.value) || 0);
+                    const enteredHp = parseInt(hpInput.value) || 0;
+                    m.hp = m.isplayer ? enteredHp : Math.max(0, enteredHp);
                     m.maxHp = Math.max(m.maxHp || 1, m.hp);
                     updateTokenHealthBar(m);
                     if (m.hp > previousHp) flashToken(m.id, 'heal');
                     else if (m.hp < previousHp) flashToken(m.id, 'damage');
-                    if (previousHp > 0 && m.hp === 0) {
+                    if (previousHp > 0 && m.hp <= 0) {
                         showTokenDeathEffect(m.id);
                         removeDefeatedMonster(m.id);
                     }
@@ -6447,6 +6463,9 @@
             healthBar.className = 'token-health-bar';
             const healthFill = document.createElement('div');
             healthFill.className = 'token-health-fill';
+            const initialHealthRatio = Math.max(0, Math.min(1, monster.hp / Math.max(1, monster.maxHp || 1)));
+            healthFill.style.width = `${initialHealthRatio * 100}%`;
+            healthFill.style.backgroundColor = getHealthTier(monster).color;
             healthBar.appendChild(healthFill);
 
             const defeatedX = document.createElement('div');

@@ -28,6 +28,22 @@
     .monster-token.is-defeated img { filter: grayscale(1) brightness(.42); }
     .defeated-token-x { display: none; position: absolute; inset: 0; z-index: 18; align-items: center; justify-content: center; color: #e00000; font-family: Arial, sans-serif; font-weight: 900; line-height: 1; text-shadow: 0 0 4px #000, 2px 2px 0 #330000; pointer-events: none; }
     .monster-token.is-defeated .defeated-token-x { display: flex; }
+    .monster-token.is-selected { border-color: #4fc3ff !important; box-shadow: 0 0 0 3px rgba(79,195,255,.8), 0 0 18px #4fc3ff; }
+    .token-health-bar { position:absolute; left:0; bottom:-8px; width:100%; height:7px; overflow:hidden; background:#3b1111; border:1px solid #111; border-radius:4px; box-sizing:border-box; pointer-events:none; }
+    .token-health-fill { height:100%; width:100%; background:#2ecc40; transition:width .25s ease, background-color .25s ease; }
+    .map-action-panel { display:none; position:fixed; z-index:2200; top:80px; right:20px; width:280px; padding:14px; background:rgba(20,20,20,.97); border:2px solid #4fc3ff; border-radius:9px; box-shadow:0 8px 30px #000; color:white; }
+    .map-action-panel.is-open { display:block; }
+    .map-action-panel h3 { margin:0 0 4px; color:#FFD700; }
+    .map-action-panel select, .map-action-panel input, .map-action-panel button { width:100%; box-sizing:border-box; margin-top:8px; padding:9px; background:#333; color:white; border:1px solid #666; border-radius:5px; }
+    .map-action-panel button { background:#32CD32; color:#111; border:0; font-weight:bold; cursor:pointer; }
+    .map-action-panel .map-action-close { position:absolute; top:4px; right:7px; width:auto; margin:0; padding:3px 7px; background:transparent; color:#bbb; }
+    .token-lasso { position:absolute; inset:0; z-index:30; width:100%; height:100%; pointer-events:none; overflow:visible; }
+    .token-lasso polyline { fill:rgba(79,195,255,.16); stroke:#4fc3ff; stroke-width:3; stroke-dasharray:9 6; stroke-linejoin:round; }
+    .combat-flash-effect { position:fixed; z-index:2900; border-radius:50%; pointer-events:none; }
+    .combat-flash-effect.flash-red { animation:flash-red 1s ease-out forwards; }
+    .combat-flash-effect.flash-green { animation:flash-green 1s ease-out forwards; }
+    .token-death-effect { position:fixed; z-index:3000; width:72px; height:72px; object-fit:contain; pointer-events:none; animation:token-death-float 1.6s ease-out forwards; }
+    @keyframes token-death-float { 0%{transform:translate(-50%,0) scale(.65);opacity:0} 18%{transform:translate(-50%,-12px) scale(1.1);opacity:1} 100%{transform:translate(-50%,-130px) scale(.85);opacity:0} }
 
     #menu {
       position: absolute;
@@ -151,7 +167,18 @@
         <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image" style="width: 100%; height: auto; display: block;">
         <div id="mapTokenLayer"
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+        <svg id="tokenLasso" class="token-lasso" style="display:none;"><polyline id="tokenLassoPath" points=""></polyline></svg>
       </div>
+    </div>
+
+    <div id="mapActionPanel" class="map-action-panel" role="dialog" aria-label="Token actions">
+      <button class="map-action-close" type="button" onclick="clearMapTokenSelection()" aria-label="Close">×</button>
+      <h3>Token Actions</h3>
+      <div id="mapActionTargets">No tokens selected</div>
+      <select id="mapActionType" onchange="updateMapActionFields()"><option value="damage">Damage</option><option value="heal">Heal</option><option value="apply">Apply Condition</option><option value="remove">Remove Condition</option></select>
+      <div id="mapActionAmountGroup"><input id="mapActionAmount" type="number" min="0" value="0" placeholder="Amount"></div>
+      <div id="mapActionConditionGroup" style="display:none;"><select id="mapActionCondition"><option>Blinded</option><option>Charmed</option><option>Deafened</option><option>Frightened</option><option>Grappled</option><option>Incapacitated</option><option>Invisible</option><option>Paralyzed</option><option>Petrified</option><option>Poisoned</option><option>Prone</option><option>Restrained</option><option>Stunned</option><option>Unconscious</option><option>Exhaustion</option><option>Hexed</option><option>Blessed</option><option>Baned</option><option>mark1</option><option>mark2</option><option>mark3</option></select></div>
+      <button type="button" onclick="applyMapTokenAction()">Apply to Selected</button>
     </div>
 
     <!-- Token Size Controls -->
@@ -172,6 +199,7 @@
       <span>Token Size</span>
       <button id="decreaseTokenSize" style="font-size: 18px;">-</button>
       <button id="increaseTokenSize" style="font-size: 18px;">+</button>
+      <button id="toggleDrawingToolbar" type="button">Hide Drawing</button>
     </div>
   </div>
 
@@ -208,7 +236,7 @@
             style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
 
           <label>HP:</label>
-          <input type="number" id="currentHP" min="0" value="10"
+          <input type="number" id="currentHP" value="10"
             style="width: 100%; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
         </div>
 
@@ -462,6 +490,94 @@
     // Global monster state array
     const monsters = []; // Each: { id, name, hp, init, conditions, x, y, isplayer }
     const tokenLayer = document.getElementById('mapTokenLayer');
+    const mapImage = document.getElementById('mapImage');
+    const selectedMapTokenIds = new Set();
+
+    function normalizeMonsterState(monster) {
+      const hp = Number(monster.hp) || 0;
+      return { ...monster, hp, maxHp: Math.max(1, Number(monster.maxHp) || hp || 1), conditions: Array.isArray(monster.conditions) ? monster.conditions : [] };
+    }
+
+    function updateTokenHealthBar(monster) {
+      const token = document.getElementById(`token-${monster.id}`);
+      if (!token) return;
+      const fill = token.querySelector('.token-health-fill');
+      const bar = token.querySelector('.token-health-bar');
+      if (!fill || !bar) return;
+      const ratio = Math.max(0, Math.min(1, monster.hp / Math.max(1, monster.maxHp || 1)));
+      const tier = ratio >= .75 ? ['#2ecc40','Undamaged / Scratched'] : ratio >= .5 ? ['#ff8c00','Bloodied / Hurt'] : ratio >= .25 ? ['#ffd700','Battered / Badly Injured'] : ['#e32636','On Its Last Legs / Critical'];
+      fill.style.width = `${ratio * 100}%`;
+      fill.style.backgroundColor = tier[0];
+      bar.title = `${tier[1]}: ${monster.hp}/${monster.maxHp} HP`;
+    }
+
+    function updateTokenDefeatedState(monster) {
+      const token = document.getElementById(`token-${monster.id}`);
+      if (!token) return;
+      token.classList.toggle('is-defeated', Boolean(monster.isplayer && monster.hp <= 0));
+      const defeatedX = token.querySelector('.defeated-token-x');
+      if (defeatedX) defeatedX.style.fontSize = `${currentTokenSize * .82}px`;
+    }
+
+    function refreshMapTokenSelection() {
+      document.querySelectorAll('.monster-token').forEach(token => token.classList.toggle('is-selected', selectedMapTokenIds.has(token.id.replace('token-',''))));
+      const selected = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
+      document.getElementById('mapActionTargets').textContent = selected.length === 1 ? selected[0].name : `${selected.length} tokens selected`;
+      if (!selected.length) document.getElementById('mapActionPanel').classList.remove('is-open');
+    }
+
+    function selectMapToken(monsterId, additive) {
+      if (!additive) selectedMapTokenIds.clear();
+      if (additive && selectedMapTokenIds.has(monsterId)) selectedMapTokenIds.delete(monsterId); else selectedMapTokenIds.add(monsterId);
+      refreshMapTokenSelection();
+      if (selectedMapTokenIds.size) document.getElementById('mapActionPanel').classList.add('is-open');
+    }
+
+    function clearMapTokenSelection() { selectedMapTokenIds.clear(); refreshMapTokenSelection(); }
+    function updateMapActionFields() {
+      const usesAmount = ['damage','heal'].includes(document.getElementById('mapActionType').value);
+      document.getElementById('mapActionAmountGroup').style.display = usesAmount ? 'block' : 'none';
+      document.getElementById('mapActionConditionGroup').style.display = usesAmount ? 'none' : 'block';
+    }
+
+    function showTokenDeathEffect(monsterId) {
+      const token = document.getElementById(`token-${monsterId}`);
+      if (!token) return;
+      const rect = token.getBoundingClientRect();
+      const icon = document.createElement('img');
+      icon.className = 'token-death-effect'; icon.src = 'data/images/dead_icon.png'; icon.alt = '';
+      icon.style.left = `${rect.left + rect.width / 2}px`; icon.style.top = `${rect.top + rect.height / 2 - 36}px`;
+      document.body.appendChild(icon); icon.addEventListener('animationend', () => icon.remove(), { once:true });
+    }
+
+    function removeDefeatedMonster(monsterId) {
+      const index = monsters.findIndex(monster => monster.id === monsterId);
+      const monster = index >= 0 ? monsters[index] : null;
+      if (monster?.isplayer) { updateTokenDefeatedState(monster); return; }
+      if (index >= 0) monsters.splice(index,1);
+      selectedMapTokenIds.delete(monsterId);
+      document.getElementById(`token-${monsterId}`)?.remove();
+    }
+
+    function applyMapTokenAction() {
+      const action = document.getElementById('mapActionType').value;
+      const amount = Math.max(0, Number(document.getElementById('mapActionAmount').value) || 0);
+      const condition = document.getElementById('mapActionCondition').value;
+      const targets = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
+      targets.forEach(monster => {
+        const previousHp = monster.hp;
+        if (action === 'heal') { monster.hp = Math.min(monster.maxHp, monster.hp + amount); flashToken(monster.id,'heal'); }
+        else if (action === 'damage') { monster.hp = monster.isplayer ? monster.hp-amount : Math.max(0,monster.hp-amount); flashToken(monster.id,'damage'); if (previousHp > 0 && monster.hp <= 0) { showTokenDeathEffect(monster.id); removeDefeatedMonster(monster.id); } }
+        else if (action === 'apply' && !monster.conditions.some(item => item.toLowerCase() === condition.toLowerCase())) monster.conditions.push(condition);
+        else if (action === 'remove') monster.conditions = monster.conditions.filter(item => item.toLowerCase() !== condition.toLowerCase());
+        updateTokenHealthBar(monster); updateTokenDefeatedState(monster);
+        const conditionLabel = document.querySelector(`#token-${CSS.escape(monster.id)} .condition-label`);
+        if (conditionLabel) conditionLabel.textContent = monster.conditions.join(', ');
+        if (monster.id === currentPlayerId) document.getElementById('currentHP').value = monster.hp;
+      });
+      refreshMapTokenSelection();
+      syncMonstersToFirebase();
+    }
 
     function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`)) {
       if (!element || !mapImage?.clientWidth || !mapImage?.clientHeight) return;
@@ -483,6 +599,7 @@
       element.classList.toggle('is-defeated', Boolean(monster.isplayer && monster.hp <= 0));
       const defeatedX = element.querySelector('.defeated-token-x');
       if (defeatedX) defeatedX.style.fontSize = `${currentTokenSize * 0.82}px`;
+      updateTokenHealthBar(monster);
     }
 
     function refreshMapLayout() {
@@ -546,7 +663,7 @@
       const conditionLabel = document.createElement('div');
       conditionLabel.className = 'condition-label';
       conditionLabel.style.position = 'absolute';
-      conditionLabel.style.bottom = '-5px';
+      conditionLabel.style.bottom = '-30px';
       conditionLabel.style.left = '50%';
       conditionLabel.style.transform = 'translateX(-50%)';
       conditionLabel.style.fontSize = `${currentTokenSize / 5}px`;
@@ -557,14 +674,29 @@
       conditionLabel.style.pointerEvents = 'none';
       conditionLabel.textContent = (monster.conditions || []).join(', ');
 
+      const healthBar = document.createElement('div');
+      healthBar.className = 'token-health-bar';
+      const healthFill = document.createElement('div');
+      healthFill.className = 'token-health-fill';
+      const initialHealthRatio=Math.max(0,Math.min(1,monster.hp/Math.max(1,monster.maxHp||1)));
+      healthFill.style.width=`${initialHealthRatio*100}%`;
+      healthFill.style.backgroundColor=initialHealthRatio>=.75?'#2ecc40':initialHealthRatio>=.5?'#ff8c00':initialHealthRatio>=.25?'#ffd700':'#e32636';
+      healthBar.appendChild(healthFill);
+
       const defeatedX = document.createElement('div');
       defeatedX.className = 'defeated-token-x';
       defeatedX.textContent = '×';
 
       container.appendChild(img);
       container.appendChild(label);
+      container.appendChild(healthBar);
       container.appendChild(defeatedX);
       container.appendChild(conditionLabel);
+      container.addEventListener('click', event => {
+        event.stopPropagation();
+        if (container.dataset.suppressClick === 'true') return;
+        selectMapToken(monster.id, event.ctrlKey);
+      });
       makeDraggable(container);
       tokenLayer.appendChild(container);
       positionTokenElement(monster, container);
@@ -573,10 +705,12 @@
     function makeDraggable(el) {
       let isDragging = false;
       let offsetX = 0, offsetY = 0;
+      let dragStartX = 0, dragStartY = 0, didMove = false;
 
       el.addEventListener('mousedown', (e) => {
         e.preventDefault();
         isDragging = true;
+        didMove = false; dragStartX = e.clientX; dragStartY = e.clientY;
         offsetX = e.clientX - el.offsetLeft;
         offsetY = e.clientY - el.offsetTop;
         el.style.cursor = 'grabbing';
@@ -584,6 +718,7 @@
 
       document.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
+        if (Math.hypot(e.clientX-dragStartX,e.clientY-dragStartY)>3) didMove=true;
         el.style.left = `${e.clientX - offsetX}px`;
         el.style.top = `${e.clientY - offsetY}px`;
       });
@@ -602,6 +737,7 @@
             monster.yRatio = topPx / mapImage.clientHeight;
           }
           syncMonstersToFirebase();
+          if (didMove) { el.dataset.suppressClick='true'; setTimeout(()=>{el.dataset.suppressClick='false';},0); }
         }
       });
 
@@ -689,6 +825,7 @@
         id: id,
         name: name,
         hp: parseInt(document.getElementById('currentHP').value),
+        maxHp: Math.max(1, parseInt(document.getElementById('currentHP').value) || 1),
         init: parseInt(document.getElementById('initiativeInput').value),
         conditions: [],
         xRatio: 0.5,
@@ -705,7 +842,13 @@
     document.getElementById('currentHP').addEventListener('input', () => {
       const m = monsters.find(m => m.id === currentPlayerId);
       if (m) {
-        m.hp = parseInt(document.getElementById('currentHP').value);
+        const previousHp = m.hp;
+        m.hp = parseInt(document.getElementById('currentHP').value) || 0;
+        m.maxHp = Math.max(m.maxHp || 1, m.hp);
+        if (m.hp > previousHp) flashToken(m.id,'heal');
+        else if (m.hp < previousHp) flashToken(m.id,'damage');
+        if (previousHp > 0 && m.hp <= 0) showTokenDeathEffect(m.id);
+        updateTokenHealthBar(m); updateTokenDefeatedState(m);
         syncMonstersToFirebase();
       }
     });
@@ -775,8 +918,10 @@
         document.getElementById('mapTokenLayer').innerHTML = '';
 
         data.monsters.forEach(m => {
-          monsters.push({ ...m });
-          addMonsterToken(m);
+          const normalized=normalizeMonsterState(m);
+          if(normalized.hp<=0&&!normalized.isplayer)return;
+          monsters.push(normalized);
+          addMonsterToken(normalized);
         });
 
         scheduleMapLayoutRefresh();
@@ -808,15 +953,19 @@
 
 
       if (action === 'heal') {
-        monster.hp += amount;
+        monster.hp = Math.min(monster.maxHp || monster.hp + amount, monster.hp + amount);
 
         flashToken(monster.id, 'heal');
         await sleep(1000);
 
       } else if (action === 'damage') {
-        monster.hp = Math.max(0, monster.hp - amount);
+        monster.hp = monster.isplayer ? monster.hp - amount : Math.max(0, monster.hp - amount);
 
         flashToken(monster.id, 'damage');
+        if (previousHP > 0 && monster.hp <= 0) {
+          showTokenDeathEffect(monster.id);
+          removeDefeatedMonster(monster.id);
+        }
         await sleep(1000);
 
       } else if (action === 'apply') {
@@ -848,6 +997,38 @@
     };
 
     const mapTab = document.getElementById('scrollWrapper');
+    const playerMapTransformLayer = document.getElementById('mapTransformLayer');
+    const tokenLasso = document.getElementById('tokenLasso');
+    const tokenLassoPath = document.getElementById('tokenLassoPath');
+    let lassoPoints = [];
+
+    function mapClientToLocal(clientX, clientY) {
+      const rect = mapImage.getBoundingClientRect();
+      return { x:(clientX-rect.left)*(mapImage.clientWidth/rect.width), y:(clientY-rect.top)*(mapImage.clientHeight/rect.height) };
+    }
+
+    function isPointInsideLasso(point,polygon){let inside=false;for(let i=0,j=polygon.length-1;i<polygon.length;j=i++){const a=polygon[i],b=polygon[j];if(((a.y>point.y)!==(b.y>point.y))&&point.x<(b.x-a.x)*(point.y-a.y)/((b.y-a.y)||.00001)+a.x)inside=!inside;}return inside;}
+    function renderTokenLasso(){tokenLassoPath.setAttribute('points',lassoPoints.map(point=>`${point.x},${point.y}`).join(' '));}
+
+    playerMapTransformLayer.addEventListener('mousedown', event => {
+      if (!event.ctrlKey || event.button !== 0 || event.target.closest('.monster-token')) return;
+      event.preventDefault(); event.stopPropagation();
+      lassoPoints=[mapClientToLocal(event.clientX,event.clientY)];
+      tokenLasso.style.display='block'; tokenLasso.setAttribute('viewBox',`0 0 ${mapImage.clientWidth} ${mapImage.clientHeight}`); renderTokenLasso();
+    }, true);
+
+    document.addEventListener('mousemove', event => {
+      if (!lassoPoints.length) return;
+      const point=mapClientToLocal(event.clientX,event.clientY);
+      const previous=lassoPoints[lassoPoints.length-1]; if(Math.hypot(point.x-previous.x,point.y-previous.y)>=3)lassoPoints.push(point); renderTokenLasso();
+    });
+
+    document.addEventListener('mouseup', event => {
+      if (!lassoPoints.length) return;
+      if(lassoPoints.length>=3)monsters.forEach(monster=>{if(isPointInsideLasso({x:monster.xRatio*mapImage.clientWidth,y:monster.yRatio*mapImage.clientHeight},lassoPoints))selectedMapTokenIds.add(monster.id);});
+      lassoPoints=[]; tokenLassoPath.setAttribute('points',''); tokenLasso.style.display='none'; refreshMapTokenSelection();
+      if(selectedMapTokenIds.size)document.getElementById('mapActionPanel').classList.add('is-open');
+    });
 
     // PAN START
     mapTab.addEventListener('mousedown', (e) => {
@@ -950,7 +1131,7 @@
     }
 
 
-    function flashToken(monsterId, type) {
+    function flashToken(monsterId, type, attempts = 5) {
       const token = document.getElementById(`token-${monsterId}`);
       if (!token && attempts > 0) {
         // Retry shortly later if token not yet in DOM
@@ -959,12 +1140,11 @@
       }
       if (!token) return;
 
-      const className = (type === 'heal') ? 'flash-green' : 'flash-red';
-      token.classList.add(className);
-
-      setTimeout(() => {
-        token.classList.remove(className);
-      }, 1000);  // Match animation duration
+      const rect=token.getBoundingClientRect();
+      const effect=document.createElement('div');
+      effect.className=`combat-flash-effect ${type==='heal'?'flash-green':'flash-red'}`;
+      effect.style.left=`${rect.left}px`; effect.style.top=`${rect.top}px`; effect.style.width=`${rect.width}px`; effect.style.height=`${rect.height}px`;
+      document.body.appendChild(effect); effect.addEventListener('animationend',()=>effect.remove(),{once:true});
     }
 
     // sound effects
@@ -1022,14 +1202,16 @@
 
       // Rebuild state and tokens
       data.monsters.forEach(m => {
-        monsters.push({ ...m }); // Keep shared reference
-        addMonsterToken(m);
+        const normalized=normalizeMonsterState(m);
+        if(normalized.hp<=0&&!normalized.isplayer)return;
+        monsters.push(normalized);
+        addMonsterToken(normalized);
 
         // Compare HP for animation
-        const oldHP = previousHP[m.id];
+        const oldHP = previousHP[normalized.id];
         if (typeof oldHP === 'number') {
-          if (m.hp > oldHP) flashToken(m.id, 'heal');
-          else if (m.hp < oldHP) flashToken(m.id, 'damage');
+          if (normalized.hp > oldHP) flashToken(normalized.id, 'heal');
+          else if (normalized.hp < oldHP) flashToken(normalized.id, 'damage');
         }
 
       });
@@ -1043,12 +1225,12 @@
           if (label) label.textContent = i;
         }
       });
+      refreshMapTokenSelection();
 
     });
 
-    const mapImage = document.getElementById('mapImage');
     const mapRef = db.collection("shared").doc("map");
-    setupSharedMapDrawing({
+    const drawingToolbarManager = setupSharedMapDrawing({
       db,
       mapImage,
       mapTransformLayer: document.getElementById('mapTransformLayer'),
@@ -1057,6 +1239,17 @@
         top: '80px',
         left: '25px'
       }
+    });
+    let drawingToolbarHidden = false;
+    document.getElementById('toggleDrawingToolbar')?.addEventListener('click', event => {
+      drawingToolbarHidden = !drawingToolbarHidden;
+      drawingToolbarManager.setVisible(!drawingToolbarHidden);
+      event.currentTarget.textContent = drawingToolbarHidden ? 'Show Drawing' : 'Hide Drawing';
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      drawingToolbarManager.setTool('pan');
+      clearMapTokenSelection();
     });
 
     mapImage.addEventListener('load', () => {
