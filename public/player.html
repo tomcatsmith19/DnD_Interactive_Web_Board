@@ -92,6 +92,15 @@
     .party-modal-card { width:min(620px,90vw); max-height:80vh; overflow:auto; padding:18px; background:#222; color:white; border-radius:10px; }
     .party-choice-list { max-height:55vh; overflow:auto; margin:10px 0; }
     .party-choice { display:flex; justify-content:space-between; width:100%; margin:3px 0; color:white; background:#333 !important; }
+    .custom-player-card { width:min(440px,90vw); display:flex; flex-direction:column; gap:10px; }
+    .custom-player-card input[type="text"] { padding:9px; color:white; background:#292929; border:1px solid #666; border-radius:5px; }
+    .custom-player-preview { width:150px; height:150px; align-self:center; object-fit:cover; border:2px solid #FFD700; border-radius:50%; background:#111; }
+    .custom-player-library { max-height:190px; overflow:auto; padding:6px; background:#181818; border:1px solid #555; border-radius:6px; }
+    .custom-player-library-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto auto; gap:5px; align-items:center; padding:6px 0; border-bottom:1px solid #444; }
+    .custom-player-library-row button { min-width:56px; padding:6px !important; }
+    .fantasy-token-button { width:34px; height:34px; padding:0 !important; color:#f4d76d; background:linear-gradient(#4b2915,#1d1009); border:2px ridge #d4af37; border-radius:50% 50% 44% 44%; box-shadow:0 0 0 1px #5b3517,0 2px 5px #000; font-family:Georgia,'Times New Roman',serif; font-size:23px !important; font-weight:bold; line-height:28px; cursor:pointer; text-shadow:0 1px #000; }
+    .fantasy-token-button:hover { color:#111; background:#FFD700; }
+    .token-size-label { color:#f4d76d; font-family:'MedievalSharp',Georgia,serif; white-space:nowrap; }
     @keyframes token-death-float { 0%{transform:translate(-50%,0) scale(.65);opacity:0} 18%{transform:translate(-50%,-12px) scale(1.1);opacity:1} 100%{transform:translate(-50%,-130px) scale(.85);opacity:0} }
 
     #menu {
@@ -233,8 +242,8 @@
     <!-- Token Size Controls -->
     <div id="tokenSizeControls" style="
                     position: fixed;
-                    top: 25px;
-                    left: 25px;
+                    top: 8px;
+                    left: 10px;
                     background-color: rgba(0, 0, 0, 0.7);
                     padding: 8px 12px;
                     border-radius: 8px;
@@ -245,9 +254,9 @@
                     color: white;
                     font-family: 'MedievalSharp', cursive;
                 ">
-      <span>Token Size</span>
-      <button id="decreaseTokenSize" style="font-size: 18px;">-</button>
-      <button id="increaseTokenSize" style="font-size: 18px;">+</button>
+      <span class="token-size-label">Token Size</span>
+      <button id="decreaseTokenSize" class="fantasy-token-button" title="Decrease token size">−</button>
+      <button id="increaseTokenSize" class="fantasy-token-button" title="Increase token size">+</button>
     </div>
   </div>
 
@@ -263,7 +272,8 @@
     <div id="playerNotesContent" class="player-left-panel-content"><h2>Notes</h2><textarea id="playerNotesArea" class="player-notes-area" placeholder="Write notes for the players here..."></textarea></div>
   </aside>
 
-  <div id="partyPicker" class="party-modal"><div class="party-modal-card"><h2>Add to Party</h2><input id="partySearch" type="search" placeholder="Search monsters or player characters" style="width:100%;padding:9px;"><div id="partyChoiceList" class="party-choice-list"></div><button type="button" onclick="closePartyPicker()">Close</button></div></div>
+  <div id="partyPicker" class="party-modal"><div class="party-modal-card"><h2>Add to Party</h2><input id="partySearch" type="search" placeholder="Search monsters or player characters" style="width:100%;padding:9px;"><div id="partyChoiceList" class="party-choice-list"></div><div style="display:flex;gap:8px;"><button type="button" style="flex:1;" onclick="openCustomPlayerModal()">Custom Player</button><button type="button" style="flex:1;" onclick="closePartyPicker()">Close</button></div></div></div>
+  <div id="customPlayerModal" class="party-modal"><div class="party-modal-card custom-player-card"><h2>Custom Players</h2><input id="customPlayerId" type="hidden"><input id="customPlayerTokenUrl" type="hidden"><input id="customPlayerTokenPath" type="hidden"><label>Name</label><input id="customPlayerName" type="text" placeholder="Player name"><label>Token Image</label><input id="customPlayerTokenUpload" type="file" accept="image/*"><img id="customPlayerTokenPreview" class="custom-player-preview" src="data/player_tokens/Telperil.png" alt="Custom player token preview"><div style="display:flex;gap:8px;"><button id="saveCustomPlayerBtn" type="button" style="flex:1;" onclick="createCustomPlayer()">Save &amp; Add to Party</button><button type="button" style="flex:1;background:#444;color:#FFD700;" onclick="resetCustomPlayerForm()">New Player</button><button type="button" style="flex:1;background:#a83232;color:white;" onclick="closeCustomPlayerModal()">Close</button></div><div id="customPlayerStatus" style="min-height:20px;color:#FFD700;"></div><strong style="color:#FFD700;">Custom Player Library</strong><div id="customPlayerLibrary" class="custom-player-library"></div></div></div>
 
   <section id="audioDock" class="audio-dock is-collapsed">
     <button id="audioCollapseButton" class="audio-collapse-tab" type="button" onclick="toggleAudioDock()" aria-label="Sound panel" title="Sound panel">♫</button>
@@ -492,6 +502,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
   <script src="map-drawing.js"></script>
 
   <script>
@@ -508,6 +519,7 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
+    const storage = firebase.storage();
     const playerSessionControls = document.getElementById('playerSessionControls');
     const playerMenuButton = document.getElementById('menuBtn');
     const playerLogoutButton = document.getElementById('logoutBtn');
@@ -601,6 +613,9 @@
     const mapImage = document.getElementById('mapImage');
     const selectedMapTokenIds = new Set();
     let partyCatalog = [];
+    let basePartyCatalog = [];
+    const customPlayerDefinitions = new Map();
+    const customPlayersRef = db.collection('customPlayers');
 
     function updatePlayerTokenInitiativeLabels() {
       const ordered = [...monsters].sort((a,b)=>(Number(b.init)||0)-(Number(a.init)||0));
@@ -683,11 +698,93 @@
     setupPlayerNotesPersistence();
     function openPartyPicker(){document.getElementById('partyPicker').classList.add('is-open');renderPartyChoices(document.getElementById('partySearch').value);}
     function closePartyPicker(){document.getElementById('partyPicker').classList.remove('is-open');}
-    async function addPartyMember(choice){let member;if(choice.kind==='Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;member.partyOwnerAccount=sessionAccountId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();syncMonstersToFirebase();closePartyPicker();}
+    function openCustomPlayerModal(){
+      closePartyPicker();
+      resetCustomPlayerForm();
+      renderCustomPlayerLibrary();
+      document.getElementById('customPlayerModal').classList.add('is-open');
+    }
+    function resetCustomPlayerForm(){
+      document.getElementById('customPlayerId').value='';
+      document.getElementById('customPlayerName').value='';
+      document.getElementById('customPlayerTokenUpload').value='';
+      document.getElementById('customPlayerTokenUrl').value='';
+      document.getElementById('customPlayerTokenPath').value='';
+      document.getElementById('customPlayerTokenPreview').src='data/player_tokens/Telperil.png';
+      document.getElementById('customPlayerStatus').textContent='';
+    }
+    function closeCustomPlayerModal(){document.getElementById('customPlayerModal').classList.remove('is-open');}
+    document.getElementById('customPlayerTokenUpload')?.addEventListener('change',event=>{
+      const file=event.target.files?.[0];
+      if(file)document.getElementById('customPlayerTokenPreview').src=URL.createObjectURL(file);
+    });
+    function rebuildPartyCatalog(){
+      partyCatalog=[...basePartyCatalog,...Array.from(customPlayerDefinitions.values()).map(player=>({...player,kind:'Custom Player'}))];
+      if(document.getElementById('partyPicker').classList.contains('is-open'))renderPartyChoices(document.getElementById('partySearch').value);
+    }
+    function loadCustomPlayerIntoForm(playerId){
+      const player=customPlayerDefinitions.get(playerId);if(!player)return;
+      document.getElementById('customPlayerId').value=player.id;
+      document.getElementById('customPlayerName').value=player.name;
+      document.getElementById('customPlayerTokenUrl').value=player.tokenUrl||'';
+      document.getElementById('customPlayerTokenPath').value=player.tokenPath||'';
+      document.getElementById('customPlayerTokenUpload').value='';
+      document.getElementById('customPlayerTokenPreview').src=player.tokenUrl||'data/player_tokens/Telperil.png';
+      document.getElementById('customPlayerStatus').textContent=`Editing ${player.name}.`;
+    }
+    function renderCustomPlayerLibrary(){
+      const library=document.getElementById('customPlayerLibrary');if(!library)return;library.replaceChildren();
+      const players=Array.from(customPlayerDefinitions.values()).sort((a,b)=>a.name.localeCompare(b.name));
+      if(!players.length){library.textContent='No custom players saved yet.';return;}
+      players.forEach(player=>{
+        const row=document.createElement('div');row.className='custom-player-library-row';
+        const name=document.createElement('span');name.textContent=player.name;row.appendChild(name);
+        const add=document.createElement('button');add.type='button';add.textContent='Add';add.addEventListener('click',async()=>{await addPartyMember({...player,kind:'Custom Player'});closeCustomPlayerModal();});row.appendChild(add);
+        const edit=document.createElement('button');edit.type='button';edit.textContent='Edit';edit.addEventListener('click',()=>loadCustomPlayerIntoForm(player.id));row.appendChild(edit);
+        const remove=document.createElement('button');remove.type='button';remove.textContent='Delete';remove.style.cssText='background:#a83232;color:white;';remove.addEventListener('click',()=>deleteCustomPlayer(player.id));row.appendChild(remove);
+        library.appendChild(row);
+      });
+    }
+    async function deleteCustomPlayer(playerId){
+      const player=customPlayerDefinitions.get(playerId);if(!player||!confirm(`Delete custom player "${player.name}"?`))return;
+      await customPlayersRef.doc(playerId).delete();
+      if(player.tokenPath)storage.ref().child(player.tokenPath).delete().catch(()=>{});
+      customPlayerDefinitions.delete(playerId);rebuildPartyCatalog();renderCustomPlayerLibrary();
+      if(document.getElementById('customPlayerId').value===playerId)resetCustomPlayerForm();
+    }
+    async function createCustomPlayer(){
+      const name=document.getElementById('customPlayerName').value.trim();
+      const file=document.getElementById('customPlayerTokenUpload').files?.[0];
+      const existingId=document.getElementById('customPlayerId').value;
+      const existingUrl=document.getElementById('customPlayerTokenUrl').value;
+      const existingPath=document.getElementById('customPlayerTokenPath').value;
+      const status=document.getElementById('customPlayerStatus');
+      if(!name||(!file&&!existingUrl)){status.textContent='Enter a name and choose a token image.';return;}
+      const button=document.getElementById('saveCustomPlayerBtn');
+      button.disabled=true;status.textContent='Saving custom player...';
+      try{
+        const safeName=name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'player';
+        const playerId=existingId||`${sessionAccountId}-${safeName}-${Date.now()}`;
+        let tokenUrl=existingUrl,tokenPath=existingPath;
+        if(file){
+          const extension=(file.name.split('.').pop()||'png').replace(/[^a-z0-9]/gi,'').toLowerCase();
+          tokenPath=`custom-players/tokens/${sessionAccountId}/${safeName}-${Date.now()}.${extension}`;
+          const tokenRef=storage.ref().child(tokenPath);await tokenRef.put(file);tokenUrl=await tokenRef.getDownloadURL();
+          if(existingPath&&existingPath!==tokenPath)storage.ref().child(existingPath).delete().catch(()=>{});
+        }
+        const definition={id:playerId,name,tokenUrl,tokenPath,ownerUid:sessionAccountId,updatedAt:Date.now()};
+        await customPlayersRef.doc(playerId).set(definition,{merge:true});
+        customPlayerDefinitions.set(playerId,definition);rebuildPartyCatalog();renderCustomPlayerLibrary();
+        await addPartyMember({...definition,kind:'Custom Player'});closeCustomPlayerModal();
+      }catch(error){console.error('Failed to create custom player:',error);status.textContent='Could not upload the custom player.';}
+      finally{button.disabled=false;}
+    }
+    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;member.partyOwnerAccount=sessionAccountId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();await syncMonstersToFirebase();closePartyPicker();}
     function cleanupSessionParty(){if(!sessionOwnerId)return Promise.resolve();for(let i=monsters.length-1;i>=0;i--)if(monsters[i].partyManaged&&monsters[i].partyOwner===sessionOwnerId)monsters.splice(i,1);renderPartyTracker();return Promise.resolve(syncMonstersToFirebase());}
     document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
     const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
-    fetch('data/api_data/monster_catalog.json').then(response=>response.json()).then(data=>{partyCatalog=[...playerCharacterNames.map(name=>({name,kind:'Player'})),...data.map(monster=>({name:monster.name,kind:'Monster'}))];});
+    fetch('data/api_data/monster_catalog.json').then(response=>response.json()).then(data=>{basePartyCatalog=[...playerCharacterNames.map(name=>({name,kind:'Player'})),...data.map(monster=>({name:monster.name,kind:'Monster'}))];rebuildPartyCatalog();});
+    customPlayersRef.onSnapshot(snapshot=>{customPlayerDefinitions.clear();snapshot.forEach(doc=>{const data=doc.data()||{};customPlayerDefinitions.set(doc.id,{...data,id:doc.id});});rebuildPartyCatalog();renderCustomPlayerLibrary();},error=>console.error('Failed to load custom players:',error));
     window.addEventListener('pagehide',()=>cleanupSessionParty());
 
     function normalizeMonsterState(monster) {
@@ -868,7 +965,7 @@
       if (!monster.isplayer) {
         img.src = monster.tokenUrl || `data/monster_tokens/${encodeURIComponent(monster.name)}.webp`;
       } else {
-        img.src = `data/player_tokens/${encodeURIComponent(monster.name)}.png`;
+        img.src = monster.tokenUrl || `data/player_tokens/${encodeURIComponent(monster.name)}.png`;
       }
 
       img.style.width = '100%';
