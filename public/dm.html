@@ -5661,7 +5661,7 @@
                         <div class="npc-identity-layout">
                             <div class="npc-token-editor">
                                 <input id="npcTokenUrl" type="hidden"><input id="npcTokenPath" type="hidden">
-                                <img id="npcTokenPreview" class="npc-token-preview" src="data/monster_tokens/Acolyte.webp" alt="NPC token preview">
+                                <img id="npcTokenPreview" class="npc-token-preview" src="data/npc_tokens/human.webp" alt="NPC token preview">
                                 <label class="npc-token-upload-button">Upload Token<input id="npcTokenUpload" type="file" accept="image/*" onchange="previewNpcToken()"></label>
                             </div>
                             <div class="npc-identity-grid" style="grid-template-columns:1fr;">
@@ -6031,6 +6031,36 @@
             skills: { Artisan: 'Investigation and artisan tools', Farmer: 'Animal Handling and Nature', Guard: 'Athletics and Perception', Healer: 'Medicine and herbalism kit', Innkeeper: 'Insight and Persuasion', Laborer: 'Athletics and Survival', Merchant: 'Deception and Persuasion', Noble: 'History and Persuasion', Priest: 'Medicine and Religion', Sailor: 'Athletics and water vehicles', Scholar: 'Arcana and History', Soldier: 'Athletics and Intimidation', Thief: 'Sleight of Hand and thieves’ tools', Wanderer: 'Perception and Survival' }
         };
 
+        const NPC_RACE_TOKEN_FILES = {
+            aaracokra: 'Aarakocra.webp',
+            aarakocra: 'Aarakocra.webp',
+            dragonborn: 'dragonborne.webp',
+            dwarf: 'dwarf.webp',
+            elf: 'elf.webp',
+            firbolg: 'firbolg.webp',
+            gnome: 'gnome.webp',
+            goblin: 'goblin.webp',
+            halfling: 'halfling.webp',
+            half_elf: 'half_elf.webp',
+            half_orc: 'half_orc.webp',
+            harengon: 'harengon.webp',
+            human: 'human.webp',
+            kenku: 'kenku.webp',
+            owlin: 'owlin.webp',
+            sea_elf: 'sea_elf.webp',
+            tabaxi: 'tabaxi.webp',
+            tiefling: 'tiefling.webp',
+            tortle: 'tortle.webp',
+            warforged: 'warforged.webp'
+        };
+        const DEFAULT_NPC_TOKEN = 'data/npc_tokens/human.webp';
+
+        function getNpcRaceToken(race) {
+            const key = String(race || '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+            const filename = NPC_RACE_TOKEN_FILES[key];
+            return filename ? `data/npc_tokens/${filename}` : DEFAULT_NPC_TOKEN;
+        }
+
         function randomNpcItem(items) { return items[Math.floor(Math.random() * items.length)]; }
         function rollNpcStat() { return Array.from({ length: 3 }, () => Math.floor(Math.random() * 6) + 1).reduce((sum, roll) => sum + roll, 0); }
 
@@ -6069,9 +6099,10 @@
             document.getElementById('npcOccupation').value = occupation;
             document.getElementById('npcNotes').value = `${personal}\n\n${abilities}`;
             document.getElementById('npcTokenUpload').value = '';
-            document.getElementById('npcTokenUrl').value = '';
+            const generatedTokenUrl = getNpcRaceToken(inspiration.race);
+            document.getElementById('npcTokenUrl').value = generatedTokenUrl;
             document.getElementById('npcTokenPath').value = '';
-            document.getElementById('npcTokenPreview').src = DEFAULT_MONSTER_TOKEN;
+            document.getElementById('npcTokenPreview').src = generatedTokenUrl;
             ['npcStr', 'npcDex', 'npcCon', 'npcInt', 'npcWis', 'npcCha'].forEach((id, index) => {
                 document.getElementById(id).value = stats[index];
             });
@@ -6199,7 +6230,7 @@
             document.getElementById('npcTokenUrl').value = npc.tokenUrl || '';
             document.getElementById('npcTokenPath').value = npc.tokenPath || '';
             document.getElementById('npcTokenUpload').value = '';
-            document.getElementById('npcTokenPreview').src = npc.tokenUrl || DEFAULT_MONSTER_TOKEN;
+            document.getElementById('npcTokenPreview').src = npc.tokenUrl || getNpcRaceToken(npc.race);
             document.getElementById('npcGeneratorFlavor').textContent = 'Loaded saved NPC. Edit any field, then choose Save NPC to update it.';
         }
 
@@ -6210,7 +6241,7 @@
             const member = {
                 id: generateID(), name:npc.name.trim(), hp:10, maxHp:10,
                 init:Math.floor(Math.random()*20)+1, conditions:[], xRatio:.5, yRatio:.5,
-                isplayer:false, isNpc:true, tokenUrl:npc.tokenUrl || DEFAULT_MONSTER_TOKEN
+                isplayer:false, isNpc:true, tokenUrl:npc.tokenUrl || getNpcRaceToken(npc.race)
             };
             monsters.push(member);
             addMonsterToken(member);
