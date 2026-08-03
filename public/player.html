@@ -44,15 +44,28 @@
     .combat-flash-effect.flash-green { animation:flash-green 1s ease-out forwards; }
     .token-death-effect { position:fixed; z-index:3000; width:72px; height:72px; object-fit:contain; pointer-events:none; animation:token-death-float 1.6s ease-out forwards; }
     #menu, #toggleMenuStandalone { display:none !important; }
-    .party-panel { position:fixed; top:70px; left:20px; z-index:1100; width:390px; max-height:55vh; overflow:visible; padding:12px; color:white; background:rgba(15,15,15,.92); border:1px solid #666; border-radius:9px; transition:transform .25s ease; }
-    .party-panel.is-collapsed { transform:translateX(calc(-100% - 20px)); }
-    .party-panel-content { max-height:50vh; overflow:auto; }
-    .party-collapse { position:absolute; top:50%; right:-29px; transform:translateY(-50%); width:29px; height:105px; padding:0 !important; border-radius:0 7px 7px 0 !important; writing-mode:horizontal-tb; background:#111 !important; color:#FFD700; border:1px solid #FFD700 !important; }
+    .party-panel { position:fixed; top:70px; bottom:42px; left:0; z-index:1100; width:400px; max-height:none; overflow:visible; padding:12px; box-sizing:border-box; color:white; background:rgba(15,15,15,.92); border:1px solid #666; border-left:0; border-radius:0 9px 9px 0; transition:transform .25s ease; }
+    .party-panel.is-collapsed { transform:translateX(-100%); }
+    .player-left-rail { position:absolute; top:calc(50vh - 70px); right:-42px; transform:translateY(-50%); display:flex; flex-direction:column; width:42px; gap:5px; }
+    .player-left-rail button { width:42px; min-width:0; height:82px; padding:0 !important; border-radius:0 7px 7px 0 !important; background:#111 !important; color:#FFD700 !important; border:1px solid #FFD700 !important; border-left:0 !important; cursor:pointer; }
+    .player-left-rail button.is-active { background:#FFD700 !important; color:#111 !important; }
+    .player-left-rail svg { width:27px; height:40px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    .player-left-panel-content { display:none; height:100%; min-height:0; overflow:auto; flex-direction:column; }
+    .player-left-panel-content.is-active { display:flex; }
+    .party-panel-content { max-height:none; }
+    .player-notes-area { flex:1; min-height:220px; box-sizing:border-box; padding:10px; resize:none; background:#222; color:white; border:1px solid #666; border-radius:6px; font:1rem Arial,sans-serif; }
     .party-panel h2 { margin:0 0 8px; color:#FFD700; font-family:'MedievalSharp',cursive; }
     .party-table { width:100%; border-collapse:collapse; font-size:.85rem; }
     .party-table th,.party-table td { padding:5px; border:1px solid #555; }
     .party-table input { width:58px; box-sizing:border-box; background:#292929; color:white; border:1px solid #666; }
     .party-panel button,.party-modal button { padding:8px; background:#FFD700; border:0; border-radius:5px; font-weight:bold; cursor:pointer; }
+    .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
+    .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
+    .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
+    .session-controls-panel .session-menu-button { background:#1976d2 !important; }
+    .session-controls-panel .session-logout-button { background:#a83232 !important; }
+    .session-controls-panel .session-controls-toggle { position:absolute; left:-43px; bottom:0; width:43px; min-width:0; height:68px; padding:3px !important; background:#111 !important; color:#FFD700 !important; border:1px solid #FFD700 !important; border-right:0 !important; border-radius:8px 0 0 8px !important; }
+    .session-controls-toggle svg { width:34px; height:54px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
     .audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; gap:10px; padding:8px; color:white; background:rgba(15,15,15,.92); border:1px solid #666; border-radius:9px; }
     .audio-dock.is-collapsed .audio-dock-content { display:none; }
     .audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
@@ -73,7 +86,7 @@
     .audio-group.combat button:hover { color:#210606; background:#ff5959; }
     .audio-group.checks button { color:#55a8ff; border-color:#55a8ff; }
     .audio-group.checks button:hover { color:#06172a; background:#55a8ff; }
-    .audio-collapse-tab { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; }
+    .audio-collapse-tab { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; font-size:24px; line-height:20px; }
     .party-modal { display:none; position:fixed; inset:0; z-index:3500; align-items:center; justify-content:center; background:rgba(0,0,0,.8); }
     .party-modal.is-open { display:flex; }
     .party-modal-card { width:min(620px,90vw); max-height:80vh; overflow:auto; padding:18px; background:#222; color:white; border-radius:10px; }
@@ -239,17 +252,21 @@
   </div>
 
   <aside id="partyPanel" class="party-panel is-collapsed">
-    <button id="partyCollapseButton" class="party-collapse" type="button" onclick="togglePartyPanel()">›</button>
-    <div class="party-panel-content"><h2>Party</h2>
-    <table class="party-table"><thead><tr><th>Name</th><th>Init</th><th>HP</th><th>Max HP</th></tr></thead><tbody id="partyTableBody"></tbody></table>
-    <button type="button" style="width:100%;margin-top:8px;" onclick="openPartyPicker()">Add to Party</button>
-    <div style="display:flex;gap:6px;margin-top:6px;"><button type="button" style="flex:1;background:#1976d2;color:white;" onclick="document.getElementById('menuBtn').click()">Menu</button><button type="button" style="flex:1;background:#b33;color:white;" onclick="document.getElementById('logoutBtn').click()">Logout</button></div></div>
+    <nav class="player-left-rail" aria-label="Player side panels">
+      <button id="partyCollapseButton" type="button" onclick="togglePlayerLeftPanel('party')" aria-label="Party panel" title="Party"><svg viewBox="0 0 28 42" aria-hidden="true"><circle cx="14" cy="9" r="5"/><path d="M6 36c0-9 2-17 8-17s8 8 8 17M9 23l-5 9M19 23l5 9M10 36h8"/></svg></button>
+      <button id="playerNotesButton" type="button" onclick="togglePlayerLeftPanel('notes')" aria-label="Player notes" title="Player notes"><svg viewBox="0 0 32 40" aria-hidden="true"><path d="M7 3h15l5 5v28H7z"/><path d="M22 3v6h5M11 15c3-3 7 3 11-1M11 21c4-3 7 3 12-1M11 27c3-2 6 2 10 0"/><path d="M4 8v28h17"/></svg></button>
+    </nav>
+    <div id="playerPartyContent" class="party-panel-content player-left-panel-content is-active"><h2>Party</h2>
+      <table class="party-table"><thead><tr><th>Name</th><th>Init</th><th>HP</th><th>Max HP</th></tr></thead><tbody id="partyTableBody"></tbody></table>
+      <button type="button" style="width:100%;margin-top:8px;" onclick="openPartyPicker()">Add to Party</button>
+    </div>
+    <div id="playerNotesContent" class="player-left-panel-content"><h2>Notes</h2><textarea id="playerNotesArea" class="player-notes-area" placeholder="Write notes for the players here..."></textarea></div>
   </aside>
 
   <div id="partyPicker" class="party-modal"><div class="party-modal-card"><h2>Add to Party</h2><input id="partySearch" type="search" placeholder="Search monsters or player characters" style="width:100%;padding:9px;"><div id="partyChoiceList" class="party-choice-list"></div><button type="button" onclick="closePartyPicker()">Close</button></div></div>
 
   <section id="audioDock" class="audio-dock is-collapsed">
-    <button id="audioCollapseButton" class="audio-collapse-tab" type="button" onclick="toggleAudioDock()">⌃</button>
+    <button id="audioCollapseButton" class="audio-collapse-tab" type="button" onclick="toggleAudioDock()" aria-label="Sound panel" title="Sound panel">♫</button>
     <div class="audio-dock-content">
       <div class="audio-music-controls"><select id="dockMusicSelect" onchange="handleDockMusicChange(this.value)"><option value="">No Music</option><option value="data/music/camp.mp3">Camp</option><option value="data/music/tavern.mp3">Tavern</option><option value="data/music/city.mp3">City</option><option value="data/music/desert.mp3">Desert</option><option value="data/music/swamp.mp3">Swamp</option><option value="data/music/forest.mp3">Forest</option><option value="data/music/mountain.mp3">Mountain</option><option value="data/music/underdark.mp3">Underdark</option><option value="data/music/dungeon.mp3">Dungeon</option><option value="data/music/combat.mp3">Combat</option></select>
       <div class="audio-controls"><label>Music <input id="musicVolume" type="range" min="0" max="1" step="0.05" value="1" oninput="setMusicVolume(this.value)"></label><label>SFX <input id="sfxVolume" type="range" min="0" max="1" step="0.05" value="1" oninput="setSfxVolume(this.value)"></label></div></div>
@@ -258,6 +275,10 @@
       <div class="audio-group checks"><strong>Checks</strong><button onclick="playSoundEffect('data/sounds/died.mp3')">Died</button><button onclick="playSoundEffect('data/sounds/item.mp3')">Item</button><button onclick="playSoundEffect('data/sounds/sad.mp3')">Fail</button><button onclick="playSoundEffect('data/sounds/senses.mp3')">Senses</button><button onclick="playSoundEffect('data/sounds/slipandfall.mp3')">Fall</button><button onclick="playSoundEffect('data/sounds/sucess.mp3')">Success</button><button onclick="playSoundEffect('data/sounds/spell_whispers.mp3')">Whispers</button></div>
     </div>
   </section>
+
+  <div id="playerSessionControls" class="session-controls-panel is-collapsed" aria-label="Session controls">
+    <button class="session-controls-toggle" type="button" onclick="toggleSessionControls('playerSessionControls')" aria-label="Menu and logout" title="Menu and logout"><svg viewBox="0 0 38 58" aria-hidden="true"><path d="M7 52V8l23-5v49M7 8h23M7 52h25"/><path d="M12 47V13l14-4v39z"/><circle cx="22" cy="29" r="1.4"/><path d="M3 17l4-3M3 27l4-2M3 39l4 2M30 14l5 3M30 27l5 1M30 41l5-3"/></svg></button>
+  </div>
 
   <!-- Menu -->
   <div id="menu" class="fullscreen">
@@ -487,6 +508,19 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
+    const playerSessionControls = document.getElementById('playerSessionControls');
+    const playerMenuButton = document.getElementById('menuBtn');
+    const playerLogoutButton = document.getElementById('logoutBtn');
+    if (playerMenuButton) {
+      playerMenuButton.removeAttribute('style');
+      playerMenuButton.className = 'session-menu-button';
+      playerSessionControls.appendChild(playerMenuButton);
+    }
+    if (playerLogoutButton) {
+      playerLogoutButton.removeAttribute('style');
+      playerLogoutButton.className = 'session-logout-button';
+      playerSessionControls.appendChild(playerLogoutButton);
+    }
     // Firebase UID identifies the account, not an individual browser instance.
     // sessionStorage gives each browser tab its own stable owner across reloads.
     function getPlayerInstanceId() {
@@ -589,13 +623,64 @@
     }
 
     function renderPartyChoices(filter='') {const list=document.getElementById('partyChoiceList');list.replaceChildren();partyCatalog.filter(item=>item.name.toLowerCase().includes(filter.toLowerCase())).forEach(item=>{const button=document.createElement('button');button.className='party-choice';button.type='button';button.textContent=`${item.name} — ${item.kind}`;button.addEventListener('click',()=>addPartyMember(item));list.appendChild(button);});}
-    function togglePartyPanel(){const panel=document.getElementById('partyPanel'),button=document.getElementById('partyCollapseButton');panel.classList.toggle('is-collapsed');button.textContent=panel.classList.contains('is-collapsed')?'›':'‹';}
-    function toggleAudioDock(){const dock=document.getElementById('audioDock'),button=document.getElementById('audioCollapseButton');dock.classList.toggle('is-collapsed');button.textContent=dock.classList.contains('is-collapsed')?'⌃':'⌄';}
+    let activePlayerLeftPanel = 'party';
+    function togglePlayerLeftPanel(mode){
+      const panel=document.getElementById('partyPanel');
+      const contentIds={party:'playerPartyContent',notes:'playerNotesContent'};
+      const buttonIds={party:'partyCollapseButton',notes:'playerNotesButton'};
+      const isSameOpenPanel=!panel.classList.contains('is-collapsed')&&activePlayerLeftPanel===mode;
+      document.querySelectorAll('.player-left-panel-content').forEach(content=>content.classList.remove('is-active'));
+      document.querySelectorAll('.player-left-rail button').forEach(button=>button.classList.remove('is-active'));
+      if(isSameOpenPanel){panel.classList.add('is-collapsed');return;}
+      activePlayerLeftPanel=mode;
+      document.getElementById(contentIds[mode])?.classList.add('is-active');
+      document.getElementById(buttonIds[mode])?.classList.add('is-active');
+      panel.classList.remove('is-collapsed');
+    }
+    function togglePartyPanel(){togglePlayerLeftPanel('party');}
+    function toggleSessionControls(panelId){document.getElementById(panelId)?.classList.toggle('is-collapsed');}
+    function toggleAudioDock(){document.getElementById('audioDock').classList.toggle('is-collapsed');}
     document.getElementById('partyPanel')?.addEventListener('wheel', event => {
-      document.querySelector('.party-panel-content').scrollTop += event.deltaY;
+      if(event.target.closest('textarea')){event.stopPropagation();return;}
+      document.querySelector('.player-left-panel-content.is-active').scrollTop += event.deltaY;
       event.preventDefault();
       event.stopPropagation();
     }, { passive:false });
+    function setupPlayerNotesPersistence(){
+      const notes=document.getElementById('playerNotesArea');
+      if(!notes)return;
+      const textKey='dndSharedPlayerNotes';
+      const timeKey='dndSharedPlayerNotesUpdatedAt';
+      let localUpdatedAt=Number(localStorage.getItem(timeKey)||0);
+      const localText=localStorage.getItem(textKey);
+      if(localText!==null)notes.value=localText;
+      const notesRef=db.collection('shared').doc('playerNotes');
+      let saveTimer=null;
+      notes.addEventListener('input',()=>{
+        localUpdatedAt=Date.now();
+        localStorage.setItem(textKey,notes.value);
+        localStorage.setItem(timeKey,String(localUpdatedAt));
+        clearTimeout(saveTimer);
+        saveTimer=setTimeout(()=>notesRef.set({text:notes.value,updatedAt:localUpdatedAt},{merge:true}).catch(error=>console.error('Failed to sync player notes:',error)),350);
+      });
+      notesRef.onSnapshot(snapshot=>{
+        if(!snapshot.exists){
+          if(localText!==null)notesRef.set({text:notes.value,updatedAt:localUpdatedAt},{merge:true});
+          return;
+        }
+        const data=snapshot.data()||{};
+        const remoteUpdatedAt=Number(data.updatedAt||0);
+        if(remoteUpdatedAt>localUpdatedAt&&document.activeElement!==notes){
+          notes.value=data.text||'';
+          localUpdatedAt=remoteUpdatedAt;
+          localStorage.setItem(textKey,notes.value);
+          localStorage.setItem(timeKey,String(localUpdatedAt));
+        }else if(localUpdatedAt>remoteUpdatedAt){
+          notesRef.set({text:notes.value,updatedAt:localUpdatedAt},{merge:true});
+        }
+      },error=>console.error('Failed to load player notes:',error));
+    }
+    setupPlayerNotesPersistence();
     function openPartyPicker(){document.getElementById('partyPicker').classList.add('is-open');renderPartyChoices(document.getElementById('partySearch').value);}
     function closePartyPicker(){document.getElementById('partyPicker').classList.remove('is-open');}
     async function addPartyMember(choice){let member;if(choice.kind==='Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;member.partyOwnerAccount=sessionAccountId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();syncMonstersToFirebase();closePartyPicker();}

@@ -146,6 +146,7 @@
       .drawing-toolbar.is-compact .drawing-toolbar-label { display: none; }
       .drawing-toolbar.is-collapsed > :not(.drawing-collapse-toggle) { display: none !important; }
       .drawing-toolbar.is-compact .drawing-collapse-toggle { position: absolute; left: 50%; bottom: -23px; transform: translateX(-50%); width: 92px; min-width: 92px; height: 23px; padding: 0; border-radius: 0 0 7px 7px; background: #111; color: #FFD700; border: 1px solid #FFD700; border-top: 0; font-size: 15px; }
+      .drawing-toolbar.is-compact .drawing-collapse-toggle svg { width: 64px; height: 16px; }
       .drawing-toolbar.is-compact.is-collapsed { height: 0; min-height: 0; padding: 0; border: 0; box-shadow: none; }
       .drawing-toolbar.is-compact.is-collapsed { top: 0 !important; }
       .drawing-toolbar.is-compact.is-collapsed .drawing-collapse-toggle { top: 0; bottom: auto; }
@@ -218,16 +219,16 @@
       const collapseToggle = document.createElement("button");
       collapseToggle.type = "button";
       collapseToggle.className = "drawing-collapse-toggle";
-      collapseToggle.textContent = "⌃";
+      collapseToggle.innerHTML = '<svg viewBox="0 0 80 20" aria-hidden="true"><path d="M3 14c8-8 14 7 22-1s14 6 23-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m55 14 13-12 7 7-13 12-8 1 1-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m66 4 7 7" stroke="currentColor" stroke-width="2"/></svg>';
       collapseToggle.title = "Hide drawing tools";
       collapseToggle.addEventListener("click", () => {
         toolbar.classList.toggle("is-collapsed");
-        collapseToggle.textContent = toolbar.classList.contains("is-collapsed") ? "⌄" : "⌃";
+        collapseToggle.title = toolbar.classList.contains("is-collapsed") ? "Show drawing tools" : "Hide drawing tools";
       });
       toolbar.appendChild(collapseToggle);
       if (options.startCollapsed) {
         toolbar.classList.add("is-collapsed");
-        collapseToggle.textContent = "⌄";
+        collapseToggle.title = "Show drawing tools";
       }
     }
 

@@ -196,6 +196,29 @@
         .dm-initiative-table { width:100%; border-collapse:collapse; background:#333; color:white; font-size:.82rem; }
         .dm-initiative-table th,.dm-initiative-table td { padding:6px; border:1px solid #555; }
         .dm-add-monster { width:100%; margin-top:8px; padding:9px; background:#FFD700; border:0; color:#111; font-weight:bold; border-radius:5px; cursor:pointer; }
+        .dm-left-dock { position:fixed; top:142px; bottom:42px; left:0; z-index:1120; width:440px; max-height:none; padding:12px; box-sizing:border-box; overflow:visible; color:white; background:rgba(15,15,15,.96); border:1px solid #666; border-left:0; border-radius:0 9px 9px 0; transition:transform .25s ease; }
+        .dm-left-dock.is-collapsed { transform:translateX(-100%); }
+        .dm-left-rail { position:absolute; top:calc(50vh - 142px); right:-48px; transform:translateY(-50%); display:flex; flex-direction:column; width:48px; gap:5px; }
+        .dm-left-rail button { width:48px; height:66px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-left:0; border-radius:0 7px 7px 0; cursor:pointer; font-size:1.45rem; }
+        .dm-left-rail button.is-active { background:#FFD700; color:#111; }
+        .dm-left-rail button svg { width:31px; height:38px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; vertical-align:middle; }
+        .dm-left-panel-content { display:none; height:100%; min-height:0; overflow:auto; flex-direction:column; }
+        .dm-left-panel-content.is-active { display:flex; }
+        .dm-left-panel-content h2 { margin:0 0 10px; color:#FFD700; font-family:'MedievalSharp',cursive; }
+        #dmNotesContent textarea { flex:1; min-height:220px; box-sizing:border-box; padding:10px; resize:none; background:#222; color:white; border:1px solid #666; border-radius:6px; }
+        .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
+        .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
+        .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
+        .session-controls-panel .session-menu-button { background:#1976d2 !important; }
+        .session-controls-panel .session-logout-button { background:#a83232 !important; }
+        .session-controls-panel .session-controls-toggle { position:absolute; left:-43px; bottom:0; width:43px; min-width:0; height:68px; padding:3px !important; background:#111 !important; color:#FFD700 !important; border:1px solid #FFD700 !important; border-right:0 !important; border-radius:8px 0 0 8px !important; }
+        .session-controls-toggle svg { width:34px; height:54px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+        #dmBooksContent select { margin-bottom:8px; padding:9px; background:#111; color:#FFD700; border:1px solid #FFD700; border-radius:5px; }
+        #dmBooksContent iframe { flex:1; min-height:0; width:100%; border:0; background:#111; }
+        #dmReferenceHost { display:flex; flex:1; min-height:0; }
+        #dmReferenceHost > div { display:flex !important; flex:1; min-height:0; width:100%; padding:0 !important; gap:8px !important; flex-direction:column; }
+        #dmReferenceHost > div > div:first-child { width:100% !important; max-height:38%; box-sizing:border-box; padding:10px !important; }
+        #dmReferenceHost > div > div:last-child { width:100% !important; min-height:0; box-sizing:border-box; }
         .dm-audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; padding:8px; color:white; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:9px; }
         .dm-audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
         .dm-audio-dock.is-collapsed .dm-audio-content { display:none; }
@@ -215,10 +238,16 @@
         .dm-audio-group.reactions button:hover { background:#55d66b; color:#081b0c; }
         .dm-audio-group.combat button:hover { background:#ff5959; color:#210606; }
         .dm-audio-group.checks button:hover { background:#55a8ff; color:#06172a; }
-        .dm-audio-collapse { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; }
+        .dm-audio-collapse { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; font-size:24px; line-height:20px; }
         .generator-panel { position:fixed; top:70px; right:18px; bottom:42px; z-index:1130; width:min(570px,calc(100vw - 42px)); padding:12px; box-sizing:border-box; overflow:visible; color:white; background:rgba(15,15,15,.96); border:1px solid #666; border-radius:9px; transition:transform .25s ease; }
         .generator-panel.is-collapsed { transform:translateX(calc(100% + 18px)); }
-        .generator-collapse { position:absolute; top:50%; left:-29px; transform:translateY(-50%); width:29px; height:105px; padding:0; border-radius:7px 0 0 7px; background:#111; color:#FFD700; border:1px solid #FFD700; cursor:pointer; font-size:20px; }
+        .generator-collapse { position:absolute; top:50%; left:-44px; transform:translateY(-50%); width:44px; height:105px; padding:0; border-radius:7px 0 0 7px; background:#111; color:#FFD700; border:1px solid #FFD700; cursor:pointer; }
+        .generator-collapse .gear-icon { position:absolute; font-size:23px; line-height:1; }
+        .generator-collapse .gear-one { left:5px; top:31px; transform:rotate(-22deg); }
+        .generator-collapse .gear-two { right:4px; top:50px; transform:rotate(23deg); }
+        .fantasy-token-button { width:34px; height:34px; padding:0 !important; color:#f4d76d; background:linear-gradient(#4b2915,#1d1009); border:2px ridge #d4af37; border-radius:50% 50% 44% 44%; box-shadow:0 0 0 1px #5b3517,0 2px 5px #000; font-family:Georgia,'Times New Roman',serif; font-size:23px !important; font-weight:bold; line-height:28px; cursor:pointer; text-shadow:0 1px #000; }
+        .fantasy-token-button:hover { color:#111; background:#FFD700; }
+        .token-size-label { color:#f4d76d; font-family:'MedievalSharp',Georgia,serif; white-space:nowrap; }
         .generator-panel-inner { height:100%; display:flex; flex-direction:column; min-height:0; }
         .generator-panel h2 { margin:0 0 8px; color:#FFD700; font-family:'MedievalSharp',cursive; }
         .generator-shared-controls { display:grid; grid-template-columns:1.25fr .8fr 1fr; gap:7px; margin-bottom:9px; }
@@ -462,14 +491,12 @@
 
 <div class="main-layout">
     <div class="tab-bar">
-        <button class="tab-button active" onclick="openTab('campaignTab')">Campaign</button>
-        <button class="tab-button" onclick="openTab('mapTab')">Map</button>
-        <button class="tab-button" onclick="openTab('referenceTab')">Reference</button>
+        <button class="tab-button active" onclick="openTab('mapTab')">Map</button>
         <button class="tab-button" onclick="openTab('creatorTab')">Creator</button>
     </div>
 
     <!-- Campaign Tab ############################################################################################-->
-    <div class="tab-content active" id="campaignTab">
+    <div class="tab-content" id="campaignTab">
         <div style="padding: 20px; display: flex; flex: 1; gap: 20px;">
 
             <!-- Left: Book Viewer -->
@@ -971,7 +998,7 @@
 
 
     <!-- Map Tab ##################################################################################################-->
-    <div class="tab-content" id="mapTab" style="overflow: auto; flex: 1;">
+    <div class="tab-content active" id="mapTab" style="overflow: auto; flex: 1;">
         <div id="mapContainer" style="position: relative; display: inline-block;">
             <div id="mapTransformLayer" style="transform-origin: top left; position: relative;">
                 <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image"
@@ -1008,7 +1035,7 @@
         <div id="tokenSizeControls" style="
                     position: fixed;
                     top: 75px;
-                    left: 25px;
+                    left: 10px;
                     background-color: rgba(0, 0, 0, 0.7);
                     padding: 8px 12px;
                     border-radius: 8px;
@@ -1019,6 +1046,9 @@
                     color: white;
                     font-family: 'MedievalSharp', cursive;
                 ">
+            <span class="token-size-label">Token Size</span>
+            <button id="decreaseTokenSize" class="fantasy-token-button" title="Decrease token size">−</button>
+            <button id="increaseTokenSize" class="fantasy-token-button" title="Increase token size">+</button>
             <select id="mapSelect"
                 style="padding: 10px; background-color: #333; color: white; border: 1px solid #555; border-radius: 5px; font-size: 1rem;">
 
@@ -1059,15 +1089,17 @@
                 </optgroup>
 
                 <!-- Add more maps here -->
-            </select><br>
-            <span>Token Size</span>
-            <button id="decreaseTokenSize" style="font-size: 18px;">-</button>
-            <button id="increaseTokenSize" style="font-size: 18px;">+</button>
+            </select>
         </div>
 
-        <aside id="dmInitiativePanel" class="dm-map-ui dm-initiative-panel is-collapsed" hidden>
-            <button id="dmInitiativeCollapse" class="dm-initiative-collapse" type="button" onclick="toggleDmInitiativePanel()" aria-label="Show initiative tracker">&#8250;</button>
-            <div class="dm-initiative-content">
+        <aside id="dmInitiativePanel" class="dm-map-ui dm-initiative-panel dm-left-dock is-collapsed" hidden>
+            <nav class="dm-left-rail" aria-label="Map side panels">
+                <button id="dmInitiativeCollapse" type="button" onclick="toggleDmLeftPanel('initiative')" aria-label="Initiative" title="Initiative">⚔</button>
+                <button id="dmNotesButton" type="button" onclick="toggleDmLeftPanel('notes')" aria-label="Notes" title="Notes"><svg viewBox="0 0 32 40" aria-hidden="true"><path d="M7 3h15l5 5v28H7z"/><path d="M22 3v6h5M11 15c3-3 7 3 11-1M11 21c4-3 7 3 12-1M11 27c3-2 6 2 10 0"/><path d="M4 8v28h17"/></svg></button>
+                <button id="dmBooksButton" type="button" onclick="toggleDmLeftPanel('books')" aria-label="Books" title="Books"><svg viewBox="0 0 38 38" aria-hidden="true"><path d="M19 9c-4-4-10-4-15-2v24c6-2 11-1 15 3zM19 9c4-4 10-4 15-2v24c-6-2-11-1-15 3z"/><path d="M8 12c3-1 6 0 8 2M8 18c3-1 6 0 8 2M30 12c-3-1-6 0-8 2M30 18c-3-1-6 0-8 2"/><path d="M19 5v29"/></svg></button>
+                <button id="dmReferenceButton" type="button" onclick="toggleDmLeftPanel('reference')" aria-label="Reference" title="Reference"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 13c-2 3-5 8-5 16 0 6 5 8 13 8s13-2 13-8c0-8-3-13-5-16"/><path d="M12 13c4 2 12 2 16 0l-3-7-5 4-5-4z"/><path d="M11 17c6 2 12 2 18 0"/><path d="M16 24c2-2 6-2 8 0M15 29c3-2 7-2 10 0"/></svg></button>
+            </nav>
+            <div id="dmInitiativeContent" class="dm-initiative-content dm-left-panel-content">
                 <h2>Initiative</h2>
                 <table class="dm-initiative-table">
                     <thead><tr><th>#</th><th>INIT</th><th>NAME</th><th>HP</th><th>Conditions</th></tr></thead>
@@ -1075,10 +1107,13 @@
                 </table>
                 <button id="addMonsterBtn" class="dm-add-monster" type="button">Add Monster</button>
             </div>
+            <div id="dmNotesContent" class="dm-left-panel-content"><h2>Notes</h2><div id="dmNotesHost" style="display:flex;flex:1;min-height:0;flex-direction:column;"></div></div>
+            <div id="dmBooksContent" class="dm-left-panel-content"><h2>Books</h2><div id="dmBooksHost" style="display:flex;flex:1;min-height:0;flex-direction:column;"></div></div>
+            <div id="dmReferenceContent" class="dm-left-panel-content"><h2>Reference</h2><div id="dmReferenceHost"></div></div>
         </aside>
 
         <section id="dmAudioDock" class="dm-map-ui dm-audio-dock is-collapsed" hidden>
-            <button id="dmAudioCollapse" class="dm-audio-collapse" type="button" onclick="toggleDmAudioDock()">&#8963;</button>
+            <button id="dmAudioCollapse" class="dm-audio-collapse" type="button" onclick="toggleDmAudioDock()" aria-label="Sound panel" title="Sound panel">♫</button>
             <div class="dm-audio-content">
                 <div class="dm-audio-music">
                     <select id="dmMusicSelect" onchange="handleDmMusicChange(this.value)"><option value="">No Music</option><option value="data/music/camp.mp3">Camp</option><option value="data/music/tavern.mp3">Tavern</option><option value="data/music/city.mp3">City</option><option value="data/music/desert.mp3">Desert</option><option value="data/music/swamp.mp3">Swamp</option><option value="data/music/forest.mp3">Forest</option><option value="data/music/mountain.mp3">Mountain</option><option value="data/music/underdark.mp3">Underdark</option><option value="data/music/dungeon.mp3">Dungeon</option><option value="data/music/combat.mp3">Combat</option></select>
@@ -1091,7 +1126,7 @@
         </section>
 
         <aside id="generatorPanel" class="dm-map-ui generator-panel is-collapsed" hidden>
-            <button id="generatorCollapse" class="generator-collapse" type="button" onclick="toggleGeneratorPanel()" aria-label="Show generators">&#8249;</button>
+            <button id="generatorCollapse" class="generator-collapse" type="button" onclick="toggleGeneratorPanel()" aria-label="Generators" title="Generators"><span class="gear-icon gear-one">⚙</span><span class="gear-icon gear-two">⚙</span></button>
             <div class="generator-panel-inner">
                 <h2>Generators</h2>
                 <div class="generator-shared-controls">
@@ -1120,6 +1155,10 @@
                 </div>
             </div>
         </aside>
+
+        <div id="dmSessionControls" class="dm-map-ui session-controls-panel is-collapsed" hidden aria-label="Session controls">
+            <button class="session-controls-toggle" type="button" onclick="toggleSessionControls('dmSessionControls')" aria-label="Menu and logout" title="Menu and logout"><svg viewBox="0 0 38 58" aria-hidden="true"><path d="M7 52V8l23-5v49M7 8h23M7 52h25"/><path d="M12 47V13l14-4v39z"/><circle cx="22" cy="29" r="1.4"/><path d="M3 17l4-3M3 27l4-2M3 39l4 2M30 14l5 3M30 27l5 1M30 41l5-3"/></svg></button>
+        </div>
 
     </div>
 
@@ -5538,29 +5577,37 @@
         let drawingToolbarManager = null;
         let drawingToolbarHidden = false;
 
-        function toggleDmInitiativePanel() {
+        let activeDmLeftPanel = null;
+        function toggleDmLeftPanel(mode) {
             const panel = document.getElementById('dmInitiativePanel');
-            const button = document.getElementById('dmInitiativeCollapse');
-            panel.classList.toggle('is-collapsed');
-            const collapsed = panel.classList.contains('is-collapsed');
-            button.textContent = collapsed ? '\u203a' : '\u2039';
-            button.setAttribute('aria-label', collapsed ? 'Show initiative tracker' : 'Hide initiative tracker');
+            const contentIds = { initiative:'dmInitiativeContent', notes:'dmNotesContent', books:'dmBooksContent', reference:'dmReferenceContent' };
+            const buttonIds = { initiative:'dmInitiativeCollapse', notes:'dmNotesButton', books:'dmBooksButton', reference:'dmReferenceButton' };
+            const isSameOpenPanel = !panel.classList.contains('is-collapsed') && activeDmLeftPanel === mode;
+            document.querySelectorAll('.dm-left-panel-content').forEach(content => content.classList.remove('is-active'));
+            document.querySelectorAll('.dm-left-rail button').forEach(button => button.classList.remove('is-active'));
+            if (isSameOpenPanel) {
+                panel.classList.add('is-collapsed');
+                activeDmLeftPanel = null;
+                return;
+            }
+            activeDmLeftPanel = mode;
+            document.getElementById(contentIds[mode])?.classList.add('is-active');
+            document.getElementById(buttonIds[mode])?.classList.add('is-active');
+            panel.classList.remove('is-collapsed');
         }
+
+        function toggleDmInitiativePanel() { toggleDmLeftPanel('initiative'); }
 
         function toggleDmAudioDock() {
             const dock = document.getElementById('dmAudioDock');
-            const button = document.getElementById('dmAudioCollapse');
             dock.classList.toggle('is-collapsed');
-            button.textContent = dock.classList.contains('is-collapsed') ? '\u2303' : '\u2304';
         }
 
         function toggleGeneratorPanel() {
             const panel = document.getElementById('generatorPanel');
-            const button = document.getElementById('generatorCollapse');
             panel.classList.toggle('is-collapsed');
             const collapsed = panel.classList.contains('is-collapsed');
-            button.textContent = collapsed ? '\u2039' : '\u203a';
-            button.setAttribute('aria-label', collapsed ? 'Show generators' : 'Hide generators');
+            document.getElementById('generatorCollapse').setAttribute('aria-label', collapsed ? 'Show generators' : 'Hide generators');
         }
 
         function showGeneratorMode(mode, button) {
@@ -5673,7 +5720,11 @@
             document.getElementById('generatorEnvironment')?.addEventListener('change', () => syncGeneratorSharedInputs(true));
             document.querySelectorAll('.generator-panel, .dm-initiative-panel').forEach(panel => {
                 panel.addEventListener('wheel', event => {
-                    const scroller = panel.querySelector('.generator-scroll, .dm-initiative-content');
+                    if (event.target.closest('textarea')) {
+                        event.stopPropagation();
+                        return;
+                    }
+                    const scroller = panel.querySelector('.generator-scroll, .dm-left-panel-content.is-active');
                     if (scroller) scroller.scrollTop += event.deltaY;
                     event.preventDefault();
                     event.stopPropagation();
@@ -5687,7 +5738,83 @@
             });
         }
 
+        function initializeCampaignDock() {
+            const notesHost = document.getElementById('dmNotesHost');
+            const booksHost = document.getElementById('dmBooksHost');
+            const notes = document.getElementById('notesArea');
+            const bookSelectControl = document.getElementById('bookSelect');
+            const bookViewerFrame = document.getElementById('bookViewer');
+            if (notes) notesHost.appendChild(notes);
+            const sessionControls = document.getElementById('dmSessionControls');
+            const logout = document.getElementById('logoutBtn');
+            const menu = document.getElementById('menuBtn');
+            if (menu) {
+                menu.removeAttribute('style');
+                menu.className = 'session-menu-button';
+                sessionControls?.appendChild(menu);
+            }
+            if (logout) {
+                logout.removeAttribute('style');
+                logout.className = 'session-logout-button';
+                sessionControls?.appendChild(logout);
+            }
+            if (bookSelectControl) booksHost.appendChild(bookSelectControl);
+            if (bookViewerFrame) booksHost.appendChild(bookViewerFrame);
+            const referenceTab = document.getElementById('referenceTab');
+            const referenceLayout = referenceTab?.firstElementChild;
+            if (referenceLayout) document.getElementById('dmReferenceHost').appendChild(referenceLayout);
+            referenceTab?.remove();
+            document.getElementById('campaignTab')?.remove();
+        }
+
+        function toggleSessionControls(panelId) {
+            document.getElementById(panelId)?.classList.toggle('is-collapsed');
+        }
+
+        function setupNotesPersistence() {
+            const notes = document.getElementById('notesArea');
+            if (!notes) return;
+            const textKey = 'dndDmCampaignNotes';
+            const timeKey = 'dndDmCampaignNotesUpdatedAt';
+            let localUpdatedAt = Number(localStorage.getItem(timeKey) || 0);
+            const localText = localStorage.getItem(textKey);
+            if (localText !== null) notes.value = localText;
+            const notesRef = db.collection('shared').doc('campaignNotes');
+            let saveTimer = null;
+
+            notes.addEventListener('input', () => {
+                localUpdatedAt = Date.now();
+                localStorage.setItem(textKey, notes.value);
+                localStorage.setItem(timeKey, String(localUpdatedAt));
+                clearTimeout(saveTimer);
+                saveTimer = setTimeout(() => {
+                    notesRef.set({ text:notes.value, updatedAt:localUpdatedAt }, { merge:true })
+                        .catch(error => console.error('Failed to sync campaign notes:', error));
+                }, 350);
+            });
+
+            notesRef.onSnapshot(snapshot => {
+                if (!snapshot.exists) {
+                    if (localText !== null) notesRef.set({ text:notes.value, updatedAt:localUpdatedAt }, { merge:true });
+                    return;
+                }
+                const data = snapshot.data() || {};
+                const remoteUpdatedAt = Number(data.updatedAt || 0);
+                if (remoteUpdatedAt > localUpdatedAt && document.activeElement !== notes) {
+                    notes.value = data.text || '';
+                    localUpdatedAt = remoteUpdatedAt;
+                    localStorage.setItem(textKey, notes.value);
+                    localStorage.setItem(timeKey, String(localUpdatedAt));
+                } else if (localUpdatedAt > remoteUpdatedAt) {
+                    notesRef.set({ text:notes.value, updatedAt:localUpdatedAt }, { merge:true });
+                }
+            }, error => console.error('Failed to load campaign notes:', error));
+        }
+
         initializeGeneratorPanel();
+        initializeCampaignDock();
+        setupNotesPersistence();
+        syncDmMapPanels('mapTab');
 
         function syncDrawingToolbarVisibility() {
             if (!drawingToolbarManager) return;
