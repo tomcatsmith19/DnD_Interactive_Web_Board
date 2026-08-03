@@ -328,6 +328,27 @@
         .map-action-panel select, .map-action-panel input, .map-action-panel button { width: 100%; box-sizing: border-box; margin-top: 8px; padding: 9px; background: #333; color: white; border: 1px solid #666; border-radius: 5px; }
         .map-action-panel button { background: #32CD32; color: #111; border: 0; font-weight: bold; cursor: pointer; }
         .map-action-panel .map-action-close { position: absolute; top: 4px; right: 7px; width: auto; margin: 0; padding: 3px 7px; background: transparent; color: #bbb; }
+        .monster-stat-modal { display:none; position:fixed; inset:0; z-index:3600; pointer-events:none; }
+        .monster-stat-modal.is-open { display:block; }
+        .classic-statblock { position:fixed; right:20px; bottom:20px; width:min(480px,calc(100vw - 40px)); height:min(520px,calc(100vh - 90px)); min-width:340px; min-height:220px; max-width:calc(100vw - 20px); max-height:calc(100vh - 60px); margin:0; padding:25px 24px 20px; box-sizing:border-box; overflow:auto; resize:both; pointer-events:auto; color:#651c12; background:#efe0ad; border:3px solid #7b2719; border-top-width:8px; border-bottom-width:8px; box-shadow:0 10px 35px #000; font-family:Georgia,'Times New Roman',serif; }
+        .statblock-drag-handle { position:absolute; top:0; left:38px; right:38px; height:18px; cursor:move; touch-action:none; background:rgba(111,29,20,.12); }
+        .classic-statblock h1 { margin:0; color:#6f1d14; font-size:2rem; font-variant:small-caps; }
+        .classic-statblock .stat-subtitle { margin:2px 0 9px; color:#3b2419; font-style:italic; }
+        .classic-statblock h2 { margin:12px 0 4px; padding-bottom:2px; color:#6f1d14; border-bottom:2px solid #9b3825; font-size:1.25rem; font-variant:small-caps; }
+        .classic-statblock p { margin:4px 0; line-height:1.35; }
+        .classic-statblock hr { height:4px; margin:8px 0; border:0; background:#8b2e1f; clip-path:polygon(0 0,100% 30%,100% 70%,0 100%); }
+        .classic-statblock .stat-abilities { display:grid; grid-template-columns:repeat(6,1fr); gap:5px; text-align:center; color:#6f1d14; }
+        .classic-statblock .stat-abilities strong { display:block; }
+        .classic-statblock .stat-entry { margin:7px 0; color:#24170f; }
+        .classic-statblock .stat-entry strong { color:#6f1d14; font-style:italic; }
+        .classic-statblock-close { position:absolute; top:6px; right:8px; padding:2px 8px; color:#6f1d14; background:transparent; border:0; font-size:1.6rem; cursor:pointer; }
+        .classic-statblock-pin { position:absolute; top:2px; left:5px; z-index:2; width:30px; height:25px; padding:0; color:#6f1d14; background:transparent; border:0; border-radius:4px; font-size:1.05rem; cursor:pointer; }
+        .classic-statblock-pin.is-pinned { color:#fff3c4; background:#6f1d14; box-shadow:0 0 0 1px #efe0ad inset; }
+        .stat-spell-link { color:#7a1f17; text-decoration:underline; text-decoration-thickness:2px; cursor:help; font-weight:bold; }
+        .spell-hover-card { display:none; position:fixed; z-index:3800; width:min(390px,calc(100vw - 24px)); max-height:55vh; overflow:auto; padding:12px 14px; color:#f7e9bd; background:#35140f; border:2px solid #b87345; border-radius:7px; box-shadow:0 7px 24px #000; font-family:Georgia,'Times New Roman',serif; pointer-events:none; }
+        .spell-hover-card.is-open { display:block; }
+        .spell-hover-card h3 { margin:0 0 4px; color:#ffd78a; }
+        .spell-hover-card p { margin:5px 0; line-height:1.35; }
         .token-lasso { position: absolute; inset: 0; z-index: 30; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
         .token-lasso polyline { fill: rgba(79,195,255,.16); stroke: #4fc3ff; stroke-width: 3; stroke-dasharray: 9 6; stroke-linejoin: round; }
         .combat-flash-effect { position: fixed; z-index: 2900; border-radius: 50%; pointer-events: none; }
@@ -977,6 +998,11 @@
             </div>
             <button type="button" onclick="applyMapTokenAction()">Apply to Selected</button>
         </div>
+
+        <div id="monsterStatModal" class="monster-stat-modal" role="dialog" aria-modal="true" aria-label="Monster stat block" onclick="if(event.target===this) closeMonsterStatblock()">
+            <article id="monsterStatblock" class="classic-statblock"></article>
+        </div>
+        <div id="spellHoverCard" class="spell-hover-card" role="tooltip"></div>
 
         <!-- Token Size Controls -->
         <div id="tokenSizeControls" style="
@@ -6287,11 +6313,17 @@
             else selectedMapTokenIds.add(monsterId);
             refreshMapTokenSelection();
             if (selectedMapTokenIds.size) openMapActionPanel();
+            const selectedMonster = selectedMapTokenIds.size === 1
+                ? monsters.find(monster => selectedMapTokenIds.has(monster.id))
+                : null;
+            if (selectedMonster && !selectedMonster.isplayer) openMonsterStatblock(selectedMonster.name);
+            else closeMonsterStatblock();
         }
 
         function clearMapTokenSelection() {
             selectedMapTokenIds.clear();
             refreshMapTokenSelection();
+            closeMonsterStatblock();
         }
 
         function updateMapActionFields() {
@@ -6528,6 +6560,197 @@
 
             });
         });
+
+        const spellCatalogPromise = fetch('data/api_data/spells.json').then(response => response.json()).catch(() => []);
+        const spellDetailCache = new Map();
+
+        function escapeStatHtml(value) {
+            return String(value ?? '').replace(/[&<>"']/g, character => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[character]));
+        }
+
+        function formatMonsterEntries(entries) {
+            const flatten = value => {
+                if (typeof value === 'string') return cleanText(value);
+                if (Array.isArray(value)) return value.map(flatten).join(' ');
+                if (value?.entries) return flatten(value.entries);
+                if (value?.items) return flatten(value.items);
+                return value?.name || '';
+            };
+            return escapeStatHtml(flatten(entries || []));
+        }
+
+        function spellLink(name) {
+            const cleanedName = cleanText(name).trim();
+            return `<span class="stat-spell-link" data-spell-name="${escapeStatHtml(cleanedName)}">${escapeStatHtml(cleanedName)}</span>`;
+        }
+
+        function formatStatSection(title, entries) {
+            if (!entries?.length) return '';
+            return `<h2>${title}</h2>${entries.map(entry => `<p class="stat-entry"><strong>${escapeStatHtml(entry.name || '')}.</strong> ${formatMonsterEntries(entry.entries)}</p>`).join('')}`;
+        }
+
+        function formatSpellcasting(spellcasting) {
+            if (!spellcasting?.length) return '';
+            return `<h2>Spellcasting</h2>${spellcasting.map(casting => {
+                let content = `<p class="stat-entry"><strong>${escapeStatHtml(casting.name || 'Spellcasting')}.</strong> ${formatMonsterEntries(casting.headerEntries)}</p>`;
+                Object.entries(casting.spells || {}).forEach(([level, details]) => {
+                    if (!details.spells?.length) return;
+                    const label = level === '0' ? 'Cantrips (at will)' : `Level ${level}${details.slots == null ? '' : ` (${details.slots} slots)`}`;
+                    content += `<p><strong>${label}:</strong> ${details.spells.map(spellLink).join(', ')}</p>`;
+                });
+                if (casting.will?.length) content += `<p><strong>At will:</strong> ${casting.will.map(spellLink).join(', ')}</p>`;
+                Object.entries(casting.daily || {}).forEach(([uses, spells]) => {
+                    if (spells?.length) content += `<p><strong>${escapeStatHtml(uses)}/day:</strong> ${spells.map(spellLink).join(', ')}</p>`;
+                });
+                return content;
+            }).join('')}`;
+        }
+
+        async function showSpellTooltip(link) {
+            const tooltip = document.getElementById('spellHoverCard');
+            const spellName = link.dataset.spellName;
+            tooltip.innerHTML = `<h3>${escapeStatHtml(spellName)}</h3><p>Loading spell information…</p>`;
+            positionSpellTooltip(link, tooltip);
+            tooltip.classList.add('is-open');
+            try {
+                let detail = spellDetailCache.get(spellName.toLowerCase());
+                if (!detail) {
+                    const catalog = await spellCatalogPromise;
+                    const normalized = spellName.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    const match = catalog.find(spell => spell.name.toLowerCase().replace(/[^a-z0-9]/g, '') === normalized);
+                    if (!match) throw new Error('Spell details are unavailable.');
+                    const response = await fetch(`https://www.dnd5eapi.co${match.url}`);
+                    if (!response.ok) throw new Error(`Spell lookup failed (${response.status}).`);
+                    detail = await response.json();
+                    spellDetailCache.set(spellName.toLowerCase(), detail);
+                }
+                if (!link.matches(':hover')) return;
+                const components = (detail.components || []).join(', ');
+                tooltip.innerHTML = `<h3>${escapeStatHtml(detail.name || spellName)}</h3><p><em>Level ${detail.level ?? '?'} ${escapeStatHtml(detail.school?.name || '')}</em></p><p><strong>Casting:</strong> ${escapeStatHtml(detail.casting_time || '—')} &nbsp; <strong>Range:</strong> ${escapeStatHtml(detail.range || '—')}</p><p><strong>Duration:</strong> ${escapeStatHtml(detail.duration || '—')} &nbsp; <strong>Components:</strong> ${escapeStatHtml(components || '—')}</p>${(detail.desc || []).map(paragraph => `<p>${escapeStatHtml(paragraph)}</p>`).join('')}`;
+                positionSpellTooltip(link, tooltip);
+            } catch (error) {
+                if (link.matches(':hover')) tooltip.innerHTML = `<h3>${escapeStatHtml(spellName)}</h3><p>${escapeStatHtml(error.message)}</p>`;
+            }
+        }
+
+        function positionSpellTooltip(link, tooltip) {
+            const rect = link.getBoundingClientRect();
+            const width = Math.min(390, window.innerWidth - 24);
+            tooltip.style.width = `${width}px`;
+            tooltip.style.left = `${Math.max(12, Math.min(rect.left, window.innerWidth - width - 12))}px`;
+            tooltip.style.top = `${rect.bottom + 10}px`;
+            requestAnimationFrame(() => {
+                if (tooltip.getBoundingClientRect().bottom > window.innerHeight - 10) tooltip.style.top = `${Math.max(10, rect.top - tooltip.offsetHeight - 10)}px`;
+            });
+        }
+
+        let monsterStatblockRequestId = 0;
+        let monsterStatblockPinned = false;
+        let statblockDragState = null;
+        document.getElementById('monsterStatblock').addEventListener('wheel', event => {
+            const block = event.currentTarget;
+            block.scrollTop += event.deltaY;
+            event.preventDefault();
+            event.stopPropagation();
+        }, { passive:false });
+        document.getElementById('monsterStatblock').addEventListener('pointerdown', event => {
+            if (!event.target.classList.contains('statblock-drag-handle')) return;
+            const block = document.getElementById('monsterStatblock');
+            const rect = block.getBoundingClientRect();
+            statblockDragState = { pointerId:event.pointerId, offsetX:event.clientX-rect.left, offsetY:event.clientY-rect.top };
+            block.style.left = `${rect.left}px`;
+            block.style.top = `${rect.top}px`;
+            block.style.right = 'auto';
+            block.style.bottom = 'auto';
+            event.target.setPointerCapture?.(event.pointerId);
+            event.preventDefault();
+        });
+        document.addEventListener('pointermove', event => {
+            if (!statblockDragState || event.pointerId !== statblockDragState.pointerId) return;
+            const block = document.getElementById('monsterStatblock');
+            const maxLeft = Math.max(0, window.innerWidth - block.offsetWidth);
+            const maxTop = Math.max(50, window.innerHeight - block.offsetHeight);
+            block.style.left = `${Math.max(0, Math.min(maxLeft, event.clientX-statblockDragState.offsetX))}px`;
+            block.style.top = `${Math.max(50, Math.min(maxTop, event.clientY-statblockDragState.offsetY))}px`;
+        });
+        document.addEventListener('pointerup', event => {
+            if (statblockDragState?.pointerId === event.pointerId) statblockDragState = null;
+        });
+
+        function statblockWindowControls() {
+            return `<div class="statblock-drag-handle" title="Drag stat block"></div><button class="classic-statblock-pin${monsterStatblockPinned ? ' is-pinned' : ''}" type="button" onclick="toggleMonsterStatblockPin()" aria-pressed="${monsterStatblockPinned}" title="${monsterStatblockPinned ? 'Unpin stat block' : 'Pin stat block'}">📌</button><button class="classic-statblock-close" type="button" onclick="closeMonsterStatblock(true)" aria-label="Close">×</button>`;
+        }
+
+        function toggleMonsterStatblockPin() {
+            monsterStatblockPinned = !monsterStatblockPinned;
+            const button = document.querySelector('#monsterStatblock .classic-statblock-pin');
+            if (!button) return;
+            button.classList.toggle('is-pinned', monsterStatblockPinned);
+            button.setAttribute('aria-pressed', String(monsterStatblockPinned));
+            button.title = monsterStatblockPinned ? 'Unpin stat block' : 'Pin stat block';
+        }
+
+        function closeMonsterStatblock(force = false) {
+            if (monsterStatblockPinned && !force) return;
+            if (force) monsterStatblockPinned = false;
+            monsterStatblockRequestId += 1;
+            document.getElementById('monsterStatModal').classList.remove('is-open');
+            document.getElementById('spellHoverCard').classList.remove('is-open');
+        }
+
+        async function openMonsterStatblock(name) {
+            if (monsterStatblockPinned) return;
+            const requestId = ++monsterStatblockRequestId;
+            const modal = document.getElementById('monsterStatModal');
+            const block = document.getElementById('monsterStatblock');
+            block.style.left = 'auto';
+            block.style.top = 'auto';
+            block.style.right = '20px';
+            block.style.bottom = '20px';
+            modal.classList.add('is-open');
+            const initialRect = block.getBoundingClientRect();
+            block.style.left = `${initialRect.left}px`;
+            block.style.top = `${initialRect.top}px`;
+            block.style.right = 'auto';
+            block.style.bottom = 'auto';
+            block.innerHTML = `${statblockWindowControls()}<p>Loading ${escapeStatHtml(name)}…</p>`;
+            try {
+                const definition = await loadMonsterDefinitionByName(name);
+                if (requestId !== monsterStatblockRequestId) return;
+                const data = definition.monsterData;
+                const sizeNames = { T:'Tiny', S:'Small', M:'Medium', L:'Large', H:'Huge', G:'Gargantuan' };
+                const type = typeof data.type === 'string' ? data.type : data.type?.type || 'creature';
+                const tags = (data.type?.tags || data.tags || []).map(tag => typeof tag === 'string' ? tag : tag.tag).filter(Boolean);
+                const alignment = Array.isArray(data.alignment) ? data.alignment.join(' ') : data.alignment || 'unaligned';
+                const ac = (Array.isArray(data.ac) ? data.ac : [data.ac]).map(value => typeof value === 'object' ? `${value.ac}${value.from ? ` (${value.from.join(', ')})` : ''}` : value).join(', ');
+                const hpAverage = typeof data.hp === 'object' ? data.hp.average : data.hp;
+                const hpFormula = typeof data.hp === 'object' ? data.hp.formula : '';
+                const speed = Object.entries(data.speed || {}).map(([kind,value]) => `${kind} ${typeof value === 'object' ? value.number : value} ft.`).join(', ');
+                const saves = Object.entries(data.save || {}).map(([key,value]) => `${key.toUpperCase()} ${value}`).join(', ');
+                const skills = Object.entries(data.skills || {}).map(([key,value]) => `${key.replace(/_/g,' ')} ${value}`).join(', ');
+                const senses = [...(data.senses || []), data.passive ? `passive Perception ${data.passive}` : ''].filter(Boolean).join(', ');
+                const immunities = (data.immune || []).map(value => typeof value === 'string' ? value : value.special || value.name).filter(Boolean).join(', ');
+                const conditionImmunities = (data.conditionImmune || []).map(value => typeof value === 'string' ? value : value.name || value.conditionImmune).filter(Boolean).join(', ');
+                block.innerHTML = `
+                    ${statblockWindowControls()}
+                    <h1>${escapeStatHtml(data.name)}</h1>
+                    <p class="stat-subtitle">${escapeStatHtml(sizeNames[data.size?.[0]] || data.size?.[0] || '')} ${escapeStatHtml(type)}${tags.length ? ` (${escapeStatHtml(tags.join(', '))})` : ''}, ${escapeStatHtml(alignment)}</p>
+                    <hr><p><strong>Armor Class</strong> ${escapeStatHtml(ac || '—')}</p><p><strong>Hit Points</strong> ${escapeStatHtml(hpAverage ?? '—')}${hpFormula ? ` (${escapeStatHtml(hpFormula)})` : ''}</p><p><strong>Speed</strong> ${escapeStatHtml(speed || '—')}</p><hr>
+                    <div class="stat-abilities">${['str','dex','con','int','wis','cha'].map(ability => `<div><strong>${ability.toUpperCase()}</strong>${escapeStatHtml(data[ability] ?? '—')}</div>`).join('')}</div><hr>
+                    ${saves ? `<p><strong>Saving Throws</strong> ${escapeStatHtml(saves)}</p>` : ''}${skills ? `<p><strong>Skills</strong> ${escapeStatHtml(skills)}</p>` : ''}
+                    ${data.vulnerable?.length ? `<p><strong>Damage Vulnerabilities</strong> ${escapeStatHtml(data.vulnerable.join(', '))}</p>` : ''}${data.resist?.length ? `<p><strong>Damage Resistances</strong> ${escapeStatHtml(data.resist.join(', '))}</p>` : ''}${immunities ? `<p><strong>Damage Immunities</strong> ${escapeStatHtml(immunities)}</p>` : ''}${conditionImmunities ? `<p><strong>Condition Immunities</strong> ${escapeStatHtml(conditionImmunities)}</p>` : ''}
+                    <p><strong>Senses</strong> ${escapeStatHtml(senses || '—')}</p><p><strong>Languages</strong> ${escapeStatHtml((data.languages || []).join(', ') || '—')}</p><p><strong>Challenge</strong> ${escapeStatHtml(data.cr ?? '—')} (Proficiency Bonus +${escapeStatHtml(data.prof_bonus ?? '—')})</p>
+                    ${formatSpellcasting(data.spellcasting)}${formatStatSection('Traits', data.traits)}${formatStatSection('Actions', data.actions)}${formatStatSection('Bonus Actions', data.bonus)}${formatStatSection('Reactions', data.reactions)}${formatStatSection('Legendary Actions', data.legendary)}
+                `;
+                block.querySelectorAll('.stat-spell-link').forEach(link => {
+                    link.addEventListener('mouseenter', () => showSpellTooltip(link));
+                    link.addEventListener('mouseleave', () => document.getElementById('spellHoverCard').classList.remove('is-open'));
+                });
+            } catch (error) {
+                if (requestId !== monsterStatblockRequestId) return;
+                block.innerHTML = `${statblockWindowControls()}<h1>${escapeStatHtml(name)}</h1><p>Could not load this stat block: ${escapeStatHtml(error.message)}</p>`;
+            }
+        }
 
         // clean json text
         function cleanText(entry) {
