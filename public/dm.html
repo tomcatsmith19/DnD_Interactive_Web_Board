@@ -241,26 +241,27 @@
         .dm-audio-collapse { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; font-size:24px; line-height:20px; }
         .generator-panel { position:fixed; top:70px; right:18px; bottom:42px; z-index:1130; width:min(570px,calc(100vw - 42px)); padding:12px; box-sizing:border-box; overflow:visible; color:white; background:rgba(15,15,15,.96); border:1px solid #666; border-radius:9px; transition:transform .25s ease; }
         .generator-panel.is-collapsed { transform:translateX(calc(100% + 18px)); }
-        .generator-collapse { position:absolute; top:50%; left:-44px; transform:translateY(-50%); width:44px; height:105px; padding:0; border-radius:7px 0 0 7px; background:#111; color:#FFD700; border:1px solid #FFD700; cursor:pointer; }
-        .generator-collapse .gear-icon { position:absolute; font-size:23px; line-height:1; }
-        .generator-collapse .gear-one { left:5px; top:31px; transform:rotate(-22deg); }
-        .generator-collapse .gear-two { right:4px; top:50px; transform:rotate(23deg); }
+        .generator-rail { position:absolute; top:calc(50vh - 70px); left:-48px; transform:translateY(-50%); display:flex; flex-direction:column; width:48px; gap:5px; }
+        .generator-rail button { width:48px; height:78px; padding:0; background:#111; border:1px solid currentColor; border-right:0; border-radius:7px 0 0 7px; cursor:pointer; }
+        .generator-rail button svg { width:34px; height:46px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; vertical-align:middle; }
+        .generator-rail .wild { color:#55d66b; background:#102d17; }.generator-rail .town { color:#55a8ff; background:#10263d; }.generator-rail .dungeon { color:#ff5959; background:#391313; }
+        .generator-rail .wild.is-active { background:#55d66b; color:#111; }.generator-rail .town.is-active { background:#55a8ff; color:#111; }.generator-rail .dungeon.is-active { background:#ff5959; color:#111; }
         .fantasy-token-button { width:34px; height:34px; padding:0 !important; color:#f4d76d; background:linear-gradient(#4b2915,#1d1009); border:2px ridge #d4af37; border-radius:50% 50% 44% 44%; box-shadow:0 0 0 1px #5b3517,0 2px 5px #000; font-family:Georgia,'Times New Roman',serif; font-size:23px !important; font-weight:bold; line-height:28px; cursor:pointer; text-shadow:0 1px #000; }
         .fantasy-token-button:hover { color:#111; background:#FFD700; }
         .token-size-label { color:#f4d76d; font-family:'MedievalSharp',Georgia,serif; white-space:nowrap; }
+        #mapSelect { min-width:190px; padding:9px 34px 9px 11px !important; color:#f4d76d !important; background-color:#111 !important; border:2px ridge #d4af37 !important; border-radius:6px !important; box-shadow:inset 0 0 8px rgba(212,175,55,.14),0 2px 5px #000; font-family:'MedievalSharp',Georgia,serif; font-size:.95rem !important; cursor:pointer; outline:none; }
+        #mapSelect:hover,#mapSelect:focus { color:#FFD700 !important; border-color:#FFD700 !important; box-shadow:inset 0 0 10px rgba(255,215,0,.2),0 0 7px rgba(255,215,0,.35); }
+        #mapSelect option,#mapSelect optgroup { color:#f4d76d; background:#111; font-family:Georgia,'Times New Roman',serif; }
+        #mapSelect optgroup { color:#FFD700; font-weight:bold; }
         .generator-panel-inner { height:100%; display:flex; flex-direction:column; min-height:0; }
-        .generator-panel h2 { margin:0 0 8px; color:#FFD700; font-family:'MedievalSharp',cursive; }
         .generator-shared-controls { display:grid; grid-template-columns:1.25fr .8fr 1fr; gap:7px; margin-bottom:9px; }
         .generator-shared-controls label { display:flex; flex-direction:column; gap:4px; color:#e7c96a; font-size:.74rem; font-weight:bold; }
         .generator-shared-controls input,.generator-shared-controls select { min-width:0; padding:7px; background:#222; color:white; border:1px solid #666; border-radius:4px; }
-        .generator-main-tabs,.generator-subtabs { display:grid; grid-template-columns:repeat(3,1fr); gap:5px; margin-bottom:8px; }
-        .generator-main-tab,.generator-banner { padding:8px; color:white; background:#292929; border:1px solid currentColor; border-radius:5px; font-weight:bold; cursor:pointer; }
-        .generator-main-tab.wild { color:#55d66b; }.generator-main-tab.town { color:#55a8ff; }.generator-main-tab.dungeon { color:#ff5959; }
-        .generator-main-tab.wild.is-active { background:#55d66b; color:#111; }
-        .generator-main-tab.town.is-active { background:#55a8ff; color:#111; }
-        .generator-main-tab.dungeon.is-active { background:#ff5959; color:#111; }
-        .generator-banner { color:#FFD700; border-color:#665b24; }
-        .generator-banner.is-active { background:#FFD700; color:#111; }
+        .generator-shared-separator { width:100%; margin:0 0 10px; border:0; border-top:1px solid rgba(255,215,0,.55); }
+        .generator-subtabs { display:flex; align-items:flex-end; gap:2px; margin:0 0 -1px; padding:0 8px; position:relative; z-index:2; }
+        .generator-banner { flex:1; padding:9px 7px; color:#bdbdbd; background:#181818; border:1px solid #666; border-bottom-color:#666; border-radius:7px 7px 0 0; font-weight:bold; cursor:pointer; }
+        .generator-banner:hover { color:#FFD700; background:#242424; }
+        .generator-banner.is-active { color:#FFD700; background:#303030; border-bottom-color:#303030; transform:translateY(1px); }
         .generator-scroll { flex:1; min-height:0; overflow:auto; padding-right:3px; }
         .generator-mode { display:none; }
         .generator-subcontent { display:none !important; }
@@ -278,7 +279,7 @@
         .generator-panel #npcSubTab > div { flex:auto !important; overflow:visible !important; }
         .generator-panel #encounterContent { flex-direction:column; }
         .generator-panel #trapContent,.generator-panel #lootContent,.generator-panel #carousingSubTab,.generator-panel #magicShopSubTab { min-height:0; }
-        .generator-panel .generator-subcontent { box-sizing:border-box; width:100%; padding:12px !important; background:rgba(255,255,255,.05) !important; border-radius:10px; }
+        .generator-panel .generator-subcontent { box-sizing:border-box; width:100%; padding:12px !important; background:#303030 !important; border:1px solid #666; border-radius:0 0 10px 10px; }
         .generator-panel #wildTravelPanel.is-active,.generator-panel #wildForagingPanel.is-active { display:block !important; }
         .generator-panel #wildTravelPanel > * + *,.generator-panel #wildForagingPanel > * + * { margin-top:10px; }
         .generator-panel #wildForagingPanel.is-active { display:flex !important; flex-direction:column; min-height:calc(100vh - 325px); }
@@ -1136,19 +1137,18 @@
         </section>
 
         <aside id="generatorPanel" class="dm-map-ui generator-panel is-collapsed" hidden>
-            <button id="generatorCollapse" class="generator-collapse" type="button" onclick="toggleGeneratorPanel()" aria-label="Generators" title="Generators"><span class="gear-icon gear-one">⚙</span><span class="gear-icon gear-two">⚙</span></button>
+            <nav class="generator-rail" aria-label="Generator sections">
+                <button class="generator-main-tab wild is-active" type="button" onclick="toggleGeneratorModePanel('wild',this)" aria-label="Wilderness generators" title="Wild"><svg viewBox="0 0 40 50" aria-hidden="true"><path d="M20 46V25M15 46h10"/><path d="M20 5c-7 0-11 6-9 11-6 2-7 10-2 14 4 3 8 1 11-2 3 3 8 5 12 2 5-4 4-12-2-14 2-5-3-11-10-11z"/><path d="M20 28l-7-7M20 34l8-8"/></svg></button>
+                <button class="generator-main-tab town" type="button" onclick="toggleGeneratorModePanel('town',this)" aria-label="Town generators" title="Town"><svg viewBox="0 0 40 50" aria-hidden="true"><path d="M7 46h26M10 46V15h20v31M8 15h24M11 15V7l5 4 4-5 4 5 5-4v8"/><path d="M16 46V34h8v12M15 22h3v5h-3zM23 22h3v5h-3z"/></svg></button>
+                <button class="generator-main-tab dungeon" type="button" onclick="toggleGeneratorModePanel('dungeon',this)" aria-label="Dungeon generators" title="Dungeon"><svg viewBox="0 0 40 50" aria-hidden="true"><path d="M6 5h28v40H6zM13 5v40M20 5v40M27 5v40"/><path d="M15 25c1-5 9-5 10 0M16 30l3-2M24 30l-3-2M17 35c2 2 4 2 6 0"/></svg></button>
+            </nav>
             <div class="generator-panel-inner">
-                <h2>Generators</h2>
                 <div class="generator-shared-controls">
                     <label>Party <input id="generatorPartyLevels" type="text" value="3,3,3,3" aria-label="Party levels, comma separated"></label>
                     <label>Season <select id="generatorSeason"><option>Summer</option><option>Autumn</option><option>Winter</option><option>Spring</option></select></label>
                     <label>Environment <select id="generatorEnvironment"><option>Desert</option><option selected>Forest</option><option>Grassland</option><option>Mountain</option><option>Swamp</option><option>Underdark</option><option>Urban</option></select></label>
                 </div>
-                <div class="generator-main-tabs">
-                    <button class="generator-main-tab wild is-active" type="button" onclick="showGeneratorMode('wild',this)">Wild</button>
-                    <button class="generator-main-tab town" type="button" onclick="showGeneratorMode('town',this)">Town</button>
-                    <button class="generator-main-tab dungeon" type="button" onclick="showGeneratorMode('dungeon',this)">Dungeon</button>
-                </div>
+                <hr class="generator-shared-separator">
                 <div class="generator-scroll">
                     <section id="generatorWild" class="generator-mode is-active">
                         <div class="generator-subtabs"><button class="generator-banner is-active" type="button" onclick="showGeneratorSubcontent('wild','wildTravelPanel',this)">Travel</button><button class="generator-banner" type="button" onclick="showGeneratorSubcontent('wild','wildForagingPanel',this)">Foraging</button></div>
@@ -5625,8 +5625,6 @@
         function toggleGeneratorPanel() {
             const panel = document.getElementById('generatorPanel');
             panel.classList.toggle('is-collapsed');
-            const collapsed = panel.classList.contains('is-collapsed');
-            document.getElementById('generatorCollapse').setAttribute('aria-label', collapsed ? 'Show generators' : 'Hide generators');
         }
 
         function showGeneratorMode(mode, button) {
@@ -5634,6 +5632,21 @@
             document.querySelectorAll('.generator-mode').forEach(section => section.classList.remove('is-active'));
             button?.classList.add('is-active');
             document.getElementById(`generator${mode[0].toUpperCase()}${mode.slice(1)}`)?.classList.add('is-active');
+        }
+
+        let activeGeneratorMode = 'wild';
+        function toggleGeneratorModePanel(mode, button) {
+            const panel = document.getElementById('generatorPanel');
+            const isSameOpenMode = !panel.classList.contains('is-collapsed') && activeGeneratorMode === mode;
+            if (isSameOpenMode) {
+                panel.classList.add('is-collapsed');
+                document.querySelectorAll('.generator-main-tab').forEach(tab => tab.classList.remove('is-active'));
+                activeGeneratorMode = null;
+                return;
+            }
+            activeGeneratorMode = mode;
+            showGeneratorMode(mode, button);
+            panel.classList.remove('is-collapsed');
         }
 
         function showGeneratorSubcontent(group, contentId, button) {
