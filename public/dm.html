@@ -205,7 +205,6 @@
         .dm-left-panel-content { display:none; height:100%; min-height:0; overflow:auto; flex-direction:column; }
         .dm-left-panel-content.is-active { display:flex; }
         .dm-left-panel-content h2 { margin:0 0 10px; color:#FFD700; font-family:'MedievalSharp',cursive; }
-        #dmNotesContent textarea { flex:1; min-height:220px; box-sizing:border-box; padding:10px; resize:none; background:#222; color:white; border:1px solid #666; border-radius:6px; }
         .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
         .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
         .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
@@ -522,14 +521,10 @@
                 <iframe id="bookViewer" style="flex: 1; width: 100%; border: none; background-color: black;"></iframe>
             </div>
 
-            <!-- Right: Maps and Notes -->
+            <!-- Right: Session controls -->
             <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
 
                 <div style="display: flex; flex-direction: column; flex: 1; gap: 10px;">
-                    <label style="font-weight: bold;">Notes</label>
-                    <textarea id="notesArea" placeholder="Write campaign notes here..."
-                        style="flex: 1; padding: 10px; background-color: #333; color: white; border: 1px solid #555; border-radius: 5px; font-size: 1rem; resize: none;"></textarea>
-
                     <div style="display: flex; gap: 10px;">
                         <button id="logoutBtn"
                             style="flex: 1; padding: 10px; font-size: 1rem; background-color: #FF4C4C; color: white; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
@@ -1059,6 +1054,9 @@
             <span class="token-size-label">Token Size</span>
             <button id="decreaseTokenSize" class="fantasy-token-button" title="Decrease token size">−</button>
             <button id="increaseTokenSize" class="fantasy-token-button" title="Increase token size">+</button>
+            <span class="token-size-label">Map Scale</span>
+            <button id="decreaseMapScale" class="fantasy-token-button" title="Decrease map scale">−</button>
+            <button id="increaseMapScale" class="fantasy-token-button" title="Increase map scale">+</button>
             <select id="mapSelect"
                 style="padding: 10px; background-color: #333; color: white; border: 1px solid #555; border-radius: 5px; font-size: 1rem;">
 
@@ -1106,7 +1104,6 @@
         <aside id="dmInitiativePanel" class="dm-map-ui dm-initiative-panel dm-left-dock is-collapsed" hidden>
             <nav class="dm-left-rail" aria-label="Map side panels">
                 <button id="dmInitiativeCollapse" type="button" onclick="toggleDmLeftPanel('initiative')" aria-label="Initiative" title="Initiative">⚔</button>
-                <button id="dmNotesButton" type="button" onclick="toggleDmLeftPanel('notes')" aria-label="Notes" title="Notes"><svg viewBox="0 0 32 40" aria-hidden="true"><path d="M7 3h15l5 5v28H7z"/><path d="M22 3v6h5M11 15c3-3 7 3 11-1M11 21c4-3 7 3 12-1M11 27c3-2 6 2 10 0"/><path d="M4 8v28h17"/></svg></button>
                 <button id="dmBooksButton" type="button" onclick="toggleDmLeftPanel('books')" aria-label="Books" title="Books"><svg viewBox="0 0 38 38" aria-hidden="true"><path d="M19 9c-4-4-10-4-15-2v24c6-2 11-1 15 3zM19 9c4-4 10-4 15-2v24c-6-2-11-1-15 3z"/><path d="M8 12c3-1 6 0 8 2M8 18c3-1 6 0 8 2M30 12c-3-1-6 0-8 2M30 18c-3-1-6 0-8 2"/><path d="M19 5v29"/></svg></button>
                 <button id="dmReferenceButton" type="button" onclick="toggleDmLeftPanel('reference')" aria-label="Reference" title="Reference"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 13c-2 3-5 8-5 16 0 6 5 8 13 8s13-2 13-8c0-8-3-13-5-16"/><path d="M12 13c4 2 12 2 16 0l-3-7-5 4-5-4z"/><path d="M11 17c6 2 12 2 18 0"/><path d="M16 24c2-2 6-2 8 0M15 29c3-2 7-2 10 0"/></svg></button>
             </nav>
@@ -1118,7 +1115,6 @@
                 </table>
                 <button id="addMonsterBtn" class="dm-add-monster" type="button">Add Monster</button>
             </div>
-            <div id="dmNotesContent" class="dm-left-panel-content"><h2>Notes</h2><div id="dmNotesHost" style="display:flex;flex:1;min-height:0;flex-direction:column;"></div></div>
             <div id="dmBooksContent" class="dm-left-panel-content"><h2>Books</h2><div id="dmBooksHost" style="display:flex;flex:1;min-height:0;flex-direction:column;"></div></div>
             <div id="dmReferenceContent" class="dm-left-panel-content"><h2>Reference</h2><div id="dmReferenceHost"></div></div>
         </aside>
@@ -5599,8 +5595,8 @@
         let activeDmLeftPanel = null;
         function toggleDmLeftPanel(mode) {
             const panel = document.getElementById('dmInitiativePanel');
-            const contentIds = { initiative:'dmInitiativeContent', notes:'dmNotesContent', books:'dmBooksContent', reference:'dmReferenceContent' };
-            const buttonIds = { initiative:'dmInitiativeCollapse', notes:'dmNotesButton', books:'dmBooksButton', reference:'dmReferenceButton' };
+            const contentIds = { initiative:'dmInitiativeContent', books:'dmBooksContent', reference:'dmReferenceContent' };
+            const buttonIds = { initiative:'dmInitiativeCollapse', books:'dmBooksButton', reference:'dmReferenceButton' };
             const isSameOpenPanel = !panel.classList.contains('is-collapsed') && activeDmLeftPanel === mode;
             document.querySelectorAll('.dm-left-panel-content').forEach(content => content.classList.remove('is-active'));
             document.querySelectorAll('.dm-left-rail button').forEach(button => button.classList.remove('is-active'));
@@ -5780,12 +5776,9 @@
         }
 
         function initializeCampaignDock() {
-            const notesHost = document.getElementById('dmNotesHost');
             const booksHost = document.getElementById('dmBooksHost');
-            const notes = document.getElementById('notesArea');
             const bookSelectControl = document.getElementById('bookSelect');
             const bookViewerFrame = document.getElementById('bookViewer');
-            if (notes) notesHost.appendChild(notes);
             const sessionControls = document.getElementById('dmSessionControls');
             const logout = document.getElementById('logoutBtn');
             const menu = document.getElementById('menuBtn');
@@ -5840,50 +5833,9 @@
             });
         }
 
-        function setupNotesPersistence() {
-            const notes = document.getElementById('notesArea');
-            if (!notes) return;
-            const textKey = 'dndDmCampaignNotes';
-            const timeKey = 'dndDmCampaignNotesUpdatedAt';
-            let localUpdatedAt = Number(localStorage.getItem(timeKey) || 0);
-            const localText = localStorage.getItem(textKey);
-            if (localText !== null) notes.value = localText;
-            const notesRef = db.collection('shared').doc('campaignNotes');
-            let saveTimer = null;
-
-            notes.addEventListener('input', () => {
-                localUpdatedAt = Date.now();
-                localStorage.setItem(textKey, notes.value);
-                localStorage.setItem(timeKey, String(localUpdatedAt));
-                clearTimeout(saveTimer);
-                saveTimer = setTimeout(() => {
-                    notesRef.set({ text:notes.value, updatedAt:localUpdatedAt }, { merge:true })
-                        .catch(error => console.error('Failed to sync campaign notes:', error));
-                }, 350);
-            });
-
-            notesRef.onSnapshot(snapshot => {
-                if (!snapshot.exists) {
-                    if (localText !== null) notesRef.set({ text:notes.value, updatedAt:localUpdatedAt }, { merge:true });
-                    return;
-                }
-                const data = snapshot.data() || {};
-                const remoteUpdatedAt = Number(data.updatedAt || 0);
-                if (remoteUpdatedAt > localUpdatedAt && document.activeElement !== notes) {
-                    notes.value = data.text || '';
-                    localUpdatedAt = remoteUpdatedAt;
-                    localStorage.setItem(textKey, notes.value);
-                    localStorage.setItem(timeKey, String(localUpdatedAt));
-                } else if (localUpdatedAt > remoteUpdatedAt) {
-                    notesRef.set({ text:notes.value, updatedAt:localUpdatedAt }, { merge:true });
-                }
-            }, error => console.error('Failed to load campaign notes:', error));
-        }
-
         initializeGeneratorPanel();
         initializeCampaignDock();
         initializeDistributedCreators();
-        setupNotesPersistence();
         syncDmMapPanels('mapTab');
 
         function syncDrawingToolbarVisibility() {
@@ -6011,7 +5963,7 @@
                 mapRef.set({
                     filepath: selectedMap,
                     updatedAt: Date.now()
-                });
+                }, { merge: true });
             } else {
                 mapImage.src = '';
             }
@@ -6342,6 +6294,7 @@
         let panStartX = 0, panStartY = 0;
         let panOffsetX = 0, panOffsetY = 0;
         let scale = 1;
+        let sharedMapScale = 1;
 
 
 
@@ -6349,6 +6302,29 @@
             const mapTransformLayer = document.getElementById('mapTransformLayer');
             mapTransformLayer.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px) scale(${scale})`;
         };
+
+        function applySharedMapScale() {
+            if (!mapImage.naturalWidth) return;
+            document.getElementById('mapTransformLayer').style.width = `${mapImage.naturalWidth * sharedMapScale}px`;
+            scheduleMapLayoutRefresh();
+        }
+
+        function setSharedMapScale(nextScale) {
+            sharedMapScale = Number(Math.min(Math.max(0.2, nextScale), 3).toFixed(2));
+            applySharedMapScale();
+            mapRef.set({
+                mapScale: sharedMapScale,
+                scaleUpdatedAt: Date.now()
+            }, { merge: true }).catch(error => console.error('Failed to sync map scale:', error));
+        }
+
+        document.getElementById('increaseMapScale')?.addEventListener('click', () => {
+            setSharedMapScale(sharedMapScale + 0.1);
+        });
+
+        document.getElementById('decreaseMapScale')?.addEventListener('click', () => {
+            setSharedMapScale(sharedMapScale - 0.1);
+        });
 
         // PAN START
         mapTab.addEventListener('mousedown', (e) => {
@@ -6747,6 +6723,7 @@
 
         // Resize on image load
         mapImage.addEventListener('load', () => {
+            applySharedMapScale();
             scheduleMapLayoutRefresh();
         });
 
@@ -8370,7 +8347,7 @@
         async function saveCustomMap() {
             const name = customMapNameInput.value.trim();
             const mapFile = customMapUpload.files?.[0];
-            const existingMapId = document.getElementById('customMapId').value || slugifyValue(name);
+            const existingMapId = document.getElementById('customMapId').value || customMapsRef.doc().id;
             const existingImageUrl = document.getElementById('existingMapImageUrl').value || '';
             const existingImagePath = document.getElementById('existingMapImagePath').value || '';
 
@@ -8413,15 +8390,12 @@
             });
             refreshCustomMapOptions();
             renderCustomMapLibrary();
-            document.getElementById('customMapId').value = existingMapId;
-            document.getElementById('existingMapImageUrl').value = imageUrl;
-            document.getElementById('existingMapImagePath').value = imagePath;
-
-            setImagePreview('mapPreview', 'mapPreviewPlaceholder', imageUrl);
-            setStatusMessage('mapSaveStatus', `Saved ${name} to the custom map library.`);
 
             mapSelect.value = imageUrl;
             mapSelect.dispatchEvent(new Event('change'));
+
+            resetCustomMapForm();
+            setStatusMessage('mapSaveStatus', `Saved ${name} to the custom map library. You can upload another map now.`);
         }
 
         async function deleteCustomMonster(monsterId) {
@@ -8689,8 +8663,15 @@
         });
 
         mapRef.onSnapshot(doc => {
-            if (doc.exists && doc.data()?.filepath) {
-                currentSharedMapPath = doc.data().filepath;
+            if (!doc.exists) return;
+            const sharedMap = doc.data() || {};
+            const sharedScale = Number(sharedMap.mapScale);
+            if (Number.isFinite(sharedScale)) {
+                sharedMapScale = Math.min(Math.max(0.2, sharedScale), 3);
+                applySharedMapScale();
+            }
+            if (sharedMap.filepath) {
+                currentSharedMapPath = sharedMap.filepath;
                 mapImage.src = currentSharedMapPath;
                 if (Array.from(mapSelect.options).some(option => option.value === currentSharedMapPath)) {
                     mapSelect.value = currentSharedMapPath;

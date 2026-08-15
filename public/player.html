@@ -53,7 +53,6 @@
     .player-left-panel-content { display:none; height:100%; min-height:0; overflow:auto; flex-direction:column; }
     .player-left-panel-content.is-active { display:flex; }
     .party-panel-content { max-height:none; }
-    .player-notes-area { flex:1; min-height:220px; box-sizing:border-box; padding:10px; resize:none; background:#222; color:white; border:1px solid #666; border-radius:6px; font:1rem Arial,sans-serif; }
     .party-panel h2 { margin:0 0 8px; color:#FFD700; font-family:'MedievalSharp',cursive; }
     .party-table { width:100%; border-collapse:collapse; font-size:.85rem; }
     .party-table th,.party-table td { padding:5px; border:1px solid #555; }
@@ -263,13 +262,11 @@
   <aside id="partyPanel" class="party-panel is-collapsed">
     <nav class="player-left-rail" aria-label="Player side panels">
       <button id="partyCollapseButton" type="button" onclick="togglePlayerLeftPanel('party')" aria-label="Party panel" title="Party"><svg viewBox="0 0 28 42" aria-hidden="true"><circle cx="14" cy="9" r="5"/><path d="M6 36c0-9 2-17 8-17s8 8 8 17M9 23l-5 9M19 23l5 9M10 36h8"/></svg></button>
-      <button id="playerNotesButton" type="button" onclick="togglePlayerLeftPanel('notes')" aria-label="Player notes" title="Player notes"><svg viewBox="0 0 32 40" aria-hidden="true"><path d="M7 3h15l5 5v28H7z"/><path d="M22 3v6h5M11 15c3-3 7 3 11-1M11 21c4-3 7 3 12-1M11 27c3-2 6 2 10 0"/><path d="M4 8v28h17"/></svg></button>
     </nav>
     <div id="playerPartyContent" class="party-panel-content player-left-panel-content is-active"><h2>Party</h2>
       <table class="party-table"><thead><tr><th>Name</th><th>Init</th><th>HP</th><th>Max HP</th></tr></thead><tbody id="partyTableBody"></tbody></table>
       <button type="button" style="width:100%;margin-top:8px;" onclick="openPartyPicker()">Add to Party</button>
     </div>
-    <div id="playerNotesContent" class="player-left-panel-content"><h2>Notes</h2><textarea id="playerNotesArea" class="player-notes-area" placeholder="Write notes for the players here..."></textarea></div>
   </aside>
 
   <div id="partyPicker" class="party-modal"><div class="party-modal-card"><h2>Add to Party</h2><input id="partySearch" type="search" placeholder="Search monsters or player characters" style="width:100%;padding:9px;"><div id="partyChoiceList" class="party-choice-list"></div><div style="display:flex;gap:8px;"><button type="button" style="flex:1;" onclick="openCustomPlayerModal()">Custom Player</button><button type="button" style="flex:1;" onclick="closePartyPicker()">Close</button></div></div></div>
@@ -641,8 +638,8 @@
     let activePlayerLeftPanel = 'party';
     function togglePlayerLeftPanel(mode){
       const panel=document.getElementById('partyPanel');
-      const contentIds={party:'playerPartyContent',notes:'playerNotesContent'};
-      const buttonIds={party:'partyCollapseButton',notes:'playerNotesButton'};
+      const contentIds={party:'playerPartyContent'};
+      const buttonIds={party:'partyCollapseButton'};
       const isSameOpenPanel=!panel.classList.contains('is-collapsed')&&activePlayerLeftPanel===mode;
       document.querySelectorAll('.player-left-panel-content').forEach(content=>content.classList.remove('is-active'));
       document.querySelectorAll('.player-left-rail button').forEach(button=>button.classList.remove('is-active'));
@@ -661,41 +658,6 @@
       event.preventDefault();
       event.stopPropagation();
     }, { passive:false });
-    function setupPlayerNotesPersistence(){
-      const notes=document.getElementById('playerNotesArea');
-      if(!notes)return;
-      const textKey='dndSharedPlayerNotes';
-      const timeKey='dndSharedPlayerNotesUpdatedAt';
-      let localUpdatedAt=Number(localStorage.getItem(timeKey)||0);
-      const localText=localStorage.getItem(textKey);
-      if(localText!==null)notes.value=localText;
-      const notesRef=db.collection('shared').doc('playerNotes');
-      let saveTimer=null;
-      notes.addEventListener('input',()=>{
-        localUpdatedAt=Date.now();
-        localStorage.setItem(textKey,notes.value);
-        localStorage.setItem(timeKey,String(localUpdatedAt));
-        clearTimeout(saveTimer);
-        saveTimer=setTimeout(()=>notesRef.set({text:notes.value,updatedAt:localUpdatedAt},{merge:true}).catch(error=>console.error('Failed to sync player notes:',error)),350);
-      });
-      notesRef.onSnapshot(snapshot=>{
-        if(!snapshot.exists){
-          if(localText!==null)notesRef.set({text:notes.value,updatedAt:localUpdatedAt},{merge:true});
-          return;
-        }
-        const data=snapshot.data()||{};
-        const remoteUpdatedAt=Number(data.updatedAt||0);
-        if(remoteUpdatedAt>localUpdatedAt&&document.activeElement!==notes){
-          notes.value=data.text||'';
-          localUpdatedAt=remoteUpdatedAt;
-          localStorage.setItem(textKey,notes.value);
-          localStorage.setItem(timeKey,String(localUpdatedAt));
-        }else if(localUpdatedAt>remoteUpdatedAt){
-          notesRef.set({text:notes.value,updatedAt:localUpdatedAt},{merge:true});
-        }
-      },error=>console.error('Failed to load player notes:',error));
-    }
-    setupPlayerNotesPersistence();
     function openPartyPicker(){document.getElementById('partyPicker').classList.add('is-open');renderPartyChoices(document.getElementById('partySearch').value);}
     function closePartyPicker(){document.getElementById('partyPicker').classList.remove('is-open');}
     function openCustomPlayerModal(){
@@ -1319,11 +1281,18 @@
     let panStartX = 0, panStartY = 0;
     let panOffsetX = 0, panOffsetY = 0;
     let scale = 1;
+    let sharedMapScale = 1;
 
     const updateTransform = () => {
       const mapTransformLayer = document.getElementById('mapTransformLayer');
       mapTransformLayer.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px) scale(${scale})`;
     };
+
+    function applySharedMapScale() {
+      if (!mapImage.naturalWidth) return;
+      document.getElementById('mapTransformLayer').style.width = `${mapImage.naturalWidth * sharedMapScale}px`;
+      scheduleMapLayoutRefresh();
+    }
 
     const mapTab = document.getElementById('scrollWrapper');
     const playerMapTransformLayer = document.getElementById('mapTransformLayer');
@@ -1671,6 +1640,7 @@
     });
 
     mapImage.addEventListener('load', () => {
+      applySharedMapScale();
       scheduleMapLayoutRefresh();
     });
 
@@ -1688,8 +1658,15 @@
     scheduleMapLayoutRefresh();
 
     mapRef.onSnapshot(doc => {
-      if (doc.exists && doc.data()?.filepath) {
-        mapImage.src = doc.data().filepath;
+      if (!doc.exists) return;
+      const sharedMap = doc.data() || {};
+      const sharedScale = Number(sharedMap.mapScale);
+      if (Number.isFinite(sharedScale)) {
+        sharedMapScale = Math.min(Math.max(0.2, sharedScale), 3);
+        applySharedMapScale();
+      }
+      if (sharedMap.filepath) {
+        mapImage.src = sharedMap.filepath;
         scheduleMapLayoutRefresh();
       }
     });
