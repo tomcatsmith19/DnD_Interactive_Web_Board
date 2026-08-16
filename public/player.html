@@ -17,7 +17,7 @@
     }
 
     body {
-      background-color: #121212;
+      background-color: #160c07;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -29,105 +29,105 @@
     .defeated-token-x { display: none; position: absolute; inset: 0; z-index: 18; align-items: center; justify-content: center; color: #e00000; font-family: Arial, sans-serif; font-weight: 900; line-height: 1; text-shadow: 0 0 4px #000, 2px 2px 0 #330000; pointer-events: none; }
     .monster-token.is-defeated .defeated-token-x { display: flex; }
     .monster-token.is-selected { border-color: #4fc3ff !important; box-shadow: 0 0 0 3px rgba(79,195,255,.8), 0 0 18px #4fc3ff; }
-    .token-health-bar { position:absolute; left:0; bottom:-8px; width:100%; height:7px; overflow:hidden; background:#3b1111; border:1px solid #111; border-radius:4px; box-sizing:border-box; pointer-events:none; }
+    .token-health-bar { position:absolute; left:0; bottom:-8px; width:100%; height:7px; overflow:hidden; background:#3b1111; border:1px solid #1d1009; border-radius:4px; box-sizing:border-box; pointer-events:none; }
     .token-health-fill { height:100%; width:100%; background:#2ecc40; transition:width .25s ease, background-color .25s ease; }
     .map-action-panel { display:none; position:fixed; z-index:2200; top:80px; right:20px; width:280px; padding:14px; background:rgba(20,20,20,.97); border:2px solid #4fc3ff; border-radius:9px; box-shadow:0 8px 30px #000; color:white; }
     .map-action-panel.is-open { display:block; }
-    .map-action-panel h3 { margin:0 0 4px; color:#FFD700; }
-    .map-action-panel select, .map-action-panel input, .map-action-panel button { width:100%; box-sizing:border-box; margin-top:8px; padding:9px; background:#333; color:white; border:1px solid #666; border-radius:5px; }
-    .map-action-panel button { background:#32CD32; color:#111; border:0; font-weight:bold; cursor:pointer; }
+    .map-action-panel h3 { margin:0 0 4px; color:#f4d76d; }
+    .map-action-panel select, .map-action-panel input, .map-action-panel button { width:100%; box-sizing:border-box; margin-top:8px; padding:9px; background:#3d2718; color:white; border:1px solid #8a6643; border-radius:5px; }
+    .map-action-panel button { background:#32CD32; color:#1d1009; border:0; font-weight:bold; cursor:pointer; }
     .map-action-panel .map-action-close { position:absolute; top:4px; right:7px; width:auto; margin:0; padding:3px 7px; background:transparent; color:#bbb; }
     .token-lasso { position:absolute; inset:0; z-index:30; width:100%; height:100%; pointer-events:none; overflow:visible; }
     .token-lasso polyline { fill:rgba(79,195,255,.16); stroke:#4fc3ff; stroke-width:3; stroke-dasharray:9 6; stroke-linejoin:round; }
-    .group-move-handle { position:absolute; z-index:35; width:34px; height:34px; padding:0; display:flex; align-items:center; justify-content:center; color:#111; background:#4fc3ff; border:2px solid white; border-radius:50%; box-shadow:0 2px 9px #000,0 0 0 2px rgba(79,195,255,.45); font-size:23px; line-height:1; cursor:move; pointer-events:auto; touch-action:none; user-select:none; }
+    .group-move-handle { position:absolute; z-index:35; width:34px; height:34px; padding:0; display:flex; align-items:center; justify-content:center; color:#1d1009; background:#4fc3ff; border:2px solid white; border-radius:50%; box-shadow:0 2px 9px #000,0 0 0 2px rgba(79,195,255,.45); font-size:23px; line-height:1; cursor:move; pointer-events:auto; touch-action:none; user-select:none; }
     .combat-flash-effect { position:fixed; z-index:2900; border-radius:50%; pointer-events:none; }
     .combat-flash-effect.flash-red { animation:flash-red 1s ease-out forwards; }
     .combat-flash-effect.flash-green { animation:flash-green 1s ease-out forwards; }
     .token-death-effect { position:fixed; z-index:3000; width:72px; height:72px; object-fit:contain; pointer-events:none; animation:token-death-float 1.6s ease-out forwards; }
     #menu, #toggleMenuStandalone { display:none !important; }
-    .party-panel { position:fixed; top:70px; bottom:42px; left:0; z-index:1100; width:400px; max-height:none; overflow:visible; padding:12px; box-sizing:border-box; color:white; background:rgba(15,15,15,.92); border:1px solid #666; border-left:0; border-radius:0 9px 9px 0; transition:transform .25s ease; }
+    .party-panel { position:fixed; top:70px; bottom:42px; left:0; z-index:1100; width:400px; max-height:none; overflow:visible; padding:12px; box-sizing:border-box; color:white; background:rgba(15,15,15,.92); border:1px solid #8a6643; border-left:0; border-radius:0 9px 9px 0; transition:transform .25s ease; }
     .party-panel.is-collapsed { transform:translateX(-100%); }
     .player-left-rail { position:absolute; top:calc(50vh - 70px); right:-42px; transform:translateY(-50%); display:flex; flex-direction:column; width:42px; gap:5px; }
-    .player-left-rail button { width:42px; min-width:0; height:82px; padding:0 !important; border-radius:0 7px 7px 0 !important; background:#111 !important; color:#FFD700 !important; border:1px solid #FFD700 !important; border-left:0 !important; cursor:pointer; }
-    .player-left-rail button.is-active { background:#FFD700 !important; color:#111 !important; }
+    .player-left-rail button { width:42px; min-width:0; height:82px; padding:0 !important; border-radius:0 7px 7px 0 !important; background:#1d1009 !important; color:#f4d76d !important; border:1px solid #f4d76d !important; border-left:0 !important; cursor:pointer; }
+    .player-left-rail button.is-active { background:#f4d76d !important; color:#1d1009 !important; }
     .player-left-rail svg { width:27px; height:40px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-    .dice-icon { display:inline-block; width:32px; height:38px; background:#FFD700; -webkit-mask:url('data/images/d20-black.png') center/contain no-repeat; mask:url('data/images/d20-black.png') center/contain no-repeat; }
-    .player-left-rail button.is-active .dice-icon { background:#111; }
+    .dice-icon { display:inline-block; width:32px; height:38px; background:#f4d76d; -webkit-mask:url('data/images/d20-black.png') center/contain no-repeat; mask:url('data/images/d20-black.png') center/contain no-repeat; }
+    .player-left-rail button.is-active .dice-icon { background:#1d1009; }
     .player-left-panel-content { display:none; height:100%; min-height:0; overflow:auto; flex-direction:column; }
     .player-left-panel-content.is-active { display:flex; }
     .party-panel-content { max-height:none; }
-    .party-panel h2 { margin:0 0 8px; color:#FFD700; font-family:'MedievalSharp',cursive; }
+    .party-panel h2 { margin:0 0 8px; color:#f4d76d; font-family:'MedievalSharp',cursive; }
     .party-table { width:100%; border-collapse:collapse; font-size:.85rem; }
-    .party-table th,.party-table td { padding:5px; border:1px solid #555; }
-    .party-table input { width:58px; box-sizing:border-box; background:#292929; color:white; border:1px solid #666; }
+    .party-table th,.party-table td { padding:5px; border:1px solid #765133; }
+    .party-table input { width:58px; box-sizing:border-box; background:#342014; color:white; border:1px solid #8a6643; }
     .dice-roller { gap:14px; }
     .dice-roller-form { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
-    .dice-roller label { display:flex; flex-direction:column; gap:5px; color:#FFD700; font-weight:bold; }
-    .dice-roller select,.dice-roller input { box-sizing:border-box; width:100%; padding:10px; color:white; background:#292929; border:1px solid #666; border-radius:5px; font-size:1rem; }
-    .dice-counter { display:grid; grid-template-columns:30px 52px 30px; grid-template-rows:48px 22px; justify-content:center; justify-items:center; align-items:center; gap:2px 3px; padding:6px 4px; background:#202020; border:1px solid #555; border-radius:6px; color:#FFD700; font-weight:bold; }
+    .dice-roller label { display:flex; flex-direction:column; gap:5px; color:#f4d76d; font-weight:bold; }
+    .dice-roller select,.dice-roller input { box-sizing:border-box; width:100%; padding:10px; color:white; background:#342014; border:1px solid #8a6643; border-radius:5px; font-size:1rem; }
+    .dice-counter { display:grid; grid-template-columns:30px 52px 30px; grid-template-rows:48px 22px; justify-content:center; justify-items:center; align-items:center; gap:2px 3px; padding:6px 4px; background:#2a180f; border:1px solid #765133; border-radius:6px; color:#f4d76d; font-weight:bold; }
     .dice-counter.d20 { grid-column:2; grid-row:1; }
     .dice-customize { position:relative; grid-column:1; grid-row:1; align-self:center; }
-    .dice-customize summary { display:flex; min-height:48px; align-items:center; justify-content:center; padding:8px; box-sizing:border-box; color:#111; background:#FFD700; border-radius:6px; font-weight:bold; text-align:center; cursor:pointer; list-style:none; }
+    .dice-customize summary { display:flex; min-height:48px; align-items:center; justify-content:center; padding:8px; box-sizing:border-box; color:#1d1009; background:#f4d76d; border-radius:6px; font-weight:bold; text-align:center; cursor:pointer; list-style:none; }
     .dice-customize summary::-webkit-details-marker { display:none; }
-    .dice-customize-menu { position:absolute; z-index:10; top:calc(100% + 6px); left:0; width:250px; padding:10px; box-sizing:border-box; background:#171717; border:1px solid #FFD700; border-radius:7px; box-shadow:0 8px 24px #000; }
+    .dice-customize-menu { position:absolute; z-index:10; top:calc(100% + 6px); left:0; width:250px; padding:10px; box-sizing:border-box; background:#1f120b; border:1px solid #f4d76d; border-radius:7px; box-shadow:0 8px 24px #000; }
     .dice-customize-menu label { margin-bottom:7px; }
-    .dice-parameter-preview { margin-top:8px; padding:8px; color:white; background:#292929; border:1px solid #555; border-radius:6px; font-size:.75rem; }
-    .dice-preview-stage { width:100%; height:130px; overflow:hidden; background:radial-gradient(circle,#444,#181818); border-radius:5px; }
+    .dice-parameter-preview { margin-top:8px; padding:8px; color:white; background:#342014; border:1px solid #765133; border-radius:6px; font-size:.75rem; }
+    .dice-preview-stage { width:100%; height:130px; overflow:hidden; background:radial-gradient(circle,#563722,#21130c); border-radius:5px; }
     .dice-preview-stage canvas { width:100% !important; height:100% !important; }
     .dice-preview-details { line-height:1.4; }
-    .dice-sound-preview-button { width:100%; margin-top:8px; padding:8px !important; color:#111 !important; background:#FFD700 !important; border:0 !important; border-radius:5px; font-weight:bold; cursor:pointer; }
+    .dice-sound-preview-button { width:100%; margin-top:8px; padding:8px !important; color:#1d1009 !important; background:#f4d76d !important; border:0 !important; border-radius:5px; font-weight:bold; cursor:pointer; }
     .dice-modifier { grid-column:3; grid-row:1; align-self:center; align-items:center; text-align:center; }
     .dice-roller .dice-modifier input { width:5.25em; padding:8px 4px; text-align:center; }
     .dice-counter.row-two { grid-row:2; }
     .dice-counter.row-three { grid-row:3; }
     .dice-counter-label { grid-column:2; grid-row:1; display:flex; align-items:center; justify-content:center; gap:4px; width:52px; height:48px; }
-    .die-picture { display:inline-block; width:44px; height:44px; flex:0 0 auto; background:#FFD700; -webkit-mask:var(--die-image) center/contain no-repeat; mask:var(--die-image) center/contain no-repeat; }
+    .die-picture { display:inline-block; width:44px; height:44px; flex:0 0 auto; background:#f4d76d; -webkit-mask:var(--die-image) center/contain no-repeat; mask:var(--die-image) center/contain no-repeat; }
     .die-picture.d100-back { width:34px; transform:translate(-7px,7px) rotate(-14deg); }
     .die-picture.d100-front { width:34px; margin-left:-25px; transform:translate(9px,-7px) rotate(14deg); }
     .dice-counter button { grid-row:1; width:30px; height:30px; padding:0 !important; font-size:1.2rem; }
     .dice-counter button:first-of-type { grid-column:1; }
     .dice-counter button:last-of-type { grid-column:3; }
-    .dice-counter input { grid-column:2; grid-row:2; z-index:2; align-self:center; justify-self:center; width:30px !important; height:20px; margin:0; padding:1px 2px !important; color:white; background:#333; border:1px solid #555; border-radius:4px; font-size:.78rem !important; line-height:18px; text-align:center; appearance:textfield; -moz-appearance:textfield; }
+    .dice-counter input { grid-column:2; grid-row:2; z-index:2; align-self:center; justify-self:center; width:30px !important; height:20px; margin:0; padding:1px 2px !important; color:white; background:#3d2718; border:1px solid #765133; border-radius:4px; font-size:.78rem !important; line-height:18px; text-align:center; appearance:textfield; -moz-appearance:textfield; }
     .dice-counter input::-webkit-inner-spin-button,.dice-counter input::-webkit-outer-spin-button { margin:0; -webkit-appearance:none; }
     .dice-roll-button { width:100%; padding:11px !important; font-size:1rem; }
-    .dice-clear-button { width:100%; padding:9px !important; color:#FFD700 !important; background:#333 !important; border:1px solid #FFD700 !important; font-size:.95rem; }
-    .dice-replay-button { width:100%; padding:9px !important; color:#FFD700 !important; background:#222 !important; border:1px solid #FFD700 !important; font-size:.95rem; font-weight:bold; cursor:pointer; }
+    .dice-clear-button { width:100%; padding:9px !important; color:#f4d76d !important; background:#3d2718 !important; border:1px solid #f4d76d !important; font-size:.95rem; }
+    .dice-replay-button { width:100%; padding:9px !important; color:#f4d76d !important; background:#2b190f !important; border:1px solid #f4d76d !important; font-size:.95rem; font-weight:bold; cursor:pointer; }
     .dice-replay-button:disabled { opacity:.45; cursor:not-allowed; }
     .dice-post-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-    .dice-apply-button { width:100%; padding:9px !important; color:#111 !important; background:#FFD700 !important; border:1px solid #FFD700 !important; font-size:.95rem; font-weight:bold; cursor:pointer; }
+    .dice-apply-button { width:100%; padding:9px !important; color:#1d1009 !important; background:#f4d76d !important; border:1px solid #f4d76d !important; font-size:.95rem; font-weight:bold; cursor:pointer; }
     .dice-apply-button:disabled { opacity:.45; cursor:not-allowed; }
-    .dice-result { min-height:105px; padding:12px; color:white; background:#191919; border:1px solid #555; border-radius:7px; overflow-wrap:anywhere; }
-    .dice-result strong { color:#FFD700; font-size:1.25rem; }
+    .dice-result { min-height:105px; padding:12px; color:white; background:#24150d; border:1px solid #765133; border-radius:7px; overflow-wrap:anywhere; }
+    .dice-result strong { color:#f4d76d; font-size:1.25rem; }
     .dice-output-grid { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); gap:8px; }
-    .dice-appearance-result { min-height:105px; padding:12px; box-sizing:border-box; color:white; background:#191919; border:1px solid #555; border-radius:7px; overflow-wrap:anywhere; line-height:1.45; }
-    .dice-appearance-result strong { color:#FFD700; }
+    .dice-appearance-result { min-height:105px; padding:12px; box-sizing:border-box; color:white; background:#24150d; border:1px solid #765133; border-radius:7px; overflow-wrap:anywhere; line-height:1.45; }
+    .dice-appearance-result strong { color:#f4d76d; }
     .dice-roller .share-dice-roll { flex-direction:row; align-items:center; gap:8px; color:white; font-weight:normal; }
-    .dice-roller .share-dice-roll input { width:auto; margin:0; accent-color:#FFD700; }
+    .dice-roller .share-dice-roll input { width:auto; margin:0; accent-color:#f4d76d; }
     .dice-roll-controls { display:grid; grid-template-columns:minmax(0,1fr) 150px; gap:10px; align-items:center; }
     .dice-roll-options { display:flex; flex-direction:column; gap:7px; }
     .dice-roller .dice-roll-option { display:flex; flex-direction:row; align-items:center; gap:7px; color:white; font-weight:normal; }
-    .dice-roller .dice-roll-option input { width:auto; margin:0; accent-color:#FFD700; }
-    .party-panel button,.party-modal button { padding:8px; background:#FFD700; border:0; border-radius:5px; font-weight:bold; cursor:pointer; }
-    .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
+    .dice-roller .dice-roll-option input { width:auto; margin:0; accent-color:#f4d76d; }
+    .party-panel button,.party-modal button { padding:8px; background:#f4d76d; border:0; border-radius:5px; font-weight:bold; cursor:pointer; }
+    .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
     .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
     .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
     .session-controls-panel .session-menu-button { background:#1976d2 !important; }
     .session-controls-panel .session-logout-button { background:#a83232 !important; }
-    .session-controls-panel .session-controls-toggle { position:absolute; left:-43px; bottom:0; width:43px; min-width:0; height:68px; padding:3px !important; background:#111 !important; color:#FFD700 !important; border:1px solid #FFD700 !important; border-right:0 !important; border-radius:8px 0 0 8px !important; }
+    .session-controls-panel .session-controls-toggle { position:absolute; left:-43px; bottom:0; width:43px; min-width:0; height:68px; padding:3px !important; background:#1d1009 !important; color:#f4d76d !important; border:1px solid #f4d76d !important; border-right:0 !important; border-radius:8px 0 0 8px !important; }
     .session-controls-toggle svg { width:34px; height:54px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-    .audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; gap:10px; padding:8px; color:white; background:rgba(15,15,15,.92); border:1px solid #666; border-radius:9px; }
+    .audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; gap:10px; padding:8px; color:white; background:rgba(15,15,15,.92); border:1px solid #8a6643; border-radius:9px; }
     .audio-dock.is-collapsed .audio-dock-content { display:none; }
     .audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
     .audio-dock-content { display:grid; grid-template-columns:minmax(105px,.4fr) repeat(3,minmax(0,1fr)); gap:8px 12px; align-items:start; flex:1; }
     .audio-music-controls { display:flex; flex-direction:column; align-items:stretch; gap:8px; }
-    .audio-music-controls::before { content:'Background Music'; color:#FFD700; font-weight:bold; font-size:.78rem; text-align:center; }
-    .audio-controls { display:flex; flex-direction:column; gap:7px; font-size:.72rem; color:#FFD700; }
-    .audio-controls input[type="range"] { accent-color:#FFD700; }
-    #dockMusicSelect { padding:6px 9px; background:#111; color:#FFD700; border:1px solid #FFD700; border-radius:4px; }
+    .audio-music-controls::before { content:'Background Music'; color:#f4d76d; font-weight:bold; font-size:.78rem; text-align:center; }
+    .audio-controls { display:flex; flex-direction:column; gap:7px; font-size:.72rem; color:#f4d76d; }
+    .audio-controls input[type="range"] { accent-color:#f4d76d; }
+    #dockMusicSelect { padding:6px 9px; background:#1d1009; color:#f4d76d; border:1px solid #f4d76d; border-radius:4px; }
     .audio-group { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); align-items:center; gap:5px; }
-    .audio-group strong { grid-column:1/-1; color:#FFD700; font-size:.78rem; text-align:center; }
-    .audio-group button { padding:6px 9px; font-size:.76rem; background:#111; color:#FFD700; border:1px solid #FFD700; border-radius:4px; cursor:pointer; }
-    .audio-group button:hover { background:#FFD700; color:#111; }
+    .audio-group strong { grid-column:1/-1; color:#f4d76d; font-size:.78rem; text-align:center; }
+    .audio-group button { padding:6px 9px; font-size:.76rem; background:#1d1009; color:#f4d76d; border:1px solid #f4d76d; border-radius:4px; cursor:pointer; }
+    .audio-group button:hover { background:#f4d76d; color:#1d1009; }
     .audio-group + .audio-group { border-left:1px solid rgba(255,215,0,.55); padding-left:12px; }
     .audio-group.reactions button { color:#55d66b; border-color:#55d66b; }
     .audio-group.reactions button:hover { color:#081b0c; background:#55d66b; }
@@ -135,20 +135,20 @@
     .audio-group.combat button:hover { color:#210606; background:#ff5959; }
     .audio-group.checks button { color:#55a8ff; border-color:#55a8ff; }
     .audio-group.checks button:hover { color:#06172a; background:#55a8ff; }
-    .audio-collapse-tab { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; font-size:24px; line-height:20px; }
+    .audio-collapse-tab { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#1d1009; color:#f4d76d; border:1px solid #f4d76d; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; font-size:24px; line-height:20px; }
     .party-modal { display:none; position:fixed; inset:0; z-index:3500; align-items:center; justify-content:center; background:rgba(0,0,0,.8); }
     .party-modal.is-open { display:flex; }
-    .party-modal-card { width:min(620px,90vw); max-height:80vh; overflow:auto; padding:18px; background:#222; color:white; border-radius:10px; }
+    .party-modal-card { width:min(620px,90vw); max-height:80vh; overflow:auto; padding:18px; background:#2b190f; color:white; border-radius:10px; }
     .party-choice-list { max-height:55vh; overflow:auto; margin:10px 0; }
-    .party-choice { display:flex; justify-content:space-between; width:100%; margin:3px 0; color:white; background:#333 !important; }
+    .party-choice { display:flex; justify-content:space-between; width:100%; margin:3px 0; color:white; background:#3d2718 !important; }
     .custom-player-card { width:min(440px,90vw); display:flex; flex-direction:column; gap:10px; }
-    .custom-player-card input[type="text"] { padding:9px; color:white; background:#292929; border:1px solid #666; border-radius:5px; }
-    .custom-player-preview { width:150px; height:150px; align-self:center; object-fit:cover; border:2px solid #FFD700; border-radius:50%; background:#111; }
-    .custom-player-library { max-height:190px; overflow:auto; padding:6px; background:#181818; border:1px solid #555; border-radius:6px; }
-    .custom-player-library-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto auto; gap:5px; align-items:center; padding:6px 0; border-bottom:1px solid #444; }
+    .custom-player-card input[type="text"] { padding:9px; color:white; background:#342014; border:1px solid #8a6643; border-radius:5px; }
+    .custom-player-preview { width:150px; height:150px; align-self:center; object-fit:cover; border:2px solid #f4d76d; border-radius:50%; background:#1d1009; }
+    .custom-player-library { max-height:190px; overflow:auto; padding:6px; background:#21130c; border:1px solid #765133; border-radius:6px; }
+    .custom-player-library-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto auto; gap:5px; align-items:center; padding:6px 0; border-bottom:1px solid #563722; }
     .custom-player-library-row button { min-width:56px; padding:6px !important; }
     .fantasy-token-button { width:34px; height:34px; padding:0 !important; color:#f4d76d; background:linear-gradient(#4b2915,#1d1009); border:2px ridge #d4af37; border-radius:50% 50% 44% 44%; box-shadow:0 0 0 1px #5b3517,0 2px 5px #000; font-family:Georgia,'Times New Roman',serif; font-size:23px !important; font-weight:bold; line-height:28px; cursor:pointer; text-shadow:0 1px #000; }
-    .fantasy-token-button:hover { color:#111; background:#FFD700; }
+    .fantasy-token-button:hover { color:#1d1009; background:#f4d76d; }
     .token-size-label { color:#f4d76d; font-family:'MedievalSharp',Georgia,serif; white-space:nowrap; }
     @keyframes token-death-float { 0%{transform:translate(-50%,0) scale(.65);opacity:0} 18%{transform:translate(-50%,-12px) scale(1.1);opacity:1} 100%{transform:translate(-50%,-130px) scale(.85);opacity:0} }
 
@@ -177,7 +177,7 @@
       position: absolute;
       top: 10px;
       left: 10px;
-      background-color: #FFD700;
+      background-color: #f4d76d;
       border: none;
       color: black;
       padding: 8px;
@@ -191,7 +191,7 @@
       position: fixed;
       top: 10px;
       right: 10px;
-      background-color: #FFD700;
+      background-color: #f4d76d;
       border: none;
       color: black;
       padding: 10px;
@@ -244,9 +244,9 @@
 
     .sound-button {
       padding: 10px;
-      background-color: #444;
-      color: #FFD700;
-      border: 1px solid #FFD700;
+      background-color: #563722;
+      color: #f4d76d;
+      border: 1px solid #f4d76d;
       border-radius: 5px;
       font-family: 'MedievalSharp', cursive;
       font-size: 1rem;
@@ -254,11 +254,11 @@
     }
 
     .sound-button:hover {
-      background-color: #666;
+      background-color: #8a6643;
     }
 
     .sound-category {
-      color: #FFD700;
+      color: #f4d76d;
       font-family: 'MedievalSharp', cursive;
       margin-bottom: 10px;
     }
@@ -293,7 +293,7 @@
                     position: fixed;
                     top: 8px;
                     left: 10px;
-                    background-color: rgba(0, 0, 0, 0.7);
+                    background-color: rgba(29, 16, 9, 0.88);
                     padding: 8px 12px;
                     border-radius: 8px;
                     z-index: 1000;
@@ -338,7 +338,7 @@
   </aside>
 
   <div id="partyPicker" class="party-modal"><div class="party-modal-card"><h2>Add to Party</h2><input id="partySearch" type="search" placeholder="Search monsters or player characters" style="width:100%;padding:9px;"><div id="partyChoiceList" class="party-choice-list"></div><div style="display:flex;gap:8px;"><button type="button" style="flex:1;" onclick="openCustomPlayerModal()">Custom Player</button><button type="button" style="flex:1;" onclick="closePartyPicker()">Close</button></div></div></div>
-  <div id="customPlayerModal" class="party-modal"><div class="party-modal-card custom-player-card"><h2>Custom Players</h2><input id="customPlayerId" type="hidden"><input id="customPlayerTokenUrl" type="hidden"><input id="customPlayerTokenPath" type="hidden"><label>Name</label><input id="customPlayerName" type="text" placeholder="Player name"><label>Token Image</label><input id="customPlayerTokenUpload" type="file" accept="image/*"><img id="customPlayerTokenPreview" class="custom-player-preview" src="data/player_tokens/Telperil.png" alt="Custom player token preview"><div style="display:flex;gap:8px;"><button id="saveCustomPlayerBtn" type="button" style="flex:1;" onclick="createCustomPlayer()">Save &amp; Add to Party</button><button type="button" style="flex:1;background:#444;color:#FFD700;" onclick="resetCustomPlayerForm()">New Player</button><button type="button" style="flex:1;background:#a83232;color:white;" onclick="closeCustomPlayerModal()">Close</button></div><div id="customPlayerStatus" style="min-height:20px;color:#FFD700;"></div><strong style="color:#FFD700;">Custom Player Library</strong><div id="customPlayerLibrary" class="custom-player-library"></div></div></div>
+  <div id="customPlayerModal" class="party-modal"><div class="party-modal-card custom-player-card"><h2>Custom Players</h2><input id="customPlayerId" type="hidden"><input id="customPlayerTokenUrl" type="hidden"><input id="customPlayerTokenPath" type="hidden"><label>Name</label><input id="customPlayerName" type="text" placeholder="Player name"><label>Token Image</label><input id="customPlayerTokenUpload" type="file" accept="image/*"><img id="customPlayerTokenPreview" class="custom-player-preview" src="data/player_tokens/Telperil.png" alt="Custom player token preview"><div style="display:flex;gap:8px;"><button id="saveCustomPlayerBtn" type="button" style="flex:1;" onclick="createCustomPlayer()">Save &amp; Add to Party</button><button type="button" style="flex:1;background:#563722;color:#f4d76d;" onclick="resetCustomPlayerForm()">New Player</button><button type="button" style="flex:1;background:#a83232;color:white;" onclick="closeCustomPlayerModal()">Close</button></div><div id="customPlayerStatus" style="min-height:20px;color:#f4d76d;"></div><strong style="color:#f4d76d;">Custom Player Library</strong><div id="customPlayerLibrary" class="custom-player-library"></div></div></div>
 
   <section id="audioDock" class="audio-dock is-collapsed">
     <button id="audioCollapseButton" class="audio-collapse-tab" type="button" onclick="toggleAudioDock()" aria-label="Sound panel" title="Sound panel">♫</button>
@@ -369,7 +369,7 @@
 
           <label for="playerSelect">Choose Player:</label>
           <select id="playerSelect"
-            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #3d2718; color: #fff;">
             <option value="Alben Ravenwood">Alben Ravenwood</option>
             <option value="hatman">hatman</option>
             <option value="Sera Nobody">Sera Nobody</option>
@@ -385,11 +385,11 @@
 
           <label for="initiativeInput">Initiative:</label>
           <input type="number" id="initiativeInput" min="0" value="0"
-            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #3d2718; color: #fff; border: 1px solid #765133; border-radius: 5px;">
 
           <label>HP:</label>
           <input type="number" id="currentHP" value="10"
-            style="width: 100%; padding: 8px; background-color: #333; color: #fff; border: 1px solid #555; border-radius: 5px;">
+            style="width: 100%; padding: 8px; background-color: #3d2718; color: #fff; border: 1px solid #765133; border-radius: 5px;">
         </div>
 
         <!-- Action Container -->
@@ -398,7 +398,7 @@
 
           <label for="actionSelect">Action:</label>
           <select id="actionSelect"
-            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #3d2718; color: #fff;">
             <option value="heal">Heal</option>
             <option value="damage">Damage</option>
             <option value="apply">Apply Condition</option>
@@ -407,11 +407,11 @@
 
           <label for="targetIndex">Target Index:</label>
           <input type="number" id="targetIndex" min="0" value="0"
-            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #3d2718; color: #fff;">
 
           <label for="conditionSelect">Condition (if applicable):</label>
           <select id="conditionSelect"
-            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #333; color: #fff;">
+            style="width: 100%; padding: 8px; margin-bottom: 10px; background-color: #3d2718; color: #fff;">
             <option>-- None --</option>
             <option>Blinded</option>
             <option>Charmed</option>
@@ -438,7 +438,7 @@
 
           <label for="amountTurns">Amount / Turns:</label>
           <input type="number" id="amountTurns" min="0" value="0"
-            style="width: 100%; padding: 8px; margin-bottom: 20px;  background-color: #333; color: #fff;">
+            style="width: 100%; padding: 8px; margin-bottom: 20px;  background-color: #3d2718; color: #fff;">
 
           <button id="executeBtn"
             style="width: 100%; padding: 10px; font-family: 'MedievalSharp', cursive; font-size: 1.2rem; background-color: #32CD32; color: white; border: none; border-radius: 5px; cursor: pointer;">Execute</button>
@@ -451,7 +451,7 @@
           <!-- Background Music Selector -->
           <label for="bgMusicSelect">Background Music:</label>
           <select id="bgMusicSelect" onchange="handleMusicChange()"
-            style="width: 100%; padding: 8px; margin-bottom: 20px; background-color: #333; color: #fff;">
+            style="width: 100%; padding: 8px; margin-bottom: 20px; background-color: #3d2718; color: #fff;">
 
             <option value="">No Music</option>
 

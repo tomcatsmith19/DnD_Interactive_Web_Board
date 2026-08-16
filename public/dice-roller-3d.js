@@ -6,10 +6,10 @@ style.textContent = `
   #sharedDiceStage { position:fixed; inset:0; z-index:5000; pointer-events:none; visibility:hidden; background:radial-gradient(ellipse at center,rgba(56,42,20,.18),rgba(0,0,0,.08)); }
   #sharedDiceStage.is-rolling { visibility:visible; }
   #sharedDiceStage canvas { width:100% !important; height:100% !important; }
-  #sharedDicePopup { position:fixed; z-index:5100; left:50%; top:12%; width:min(520px,calc(100vw - 32px)); transform:translate(-50%,-25px); box-sizing:border-box; padding:16px 20px; color:white; background:rgba(18,18,18,.96); border:2px solid #FFD700; border-radius:12px; box-shadow:0 10px 40px #000; text-align:center; opacity:0; visibility:hidden; transition:opacity .2s ease,transform .2s ease; pointer-events:none; }
+  #sharedDicePopup { position:fixed; z-index:5100; left:50%; top:12%; width:min(520px,calc(100vw - 32px)); transform:translate(-50%,-25px); box-sizing:border-box; padding:16px 20px; color:white; background:rgba(29,16,9,.96); border:2px solid #f4d76d; border-radius:12px; box-shadow:0 10px 40px #000; text-align:center; opacity:0; visibility:hidden; transition:opacity .2s ease,transform .2s ease; pointer-events:none; }
   #sharedDicePopup.is-visible { opacity:1; visibility:visible; transform:translate(-50%,0); }
-  #sharedDicePopup h2 { margin:0 0 8px; color:#FFD700; font-family:'MedievalSharp',serif; }
-  #sharedDicePopup .dice-popup-total { color:#FFD700; font-size:2rem; font-weight:bold; }
+  #sharedDicePopup h2 { margin:0 0 8px; color:#f4d76d; font-family:'MedievalSharp',serif; }
+  #sharedDicePopup .dice-popup-total { color:#f4d76d; font-size:2rem; font-weight:bold; }
   #sharedDicePopup .dice-popup-groups { margin-top:8px; line-height:1.45; }
 `;
 document.head.appendChild(style);
@@ -24,7 +24,7 @@ popup.setAttribute('aria-live', 'polite');
 document.body.append(stage, popup);
 
 const themes = {
-  default: { theme_customColorset:{ name:'Campaign Gold', foreground:'#111111', background:'#FFD700', outline:'#FFD700', texture:'none' }, theme_texture:'none', theme_material:'glass' },
+  default: { theme_customColorset:{ name:'Campaign Gold', foreground:'#1d1009', background:'#f4d76d', outline:'#f4d76d', texture:'none' }, theme_texture:'none', theme_material:'glass' },
   blueGreenMetal: { theme_colorset:'water', theme_texture:'metal', theme_material:'metal' },
   diceOfRolling: { theme_colorset:'rainbow', theme_texture:'none', theme_material:'glass' },
   gemstone: { theme_colorset:'poison', theme_texture:'stainedglass', theme_material:'glass' },
@@ -44,7 +44,7 @@ const customizationOptions = {
   surface: [['default','Default'],['blue-felt','Blue Felt'],['red-felt','Red Felt'],['green-felt','Green Felt'],['taverntable','Tavern Table'],['mahogany','Mahogany'],['stainless','Stainless Steel'],['cyberpunk','Cyberpunk'],['cagetown','Cage Town']]
 };
 
-const previewColors = { campaignGold:'#FFD700', coin_default:'#d8a900', coin_silver:'#c8c8c8', radiant:'#fff3a3', fire:'#b62916', ice:'#3c6ac1', poison:'#66409e', acid:'#83b625', thunder:'#777', lightning:'#f3ca40', air:'#b4d9e2', water:'#5b8691', earth:'#527f22', force:'#c651c6', psychic:'#934fc3', necrotic:'#6f0000', black:'#111', white:'#fff', rainbow:'#ff5959', bronze:'#7a4e06' };
+const previewColors = { campaignGold:'#f4d76d', coin_default:'#d8a900', coin_silver:'#c8c8c8', radiant:'#fff3a3', fire:'#b62916', ice:'#3c6ac1', poison:'#66409e', acid:'#83b625', thunder:'#777', lightning:'#f3ca40', air:'#b4d9e2', water:'#5b8691', earth:'#527f22', force:'#c651c6', psychic:'#934fc3', necrotic:'#6f0000', black:'#111', white:'#fff', rainbow:'#ff5959', bronze:'#7a4e06' };
 
 let diceBox;
 let diceReady;
@@ -216,7 +216,7 @@ function buildCustomization(colorset, texture, material, surface) {
   const theme = { theme_texture:texture, theme_material:material, theme_surface:surface };
   if (colorset === 'campaignGold') {
     theme.theme_texture = texture === 'preset' ? 'none' : texture;
-    theme.theme_customColorset = { name:'Campaign Gold', foreground:'#111111', background:'#FFD700', outline:'#FFD700', texture:theme.theme_texture };
+    theme.theme_customColorset = { name:'Campaign Gold', foreground:'#1d1009', background:'#f4d76d', outline:'#f4d76d', texture:theme.theme_texture };
   }
   else theme.theme_colorset = colorset;
   return theme;

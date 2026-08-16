@@ -80,13 +80,13 @@
         padding: 10px 12px;
         width: min(160px, calc(100vw - 50px));
         max-height: calc(100vh - 100px);
-        background: rgba(0, 0, 0, 0.78);
-        border: 1px solid rgba(255, 215, 0, 0.45);
+        background: rgba(29, 16, 9, 0.92);
+        border: 2px ridge #d4af37;
         border-radius: 10px;
         z-index: 1100;
         color: white;
         font-family: 'MedievalSharp', cursive;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        box-shadow: inset 0 0 12px rgba(212, 175, 55, 0.12), 0 8px 24px rgba(0, 0, 0, 0.45);
       }
 
       .drawing-toolbar button,
@@ -99,33 +99,34 @@
 
       .drawing-toolbar button {
         padding: 0 12px;
-        border: 1px solid #FFD700;
-        background: #2d2d2d;
-        color: #FFD700;
+        border: 1px solid #d4af37;
+        background: linear-gradient(#4b2915, #2b190f);
+        color: #f4d76d;
         font-family: inherit;
         cursor: pointer;
       }
 
       .drawing-toolbar button:hover {
-        background: #3c3c3c;
+        background: linear-gradient(#684126, #3d2718);
+        border-color: #f4d76d;
       }
 
       .drawing-toolbar button.is-active {
-        background: #FFD700;
-        color: #111;
+        background: #f4d76d;
+        color: #1d1009;
       }
 
       .drawing-toolbar input[type="color"] {
         width: 44px;
         padding: 0;
-        border: 1px solid #FFD700;
-        background: transparent;
+        border: 1px solid #d4af37;
+        background: #2b190f;
         cursor: pointer;
       }
 
       .drawing-toolbar .drawing-toolbar-label {
         font-size: 0.95rem;
-        color: #FFD700;
+        color: #f4d76d;
         text-align: center;
       }
 
@@ -145,7 +146,7 @@
       .drawing-toolbar.is-compact input[type="color"] { width: 30px; height: 30px; }
       .drawing-toolbar.is-compact .drawing-toolbar-label { display: none; }
       .drawing-toolbar.is-collapsed > :not(.drawing-collapse-toggle) { display: none !important; }
-      .drawing-toolbar.is-compact .drawing-collapse-toggle { position: absolute; left: 50%; bottom: -23px; transform: translateX(-50%); width: 92px; min-width: 92px; height: 23px; padding: 0; border-radius: 0 0 7px 7px; background: #111; color: #FFD700; border: 1px solid #FFD700; border-top: 0; font-size: 15px; }
+      .drawing-toolbar.is-compact .drawing-collapse-toggle { position: absolute; left: 50%; bottom: -23px; transform: translateX(-50%); width: 92px; min-width: 92px; height: 23px; padding: 0; border-radius: 0 0 7px 7px; background: linear-gradient(#4b2915, #1d1009); color: #f4d76d; border: 1px solid #d4af37; border-top: 0; font-size: 15px; }
       .drawing-toolbar.is-compact .drawing-collapse-toggle svg { width: 64px; height: 16px; }
       .drawing-toolbar.is-compact.is-collapsed { height: 0; min-height: 0; padding: 0; border: 0; box-shadow: none; }
       .drawing-toolbar.is-compact.is-collapsed { top: 0 !important; }

@@ -1,4 +1,4 @@
-import {generatorRegistry,providerForType} from './universe-generators.js?v=14';
+import {generatorRegistry,providerForType} from './universe-generators.js?v=16';
 
 const firebaseConfig={apiKey:'AIzaSyDeUJ3781n8fi4QhVWvHAfeW7ueRqaw87E',authDomain:'dnd-interactive-web-board.firebaseapp.com',projectId:'dnd-interactive-web-board',storageBucket:'dnd-interactive-web-board.firebasestorage.app',messagingSenderId:'474147936717',appId:'1:474147936717:web:5a4101401f5bde9a368c84',measurementId:'G-G9KT6WQ5F4'};
 const app=firebase.apps.length?firebase.app():firebase.initializeApp(firebaseConfig);
@@ -10,32 +10,30 @@ const mapsRef=db.collection('campaigns').doc(campaignId).collection('universeMap
 const host=document.getElementById('mapHost'),statusPanel=document.getElementById('statusPanel'),breadcrumbs=document.getElementById('breadcrumbs'),infoPanel=document.getElementById('infoPanel'),dialog=document.getElementById('mapDialog'),form=document.getElementById('mapForm');
 const dmControls=document.getElementById('dmControls'),placementBanner=document.getElementById('placementBanner');
 const maps=new Map(),generatedCache=new Map();
-let currentMap=null,currentController=null,selectedMarker=null,placing=false,pendingPlacement=null,unsubscribe=null;
+let currentMap=null,currentController=null,selectedMarker=null,placing=false,pendingPlacement=null,unsubscribe=null,previewMap=null,previewGenerated=null;
 
-const defaults={
-  world:{width:1536,height:1024},town:{size:32,walled:true,river:false,coast:false,density:.65,palette:'parchment'},dungeon:{size:'medium'},dwelling:{tags:'medium'},cave:{tags:'medium,cave'},glade:{tags:'medium,glade'},wilderness:{biome:'forest',width:1000,height:700,density:.55,water:.2,paths:true,grid:true},other:{size:22,walled:false,density:.5}
-};
+const defaults={world:{width:1536,height:1024},town:{size:'medium'},dungeon:{size:'medium'},dwelling:{tags:'medium'},cave:{tags:'medium,cave'},glade:{tags:'medium,glade'}};
 
 function showStatus(title,message,action='') {statusPanel.hidden=false;statusPanel.replaceChildren();const heading=document.createElement('h2');heading.textContent=title;const text=document.createElement('p');text.textContent=message;statusPanel.append(heading,text);if(action&&(isDm||action==='Retry')){const button=document.createElement('button');button.className='gold-button';button.textContent=action;button.addEventListener('click',()=>action==='Retry'?renderCurrent():openCreateDialog(null,'world'));statusPanel.append(button);}}
 function hideStatus(){statusPanel.hidden=true;}
 function numericOrNull(value){return value===null||value===''||value===undefined||!Number.isFinite(Number(value))?null:Number(value);}
-function validMap(raw,id){if(!raw||typeof raw!=='object')return null;const type=['world','town','dungeon','dwelling','cave','glade','wilderness','other'].includes(raw.type)?raw.type:'other';const generator=raw.generator&&typeof raw.generator==='object'?raw.generator:{};return{id:id||raw.id,name:String(raw.name||'Unnamed Location').slice(0,80),campaignId,parentMapId:raw.parentMapId||null,type,description:String(raw.description||'').slice(0,500),generator:{provider:generatorRegistry.has(generator.provider)?generator.provider:providerForType(type),version:String(generator.version||'local-1'),seed:String(generator.seed||id||'seed').slice(0,100),params:generator.params&&typeof generator.params==='object'&&!Array.isArray(generator.params)?generator.params:{},permalink:typeof generator.permalink==='string'?generator.permalink:null},placement:{latitude:numericOrNull(raw.placement?.latitude),longitude:numericOrNull(raw.placement?.longitude),x:numericOrNull(raw.placement?.x),y:numericOrNull(raw.placement?.y)},createdAt:raw.createdAt||null,updatedAt:raw.updatedAt||null};}
+function validMap(raw,id){if(!raw||typeof raw!=='object')return null;const supported=['world','town','dungeon','dwelling','cave','glade'];const type=supported.includes(raw.type)?raw.type:'town';const generator=raw.generator&&typeof raw.generator==='object'?raw.generator:{};return{id:id||raw.id,name:String(raw.name||'Unnamed Location').slice(0,80),campaignId,parentMapId:raw.parentMapId||null,type,description:String(raw.description||'').slice(0,500),generator:{provider:generatorRegistry.has(generator.provider)?generator.provider:providerForType(type),version:String(generator.version||'generator-1'),seed:String(generator.seed||id||'seed').slice(0,100),params:generator.params&&typeof generator.params==='object'&&!Array.isArray(generator.params)?generator.params:{},permalink:typeof generator.permalink==='string'?generator.permalink:null},placement:{latitude:numericOrNull(raw.placement?.latitude),longitude:numericOrNull(raw.placement?.longitude),x:numericOrNull(raw.placement?.x),y:numericOrNull(raw.placement?.y)},createdAt:raw.createdAt||null,updatedAt:raw.updatedAt||null};}
 function childrenOf(parentId){return[...maps.values()].filter(map=>map.parentMapId===parentId);}
 function cacheKey(map){return JSON.stringify([map.generator.provider,map.generator.seed,map.generator.params,map.generator.permalink]);}
 
 async function renderCurrent(){
   currentController?.destroy?.();currentController=null;infoPanel.hidden=true;selectedMarker=null;
-  if(!currentMap){showEmpty();return;}
-  showStatus('Generating map…',`Regenerating ${currentMap.name} from its saved seed.`);renderBreadcrumbs();updateControls();
-  try{const adapter=generatorRegistry.get(currentMap.generator.provider)||generatorRegistry.get(providerForType(currentMap.type));const key=cacheKey(currentMap);let generated=generatedCache.get(key);if(!generated){generated=adapter.generate(currentMap.generator.seed,{...currentMap.generator.params,_permalink:currentMap.generator.permalink});generatedCache.set(key,generated);}currentController=adapter.render(host,generated,{children:childrenOf(currentMap.id),onSelect:selectMarker,onPlace:handlePlacement,onOpenGeneratedTown:handleGeneratedTown});hideStatus();}
+  const displayedMap=previewMap||currentMap;if(!displayedMap){showEmpty();return;}
+  showStatus('Generating map...',previewMap?`Previewing ${displayedMap.name}. Save Map when you want to keep it.`:`Loading ${displayedMap.name} from its saved permalink.`);renderBreadcrumbs();updateControls();
+  try{const adapter=generatorRegistry.get(displayedMap.generator.provider)||generatorRegistry.get(providerForType(displayedMap.type));const key=cacheKey(displayedMap);let generated=generatedCache.get(key);if(!generated){generated=adapter.generate(displayedMap.generator.seed,{...displayedMap.generator.params,_permalink:displayedMap.generator.permalink});generatedCache.set(key,generated);}previewGenerated=previewMap?generated:null;currentController=adapter.render(host,generated,{children:childrenOf(displayedMap.id),onSelect:selectMarker,onPlace:handlePlacement,onOpenGeneratedTown:handleGeneratedTown});hideStatus();}
   catch(error){console.error(error);showStatus('Map generation failed',error.message||'This descriptor could not be rendered.','Retry');}
 }
 
 function showEmpty(){host.replaceChildren();breadcrumbs.replaceChildren();updateControls();showStatus('No world exists',isDm?'Create a deterministic world to begin this campaign universe.':'The Dungeon Master has not created a world yet.',isDm?'Create World':'');}
 function renderBreadcrumbs(){breadcrumbs.replaceChildren();const chain=[],seen=new Set();let node=currentMap;while(node&&!seen.has(node.id)){seen.add(node.id);chain.unshift(node);node=node.parentMapId?maps.get(node.parentMapId):null;}chain.forEach((map,index)=>{if(index){const sep=document.createElement('span');sep.textContent='›';breadcrumbs.append(sep);}const button=document.createElement('button');button.type='button';button.textContent=map.name;button.addEventListener('click',()=>navigateTo(map.id));breadcrumbs.append(button);});}
-function updateControls(){dmControls.hidden=!isDm;document.getElementById('newWorldButton').hidden=!isDm;for(const id of ['addLocationButton','regenerateButton','renameButton','settingsButton','deleteButton'])document.getElementById(id).disabled=!currentMap;document.getElementById('backButton').textContent=currentMap?.parentMapId?'← Parent':'← Menu';}
+function updateControls(){const hasMap=!!(previewMap||currentMap);dmControls.hidden=!isDm;document.getElementById('newWorldButton').hidden=!isDm;for(const id of ['regenerateButton','settingsButton'])document.getElementById(id).disabled=!hasMap;for(const id of ['addLocationButton','renameButton','deleteButton'])document.getElementById(id).disabled=!currentMap;document.getElementById('saveMapButton').disabled=!previewMap;document.getElementById('backButton').textContent=currentMap?.parentMapId?'← Parent':'← Menu';}
 function updateUrl(mapId,push=true){const url=new URL(location.href);url.searchParams.set('campaign',campaignId);mapId?url.searchParams.set('map',mapId):url.searchParams.delete('map');history[push?'pushState':'replaceState']({mapId},'',url);}
-function navigateTo(id,{push=true}={}){const next=maps.get(id);if(!next){showStatus('Map not found','This location may have been deleted or belongs to another campaign.');return;}currentMap=next;if(push)updateUrl(id,true);renderCurrent();}
+function navigateTo(id,{push=true}={}){const next=maps.get(id);if(!next){showStatus('Map not found','This location may have been deleted or belongs to another campaign.');return;}previewMap=null;previewGenerated=null;currentMap=next;if(push)updateUrl(id,true);renderCurrent();}
 function selectMarker(map){selectedMarker=map;document.getElementById('infoName').textContent=map.name;document.getElementById('infoType').textContent=map.type[0].toUpperCase()+map.type.slice(1);document.getElementById('infoDescription').textContent=map.description||'No description provided.';document.getElementById('editMarkerButton').hidden=!isDm;infoPanel.hidden=false;}
 function handlePlacement(placement){if(!placing)return;placing=false;currentController?.setPlacementMode?.(false);placementBanner.hidden=true;pendingPlacement=placement;openCreateDialog(currentMap,'town');}
 
@@ -65,26 +63,88 @@ function ensureTownSeed(value,fallbackSeed){
 
 function stableNumericSeed(value){let hash=2166136261;for(const character of String(value)){hash^=character.charCodeAt(0);hash=Math.imul(hash,16777619);}return hash>>>0;}
 
-function openCreateDialog(parent,type='town',existing=null){
-  if(!isDm)return;pendingPlacement=existing?.placement||pendingPlacement||{latitude:null,longitude:null,x:.5,y:.5};
-  document.getElementById('dialogTitle').textContent=existing?'Edit Location':type==='world'?'Create World':'Add Location';document.getElementById('editingMapId').value=existing?.id||'';document.getElementById('mapName').value=existing?.name||'';document.getElementById('mapType').value=existing?.type||type;document.getElementById('mapProvider').value=existing?.generator.provider||providerForType(type);document.getElementById('mapSeed').value=existing?.generator.seed||`${type}-${crypto.randomUUID?.()||Date.now()}`;document.getElementById('mapDescription').value=existing?.description||'';document.getElementById('mapParams').value=JSON.stringify(existing?.generator.params||defaults[type]||{},null,2);document.getElementById('mapPermalink').value=existing?.generator.permalink||'';document.getElementById('mapType').disabled=!!existing||type==='world';document.getElementById('formError').textContent='';dialog.dataset.parentId=existing?.parentMapId??parent?.id??'';dialog.showModal();document.getElementById('mapName').focus();
+function paramsFromControls(type){
+  if(type==='world'){
+    const resolutions={standard:{width:1536,height:1024},wide:{width:1920,height:1080},large:{width:2560,height:1440}};
+    return resolutions[document.getElementById('worldResolution').value]||resolutions.standard;
+  }
+  const size=document.getElementById('mapSize').value;
+  if(type==='dwelling')return{tags:size};
+  if(type==='cave'||type==='glade')return{tags:`${size},${type}`};
+  return{size};
 }
-function syncProvider(){const type=document.getElementById('mapType').value;document.getElementById('mapProvider').value=providerForType(type);document.getElementById('mapParams').value=JSON.stringify(defaults[type]||{},null,2);}
-function validateForm(){const name=document.getElementById('mapName').value.trim(),seed=document.getElementById('mapSeed').value.trim(),type=document.getElementById('mapType').value,provider=document.getElementById('mapProvider').value,permalink=document.getElementById('mapPermalink').value.trim();if(!name||name.length>80)throw new Error('Enter a name of 1–80 characters.');if(!seed||seed.length>100)throw new Error('Enter a seed of 1–100 characters.');if(!['world','town','dungeon','dwelling','cave','glade','wilderness','other'].includes(type))throw new Error('Invalid map type.');if(!generatorRegistry.has(provider))throw new Error('Invalid generator provider.');let generatorParams;try{generatorParams=JSON.parse(document.getElementById('mapParams').value||'{}');}catch{throw new Error('Generator Parameters must be valid JSON.');}if(!generatorParams||typeof generatorParams!=='object'||Array.isArray(generatorParams))throw new Error('Generator Parameters must be a JSON object.');if(JSON.stringify(generatorParams).length>12000)throw new Error('Generator Parameters are too large. Keep them below 12 KB.');if(permalink){const url=new URL(permalink);if(!['http:','https:'].includes(url.protocol))throw new Error('Permalink must use HTTP or HTTPS.');}return{name,seed,type,provider,permalink:permalink||null,params:generatorParams,description:document.getElementById('mapDescription').value.trim().slice(0,500)};}
+
+function controlsFromParams(type,params={}){
+  const resolution=Number(params.width)>=2500?'large':Number(params.width)>=1900?'wide':'standard';
+  document.getElementById('worldResolution').value=resolution;
+  const rawSize=String(params.size||params.tags||'medium').split(',')[0];
+  document.getElementById('mapSize').value=['small','medium','large'].includes(rawSize)?rawSize:'medium';
+  document.getElementById('worldResolutionField').hidden=type!=='world';
+  document.getElementById('mapSizeField').hidden=type==='world';
+}
+
+function openCreateDialog(parent,type='town',existing=null){
+  if(!isDm)return;
+  const source=existing||(previewMap&&(!currentMap||previewMap.id===currentMap.id)?previewMap:null);
+  pendingPlacement=source?.placement||pendingPlacement||{latitude:null,longitude:null,x:.5,y:.5};
+  const selectedType=source?.type||type;
+  document.getElementById('dialogTitle').textContent=source?'Generator Settings':selectedType==='world'?'Create World':'Add Location';
+  document.getElementById('editingMapId').value=source?.id||'';
+  document.getElementById('mapName').value=source?.name||'';
+  document.getElementById('mapType').value=selectedType;
+  document.getElementById('mapProvider').value=source?.generator.provider||providerForType(selectedType);
+  document.getElementById('mapSeed').value=source?.generator.seed||`${selectedType}-${crypto.randomUUID?.()||Date.now()}`;
+  document.getElementById('mapDescription').value=source?.description||'';
+  document.getElementById('mapPermalink').value=source?.generator.permalink||'';
+  document.getElementById('mapType').disabled=!!source||selectedType==='world';
+  controlsFromParams(selectedType,source?.generator.params||defaults[selectedType]||{});
+  document.getElementById('formError').textContent='';
+  dialog.dataset.parentId=source?.parentMapId??parent?.id??'';
+  dialog.showModal();document.getElementById('mapName').focus();
+}
+
+function syncProvider(){
+  const type=document.getElementById('mapType').value;
+  document.getElementById('mapProvider').value=providerForType(type);
+  controlsFromParams(type,defaults[type]||{});
+}
+
+function validateForm(){
+  const name=document.getElementById('mapName').value.trim(),seed=document.getElementById('mapSeed').value.trim(),type=document.getElementById('mapType').value,provider=document.getElementById('mapProvider').value,permalink=document.getElementById('mapPermalink').value.trim();
+  if(!name||name.length>80)throw new Error('Enter a name of 1-80 characters.');
+  if(!seed||seed.length>100)throw new Error('Enter a seed of 1-100 characters.');
+  if(!['world','town','dungeon','dwelling','cave','glade'].includes(type))throw new Error('Invalid map type.');
+  if(!generatorRegistry.has(provider))throw new Error('Choose an available Azgaar or Watabou generator.');
+  if(permalink){const url=new URL(permalink);if(!['http:','https:'].includes(url.protocol))throw new Error('Permalink must use HTTP or HTTPS.');}
+  return{name,seed,type,provider,permalink:permalink||null,params:paramsFromControls(type),description:document.getElementById('mapDescription').value.trim().slice(0,500)};
+}
+
+function previewFromForm(){
+  const values=validateForm(),editingId=document.getElementById('editingMapId').value,id=editingId||mapsRef.doc().id,parentMapId=values.type==='world'?null:(dialog.dataset.parentId||currentMap?.id||null);
+  if(parentMapId===id)throw new Error('A map cannot be its own parent.');
+  const existing=maps.get(id);
+  previewMap={id,campaignId,parentMapId,type:values.type,name:values.name,description:values.description,generator:{provider:values.provider,version:values.provider==='azgaar'?'1.143.2+992246f':'watabou-permalink',seed:values.seed,params:values.params,permalink:values.permalink},placement:values.type==='world'?{latitude:null,longitude:null,x:null,y:null}:(pendingPlacement||existing?.placement||{latitude:null,longitude:null,x:.5,y:.5}),createdAt:existing?.createdAt||null,updatedAt:null};
+  previewGenerated=null;dialog.close();renderCurrent();
+}
 
 async function saveMap(){
-  const values=validateForm(),editingId=document.getElementById('editingMapId').value,id=editingId||mapsRef.doc().id,parentMapId=values.type==='world'?null:(dialog.dataset.parentId||currentMap?.id||null);if(parentMapId===id)throw new Error('A map cannot be its own parent.');const existing=maps.get(id);const version=values.provider.startsWith('azgaar')?'1.143.2+992246f':values.provider.startsWith('watabou-')?'watabou-permalink':'local-1';const payload={id,campaignId,parentMapId,type:values.type,name:values.name,description:values.description,generator:{provider:values.provider,version,seed:values.seed,params:values.params,permalink:values.permalink},placement:values.type==='world'?{latitude:null,longitude:null,x:null,y:null}:(pendingPlacement||existing?.placement||{latitude:null,longitude:null,x:.5,y:.5}),updatedAt:firebase.firestore.FieldValue.serverTimestamp()};if(!existing)payload.createdAt=firebase.firestore.FieldValue.serverTimestamp();await mapsRef.doc(id).set(payload,{merge:true});pendingPlacement=null;dialog.close();if(values.type==='world'||editingId===currentMap?.id)navigateTo(id,{push:values.type==='world'&&!editingId});}
-
+  if(!isDm||!previewMap)return;
+  const adapter=generatorRegistry.get(previewMap.generator.provider);const permalink=adapter?.getPermalink?.(previewGenerated)||previewMap.generator.permalink;
+  const existing=maps.get(previewMap.id),payload={...previewMap,generator:{...previewMap.generator,permalink},updatedAt:firebase.firestore.FieldValue.serverTimestamp()};
+  if(!existing)payload.createdAt=firebase.firestore.FieldValue.serverTimestamp();
+  await mapsRef.doc(previewMap.id).set(payload,{merge:true});
+  const saved=validMap({...payload,createdAt:existing?.createdAt||null,updatedAt:null},previewMap.id);maps.set(saved.id,saved);currentMap=saved;previewMap=null;previewGenerated=null;pendingPlacement=null;updateUrl(saved.id,!existing&&saved.type==='world');renderCurrent();
+}
 async function deleteCurrent(){if(!isDm||!currentMap)return;const descendants=[];const collect=id=>childrenOf(id).forEach(child=>{descendants.push(child);collect(child.id);});collect(currentMap.id);const message=descendants.length?`“${currentMap.name}” has ${descendants.length} child location(s). Delete it and every descendant? Cancel leaves everything unchanged.`:`Delete “${currentMap.name}”?`;if(!confirm(message))return;const parent=currentMap.parentMapId,targets=[...descendants,currentMap];for(let start=0;start<targets.length;start+=450){const batch=db.batch();targets.slice(start,start+450).forEach(map=>batch.delete(mapsRef.doc(map.id)));await batch.commit();}parent&&maps.has(parent)?navigateTo(parent):showEmpty();}
-async function regenerate(){if(!isDm||!currentMap)return;const seed=prompt('New deterministic seed:',currentMap.generator.seed);if(!seed)return;await mapsRef.doc(currentMap.id).set({'generator.seed':seed.slice(0,100),updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});}
+async function regenerate(){if(!isDm||(!currentMap&&!previewMap))return;const source=previewMap||currentMap,newSeed=`${Date.now()}-${Math.floor(Math.random()*1000000)}`;previewMap={...source,generator:{...source.generator,seed:newSeed.slice(0,100),permalink:null}};previewGenerated=null;renderCurrent();}
 async function rename(){if(!isDm||!currentMap)return;const name=prompt('Location name:',currentMap.name)?.trim();if(!name)return;await mapsRef.doc(currentMap.id).set({name:name.slice(0,80),updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});}
 
 document.getElementById('backButton').addEventListener('click',()=>{if(currentMap?.parentMapId)navigateTo(currentMap.parentMapId);else location.href='menu.html';});
 document.getElementById('newWorldButton').addEventListener('click',()=>openCreateDialog(null,'world'));
 document.getElementById('addLocationButton').addEventListener('click',()=>{if(!currentMap)return;placing=true;currentController?.setPlacementMode?.(true);placementBanner.hidden=false;infoPanel.hidden=true;});
-document.getElementById('regenerateButton').addEventListener('click',regenerate);document.getElementById('renameButton').addEventListener('click',rename);document.getElementById('settingsButton').addEventListener('click',()=>currentMap&&openCreateDialog(maps.get(currentMap.parentMapId),currentMap.type,currentMap));document.getElementById('deleteButton').addEventListener('click',deleteCurrent);
+document.getElementById('regenerateButton').addEventListener('click',regenerate);document.getElementById('saveMapButton').addEventListener('click',async()=>{try{await saveMap();}catch(error){showStatus('Could not save map',error.message||'The preview could not be saved.');}});document.getElementById('renameButton').addEventListener('click',rename);document.getElementById('settingsButton').addEventListener('click',()=>{const source=previewMap||currentMap;if(source)openCreateDialog(maps.get(source.parentMapId),source.type,source);});document.getElementById('deleteButton').addEventListener('click',deleteCurrent);
 document.getElementById('openMarkerButton').addEventListener('click',()=>selectedMarker&&navigateTo(selectedMarker.id));document.getElementById('editMarkerButton').addEventListener('click',()=>selectedMarker&&openCreateDialog(currentMap,selectedMarker.type,selectedMarker));
-document.getElementById('cancelDialog').addEventListener('click',()=>{pendingPlacement=null;dialog.close();});document.getElementById('mapType').addEventListener('change',syncProvider);form.addEventListener('submit',async event=>{event.preventDefault();try{await saveMap();}catch(error){document.getElementById('formError').textContent=error.message;}});
+document.getElementById('cancelDialog').addEventListener('click',()=>{pendingPlacement=null;dialog.close();});document.getElementById('mapType').addEventListener('change',syncProvider);document.getElementById('mapProvider').addEventListener('change',()=>controlsFromParams(document.getElementById('mapType').value,{}));form.addEventListener('submit',event=>{event.preventDefault();try{previewFromForm();}catch(error){document.getElementById('formError').textContent=error.message;}});
 window.addEventListener('keydown',event=>{if(event.key==='Escape'&&placing){placing=false;currentController?.setPlacementMode?.(false);placementBanner.hidden=true;}});window.addEventListener('popstate',event=>{const id=event.state?.mapId||new URLSearchParams(location.search).get('map');id?navigateTo(id,{push:false}):showEmpty();});
 
 auth.onAuthStateChanged(user=>{
