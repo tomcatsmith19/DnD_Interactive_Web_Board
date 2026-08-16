@@ -66,6 +66,18 @@
     .dice-roller select,.dice-roller input { box-sizing:border-box; width:100%; padding:10px; color:white; background:#292929; border:1px solid #666; border-radius:5px; font-size:1rem; }
     .dice-counter { display:grid; grid-template-columns:34px minmax(0,1fr) 34px; justify-items:center; align-items:center; gap:4px; padding:7px 5px; background:#202020; border:1px solid #555; border-radius:6px; color:#FFD700; font-weight:bold; }
     .dice-counter.d20 { grid-column:2; grid-row:1; }
+    .dice-customize { position:relative; grid-column:1; grid-row:1; align-self:center; }
+    .dice-customize summary { display:flex; min-height:48px; align-items:center; justify-content:center; padding:8px; box-sizing:border-box; color:#111; background:#FFD700; border-radius:6px; font-weight:bold; text-align:center; cursor:pointer; list-style:none; }
+    .dice-customize summary::-webkit-details-marker { display:none; }
+    .dice-customize-menu { position:absolute; z-index:10; top:calc(100% + 6px); left:0; width:250px; padding:10px; box-sizing:border-box; background:#171717; border:1px solid #FFD700; border-radius:7px; box-shadow:0 8px 24px #000; }
+    .dice-customize-menu label { margin-bottom:7px; }
+    .dice-parameter-preview { margin-top:8px; padding:8px; color:white; background:#292929; border:1px solid #555; border-radius:6px; font-size:.75rem; }
+    .dice-preview-stage { width:100%; height:130px; overflow:hidden; background:radial-gradient(circle,#444,#181818); border-radius:5px; }
+    .dice-preview-stage canvas { width:100% !important; height:100% !important; }
+    .dice-preview-details { line-height:1.4; }
+    .dice-sound-preview-button { width:100%; margin-top:8px; padding:8px !important; color:#111 !important; background:#FFD700 !important; border:0 !important; border-radius:5px; font-weight:bold; cursor:pointer; }
+    .dice-modifier { grid-column:3; grid-row:1; align-self:center; align-items:center; text-align:center; }
+    .dice-roller .dice-modifier input { width:5.25em; padding:8px 4px; text-align:center; }
     .dice-counter.row-two { grid-row:2; }
     .dice-counter.row-three { grid-row:3; }
     .dice-counter-label { grid-column:1/-1; display:flex; align-items:center; justify-content:center; gap:4px; height:48px; }
@@ -76,10 +88,16 @@
     .dice-counter input { padding:7px 3px; text-align:center; }
     .dice-roll-button { width:100%; padding:11px !important; font-size:1rem; }
     .dice-clear-button { width:100%; padding:9px !important; color:#FFD700 !important; background:#333 !important; border:1px solid #FFD700 !important; font-size:.95rem; }
+    .dice-replay-button { width:100%; padding:9px !important; color:#FFD700 !important; background:#222 !important; border:1px solid #FFD700 !important; font-size:.95rem; font-weight:bold; cursor:pointer; }
+    .dice-replay-button:disabled { opacity:.45; cursor:not-allowed; }
     .dice-result { min-height:105px; padding:12px; color:white; background:#191919; border:1px solid #555; border-radius:7px; overflow-wrap:anywhere; }
     .dice-result strong { color:#FFD700; font-size:1.25rem; }
     .dice-roller .share-dice-roll { flex-direction:row; align-items:center; gap:8px; color:white; font-weight:normal; }
     .dice-roller .share-dice-roll input { width:auto; margin:0; accent-color:#FFD700; }
+    .dice-roll-controls { display:grid; grid-template-columns:minmax(0,1fr) 150px; gap:10px; align-items:center; }
+    .dice-roll-options { display:flex; flex-direction:column; gap:7px; }
+    .dice-roller .dice-roll-option { display:flex; flex-direction:row; align-items:center; gap:7px; color:white; font-weight:normal; }
+    .dice-roller .dice-roll-option input { width:auto; margin:0; accent-color:#FFD700; }
     .party-panel button,.party-modal button { padding:8px; background:#FFD700; border:0; border-radius:5px; font-weight:bold; cursor:pointer; }
     .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
     .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
@@ -293,7 +311,9 @@
     </div>
     <div id="playerDiceContent" class="dice-roller player-left-panel-content"><h2>Dice Roller</h2>
       <div class="dice-roller-form">
+        <details class="dice-customize"><summary>Customize Dice</summary><div class="dice-customize-menu" data-dice-customizer="player"><label>Colorset<select id="playerDiceColorset" class="dice-colorset"></select></label><label>Texture<select id="playerDiceTexture" class="dice-texture"></select></label><label>Material<select id="playerDiceMaterial" class="dice-material"></select></label><label>Surface<select id="playerDiceSurface" class="dice-surface"></select></label><div class="dice-parameter-preview"><div id="playerDicePreviewStage" class="dice-preview-stage"></div><div class="dice-preview-details" aria-live="polite"></div><button class="dice-sound-preview-button" type="button">Preview Roll Sound</button></div></div></details>
         <div class="dice-counter d20"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d20-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',20,-1)">−</button><input id="playerDiceCount20" type="number" min="0" max="100" value="1" aria-label="Number of d20 dice"><button type="button" onclick="changeDiceCount('player',20,1)">+</button></div>
+        <label class="dice-modifier">Modifier<input id="playerDiceModifier" type="number" value="0" inputmode="numeric" aria-label="Roll modifier, positive or negative"></label>
         <div class="dice-counter row-two"><div class="dice-counter-label"><span class="die-picture d100-back" style="--die-image:url('data/images/d10-black.png')"></span><span class="die-picture d100-front" style="--die-image:url('data/images/d10-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',100,-1)">−</button><input id="playerDiceCount100" type="number" min="0" max="100" value="0" aria-label="Number of d100 dice"><button type="button" onclick="changeDiceCount('player',100,1)">+</button></div>
         <div class="dice-counter row-two"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d12-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',12,-1)">−</button><input id="playerDiceCount12" type="number" min="0" max="100" value="0" aria-label="Number of d12 dice"><button type="button" onclick="changeDiceCount('player',12,1)">+</button></div>
         <div class="dice-counter row-two"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d10-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',10,-1)">−</button><input id="playerDiceCount10" type="number" min="0" max="100" value="0" aria-label="Number of d10 dice"><button type="button" onclick="changeDiceCount('player',10,1)">+</button></div>
@@ -301,12 +321,10 @@
         <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d6-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',6,-1)">−</button><input id="playerDiceCount6" type="number" min="0" max="100" value="0" aria-label="Number of d6 dice"><button type="button" onclick="changeDiceCount('player',6,1)">+</button></div>
         <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d4-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',4,-1)">−</button><input id="playerDiceCount4" type="number" min="0" max="100" value="0" aria-label="Number of d4 dice"><button type="button" onclick="changeDiceCount('player',4,1)">+</button></div>
       </div>
-      <label>Modifier<input id="playerDiceModifier" type="number" value="0" inputmode="numeric" aria-label="Roll modifier, positive or negative"></label>
-      <label>Dice set<select id="playerDiceTheme"><option value="default">Default</option><option value="blueGreenMetal">Blue/Green Metal</option><option value="diceOfRolling">Dice of Rolling</option><option value="gemstone">Gemstone</option><option value="gemstoneMarble">Gemstone Marble</option><option value="rock">Rock</option><option value="rust">Rust</option><option value="smooth">Smooth</option><option value="wooden">Wooden</option></select></label>
-      <label class="share-dice-roll"><input id="playerShareDiceRoll" type="checkbox"> Share this roll with everyone</label>
       <button class="dice-clear-button" type="button" onclick="clearSelectedDice('player')">Clear Selected Dice</button>
-      <button class="dice-roll-button" type="button" onclick="rollUtilityDice('player')">Roll Dice</button>
+      <div class="dice-roll-controls"><div class="dice-roll-options"><label class="dice-roll-option"><input id="playerShareDiceRoll" type="checkbox"> Share</label><label class="dice-roll-option"><input id="playerRandomDiceColor" type="checkbox"> Random Color</label></div><button class="dice-roll-button" type="button" onclick="rollUtilityDice('player')">Roll Dice</button></div>
       <div id="playerDiceResult" class="dice-result" aria-live="polite">Choose your dice and roll.</div>
+      <button id="playerReplayDiceRoll" class="dice-replay-button" type="button" onclick="window.diceRoller3d?.replayAndShare('player')" disabled>Replay &amp; Share Roll</button>
     </div>
   </aside>
 
@@ -317,7 +335,7 @@
     <button id="audioCollapseButton" class="audio-collapse-tab" type="button" onclick="toggleAudioDock()" aria-label="Sound panel" title="Sound panel">♫</button>
     <div class="audio-dock-content">
       <div class="audio-music-controls"><select id="dockMusicSelect" onchange="handleDockMusicChange(this.value)"><option value="">No Music</option><option value="data/music/camp.mp3">Camp</option><option value="data/music/tavern.mp3">Tavern</option><option value="data/music/city.mp3">City</option><option value="data/music/desert.mp3">Desert</option><option value="data/music/swamp.mp3">Swamp</option><option value="data/music/forest.mp3">Forest</option><option value="data/music/mountain.mp3">Mountain</option><option value="data/music/underdark.mp3">Underdark</option><option value="data/music/dungeon.mp3">Dungeon</option><option value="data/music/combat.mp3">Combat</option></select>
-      <div class="audio-controls"><label>Music <input id="musicVolume" type="range" min="0" max="1" step="0.05" value="1" oninput="setMusicVolume(this.value)"></label><label>SFX <input id="sfxVolume" type="range" min="0" max="1" step="0.05" value="1" oninput="setSfxVolume(this.value)"></label></div></div>
+      <div class="audio-controls"><label>Music <input id="musicVolume" type="range" min="0" max="1" step="0.05" value="1" oninput="setMusicVolume(this.value)"></label><label>SFX <input id="sfxVolume" type="range" min="0" max="1" step="0.05" value="1" oninput="setSfxVolume(this.value)"> <span><input id="playerDiceSounds" type="checkbox" checked> Dice sounds</span></label></div></div>
       <div class="audio-group reactions"><strong>Reactions</strong><button onclick="playSoundEffect('data/sounds/angry.mp3')">Angry</button><button onclick="playSoundEffect('data/sounds/bruh.mp3')">Bruh</button><button onclick="playSoundEffect('data/sounds/dumb.mp3')">Dumb</button><button onclick="playSoundEffect('data/sounds/evillaugh.mp3')">Evil Laugh</button><button onclick="playSoundEffect('data/sounds/scream.mp3')">Scream</button><button onclick="playSoundEffect('data/sounds/nooo.mp3')">Nooo</button><button onclick="playSoundEffect('data/sounds/suprise.mp3')">Surprise</button><button onclick="playSoundEffect('data/sounds/oh_my.mp3')">Oh My</button><button onclick="playSoundEffect('data/sounds/awww.mp3')">Awww</button><button onclick="playSoundEffect('data/sounds/laugh.mp3')">Laugh</button></div>
       <div class="audio-group combat"><strong>Combat</strong><button onclick="playSoundEffect('data/sounds/yeet.mp3')">Yeet</button><button onclick="playSoundEffect('data/sounds/running.mp3')">Run</button><button onclick="playSoundEffect('data/sounds/bite.mp3')">Bite</button><button onclick="playSoundEffect('data/sounds/punch.mp3')">Punch</button><button onclick="playSoundEffect('data/sounds/splat.mp3')">Splat</button><button onclick="playSoundEffect('data/sounds/bonk.mp3')">Bonk</button><button onclick="playSoundEffect('data/sounds/hammer.mp3')">Hammer</button><button onclick="playSoundEffect('data/sounds/sword.mp3')">Sword</button><button onclick="playSoundEffect('data/sounds/tentacle.mp3')">Tentacle</button><button onclick="playSoundEffect('data/sounds/gunshot.mp3')">Gun</button><button onclick="playSoundEffect('data/sounds/Explosion.mp3')">Blast</button><button onclick="playSoundEffect('data/sounds/failed_spell.mp3')">Spell Fail</button><button onclick="playSoundEffect('data/sounds/spell attack.mp3')">Spell</button></div>
       <div class="audio-group checks"><strong>Checks</strong><button onclick="playSoundEffect('data/sounds/died.mp3')">Died</button><button onclick="playSoundEffect('data/sounds/item.mp3')">Item</button><button onclick="playSoundEffect('data/sounds/sad.mp3')">Fail</button><button onclick="playSoundEffect('data/sounds/senses.mp3')">Senses</button><button onclick="playSoundEffect('data/sounds/slipandfall.mp3')">Fall</button><button onclick="playSoundEffect('data/sounds/sucess.mp3')">Success</button><button onclick="playSoundEffect('data/sounds/spell_whispers.mp3')">Whispers</button></div>
@@ -700,7 +718,8 @@
       const pool=dice.map(sides=>{const input=document.getElementById(`${prefix}DiceCount${sides}`),count=Math.min(100,Math.max(0,Math.trunc(Number(input?.value)||0)));if(input)input.value=count;return{sides,count};}).filter(die=>die.count);
       const result=document.getElementById(`${prefix}DiceResult`);if(!pool.length){result.textContent='Add at least one die to roll.';return;}
       result.textContent='Rolling…';
-      const request={id:`${Date.now()}-${Math.random().toString(36).slice(2)}`,createdAt:Date.now(),roller:'Player',sourcePrefix:prefix,dice:pool,modifier,theme:document.getElementById(`${prefix}DiceTheme`)?.value||'default'};
+      const randomAppearance=document.getElementById(`${prefix}RandomDiceColor`)?.checked?window.diceRoller3d?.getRandomCustomization():null;
+      const request={id:`${Date.now()}-${Math.random().toString(36).slice(2)}`,createdAt:Date.now(),roller:'Player',sourcePrefix:prefix,dice:pool,modifier,themeConfig:randomAppearance?.themeConfig||window.diceRoller3d?.getCustomization(prefix),randomCustomization:randomAppearance?.summary||''};
       if(window.diceRoller3d)window.diceRoller3d.roll(request,document.getElementById(`${prefix}ShareDiceRoll`)?.checked);else result.textContent='3D dice are still loading. Please try again.';
     }
     function toggleSessionControls(panelId){document.getElementById(panelId)?.classList.toggle('is-collapsed');}
@@ -1775,7 +1794,7 @@
 
 
   </script>
-  <script type="module" src="dice-roller-3d.js?v=4"></script>
+  <script type="module" src="dice-roller-3d.js?v=14"></script>
 </body>
 
 </html>
