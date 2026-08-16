@@ -51,6 +51,8 @@
     .player-left-rail button { width:42px; min-width:0; height:82px; padding:0 !important; border-radius:0 7px 7px 0 !important; background:#111 !important; color:#FFD700 !important; border:1px solid #FFD700 !important; border-left:0 !important; cursor:pointer; }
     .player-left-rail button.is-active { background:#FFD700 !important; color:#111 !important; }
     .player-left-rail svg { width:27px; height:40px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    .dice-icon { display:inline-block; width:32px; height:38px; background:#FFD700; -webkit-mask:url('data/images/d20-black.png') center/contain no-repeat; mask:url('data/images/d20-black.png') center/contain no-repeat; }
+    .player-left-rail button.is-active .dice-icon { background:#111; }
     .player-left-panel-content { display:none; height:100%; min-height:0; overflow:auto; flex-direction:column; }
     .player-left-panel-content.is-active { display:flex; }
     .party-panel-content { max-height:none; }
@@ -58,6 +60,26 @@
     .party-table { width:100%; border-collapse:collapse; font-size:.85rem; }
     .party-table th,.party-table td { padding:5px; border:1px solid #555; }
     .party-table input { width:58px; box-sizing:border-box; background:#292929; color:white; border:1px solid #666; }
+    .dice-roller { gap:14px; }
+    .dice-roller-form { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+    .dice-roller label { display:flex; flex-direction:column; gap:5px; color:#FFD700; font-weight:bold; }
+    .dice-roller select,.dice-roller input { box-sizing:border-box; width:100%; padding:10px; color:white; background:#292929; border:1px solid #666; border-radius:5px; font-size:1rem; }
+    .dice-counter { display:grid; grid-template-columns:34px minmax(0,1fr) 34px; justify-items:center; align-items:center; gap:4px; padding:7px 5px; background:#202020; border:1px solid #555; border-radius:6px; color:#FFD700; font-weight:bold; }
+    .dice-counter.d20 { grid-column:2; grid-row:1; }
+    .dice-counter.row-two { grid-row:2; }
+    .dice-counter.row-three { grid-row:3; }
+    .dice-counter-label { grid-column:1/-1; display:flex; align-items:center; justify-content:center; gap:4px; height:48px; }
+    .die-picture { display:inline-block; width:44px; height:44px; flex:0 0 auto; background:#FFD700; -webkit-mask:var(--die-image) center/contain no-repeat; mask:var(--die-image) center/contain no-repeat; }
+    .die-picture.d100-back { width:34px; transform:translate(-7px,7px) rotate(-14deg); }
+    .die-picture.d100-front { width:34px; margin-left:-25px; transform:translate(9px,-7px) rotate(14deg); }
+    .dice-counter button { height:34px; padding:0 !important; font-size:1.2rem; }
+    .dice-counter input { padding:7px 3px; text-align:center; }
+    .dice-roll-button { width:100%; padding:11px !important; font-size:1rem; }
+    .dice-clear-button { width:100%; padding:9px !important; color:#FFD700 !important; background:#333 !important; border:1px solid #FFD700 !important; font-size:.95rem; }
+    .dice-result { min-height:105px; padding:12px; color:white; background:#191919; border:1px solid #555; border-radius:7px; overflow-wrap:anywhere; }
+    .dice-result strong { color:#FFD700; font-size:1.25rem; }
+    .dice-roller .share-dice-roll { flex-direction:row; align-items:center; gap:8px; color:white; font-weight:normal; }
+    .dice-roller .share-dice-roll input { width:auto; margin:0; accent-color:#FFD700; }
     .party-panel button,.party-modal button { padding:8px; background:#FFD700; border:0; border-radius:5px; font-weight:bold; cursor:pointer; }
     .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
     .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
@@ -263,10 +285,28 @@
   <aside id="partyPanel" class="party-panel is-collapsed">
     <nav class="player-left-rail" aria-label="Player side panels">
       <button id="partyCollapseButton" type="button" onclick="togglePlayerLeftPanel('party')" aria-label="Party panel" title="Party"><svg viewBox="0 0 28 42" aria-hidden="true"><circle cx="14" cy="9" r="5"/><path d="M6 36c0-9 2-17 8-17s8 8 8 17M9 23l-5 9M19 23l5 9M10 36h8"/></svg></button>
+      <button id="playerDiceButton" type="button" onclick="togglePlayerLeftPanel('dice')" aria-label="Dice roller" title="Dice Roller"><span class="dice-icon" aria-hidden="true"></span></button>
     </nav>
     <div id="playerPartyContent" class="party-panel-content player-left-panel-content is-active"><h2>Party</h2>
       <table class="party-table"><thead><tr><th>Name</th><th>Init</th><th>HP</th><th>Max HP</th></tr></thead><tbody id="partyTableBody"></tbody></table>
       <button type="button" style="width:100%;margin-top:8px;" onclick="openPartyPicker()">Add to Party</button>
+    </div>
+    <div id="playerDiceContent" class="dice-roller player-left-panel-content"><h2>Dice Roller</h2>
+      <div class="dice-roller-form">
+        <div class="dice-counter d20"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d20-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',20,-1)">−</button><input id="playerDiceCount20" type="number" min="0" max="100" value="1" aria-label="Number of d20 dice"><button type="button" onclick="changeDiceCount('player',20,1)">+</button></div>
+        <div class="dice-counter row-two"><div class="dice-counter-label"><span class="die-picture d100-back" style="--die-image:url('data/images/d10-black.png')"></span><span class="die-picture d100-front" style="--die-image:url('data/images/d10-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',100,-1)">−</button><input id="playerDiceCount100" type="number" min="0" max="100" value="0" aria-label="Number of d100 dice"><button type="button" onclick="changeDiceCount('player',100,1)">+</button></div>
+        <div class="dice-counter row-two"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d12-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',12,-1)">−</button><input id="playerDiceCount12" type="number" min="0" max="100" value="0" aria-label="Number of d12 dice"><button type="button" onclick="changeDiceCount('player',12,1)">+</button></div>
+        <div class="dice-counter row-two"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d10-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',10,-1)">−</button><input id="playerDiceCount10" type="number" min="0" max="100" value="0" aria-label="Number of d10 dice"><button type="button" onclick="changeDiceCount('player',10,1)">+</button></div>
+        <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d8-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',8,-1)">−</button><input id="playerDiceCount8" type="number" min="0" max="100" value="0" aria-label="Number of d8 dice"><button type="button" onclick="changeDiceCount('player',8,1)">+</button></div>
+        <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d6-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',6,-1)">−</button><input id="playerDiceCount6" type="number" min="0" max="100" value="0" aria-label="Number of d6 dice"><button type="button" onclick="changeDiceCount('player',6,1)">+</button></div>
+        <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d4-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',4,-1)">−</button><input id="playerDiceCount4" type="number" min="0" max="100" value="0" aria-label="Number of d4 dice"><button type="button" onclick="changeDiceCount('player',4,1)">+</button></div>
+      </div>
+      <label>Modifier<input id="playerDiceModifier" type="number" value="0" inputmode="numeric" aria-label="Roll modifier, positive or negative"></label>
+      <label>Dice set<select id="playerDiceTheme"><option value="default">Default</option><option value="blueGreenMetal">Blue/Green Metal</option><option value="diceOfRolling">Dice of Rolling</option><option value="gemstone">Gemstone</option><option value="gemstoneMarble">Gemstone Marble</option><option value="rock">Rock</option><option value="rust">Rust</option><option value="smooth">Smooth</option><option value="wooden">Wooden</option></select></label>
+      <label class="share-dice-roll"><input id="playerShareDiceRoll" type="checkbox"> Share this roll with everyone</label>
+      <button class="dice-clear-button" type="button" onclick="clearSelectedDice('player')">Clear Selected Dice</button>
+      <button class="dice-roll-button" type="button" onclick="rollUtilityDice('player')">Roll Dice</button>
+      <div id="playerDiceResult" class="dice-result" aria-live="polite">Choose your dice and roll.</div>
     </div>
   </aside>
 
@@ -639,8 +679,8 @@
     let activePlayerLeftPanel = 'party';
     function togglePlayerLeftPanel(mode){
       const panel=document.getElementById('partyPanel');
-      const contentIds={party:'playerPartyContent'};
-      const buttonIds={party:'partyCollapseButton'};
+      const contentIds={party:'playerPartyContent',dice:'playerDiceContent'};
+      const buttonIds={party:'partyCollapseButton',dice:'playerDiceButton'};
       const isSameOpenPanel=!panel.classList.contains('is-collapsed')&&activePlayerLeftPanel===mode;
       document.querySelectorAll('.player-left-panel-content').forEach(content=>content.classList.remove('is-active'));
       document.querySelectorAll('.player-left-rail button').forEach(button=>button.classList.remove('is-active'));
@@ -651,6 +691,18 @@
       panel.classList.remove('is-collapsed');
     }
     function togglePartyPanel(){togglePlayerLeftPanel('party');}
+    function changeDiceCount(prefix,sides,change){const input=document.getElementById(`${prefix}DiceCount${sides}`);input.value=Math.min(100,Math.max(0,(Number(input.value)||0)+change));}
+    function clearSelectedDice(prefix){[20,100,12,10,8,6,4].forEach(sides=>{const input=document.getElementById(`${prefix}DiceCount${sides}`);if(input)input.value=0;});const result=document.getElementById(`${prefix}DiceResult`);if(result)result.textContent='Choose your dice and roll.';}
+    function rollUtilityDice(prefix){
+      const dice=[20,100,12,10,8,6,4],modifierInput=document.getElementById(`${prefix}DiceModifier`);
+      const modifier=Math.trunc(Number(modifierInput?.value)||0);
+      if(modifierInput)modifierInput.value=modifier;
+      const pool=dice.map(sides=>{const input=document.getElementById(`${prefix}DiceCount${sides}`),count=Math.min(100,Math.max(0,Math.trunc(Number(input?.value)||0)));if(input)input.value=count;return{sides,count};}).filter(die=>die.count);
+      const result=document.getElementById(`${prefix}DiceResult`);if(!pool.length){result.textContent='Add at least one die to roll.';return;}
+      result.textContent='Rolling…';
+      const request={id:`${Date.now()}-${Math.random().toString(36).slice(2)}`,createdAt:Date.now(),roller:'Player',sourcePrefix:prefix,dice:pool,modifier,theme:document.getElementById(`${prefix}DiceTheme`)?.value||'default'};
+      if(window.diceRoller3d)window.diceRoller3d.roll(request,document.getElementById(`${prefix}ShareDiceRoll`)?.checked);else result.textContent='3D dice are still loading. Please try again.';
+    }
     function toggleSessionControls(panelId){document.getElementById(panelId)?.classList.toggle('is-collapsed');}
     function toggleAudioDock(){document.getElementById('audioDock').classList.toggle('is-collapsed');}
     document.getElementById('partyPanel')?.addEventListener('wheel', event => {
@@ -1723,6 +1775,7 @@
 
 
   </script>
+  <script type="module" src="dice-roller-3d.js?v=4"></script>
 </body>
 
 </html>

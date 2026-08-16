@@ -202,9 +202,31 @@
         .dm-left-rail button { width:48px; height:66px; padding:0; background:#111; color:#FFD700; border:1px solid #FFD700; border-left:0; border-radius:0 7px 7px 0; cursor:pointer; font-size:1.45rem; }
         .dm-left-rail button.is-active { background:#FFD700; color:#111; }
         .dm-left-rail button svg { width:31px; height:38px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; vertical-align:middle; }
+        .dice-icon { display:inline-block; width:35px; height:42px; vertical-align:middle; background:#FFD700; -webkit-mask:url('data/images/d20-black.png') center/contain no-repeat; mask:url('data/images/d20-black.png') center/contain no-repeat; }
+        .dm-left-rail button.is-active .dice-icon { background:#111; }
         .dm-left-panel-content { display:none; height:100%; min-height:0; overflow:auto; flex-direction:column; }
         .dm-left-panel-content.is-active { display:flex; }
         .dm-left-panel-content h2 { margin:0 0 10px; color:#FFD700; font-family:'MedievalSharp',cursive; }
+        .dice-roller { gap:14px; }
+        .dice-roller-form { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+        .dice-roller label { display:flex; flex-direction:column; gap:5px; color:#FFD700; font-weight:bold; }
+        .dice-roller select,.dice-roller input { box-sizing:border-box; width:100%; padding:10px; color:white; background:#292929; border:1px solid #666; border-radius:5px; font-size:1rem; }
+        .dice-counter { display:grid; grid-template-columns:34px minmax(0,1fr) 34px; justify-items:center; align-items:center; gap:4px; padding:7px 5px; background:#202020; border:1px solid #555; border-radius:6px; color:#FFD700; font-weight:bold; }
+        .dice-counter.d20 { grid-column:2; grid-row:1; }
+        .dice-counter.row-two { grid-row:2; }
+        .dice-counter.row-three { grid-row:3; }
+        .dice-counter-label { grid-column:1/-1; display:flex; align-items:center; justify-content:center; gap:4px; height:48px; }
+        .die-picture { display:inline-block; width:44px; height:44px; flex:0 0 auto; background:#FFD700; -webkit-mask:var(--die-image) center/contain no-repeat; mask:var(--die-image) center/contain no-repeat; }
+        .die-picture.d100-back { width:34px; transform:translate(-7px,7px) rotate(-14deg); }
+        .die-picture.d100-front { width:34px; margin-left:-25px; transform:translate(9px,-7px) rotate(14deg); }
+        .dice-counter button { height:34px; padding:0; color:#111; background:#FFD700; border:0; border-radius:5px; font-size:1.2rem; font-weight:bold; cursor:pointer; }
+        .dice-counter input { padding:7px 3px; text-align:center; }
+        .dice-roll-button { width:100%; padding:11px; color:#111; background:#FFD700; border:0; border-radius:5px; font-size:1rem; font-weight:bold; cursor:pointer; }
+        .dice-clear-button { width:100%; padding:9px; color:#FFD700; background:#333; border:1px solid #FFD700; border-radius:5px; font-size:.95rem; font-weight:bold; cursor:pointer; }
+        .dice-result { min-height:105px; padding:12px; color:white; background:#191919; border:1px solid #555; border-radius:7px; overflow-wrap:anywhere; }
+        .dice-result strong { color:#FFD700; font-size:1.25rem; }
+        .dice-roller .share-dice-roll { flex-direction:row; align-items:center; gap:8px; color:white; font-weight:normal; }
+        .dice-roller .share-dice-roll input { width:auto; margin:0; accent-color:#FFD700; }
         .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
         .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
         .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
@@ -1107,6 +1129,7 @@
                 <button id="dmInitiativeCollapse" type="button" onclick="toggleDmLeftPanel('initiative')" aria-label="Initiative" title="Initiative">⚔</button>
                 <button id="dmBooksButton" type="button" onclick="toggleDmLeftPanel('books')" aria-label="Books" title="Books"><svg viewBox="0 0 38 38" aria-hidden="true"><path d="M19 9c-4-4-10-4-15-2v24c6-2 11-1 15 3zM19 9c4-4 10-4 15-2v24c-6-2-11-1-15 3z"/><path d="M8 12c3-1 6 0 8 2M8 18c3-1 6 0 8 2M30 12c-3-1-6 0-8 2M30 18c-3-1-6 0-8 2"/><path d="M19 5v29"/></svg></button>
                 <button id="dmReferenceButton" type="button" onclick="toggleDmLeftPanel('reference')" aria-label="Reference" title="Reference"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 13c-2 3-5 8-5 16 0 6 5 8 13 8s13-2 13-8c0-8-3-13-5-16"/><path d="M12 13c4 2 12 2 16 0l-3-7-5 4-5-4z"/><path d="M11 17c6 2 12 2 18 0"/><path d="M16 24c2-2 6-2 8 0M15 29c3-2 7-2 10 0"/></svg></button>
+                <button id="dmDiceButton" type="button" onclick="toggleDmLeftPanel('dice')" aria-label="Dice roller" title="Dice Roller"><span class="dice-icon" aria-hidden="true"></span></button>
             </nav>
             <div id="dmInitiativeContent" class="dm-initiative-content dm-left-panel-content">
                 <h2>Initiative</h2>
@@ -1118,6 +1141,23 @@
             </div>
             <div id="dmBooksContent" class="dm-left-panel-content"><h2>Books</h2><div id="dmBooksHost" style="display:flex;flex:1;min-height:0;flex-direction:column;"></div></div>
             <div id="dmReferenceContent" class="dm-left-panel-content"><h2>Reference</h2><div id="dmReferenceHost"></div></div>
+            <div id="dmDiceContent" class="dice-roller dm-left-panel-content"><h2>Dice Roller</h2>
+                <div class="dice-roller-form">
+                    <div class="dice-counter d20"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d20-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',20,-1)">−</button><input id="dmDiceCount20" type="number" min="0" max="100" value="1" aria-label="Number of d20 dice"><button type="button" onclick="changeDiceCount('dm',20,1)">+</button></div>
+                    <div class="dice-counter row-two"><div class="dice-counter-label"><span class="die-picture d100-back" style="--die-image:url('data/images/d10-black.png')"></span><span class="die-picture d100-front" style="--die-image:url('data/images/d10-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',100,-1)">−</button><input id="dmDiceCount100" type="number" min="0" max="100" value="0" aria-label="Number of d100 dice"><button type="button" onclick="changeDiceCount('dm',100,1)">+</button></div>
+                    <div class="dice-counter row-two"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d12-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',12,-1)">−</button><input id="dmDiceCount12" type="number" min="0" max="100" value="0" aria-label="Number of d12 dice"><button type="button" onclick="changeDiceCount('dm',12,1)">+</button></div>
+                    <div class="dice-counter row-two"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d10-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',10,-1)">−</button><input id="dmDiceCount10" type="number" min="0" max="100" value="0" aria-label="Number of d10 dice"><button type="button" onclick="changeDiceCount('dm',10,1)">+</button></div>
+                    <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d8-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',8,-1)">−</button><input id="dmDiceCount8" type="number" min="0" max="100" value="0" aria-label="Number of d8 dice"><button type="button" onclick="changeDiceCount('dm',8,1)">+</button></div>
+                    <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d6-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',6,-1)">−</button><input id="dmDiceCount6" type="number" min="0" max="100" value="0" aria-label="Number of d6 dice"><button type="button" onclick="changeDiceCount('dm',6,1)">+</button></div>
+                    <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d4-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',4,-1)">−</button><input id="dmDiceCount4" type="number" min="0" max="100" value="0" aria-label="Number of d4 dice"><button type="button" onclick="changeDiceCount('dm',4,1)">+</button></div>
+                </div>
+                <label>Modifier<input id="dmDiceModifier" type="number" value="0" inputmode="numeric" aria-label="Roll modifier, positive or negative"></label>
+                <label>Dice set<select id="dmDiceTheme"><option value="default">Default</option><option value="blueGreenMetal">Blue/Green Metal</option><option value="diceOfRolling">Dice of Rolling</option><option value="gemstone">Gemstone</option><option value="gemstoneMarble">Gemstone Marble</option><option value="rock">Rock</option><option value="rust">Rust</option><option value="smooth">Smooth</option><option value="wooden">Wooden</option></select></label>
+                <label class="share-dice-roll"><input id="dmShareDiceRoll" type="checkbox"> Share this roll with everyone</label>
+                <button class="dice-clear-button" type="button" onclick="clearSelectedDice('dm')">Clear Selected Dice</button>
+                <button class="dice-roll-button" type="button" onclick="rollUtilityDice('dm')">Roll Dice</button>
+                <div id="dmDiceResult" class="dice-result" aria-live="polite">Choose your dice and roll.</div>
+            </div>
         </aside>
 
         <section id="dmAudioDock" class="dm-map-ui dm-audio-dock is-collapsed" hidden>
@@ -5596,8 +5636,8 @@
         let activeDmLeftPanel = null;
         function toggleDmLeftPanel(mode) {
             const panel = document.getElementById('dmInitiativePanel');
-            const contentIds = { initiative:'dmInitiativeContent', books:'dmBooksContent', reference:'dmReferenceContent' };
-            const buttonIds = { initiative:'dmInitiativeCollapse', books:'dmBooksButton', reference:'dmReferenceButton' };
+            const contentIds = { initiative:'dmInitiativeContent', books:'dmBooksContent', reference:'dmReferenceContent', dice:'dmDiceContent' };
+            const buttonIds = { initiative:'dmInitiativeCollapse', books:'dmBooksButton', reference:'dmReferenceButton', dice:'dmDiceButton' };
             const isSameOpenPanel = !panel.classList.contains('is-collapsed') && activeDmLeftPanel === mode;
             document.querySelectorAll('.dm-left-panel-content').forEach(content => content.classList.remove('is-active'));
             document.querySelectorAll('.dm-left-rail button').forEach(button => button.classList.remove('is-active'));
@@ -5613,6 +5653,39 @@
         }
 
         function toggleDmInitiativePanel() { toggleDmLeftPanel('initiative'); }
+
+        function changeDiceCount(prefix, sides, change) {
+            const input = document.getElementById(`${prefix}DiceCount${sides}`);
+            input.value = Math.min(100, Math.max(0, (Number(input.value) || 0) + change));
+        }
+
+        function clearSelectedDice(prefix) {
+            [20,100,12,10,8,6,4].forEach(sides => {
+                const input = document.getElementById(`${prefix}DiceCount${sides}`);
+                if (input) input.value = 0;
+            });
+            const result = document.getElementById(`${prefix}DiceResult`);
+            if (result) result.textContent = 'Choose your dice and roll.';
+        }
+
+        function rollUtilityDice(prefix) {
+            const dice = [20,100,12,10,8,6,4];
+            const modifierInput = document.getElementById(`${prefix}DiceModifier`);
+            const modifier = Math.trunc(Number(modifierInput?.value) || 0);
+            if (modifierInput) modifierInput.value = modifier;
+            const pool = dice.map(sides => {
+                const input = document.getElementById(`${prefix}DiceCount${sides}`);
+                const count = Math.min(100, Math.max(0, Math.trunc(Number(input?.value) || 0)));
+                if (input) input.value = count;
+                return { sides, count };
+            }).filter(die => die.count);
+            const result = document.getElementById(`${prefix}DiceResult`);
+            if (!pool.length) { result.textContent = 'Add at least one die to roll.'; return; }
+            result.textContent = 'Rolling…';
+            const request = { id:`${Date.now()}-${Math.random().toString(36).slice(2)}`, createdAt:Date.now(), roller:'Dungeon Master', sourcePrefix:prefix, dice:pool, modifier, theme:document.getElementById(`${prefix}DiceTheme`)?.value || 'default' };
+            if (window.diceRoller3d) window.diceRoller3d.roll(request, document.getElementById(`${prefix}ShareDiceRoll`)?.checked);
+            else result.textContent = '3D dice are still loading. Please try again.';
+        }
 
         function toggleDmAudioDock() {
             const dock = document.getElementById('dmAudioDock');
@@ -8883,6 +8956,7 @@
         switchTab('attacksTab');
 
     </script>
+    <script type="module" src="dice-roller-3d.js?v=4"></script>
 </div>
 </body>
 
