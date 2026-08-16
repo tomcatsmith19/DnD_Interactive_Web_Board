@@ -46,21 +46,82 @@ class WorldAdapter extends MapGeneratorAdapter {
     const height=Math.max(400,Math.min(2160,Number(params.height)||1024));
     return {seed:String(seed),params:{...params,width,height}};
   }
-  render(container,map,{children=[],onSelect,onPlace}={}) {
+  render(container,map,{children=[],onSelect,onPlace,onOpenGeneratedTown}={}) {
     container.replaceChildren();
     const frameHost=document.createElement('div');frameHost.className='azgaar-world-host';
     const frame=document.createElement('iframe');frame.className='azgaar-world-frame';frame.title='Azgaar Fantasy Map Generator';frame.allow='fullscreen';
     const query=new URLSearchParams({seed:map.seed,width:String(map.params.width),height:String(map.params.height)});
     frame.src=`vendor/azgaar/index.html?${query}`;
+    const manualChildren=children.filter(child=>child.generator?.params?.azgaarBurgId==null);
+    let markerTransformObserver=null;
+    const renderUniverseMarkers=()=>{try{
+      const win=frame.contentWindow,doc=frame.contentDocument,viewbox=doc?.getElementById('viewbox'),svgRoot=doc?.getElementById('map');if(!viewbox||!svgRoot)return;
+      doc.getElementById('universeLocationMarkers')?.remove();const group=doc.createElementNS('http://www.w3.org/2000/svg','g');group.id='universeLocationMarkers';
+      const width=Number(win.graphWidth)||map.params.width,height=Number(win.graphHeight)||map.params.height;
+      const markerRecords=[];
+      manualChildren.forEach(child=>{const x=Math.max(0,Math.min(1,Number(child.placement?.x)||.5))*width,y=Math.max(0,Math.min(1,Number(child.placement?.y)||.5))*height,marker=doc.createElementNS('http://www.w3.org/2000/svg','g');marker.setAttribute('transform',`translate(${x} ${y})`);marker.setAttribute('role','button');marker.setAttribute('tabindex','0');marker.style.cursor='pointer';
+        const circle=doc.createElementNS('http://www.w3.org/2000/svg','circle');circle.setAttribute('r','6');circle.setAttribute('fill','#111');circle.setAttribute('stroke','#FFD700');circle.setAttribute('stroke-width','2');
+        const label=doc.createElementNS('http://www.w3.org/2000/svg','text');label.setAttribute('x','9');label.setAttribute('y','4');label.setAttribute('fill','#fff');label.setAttribute('font-size','11');label.setAttribute('stroke','#111');label.setAttribute('stroke-width','3');label.setAttribute('paint-order','stroke');label.textContent=child.name;
+        const choose=event=>{event.preventDefault();event.stopImmediatePropagation();event.stopPropagation();onSelect(child);};marker.addEventListener('click',choose,true);marker.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();choose(event);}});marker.append(circle,label);group.append(marker);markerRecords.push({marker,x,y});});
+      const mirrorTransform=()=>{const mapTransform=viewbox.getAttribute('transform')||'',scaleMatch=mapTransform.match(/scale\(([-+\d.eE]+)\)/),zoom=Math.max(1,Number(scaleMatch?.[1])||1);group.setAttribute('transform',mapTransform);const inverseZoom=1/zoom;markerRecords.forEach(record=>record.marker.setAttribute('transform',`translate(${record.x} ${record.y}) scale(${inverseZoom})`));};mirrorTransform();svgRoot.insertBefore(group,doc.getElementById('scaleBar')||null);
+      markerTransformObserver?.disconnect();markerTransformObserver=new MutationObserver(mirrorTransform);markerTransformObserver.observe(viewbox,{attributes:true,attributeFilter:['transform']});
+    }catch(error){console.warn('Could not render Universe markers in Azgaar',error);}};
+    const interceptTownOpen=event=>{
+      const openButton=event.target?.closest?.('#burgLinkOpen');if(!openButton)return;
+      const win=frame.contentWindow,editor=win?.document?.getElementById('burgEditor'),id=Number(editor?.dataset?.burgId);
+      const burg=Number.isFinite(id)?win?.pack?.burgs?.[id]:null;if(!burg)return;
+      event.preventDefault();event.stopImmediatePropagation();event.stopPropagation();
+      const width=Number(win.graphWidth)||map.params.width,height=Number(win.graphHeight)||map.params.height;
+      const previewLinks=win?.Burgs?.getPreview?.(burg),generatedUrl=previewLinks?.link||null;
+      onOpenGeneratedTown?.({id:burg.i,name:burg.name||`Settlement ${burg.i}`,x:Math.max(0,Math.min(1,Number(burg.x)/width)),y:Math.max(0,Math.min(1,Number(burg.y)/height)),population:Number(burg.population)||null,capital:Boolean(burg.capital),port:Boolean(burg.port),generatedUrl});
+    };
+    const stabilizeBurgUrl=(value,burgId,isPreview)=>{if(!value)return null;try{const url=new URL(value),seed=url.searchParams.get('seed');if(!/^\d{1,15}$/.test(seed||''))url.searchParams.set('seed',String(hashSeed(`${map.seed}-${burgId}`)));url.searchParams.set('random','0');isPreview?url.searchParams.set('preview','1'):url.searchParams.delete('preview');return url.toString();}catch{return value;}};
+    frame.addEventListener('load',()=>{try{
+      const win=frame.contentWindow,burgs=win?.Burgs;
+      if(burgs?.getPreview&&!burgs.getPreview.__universeStable){
+        const original=burgs.getPreview.bind(burgs),stablePreview=burg=>{const result=original(burg)||{};return{link:stabilizeBurgUrl(result.link,burg?.i,false),preview:stabilizeBurgUrl(result.preview||result.link,burg?.i,true)};};
+        stablePreview.__universeStable=true;burgs.getPreview=stablePreview;
+      }
+      win.addEventListener('map:generated',renderUniverseMarkers);if(win.mapId)renderUniverseMarkers();
+      frame.contentDocument?.addEventListener('click',interceptTownOpen,true);
+    }catch(error){console.warn('Could not attach Azgaar town bridge',error);}});
     const markerOverlay=document.createElement('div');markerOverlay.className='azgaar-marker-overlay';
-    children.forEach(child=>{
-      const x=Number.isFinite(Number(child.placement?.x))?Number(child.placement.x):(Number(child.placement?.longitude)+180)/360;
-      const y=Number.isFinite(Number(child.placement?.y))?Number(child.placement.y):(90-Number(child.placement?.latitude))/180;
-      const button=document.createElement('button');button.type='button';button.className='azgaar-location-marker';button.style.left=`${Math.max(0,Math.min(1,x||.5))*100}%`;button.style.top=`${Math.max(0,Math.min(1,y||.5))*100}%`;button.textContent=child.name;button.setAttribute('aria-label',`Open ${child.name}`);button.addEventListener('click',event=>{event.stopPropagation();onSelect(child);});markerOverlay.append(button);
-    });
-    markerOverlay.addEventListener('click',event=>{if(event.target!==markerOverlay)return;const rect=markerOverlay.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;onPlace?.({x,y,latitude:(.5-y)*180,longitude:(x-.5)*360});});
+    markerOverlay.addEventListener('click',event=>{if(event.target!==markerOverlay)return;try{const win=frame.contentWindow,svg=frame.contentDocument?.getElementById('map'),viewbox=frame.contentDocument?.getElementById('viewbox'),frameRect=frame.getBoundingClientRect(),point=svg.createSVGPoint();point.x=event.clientX-frameRect.left;point.y=event.clientY-frameRect.top;const local=point.matrixTransform(viewbox.getScreenCTM().inverse()),x=Math.max(0,Math.min(1,local.x/(Number(win.graphWidth)||map.params.width))),y=Math.max(0,Math.min(1,local.y/(Number(win.graphHeight)||map.params.height)));onPlace?.({x,y,latitude:(.5-y)*180,longitude:(x-.5)*360});}catch{const rect=markerOverlay.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;onPlace?.({x,y,latitude:(.5-y)*180,longitude:(x-.5)*360});}});
     frameHost.append(frame,markerOverlay);container.append(frameHost);
-    return{setPlacementMode(active){markerOverlay.classList.toggle('is-placing',!!active);},destroy(){frame.src='about:blank';frameHost.remove();}};
+    return{setPlacementMode(active){markerOverlay.classList.toggle('is-placing',!!active);},destroy(){markerTransformObserver?.disconnect();try{frame.contentWindow?.removeEventListener('map:generated',renderUniverseMarkers);frame.contentDocument?.removeEventListener('click',interceptTownOpen,true);}catch{}frame.src='about:blank';frameHost.remove();}};
+  }
+}
+
+class AzgaarTownAdapter extends MapGeneratorAdapter {
+  generate(seed,params={}) {
+    const rawUrl=params._permalink||params.generatedUrl||null;
+    let url=rawUrl;
+    if(rawUrl){try{const parsed=new URL(rawUrl),urlSeed=parsed.searchParams.get('seed');parsed.searchParams.delete('preview');parsed.searchParams.set('random','0');if(!/^\d{1,15}$/.test(urlSeed||''))parsed.searchParams.set('seed',String(hashSeed(seed)));url=parsed.toString();}catch{}}
+    return{seed,params:{...params},url};
+  }
+  render(container,map,{children=[],onSelect,onPlace}={}) {
+    container.replaceChildren();const host=document.createElement('div');host.className='azgaar-world-host';
+    if(!map.url)throw new Error('This Azgaar settlement does not include a generated town URL. Reopen it from the world map to repair it.');
+    const frame=document.createElement('iframe');frame.className='azgaar-world-frame';frame.title='Generated town map';frame.src=map.url;frame.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-downloads');
+    const overlay=document.createElement('div');overlay.className='azgaar-marker-overlay';
+    children.forEach(child=>{const button=document.createElement('button');button.type='button';button.className='azgaar-location-marker';button.style.left=`${Math.max(0,Math.min(1,Number(child.placement?.x)||.5))*100}%`;button.style.top=`${Math.max(0,Math.min(1,Number(child.placement?.y)||.5))*100}%`;button.textContent=child.name;button.addEventListener('click',event=>{event.stopPropagation();onSelect(child);});overlay.append(button);});
+    overlay.addEventListener('click',event=>{if(event.target!==overlay)return;const rect=overlay.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;onPlace?.({x,y,latitude:null,longitude:null});});
+    host.append(frame,overlay);container.append(host);
+    return{setPlacementMode(active){overlay.classList.toggle('is-placing',!!active);},destroy(){frame.src='about:blank';host.remove();}};
+  }
+}
+
+class WatabouLocationAdapter extends AzgaarTownAdapter {
+  constructor(baseUrl,defaults={}) { super();this.baseUrl=baseUrl;this.defaults=defaults; }
+  generate(seed,params={}) {
+    const supplied=params._permalink||params.generatedUrl||null;
+    let url;
+    try{url=new URL(supplied||this.baseUrl);}catch{url=new URL(this.baseUrl);}
+    if(!supplied)Object.entries({...this.defaults,...params}).forEach(([key,value])=>{if(!key.startsWith('_')&&value!==null&&value!==undefined&&value!=='')url.searchParams.set(key,String(value));});
+    const urlSeed=url.searchParams.get('seed');
+    if(!/^\d{1,15}$/.test(urlSeed||''))url.searchParams.set('seed',String(hashSeed(seed)));
+    url.searchParams.set('random','0');url.searchParams.delete('preview');
+    return{seed:String(seed),params:{...params},url:url.toString()};
   }
 }
 
@@ -98,7 +159,12 @@ class WildernessAdapter extends MapGeneratorAdapter {
 }
 
 export const generatorRegistry = new Map([
-  ['azgaar',new WorldAdapter()],['azgaar-compatible',new WorldAdapter()],['town',new TownAdapter()],['rot-dungeon',new DungeonAdapter()],['wilderness',new WildernessAdapter()]
+  ['azgaar',new WorldAdapter()],['azgaar-compatible',new WorldAdapter()],['azgaar-town',new AzgaarTownAdapter()],['town',new TownAdapter()],
+  ['watabou-dungeon',new WatabouLocationAdapter('https://watabou.github.io/one-page-dungeon/',{size:'medium'})],
+  ['watabou-dwelling',new WatabouLocationAdapter('https://watabou.github.io/dwellings/',{tags:'medium'})],
+  ['watabou-cave',new WatabouLocationAdapter('https://watabou.github.io/cave-generator/',{tags:'medium,cave'})],
+  ['watabou-glade',new WatabouLocationAdapter('https://watabou.github.io/cave-generator/',{tags:'medium,glade'})],
+  ['rot-dungeon',new DungeonAdapter()],['wilderness',new WildernessAdapter()]
 ]);
 
-export function providerForType(type) {return type==='world'?'azgaar':type==='dungeon'?'rot-dungeon':type==='wilderness'?'wilderness':'town';}
+export function providerForType(type) {return type==='world'?'azgaar':type==='dungeon'?'watabou-dungeon':type==='dwelling'?'watabou-dwelling':type==='cave'?'watabou-cave':type==='glade'?'watabou-glade':type==='wilderness'?'wilderness':'town';}
