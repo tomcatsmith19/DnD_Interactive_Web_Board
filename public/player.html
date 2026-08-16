@@ -315,7 +315,7 @@
       <button id="playerDiceButton" type="button" onclick="togglePlayerLeftPanel('dice')" aria-label="Dice roller" title="Dice Roller"><span class="dice-icon" aria-hidden="true"></span></button>
     </nav>
     <div id="playerPartyContent" class="party-panel-content player-left-panel-content is-active"><h2>Party</h2>
-      <table class="party-table"><thead><tr><th>Name</th><th>Init</th><th>HP</th><th>Max HP</th></tr></thead><tbody id="partyTableBody"></tbody></table>
+      <table class="party-table"><thead><tr><th>Name</th><th>Init</th><th>HP</th><th>Max HP</th><th>AC</th></tr></thead><tbody id="partyTableBody"></tbody></table>
       <button type="button" style="width:100%;margin-top:8px;" onclick="openPartyPicker()">Add to Party</button>
     </div>
     <div id="playerDiceContent" class="dice-roller player-left-panel-content"><h2>Dice Roller</h2>
@@ -698,7 +698,7 @@
       const body=document.getElementById('partyTableBody'); if(!body)return; body.replaceChildren();
       monsters.filter(monster=>monster.partyManaged&&monster.partyOwner===sessionOwnerId).forEach(monster=>{
         const row=body.insertRow(),nameCell=row.insertCell(),removeButton=document.createElement('button');removeButton.type='button';removeButton.textContent='×';removeButton.title='Remove from party';removeButton.style.cssText='margin-right:5px;padding:1px 5px;background:#c62828;color:white;';removeButton.addEventListener('click',()=>removeCreatureById(monster.id));nameCell.appendChild(removeButton);nameCell.appendChild(document.createTextNode(monster.name));
-        ['init','hp','maxHp'].forEach(field=>{const cell=row.insertCell(),input=document.createElement('input');input.type='number';input.value=monster[field]??0;input.addEventListener('change',()=>{monster[field]=Number(input.value)||0;if(field==='maxHp')monster.maxHp=Math.max(1,monster.maxHp);if(field==='hp'&&!monster.isplayer)monster.hp=Math.max(0,monster.hp);updateTokenHealthBar(monster);updateTokenDefeatedState(monster);updatePlayerTokenInitiativeLabels();syncMonstersToFirebase();});cell.appendChild(input);});
+        ['init','hp','maxHp','ac'].forEach(field=>{const cell=row.insertCell(),input=document.createElement('input');input.type='number';input.value=field==='ac'?(Number(monster.ac)||10):(monster[field]??0);if(field==='ac'){input.min='1';input.max='40';input.title='Armor Class used by the DM CPU Action Advisor';input.setAttribute('aria-label',`${monster.name} Armor Class`);}input.addEventListener('change',()=>{monster[field]=Number(input.value)||(field==='ac'?10:0);if(field==='maxHp')monster.maxHp=Math.max(1,monster.maxHp);if(field==='ac')monster.ac=Math.max(1,Math.min(40,monster.ac));if(field==='hp'&&!monster.isplayer)monster.hp=Math.max(0,monster.hp);updateTokenHealthBar(monster);updateTokenDefeatedState(monster);updatePlayerTokenInitiativeLabels();syncMonstersToFirebase();});cell.appendChild(input);});
       });
     }
 
@@ -823,7 +823,7 @@
       }catch(error){console.error('Failed to create custom player:',error);status.textContent='Could not upload the custom player.';}
       finally{button.disabled=false;}
     }
-    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;member.partyOwnerAccount=sessionAccountId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();await syncMonstersToFirebase();closePartyPicker();}
+    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;member.partyOwnerAccount=sessionAccountId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();await syncMonstersToFirebase();closePartyPicker();}
     function cleanupSessionParty(){if(!sessionOwnerId)return Promise.resolve();for(let i=monsters.length-1;i>=0;i--)if(monsters[i].partyManaged&&monsters[i].partyOwner===sessionOwnerId)monsters.splice(i,1);renderPartyTracker();return Promise.resolve(syncMonstersToFirebase());}
     document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
     const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
@@ -833,7 +833,7 @@
 
     function normalizeMonsterState(monster) {
       const hp = Number(monster.hp) || 0;
-      return { ...monster, hp, maxHp: Math.max(1, Number(monster.maxHp) || hp || 1), conditions: Array.isArray(monster.conditions) ? monster.conditions : [] };
+      return { ...monster, hp, ac:monster.isplayer?Math.max(1,Number(monster.ac)||10):monster.ac, maxHp: Math.max(1, Number(monster.maxHp) || hp || 1), conditions: Array.isArray(monster.conditions) ? monster.conditions : [] };
     }
 
     function updateTokenHealthBar(monster) {
@@ -1234,6 +1234,7 @@
         name: name,
         hp: parseInt(document.getElementById('currentHP').value),
         maxHp: Math.max(1, parseInt(document.getElementById('currentHP').value) || 1),
+        ac: 10,
         init: parseInt(document.getElementById('initiativeInput').value),
         conditions: [],
         xRatio: 0.5,

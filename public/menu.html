@@ -24,6 +24,9 @@
       flex-direction: column;
       align-items: center;
       gap: 30px;
+      max-height: 94vh;
+      overflow-y: auto;
+      padding: 18px;
     }
 
     .menu-image {
@@ -59,10 +62,12 @@
 <body>
   <div class="container">
     <img src="data/images/players.png" alt="Player Icon" class="menu-image">
-    <button class="menu-button" onclick="location.href='player.html'">Player</button>
+    <button class="menu-button" onclick="sessionStorage.setItem('vttRole','player');location.href='player.html'">Player</button>
 
     <img src="data/images/dm.png" alt="Dungeon Master Icon" class="menu-image">
-    <button class="menu-button" onclick="location.href='dm.html'">Dungeon Master</button>
+    <button class="menu-button" onclick="sessionStorage.setItem('vttRole','dm');location.href='dm.html'">Dungeon Master</button>
+
+    <button class="menu-button" onclick="location.href='universe.html'">Universe <span style="display:block;font-family:Arial,sans-serif;font-size:.8rem;">(in development)</span></button>
   </div>
 </body>
 </html>

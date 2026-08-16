@@ -446,6 +446,21 @@
         .classic-statblock-close { position:absolute; top:6px; right:8px; padding:2px 8px; color:#6f1d14; background:transparent; border:0; font-size:1.6rem; cursor:pointer; }
         .classic-statblock-pin { position:absolute; top:2px; left:5px; z-index:2; width:30px; height:25px; padding:0; color:#6f1d14; background:transparent; border:0; border-radius:4px; font-size:1.05rem; cursor:pointer; }
         .classic-statblock-pin.is-pinned { color:#fff3c4; background:#6f1d14; box-shadow:0 0 0 1px #efe0ad inset; }
+        .cpu-advisor-panel { position:fixed; z-index:3599; width:340px; max-width:calc(100vw - 20px); overflow:auto; pointer-events:auto; transition:opacity .18s ease,transform .18s ease; }
+        .cpu-advisor-panel.is-hidden { visibility:hidden; opacity:0; transform:translateX(18px); pointer-events:none; }
+        .cpu-advisor { min-height:100%; padding:12px; box-sizing:border-box; color:#fff; background:rgba(17,17,17,.98); border:2px solid #FFD700; border-radius:8px 0 0 8px; box-shadow:-8px 8px 24px #000; font-family:Arial,sans-serif; }
+        .cpu-advisor h2 { margin:0 0 4px; color:#FFD700; border-color:#FFD700; font-family:'MedievalSharp',cursive; }
+        .cpu-advisor-note { margin:0 0 10px!important; color:#ddd; font-size:.82rem; }
+        .cpu-advisor-controls { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+        .cpu-advisor label { display:grid; gap:3px; color:#FFD700; font-size:.8rem; font-weight:bold; }
+        .cpu-advisor select,.cpu-advisor button { min-height:35px; padding:6px; color:#fff; background:#292929; border:1px solid #777; border-radius:5px; }
+        .cpu-advisor button { color:#111; background:#FFD700; border-color:#FFD700; font-weight:bold; }
+        .cpu-advisor-output { margin-top:9px; padding:9px; color:#eee; background:#252525; border-left:4px solid #FFD700; border-radius:4px; }
+        .cpu-advisor-output strong { color:#FFD700!important; font-style:normal!important; }
+        .cpu-advisor-alternatives { margin:7px 0 0; padding-left:18px; }
+        .classic-statblock-cpu { position:absolute; top:2px; left:39px; z-index:2; height:25px; padding:2px 7px; color:#6f1d14; background:transparent; border:1px solid #6f1d14; border-radius:4px; font-size:.74rem; font-weight:bold; cursor:pointer; }
+        .classic-statblock-cpu[aria-expanded="true"] { color:#fff3c4; background:#6f1d14; }
+        @media(max-width:760px){.cpu-advisor-panel{width:min(340px,calc(100vw - 20px))}.cpu-advisor-controls{grid-template-columns:1fr}}
         .stat-spell-link { color:#7a1f17; text-decoration:underline; text-decoration-thickness:2px; cursor:help; font-weight:bold; }
         .spell-hover-card { display:none; position:fixed; z-index:3800; width:min(390px,calc(100vw - 24px)); max-height:55vh; overflow:auto; padding:12px 14px; color:#f7e9bd; background:#35140f; border:2px solid #b87345; border-radius:7px; box-shadow:0 7px 24px #000; font-family:Georgia,'Times New Roman',serif; pointer-events:none; }
         .spell-hover-card.is-open { display:block; }
@@ -1092,6 +1107,7 @@
         </div>
 
         <div id="monsterStatModal" class="monster-stat-modal" role="dialog" aria-modal="true" aria-label="Monster stat block" onclick="if(event.target===this) closeMonsterStatblock()">
+            <aside id="cpuAdvisorPanel" class="cpu-advisor-panel is-hidden" aria-label="CPU Action Advisor"></aside>
             <article id="monsterStatblock" class="classic-statblock"></article>
         </div>
         <div id="spellHoverCard" class="spell-hover-card" role="tooltip"></div>
@@ -1621,6 +1637,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
     <script src="map-drawing.js"></script>
     <script src="reference.js"></script>
+    <script src="cpu-action-advisor.js?v=1"></script>
     <script>
 
         const firebaseConfig = {
@@ -5441,18 +5458,22 @@
                 xRatio: 0.5,
                 yRatio: 0.5,
                 isplayer: false,
-                tokenUrl: definition.tokenUrl || ""
+                tokenUrl: definition.tokenUrl || "",
+                cpuAdvisor: CpuActionAdvisor.createSettings(data.int)
             };
         }
 
         function normalizeMonsterState(monster) {
             const hp = Number(monster.hp) || 0;
-            return {
+            const normalized = {
                 ...monster,
                 hp,
+                ac: monster.isplayer ? Math.max(1, Number(monster.ac) || 10) : monster.ac,
                 maxHp: Math.max(1, Number(monster.maxHp) || hp || 1),
                 conditions: Array.isArray(monster.conditions) ? monster.conditions : []
             };
+            if (!normalized.isplayer && !normalized.isNpc && normalized.cpuAdvisor) normalized.cpuAdvisor = CpuActionAdvisor.normalizeSettings(normalized.cpuAdvisor);
+            return normalized;
         }
 
         function initializeStaticMapOptions() {
@@ -6728,7 +6749,7 @@
             const selectedMonster = selectedMapTokenIds.size === 1
                 ? monsters.find(monster => selectedMapTokenIds.has(monster.id))
                 : null;
-            if (selectedMonster && !selectedMonster.isplayer) openMonsterStatblock(selectedMonster.name);
+            if (selectedMonster && !selectedMonster.isplayer) openMonsterStatblock(selectedMonster.id);
             else closeMonsterStatblock();
         }
 
@@ -7061,9 +7082,17 @@
         let monsterStatblockRequestId = 0;
         let monsterStatblockPinned = false;
         let statblockDragState = null;
+        let currentStatblockMonsterId = null;
+        const cpuStatblockByMonsterId = new Map();
         document.getElementById('monsterStatblock').addEventListener('wheel', event => {
             const block = event.currentTarget;
             block.scrollTop += event.deltaY;
+            event.preventDefault();
+            event.stopPropagation();
+        }, { passive:false });
+        document.getElementById('cpuAdvisorPanel').addEventListener('wheel', event => {
+            const panel = event.currentTarget;
+            panel.scrollTop += event.deltaY;
             event.preventDefault();
             event.stopPropagation();
         }, { passive:false });
@@ -7086,13 +7115,32 @@
             const maxTop = Math.max(50, window.innerHeight - block.offsetHeight);
             block.style.left = `${Math.max(0, Math.min(maxLeft, event.clientX-statblockDragState.offsetX))}px`;
             block.style.top = `${Math.max(50, Math.min(maxTop, event.clientY-statblockDragState.offsetY))}px`;
+            positionCpuAdvisorPanel();
         });
         document.addEventListener('pointerup', event => {
             if (statblockDragState?.pointerId === event.pointerId) statblockDragState = null;
         });
+        if(typeof ResizeObserver==='function')new ResizeObserver(positionCpuAdvisorPanel).observe(document.getElementById('monsterStatblock'));
+        window.addEventListener('resize',positionCpuAdvisorPanel);
+
+        function baseStatblockWindowControls() {
+            return `<div class="statblock-drag-handle" title="Drag stat block"></div><button class="classic-statblock-pin${monsterStatblockPinned ? ' is-pinned' : ''}" type="button" onclick="toggleMonsterStatblockPin()" aria-pressed="${monsterStatblockPinned}" title="${monsterStatblockPinned ? 'Unpin stat block' : 'Pin stat block'}">📌</button><button class="classic-statblock-close" type="button" onclick="closeMonsterStatblock(true)" aria-label="Close">×</button>`;
+        }
 
         function statblockWindowControls() {
-            return `<div class="statblock-drag-handle" title="Drag stat block"></div><button class="classic-statblock-pin${monsterStatblockPinned ? ' is-pinned' : ''}" type="button" onclick="toggleMonsterStatblockPin()" aria-pressed="${monsterStatblockPinned}" title="${monsterStatblockPinned ? 'Unpin stat block' : 'Pin stat block'}">📌</button><button class="classic-statblock-close" type="button" onclick="closeMonsterStatblock(true)" aria-label="Close">×</button>`;
+            const expanded=!document.getElementById('cpuAdvisorPanel')?.classList.contains('is-hidden');
+            const cpuButton=`<button class="classic-statblock-cpu" type="button" onclick="toggleCpuAdvisorPanel()" aria-expanded="${expanded}" aria-controls="cpuAdvisorPanel" title="Show or hide CPU Action Advisor">CPU</button>`;
+            return baseStatblockWindowControls().replace('<button class="classic-statblock-close"',`${cpuButton}<button class="classic-statblock-close"`);
+        }
+
+        function positionCpuAdvisorPanel() {
+            const panel=document.getElementById('cpuAdvisorPanel'),block=document.getElementById('monsterStatblock');if(!panel||!block)return;
+            const rect=block.getBoundingClientRect(),width=Math.min(340,Math.max(260,rect.left-10));panel.style.width=`${width}px`;panel.style.left=`${Math.max(0,rect.left-width)}px`;panel.style.top=`${rect.top}px`;panel.style.height=`${rect.height}px`;
+        }
+        function toggleCpuAdvisorPanel(force) {
+            const panel=document.getElementById('cpuAdvisorPanel');if(!panel||!panel.innerHTML)return;
+            const show=typeof force==='boolean'?force:panel.classList.contains('is-hidden');panel.classList.toggle('is-hidden',!show);
+            document.querySelector('#monsterStatblock .classic-statblock-cpu')?.setAttribute('aria-expanded',String(show));if(show)positionCpuAdvisorPanel();
         }
 
         function toggleMonsterStatblockPin() {
@@ -7108,15 +7156,66 @@
             if (monsterStatblockPinned && !force) return;
             if (force) monsterStatblockPinned = false;
             monsterStatblockRequestId += 1;
+            currentStatblockMonsterId = null;
+            const advisorPanel=document.getElementById('cpuAdvisorPanel');advisorPanel.classList.add('is-hidden');advisorPanel.replaceChildren();
             document.getElementById('monsterStatModal').classList.remove('is-open');
             document.getElementById('spellHoverCard').classList.remove('is-open');
         }
 
-        async function openMonsterStatblock(name) {
+        function cpuAdvisorSection(monster) {
+            if (!monster || monster.isplayer || monster.isNpc) return '';
+            const settings = CpuActionAdvisor.normalizeSettings(monster.cpuAdvisor);
+            const personalities = Object.entries(CpuActionAdvisor.PERSONALITIES).map(([value,label]) => `<option value="${value}"${settings.personality===value?' selected':''}>${label}</option>`).join('');
+            const intelligence = Object.entries(CpuActionAdvisor.INTELLIGENCE).map(([value,label]) => `<option value="${value}"${settings.intelligence===value?' selected':''}>${label}</option>`).join('');
+            return `<section class="cpu-advisor" aria-labelledby="cpuAdvisorHeading"><h2 id="cpuAdvisorHeading">CPU Advisor</h2><p class="cpu-advisor-note">Advice only—the advisor never moves tokens, rolls dice, changes health, or spends resources.</p><div class="cpu-advisor-controls"><label>Personality<select id="cpuPersonality" title="How this individual creature tends to act">${personalities}</select></label><label>Tactical intelligence<select id="cpuIntelligence" title="How much battlefield information this creature considers">${intelligence}</select></label><button id="cpuReroll" type="button">Reroll Personality</button><button id="cpuRecommend" type="button">Recommend Action</button></div><div id="cpuAdvisorOutput" class="cpu-advisor-output" aria-live="polite">Choose Recommend Action to evaluate the latest battlefield state.</div></section>`;
+        }
+
+        function invalidateCpuRecommendation(message='Settings changed. Generate a new recommendation.') { const output=document.getElementById('cpuAdvisorOutput'); if(output) output.textContent=message; }
+        function saveCpuAdvisorSetting(field,value) {
+            const monster=monsters.find(item=>item.id===currentStatblockMonsterId); if(!monster||monster.isplayer||monster.isNpc)return;
+            monster.cpuAdvisor=CpuActionAdvisor.normalizeSettings(monster.cpuAdvisor); monster.cpuAdvisor[field]=value; monster.cpuAdvisor[`${field}Overridden`]=true;
+            invalidateCpuRecommendation(); syncMonstersToFirebase();
+        }
+        function rerollCpuPersonality() {
+            const monster=monsters.find(item=>item.id===currentStatblockMonsterId); if(!monster)return;
+            const previous=monster.cpuAdvisor?.personality; let next=previous;
+            for(let attempts=0;attempts<8&&next===previous;attempts++) next=CpuActionAdvisor.weightedChoice();
+            monster.cpuAdvisor=CpuActionAdvisor.normalizeSettings({...monster.cpuAdvisor,personality:next,personalityOverridden:false});
+            const select=document.getElementById('cpuPersonality'); if(select)select.value=monster.cpuAdvisor.personality;
+            invalidateCpuRecommendation('Personality rerolled. Generate a new recommendation.'); syncMonstersToFirebase();
+        }
+        function renderCpuRecommendation(result) {
+            const output=document.getElementById('cpuAdvisorOutput'); if(!output)return;
+            if(result.disabled){output.textContent=result.reason;return;}
+            const movement=['none','hold'].includes(result.movement?.type)?'No movement needed.':`${result.movement.type[0].toUpperCase()+result.movement.type.slice(1)}${result.movement.distance?` ${result.movement.distance} ft.`:''}`;
+            const expected=result.expectedDamage==null?'Expected damage cannot be calculated exactly from available data.':`Expected damage: ${result.expectedDamage.toFixed(1)}.`;
+            output.innerHTML=`<p><strong>Recommended: ${escapeStatHtml(result.actionName)}${result.targetName?` targeting ${escapeStatHtml(result.targetName)}`:''}.</strong></p><p><strong>Movement:</strong> ${escapeStatHtml(movement)}</p><p><strong>Reason:</strong> ${escapeStatHtml(result.reason)} ${escapeStatHtml(expected)}</p>${result.warnings?.length?`<p><strong>Caution:</strong> ${escapeStatHtml(result.warnings.join(' '))}</p>`:''}${result.alternatives?.length?`<p><strong>Alternatives</strong></p><ol class="cpu-advisor-alternatives">${result.alternatives.map(item=>`<li>${escapeStatHtml(item.actionName)}${item.targetName?` against ${escapeStatHtml(item.targetName)}`:''}</li>`).join('')}</ol>`:''}`;
+        }
+        function recommendCpuAction() {
+            const actor=monsters.find(item=>item.id===currentStatblockMonsterId),statblock=cpuStatblockByMonsterId.get(currentStatblockMonsterId); if(!actor||!statblock)return;
+            const result=CpuActionAdvisor.recommend({actor,statblock,enemies:monsters.filter(item=>item.isplayer&&item.hp>0),allies:monsters.filter(item=>!item.isplayer&&item.hp>0),mapWidth,mapHeight,tokenSize:currentTokenSize});
+            renderCpuRecommendation(result); const button=document.getElementById('cpuRecommend'); if(button)button.disabled=Boolean(result.disabled);
+        }
+        function bindCpuAdvisor(monster,data) {
+            if(!monster||monster.isplayer||monster.isNpc)return;
+            const wasMissing=!monster.cpuAdvisor; monster.cpuAdvisor=CpuActionAdvisor.normalizeSettings(monster.cpuAdvisor,data.int); cpuStatblockByMonsterId.set(monster.id,data);
+            document.getElementById('cpuPersonality')?.addEventListener('change',event=>saveCpuAdvisorSetting('personality',event.target.value));
+            document.getElementById('cpuIntelligence')?.addEventListener('change',event=>saveCpuAdvisorSetting('intelligence',event.target.value));
+            document.getElementById('cpuReroll')?.addEventListener('click',rerollCpuPersonality);
+            document.getElementById('cpuRecommend')?.addEventListener('click',recommendCpuAction);
+            if(wasMissing)syncMonstersToFirebase();
+        }
+
+        async function openMonsterStatblock(monsterIdOrName) {
             if (monsterStatblockPinned) return;
+            const instance=monsters.find(monster=>monster.id===monsterIdOrName)||monsters.find(monster=>monster.name===monsterIdOrName&&!monster.isplayer);
+            const name=instance?.name||monsterIdOrName;
+            currentStatblockMonsterId=instance?.id||null;
             const requestId = ++monsterStatblockRequestId;
             const modal = document.getElementById('monsterStatModal');
             const block = document.getElementById('monsterStatblock');
+            const advisorPanel = document.getElementById('cpuAdvisorPanel');
+            advisorPanel.classList.add('is-hidden');advisorPanel.replaceChildren();
             block.style.left = 'auto';
             block.style.top = 'auto';
             block.style.right = '20px';
@@ -7156,6 +7255,9 @@
                     <p><strong>Senses</strong> ${escapeStatHtml(senses || '—')}</p><p><strong>Languages</strong> ${escapeStatHtml((data.languages || []).join(', ') || '—')}</p><p><strong>Challenge</strong> ${escapeStatHtml(data.cr ?? '—')} (Proficiency Bonus +${escapeStatHtml(data.prof_bonus ?? '—')})</p>
                     ${formatSpellcasting(data.spellcasting)}${formatStatSection('Traits', data.traits)}${formatStatSection('Actions', data.actions)}${formatStatSection('Bonus Actions', data.bonus)}${formatStatSection('Reactions', data.reactions)}${formatStatSection('Legendary Actions', data.legendary)}
                 `;
+                advisorPanel.innerHTML=cpuAdvisorSection(instance);
+                bindCpuAdvisor(instance,data);
+                positionCpuAdvisorPanel();
                 block.querySelectorAll('.stat-spell-link').forEach(link => {
                     link.addEventListener('mouseenter', () => showSpellTooltip(link));
                     link.addEventListener('mouseleave', () => document.getElementById('spellHoverCard').classList.remove('is-open'));
@@ -7390,7 +7492,7 @@
                 row.children[2].prepend(removeButton);
 
                 if (!m.isplayer) {
-                    row.addEventListener('click', () => loadMonster(m.name));
+                    row.addEventListener('click', () => openMonsterStatblock(m.id));
                 }
 
                 const token = document.getElementById(`token-${m.id}`);
@@ -8700,6 +8802,7 @@
 
         function syncMonstersToFirebase() {
             const monstersRef = db.collection("shared").doc("monsters");
+            if (document.getElementById('cpuAdvisorOutput')) invalidateCpuRecommendation('Battlefield state changed. Generate a fresh recommendation.');
 
             monstersRef.get().then(doc => {
                 const serverData = doc.data();

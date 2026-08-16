@@ -1,0 +1,42 @@
+import{Ft as e,S as t,Sn as n,U as r,x as i}from"./utils-BYaxf2yO.js";import{Lt as a,N as o,Nt as s,P as c,Qt as l,Ut as u,jt as d,kt as f}from"./index-DqeJMjPz.js";import{t as p}from"./highlighting-CH83CMtN.js";import{i as m,n as h,r as g,t as _}from"./table-BDnPiVU4.js";var v=`riversOverview`,y={my:`right top`,at:`right-10 top+10`,of:`svg`,collision:`fit`},b=[{key:`locate`,width:`1.4em`,permanent:!0},{key:`name`,label:`River`,width:`8em`,permanent:!0,sortBy:e=>e.name||``,sortType:`alpha`},{key:`type`,label:`Type`,width:`5em`,mobileHidden:!0,sortBy:e=>e.type||``,sortType:`alpha`},{key:`discharge`,label:`Discharge`,width:`7em`,mobileHidden:!0,tip:`Click to sort by discharge (flux in m3/s)`,sortBy:e=>e.discharge,defaultSort:`desc`},{key:`length`,label:`Length`,width:`5em`,sortBy:e=>e.length},{key:`width`,label:`Width`,width:`5em`,mobileHidden:!0,sortBy:e=>e.width},{key:`basin`,label:`Basin`,width:`9em`,sortBy:e=>pack.rivers.find(({i:t})=>t===e.basin)?.name||``,sortType:`alpha`},{key:`actions`,width:`2.2em`,permanent:!0,align:`right`}];function x(){return new Map(pack.rivers.map(e=>[e.i,e]))}function S(e){let t=r(`riversSearch`).value.toLowerCase().trim();return t?pack.rivers.filter(n=>{let r=(n.name||``).toLowerCase(),i=(n.type||``).toLowerCase(),a=e.get(n.basin),o=a?(a.name||``).toLowerCase():``;return r.includes(t)||i.includes(t)||o.includes(t)}):pack.rivers.slice()}var C=h({getData:()=>c(v,S(x()),b),onUpdate:O});function w(){customization||(f(`#${v}, .stable`),layerIsOn(`toggleRivers`)||toggleRivers(),T(),C.reset(),$(`#${v}`).dialog({title:`Rivers Overview`,resizable:!1,width:`fit-content`,position:y,close:E}))}function T(){d(`riversOverview`);let e=`<div id="riversOverview" class="dialog stable editorDialog">
+    <div id="riversBody" class="table">${g({dialogId:v,columns:b})}</div>
+    <div id="riversFilters" class="editorFilters">
+      <label for="riversSearch" data-tip="Filter by name, type or basin">Search: <input id="riversSearch" type="search" /></label>
+    </div>
+    <div id="riversFooter" class="totalLine">
+      <div data-tip="Rivers number" style="margin-left: 4px">Rivers:&nbsp;<span id="riversFooterNumber">0</span></div>
+      <div data-tip="Average discharge" style="margin-left: 12px" data-col="discharge">Average discharge:&nbsp;<span id="riversFooterDischarge">0</span></div>
+      <div data-tip="Average length" style="margin-left: 12px" data-col="length">Length:&nbsp;<span id="riversFooterLength">0</span></div>
+      <div data-tip="Average mouth width" style="margin-left: 12px" data-col="width">Width:&nbsp;<span id="riversFooterWidth">0</span></div>
+    </div>
+    <div id="riversBottom" class="editorToolbar">
+      <button id="riversOverviewRefresh" data-tip="Refresh the Editor" class="icon-cw"></button>
+      <button id="addNewRiver" data-tip="Automatically add river starting from clicked cell. Hold Shift to add multiple" class="icon-plus"></button>
+      <button id="riverCreateNew" data-tip="Create a new river selecting river cells" class="icon-map-pin"></button>
+      <button id="riversBasinHighlight" data-tip="Toggle basin highlight mode" class="icon-sitemap"></button>
+      <button id="riversExport" data-tip="Save rivers-related data as a text file (.csv)" class="icon-download"></button>
+      <button id="riversRemoveAll" data-tip="Remove all rivers" class="icon-trash"></button>
+    </div>
+  </div>`;r(`dialogs`).insertAdjacentHTML(`beforeend`,e),o(v,C.reset),p(v,({target:e,cellId:t})=>{let n=pack.cells.r[t];if(n)return n;let r=e.closest(`#rivers [id^='river']`);return r&&/^river\d+$/.test(r.id)?Number(r.id.slice(5)):void 0}),r(`riversOverviewRefresh`).addEventListener(`click`,C.refresh),_({dialogId:v,columns:b,onUpdate:()=>s(v,{width:`fit-content`,position:y})}),r(`addNewRiver`).addEventListener(`click`,()=>void a.RiverAutoCreator.toggle()),r(`riverCreateNew`).addEventListener(`click`,D),r(`riversBasinHighlight`).addEventListener(`click`,M),r(`riversExport`).addEventListener(`click`,N),r(`riversRemoveAll`).addEventListener(`click`,I),r(`riversSearch`).addEventListener(`input`,C.reset)}function E(){d(`riversOverview`)}function D(){a.RiverCreator.open()}function O(t){let n=r(`riversBody`);n.querySelectorAll(`:scope > .states`).forEach(e=>{e.remove()});let i=``,a=distanceUnitInput.value,o=x();for(let n of t.rows){let t=`${n.discharge} m³/s`,r=`${e(n.length*distanceScale)} ${a}`,s=`${e(n.width*distanceScale,3)} ${a}`,c=o.get(n.basin)?.name;i+=`<div
+        class="states"
+        data-id=${n.i}
+        data-name="${n.name}"
+        data-type="${n.type}"
+        data-discharge="${n.discharge}"
+        data-length="${n.length}"
+        data-width="${n.width}"
+        data-basin="${c}"
+      >
+        <span data-tip="Locate the river" class="icon-target" data-col="locate"></span>
+        <div data-tip="River name" data-col="name">${n.name}</div>
+        <div data-tip="River type name" data-col="type">${n.type}</div>
+        <div data-tip="River discharge (flux power)" data-col="discharge">${t}</div>
+        <div data-tip="River length from source to mouth" data-col="length">${r}</div>
+        <div data-tip="River mouth width" data-col="width">${s}</div>
+        <input data-tip="River basin (name of the main stem)" class="stateName" value="${c}" disabled data-col="basin" />
+        <div data-col="actions">
+          <span data-tip="Edit river" class="icon-pencil"></span>
+          <span data-tip="Remove river" class="icon-trash-empty"></span>
+        </div>
+      </div>`}n.insertAdjacentHTML(`beforeend`,i),r(`riversFooterNumber`).innerHTML=`${t.all.length} of ${pack.rivers.length}`;let s=e(l(t.all.map(e=>e.discharge)))||0;r(`riversFooterDischarge`).innerHTML=`${s} m³/s`;let c=e(l(t.all.map(e=>e.length)))||0;r(`riversFooterLength`).innerHTML=`${c*distanceScale} ${a}`;let u=e(l(t.all.map(e=>e.width)),3)||0;r(`riversFooterWidth`).innerHTML=`${e(u*distanceScale,3)} ${a}`,n.querySelectorAll(`div.states`).forEach(e=>void e.addEventListener(`mouseenter`,e=>k(e))),n.querySelectorAll(`div.states`).forEach(e=>void e.addEventListener(`mouseleave`,e=>A(e))),n.querySelectorAll(`div > span.icon-target`).forEach(e=>void e.addEventListener(`click`,j)),n.querySelectorAll(`div > span.icon-pencil`).forEach(e=>void e.addEventListener(`click`,P)),n.querySelectorAll(`div > span.icon-trash-empty`).forEach(e=>void e.addEventListener(`click`,F)),m(r(`riversFooter`),t,C.goto)}function k(e){layerIsOn(`toggleRivers`)||toggleRivers();let t=+e.target.dataset.id;n(`#rivers`).select(`#river${t}`).attr(`stroke`,`red`).attr(`stroke-width`,1)}function A(e){let t=+e.target.dataset.id;n(`#rivers`).select(`#river${t}`).attr(`stroke`,null).attr(`stroke-width`,null)}function j(){let e=+this.closest(`.states`).dataset.id;u(n(`#rivers`).select(`#river${e}`).node(),3)}function M(){if(n(`#rivers`).attr(`data-basin`)===`hightlighted`)n(`#rivers`).selectAll(`*`).attr(`fill`,null),n(`#rivers`).attr(`data-basin`,null);else{n(`#rivers`).attr(`data-basin`,`hightlighted`);let e=[...new Set(pack.rivers.map(e=>e.basin))],t=[`#1f77b4`,`#ff7f0e`,`#2ca02c`,`#d62728`,`#9467bd`,`#8c564b`,`#e377c2`,`#7f7f7f`,`#bcbd22`,`#17becf`];e.forEach((e,r)=>{let i=t[r%t.length];pack.rivers.filter(t=>t.basin===e).forEach(e=>{n(`#rivers`).select(`#river${e.i}`).attr(`fill`,i)})})}}function N(){let n=`Id,River,Type,Discharge,Length,Width,Basin
+`,r=x();C.view().all.forEach(t=>{let i=`${t.discharge} m³/s`,a=`${e(t.length*distanceScale)} ${distanceUnitInput.value}`,o=`${e(t.width*distanceScale,3)} ${distanceUnitInput.value}`,s=r.get(t.basin)?.name||``;n+=`${[t.i,t.name,t.type,i,a,o,s].join(`,`)}\n`});let a=`${t(`Rivers`)}.csv`;i(n,a)}function P(){let e=`river${this.closest(`.states`).dataset.id}`;a.RiverEditor.open(e)}function F(){let e=+this.closest(`.states`).dataset.id;alertMessage.innerHTML=`Are you sure you want to remove the river? All tributaries will be auto-removed`,$(`#alert`).dialog({resizable:!1,width:`22em`,title:`Remove river`,buttons:{Remove:function(){Rivers.remove(e),C.refresh(),$(this).dialog(`close`)},Cancel:function(){$(this).dialog(`close`)}}})}function I(){alertMessage.innerHTML=`Are you sure you want to remove all rivers?`,$(`#alert`).dialog({resizable:!1,title:`Remove all rivers`,buttons:{Remove:function(){$(this).dialog(`close`),L()},Cancel:function(){$(this).dialog(`close`)}}})}function L(){pack.rivers=[],pack.cells.r=new Uint16Array(pack.cells.i.length),n(`#rivers`).selectAll(`*`).remove(),C.refresh()}var R={open:w};export{R as RiversOverview};
