@@ -7178,11 +7178,12 @@
         }
         function rerollCpuPersonality() {
             const monster=monsters.find(item=>item.id===currentStatblockMonsterId); if(!monster)return;
-            const previous=monster.cpuAdvisor?.personality; let next=previous;
-            for(let attempts=0;attempts<8&&next===previous;attempts++) next=CpuActionAdvisor.weightedChoice();
-            monster.cpuAdvisor=CpuActionAdvisor.normalizeSettings({...monster.cpuAdvisor,personality:next,personalityOverridden:false});
-            const select=document.getElementById('cpuPersonality'); if(select)select.value=monster.cpuAdvisor.personality;
-            invalidateCpuRecommendation('Personality rerolled. Generate a new recommendation.'); syncMonstersToFirebase();
+            const previousPersonality=monster.cpuAdvisor?.personality,previousIntelligence=monster.cpuAdvisor?.intelligence;let personality=previousPersonality,intelligence=previousIntelligence;
+            for(let attempts=0;attempts<8&&personality===previousPersonality;attempts++)personality=CpuActionAdvisor.weightedChoice();
+            for(let attempts=0;attempts<8&&intelligence===previousIntelligence;attempts++)intelligence=CpuActionAdvisor.weightedChoice({dumb:1,average:1,intelligent:1});
+            monster.cpuAdvisor=CpuActionAdvisor.normalizeSettings({...monster.cpuAdvisor,personality,intelligence,personalityOverridden:false,intelligenceOverridden:false});
+            const personalitySelect=document.getElementById('cpuPersonality'),intelligenceSelect=document.getElementById('cpuIntelligence');if(personalitySelect)personalitySelect.value=monster.cpuAdvisor.personality;if(intelligenceSelect)intelligenceSelect.value=monster.cpuAdvisor.intelligence;
+            invalidateCpuRecommendation('Personality and intelligence rerolled. Generate a new recommendation.');syncMonstersToFirebase();
         }
         function renderCpuRecommendation(result) {
             const output=document.getElementById('cpuAdvisorOutput'); if(!output)return;
@@ -7201,7 +7202,7 @@
             const wasMissing=!monster.cpuAdvisor; monster.cpuAdvisor=CpuActionAdvisor.normalizeSettings(monster.cpuAdvisor,data.int); cpuStatblockByMonsterId.set(monster.id,data);
             document.getElementById('cpuPersonality')?.addEventListener('change',event=>saveCpuAdvisorSetting('personality',event.target.value));
             document.getElementById('cpuIntelligence')?.addEventListener('change',event=>saveCpuAdvisorSetting('intelligence',event.target.value));
-            document.getElementById('cpuReroll')?.addEventListener('click',rerollCpuPersonality);
+            const rerollButton=document.getElementById('cpuReroll');if(rerollButton){rerollButton.textContent='Reroll Personality & Intelligence';rerollButton.addEventListener('click',rerollCpuPersonality);}
             document.getElementById('cpuRecommend')?.addEventListener('click',recommendCpuAction);
             if(wasMissing)syncMonstersToFirebase();
         }
