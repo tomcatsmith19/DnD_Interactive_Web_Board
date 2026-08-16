@@ -211,7 +211,7 @@
         .dice-roller-form { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
         .dice-roller label { display:flex; flex-direction:column; gap:5px; color:#FFD700; font-weight:bold; }
         .dice-roller select,.dice-roller input { box-sizing:border-box; width:100%; padding:10px; color:white; background:#292929; border:1px solid #666; border-radius:5px; font-size:1rem; }
-        .dice-counter { display:grid; grid-template-columns:34px minmax(0,1fr) 34px; justify-items:center; align-items:center; gap:4px; padding:7px 5px; background:#202020; border:1px solid #555; border-radius:6px; color:#FFD700; font-weight:bold; }
+        .dice-counter { display:grid; grid-template-columns:30px 52px 30px; grid-template-rows:48px 22px; justify-content:center; justify-items:center; align-items:center; gap:2px 3px; padding:6px 4px; background:#202020; border:1px solid #555; border-radius:6px; color:#FFD700; font-weight:bold; }
         .dice-counter.d20 { grid-column:2; grid-row:1; }
         .dice-customize { position:relative; grid-column:1; grid-row:1; align-self:center; }
         .dice-customize summary { display:flex; min-height:48px; align-items:center; justify-content:center; padding:8px; box-sizing:border-box; color:#111; background:#FFD700; border-radius:6px; font-weight:bold; text-align:center; cursor:pointer; list-style:none; }
@@ -227,12 +227,15 @@
         .dice-roller .dice-modifier input { width:5.25em; padding:8px 4px; text-align:center; }
         .dice-counter.row-two { grid-row:2; }
         .dice-counter.row-three { grid-row:3; }
-        .dice-counter-label { grid-column:1/-1; display:flex; align-items:center; justify-content:center; gap:4px; height:48px; }
+        .dice-counter-label { grid-column:2; grid-row:1; display:flex; align-items:center; justify-content:center; gap:4px; width:52px; height:48px; }
         .die-picture { display:inline-block; width:44px; height:44px; flex:0 0 auto; background:#FFD700; -webkit-mask:var(--die-image) center/contain no-repeat; mask:var(--die-image) center/contain no-repeat; }
         .die-picture.d100-back { width:34px; transform:translate(-7px,7px) rotate(-14deg); }
         .die-picture.d100-front { width:34px; margin-left:-25px; transform:translate(9px,-7px) rotate(14deg); }
-        .dice-counter button { height:34px; padding:0; color:#111; background:#FFD700; border:0; border-radius:5px; font-size:1.2rem; font-weight:bold; cursor:pointer; }
-        .dice-counter input { padding:7px 3px; text-align:center; }
+        .dice-counter button { grid-row:1; width:30px; height:30px; padding:0; color:#111; background:#FFD700; border:0; border-radius:5px; font-size:1.2rem; font-weight:bold; cursor:pointer; }
+        .dice-counter button:first-of-type { grid-column:1; }
+        .dice-counter button:last-of-type { grid-column:3; }
+        .dice-counter input { grid-column:2; grid-row:2; z-index:2; align-self:center; justify-self:center; width:30px !important; height:20px; margin:0; padding:1px 2px !important; color:white; background:#333; border:1px solid #555; border-radius:4px; font-size:.78rem !important; line-height:18px; text-align:center; appearance:textfield; -moz-appearance:textfield; }
+        .dice-counter input::-webkit-inner-spin-button,.dice-counter input::-webkit-outer-spin-button { margin:0; -webkit-appearance:none; }
         .dice-roll-button { width:100%; padding:11px; color:#111; background:#FFD700; border:0; border-radius:5px; font-size:1rem; font-weight:bold; cursor:pointer; }
         .dice-clear-button { width:100%; padding:9px; color:#FFD700; background:#333; border:1px solid #FFD700; border-radius:5px; font-size:.95rem; font-weight:bold; cursor:pointer; }
         .dice-replay-button { width:100%; padding:9px; color:#FFD700; background:#222; border:1px solid #FFD700; border-radius:5px; font-size:.95rem; font-weight:bold; cursor:pointer; }
@@ -8976,7 +8979,7 @@
         switchTab('attacksTab');
 
     </script>
-    <script type="module" src="dice-roller-3d.js?v=18"></script>
+    <script type="module" src="dice-roller-3d.js?v=19"></script>
 </div>
 </body>
 

@@ -120,9 +120,22 @@ function completeRequest(request) {
 }
 
 function forcedNotation(payload) {
-  const expression = payload.dice.map(group => `${group.count}d${group.sides}`).join('+');
-  const outcomes = payload.dice.flatMap(group => group.rolls).join(',');
-  return `${expression}@${outcomes}`;
+  const expressions = [];
+  const outcomes = [];
+  payload.dice.forEach(group => {
+    if (group.sides === 100) {
+      expressions.push(`${group.count}d100`, `${group.count}d10`);
+      outcomes.push(...group.rolls.map(value => {
+        const percentile = value % 100;
+        return percentile < 10 ? 100 : Math.floor(percentile / 10) * 10;
+      }));
+      outcomes.push(...group.rolls.map(value => value % 10 || 10));
+      return;
+    }
+    expressions.push(`${group.count}d${group.sides}`);
+    outcomes.push(...group.rolls);
+  });
+  return `${expressions.join('+')}@${outcomes.join(',')}`;
 }
 
 function updateLocalOutput(payload) {
