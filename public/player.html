@@ -90,8 +90,14 @@
     .dice-clear-button { width:100%; padding:9px !important; color:#FFD700 !important; background:#333 !important; border:1px solid #FFD700 !important; font-size:.95rem; }
     .dice-replay-button { width:100%; padding:9px !important; color:#FFD700 !important; background:#222 !important; border:1px solid #FFD700 !important; font-size:.95rem; font-weight:bold; cursor:pointer; }
     .dice-replay-button:disabled { opacity:.45; cursor:not-allowed; }
+    .dice-post-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .dice-apply-button { width:100%; padding:9px !important; color:#111 !important; background:#FFD700 !important; border:1px solid #FFD700 !important; font-size:.95rem; font-weight:bold; cursor:pointer; }
+    .dice-apply-button:disabled { opacity:.45; cursor:not-allowed; }
     .dice-result { min-height:105px; padding:12px; color:white; background:#191919; border:1px solid #555; border-radius:7px; overflow-wrap:anywhere; }
     .dice-result strong { color:#FFD700; font-size:1.25rem; }
+    .dice-output-grid { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); gap:8px; }
+    .dice-appearance-result { min-height:105px; padding:12px; box-sizing:border-box; color:white; background:#191919; border:1px solid #555; border-radius:7px; overflow-wrap:anywhere; line-height:1.45; }
+    .dice-appearance-result strong { color:#FFD700; }
     .dice-roller .share-dice-roll { flex-direction:row; align-items:center; gap:8px; color:white; font-weight:normal; }
     .dice-roller .share-dice-roll input { width:auto; margin:0; accent-color:#FFD700; }
     .dice-roll-controls { display:grid; grid-template-columns:minmax(0,1fr) 150px; gap:10px; align-items:center; }
@@ -323,8 +329,8 @@
       </div>
       <button class="dice-clear-button" type="button" onclick="clearSelectedDice('player')">Clear Selected Dice</button>
       <div class="dice-roll-controls"><div class="dice-roll-options"><label class="dice-roll-option"><input id="playerShareDiceRoll" type="checkbox"> Share</label><label class="dice-roll-option"><input id="playerRandomDiceColor" type="checkbox"> Random Color</label></div><button class="dice-roll-button" type="button" onclick="rollUtilityDice('player')">Roll Dice</button></div>
-      <div id="playerDiceResult" class="dice-result" aria-live="polite">Choose your dice and roll.</div>
-      <button id="playerReplayDiceRoll" class="dice-replay-button" type="button" onclick="window.diceRoller3d?.replayAndShare('player')" disabled>Replay &amp; Share Roll</button>
+      <div class="dice-output-grid"><div id="playerDiceResult" class="dice-result" aria-live="polite">Choose your dice and roll.</div><div id="playerDiceAppearanceResult" class="dice-appearance-result" aria-live="polite"><strong>Appearance</strong><br>Uses your selected customization.</div></div>
+      <div class="dice-post-actions"><button id="playerReplayDiceRoll" class="dice-replay-button" type="button" onclick="window.diceRoller3d?.replayAndShare('player')" disabled>Replay &amp; Share Roll</button><button id="playerApplyDiceAppearance" class="dice-apply-button" type="button" onclick="window.diceRoller3d?.applyAppearance('player')" disabled>Apply Appearance</button></div>
     </div>
   </aside>
 
@@ -719,7 +725,8 @@
       const result=document.getElementById(`${prefix}DiceResult`);if(!pool.length){result.textContent='Add at least one die to roll.';return;}
       result.textContent='Rolling…';
       const randomAppearance=document.getElementById(`${prefix}RandomDiceColor`)?.checked?window.diceRoller3d?.getRandomCustomization():null;
-      const request={id:`${Date.now()}-${Math.random().toString(36).slice(2)}`,createdAt:Date.now(),roller:'Player',sourcePrefix:prefix,dice:pool,modifier,themeConfig:randomAppearance?.themeConfig||window.diceRoller3d?.getCustomization(prefix),randomCustomization:randomAppearance?.summary||''};
+      const appearance=randomAppearance||window.diceRoller3d?.getCustomizationDetails(prefix);
+      const request={id:`${Date.now()}-${Math.random().toString(36).slice(2)}`,createdAt:Date.now(),roller:'Player',sourcePrefix:prefix,dice:pool,modifier,themeConfig:appearance?.themeConfig||window.diceRoller3d?.getCustomization(prefix),appearanceSummary:appearance?.summary||'',appearanceSelection:appearance?.selection||null,appearanceMode:randomAppearance?'Random':'Custom'};
       if(window.diceRoller3d)window.diceRoller3d.roll(request,document.getElementById(`${prefix}ShareDiceRoll`)?.checked);else result.textContent='3D dice are still loading. Please try again.';
     }
     function toggleSessionControls(panelId){document.getElementById(panelId)?.classList.toggle('is-collapsed');}
@@ -1794,7 +1801,7 @@
 
 
   </script>
-  <script type="module" src="dice-roller-3d.js?v=14"></script>
+  <script type="module" src="dice-roller-3d.js?v=18"></script>
 </body>
 
 </html>

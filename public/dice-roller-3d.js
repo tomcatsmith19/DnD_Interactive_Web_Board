@@ -115,8 +115,7 @@ function completeRequest(request) {
   const modifier = Math.trunc(Number(request.modifier) || 0);
   const total = subtotal + modifier;
   const groups = dice.map(group => `<div><b>${group.count}d${group.sides}:</b> ${group.rolls.join(', ')}</div>`).join('');
-  const randomDetails = request.randomCustomization ? `<div><b>Random appearance:</b> ${request.randomCustomization}</div>` : '';
-  const markup = `<div><strong>${total}</strong> total</div>${groups}<div>${subtotal} ${modifier < 0 ? '−' : '+'} ${Math.abs(modifier)} = ${total}</div>${randomDetails}`;
+  const markup = `<div><strong>${total}</strong> total</div>${groups}<div>${subtotal} ${modifier < 0 ? '−' : '+'} ${Math.abs(modifier)} = ${total}</div>`;
   return { ...request, dice, modifier, subtotal, total, markup, createdAt:Date.now() };
 }
 
@@ -130,6 +129,11 @@ function updateLocalOutput(payload) {
   if (!payload.sourcePrefix) return;
   const output = document.getElementById(`${payload.sourcePrefix}DiceResult`);
   if (output) output.innerHTML = safeMarkup(payload.markup);
+  const appearanceOutput = document.getElementById(`${payload.sourcePrefix}DiceAppearanceResult`);
+  if (appearanceOutput) {
+    const summary = String(payload.appearanceSummary || 'Default appearance').split('; ').join('<br>');
+    appearanceOutput.innerHTML = `<strong>${payload.appearanceMode || 'Custom'} Appearance</strong><br>${safeMarkup(summary)}`;
+  }
 }
 
 async function animate(payload) {
@@ -156,6 +160,8 @@ function finishAnimation(payload, shared) {
   lastCompletedPayload = JSON.parse(JSON.stringify(payload));
   const replayButton = document.getElementById('dmReplayDiceRoll') || document.getElementById('playerReplayDiceRoll');
   if (replayButton) replayButton.disabled = false;
+  const applyButton = document.getElementById('dmApplyDiceAppearance') || document.getElementById('playerApplyDiceAppearance');
+  if (applyButton) applyButton.disabled = !payload.appearanceSelection;
   clearTimer = setTimeout(() => { diceBox?.clearDice(); stage.classList.remove('is-rolling'); }, 3000);
 }
 
@@ -204,12 +210,26 @@ function buildCustomization(colorset, texture, material, surface) {
 }
 
 function getCustomization(prefix) {
-  return buildCustomization(
-    document.getElementById(`${prefix}DiceColorset`)?.value || 'campaignGold',
-    document.getElementById(`${prefix}DiceTexture`)?.value || 'none',
-    document.getElementById(`${prefix}DiceMaterial`)?.value || 'glass',
-    document.getElementById(`${prefix}DiceSurface`)?.value || 'green-felt'
-  );
+  const values = getCustomizationValues(prefix);
+  return buildCustomization(values.colorset, values.texture, values.material, values.surface);
+}
+
+function getCustomizationValues(prefix) {
+  return {
+    colorset:document.getElementById(`${prefix}DiceColorset`)?.value || 'campaignGold',
+    texture:document.getElementById(`${prefix}DiceTexture`)?.value || 'none',
+    material:document.getElementById(`${prefix}DiceMaterial`)?.value || 'glass',
+    surface:document.getElementById(`${prefix}DiceSurface`)?.value || 'green-felt'
+  };
+}
+
+function getCustomizationDetails(prefix) {
+  const values = getCustomizationValues(prefix);
+  return {
+    themeConfig:buildCustomization(values.colorset, values.texture, values.material, values.surface),
+    summary:`${optionName('colorset', values.colorset)}; ${optionName('texture', values.texture)}; ${optionName('material', values.material)}; ${optionName('surface', values.surface)}`,
+    selection:values
+  };
 }
 
 function randomOption(category) {
@@ -224,7 +244,8 @@ function getRandomCustomization() {
   const [surface, surfaceName] = randomOption('surface');
   return {
     themeConfig:buildCustomization(colorset, texture, material, surface),
-    summary:`${colorsetName}; ${textureName}; ${materialName}; ${surfaceName}`
+    summary:`${colorsetName}; ${textureName}; ${materialName}; ${surfaceName}`,
+    selection:{ colorset, texture, material, surface }
   };
 }
 
@@ -280,23 +301,38 @@ async function playDiceSoundPreview(prefix) {
   const volume = Math.min(1, Math.max(0, Number(volumeSlider?.value) || 0));
   const material = document.getElementById(`${prefix}DiceMaterial`)?.value || 'glass';
   const soundMaterial = material === 'metal' ? 'metal' : material === 'wood' ? 'wood' : 'plastic';
-  const soundUrl = `/assets/dice-box-threejs/sounds/dicehit/dicehit_${soundMaterial}5.mp3`;
   try {
     previewAudioContext ||= new (window.AudioContext || window.webkitAudioContext)();
     if (previewAudioContext.state === 'suspended') await previewAudioContext.resume();
-    let buffer = previewSoundBuffers.get(soundUrl);
-    if (!buffer) {
-      const response = await fetch(soundUrl);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      buffer = await previewAudioContext.decodeAudioData(await response.arrayBuffer());
-      previewSoundBuffers.set(soundUrl, buffer);
-    }
-    const source = previewAudioContext.createBufferSource();
-    const gain = previewAudioContext.createGain();
-    source.buffer = buffer;
-    gain.gain.value = volume * 3.5;
-    source.connect(gain).connect(previewAudioContext.destination);
-    source.start();
+    const impacts = [
+      { sample:3, delay:0, gain:.7, rate:1.08 },
+      { sample:7, delay:.13, gain:1, rate:.94 },
+      { sample:5, delay:.28, gain:.72, rate:1.03 },
+      { sample:9, delay:.46, gain:.48, rate:.9 },
+      { sample:2, delay:.68, gain:.3, rate:1.12 },
+      { sample:6, delay:.92, gain:.18, rate:.98 }
+    ];
+    const buffers = await Promise.all(impacts.map(async impact => {
+      const soundUrl = `/assets/dice-box-threejs/sounds/dicehit/dicehit_${soundMaterial}${impact.sample}.mp3`;
+      let buffer = previewSoundBuffers.get(soundUrl);
+      if (!buffer) {
+        const response = await fetch(soundUrl);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        buffer = await previewAudioContext.decodeAudioData(await response.arrayBuffer());
+        previewSoundBuffers.set(soundUrl, buffer);
+      }
+      return buffer;
+    }));
+    const startAt = previewAudioContext.currentTime;
+    impacts.forEach((impact, index) => {
+      const source = previewAudioContext.createBufferSource();
+      const gain = previewAudioContext.createGain();
+      source.buffer = buffers[index];
+      source.playbackRate.value = impact.rate;
+      gain.gain.value = volume * 14 * impact.gain;
+      source.connect(gain).connect(previewAudioContext.destination);
+      source.start(startAt + impact.delay);
+    });
   } catch (error) { console.warn('Dice sound preview was blocked:', error); }
 }
 
@@ -324,7 +360,28 @@ document.querySelectorAll('[data-dice-customizer]').forEach(menu => {
 
 window.diceRoller3d = {
   getCustomization,
+  getCustomizationDetails,
   getRandomCustomization,
+  applyAppearance(prefix) {
+    const selection = lastCompletedPayload?.appearanceSelection;
+    const output = document.getElementById(`${prefix}DiceAppearanceResult`);
+    if (!selection) {
+      if (output) output.innerHTML = '<strong>Appearance</strong><br>No roll appearance is available to apply.';
+      return;
+    }
+    for (const category of ['colorset','texture','material','surface']) {
+      const select = document.getElementById(`${prefix}Dice${category[0].toUpperCase()}${category.slice(1)}`);
+      if (select && [...select.options].some(option => option.value === selection[category])) select.value = selection[category];
+    }
+    const randomCheckbox = document.getElementById(`${prefix}RandomDiceColor`);
+    if (randomCheckbox) randomCheckbox.checked = false;
+    const menu = document.querySelector(`[data-dice-customizer="${prefix}"]`);
+    if (menu) {
+      updateCustomizerPreview(menu);
+      schedulePreviewRoll(menu);
+    }
+    if (output) output.innerHTML = `<strong>Applied Appearance</strong><br>${safeMarkup(String(lastCompletedPayload.appearanceSummary || '').split('; ').join('<br>'))}`;
+  },
   async replayAndShare(prefix) {
     const output = document.getElementById(`${prefix}DiceResult`);
     if (!lastCompletedPayload) {

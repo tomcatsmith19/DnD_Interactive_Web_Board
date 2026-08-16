@@ -237,20 +237,29 @@
         .dice-clear-button { width:100%; padding:9px; color:#FFD700; background:#333; border:1px solid #FFD700; border-radius:5px; font-size:.95rem; font-weight:bold; cursor:pointer; }
         .dice-replay-button { width:100%; padding:9px; color:#FFD700; background:#222; border:1px solid #FFD700; border-radius:5px; font-size:.95rem; font-weight:bold; cursor:pointer; }
         .dice-replay-button:disabled { opacity:.45; cursor:not-allowed; }
+        .dice-post-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+        .dice-apply-button { width:100%; padding:9px; color:#111; background:#FFD700; border:1px solid #FFD700; border-radius:5px; font-size:.95rem; font-weight:bold; cursor:pointer; }
+        .dice-apply-button:disabled { opacity:.45; cursor:not-allowed; }
         .dice-result { min-height:105px; padding:12px; color:white; background:#191919; border:1px solid #555; border-radius:7px; overflow-wrap:anywhere; }
         .dice-result strong { color:#FFD700; font-size:1.25rem; }
+        .dice-output-grid { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); gap:8px; }
+        .dice-appearance-result { min-height:105px; padding:12px; box-sizing:border-box; color:white; background:#191919; border:1px solid #555; border-radius:7px; overflow-wrap:anywhere; line-height:1.45; }
+        .dice-appearance-result strong { color:#FFD700; }
         .dice-roller .share-dice-roll { flex-direction:row; align-items:center; gap:8px; color:white; font-weight:normal; }
         .dice-roller .share-dice-roll input { width:auto; margin:0; accent-color:#FFD700; }
         .dice-roll-controls { display:grid; grid-template-columns:minmax(0,1fr) 150px; gap:10px; align-items:center; }
         .dice-roll-options { display:flex; flex-direction:column; gap:7px; }
         .dice-roller .dice-roll-option { display:flex; flex-direction:row; align-items:center; gap:7px; color:white; font-weight:normal; }
         .dice-roller .dice-roll-option input { width:auto; margin:0; accent-color:#FFD700; }
-        .dm-map-toolbar { position:fixed; top:8px; left:10px; z-index:1000; display:grid; grid-template-columns:auto minmax(160px,auto) auto; grid-template-rows:auto auto; align-items:center; gap:5px 10px; padding:8px 12px; color:white; background:rgba(0,0,0,.7); border-radius:8px; font-family:'MedievalSharp',cursive; }
+        .dm-map-toolbar { position:fixed; top:8px; left:10px; z-index:1000; isolation:isolate; display:grid; grid-template-columns:auto minmax(160px,auto) auto; grid-template-rows:auto auto; align-items:center; gap:5px 10px; padding:8px 12px; color:white; background:transparent; font-family:'MedievalSharp',cursive; }
+        .dm-map-toolbar::before,.dm-map-toolbar::after { content:''; position:absolute; z-index:-1; background:rgba(0,0,0,.7); }
+        .dm-map-toolbar::before { inset:0 0 auto 192px; height:52px; border-radius:0 8px 8px 0; }
+        .dm-map-toolbar::after { inset:0 auto 0 0; width:192px; border-radius:8px 0 8px 8px; }
         .dm-map-toolbar-row { display:grid; grid-template-columns:88px 34px 34px; align-items:center; gap:6px; }
         .dm-map-toolbar .map-scale-controls { grid-column:1; grid-row:1; }
         .dm-map-toolbar .token-scale-controls { grid-column:1; grid-row:2; }
-        .dm-map-toolbar #mapSelect { grid-column:2; grid-row:1 / span 2; width:100%; }
-        .dm-map-toolbar .map-library-button { grid-column:3; grid-row:1 / span 2; }
+        .dm-map-toolbar #mapSelect { grid-column:2; grid-row:1; width:100%; }
+        .dm-map-toolbar .map-library-button { grid-column:3; grid-row:1; }
         .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(15,15,15,.94); border:1px solid #666; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
         .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
         .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
@@ -1162,8 +1171,8 @@
                 </div>
                 <button class="dice-clear-button" type="button" onclick="clearSelectedDice('dm')">Clear Selected Dice</button>
                 <div class="dice-roll-controls"><div class="dice-roll-options"><label class="dice-roll-option"><input id="dmShareDiceRoll" type="checkbox"> Share</label><label class="dice-roll-option"><input id="dmRandomDiceColor" type="checkbox"> Random Color</label></div><button class="dice-roll-button" type="button" onclick="rollUtilityDice('dm')">Roll Dice</button></div>
-                <div id="dmDiceResult" class="dice-result" aria-live="polite">Choose your dice and roll.</div>
-                <button id="dmReplayDiceRoll" class="dice-replay-button" type="button" onclick="window.diceRoller3d?.replayAndShare('dm')" disabled>Replay &amp; Share Roll</button>
+                <div class="dice-output-grid"><div id="dmDiceResult" class="dice-result" aria-live="polite">Choose your dice and roll.</div><div id="dmDiceAppearanceResult" class="dice-appearance-result" aria-live="polite"><strong>Appearance</strong><br>Uses your selected customization.</div></div>
+                <div class="dice-post-actions"><button id="dmReplayDiceRoll" class="dice-replay-button" type="button" onclick="window.diceRoller3d?.replayAndShare('dm')" disabled>Replay &amp; Share Roll</button><button id="dmApplyDiceAppearance" class="dice-apply-button" type="button" onclick="window.diceRoller3d?.applyAppearance('dm')" disabled>Apply Appearance</button></div>
             </div>
         </aside>
 
@@ -5690,7 +5699,8 @@
             if (!pool.length) { result.textContent = 'Add at least one die to roll.'; return; }
             result.textContent = 'Rolling…';
             const randomAppearance = document.getElementById(`${prefix}RandomDiceColor`)?.checked ? window.diceRoller3d?.getRandomCustomization() : null;
-            const request = { id:`${Date.now()}-${Math.random().toString(36).slice(2)}`, createdAt:Date.now(), roller:'Dungeon Master', sourcePrefix:prefix, dice:pool, modifier, themeConfig:randomAppearance?.themeConfig || window.diceRoller3d?.getCustomization(prefix), randomCustomization:randomAppearance?.summary || '' };
+            const appearance = randomAppearance || window.diceRoller3d?.getCustomizationDetails(prefix);
+            const request = { id:`${Date.now()}-${Math.random().toString(36).slice(2)}`, createdAt:Date.now(), roller:'Dungeon Master', sourcePrefix:prefix, dice:pool, modifier, themeConfig:appearance?.themeConfig || window.diceRoller3d?.getCustomization(prefix), appearanceSummary:appearance?.summary || '', appearanceSelection:appearance?.selection || null, appearanceMode:randomAppearance ? 'Random' : 'Custom' };
             if (window.diceRoller3d) window.diceRoller3d.roll(request, document.getElementById(`${prefix}ShareDiceRoll`)?.checked);
             else result.textContent = '3D dice are still loading. Please try again.';
         }
@@ -8964,7 +8974,7 @@
         switchTab('attacksTab');
 
     </script>
-    <script type="module" src="dice-roller-3d.js?v=14"></script>
+    <script type="module" src="dice-roller-3d.js?v=18"></script>
 </div>
 </body>
 
