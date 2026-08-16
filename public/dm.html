@@ -394,6 +394,7 @@
         .spell-hover-card p { margin:5px 0; line-height:1.35; }
         .token-lasso { position: absolute; inset: 0; z-index: 30; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
         .token-lasso polyline { fill: rgba(79,195,255,.16); stroke: #4fc3ff; stroke-width: 3; stroke-dasharray: 9 6; stroke-linejoin: round; }
+        .group-move-handle { position:absolute; z-index:35; width:34px; height:34px; padding:0; display:flex; align-items:center; justify-content:center; color:#111; background:#4fc3ff; border:2px solid white; border-radius:50%; box-shadow:0 2px 9px #000,0 0 0 2px rgba(79,195,255,.45); font-size:23px; line-height:1; cursor:move; pointer-events:auto; touch-action:none; user-select:none; }
         .combat-flash-effect { position: fixed; z-index: 2900; border-radius: 50%; pointer-events: none; }
         .combat-flash-effect.flash-red { animation: flash-red 1s ease-out forwards; }
         .combat-flash-effect.flash-green { animation: flash-green 1s ease-out forwards; }
@@ -6303,6 +6304,18 @@
             mapTransformLayer.style.transform = `translate(${panOffsetX}px, ${panOffsetY}px) scale(${scale})`;
         };
 
+        function zoomMapAtPoint(nextScale, clientX, clientY) {
+            const mapTransformLayer = document.getElementById('mapTransformLayer');
+            const rect = mapTransformLayer.getBoundingClientRect();
+            const localX = (clientX - rect.left) / scale;
+            const localY = (clientY - rect.top) / scale;
+            const clampedScale = Math.min(Math.max(0.2, nextScale), 3);
+            panOffsetX += localX * (scale - clampedScale);
+            panOffsetY += localY * (scale - clampedScale);
+            scale = clampedScale;
+            updateTransform();
+        }
+
         function applySharedMapScale() {
             if (!mapImage.naturalWidth) return;
             document.getElementById('mapTransformLayer').style.width = `${mapImage.naturalWidth * sharedMapScale}px`;
@@ -6368,8 +6381,7 @@
             if (e.target.closest('.generator-panel, .dm-initiative-panel')) return;
             e.preventDefault();
             const delta = e.deltaY > 0 ? -0.1 : 0.1;
-            scale = Math.min(Math.max(0.2, scale + delta), 3);
-            updateTransform();
+            zoomMapAtPoint(scale + delta, e.clientX, e.clientY);
             if (isMapVisible()) {
                 mapWidth = mapImage.clientWidth;
                 mapHeight = mapImage.clientHeight;
@@ -6552,6 +6564,58 @@
             const targetLabel = document.getElementById('mapActionTargets');
             targetLabel.textContent = selected.length === 1 ? selected[0].name : `${selected.length} tokens selected`;
             if (!selected.length) document.getElementById('mapActionPanel').classList.remove('is-open');
+            renderGroupMoveHandle(selected);
+        }
+
+        function renderGroupMoveHandle(selected) {
+            document.getElementById('groupMoveHandle')?.remove();
+            if (selected.length < 2 || !mapWidth || !mapHeight) return;
+            const handle = document.createElement('button');
+            handle.id = 'groupMoveHandle';
+            handle.className = 'group-move-handle';
+            handle.type = 'button';
+            handle.textContent = '✥';
+            handle.title = `Move ${selected.length} selected tokens`;
+            const centerX = selected.reduce((sum, monster) => sum + monster.xRatio * mapWidth, 0) / selected.length;
+            const centerY = selected.reduce((sum, monster) => sum + monster.yRatio * mapHeight, 0) / selected.length;
+            handle.style.left = `${centerX - 17}px`;
+            handle.style.top = `${centerY - 17}px`;
+            tokenLayer.appendChild(handle);
+
+            let dragState = null;
+            handle.addEventListener('pointerdown', event => {
+                event.preventDefault();
+                event.stopPropagation();
+                dragState = {
+                    pointerId: event.pointerId,
+                    clientX: event.clientX,
+                    clientY: event.clientY,
+                    positions: selected.map(monster => ({ monster, xRatio: monster.xRatio, yRatio: monster.yRatio }))
+                };
+                handle.setPointerCapture?.(event.pointerId);
+            });
+            handle.addEventListener('pointermove', event => {
+                if (!dragState || event.pointerId !== dragState.pointerId) return;
+                const rawDx = (event.clientX - dragState.clientX) / scale / mapWidth;
+                const rawDy = (event.clientY - dragState.clientY) / scale / mapHeight;
+                const dxRatio = Math.min(Math.min(...dragState.positions.map(start => 1 - start.xRatio)), Math.max(Math.max(...dragState.positions.map(start => -start.xRatio)), rawDx));
+                const dyRatio = Math.min(Math.min(...dragState.positions.map(start => 1 - start.yRatio)), Math.max(Math.max(...dragState.positions.map(start => -start.yRatio)), rawDy));
+                dragState.positions.forEach(start => {
+                    start.monster.xRatio = start.xRatio + dxRatio;
+                    start.monster.yRatio = start.yRatio + dyRatio;
+                    positionTokenElement(start.monster);
+                });
+                const centerX = dragState.positions.reduce((sum, start) => sum + start.monster.xRatio * mapWidth, 0) / dragState.positions.length;
+                const centerY = dragState.positions.reduce((sum, start) => sum + start.monster.yRatio * mapHeight, 0) / dragState.positions.length;
+                handle.style.left = `${centerX - 17}px`;
+                handle.style.top = `${centerY - 17}px`;
+            });
+            handle.addEventListener('pointerup', event => {
+                if (!dragState || event.pointerId !== dragState.pointerId) return;
+                dragState = null;
+                syncMonstersToFirebase();
+            });
+            handle.addEventListener('click', event => event.stopPropagation());
         }
 
         function openMapActionPanel() {
@@ -6710,6 +6774,7 @@
             tokenLayer.style.width = `${mapWidth}px`;
             tokenLayer.style.height = `${mapHeight}px`;
             monsters.forEach(monster => positionTokenElement(monster));
+            renderGroupMoveHandle(monsters.filter(monster => selectedMapTokenIds.has(monster.id)));
             return true;
         }
 
@@ -7357,7 +7422,7 @@
 
         function makeDraggable(el) {
             let isDragging = false;
-            let offsetX = 0, offsetY = 0;
+            let dragOriginLeft = 0, dragOriginTop = 0;
             let dragStartX = 0, dragStartY = 0;
             let didMove = false;
 
@@ -7367,16 +7432,16 @@
                 didMove = false;
                 dragStartX = e.clientX;
                 dragStartY = e.clientY;
-                offsetX = e.clientX - el.offsetLeft;
-                offsetY = e.clientY - el.offsetTop;
+                dragOriginLeft = el.offsetLeft;
+                dragOriginTop = el.offsetTop;
                 el.style.cursor = 'grabbing';
             });
 
             document.addEventListener('mousemove', (e) => {
                 if (!isDragging) return;
                 if (Math.hypot(e.clientX - dragStartX, e.clientY - dragStartY) > 3) didMove = true;
-                el.style.left = `${e.clientX - offsetX}px`;
-                el.style.top = `${e.clientY - offsetY}px`;
+                el.style.left = `${dragOriginLeft + (e.clientX - dragStartX) / scale}px`;
+                el.style.top = `${dragOriginTop + (e.clientY - dragStartY) / scale}px`;
             });
 
             document.addEventListener('mouseup', () => {
@@ -7409,8 +7474,8 @@
                 const touch = e.touches[0];
                 dragStartX = touch.clientX;
                 dragStartY = touch.clientY;
-                offsetX = touch.clientX - el.offsetLeft;
-                offsetY = touch.clientY - el.offsetTop;
+                dragOriginLeft = el.offsetLeft;
+                dragOriginTop = el.offsetTop;
                 el.style.cursor = 'grabbing';
             }, { passive: false });
 
@@ -7418,8 +7483,8 @@
                 if (!isDragging) return;
                 const touch = e.touches[0];
                 if (Math.hypot(touch.clientX - dragStartX, touch.clientY - dragStartY) > 3) didMove = true;
-                el.style.left = `${touch.clientX - offsetX}px`;
-                el.style.top = `${touch.clientY - offsetY}px`;
+                el.style.left = `${dragOriginLeft + (touch.clientX - dragStartX) / scale}px`;
+                el.style.top = `${dragOriginTop + (touch.clientY - dragStartY) / scale}px`;
             }, { passive: false });
 
             el.addEventListener('touchend', () => {
