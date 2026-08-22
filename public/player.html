@@ -680,9 +680,9 @@
 
     function renderPartyTracker() {
       const body=document.getElementById('partyTableBody'); if(!body)return; body.replaceChildren();
-      monsters.filter(monster=>monster.partyManaged&&monster.isplayer).forEach(monster=>{
+      monsters.filter(monster=>monster.partyManaged).forEach(monster=>{
         const row=body.insertRow(),nameCell=row.insertCell(),removeButton=document.createElement('button');removeButton.type='button';removeButton.textContent='×';removeButton.title='Remove from party';removeButton.style.cssText='margin-right:5px;padding:1px 5px;background:#c62828;color:white;';removeButton.addEventListener('click',()=>removeCreatureById(monster.id));nameCell.appendChild(removeButton);nameCell.appendChild(document.createTextNode(monster.name));
-        ['init','hp','maxHp','ac'].forEach(field=>{const cell=row.insertCell(),input=document.createElement('input');input.type='number';input.value=field==='ac'?(Number(monster.ac)||10):(monster[field]??0);if(field==='ac'){input.min='1';input.max='40';input.title='Armor Class used by the DM CPU Action Advisor';input.setAttribute('aria-label',`${monster.name} Armor Class`);}input.addEventListener('change',()=>{monster[field]=Number(input.value)||(field==='ac'?10:0);if(field==='maxHp')monster.maxHp=Math.max(1,monster.maxHp);if(field==='ac')monster.ac=Math.max(1,Math.min(40,monster.ac));if(field==='hp'&&!monster.isplayer)monster.hp=Math.max(0,monster.hp);updateTokenHealthBar(monster);updateTokenDefeatedState(monster);updatePlayerTokenInitiativeLabels();syncMonstersToFirebase();});cell.appendChild(input);});
+        ['init','hp','maxHp','ac'].forEach(field=>{const cell=row.insertCell(),input=document.createElement('input');input.type='number';input.value=field==='ac'?(Number(monster.ac)||10):(monster[field]??0);if(field==='ac'){input.min='1';input.max='40';input.title='Armor Class used by the DM CPU Action Advisor';input.setAttribute('aria-label',`${monster.name} Armor Class`);}input.addEventListener('change',()=>{monster[field]=Number(input.value)||(field==='ac'?10:0);if(field==='maxHp')monster.maxHp=Math.max(1,monster.maxHp);if(field==='ac')monster.ac=Math.max(1,Math.min(40,monster.ac));if(field==='hp'&&!monster.isplayer)monster.hp=Math.max(0,monster.hp);updateTokenHealthBar(monster);updateTokenDefeatedState(monster);updatePlayerTokenInitiativeLabels();syncMonsterFieldsToFirebase(monster.id,{init:monster.init,hp:monster.hp,maxHp:monster.maxHp,ac:monster.ac});});cell.appendChild(input);});
       });
     }
 
@@ -807,7 +807,7 @@
       }catch(error){console.error('Failed to create custom player:',error);status.textContent='Could not upload the custom player.';}
       finally{button.disabled=false;}
     }
-    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();await addMonstersToFirebase([member]);closePartyPicker();}
+    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp,rawAc=Array.isArray(data.ac)?data.ac[0]:data.ac,ac=typeof rawAc==='object'?rawAc?.ac:rawAc;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,ac:Math.max(1,parseInt(ac)||10),init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();await addMonstersToFirebase([member]);closePartyPicker();}
     document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
     const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
     fetch('data/api_data/monster_catalog.json').then(response=>response.json()).then(data=>{basePartyCatalog=[...playerCharacterNames.map(name=>({name,kind:'Player'})),...data.map(monster=>({name:monster.name,kind:'Monster'}))];rebuildPartyCatalog();});
@@ -815,7 +815,7 @@
 
     function normalizeMonsterState(monster) {
       const hp = Number(monster.hp) || 0;
-      return { ...monster, hp, ac:monster.isplayer?Math.max(1,Number(monster.ac)||10):monster.ac, maxHp: Math.max(1, Number(monster.maxHp) || hp || 1), conditions: Array.isArray(monster.conditions) ? monster.conditions : [] };
+      return { ...monster, hp, ac:Math.max(1,Number(monster.ac)||10), maxHp: Math.max(1, Number(monster.maxHp) || hp || 1), conditions: Array.isArray(monster.conditions) ? monster.conditions : [] };
     }
 
     function updateTokenHealthBar(monster) {
@@ -1292,6 +1292,30 @@
         }, { merge: true });
         lastSyncedAt = revision;
       }).catch(error => console.error('Error syncing token position:', error));
+    }
+
+    function syncMonsterFieldsToFirebase(monsterId, fields) {
+      const safeFields = Object.fromEntries(Object.entries(fields).filter(([, value]) => value !== undefined));
+      return db.runTransaction(async transaction => {
+        const snapshot = await transaction.get(monstersRef);
+        const serverData = snapshot.data() || {};
+        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+        const localMonster = monsters.find(monster => monster.id === monsterId);
+        let found = false;
+        const mergedMonsters = serverMonsters.map(monster => {
+          if (monster.id !== monsterId) return monster;
+          found = true;
+          return { ...monster, ...safeFields };
+        });
+        if (!found && localMonster) mergedMonsters.push({ ...localMonster, ...safeFields });
+        const revision = nextMonsterRevision(serverData);
+        transaction.set(monstersRef, {
+          monsters: mergedMonsters,
+          revision,
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, { merge: true });
+        lastSyncedAt = revision;
+      }).catch(error => console.error('Error syncing creature stats:', error));
     }
 
     function removeMonstersFromFirebase(monsterIds) {
