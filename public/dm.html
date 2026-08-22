@@ -6638,6 +6638,7 @@
             if (index >= 0) monsters.splice(index, 1);
             selectedMapTokenIds.delete(monsterId);
             document.getElementById(`token-${monsterId}`)?.remove();
+            removeMonstersFromFirebase([monsterId]);
         }
 
 
@@ -6729,8 +6730,9 @@
             });
             handle.addEventListener('pointerup', event => {
                 if (!dragState || event.pointerId !== dragState.pointerId) return;
+                const movedIds = dragState.positions.map(start => start.monster.id);
                 dragState = null;
-                syncMonstersToFirebase();
+                syncMonsterPositionsToFirebase(movedIds);
             });
             handle.addEventListener('click', event => event.stopPropagation());
         }
@@ -6771,7 +6773,8 @@
             if (index >= 0) monsters.splice(index, 1);
             selectedMapTokenIds.delete(monsterId);
             document.getElementById(`token-${monsterId}`)?.remove();
-            if (sync) { syncMonstersToFirebase(); updateMonsterTable(); }
+            removeMonstersFromFirebase([monsterId]);
+            if (sync) updateMonsterTable();
         }
 
         function applyMapTokenAction() {
@@ -6963,7 +6966,7 @@
             refreshMonsterList(e.target.value);
         });
 
-        confirmMonsterBtn.addEventListener('click', () => {
+        confirmMonsterBtn.addEventListener('click', async () => {
             const selectedMonster = monsterList.dataset.selected;
             const number = parseInt(monsterCount.value) || 1;
 
@@ -6972,28 +6975,20 @@
                 return;
             }
 
-            let promises = [];
-
-            for (let i = 0; i < number; i++) {
-                const fetchPromise = loadMonsterDefinitionByName(selectedMonster)
-                    .then(definition => {
-                        monsters.push(buildMonsterInstance(definition));
-                    })
-                    .catch(err => {
-                        console.error("Error loading monster:", err);
-                        alert(`Could not load monster: ${selectedMonster}`);
-                    });
-
-                promises.push(fetchPromise);
-            }
-
-            Promise.all(promises).then(() => {
+            confirmMonsterBtn.disabled = true;
+            try {
+                const definition = await loadMonsterDefinitionByName(selectedMonster);
+                const additions = Array.from({ length: number }, () => buildMonsterInstance(definition));
+                monsters.push(...additions);
+                await addMonstersToFirebase(additions);
                 monsterModal.style.display = 'none';
-                syncMonstersToFirebase();
                 updateMonsterTable();
-
-
-            });
+            } catch (err) {
+                console.error("Error loading monster:", err);
+                alert(`Could not load monster: ${selectedMonster}`);
+            } finally {
+                confirmMonsterBtn.disabled = false;
+            }
         });
 
         const spellCatalogPromise = fetch('data/api_data/spells.json').then(response => response.json()).catch(() => []);
@@ -7656,7 +7651,7 @@
                         monster.xRatio = leftPx / mapWidth;
                         monster.yRatio = topPx / mapHeight;
                     }
-                    syncMonstersToFirebase();
+                    syncMonsterPositionsToFirebase([id]);
                     if (didMove) {
                         el.dataset.suppressClick = 'true';
                         setTimeout(() => { el.dataset.suppressClick = 'false'; }, 0);
@@ -7699,7 +7694,7 @@
                         monster.xRatio = leftPx / mapWidth;
                         monster.yRatio = topPx / mapHeight;
                     }
-                    syncMonstersToFirebase();
+                    syncMonsterPositionsToFirebase([id]);
                 }
             });
 
@@ -8801,31 +8796,93 @@
         let lastSyncedAt = 0;
         let lastNpcSyncedAt = 0;
 
+        function nextMonsterRevision(data) {
+            const revision = Number(data?.revision);
+            return Number.isFinite(revision) ? revision + 1 : 1;
+        }
+
+        function syncMonsterPositionsToFirebase(monsterIds) {
+            const movedMonsters = new Map(monsters
+                .filter(monster => monsterIds.includes(monster.id))
+                .map(monster => [monster.id, { ...monster }]));
+            if (!movedMonsters.size) return Promise.resolve();
+
+            return db.runTransaction(async transaction => {
+                const snapshot = await transaction.get(monstersRef);
+                const serverData = snapshot.data() || {};
+                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+                const mergedMonsters = serverMonsters.map(monster => {
+                    const movedMonster = movedMonsters.get(monster.id);
+                    return movedMonster ? { ...monster, xRatio: movedMonster.xRatio, yRatio: movedMonster.yRatio } : monster;
+                });
+                const serverIds = new Set(serverMonsters.map(monster => monster.id));
+                movedMonsters.forEach(monster => { if (!serverIds.has(monster.id)) mergedMonsters.push(monster); });
+                const revision = nextMonsterRevision(serverData);
+                transaction.set(monstersRef, {
+                    monsters: mergedMonsters,
+                    revision,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                }, { merge: true });
+                lastSyncedAt = revision;
+            }).catch(error => console.error('Error syncing token position:', error));
+        }
+
+        function removeMonstersFromFirebase(monsterIds) {
+            const ids = new Set(monsterIds);
+            if (!ids.size) return Promise.resolve();
+            return db.runTransaction(async transaction => {
+                const snapshot = await transaction.get(monstersRef);
+                const serverData = snapshot.data() || {};
+                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+                const revision = nextMonsterRevision(serverData);
+                transaction.set(monstersRef, {
+                    monsters: serverMonsters.filter(monster => !ids.has(monster.id)),
+                    revision,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                }, { merge: true });
+                lastSyncedAt = revision;
+            }).catch(error => console.error('Error removing shared creatures:', error));
+        }
+
+        function addMonstersToFirebase(newMonsters) {
+            const additions = newMonsters.map(monster => ({ ...monster }));
+            if (!additions.length) return Promise.resolve();
+            return db.runTransaction(async transaction => {
+                const snapshot = await transaction.get(monstersRef);
+                const serverData = snapshot.data() || {};
+                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+                const serverIds = new Set(serverMonsters.map(monster => monster.id));
+                const mergedMonsters = [...serverMonsters, ...additions.filter(monster => !serverIds.has(monster.id))];
+                const revision = nextMonsterRevision(serverData);
+                transaction.set(monstersRef, {
+                    monsters: mergedMonsters,
+                    revision,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                }, { merge: true });
+                lastSyncedAt = revision;
+            }).catch(error => console.error('Error adding shared creatures:', error));
+        }
+
         function syncMonstersToFirebase() {
             const monstersRef = db.collection("shared").doc("monsters");
+            const localMonsters = monsters.map(monster => ({ ...monster }));
             if (document.getElementById('cpuAdvisorOutput')) invalidateCpuRecommendation('Battlefield state changed. Generate a fresh recommendation.');
 
-            monstersRef.get().then(doc => {
-                const serverData = doc.data();
-                const now = Date.now();
-
-                // If local data is older, abort
-                if (serverData?.updatedAt > lastSyncedAt) {
-                    alert("Sync aborted: Firebase has newer data.");
-                    forceReloadMonsters();
-                    return;
-                }
-
-                const payload = {
-                    monsters,
-                    updatedAt: now
-                };
-
-                lastSyncedAt = now;
-
-                return doc.exists
-                    ? monstersRef.update(payload)
-                    : monstersRef.set(payload);
+            return db.runTransaction(async transaction => {
+                const doc = await transaction.get(monstersRef);
+                const serverData = doc.data() || {};
+                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+                const localById = new Map(localMonsters.map(monster => [monster.id, monster]));
+                const mergedMonsters = serverMonsters.map(monster => localById.get(monster.id) || monster);
+                const serverIds = new Set(serverMonsters.map(monster => monster.id));
+                localMonsters.forEach(monster => { if (!serverIds.has(monster.id)) mergedMonsters.push(monster); });
+                const revision = nextMonsterRevision(serverData);
+                transaction.set(monstersRef, {
+                    monsters: mergedMonsters,
+                    revision,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                }, { merge: true });
+                lastSyncedAt = revision;
             }).then(() => {
                 console.log("Monsters synced.");
             }).catch(err => {
@@ -8845,7 +8902,7 @@
                 const data = doc.data();
                 if (!Array.isArray(data.monsters)) return;
 
-                lastSyncedAt = data.updatedAt;
+                lastSyncedAt = Number(data.revision) || 0;
 
                 monsters.length = 0;
                 document.getElementById('mapTokenLayer').innerHTML = '';
@@ -8879,10 +8936,9 @@
             const data = doc.data();
             if (!Array.isArray(data.monsters)) return;
 
-            // Only update if Firebase data is newer
-            if (data.updatedAt < lastSyncedAt) return;
-
-            lastSyncedAt = data.updatedAt;
+            const incomingRevision = Number(data.revision) || 0;
+            if (incomingRevision < lastSyncedAt) return;
+            lastSyncedAt = incomingRevision;
 
             // Store previous HP for comparison
             const previousHP = {};

@@ -598,22 +598,6 @@
       playerLogoutButton.className = 'session-logout-button';
       playerSessionControls.appendChild(playerLogoutButton);
     }
-    // Firebase UID identifies the account, not an individual browser instance.
-    // sessionStorage gives each browser tab its own stable owner across reloads.
-    function getPlayerInstanceId() {
-      const storageKey = 'dndPlayerInstanceId';
-      try {
-        let instanceId = sessionStorage.getItem(storageKey);
-        if (!instanceId) {
-          instanceId = crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-          sessionStorage.setItem(storageKey, instanceId);
-        }
-        return instanceId;
-      } catch (_) {
-        return crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-      }
-    }
-    const sessionOwnerId = `player-instance:${getPlayerInstanceId()}`;
     let sessionAccountId = '';
 
     auth.onAuthStateChanged(user => {
@@ -626,7 +610,7 @@
       // Setup logout button after login
       const logoutBtn = document.getElementById("logoutBtn");
       logoutBtn.addEventListener("click", () => {
-        cleanupSessionParty().finally(() => auth.signOut()).then(() => {
+        auth.signOut().then(() => {
           window.location.href = "index.html";
         });
       });
@@ -696,7 +680,7 @@
 
     function renderPartyTracker() {
       const body=document.getElementById('partyTableBody'); if(!body)return; body.replaceChildren();
-      monsters.filter(monster=>monster.partyManaged&&monster.partyOwner===sessionOwnerId).forEach(monster=>{
+      monsters.filter(monster=>monster.partyManaged&&monster.isplayer).forEach(monster=>{
         const row=body.insertRow(),nameCell=row.insertCell(),removeButton=document.createElement('button');removeButton.type='button';removeButton.textContent='×';removeButton.title='Remove from party';removeButton.style.cssText='margin-right:5px;padding:1px 5px;background:#c62828;color:white;';removeButton.addEventListener('click',()=>removeCreatureById(monster.id));nameCell.appendChild(removeButton);nameCell.appendChild(document.createTextNode(monster.name));
         ['init','hp','maxHp','ac'].forEach(field=>{const cell=row.insertCell(),input=document.createElement('input');input.type='number';input.value=field==='ac'?(Number(monster.ac)||10):(monster[field]??0);if(field==='ac'){input.min='1';input.max='40';input.title='Armor Class used by the DM CPU Action Advisor';input.setAttribute('aria-label',`${monster.name} Armor Class`);}input.addEventListener('change',()=>{monster[field]=Number(input.value)||(field==='ac'?10:0);if(field==='maxHp')monster.maxHp=Math.max(1,monster.maxHp);if(field==='ac')monster.ac=Math.max(1,Math.min(40,monster.ac));if(field==='hp'&&!monster.isplayer)monster.hp=Math.max(0,monster.hp);updateTokenHealthBar(monster);updateTokenDefeatedState(monster);updatePlayerTokenInitiativeLabels();syncMonstersToFirebase();});cell.appendChild(input);});
       });
@@ -823,13 +807,11 @@
       }catch(error){console.error('Failed to create custom player:',error);status.textContent='Could not upload the custom player.';}
       finally{button.disabled=false;}
     }
-    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;member.partyOwner=sessionOwnerId;member.partyOwnerAccount=sessionAccountId;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();await syncMonstersToFirebase();closePartyPicker();}
-    function cleanupSessionParty(){if(!sessionOwnerId)return Promise.resolve();for(let i=monsters.length-1;i>=0;i--)if(monsters[i].partyManaged&&monsters[i].partyOwner===sessionOwnerId)monsters.splice(i,1);renderPartyTracker();return Promise.resolve(syncMonstersToFirebase());}
+    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();await addMonstersToFirebase([member]);closePartyPicker();}
     document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
     const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
     fetch('data/api_data/monster_catalog.json').then(response=>response.json()).then(data=>{basePartyCatalog=[...playerCharacterNames.map(name=>({name,kind:'Player'})),...data.map(monster=>({name:monster.name,kind:'Monster'}))];rebuildPartyCatalog();});
     customPlayersRef.onSnapshot(snapshot=>{customPlayerDefinitions.clear();snapshot.forEach(doc=>{const data=doc.data()||{};customPlayerDefinitions.set(doc.id,{...data,id:doc.id});});rebuildPartyCatalog();renderCustomPlayerLibrary();},error=>console.error('Failed to load custom players:',error));
-    window.addEventListener('pagehide',()=>cleanupSessionParty());
 
     function normalizeMonsterState(monster) {
       const hp = Number(monster.hp) || 0;
@@ -894,7 +876,7 @@
         const centerY=dragState.positions.reduce((sum,start)=>sum+start.monster.yRatio*mapHeight,0)/dragState.positions.length;
         handle.style.left=`${centerX-17}px`; handle.style.top=`${centerY-17}px`;
       });
-      handle.addEventListener('pointerup', event => { if (!dragState || event.pointerId !== dragState.pointerId) return; dragState=null; syncMonstersToFirebase(); });
+      handle.addEventListener('pointerup', event => { if (!dragState || event.pointerId !== dragState.pointerId) return; const movedIds=dragState.positions.map(start=>start.monster.id); dragState=null; syncMonsterPositionsToFirebase(movedIds); });
       handle.addEventListener('click', event => event.stopPropagation());
     }
 
@@ -913,7 +895,7 @@
       document.getElementById('mapActionConditionGroup').style.display = ['apply','remove'].includes(action) ? 'block' : 'none';
     }
 
-    function removeCreatureById(monsterId,sync=true){const index=monsters.findIndex(monster=>monster.id===monsterId);if(index>=0)monsters.splice(index,1);selectedMapTokenIds.delete(monsterId);document.getElementById(`token-${monsterId}`)?.remove();updatePlayerTokenInitiativeLabels();renderPartyTracker();refreshMapTokenSelection();if(sync)syncMonstersToFirebase();}
+    function removeCreatureById(monsterId,sync=true){const index=monsters.findIndex(monster=>monster.id===monsterId);if(index>=0)monsters.splice(index,1);selectedMapTokenIds.delete(monsterId);document.getElementById(`token-${monsterId}`)?.remove();updatePlayerTokenInitiativeLabels();renderPartyTracker();refreshMapTokenSelection();if(sync)removeMonstersFromFirebase([monsterId]);}
 
     const deathEffectRef = db.collection('shared').doc('deathEffect');
     const deathEffectClientId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
@@ -980,7 +962,8 @@
         if (monster.id === currentPlayerId) document.getElementById('currentHP').value = monster.hp;
       });
       refreshMapTokenSelection();
-      syncMonstersToFirebase();
+      const removedIds = targets.filter(target => !monsters.some(monster => monster.id === target.id)).map(target => target.id);
+      syncMonstersToFirebase().then(() => removeMonstersFromFirebase(removedIds));
       renderPartyTracker();
     }
 
@@ -1142,7 +1125,7 @@
             monster.xRatio = leftPx / mapImage.clientWidth;
             monster.yRatio = topPx / mapImage.clientHeight;
           }
-          syncMonstersToFirebase();
+          syncMonsterPositionsToFirebase([id]);
           if (didMove) { el.dataset.suppressClick='true'; setTimeout(()=>{el.dataset.suppressClick='false';},0); }
         }
       });
@@ -1179,7 +1162,7 @@
             monster.xRatio = leftPx / mapImage.clientWidth;
             monster.yRatio = topPx / mapImage.clientHeight;
           }
-          syncMonstersToFirebase();
+          syncMonsterPositionsToFirebase([id]);
         }
       });
 
@@ -1210,20 +1193,26 @@
     const playerSelect = document.getElementById('playerSelect');
     const playerNameLabel = document.querySelector('h1');
 
-    let currentPlayerId = null;  // Track currently selected player's ID
+    let currentPlayerId = localStorage.getItem('dndCurrentPlayerTokenId');
+
+    function showCurrentPlayerStats(monster) {
+      if (!monster) return;
+      currentPlayerId = monster.id;
+      localStorage.setItem('dndCurrentPlayerTokenId', monster.id);
+      playerNameLabel.textContent = monster.name;
+      if ([...playerSelect.options].some(option => option.value === monster.name)) playerSelect.value = monster.name;
+      document.getElementById('currentHP').value = monster.hp;
+      document.getElementById('initiativeInput').value = monster.init;
+    }
 
     playerSelect.addEventListener('change', () => {
       const name = playerSelect.value;
       playerNameLabel.textContent = name;
 
-      // Remove previous token if it exists
-      if (currentPlayerId) {
-        const index = monsters.findIndex(m => m.id === currentPlayerId);
-        if (index !== -1) {
-          monsters.splice(index, 1);
-          const oldEl = document.getElementById(`token-${currentPlayerId}`);
-          if (oldEl) oldEl.remove();
-        }
+      const existingPlayer = monsters.find(monster => monster.isplayer && !monster.partyManaged && monster.name === name);
+      if (existingPlayer) {
+        showCurrentPlayerStats(existingPlayer);
+        return;
       }
 
       const id = generateID();
@@ -1244,7 +1233,8 @@
 
       monsters.push(token);
       addMonsterToken(token);
-      syncMonstersToFirebase();
+      showCurrentPlayerStats(token);
+      addMonstersToFirebase([token]);
     });
 
     // Update HP and initiative on input change
@@ -1273,31 +1263,92 @@
 
 
     // FIREBASE SYNCHRONIZATON
+    function nextMonsterRevision(data) {
+      const revision = Number(data?.revision);
+      return Number.isFinite(revision) ? revision + 1 : 1;
+    }
+
+    function syncMonsterPositionsToFirebase(monsterIds) {
+      const movedMonsters = new Map(monsters
+        .filter(monster => monsterIds.includes(monster.id))
+        .map(monster => [monster.id, { ...monster }]));
+      if (!movedMonsters.size) return Promise.resolve();
+
+      return db.runTransaction(async transaction => {
+        const snapshot = await transaction.get(monstersRef);
+        const serverData = snapshot.data() || {};
+        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+        const mergedMonsters = serverMonsters.map(monster => {
+          const movedMonster = movedMonsters.get(monster.id);
+          return movedMonster ? { ...monster, xRatio: movedMonster.xRatio, yRatio: movedMonster.yRatio } : monster;
+        });
+        const serverIds = new Set(serverMonsters.map(monster => monster.id));
+        movedMonsters.forEach(monster => { if (!serverIds.has(monster.id)) mergedMonsters.push(monster); });
+        const revision = nextMonsterRevision(serverData);
+        transaction.set(monstersRef, {
+          monsters: mergedMonsters,
+          revision,
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, { merge: true });
+        lastSyncedAt = revision;
+      }).catch(error => console.error('Error syncing token position:', error));
+    }
+
+    function removeMonstersFromFirebase(monsterIds) {
+      const ids = new Set(monsterIds);
+      if (!ids.size) return Promise.resolve();
+      return db.runTransaction(async transaction => {
+        const snapshot = await transaction.get(monstersRef);
+        const serverData = snapshot.data() || {};
+        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+        const revision = nextMonsterRevision(serverData);
+        transaction.set(monstersRef, {
+          monsters: serverMonsters.filter(monster => !ids.has(monster.id)),
+          revision,
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, { merge: true });
+        lastSyncedAt = revision;
+      }).catch(error => console.error('Error removing shared creatures:', error));
+    }
+
+    function addMonstersToFirebase(newMonsters) {
+      const additions = newMonsters.map(monster => ({ ...monster }));
+      if (!additions.length) return Promise.resolve();
+      return db.runTransaction(async transaction => {
+        const snapshot = await transaction.get(monstersRef);
+        const serverData = snapshot.data() || {};
+        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+        const serverIds = new Set(serverMonsters.map(monster => monster.id));
+        const mergedMonsters = [...serverMonsters, ...additions.filter(monster => !serverIds.has(monster.id))];
+        const revision = nextMonsterRevision(serverData);
+        transaction.set(monstersRef, {
+          monsters: mergedMonsters,
+          revision,
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, { merge: true });
+        lastSyncedAt = revision;
+      }).catch(error => console.error('Error adding shared creatures:', error));
+    }
+
     function syncMonstersToFirebase() {
       const monstersRef = db.collection("shared").doc("monsters");
+      const localMonsters = monsters.map(monster => ({ ...monster }));
 
-      return monstersRef.get().then(doc => {
-
-        const serverData = doc.data();
-        const now = Date.now();
-
-        // If local data is older, abort
-        if (serverData?.updatedAt > lastSyncedAt) {
-          alert("Sync aborted: Firebase has newer data.");
-          forceReloadMonsters();
-          return;
-        }
-
-        const payload = {
-          monsters,
-          updatedAt: Date.now()
-        };
-
-        lastSyncedAt = now;
-
-        return doc.exists
-          ? monstersRef.update(payload)
-          : monstersRef.set(payload);
+      return db.runTransaction(async transaction => {
+        const doc = await transaction.get(monstersRef);
+        const serverData = doc.data() || {};
+        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+        const localById = new Map(localMonsters.map(monster => [monster.id, monster]));
+        const mergedMonsters = serverMonsters.map(monster => localById.get(monster.id) || monster);
+        const serverIds = new Set(serverMonsters.map(monster => monster.id));
+        localMonsters.forEach(monster => { if (!serverIds.has(monster.id)) mergedMonsters.push(monster); });
+        const revision = nextMonsterRevision(serverData);
+        transaction.set(monstersRef, {
+          monsters: mergedMonsters,
+          revision,
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, { merge: true });
+        lastSyncedAt = revision;
       }).then(() => {
         console.log("Monsters synced.");
       }).catch(err => {
@@ -1321,7 +1372,7 @@
         const data = doc.data();
         if (!Array.isArray(data.monsters)) return;
 
-        lastSyncedAt = data.updatedAt;
+        lastSyncedAt = Number(data.revision) || 0;
 
         monsters.length = 0;
         document.getElementById('mapTokenLayer').innerHTML = '';
@@ -1690,10 +1741,9 @@
       const data = doc.data();
       if (!Array.isArray(data.monsters)) return;
 
-      // Only update if Firebase data is newer
-      if (data.updatedAt < lastSyncedAt) return;
-
-      lastSyncedAt = data.updatedAt;
+      const incomingRevision = Number(data.revision) || 0;
+      if (incomingRevision < lastSyncedAt) return;
+      lastSyncedAt = incomingRevision;
 
       // Store previous HP for comparison
       const previousHP = {};
@@ -1742,6 +1792,8 @@
       updatePlayerTokenInitiativeLabels();
       refreshMapTokenSelection();
       renderPartyTracker();
+      const savedPlayer = monsters.find(monster => monster.id === currentPlayerId);
+      if (savedPlayer) showCurrentPlayerStats(savedPlayer);
 
     });
 
