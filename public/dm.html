@@ -277,6 +277,15 @@
         #dmReferenceHost > div { display:flex !important; flex:1; min-height:0; width:100%; padding:0 !important; gap:8px !important; flex-direction:column; }
         #dmReferenceHost > div > div:first-child { width:100% !important; max-height:38%; box-sizing:border-box; padding:10px !important; }
         #dmReferenceHost > div > div:last-child { width:100% !important; min-height:0; box-sizing:border-box; }
+        .campaign-manager { display:flex; flex-direction:column; gap:10px; min-height:0; }
+        .campaign-manager-controls { display:flex; gap:7px; flex-wrap:wrap; }
+        .campaign-manager-controls button,.campaign-list button { padding:7px 9px; color:#f4d76d; background:#3d2718; border:1px solid #765133; border-radius:5px; cursor:pointer; }
+        .campaign-manager-controls button:hover,.campaign-list button:hover { border-color:#f4d76d; }
+        .campaign-list { display:flex; flex-direction:column; gap:6px; overflow:auto; }
+        .campaign-list-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:5px; align-items:center; }
+        .campaign-list-row .campaign-select { overflow:hidden; text-align:left; text-overflow:ellipsis; white-space:nowrap; }
+        .campaign-list-row.is-active .campaign-select { color:#1d1009; background:#f4d76d; border-color:#f4d76d; font-weight:bold; }
+        .campaign-status { min-height:20px; color:#c9b98b; font-size:.82rem; }
         .dm-audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; padding:8px; color:white; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:9px; }
         .dm-audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
         .dm-audio-dock.is-collapsed .dm-audio-content { display:none; }
@@ -1027,15 +1036,17 @@
                         style="display: flex; flex-direction: column; flex: 1; padding: 20px; align-items: center; justify-content: center; gap: 20px; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
 
                         <!-- Dropdown + CR Input -->
-                        <div style="display: flex; gap: 10px; align-items: center;">
+                        <div style="display: flex; gap: 10px; align-items: center; flex-wrap:wrap;">
                             <select id="lootType" class="npc-input">
                                 <option value="individual">Individual Treasure</option>
                                 <option value="hoard">Treasure Hoard</option>
                             </select>
 
                             <label for="lootCR" style="color: #f4d76d; font-weight: bold;">Challenge Rating:</label>
-                            <input id="lootCR" type="number" min="0" max="20" value="0" class="npc-input"
+                            <input id="lootCR" type="number" min="0" max="30" step="0.125" value="0" class="npc-input"
                                 style="width: 80px;" />
+                            <label for="lootXP" style="color: #f4d76d; font-weight: bold;">Encounter XP:</label>
+                            <input id="lootXP" type="number" min="0" step="25" value="0" class="npc-input" style="width:110px;" />
                         </div>
 
                         <!-- Generate Button -->
@@ -1210,6 +1221,7 @@
                 <button id="dmDiceButton" type="button" onclick="toggleDmLeftPanel('dice')" aria-label="Dice roller" title="Dice Roller"><span class="dice-icon" aria-hidden="true"></span></button>
                 <button id="dmBooksButton" type="button" onclick="toggleDmLeftPanel('books')" aria-label="Books" title="Books"><svg viewBox="0 0 38 38" aria-hidden="true"><path d="M19 9c-4-4-10-4-15-2v24c6-2 11-1 15 3zM19 9c4-4 10-4 15-2v24c-6-2-11-1-15 3z"/><path d="M8 12c3-1 6 0 8 2M8 18c3-1 6 0 8 2M30 12c-3-1-6 0-8 2M30 18c-3-1-6 0-8 2"/><path d="M19 5v29"/></svg></button>
                 <button id="dmReferenceButton" type="button" onclick="toggleDmLeftPanel('reference')" aria-label="Reference" title="Reference"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 13c-2 3-5 8-5 16 0 6 5 8 13 8s13-2 13-8c0-8-3-13-5-16"/><path d="M12 13c4 2 12 2 16 0l-3-7-5 4-5-4z"/><path d="M11 17c6 2 12 2 18 0"/><path d="M16 24c2-2 6-2 8 0M15 29c3-2 7-2 10 0"/></svg></button>
+                <button id="dmCampaignButton" type="button" onclick="toggleDmLeftPanel('campaign')" aria-label="Campaigns" title="Campaigns">⚑</button>
             </nav>
             <div id="dmInitiativeContent" class="dm-initiative-content dm-left-panel-content">
                 <h2>Initiative</h2>
@@ -1221,6 +1233,7 @@
             </div>
             <div id="dmBooksContent" class="dm-left-panel-content"><h2>Books</h2><div id="dmBooksHost" style="display:flex;flex:1;min-height:0;flex-direction:column;"></div></div>
             <div id="dmReferenceContent" class="dm-left-panel-content"><h2>Reference</h2><div id="dmReferenceHost"></div></div>
+            <div id="dmCampaignContent" class="dm-left-panel-content"><h2>Campaigns</h2><div class="campaign-manager"><div class="campaign-manager-controls"><button type="button" onclick="createCampaign()">+ Add Campaign</button></div><div id="campaignList" class="campaign-list"></div><div id="campaignStatus" class="campaign-status" aria-live="polite"></div></div></div>
             <div id="dmDiceContent" class="dice-roller dm-left-panel-content"><h2>Dice Roller</h2>
                 <div class="dice-roller-form">
                     <details class="dice-customize"><summary>Customize Dice</summary><div class="dice-customize-menu" data-dice-customizer="dm"><label>Colorset<select id="dmDiceColorset" class="dice-colorset"></select></label><label>Texture<select id="dmDiceTexture" class="dice-texture"></select></label><label>Material<select id="dmDiceMaterial" class="dice-material"></select></label><label>Surface<select id="dmDiceSurface" class="dice-surface"></select></label><div class="dice-parameter-preview"><div id="dmDicePreviewStage" class="dice-preview-stage"></div><div class="dice-preview-details" aria-live="polite"></div><button class="dice-sound-preview-button" type="button">Preview Roll Sound</button></div></div></details>
@@ -5459,6 +5472,7 @@
             return {
                 id: generateID(),
                 name: definition.name,
+                cr: parseCrValue(definition.cr ?? data.cr),
                 hp,
                 maxHp: hp,
                 init: initiative,
@@ -5686,8 +5700,8 @@
         let activeDmLeftPanel = null;
         function toggleDmLeftPanel(mode) {
             const panel = document.getElementById('dmInitiativePanel');
-            const contentIds = { initiative:'dmInitiativeContent', books:'dmBooksContent', reference:'dmReferenceContent', dice:'dmDiceContent' };
-            const buttonIds = { initiative:'dmInitiativeCollapse', books:'dmBooksButton', reference:'dmReferenceButton', dice:'dmDiceButton' };
+            const contentIds = { initiative:'dmInitiativeContent', books:'dmBooksContent', reference:'dmReferenceContent', campaign:'dmCampaignContent', dice:'dmDiceContent' };
+            const buttonIds = { initiative:'dmInitiativeCollapse', books:'dmBooksButton', reference:'dmReferenceButton', campaign:'dmCampaignButton', dice:'dmDiceButton' };
             const isSameOpenPanel = !panel.classList.contains('is-collapsed') && activeDmLeftPanel === mode;
             document.querySelectorAll('.dm-left-panel-content').forEach(content => content.classList.remove('is-active'));
             document.querySelectorAll('.dm-left-rail button').forEach(button => button.classList.remove('is-active'));
@@ -6665,17 +6679,19 @@
             deathEffectSnapshotSeen = true;
         }, error => console.error('Failed to receive death effect:', error));
 
-        function removeDefeatedMonster(monsterId) {
+        function removeDefeatedMonster(monsterId, sync = true) {
             const index = monsters.findIndex(monster => monster.id === monsterId);
             const monster = index >= 0 ? monsters[index] : null;
             if (monster?.isplayer) {
                 updateTokenDefeatedState(monster);
-                return;
+                return false;
             }
+            recordCreatureForLoot(monster);
             if (index >= 0) monsters.splice(index, 1);
             selectedMapTokenIds.delete(monsterId);
             document.getElementById(`token-${monsterId}`)?.remove();
-            removeMonstersFromFirebase([monsterId]);
+            if (sync) removeMonstersFromFirebase([monsterId]);
+            return Boolean(monster);
         }
 
 
@@ -6807,19 +6823,26 @@
 
         function removeCreatureById(monsterId, sync = true) {
             const index = monsters.findIndex(monster => monster.id === monsterId);
+            const monster = index >= 0 ? monsters[index] : null;
+            recordCreatureForLoot(monster);
             if (index >= 0) monsters.splice(index, 1);
             selectedMapTokenIds.delete(monsterId);
             document.getElementById(`token-${monsterId}`)?.remove();
-            removeMonstersFromFirebase([monsterId]);
-            if (sync) updateMonsterTable();
+            if (sync) {
+                removeMonstersFromFirebase([monsterId]);
+                updateMonsterTable();
+            }
+            return Boolean(monster);
         }
 
-        function applyMapTokenAction() {
+        async function applyMapTokenAction() {
             const action = document.getElementById('mapActionType').value;
             const amount = Math.max(0, Number(document.getElementById('mapActionAmount').value) || 0);
             const condition = document.getElementById('mapActionCondition').value;
             const targets = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
             if (!targets.length) return;
+            const removedIds = [];
+            const changedFields = new Map();
             targets.forEach(monster => {
                 const previousHp = monster.hp;
                 if (action === 'heal') {
@@ -6830,19 +6853,23 @@
                     flashToken(monster.id, 'damage');
                     if (previousHp > 0 && monster.hp <= 0) {
                         showTokenDeathEffect(monster.id);
-                        removeDefeatedMonster(monster.id);
+                        if (removeDefeatedMonster(monster.id, false)) removedIds.push(monster.id);
                     }
                 } else if (action === 'apply' && !monster.conditions.some(item => item.toLowerCase() === condition.toLowerCase())) {
                     monster.conditions.push(condition);
                 } else if (action === 'remove') {
                     monster.conditions = monster.conditions.filter(item => item.toLowerCase() !== condition.toLowerCase());
                 } else if (action === 'removeCreature') {
-                    removeCreatureById(monster.id, false);
+                    if (removeCreatureById(monster.id, false)) removedIds.push(monster.id);
+                }
+                if (!removedIds.includes(monster.id)) {
+                    if (action === 'damage' || action === 'heal') changedFields.set(monster.id, { hp:monster.hp, maxHp:monster.maxHp });
+                    else if (action === 'apply' || action === 'remove') changedFields.set(monster.id, { conditions:[...monster.conditions] });
                 }
                 updateTokenHealthBar(monster);
                 updateTokenDefeatedState(monster);
             });
-            syncMonstersToFirebase();
+            await syncMonsterChangesToFirebase(changedFields, removedIds);
             updateMonsterTable();
         }
 
@@ -6856,15 +6883,24 @@
             return { x: (clientX - rect.left) * (mapWidth / rect.width), y: (clientY - rect.top) * (mapHeight / rect.height) };
         }
 
+        const pendingMonsterAdditions = new Map();
         const monsterPlacement = setupMapTokenPlacement({
             mapImage,
             mapSurface: mapTransformLayer,
             getTokenSrc: getMonsterTokenSrc,
             onPlace: async monster => {
+                pendingMonsterAdditions.set(monster.id, { ...monster });
                 monsters.push(monster);
                 addMonsterToken(monster);
                 updateMonsterTable();
-                await addMonstersToFirebase([monster]);
+                const added = await addMonstersToFirebase([monster]);
+                if (!added) {
+                    pendingMonsterAdditions.delete(monster.id);
+                    const index = monsters.findIndex(item => item.id === monster.id);
+                    if (index >= 0) monsters.splice(index, 1);
+                    document.getElementById(`token-${monster.id}`)?.remove();
+                    updateMonsterTable();
+                }
             }
         });
 
@@ -7466,6 +7502,7 @@
 
             const monster = monsters[index];
             const previousHp = monster.hp;
+            let removedMonsterId = null;
 
             if (action === 'heal') {
                 monster.hp = Math.min(monster.maxHp || monster.hp + amount, monster.hp + amount);
@@ -7477,7 +7514,7 @@
                 flashToken(monster.id, 'damage');
                 if (previousHp > 0 && monster.hp <= 0) {
                     showTokenDeathEffect(monster.id);
-                    removeDefeatedMonster(monster.id);
+                    if (removeDefeatedMonster(monster.id, false)) removedMonsterId = monster.id;
                 }
                 await sleep(1000);
 
@@ -7491,7 +7528,8 @@
                 }
             }
 
-            syncMonstersToFirebase();
+            if (removedMonsterId) await removeMonstersFromFirebase([removedMonsterId]);
+            await syncMonstersToFirebase();
             updateMonsterTable();
 
         });
@@ -7567,8 +7605,9 @@
 
                 });
 
-                hpInput.addEventListener('input', () => {
+                hpInput.addEventListener('input', async () => {
                     const previousHp = m.hp;
+                    let removedMonsterId = null;
                     const enteredHp = parseInt(hpInput.value) || 0;
                     m.hp = m.isplayer ? enteredHp : Math.max(0, enteredHp);
                     m.maxHp = Math.max(m.maxHp || 1, m.hp);
@@ -7577,9 +7616,10 @@
                     else if (m.hp < previousHp) flashToken(m.id, 'damage');
                     if (previousHp > 0 && m.hp <= 0) {
                         showTokenDeathEffect(m.id);
-                        removeDefeatedMonster(m.id);
+                        if (removeDefeatedMonster(m.id, false)) removedMonsterId = m.id;
                     }
-                    syncMonstersToFirebase();
+                    if (removedMonsterId) await removeMonstersFromFirebase([removedMonsterId]);
+                    await syncMonstersToFirebase();
                     updateMonsterTable();
 
                 });
@@ -8184,6 +8224,36 @@
 
         //------------------------- Loot Table Tab----------------------------------------------------------
         let LOOT_DATA = null;
+        const CR_XP_VALUES = new Map([[0,10],[0.125,25],[0.25,50],[0.5,100],[1,200],[2,450],[3,700],[4,1100],[5,1800],[6,2300],[7,2900],[8,3900],[9,5000],[10,5900],[11,7200],[12,8400],[13,10000],[14,11500],[15,13000],[16,15000],[17,18000],[18,20000],[19,22000],[20,25000],[21,33000],[22,41000],[23,50000],[24,62000],[25,75000],[26,90000],[27,105000],[28,120000],[29,135000],[30,155000]]);
+        const lootTrackedCreatureIds = new Set();
+        let encounterLootCR = 0;
+        let encounterLootXP = 0;
+
+        function getCreatureCR(monster) {
+            const directCR = parseCrValue(monster?.cr);
+            if (directCR || monster?.cr === 0 || monster?.cr === '0') return directCR;
+            const catalogEntry = getMonsterCatalog().find(entry => entry.name.toLowerCase() === String(monster?.name || '').toLowerCase());
+            return parseCrValue(catalogEntry?.cr);
+        }
+
+        function updateLootEncounterFields() {
+            const crInput = document.getElementById('lootCR');
+            const xpInput = document.getElementById('lootXP');
+            if (crInput) crInput.value = String(Math.round(encounterLootCR * 1000) / 1000);
+            if (xpInput) xpInput.value = String(Math.max(0, Math.round(encounterLootXP)));
+        }
+
+        function recordCreatureForLoot(monster) {
+            if (!monster || monster.isplayer || lootTrackedCreatureIds.has(monster.id)) return;
+            lootTrackedCreatureIds.add(monster.id);
+            const cr = getCreatureCR(monster);
+            encounterLootXP += CR_XP_VALUES.get(cr) || 0;
+            encounterLootCR = Array.from(CR_XP_VALUES.entries()).reduce((equivalentCR, entry) => entry[1] <= encounterLootXP ? entry[0] : equivalentCR, 0);
+            updateLootEncounterFields();
+        }
+
+        document.getElementById('lootCR')?.addEventListener('input', event => { encounterLootCR = Math.max(0, Number(event.target.value) || 0); });
+        document.getElementById('lootXP')?.addEventListener('input', event => { encounterLootXP = Math.max(0, Number(event.target.value) || 0); });
 
         fetch("data/api_data/loot.json")
             .then(res => res.json())
@@ -8205,7 +8275,7 @@
         }
 
         function generateIndividualLoot() {
-            const cr = parseInt(document.getElementById("lootCR").value);
+            const cr = parseFloat(document.getElementById("lootCR").value);
             if (!LOOT_DATA) {
                 document.getElementById("lootResult").value = "Loot data not loaded.";
                 return;
@@ -8242,7 +8312,7 @@
         }
 
         function generateHoardLoot() {
-            const cr = parseInt(document.getElementById("lootCR").value);
+            const cr = parseFloat(document.getElementById("lootCR").value);
             if (!LOOT_DATA) {
                 document.getElementById("lootResult").value = "Loot data not loaded.";
                 return;
@@ -9070,6 +9140,27 @@
             return Number.isFinite(revision) ? revision + 1 : 1;
         }
 
+        function syncMonsterChangesToFirebase(changes, removedIds = []) {
+            const changeMap = changes instanceof Map ? changes : new Map();
+            const removed = new Set(removedIds);
+            if (!changeMap.size && !removed.size) return Promise.resolve();
+            return db.runTransaction(async transaction => {
+                const snapshot = await transaction.get(monstersRef);
+                const serverData = snapshot.data() || {};
+                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
+                const mergedMonsters = serverMonsters
+                    .filter(monster => !removed.has(monster.id))
+                    .map(monster => changeMap.has(monster.id) ? { ...monster, ...changeMap.get(monster.id) } : monster);
+                const revision = nextMonsterRevision(serverData);
+                transaction.set(monstersRef, {
+                    monsters: mergedMonsters,
+                    revision,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                }, { merge:true });
+                lastSyncedAt = revision;
+            }).catch(error => console.error('Error syncing selected creature changes:', error));
+        }
+
         function syncMonsterPositionsToFirebase(monsterIds) {
             const movedMonsters = new Map(monsters
                 .filter(monster => monsterIds.includes(monster.id))
@@ -9129,7 +9220,10 @@
                     updatedAt: firebase.firestore.FieldValue.serverTimestamp()
                 }, { merge: true });
                 lastSyncedAt = revision;
-            }).catch(error => console.error('Error adding shared creatures:', error));
+            }).then(() => true).catch(error => {
+                console.error('Error adding shared creatures:', error);
+                return false;
+            });
         }
 
         function syncMonstersToFirebase() {
@@ -9195,6 +9289,175 @@
         // Load monsters from Firebase on page load
         const monstersRef = db.collection("shared").doc("monsters");
         const npcRef = db.collection("shared").doc("npcs");
+        const campaignRegistryRef = db.collection("shared").doc("campaignRegistry");
+        const campaignsRef = db.collection("campaigns");
+        let campaignRegistry = { activeId: '', campaigns: [] };
+        let campaignSwitchInProgress = false;
+        let suppressLootTrackingUntil = 0;
+
+        function setCampaignStatus(message) {
+            const status = document.getElementById('campaignStatus');
+            if (status) status.textContent = message || '';
+        }
+
+        function renderCampaignList() {
+            const host = document.getElementById('campaignList');
+            if (!host) return;
+            host.replaceChildren();
+            campaignRegistry.campaigns.forEach(campaign => {
+                const row = document.createElement('div');
+                row.className = `campaign-list-row${campaign.id === campaignRegistry.activeId ? ' is-active' : ''}`;
+                const select = document.createElement('button');
+                select.type = 'button';
+                select.className = 'campaign-select';
+                select.textContent = campaign.name;
+                select.title = campaign.id === campaignRegistry.activeId ? `${campaign.name} is active` : `Switch to ${campaign.name}`;
+                select.addEventListener('click', () => switchCampaign(campaign.id));
+                const rename = document.createElement('button');
+                rename.type = 'button'; rename.textContent = '✎'; rename.title = `Rename ${campaign.name}`;
+                rename.addEventListener('click', () => renameCampaign(campaign.id));
+                const remove = document.createElement('button');
+                remove.type = 'button'; remove.textContent = '×'; remove.title = `Delete ${campaign.name}`;
+                remove.addEventListener('click', () => deleteCampaign(campaign.id));
+                row.append(select, rename, remove);
+                host.appendChild(row);
+            });
+        }
+
+        async function readSharedCampaignState() {
+            const refs = [monstersRef, mapRef, db.collection('shared').doc('drawings'), db.collection('shared').doc('fogOfWar')];
+            const snapshots = await Promise.all(refs.map(ref => ref.get()));
+            return {
+                monsters: snapshots[0].exists ? snapshots[0].data() : { monsters: [] },
+                map: snapshots[1].exists ? snapshots[1].data() : { filepath: mapSelect.value, mapScale: sharedMapScale },
+                drawings: snapshots[2].exists ? snapshots[2].data() : { drawings: [] },
+                fogOfWar: snapshots[3].exists ? snapshots[3].data() : { drawings: [] },
+                loot: { cr: encounterLootCR, xp: encounterLootXP, trackedCreatureIds: Array.from(lootTrackedCreatureIds) }
+            };
+        }
+
+        async function saveCampaignState(campaignId) {
+            if (!campaignId) return;
+            const state = await readSharedCampaignState();
+            await writeCampaignState(campaignId, state);
+        }
+
+        async function writeCampaignState(campaignId, state) {
+            const stateRef = campaignsRef.doc(campaignId).collection('state');
+            const batch = db.batch();
+            ['monsters','map','drawings','fogOfWar','loot'].forEach(key => batch.set(stateRef.doc(key), state?.[key] || {}));
+            batch.set(campaignsRef.doc(campaignId), { savedAt:firebase.firestore.FieldValue.serverTimestamp() }, { merge:true });
+            await batch.commit();
+        }
+
+        async function readCampaignState(campaignId) {
+            const stateRef = campaignsRef.doc(campaignId).collection('state');
+            const keys = ['monsters','map','drawings','fogOfWar','loot'];
+            const snapshots = await Promise.all(keys.map(key => stateRef.doc(key).get()));
+            return Object.fromEntries(keys.map((key,index) => [key, snapshots[index].exists ? snapshots[index].data() : {}]));
+        }
+
+        async function applyCampaignState(state) {
+            suppressLootTrackingUntil = Date.now() + 3000;
+            pendingMonsterAdditions.clear();
+            const revision = Date.now();
+            const batch = db.batch();
+            batch.set(monstersRef, { ...(state?.monsters || {}), monsters: Array.isArray(state?.monsters?.monsters) ? state.monsters.monsters : [], revision, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+            batch.set(mapRef, { ...(state?.map || {}), filepath: state?.map?.filepath || mapSelect.value, mapScale: Number(state?.map?.mapScale) || 1, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+            batch.set(db.collection('shared').doc('drawings'), { drawings: Array.isArray(state?.drawings?.drawings) ? state.drawings.drawings : [], updatedAt: Date.now() });
+            batch.set(db.collection('shared').doc('fogOfWar'), { drawings: Array.isArray(state?.fogOfWar?.drawings) ? state.fogOfWar.drawings : [], updatedAt: Date.now() });
+            await batch.commit();
+            encounterLootCR = Math.max(0, Number(state?.loot?.cr) || 0);
+            encounterLootXP = Math.max(0, Number(state?.loot?.xp) || 0);
+            lootTrackedCreatureIds.clear();
+            (state?.loot?.trackedCreatureIds || []).forEach(id => lootTrackedCreatureIds.add(id));
+            updateLootEncounterFields();
+        }
+
+        async function switchCampaign(campaignId) {
+            if (!campaignId || campaignId === campaignRegistry.activeId || campaignSwitchInProgress) return;
+            campaignSwitchInProgress = true;
+            setCampaignStatus('Saving and switching campaign…');
+            try {
+                await saveCampaignState(campaignRegistry.activeId);
+                const target = await campaignsRef.doc(campaignId).get();
+                if (!target.exists) throw new Error('That campaign no longer exists.');
+                await applyCampaignState(await readCampaignState(campaignId));
+                await campaignRegistryRef.set({ activeId: campaignId, updatedAt: firebase.firestore.FieldValue.serverTimestamp() }, { merge: true });
+                campaignRegistry.activeId = campaignId;
+                renderCampaignList();
+                setCampaignStatus(`Loaded ${campaignRegistry.campaigns.find(item => item.id === campaignId)?.name || 'campaign'}.`);
+            } catch (error) {
+                console.error('Failed to switch campaign:', error);
+                setCampaignStatus(error.message || 'Campaign switch failed.');
+            } finally {
+                campaignSwitchInProgress = false;
+            }
+        }
+
+        async function createCampaign() {
+            const name = prompt('Campaign name:')?.trim();
+            if (!name) return;
+            const id = `campaign-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+            const campaign = { id, name };
+            const blankState = { monsters:{ monsters:[] }, map:{ filepath:mapSelect.value, mapScale:sharedMapScale }, drawings:{ drawings:[] }, fogOfWar:{ drawings:[] }, loot:{ cr:0, xp:0, trackedCreatureIds:[] } };
+            try {
+                await campaignsRef.doc(id).set({ name, createdAt:firebase.firestore.FieldValue.serverTimestamp() });
+                await writeCampaignState(id, blankState);
+                campaignRegistry.campaigns.push(campaign);
+                await campaignRegistryRef.set({ campaigns:campaignRegistry.campaigns, updatedAt:firebase.firestore.FieldValue.serverTimestamp() }, { merge:true });
+                renderCampaignList();
+                await switchCampaign(id);
+            } catch (error) {
+                console.error('Failed to create campaign:', error);
+                setCampaignStatus('Could not create the campaign.');
+            }
+        }
+
+        async function renameCampaign(campaignId) {
+            const campaign = campaignRegistry.campaigns.find(item => item.id === campaignId);
+            if (!campaign) return;
+            const name = prompt('Rename campaign:', campaign.name)?.trim();
+            if (!name || name === campaign.name) return;
+            campaign.name = name;
+            await Promise.all([campaignsRef.doc(campaignId).set({ name }, { merge:true }), campaignRegistryRef.set({ campaigns:campaignRegistry.campaigns, updatedAt:firebase.firestore.FieldValue.serverTimestamp() }, { merge:true })]);
+            renderCampaignList();
+        }
+
+        async function deleteCampaignData(campaignId) {
+            const batch = db.batch();
+            ['monsters','map','drawings','fogOfWar','loot'].forEach(key => batch.delete(campaignsRef.doc(campaignId).collection('state').doc(key)));
+            batch.delete(campaignsRef.doc(campaignId));
+            await batch.commit();
+        }
+
+        async function deleteCampaign(campaignId) {
+            if (campaignRegistry.campaigns.length <= 1) { setCampaignStatus('At least one campaign must remain.'); return; }
+            const campaign = campaignRegistry.campaigns.find(item => item.id === campaignId);
+            if (!campaign || !confirm(`Delete campaign “${campaign.name}”?`)) return;
+            if (campaignId === campaignRegistry.activeId) {
+                const replacement = campaignRegistry.campaigns.find(item => item.id !== campaignId);
+                await switchCampaign(replacement.id);
+            }
+            campaignRegistry.campaigns = campaignRegistry.campaigns.filter(item => item.id !== campaignId);
+            await Promise.all([deleteCampaignData(campaignId), campaignRegistryRef.set({ campaigns:campaignRegistry.campaigns, activeId:campaignRegistry.activeId, updatedAt:firebase.firestore.FieldValue.serverTimestamp() })]);
+            renderCampaignList();
+            setCampaignStatus(`Deleted ${campaign.name}.`);
+        }
+
+        async function initializeCampaignManager() {
+            const registrySnapshot = await campaignRegistryRef.get();
+            if (registrySnapshot.exists && Array.isArray(registrySnapshot.data().campaigns) && registrySnapshot.data().campaigns.length) {
+                campaignRegistry = { activeId:registrySnapshot.data().activeId || registrySnapshot.data().campaigns[0].id, campaigns:registrySnapshot.data().campaigns };
+            } else {
+                const id = `campaign-${Date.now()}`;
+                campaignRegistry = { activeId:id, campaigns:[{ id, name:'Main Campaign' }] };
+                const state = await readSharedCampaignState();
+                await campaignsRef.doc(id).set({ name:'Main Campaign', createdAt:firebase.firestore.FieldValue.serverTimestamp() });
+                await Promise.all([writeCampaignState(id, state), campaignRegistryRef.set({ ...campaignRegistry, updatedAt:firebase.firestore.FieldValue.serverTimestamp() })]);
+            }
+            renderCampaignList();
+        }
 
         monstersRef.onSnapshot(doc => {
             if (!doc.exists) {
@@ -9209,13 +9472,25 @@
             if (incomingRevision < lastSyncedAt) return;
             lastSyncedAt = incomingRevision;
 
+            const incomingIds = new Set(data.monsters.map(monster => monster.id));
+            incomingIds.forEach(id => pendingMonsterAdditions.delete(id));
+            const incomingMonsters = [...data.monsters];
+            pendingMonsterAdditions.forEach((monster, id) => {
+                if (!incomingIds.has(id)) incomingMonsters.push(monster);
+            });
+
+            if (Date.now() >= suppressLootTrackingUntil) {
+                const effectiveIds = new Set(incomingMonsters.map(monster => monster.id));
+                monsters.filter(monster => !monster.isplayer && !effectiveIds.has(monster.id)).forEach(recordCreatureForLoot);
+            }
+
             // Store previous HP for comparison
             const previousHP = {};
             monsters.forEach(m => previousHP[m.id] = m.hp);
 
             // Animate deaths while the previous token still exists. Non-player
             // defeated tokens are filtered out when the layer is rebuilt.
-            data.monsters.forEach(incoming => {
+            incomingMonsters.forEach(incoming => {
                 const oldHP = previousHP[incoming.id];
                 if (typeof oldHP === 'number' && oldHP > 0 && Number(incoming.hp) <= 0) {
                     showTokenDeathEffect(incoming.id, false);
@@ -9230,7 +9505,7 @@
             document.getElementById('mapTokenLayer').innerHTML = '';
 
             // Rebuild state and tokens
-            data.monsters.forEach(m => {
+            incomingMonsters.forEach(m => {
                     const normalized = normalizeMonsterState(m);
                     if (normalized.hp <= 0 && !normalized.isplayer) return;
                     monsters.push(normalized);
@@ -9406,6 +9681,10 @@
 
         switchSpellLevel('spell0');
         switchTab('attacksTab');
+        initializeCampaignManager().catch(error => {
+            console.error('Failed to initialize campaigns:', error);
+            setCampaignStatus('Could not load campaigns.');
+        });
 
     </script>
     <script type="module" src="dice-roller-3d.js?v=19"></script>
