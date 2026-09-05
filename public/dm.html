@@ -369,12 +369,55 @@
         .distributed-creator-modal.is-open { display:flex; }
         #monsterCreatorModal { z-index:3600 !important; }
         .distributed-creator-dialog { position:relative; width:min(1200px,96vw); max-height:92vh; overflow:auto; padding:18px; box-sizing:border-box; color:white; background:#1f120b; border:1px solid #f4d76d; border-radius:10px; box-shadow:0 10px 35px #000; }
+        #customMonsterCreatorModal .distributed-creator-dialog { width:min(1400px,96vw); }
         .distributed-creator-close { position:sticky; top:0; float:right; z-index:3; width:38px; height:38px; padding:0; color:white; background:#9b2929; border:0; border-radius:50%; cursor:pointer; font-size:1.2rem; }
         .map-library-button { width:40px; height:40px; padding:5px; background:#1d1009; color:#f4d76d; border:1px solid #f4d76d; border-radius:6px; cursor:pointer; }
         .map-library-button svg { width:28px; height:28px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
         .dm-create-monster { width:100%; margin-top:6px; padding:9px; background:#4b2915; color:#f4d76d; border:1px solid #f4d76d; border-radius:5px; cursor:pointer; font-weight:bold; }
         .npc-editable-stats { display:grid; grid-template-columns:repeat(6,1fr); gap:5px; margin:8px 0; }
         .npc-editable-stats label { color:#f4d76d; font-size:.7rem; text-align:center; }
+        .monster-multiselect { position:relative; width:154px; }
+        .monster-multiselect summary { box-sizing:border-box; width:100%; padding:5px 8px; border:1px solid #765133; border-radius:4px; background:#2b190f; color:white; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .monster-multiselect-menu { position:absolute; z-index:20; top:100%; left:0; width:230px; max-height:260px; overflow:auto; padding:9px; box-sizing:border-box; border:1px solid #d4af37; border-radius:6px; background:#24150d; box-shadow:0 8px 22px #000; }
+        .monster-multiselect-menu label { display:flex; gap:7px; align-items:center; padding:3px; color:white; }
+        .monster-speed-grid { display:grid; grid-template-columns:repeat(2,minmax(92px,1fr)); gap:7px; width:230px; }
+        .monster-speed-grid label { display:flex; flex-direction:column; gap:3px; color:#f4d76d; font-size:.8rem; }
+        .monster-speed-grid input[type="number"] { width:100%; box-sizing:border-box; }
+        .monster-creator-workspace { display:grid !important; grid-template-columns:max-content max-content max-content max-content; justify-content:start; align-items:start; gap:16px !important; width:100%; }
+        .monster-token-column { grid-column:1; grid-row:1; }
+        .monster-category-column { grid-column:2; grid-row:1; }
+        .monster-basic-column { grid-column:3; grid-row:1; }
+        .monster-ability-column { grid-column:4; grid-row:1; }
+        .monster-editor-section { grid-column:1/-1; grid-row:2; min-width:0; width:100%; }
+        .monster-editor-tabs { display:grid !important; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px !important; }
+        .monster-editor-tabs button { min-width:0; padding-inline:7px; white-space:normal; }
+        .monster-builder-panel { width:100%; min-width:0; padding:12px; box-sizing:border-box; border:1px solid #765133; border-radius:8px; background:rgba(0,0,0,.22); }
+        .monster-builder-list { display:flex; flex-direction:column; gap:9px; margin-bottom:9px; }
+        .monster-builder-card { display:grid; grid-template-columns:repeat(4,minmax(105px,1fr)) auto; gap:7px; padding:9px; border:1px solid #765133; border-radius:7px; background:#2b190f; }
+        .monster-builder-card label { display:flex; flex-direction:column; gap:3px; color:#f4d76d; font-size:.76rem; }
+        .monster-builder-card .builder-wide { grid-column:1 / -2; }
+        .monster-builder-card textarea,.monster-builder-card input,.monster-builder-card select { box-sizing:border-box; width:100%; }
+        .monster-builder-remove { align-self:start; width:30px; height:30px; padding:0; background:#9b2929; color:white; border:0; border-radius:50%; cursor:pointer; }
+        .monster-builder-add { padding:7px 12px; color:#f4d76d; background:#563722; border:1px solid #f4d76d; border-radius:5px; cursor:pointer; }
+        .monster-check-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(135px,1fr)); gap:5px; margin:7px 0 12px; }
+        .monster-check-grid label { display:flex; align-items:center; gap:5px; color:white; font-size:.82rem; }
+        .monster-fieldset { margin:8px 0; padding:9px; border:1px solid #765133; border-radius:7px; }
+        .monster-fieldset legend { color:#f4d76d; padding:0 6px; }
+        .monster-spell-controls { display:flex; flex-wrap:wrap; gap:9px; align-items:end; }
+        .monster-spell-controls > input[type="search"] { flex:1 1 230px; min-width:0; }
+        .monster-spell-level-tabs { display:grid !important; grid-template-columns:repeat(6,minmax(56px,1fr)); gap:5px !important; }
+        .monster-spell-level-tabs button { min-width:0; padding-inline:5px; }
+        .monster-spell-chips { display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
+        .monster-spell-chip { display:inline-flex; gap:5px; align-items:center; padding:4px 7px; border:1px solid #d4af37; border-radius:999px; background:#3d2718; color:white; }
+        .monster-sense-grid,.monster-skill-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:7px; }
+        .monster-skill-row { display:grid; grid-template-columns:minmax(110px,1fr) 100px 58px; gap:5px; align-items:center; min-width:0; color:white; }
+        #creatorContent select { box-sizing:border-box; padding:5px 8px; color:#f4d76d; background:#2b190f; border:1px solid #765133; border-radius:5px; color-scheme:dark; }
+        #creatorContent select:hover { border-color:#d4af37; }
+        #creatorContent select:focus { outline:2px solid rgba(244,215,109,.35); outline-offset:1px; border-color:#f4d76d; }
+        #creatorContent select option { color:#fff4d6; background:#2b190f; }
+        .ability-modifier { display:inline-block; min-width:32px; margin-left:5px; color:#f4d76d; }
+        @media(max-width:1200px){.monster-creator-workspace{display:flex !important;flex-wrap:wrap !important}.monster-token-column{order:-1}.monster-editor-section{order:5;flex:1 1 100%;width:100%}}
+        @media(max-width:760px){.monster-builder-card{grid-template-columns:1fr 1fr}.monster-builder-card .builder-wide{grid-column:1/-1}.monster-builder-remove{grid-column:2;justify-self:end}}
         .npc-editable-stats input { margin-top:3px; text-align:center; padding:5px 2px; }
         .npc-generator-flavor { margin:8px 0; color:#ccc; font-size:.86rem; }
         .npc-generation-controls { margin-top:10px; padding:10px; background:rgba(255,255,255,.05); border-radius:8px; }
@@ -1336,41 +1379,44 @@
                     </div>
 
                     <!-- Top Row -->
-                    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 10px;">
+                    <div class="monster-creator-workspace" style="margin-bottom: 10px;">
 
 
                         <!-- Monster Categorization -->
-                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="monster-category-column" style="display: flex; flex-direction: column; gap: 10px;">
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 100px;">Monster Name:</label>
                                 <input id="monName" type="text" style="width: 150px;">
                             </div>
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 100px;">CR:</label>
-                                <input id="monCR" type="text" placeholder="e.g. 1/8" style="width: 150px;">
+                                <select id="monCR" style="width: 154px;"><option value="0">0</option><option value="1/8">1/8</option><option value="1/4">1/4</option><option value="1/2">1/2</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option></select>
                             </div>
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 100px;">Size:</label>
-                                <input id="monSize" type="text" placeholder="e.g. M" style="width: 150px;">
+                                <select id="monSize" style="width:154px;"><option value="T">Tiny</option><option value="S">Small</option><option value="M" selected>Medium</option><option value="L">Large</option><option value="H">Huge</option><option value="G">Gargantuan</option></select>
                             </div>
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 100px;">Type:</label>
-                                <input id="monType" type="text" placeholder="e.g. humanoid" style="width: 150px;">
+                                <select id="monType" style="width:154px;"><option>Aberration</option><option>Beast</option><option>Celestial</option><option>Construct</option><option>Dragon</option><option>Elemental</option><option>Fey</option><option>Fiend</option><option>Giant</option><option selected>Humanoid</option><option>Monstrosity</option><option>Ooze</option><option>Plant</option><option>Undead</option></select>
                             </div>
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 100px;">Alignment:</label>
-                                <input id="monAlignment" type="text" placeholder="e.g. CE" style="width: 150px;">
+                                <select id="monAlignment" style="width:154px;"><option value="U">Unaligned</option><option value="A">Any alignment</option><option value="L,G">Lawful Good</option><option value="N,G">Neutral Good</option><option value="C,G">Chaotic Good</option><option value="L,N">Lawful Neutral</option><option value="N" selected>Neutral</option><option value="C,N">Chaotic Neutral</option><option value="L,E">Lawful Evil</option><option value="N,E">Neutral Evil</option><option value="C,E">Chaotic Evil</option></select>
                             </div>
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 100px;">Languages:</label>
-                                <input id="monLanguages" type="text" placeholder="comma-separated"
-                                    style="width: 150px;">
+                                <input id="monLanguages" type="hidden">
+                                <details id="monLanguagesPicker" class="monster-multiselect"><summary id="monLanguagesSummary">Select languages</summary><div class="monster-multiselect-menu">
+                                    <label><input type="checkbox" value="Common">Common</label><label><input type="checkbox" value="Dwarvish">Dwarvish</label><label><input type="checkbox" value="Elvish">Elvish</label><label><input type="checkbox" value="Giant">Giant</label><label><input type="checkbox" value="Gnomish">Gnomish</label><label><input type="checkbox" value="Goblin">Goblin</label><label><input type="checkbox" value="Halfling">Halfling</label><label><input type="checkbox" value="Orc">Orc</label><label><input type="checkbox" value="Abyssal">Abyssal</label><label><input type="checkbox" value="Celestial">Celestial</label><label><input type="checkbox" value="Deep Speech">Deep Speech</label><label><input type="checkbox" value="Draconic">Draconic</label><label><input type="checkbox" value="Infernal">Infernal</label><label><input type="checkbox" value="Primordial">Primordial</label><label><input type="checkbox" value="Sylvan">Sylvan</label><label><input type="checkbox" value="Undercommon">Undercommon</label><label><input type="checkbox" value="Druidic">Druidic</label><label><input type="checkbox" value="Thieves' Cant">Thieves' Cant</label>
+                                    <input id="monLanguagesOther" type="text" placeholder="Other or special languages" style="box-sizing:border-box;width:100%;margin-top:6px;">
+                                </div></details>
                             </div>
                         </div>
 
 
                         <!-- Basic Info -->
-                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="monster-basic-column" style="display: flex; flex-direction: column; gap: 10px;">
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 140px;">HP:</label>
                                 <input id="monHP" type="number" min="0" max="1000" step="1" style="width: 150px;">
@@ -1384,14 +1430,13 @@
                                 <input id="monPassive" type="number" min="0" max="30" step="1" style="width: 150px;">
                             </div>
                             <div style="display: flex; align-items: flex-start; gap: 10px;">
-                                <label style="width: 140px;">Speed:</label>
-                                <textarea id="monSpeed" rows="3" placeholder="walk: 30&#10;swim: 40"
-                                    style="width: 150px;"></textarea>
+                                <label style="width: 140px;">Speed (ft.):</label>
+                                <div class="monster-speed-grid"><label>Walk<input id="monSpeedWalk" type="number" min="0" step="5"></label><label>Fly<input id="monSpeedFly" type="number" min="0" step="5"></label><label>Swim<input id="monSpeedSwim" type="number" min="0" step="5"></label><label>Climb<input id="monSpeedClimb" type="number" min="0" step="5"></label><label>Burrow<input id="monSpeedBurrow" type="number" min="0" step="5"></label><label style="justify-content:end;"><span><input id="monSpeedHover" type="checkbox"> Can hover</span></label></div>
                             </div>
                         </div>
 
                         <!-- Physical Stats -->
-                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="monster-ability-column" style="display: flex; flex-direction: column; gap: 10px;">
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 100px;">STR:</label>
                                 <input id="str" type="number" min="0" max="30" step="1" style="width: 80px;">
@@ -1418,7 +1463,7 @@
                             </div>
                         </div>
 
-                        <div style="display: flex; flex-direction: column; gap: 10px; min-width: 220px;">
+                        <div class="monster-token-column" style="display: flex; flex-direction: column; gap: 10px; min-width: 220px;">
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <label style="width: 100px;">Token:</label>
                                 <input id="monsterTokenUpload" type="file" accept="image/*"
@@ -1437,8 +1482,8 @@
 
 
                         <!-- Tabs -->
-                        <div>
-                            <div style="display: flex; gap: 10px; margin-bottom: 5px;">
+                        <div class="monster-editor-section">
+                            <div class="monster-editor-tabs" style="margin-bottom: 5px;">
                                 <button class="monster-tab-btn active"
                                     onclick="switchTab('attacksTab')">Attacks</button>
                                 <button class="monster-tab-btn" onclick="switchTab('spellsTab')">Spells</button>
@@ -1450,17 +1495,13 @@
                                     Actions</button>
                             </div>
 
-                            <div id="attacksTab" class="monster-tab" style="display: none;">
-                                <textarea id="attacksBox" placeholder="Attack name: Attack Details" rows="5"
-                                    style="width: 100%;"></textarea>
-                            </div>
+                            <div id="attacksTab" class="monster-tab monster-builder-panel" style="display: none;"><div id="attacksBuilder" class="monster-builder-list"></div><button class="monster-builder-add" type="button" onclick="addMonsterBuilderCard('attack')">+ Add Attack</button></div>
 
                             <!-- Spellcasting Section -->
-                            <div id="spellsTab" class="monster-tab" style="display: none;">
-                                <label>Spellcasting Modifier:</label><br>
-                                <input id="spellAbility" type="text" placeholder="e.g. int" style="width: 80px;">
+                            <div id="spellsTab" class="monster-tab monster-builder-panel" style="display: none;">
+                                <div class="monster-spell-controls"><label>Casting Ability <select id="spellAbility"><option value="int">INT</option><option value="wis">WIS</option><option value="cha">CHA</option></select></label><label>Spell Save DC <input id="spellSaveDc" type="number" min="0" max="40"></label><label>Spell Attack Bonus <input id="spellAttackBonus" type="number" min="-10" max="30"></label></div>
 
-                                <div style="display: flex; gap: 5px; margin-bottom: 10px;">
+                                <div class="monster-spell-level-tabs" style="margin-bottom: 10px;">
                                     <button class="spell-tab-btn active" onclick="switchSpellLevel('spell0')">Cantrips
                                         (0)</button>
                                     <button class="spell-tab-btn" onclick="switchSpellLevel('spell1')">1st</button>
@@ -1476,54 +1517,20 @@
                                         Will</button>
                                 </div>
 
-                                <!-- All spell textareas (initially hidden except one) -->
+                                <datalist id="monsterSpellCatalog"></datalist>
+                                <!-- Searchable spell pickers (initially hidden except one) -->
                                 <div style="display: flex; flex-direction: column; gap: 10px;">
-                                    <textarea id="spell0" class="spellLevelBox" rows="3"
-                                        placeholder="Cantrips (0-level spells)" style="display: block;"></textarea>
-                                    <textarea id="spell1" class="spellLevelBox" rows="3" placeholder="1st-level spells"
-                                        style="display: none;"></textarea>
-                                    <textarea id="spell2" class="spellLevelBox" rows="3" placeholder="2nd-level spells"
-                                        style="display: none;"></textarea>
-                                    <textarea id="spell3" class="spellLevelBox" rows="3" placeholder="3rd-level spells"
-                                        style="display: none;"></textarea>
-                                    <textarea id="spell4" class="spellLevelBox" rows="3" placeholder="4th-level spells"
-                                        style="display: none;"></textarea>
-                                    <textarea id="spell5" class="spellLevelBox" rows="3" placeholder="5th-level spells"
-                                        style="display: none;"></textarea>
-                                    <textarea id="spell6" class="spellLevelBox" rows="3" placeholder="6th-level spells"
-                                        style="display: none;"></textarea>
-                                    <textarea id="spell7" class="spellLevelBox" rows="3" placeholder="7th-level spells"
-                                        style="display: none;"></textarea>
-                                    <textarea id="spell8" class="spellLevelBox" rows="3" placeholder="8th-level spells"
-                                        style="display: none;"></textarea>
-                                    <textarea id="spell9" class="spellLevelBox" rows="3" placeholder="9th-level spells"
-                                        style="display: none;"></textarea>
-                                    <textarea id="spellWill" class="spellLevelBox" rows="2" placeholder="At Will Spells"
-                                        style="display: none;"></textarea>
+                                    <div id="spell0" class="spellLevelBox" data-spells style="display:block;"></div><div id="spell1" class="spellLevelBox" data-spells style="display:none;"></div><div id="spell2" class="spellLevelBox" data-spells style="display:none;"></div><div id="spell3" class="spellLevelBox" data-spells style="display:none;"></div><div id="spell4" class="spellLevelBox" data-spells style="display:none;"></div><div id="spell5" class="spellLevelBox" data-spells style="display:none;"></div><div id="spell6" class="spellLevelBox" data-spells style="display:none;"></div><div id="spell7" class="spellLevelBox" data-spells style="display:none;"></div><div id="spell8" class="spellLevelBox" data-spells style="display:none;"></div><div id="spell9" class="spellLevelBox" data-spells style="display:none;"></div><div id="spellWill" class="spellLevelBox" data-spells style="display:none;"></div>
                                     <textarea id="spellFooter" rows="2"
                                         placeholder="Footer Notes (e.g., pre-combat buffs)"></textarea>
                                 </div>
                             </div>
 
-                            <div id="conditionsTab" class="monster-tab" style="display: none;">
-                                <textarea id="resistsBox" placeholder="Resistances" rows="2"
-                                    style="width: 100%;"></textarea>
-                                <textarea id="immunitiesBox" placeholder="Immunities" rows="2"
-                                    style="width: 100%;"></textarea>
-                                <textarea id="vulnerabilitiesBox" placeholder="Vulnerabilities" rows="2"
-                                    style="width: 100%;"></textarea>
-                            </div>
+                            <div id="conditionsTab" class="monster-tab monster-builder-panel" style="display: none;"><div id="defenseBuilders"></div></div>
 
-                            <div id="traitsTab" class="monster-tab" style="display: none;">
-                                <textarea id="skillsBox" placeholder="Skills" rows="2" style="width: 100%;"></textarea>
-                                <textarea id="traitsBox" placeholder="Traits" rows="2" style="width: 100%;"></textarea>
-                                <textarea id="sensesBox" placeholder="Senses" rows="2" style="width: 100%;"></textarea>
-                            </div>
+                            <div id="traitsTab" class="monster-tab monster-builder-panel" style="display: none;"><fieldset class="monster-fieldset"><legend>Skills</legend><div id="skillsBuilder" class="monster-skill-grid"></div></fieldset><fieldset class="monster-fieldset"><legend>Traits</legend><div id="traitsBuilder" class="monster-builder-list"></div><button class="monster-builder-add" type="button" onclick="addMonsterBuilderCard('trait')">+ Add Trait</button></fieldset><fieldset class="monster-fieldset"><legend>Senses (ft.)</legend><div id="sensesBuilder" class="monster-sense-grid"></div><input id="sensesOther" type="text" placeholder="Other senses or special notes" style="box-sizing:border-box;width:100%;margin-top:8px;"></fieldset></div>
 
-                            <div id="legendaryTab" class="monster-tab" style="display: none;">
-                                <textarea id="legendaryBox" placeholder="Name: Description" rows="5"
-                                    style="width: 100%;"></textarea>
-                            </div>
+                            <div id="legendaryTab" class="monster-tab monster-builder-panel" style="display: none;"><label style="color:#f4d76d;">Legendary actions per round <input id="legendaryActionCount" type="number" min="0" max="10" value="3" style="width:60px;"></label><div id="legendaryBuilder" class="monster-builder-list" style="margin-top:9px;"></div><button class="monster-builder-add" type="button" onclick="addMonsterBuilderCard('legendary')">+ Add Legendary Action</button></div>
 
                         </div>
 
@@ -1636,6 +1643,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
     <script src="map-drawing.js"></script>
+    <script src="token-placement.js"></script>
     <script src="reference.js"></script>
     <script src="cpu-action-advisor.js?v=1"></script>
     <script>
@@ -6449,6 +6457,19 @@
             updateTransform();
         }
 
+        function focusMapToken(monsterId) {
+            const token = document.getElementById(`token-${monsterId}`);
+            if (!token) return;
+            const tokenRect = token.getBoundingClientRect();
+            const tokenCenterX = tokenRect.left + tokenRect.width / 2;
+            const tokenCenterY = tokenRect.top + tokenRect.height / 2;
+            zoomMapAtPoint(Math.max(scale, 1.8), tokenCenterX, tokenCenterY);
+            const viewport = document.getElementById('mapTab').getBoundingClientRect();
+            panOffsetX += viewport.left + viewport.width / 2 - tokenCenterX;
+            panOffsetY += viewport.top + viewport.height / 2 - tokenCenterY;
+            updateTransform();
+        }
+
         function applySharedMapScale() {
             if (!mapImage.naturalWidth) return;
             document.getElementById('mapTransformLayer').style.width = `${mapImage.naturalWidth * sharedMapScale}px`;
@@ -6835,6 +6856,18 @@
             return { x: (clientX - rect.left) * (mapWidth / rect.width), y: (clientY - rect.top) * (mapHeight / rect.height) };
         }
 
+        const monsterPlacement = setupMapTokenPlacement({
+            mapImage,
+            mapSurface: mapTransformLayer,
+            getTokenSrc: getMonsterTokenSrc,
+            onPlace: async monster => {
+                monsters.push(monster);
+                addMonsterToken(monster);
+                updateMonsterTable();
+                await addMonstersToFirebase([monster]);
+            }
+        });
+
         function isPointInsideLasso(point, polygon) {
             let inside = false;
             for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
@@ -6995,10 +7028,8 @@
             try {
                 const definition = await loadMonsterDefinitionByName(selectedMonster);
                 const additions = Array.from({ length: number }, () => buildMonsterInstance(definition));
-                monsters.push(...additions);
-                await addMonstersToFirebase(additions);
+                monsterPlacement.enqueue(additions);
                 monsterModal.style.display = 'none';
-                updateMonsterTable();
             } catch (err) {
                 console.error("Error loading monster:", err);
                 alert(`Could not load monster: ${selectedMonster}`);
@@ -7501,7 +7532,17 @@
                     event.stopPropagation();
                     removeCreatureById(m.id);
                 });
-                row.children[2].prepend(removeButton);
+                const nameCell = row.children[2];
+                const focusButton = document.createElement('button');
+                focusButton.type = 'button';
+                focusButton.textContent = m.name;
+                focusButton.title = `Center map on ${m.name}`;
+                focusButton.style.cssText = 'padding:0;border:0;background:none;color:#f4d76d;font:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(244,215,109,.45);';
+                focusButton.addEventListener('click', event => {
+                    event.stopPropagation();
+                    focusMapToken(m.id);
+                });
+                nameCell.replaceChildren(removeButton, focusButton);
 
                 if (!m.isplayer) {
                     row.addEventListener('click', () => openMonsterStatblock(m.id));
@@ -8297,18 +8338,20 @@
         // Monster Creator Tab----------------------------------------------------------
         function buildMonsterPayloadFromForm() {
             const getVal = id => document.getElementById(id)?.value || "";
+            let originalSpellcasting = {};
+            try { originalSpellcasting = JSON.parse(document.getElementById('spellsTab')?.dataset.originalSpellcasting || '{}'); } catch (_) { }
 
             const monster = {
                 name: getVal("monName"),
                 source: "Homebrew",
                 page: 0,
-                size: [getVal("monSize") || "Medium"],
-                type: getVal("monType") || "Humanoid",
+                size: [getVal("monSize") || "M"],
+                type: buildMonsterTypeFromForm(),
                 tags: [],
-                alignment: [getVal("monAlignment") || "U"],
+                alignment: parseMonsterAlignment(getVal("monAlignment")),
                 ac: [String(parseInt(getVal("monAC")))],
                 hp: parseInt(getVal("monHP")),
-                speed: parseSpeedBlock("monSpeed"),
+                speed: buildSpeedFromForm(),
 
                 // Stats
                 str: parseInt(getVal("str")),
@@ -8320,38 +8363,40 @@
 
                 // Challenge Info
                 cr: getVal("monCR"),
-                prof_bonus: 2,
+                prof_bonus: getMonsterProficiencyBonus(),
                 passive: parseInt(getVal("monPassive")) || 10 + Math.floor(((parseInt(getVal("wis")) || 10) - 10) / 2),
-                languages: parseDelimitedList("monLanguages"),
-                skills: parseSkillBlock("skillsBox"),
+                languages: getSelectedMonsterLanguages(),
+                skills: buildSkillsFromForm(),
 
                 // Defenses
-                resist: parseLines("resistsBox"),
-                vulnerable: parseLines("vulnerabilitiesBox"),
-                immune: parseLines("immunitiesBox"),
-                conditionImmune: parseLines("conditionsBox"),
+                resist: getDefenseSelections("resist"),
+                vulnerable: getDefenseSelections("vulnerable"),
+                immune: getDefenseSelections("immune"),
+                conditionImmune: getDefenseSelections("conditionImmune"),
 
                 // Senses
-                senses: parseLines("sensesBox"),
+                senses: buildSensesFromForm(),
                 environment: [],
                 hasToken: true,
                 hasFluff: false,
                 hasFluffImages: false,
 
                 // Actions / Traits
-                traits: parseMultilineBlock("traitsBox"),
-                actions: parseMultilineBlock("attacksBox"),
-                legendary: parseMultilineBlock("legendaryBox"),
+                traits: getMonsterBuilderEntries("trait"),
+                actions: getMonsterBuilderEntries("attack"),
+                legendary: getMonsterBuilderEntries("legendary"),
+                legendaryActions: parseInt(getVal("legendaryActionCount")) || 3,
 
                 // Spellcasting
                 spellcasting: [{
+                    ...originalSpellcasting,
                     name: "Spellcasting",
                     ability: getVal("spellAbility") || "int",
-                    headerEntries: [],
+                    headerEntries: buildSpellcastingHeader(),
                     footerEntries: [getVal("spellFooter")],
-                    will: parseLines("spellWill"),
-                    daily: { "1": [] },
-                    hidden: ["will"],
+                    will: getSpellPickerValues("spellWill"),
+                    daily: originalSpellcasting.daily || { "1": [] },
+                    hidden: originalSpellcasting.hidden || ["will"],
                     spells: {}
                 }]
             };
@@ -8359,9 +8404,10 @@
             // Parse level 0–9 spells
             for (let i = 0; i <= 9; i++) {
                 const id = `spell${i}`;
-                const spells = parseLines(id);
+                const spells = getSpellPickerValues(id);
                 if (spells.length) {
-                    monster.spellcasting[0].spells[i.toString()] = { spells };
+                    const slots = parseInt(document.querySelector(`#${id} [data-spell-slots]`)?.value);
+                    monster.spellcasting[0].spells[i.toString()] = { spells, ...(i > 0 && Number.isFinite(slots) ? { slots } : {}) };
                 }
             }
 
@@ -8388,6 +8434,20 @@
                 .split("\n")
                 .map(line => line.trim())
                 .filter(line => line !== "") || [];
+        }
+
+        function parseMonsterAlignment(value) {
+            if (!value) return ["U"];
+            if (value.startsWith('[')) {
+                try { return JSON.parse(value); } catch (_) { }
+            }
+            return value.split(",").filter(Boolean);
+        }
+
+        function buildMonsterTypeFromForm() {
+            const select=document.getElementById('monType'),value=(select?.value||'humanoid').toLowerCase();
+            if(select?.dataset.originalType){try{const original=JSON.parse(select.dataset.originalType);if(typeof original==='object'&&String(original.type).toLowerCase()===value)return original;}catch(_){}}
+            return value;
         }
 
         function parseDelimitedList(id) {
@@ -8427,6 +8487,151 @@
             return speedObj;
         }
 
+        function buildSpeedFromForm() {
+            const speed = {};
+            ["walk", "fly", "swim", "climb", "burrow"].forEach(mode => {
+                const value = parseInt(document.getElementById(`monSpeed${mode[0].toUpperCase()}${mode.slice(1)}`)?.value);
+                if (Number.isFinite(value) && value >= 0) speed[mode] = value;
+            });
+            if (speed.fly && document.getElementById('monSpeedHover')?.checked) {
+                speed.fly = { number: speed.fly, condition: "(hover)" };
+            }
+            return speed;
+        }
+
+        function getSelectedMonsterLanguages() {
+            const checked = Array.from(document.querySelectorAll('#monLanguagesPicker input[type="checkbox"]:checked')).map(input => input.value);
+            const custom = (document.getElementById('monLanguagesOther')?.value || '').split(/[,;\n]+/).map(value => value.trim()).filter(Boolean);
+            return [...new Set([...checked, ...custom])];
+        }
+
+        function syncMonsterLanguagePicker() {
+            const languages = getSelectedMonsterLanguages();
+            document.getElementById('monLanguages').value = languages.join(', ');
+            document.getElementById('monLanguagesSummary').textContent = languages.length ? `${languages.length} selected` : 'Select languages';
+        }
+
+        function setMonsterLanguages(languages) {
+            const remaining = new Map((languages || []).map(language => [String(language).toLowerCase(), String(language)]));
+            document.querySelectorAll('#monLanguagesPicker input[type="checkbox"]').forEach(input => {
+                input.checked = remaining.has(input.value.toLowerCase());
+                if (input.checked) remaining.delete(input.value.toLowerCase());
+            });
+            document.getElementById('monLanguagesOther').value = Array.from(remaining.values()).join(', ');
+            syncMonsterLanguagePicker();
+        }
+
+        document.querySelectorAll('#monLanguagesPicker input[type="checkbox"]').forEach(input => input.addEventListener('change', syncMonsterLanguagePicker));
+        document.getElementById('monLanguagesOther')?.addEventListener('input', syncMonsterLanguagePicker);
+
+        const MONSTER_DAMAGE_TYPES = ['acid','bludgeoning','cold','fire','force','lightning','necrotic','piercing','poison','psychic','radiant','slashing','thunder'];
+        const MONSTER_CONDITIONS = ['blinded','charmed','deafened','exhaustion','frightened','grappled','incapacitated','invisible','paralyzed','petrified','poisoned','prone','restrained','stunned','unconscious'];
+        const MONSTER_SKILLS = { acrobatics:'dex', 'animal handling':'wis', arcana:'int', athletics:'str', deception:'cha', history:'int', insight:'wis', intimidation:'cha', investigation:'int', medicine:'wis', nature:'int', perception:'wis', performance:'cha', persuasion:'cha', religion:'int', 'sleight of hand':'dex', stealth:'dex', survival:'wis' };
+        const MONSTER_SENSES = ['blindsight','darkvision','tremorsense','truesight'];
+
+        function signedNumber(value) { return `${value >= 0 ? '+' : ''}${value}`; }
+        function getMonsterProficiencyBonus() {
+            const raw = document.getElementById('monCR')?.value || '0';
+            const cr = raw.includes('/') ? raw.split('/').reduce((a,b) => Number(a) / Number(b)) : Number(raw);
+            return Math.min(9, 2 + Math.floor((Math.max(1, cr || 0) - 1) / 4));
+        }
+        function getAbilityModifier(ability) { return Math.floor(((parseInt(document.getElementById(ability)?.value) || 10) - 10) / 2); }
+        function updateDerivedMonsterStats() {
+            const proficiencyOutput = document.getElementById('monsterProficiencyDisplay');
+            if (proficiencyOutput) proficiencyOutput.textContent = `PB ${signedNumber(getMonsterProficiencyBonus())}`;
+            ['str','dex','con','int','wis','cha'].forEach(ability => {
+                const output = document.querySelector(`[data-ability-mod="${ability}"]`);
+                if (output) output.textContent = signedNumber(getAbilityModifier(ability));
+            });
+            document.querySelectorAll('#skillsBuilder .monster-skill-row').forEach(row => {
+                const mode = row.querySelector('select').value;
+                const bonus = mode === 'expertise' ? getAbilityModifier(row.dataset.ability) + getMonsterProficiencyBonus() * 2 : getAbilityModifier(row.dataset.ability) + getMonsterProficiencyBonus();
+                if (mode !== 'custom') row.querySelector('input').value = mode === 'none' ? '' : bonus;
+            });
+        }
+
+        function initializeAbilityModifiers() {
+            const crInput = document.getElementById('monCR');
+            if (crInput && !document.getElementById('monsterProficiencyDisplay')) { const output=document.createElement('span');output.id='monsterProficiencyDisplay';output.className='ability-modifier';crInput.after(output); }
+            ['str','dex','con','int','wis','cha'].forEach(ability => {
+                const input = document.getElementById(ability);
+                if (!input || input.nextElementSibling?.dataset.abilityMod) return;
+                const output = document.createElement('span'); output.className='ability-modifier'; output.dataset.abilityMod=ability; input.after(output);
+                input.addEventListener('input', updateDerivedMonsterStats);
+            });
+            document.getElementById('monCR')?.addEventListener('change', updateDerivedMonsterStats);
+        }
+
+        function initializeDefenseBuilders() {
+            const host = document.getElementById('defenseBuilders'); host.replaceChildren();
+            [['resist','Damage Resistances',MONSTER_DAMAGE_TYPES],['immune','Damage Immunities',MONSTER_DAMAGE_TYPES],['vulnerable','Damage Vulnerabilities',MONSTER_DAMAGE_TYPES],['conditionImmune','Condition Immunities',MONSTER_CONDITIONS]].forEach(([key,label,values]) => {
+                const fieldset=document.createElement('fieldset'); fieldset.className='monster-fieldset'; fieldset.dataset.defense=key;
+                const legend=document.createElement('legend'); legend.textContent=label; const grid=document.createElement('div'); grid.className='monster-check-grid';
+                values.forEach(value=>{const item=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.value=value;item.append(input,document.createTextNode(value));grid.appendChild(item);});
+                const custom=document.createElement('textarea');custom.rows=2;custom.dataset.defenseCustom='true';custom.placeholder='Other or specially qualified entries';custom.style.cssText='box-sizing:border-box;width:100%;';
+                fieldset.append(legend,grid,custom);host.appendChild(fieldset);
+            });
+        }
+        function getDefenseSelections(key) {
+            const fieldset=document.querySelector(`[data-defense="${key}"]`); if(!fieldset)return[];
+            const checked=Array.from(fieldset.querySelectorAll('input[type="checkbox"]:checked')).map(input=>input.value);
+            const custom=(fieldset.querySelector('[data-defense-custom]')?.value||'').split(/[;\n]+/).flatMap(value=>{value=value.trim();if(!value)return[];if(value.startsWith('{')||value.startsWith('[')){try{return[JSON.parse(value)];}catch(_){return[value];}}return value.split(',').map(item=>item.trim()).filter(Boolean);});
+            return [...checked,...custom];
+        }
+        function setDefenseSelections(key, values) {
+            const fieldset=document.querySelector(`[data-defense="${key}"]`); if(!fieldset)return;
+            const remaining=new Map((values||[]).map(value=>{const text=typeof value==='string'?value:JSON.stringify(value);return[text.toLowerCase(),text];}));
+            fieldset.querySelectorAll('input[type="checkbox"]').forEach(input=>{input.checked=remaining.has(input.value.toLowerCase());if(input.checked)remaining.delete(input.value.toLowerCase());});
+            fieldset.querySelector('[data-defense-custom]').value=Array.from(remaining.values()).join(', ');
+        }
+
+        function initializeSkillsBuilder() {
+            const host=document.getElementById('skillsBuilder');host.replaceChildren();
+            Object.entries(MONSTER_SKILLS).forEach(([skill,ability])=>{const row=document.createElement('div');row.className='monster-skill-row';row.dataset.skill=skill;row.dataset.ability=ability;const label=document.createElement('span');label.textContent=`${skill} (${ability.toUpperCase()})`;const select=document.createElement('select');select.innerHTML='<option value="none">None</option><option value="proficient">Proficient</option><option value="expertise">Expertise</option><option value="custom">Custom</option>';const bonus=document.createElement('input');bonus.type='number';bonus.placeholder='Bonus';bonus.disabled=true;select.addEventListener('change',()=>{bonus.disabled=select.value!=='custom';updateDerivedMonsterStats();});row.append(label,select,bonus);host.appendChild(row);});
+        }
+        function buildSkillsFromForm() { const result={};document.querySelectorAll('#skillsBuilder .monster-skill-row').forEach(row=>{const mode=row.querySelector('select').value;if(mode==='none')return;const value=parseInt(row.querySelector('input').value);if(Number.isFinite(value))result[row.dataset.skill]=signedNumber(value);});return result; }
+        function setSkillsFromMonster(skills) { document.querySelectorAll('#skillsBuilder .monster-skill-row').forEach(row=>{const select=row.querySelector('select'),input=row.querySelector('input'),value=parseInt(skills?.[row.dataset.skill]);if(!Number.isFinite(value)){select.value='none';input.value='';input.disabled=true;return;}const base=getAbilityModifier(row.dataset.ability),prof=getMonsterProficiencyBonus();select.value=value===base+prof?'proficient':value===base+prof*2?'expertise':'custom';input.disabled=select.value!=='custom';input.value=value;}); }
+
+        function initializeSensesBuilder() { const host=document.getElementById('sensesBuilder');host.replaceChildren();MONSTER_SENSES.forEach(sense=>{const label=document.createElement('label');label.style.cssText='display:flex;flex-direction:column;gap:3px;color:#f4d76d;';const input=document.createElement('input');input.type='number';input.min='0';input.step='5';input.dataset.sense=sense;label.append(document.createTextNode(sense),input);host.appendChild(label);}); }
+        function buildSensesFromForm(){const values=[];document.querySelectorAll('#sensesBuilder [data-sense]').forEach(input=>{const value=parseInt(input.value);if(Number.isFinite(value))values.push(`${input.dataset.sense} ${value} ft.`);});const custom=(document.getElementById('sensesOther').value||'').split(/[,;\n]+/).map(value=>value.trim()).filter(Boolean);return [...values,...custom];}
+        function setSensesFromMonster(senses){const remaining=[];document.querySelectorAll('#sensesBuilder [data-sense]').forEach(input=>input.value='');(senses||[]).forEach(sense=>{const match=String(sense).match(/^(blindsight|darkvision|tremorsense|truesight)\s+(\d+)/i);const input=match&&document.querySelector(`#sensesBuilder [data-sense="${match[1].toLowerCase()}"]`);if(input)input.value=match[2];else remaining.push(typeof sense==='string'?sense:JSON.stringify(sense));});document.getElementById('sensesOther').value=remaining.join(', ');}
+
+        function addMonsterBuilderCard(kind, value={}) {
+            const host=document.getElementById(kind==='attack'?'attacksBuilder':kind==='trait'?'traitsBuilder':'legendaryBuilder');
+            const card=document.createElement('div');card.className='monster-builder-card';card.dataset.builderKind=kind;
+            const field=(label,name,type='text',val='')=>{const wrapper=document.createElement('label');wrapper.textContent=label;const input=document.createElement(type==='textarea'?'textarea':'input');if(type!=='textarea')input.type=type;input.dataset.field=name;input.value=val??'';if(type==='textarea')input.rows=3;wrapper.appendChild(input);return wrapper;};
+            const selectField=(label,name,options,val='')=>{const wrapper=document.createElement('label');wrapper.textContent=label;const select=document.createElement('select');select.dataset.field=name;options.forEach(([optionValue,text])=>select.add(new Option(text,optionValue)));select.value=val??'';wrapper.appendChild(select);return wrapper;};
+            card.appendChild(field('Name','name','text',value.name||''));
+            if(kind==='attack'){
+                card.append(
+                    selectField('Attack type','attackType',[['','Description only'],['Melee Weapon','Melee Weapon'],['Ranged Weapon','Ranged Weapon'],['Melee Spell','Melee Spell'],['Ranged Spell','Ranged Spell']],value.attackType),
+                    field('To hit','toHit','number',value.toHit),field('Reach (ft.)','reach','number',value.reach),field('Range','range','text',value.range),field('Target','target','text',value.target||'one target'),field('Damage dice','damageDice','text',value.damageDice),
+                    selectField('Damage type','damageType',[['','None'],...MONSTER_DAMAGE_TYPES.map(type=>[type,type])],value.damageType),
+                    selectField('Save ability','saveAbility',[['','None'],...['str','dex','con','int','wis','cha'].map(ability=>[ability,ability.toUpperCase()])],value.saveAbility),field('Save DC','saveDc','number',value.saveDc)
+                );
+            }
+            if(kind==='trait'){
+                const templates={"":"Choose a template","Keen Senses":"The monster has advantage on Wisdom (Perception) checks that rely on hearing or smell.","Magic Resistance":"The monster has advantage on saving throws against spells and other magical effects.","Pack Tactics":"The monster has advantage on an attack roll against a creature if at least one of the monster's allies is within 5 feet of the creature and the ally isn't incapacitated.","Legendary Resistance (3/Day)":"If the monster fails a saving throw, it can choose to succeed instead.","Flyby":"The monster doesn't provoke opportunity attacks when it flies out of an enemy's reach.","Amphibious":"The monster can breathe air and water."};
+                const picker=selectField('Trait template','template',Object.keys(templates).map(name=>[name,templates[name]&&name||templates[name]]));
+                picker.querySelector('select').addEventListener('change',event=>{const name=event.target.value;if(!name)return;card.querySelector('[data-field="name"]').value=name;card.querySelector('[data-field="description"]').value=templates[name];});card.appendChild(picker);
+            }
+            if(kind==='legendary')card.appendChild(field('Action cost','cost','number',value.cost||1));
+            const description=field('Description / advanced rules','description','textarea',value.description||'');description.classList.add('builder-wide');card.appendChild(description);
+            const remove=document.createElement('button');remove.type='button';remove.className='monster-builder-remove';remove.textContent='×';remove.title='Remove';remove.addEventListener('click',()=>card.remove());card.appendChild(remove);host.appendChild(card);return card;
+        }
+        function getMonsterBuilderEntries(kind){return Array.from(document.querySelectorAll(`[data-builder-kind="${kind}"]`)).map(card=>{const get=name=>card.querySelector(`[data-field="${name}"]`)?.value?.trim()||'';let name=get('name'),description=get('description'),entries=[description];if(card.dataset.originalEntries&&description===card.dataset.originalDescription&&!get('attackType')){try{entries=JSON.parse(card.dataset.originalEntries);}catch(_){}}if(kind==='attack'&&get('attackType')){const attack=`${get('attackType')} Attack: ${signedNumber(parseInt(get('toHit'))||0)} to hit${get('reach')?`, reach ${get('reach')} ft.`:get('range')?`, range ${get('range')}`:''}, ${get('target')||'one target'}.`;const hit=get('damageDice')?` Hit: ${get('damageDice')} ${get('damageType')||''} damage.`:'';const save=get('saveDc')?` DC ${get('saveDc')} ${(get('saveAbility')||'DEX').toUpperCase()} saving throw.`:'';entries=[[attack,hit,save,description].filter(Boolean).join(' ')];}if(kind==='legendary'&&parseInt(get('cost'))>1)name=`${name} (Costs ${parseInt(get('cost'))} Actions)`;return{name,entries};}).filter(entry=>entry.name||entry.entries[0]);}
+        function setMonsterBuilderEntries(kind,entries){const host=document.getElementById(kind==='attack'?'attacksBuilder':kind==='trait'?'traitsBuilder':'legendaryBuilder');host.replaceChildren();(entries||[]).forEach(entry=>{const text=(entry.entries||[]).map(item=>typeof item==='string'?item:JSON.stringify(item)).join(' ');const costMatch=String(entry.name||'').match(/\s*\(Costs?\s+(\d+)\s+Actions?\)$/i);const card=addMonsterBuilderCard(kind,{name:costMatch?entry.name.replace(costMatch[0],''):entry.name,description:text,cost:costMatch?costMatch[1]:1});card.dataset.originalEntries=JSON.stringify(entry.entries||[]);card.dataset.originalDescription=text;});}
+
+        let monsterSpellCatalogEntries=[];
+        function refreshMonsterSpellCatalog(spellBoxId){const list=document.getElementById('monsterSpellCatalog');if(!list)return;const levelMatch=String(spellBoxId||'').match(/^spell([0-9])$/);const selectedLevel=levelMatch?Number(levelMatch[1]):null;list.replaceChildren();monsterSpellCatalogEntries.filter(spell=>selectedLevel===null||Number(spell.level)===selectedLevel).forEach(spell=>{const option=document.createElement('option');option.value=spell.name||spell;list.appendChild(option);});const search=document.querySelector(`#${spellBoxId} [data-spell-input]`);if(search)search.placeholder=selectedLevel===null?'Search or type an at-will spell':`Search level ${selectedLevel} spells`;}
+        function initializeSpellPickers(){document.querySelectorAll('[data-spells]').forEach(host=>{host.replaceChildren();const controls=document.createElement('div');controls.className='monster-spell-controls';const input=document.createElement('input');input.type='search';input.setAttribute('list','monsterSpellCatalog');input.placeholder='Search or type a spell';input.dataset.spellInput='true';const add=document.createElement('button');add.type='button';add.className='monster-builder-add';add.textContent='+ Add Spell';add.addEventListener('click',()=>{addSpellPickerValue(host,input.value);input.value='';});input.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();add.click();}});controls.append(input,add);if(/^spell[1-9]$/.test(host.id)){const slots=document.createElement('input');slots.type='number';slots.min='0';slots.placeholder='Slots';slots.title='Spell slots';slots.dataset.spellSlots='true';slots.style.width='70px';controls.appendChild(slots);}const chips=document.createElement('div');chips.className='monster-spell-chips';chips.dataset.spellChips='true';host.append(controls,chips);});spellCatalogPromise.then(spells=>{monsterSpellCatalogEntries=Array.isArray(spells)?spells:spells.spell||[];refreshMonsterSpellCatalog('spell0');});}
+        function addSpellPickerValue(hostOrId,name){const host=typeof hostOrId==='string'?document.getElementById(hostOrId):hostOrId;name=String(name||'').trim();if(!host||!name||getSpellPickerValues(host.id).some(value=>value.toLowerCase()===name.toLowerCase()))return;const chip=document.createElement('span');chip.className='monster-spell-chip';chip.dataset.spellName=name;chip.append(document.createTextNode(name));const remove=document.createElement('button');remove.type='button';remove.textContent='×';remove.title='Remove spell';remove.addEventListener('click',()=>chip.remove());chip.appendChild(remove);host.querySelector('[data-spell-chips]').appendChild(chip);}
+        function getSpellPickerValues(id){return Array.from(document.querySelectorAll(`#${id} [data-spell-name]`)).map(chip=>chip.dataset.spellName);}
+        function setSpellPickerValues(id,values,slots){const host=document.getElementById(id);host.querySelector('[data-spell-chips]').replaceChildren();(values||[]).forEach(value=>addSpellPickerValue(host,value));const slotInput=host.querySelector('[data-spell-slots]');if(slotInput)slotInput.value=slots??'';}
+        function buildSpellcastingHeader(){const ability=(document.getElementById('spellAbility').value||'int').toUpperCase(),dc=parseInt(document.getElementById('spellSaveDc').value),attack=parseInt(document.getElementById('spellAttackBonus').value);return [`The monster's spellcasting ability is ${ability}${Number.isFinite(dc)?` (spell save DC ${dc}`:''}${Number.isFinite(attack)?`${Number.isFinite(dc)?', ': ' ('}${signedNumber(attack)} to hit with spell attacks`:''}${Number.isFinite(dc)||Number.isFinite(attack)?')':''}.`];}
+
+        initializeAbilityModifiers();initializeDefenseBuilders();initializeSkillsBuilder();initializeSensesBuilder();initializeSpellPickers();resetMonsterCreatorForm();
+
 
         function switchTab(tabId) {
             // Clear active state from buttons
@@ -8452,6 +8657,29 @@
             document.getElementById('existingMonsterTokenUrl').value = '';
             document.getElementById('existingMonsterTokenPath').value = '';
             document.getElementById('monsterTokenUpload').value = '';
+            document.getElementById('monCR').value = '0';
+            document.getElementById('monSize').value = 'M';
+            document.getElementById('monType').value = 'Humanoid';
+            document.getElementById('monType').dataset.originalType = '';
+            document.getElementById('monAlignment').value = 'N';
+            document.getElementById('monSpeedHover').checked = false;
+            setMonsterLanguages([]);
+            ['resist','immune','vulnerable','conditionImmune'].forEach(key => setDefenseSelections(key, []));
+            setSkillsFromMonster({});
+            setSensesFromMonster([]);
+            setMonsterBuilderEntries('attack', []);
+            setMonsterBuilderEntries('trait', []);
+            setMonsterBuilderEntries('legendary', []);
+            addMonsterBuilderCard('attack');
+            addMonsterBuilderCard('trait');
+            document.getElementById('legendaryActionCount').value = '3';
+            for (let i = 0; i <= 9; i++) setSpellPickerValues(`spell${i}`, []);
+            setSpellPickerValues('spellWill', []);
+            document.getElementById('spellAbility').value = 'int';
+            document.getElementById('spellSaveDc').value = '';
+            document.getElementById('spellAttackBonus').value = '';
+            document.getElementById('spellsTab').dataset.originalSpellcasting = '';
+            updateDerivedMonsterStats();
             setImagePreview('monsterImage', 'monsterImagePlaceholder', '');
             setStatusMessage('monsterSaveStatus', '');
         }
@@ -8476,6 +8704,7 @@
             // Show the selected one
             const targetBox = document.getElementById(id);
             if (targetBox) targetBox.style.display = 'block';
+            refreshMonsterSpellCatalog(id);
 
             // Update button styles
             document.querySelectorAll('.spell-tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -8750,7 +8979,19 @@
         function populateMonsterCreatorFields(data, options = {}) {
             const set = (id, val) => {
                 const el = document.getElementById(id);
-                if (el) el.value = val ?? "";
+                if (!el) return;
+                const value = val ?? "";
+                if (el.tagName === 'SELECT') {
+                    let option = Array.from(el.options).find(item => item.value.toLowerCase() === String(value).toLowerCase());
+                    if (!option && value !== "") {
+                        option = new Option(`Template: ${value}`, value);
+                        option.dataset.templateValue = 'true';
+                        el.add(option);
+                    }
+                    el.value = option?.value ?? "";
+                } else {
+                    el.value = value;
+                }
             };
 
             resetMonsterCreatorForm();
@@ -8759,14 +9000,22 @@
             set("existingMonsterTokenPath", options.tokenPath || "");
             set("monName", data.name);
             set("monSize", data.size?.[0] ?? "");
-            set("monType", typeof data.type === "string" ? data.type : data.type.type);
-            set("monAlignment", data.alignment?.join(" ") ?? "");
+            set("monType", typeof data.type === "string" ? data.type : data.type?.type);
+            document.getElementById('monType').dataset.originalType = typeof data.type === 'object' ? JSON.stringify(data.type) : '';
+            const alignmentValue = (data.alignment || []).every(value => typeof value === 'string')
+                ? data.alignment.join(",")
+                : JSON.stringify(data.alignment || ["U"]);
+            set("monAlignment", alignmentValue);
             set("monPassive", data.passive ?? 10);
-            set("monLanguages", (data.languages || []).join(", "));
-            set("monCR", data.cr);
+            setMonsterLanguages(data.languages || []);
+            set("monCR", typeof data.cr === 'object' ? data.cr.cr : data.cr);
             set("monHP", typeof data.hp === "object" ? data.hp.average : data.hp);
             set("monAC", Array.isArray(data.ac) ? parseInt(data.ac[0]) : parseInt(data.ac));
-            set("monSpeed", Object.entries(data.speed || {}).map(([k, v]) => `${k}: ${v}`).join("\n"));
+            ["walk", "fly", "swim", "climb", "burrow"].forEach(mode => {
+                const speedValue = data.speed?.[mode];
+                set(`monSpeed${mode[0].toUpperCase()}${mode.slice(1)}`, typeof speedValue === 'object' ? speedValue.number : speedValue);
+            });
+            document.getElementById('monSpeedHover').checked = Boolean(data.speed?.canHover || (typeof data.speed?.fly === 'object' && /hover/i.test(data.speed.fly.condition || '')));
 
             set("str", data.str);
             set("dex", data.dex);
@@ -8775,32 +9024,36 @@
             set("wis", data.wis);
             set("cha", data.cha);
 
-            set("skillsBox", Object.entries(data.skills || {}).map(([k, v]) => `${k}: ${v}`).join("\n"));
-            set("traitsBox", (data.traits || []).map(t => `${t.name}: ${t.entries?.join(" ")}`).join("\n"));
-            set("attacksBox", (data.actions || []).map(a => `${a.name}: ${a.entries?.join(" ")}`).join("\n"));
-            set("legendaryBox", (data.legendary || []).map(l => `${l.name}: ${l.entries?.join(" ")}`).join("\n"));
-
-            set("resistsBox", (data.resist || []).join("\n"));
-            set("vulnerabilitiesBox", (data.vulnerable || []).join("\n"));
-            set("immunitiesBox", (data.immune || []).join("\n"));
-            set("conditionsBox", (data.conditionImmune || []).map(c => typeof c === "string" ? c : c.name).join("\n"));
-            set("sensesBox", (data.senses || []).join("\n"));
+            updateDerivedMonsterStats();
+            setSkillsFromMonster(data.skills || {});
+            setMonsterBuilderEntries('trait', data.traits || []);
+            setMonsterBuilderEntries('attack', data.actions || []);
+            setMonsterBuilderEntries('legendary', data.legendary || []);
+            set("legendaryActionCount", data.legendaryActions ?? 3);
+            setDefenseSelections('resist', data.resist || []);
+            setDefenseSelections('vulnerable', data.vulnerable || []);
+            setDefenseSelections('immune', data.immune || []);
+            setDefenseSelections('conditionImmune', data.conditionImmune || []);
+            setSensesFromMonster(data.senses || []);
             setImagePreview('monsterImage', 'monsterImagePlaceholder', options.tokenUrl || '');
             document.getElementById('monsterTokenUpload').value = '';
             setStatusMessage('monsterSaveStatus', options.customMonsterId ? `Editing ${data.name}. Save to apply changes.` : '');
 
             if (data.spellcasting?.[0]) {
                 const sc = data.spellcasting[0];
+                document.getElementById('spellsTab').dataset.originalSpellcasting = JSON.stringify(sc);
                 set("spellFooter", (sc.footerEntries || []).join(" "));
                 set("spellAbility", sc.ability ?? "int");
-                set("spellWill", (sc.will || []).join("\n"));
+                const headerText = (sc.headerEntries || []).map(entry => typeof entry === 'string' ? entry : JSON.stringify(entry)).join(' ');
+                const dcMatch = headerText.match(/spell save DC\s*(\d+)/i);
+                const attackMatch = headerText.match(/([+-]\d+)\s*to hit with spell attacks/i);
+                set("spellSaveDc", dcMatch?.[1] || '');
+                set("spellAttackBonus", attackMatch?.[1] || '');
+                setSpellPickerValues("spellWill", sc.will || []);
 
                 for (let i = 0; i <= 9; i++) {
                     const key = i.toString();
-                    const box = document.getElementById(`spell${key}`);
-                    if (box && sc.spells?.[key]) {
-                        box.value = (sc.spells[key].spells || []).join("\n");
-                    }
+                    if (sc.spells?.[key]) setSpellPickerValues(`spell${key}`, sc.spells[key].spells || [], sc.spells[key].slots);
                 }
             }
         }

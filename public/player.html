@@ -569,6 +569,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
   <script src="map-drawing.js"></script>
+  <script src="token-placement.js"></script>
 
   <script>
     const firebaseConfig = {
@@ -681,7 +682,7 @@
     function renderPartyTracker() {
       const body=document.getElementById('partyTableBody'); if(!body)return; body.replaceChildren();
       monsters.filter(monster=>monster.partyManaged).forEach(monster=>{
-        const row=body.insertRow(),nameCell=row.insertCell(),removeButton=document.createElement('button');removeButton.type='button';removeButton.textContent='×';removeButton.title='Remove from party';removeButton.style.cssText='margin-right:5px;padding:1px 5px;background:#c62828;color:white;';removeButton.addEventListener('click',()=>removeCreatureById(monster.id));nameCell.appendChild(removeButton);nameCell.appendChild(document.createTextNode(monster.name));
+        const row=body.insertRow(),nameCell=row.insertCell(),removeButton=document.createElement('button'),focusButton=document.createElement('button');removeButton.type='button';removeButton.textContent='×';removeButton.title='Remove from party';removeButton.style.cssText='margin-right:5px;padding:1px 5px;background:#c62828;color:white;';removeButton.addEventListener('click',()=>removeCreatureById(monster.id));focusButton.type='button';focusButton.textContent=monster.name;focusButton.title=`Center map on ${monster.name}`;focusButton.style.cssText='padding:0;border:0;background:none;color:#f4d76d;font:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(244,215,109,.45);';focusButton.addEventListener('click',()=>focusMapToken(monster.id));nameCell.append(removeButton,focusButton);
         ['init','hp','maxHp','ac'].forEach(field=>{const cell=row.insertCell(),input=document.createElement('input');input.type='number';input.value=field==='ac'?(Number(monster.ac)||10):(monster[field]??0);if(field==='ac'){input.min='1';input.max='40';input.title='Armor Class used by the DM CPU Action Advisor';input.setAttribute('aria-label',`${monster.name} Armor Class`);}input.addEventListener('change',()=>{monster[field]=Number(input.value)||(field==='ac'?10:0);if(field==='maxHp')monster.maxHp=Math.max(1,monster.maxHp);if(field==='ac')monster.ac=Math.max(1,Math.min(40,monster.ac));if(field==='hp'&&!monster.isplayer)monster.hp=Math.max(0,monster.hp);updateTokenHealthBar(monster);updateTokenDefeatedState(monster);updatePlayerTokenInitiativeLabels();syncMonsterFieldsToFirebase(monster.id,{init:monster.init,hp:monster.hp,maxHp:monster.maxHp,ac:monster.ac});});cell.appendChild(input);});
       });
     }
@@ -807,7 +808,7 @@
       }catch(error){console.error('Failed to create custom player:',error);status.textContent='Could not upload the custom player.';}
       finally{button.disabled=false;}
     }
-    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp,rawAc=Array.isArray(data.ac)?data.ac[0]:data.ac,ac=typeof rawAc==='object'?rawAc?.ac:rawAc;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,ac:Math.max(1,parseInt(ac)||10),init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;monsters.push(member);addMonsterToken(member);updatePlayerTokenInitiativeLabels();renderPartyTracker();await addMonstersToFirebase([member]);closePartyPicker();}
+    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp,rawAc=Array.isArray(data.ac)?data.ac[0]:data.ac,ac=typeof rawAc==='object'?rawAc?.ac:rawAc;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,ac:Math.max(1,parseInt(ac)||10),init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;partyTokenPlacement.enqueue(member);closePartyPicker();}
     document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
     const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
     fetch('data/api_data/monster_catalog.json').then(response=>response.json()).then(data=>{basePartyCatalog=[...playerCharacterNames.map(name=>({name,kind:'Player'})),...data.map(monster=>({name:monster.name,kind:'Monster'}))];rebuildPartyCatalog();});
@@ -1495,6 +1496,19 @@
       updateTransform();
     }
 
+    function focusMapToken(monsterId) {
+      const token = document.getElementById(`token-${monsterId}`);
+      if (!token) return;
+      const tokenRect = token.getBoundingClientRect();
+      const tokenCenterX = tokenRect.left + tokenRect.width / 2;
+      const tokenCenterY = tokenRect.top + tokenRect.height / 2;
+      zoomMapAtPoint(Math.max(scale, 1.8), tokenCenterX, tokenCenterY);
+      const viewport = mapTab.getBoundingClientRect();
+      panOffsetX += viewport.left + viewport.width / 2 - tokenCenterX;
+      panOffsetY += viewport.top + viewport.height / 2 - tokenCenterY;
+      updateTransform();
+    }
+
     function applySharedMapScale() {
       if (!mapImage.naturalWidth) return;
       document.getElementById('mapTransformLayer').style.width = `${mapImage.naturalWidth * sharedMapScale}px`;
@@ -1511,6 +1525,21 @@
       const rect = mapImage.getBoundingClientRect();
       return { x:(clientX-rect.left)*(mapImage.clientWidth/rect.width), y:(clientY-rect.top)*(mapImage.clientHeight/rect.height) };
     }
+
+    const partyTokenPlacement = setupMapTokenPlacement({
+      mapImage,
+      mapSurface: playerMapTransformLayer,
+      getTokenSrc: monster => monster.isplayer
+        ? (monster.tokenUrl || `data/player_tokens/${encodeURIComponent(monster.name)}.png`)
+        : (monster.tokenUrl || `data/monster_tokens/${encodeURIComponent(monster.name)}.webp`),
+      onPlace: async monster => {
+        monsters.push(monster);
+        addMonsterToken(monster);
+        updatePlayerTokenInitiativeLabels();
+        renderPartyTracker();
+        await addMonstersToFirebase([monster]);
+      }
+    });
 
     function isPointInsideLasso(point,polygon){let inside=false;for(let i=0,j=polygon.length-1;i<polygon.length;j=i++){const a=polygon[i],b=polygon[j];if(((a.y>point.y)!==(b.y>point.y))&&point.x<(b.x-a.x)*(point.y-a.y)/((b.y-a.y)||.00001)+a.x)inside=!inside;}return inside;}
     function renderTokenLasso(){tokenLassoPath.setAttribute('points',lassoPoints.map(point=>`${point.x},${point.y}`).join(' '));}
