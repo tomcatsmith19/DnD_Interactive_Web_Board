@@ -55,6 +55,7 @@ let appliedSurface = '';
 let lastCompletedPayload = null;
 const seenRollIds = new Set();
 const listenerStartedAt = Date.now();
+const diceClientId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 const previewStates = new Map();
 const previewSoundBuffers = new Map();
 let previewAudioContext;
@@ -168,33 +169,45 @@ async function animate(payload) {
 }
 
 function finishAnimation(payload, shared) {
-  updateLocalOutput(payload);
+  if (!shared) updateLocalOutput(payload);
   showResult(payload, shared);
-  lastCompletedPayload = JSON.parse(JSON.stringify(payload));
-  const replayButton = document.getElementById('dmReplayDiceRoll') || document.getElementById('playerReplayDiceRoll');
-  if (replayButton) replayButton.disabled = false;
-  const applyButton = document.getElementById('dmApplyDiceAppearance') || document.getElementById('playerApplyDiceAppearance');
-  if (applyButton) applyButton.disabled = !payload.appearanceSelection;
+  if (!shared) {
+    lastCompletedPayload = JSON.parse(JSON.stringify(payload));
+    const replayButton = document.getElementById('dmReplayDiceRoll') || document.getElementById('playerReplayDiceRoll');
+    if (replayButton) replayButton.disabled = false;
+    const applyButton = document.getElementById('dmApplyDiceAppearance') || document.getElementById('playerApplyDiceAppearance');
+    if (applyButton) applyButton.disabled = !payload.appearanceSelection;
+  }
   clearTimer = setTimeout(() => { diceBox?.clearDice(); stage.classList.remove('is-rolling'); }, 3000);
 }
 
-function reportFailure(payload, error) {
+function reportFailure(payload, error, shared = false) {
   stage.classList.remove('is-rolling');
-  const output = document.getElementById(`${payload.sourcePrefix}DiceResult`);
-  if (output) output.textContent = 'The 3D dice could not be rolled. Please try again.';
+  if (!shared) {
+    const output = document.getElementById(`${payload.sourcePrefix}DiceResult`);
+    if (output) output.textContent = 'The 3D dice could not be rolled. Please try again.';
+  }
   console.error('3D dice roll failed:', error);
+}
+
+function canReceiveSharedRoll() {
+  return document.visibilityState === 'visible' && document.hasFocus();
 }
 
 function runAnimation(payload, shared) {
   activeRoll = activeRoll.catch(() => {}).then(async () => {
+    if (shared && !canReceiveSharedRoll()) return;
     try { await animate(payload); finishAnimation(payload, shared); }
-    catch (error) { reportFailure(payload, error); }
+    catch (error) { reportFailure(payload, error, shared); }
   });
   return activeRoll;
 }
 
-function scheduleSharedRoll(payload) {
-  setTimeout(() => runAnimation(payload, true), Math.max(0, Number(payload.startAt) - Date.now()));
+function scheduleSharedRoll(payload, shared = true) {
+  if (!canReceiveSharedRoll()) return;
+  setTimeout(() => {
+    if (canReceiveSharedRoll()) runAnimation(payload, shared);
+  }, Math.max(0, Number(payload.startAt) - Date.now()));
 }
 
 const sharedRollRef = window.firebase?.firestore?.().collection('shared').doc('diceRoll');
@@ -204,7 +217,8 @@ if (sharedRollRef) {
     const payload = snapshot.data() || {};
     if (!payload.id || seenRollIds.has(payload.id) || Number(payload.createdAt) < listenerStartedAt - 1000) return;
     seenRollIds.add(payload.id);
-    scheduleSharedRoll(payload);
+    if (!canReceiveSharedRoll()) return;
+    scheduleSharedRoll(payload, payload.senderClientId !== diceClientId);
   }, error => console.error('Could not receive shared dice rolls:', error));
 }
 
@@ -411,6 +425,7 @@ window.diceRoller3d = {
     replay.createdAt = Date.now();
     replay.startAt = Date.now() + SHARED_START_DELAY;
     replay.sourcePrefix = prefix;
+    replay.senderClientId = diceClientId;
     if (output) output.textContent = 'Replaying shared roll…';
     try { await sharedRollRef.set(replay); }
     catch (error) { reportFailure(replay, error); }
@@ -419,6 +434,7 @@ window.diceRoller3d = {
     const payload = completeRequest(request);
     if (share && sharedRollRef) {
       payload.startAt = Date.now() + SHARED_START_DELAY;
+      payload.senderClientId = diceClientId;
       try { await sharedRollRef.set(payload); }
       catch (error) { reportFailure(payload, error); }
       return;
