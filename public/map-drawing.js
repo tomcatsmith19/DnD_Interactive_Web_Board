@@ -150,7 +150,16 @@
       .drawing-toolbar.is-compact .drawing-collapse-toggle svg { width: 64px; height: 16px; }
       .drawing-toolbar.is-compact.is-collapsed { height: 0; min-height: 0; padding: 0; border: 0; box-shadow: none; }
       .drawing-toolbar.is-compact.is-collapsed { top: 0 !important; }
-      .drawing-toolbar.is-compact.is-collapsed .drawing-collapse-toggle { top: 0; bottom: auto; }
+      .drawing-toolbar.is-compact.is-collapsed .drawing-collapse-toggle { top: -1px; bottom: auto; }
+
+      .map-tool-tabs { position: fixed; left: 50%; top: 0; transform: translateX(-50%); z-index: 1100; display: flex; flex-direction: column; align-items: center; }
+      .map-tool-tab-buttons { display: flex; justify-content: center; align-items: flex-start; gap: 4px; }
+      .map-tool-tab-buttons button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 104px; height: 27px; padding: 3px 10px; border: 1px solid #d4af37; border-top: 0; border-radius: 0 0 7px 7px; background: linear-gradient(#4b2915, #1d1009); color: #f4d76d; font-family: 'MedievalSharp', cursive; cursor: pointer; }
+      .map-tool-tab-buttons button svg { width: 48px; height: 18px; }
+      .map-tool-tab-buttons button.is-active { background: #f4d76d; color: #1d1009; }
+      .drawing-toolbar.is-tabbed { position: relative; left: auto !important; top: auto !important; transform: none; }
+      .drawing-toolbar.is-tabbed.is-collapsed { top: auto !important; }
+      .drawing-toolbar.is-tabbed .drawing-collapse-toggle { display: none !important; }
 
       .map-drawing-overlay,
       .map-drawing-preview {
@@ -180,9 +189,12 @@
       throw new Error("setupSharedMapDrawing requires db, mapImage, mapTransformLayer, and tokenLayer.");
     }
 
-    const drawingsRef = db.collection("shared").doc("drawings");
+    const drawingsRef = db.collection("shared").doc(options.documentId || "drawings");
     const drawings = [];
     const activeButtons = new Map();
+    const isFogLayer = options.layerType === "fog";
+    const isEditable = options.editable !== false;
+    const layerKey = isFogLayer ? "fogOfWar" : "mapDrawing";
 
     let currentTool = "pan";
     let currentColor = "#ff5252";
@@ -192,22 +204,23 @@
     let triangleClickStage = 0;
 
     const drawingLayer = createSvgElement("svg", {
-      id: "mapDrawingLayer",
+      id: `${layerKey}Layer`,
       class: "map-drawing-overlay",
       "aria-hidden": "true"
     });
     drawingLayer.style.pointerEvents = "none";
-    drawingLayer.style.zIndex = "2";
+    drawingLayer.style.zIndex = isFogLayer ? "20" : "2";
 
     const previewLayer = createSvgElement("svg", {
-      id: "mapDrawingPreviewLayer",
+      id: `${layerKey}PreviewLayer`,
       class: "map-drawing-preview"
     });
     previewLayer.style.pointerEvents = "none";
     previewLayer.style.touchAction = "none";
-    previewLayer.style.zIndex = "4";
+    previewLayer.style.zIndex = isFogLayer ? "21" : "4";
 
-    mapTransformLayer.insertBefore(drawingLayer, tokenLayer);
+    if (isFogLayer) mapTransformLayer.appendChild(drawingLayer);
+    else mapTransformLayer.insertBefore(drawingLayer, tokenLayer);
     mapTransformLayer.appendChild(previewLayer);
 
     const toolbar = document.createElement("div");
@@ -235,14 +248,18 @@
 
     const toolLabel = document.createElement("span");
     toolLabel.className = "drawing-toolbar-label";
-    toolLabel.textContent = "Draw";
+    toolLabel.textContent = isFogLayer ? "Fog" : "Draw";
     toolbar.appendChild(toolLabel);
 
     function addToolButton(label, tool) {
       const button = document.createElement("button");
       button.type = "button";
       const compactIcons = { pan: "✥", pen: "✎", rectangle: "▭", circle: "○", triangle: "△", line: "╱" };
-      if (options.compact && tool === "eraser") {
+      if (options.compact && tool === "lasso-fill") {
+        button.innerHTML = '<svg viewBox="0 0 28 24" aria-hidden="true"><path d="M3 9c1-5 8-7 14-6 4 .5 5 2 6 4 .5 1.5 3 1 2.5 4.5-.5 3-4 6-9 7-6 1-11-1-11-5 0-2 1-3 3-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16.5" cy="18.5" r="2" fill="#1d1009" stroke="currentColor" stroke-width="1.5"/><path d="m20 14 5-5 2 2-5 5-3 .8 1-2.8Z" fill="currentColor"/><path d="M16 21c-1 0-3 1-4 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+      } else if (options.compact && tool === "lasso-erase") {
+        button.innerHTML = '<svg viewBox="0 0 28 24" aria-hidden="true"><path d="M3 9c1-5 8-7 14-6 4 .5 5 2 6 4 .5 1.5 3 1 2.5 4.5-.5 3-4 6-9 7-6 1-11-1-11-5 0-2 1-3 3-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16.5" cy="18.5" r="2" fill="#1d1009" stroke="currentColor" stroke-width="1.5"/><path d="m11 9 4-4 5 5-4 4h-3l-3-3 1-2Z" fill="currentColor"/><path d="M16 21c-1 0-3 1-4 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+      } else if (options.compact && tool === "eraser") {
         button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.24 3.56 21 8.32a2 2 0 0 1 0 2.83l-8.49 8.49a2 2 0 0 1-2.83 0L3 12.96a2 2 0 0 1 0-2.83l8.49-8.49a2 2 0 0 1 2.83 0l1.92 1.92ZM5.12 11.55l5.97 5.97 6.79-6.79-5.97-5.97-6.79 6.79ZM13.93 19H21v2h-9.07l2-2Z"/></svg>';
       } else button.textContent = options.compact ? compactIcons[tool] : label;
       button.title = label;
@@ -257,11 +274,14 @@
     addToolButton("Circle", "circle");
     addToolButton("Triangle", "triangle");
     addToolButton("Line", "line");
+    addToolButton("Lasso Fill", "lasso-fill");
+    addToolButton("Lasso Erase", "lasso-erase");
     addToolButton("Eraser", "eraser");
 
     const colorLabel = document.createElement("span");
     colorLabel.className = "drawing-toolbar-label";
     colorLabel.textContent = "Color";
+    if (isFogLayer) colorLabel.style.display = "none";
     toolbar.appendChild(colorLabel);
 
     const colorInput = document.createElement("input");
@@ -271,14 +291,15 @@
     colorInput.addEventListener("input", () => {
       currentColor = colorInput.value;
     });
+    if (isFogLayer) colorInput.style.display = "none";
     toolbar.appendChild(colorInput);
 
     const clearButton = document.createElement("button");
     clearButton.type = "button";
     clearButton.className = "drawing-toolbar-danger";
-    clearButton.textContent = "Erase All";
+    clearButton.textContent = isFogLayer ? "Clear Fog" : "Erase All";
     clearButton.addEventListener("click", () => {
-      if (!confirm("Erase all shared drawings?")) {
+      if (!confirm(isFogLayer ? "Clear all fog of war?" : "Erase all shared drawings?")) {
         return;
       }
 
@@ -291,6 +312,7 @@
     });
     toolbar.appendChild(clearButton);
 
+    if (options.showToolbar === false) toolbar.style.display = "none";
     document.body.appendChild(toolbar);
 
     function getMapSize() {
@@ -370,9 +392,10 @@
     function createShapeElement(drawing, isPreview) {
       const { width, height } = getMapSize();
       const strokeWidth = getStrokePixels(drawing);
+      const fogPaint = options.fogAppearance === "player" ? "url(#fogTexturePattern)" : "rgba(74, 79, 84, 0.52)";
       const sharedAttributes = {
-        fill: "none",
-        stroke: drawing.color || currentColor,
+        fill: isFogLayer ? fogPaint : "none",
+        stroke: isFogLayer ? fogPaint : (drawing.color || currentColor),
         "stroke-width": String(strokeWidth),
         "stroke-linecap": "round",
         "stroke-linejoin": "round"
@@ -402,6 +425,19 @@
         return createSvgElement("polyline", {
           ...sharedAttributes,
           points
+        });
+      }
+
+      if (drawing.type === "lasso-fill" || drawing.type === "lasso-erase") {
+        const points = (drawing.points || [])
+          .map(point => `${roundPixels(point.x * width)},${roundPixels(point.y * height)}`)
+          .join(" ");
+        return createSvgElement("polygon", {
+          ...sharedAttributes,
+          points,
+          fill: drawing.type === "lasso-erase" ? "rgba(255, 82, 82, 0.24)" : (isFogLayer ? fogPaint : (drawing.color || currentColor)),
+          stroke: drawing.type === "lasso-erase" ? "#ff5252" : (isFogLayer ? fogPaint : (drawing.color || currentColor)),
+          "fill-opacity": isPreview ? "0.38" : "1"
         });
       }
 
@@ -463,13 +499,43 @@
       return null;
     }
 
+    function createFogDefinitions() {
+      const definitions = createSvgElement("defs");
+      const pattern = createSvgElement("pattern", { id: "fogTexturePattern", width: "1024", height: "1024", patternUnits: "userSpaceOnUse" });
+      const textureAttributes = { href: "assets/fog-of-war-texture.png", width: "512", height: "512", preserveAspectRatio: "none" };
+      pattern.appendChild(createSvgElement("image", { ...textureAttributes, x: "0", y: "0" }));
+      pattern.appendChild(createSvgElement("image", { ...textureAttributes, x: "-1024", y: "0", transform: "scale(-1 1)" }));
+      pattern.appendChild(createSvgElement("image", { ...textureAttributes, x: "0", y: "-1024", transform: "scale(1 -1)" }));
+      pattern.appendChild(createSvgElement("image", { ...textureAttributes, x: "-1024", y: "-1024", transform: "scale(-1 -1)" }));
+      definitions.appendChild(pattern);
+      return definitions;
+    }
+
     function renderDrawings() {
       drawingLayer.innerHTML = "";
+      const { width, height } = getMapSize();
+      const definitions = isFogLayer ? createFogDefinitions() : (drawings.some(drawing => drawing.type === "lasso-erase") ? createSvgElement("defs") : null);
+      if (definitions) drawingLayer.appendChild(definitions);
 
-      drawings.forEach(drawing => {
+      drawings.forEach((drawing, drawingIndex) => {
+        if (drawing.type === "lasso-erase") return;
         const shape = createShapeElement(drawing, false);
         if (!shape) {
           return;
+        }
+
+        const laterErasers = drawings.slice(drawingIndex + 1)
+          .filter(item => item.type === "lasso-erase" && (item.points || []).length >= 3);
+        if (laterErasers.length && definitions) {
+          const maskId = `${layerKey}-erase-mask-${drawingIndex}`;
+          const mask = createSvgElement("mask", { id: maskId, maskUnits: "userSpaceOnUse", x: "0", y: "0", width: String(width), height: String(height) });
+          mask.appendChild(createSvgElement("rect", { x: "0", y: "0", width: String(width), height: String(height), fill: "white" }));
+          laterErasers.forEach(eraser => mask.appendChild(createSvgElement("polygon", {
+            points: eraser.points.map(point => `${roundPixels(point.x * width)},${roundPixels(point.y * height)}`).join(" "),
+            fill: "black"
+          })));
+          definitions.appendChild(mask);
+          shape.setAttribute("mask", `url(#${maskId})`);
         }
 
         shape.dataset.drawingId = drawing.id;
@@ -486,6 +552,7 @@
 
       const shape = createShapeElement(currentDraft, true);
       if (shape) {
+        if (isFogLayer) previewLayer.appendChild(createFogDefinitions());
         previewLayer.appendChild(shape);
       }
     }
@@ -501,6 +568,7 @@
     }
 
     function setTool(tool) {
+      if (!isEditable && tool !== "pan") return;
       if (tool !== currentTool) {
         currentDraft = null;
         triangleClickStage = 0;
@@ -551,7 +619,7 @@
         strokeRatio: drawing.strokeRatio
       };
 
-      if (drawing.type === "pen") {
+      if (drawing.type === "pen" || drawing.type === "lasso-fill" || drawing.type === "lasso-erase") {
         sanitized.points = (drawing.points || []).map(point => ({
           x: roundRatio(point.x),
           y: roundRatio(point.y)
@@ -583,6 +651,18 @@
 
       if (drawing.type === "pen") {
         return (drawing.points || []).length > 1;
+      }
+
+      if (drawing.type === "lasso-fill" || drawing.type === "lasso-erase") {
+        if ((drawing.points || []).length < 3) return false;
+        const pixels = drawing.points.map(ratioPointToPixels);
+        const bounds = pixels.reduce((result, point) => ({
+          left: Math.min(result.left, point.x),
+          right: Math.max(result.right, point.x),
+          top: Math.min(result.top, point.y),
+          bottom: Math.max(result.bottom, point.y)
+        }), { left: Infinity, right: -Infinity, top: Infinity, bottom: -Infinity });
+        return bounds.right - bounds.left > 6 && bounds.bottom - bounds.top > 6;
       }
 
       if (drawing.type === "triangle") {
@@ -654,6 +734,18 @@
               return drawing;
             }
           }
+          continue;
+        }
+
+        if (drawing.type === "lasso-fill") {
+          const vertices = (drawing.points || []).map(ratioPointToPixels);
+          if (vertices.length >= 3 && isPointInPolygon(point, vertices)) {
+            return drawing;
+          }
+          continue;
+        }
+
+        if (drawing.type === "lasso-erase") {
           continue;
         }
 
@@ -752,10 +844,10 @@
           currentDraft.widthPoint = point;
           triangleClickStage = 3;
         }
-      } else if (currentTool === "pen") {
+      } else if (currentTool === "pen" || currentTool === "lasso-fill" || currentTool === "lasso-erase") {
         currentDraft = {
           id: generateDrawingId(),
-          type: "pen",
+          type: currentTool,
           color: currentColor,
           strokeRatio: roundRatio(4 / Math.max(1, Math.min(getMapSize().width, getMapSize().height))),
           points: [point]
@@ -799,7 +891,7 @@
 
       if (currentDraft.type === "triangle") {
         if (triangleClickStage === 1) currentDraft.end = point;
-      } else if (currentDraft.type === "pen") {
+      } else if (currentDraft.type === "pen" || currentDraft.type === "lasso-fill" || currentDraft.type === "lasso-erase") {
         const lastPoint = currentDraft.points[currentDraft.points.length - 1];
         if (!lastPoint || Math.abs(lastPoint.x - point.x) >= 0.002 || Math.abs(lastPoint.y - point.y) >= 0.002) {
           currentDraft.points.push(point);
@@ -886,5 +978,67 @@
     };
   }
 
+  function setupMapDrawingTabs(drawingManager, fogManager) {
+    const shell = document.createElement("div");
+    shell.className = "map-tool-tabs";
+    const buttons = document.createElement("div");
+    buttons.className = "map-tool-tab-buttons";
+    const panes = document.createElement("div");
+    shell.append(panes, buttons);
+
+    const tabs = [
+      {
+        label: "Drawing",
+        title: "Drawing tools",
+        icon: '<svg viewBox="0 0 80 20" aria-hidden="true"><path d="M3 14c8-8 14 7 22-1s14 6 23-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m55 14 13-12 7 7-13 12-8 1 1-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m66 4 7 7" stroke="currentColor" stroke-width="2"/></svg>',
+        manager: drawingManager
+      },
+      {
+        label: "Fog of War",
+        title: "Fog of war tools",
+        icon: '<svg viewBox="0 0 58 22" aria-hidden="true"><path d="M8 18h17a6 6 0 0 0 0-12 8 8 0 0 0-14-2A7 7 0 0 0 8 18Z" fill="currentColor" opacity=".52"/><path d="M23 19h19a6 6 0 0 0 1-12 8 8 0 0 0-15-2 7 7 0 0 0-5 14Z" fill="currentColor" opacity=".72"/><path d="M13 20h30a5 5 0 0 0 1-10 7 7 0 0 0-13-2 6 6 0 0 0-10 3 5 5 0 0 0-8 4 5 5 0 0 0 0 5Z" fill="currentColor"/></svg>',
+        manager: fogManager
+      }
+    ];
+    let activeManager = null;
+
+    tabs.forEach(tab => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.innerHTML = tab.icon;
+      button.title = tab.title;
+      button.setAttribute("aria-label", tab.label);
+      button.setAttribute("aria-expanded", "false");
+      tab.manager.toolbar.classList.add("is-tabbed");
+      tab.manager.toolbar.classList.remove("is-collapsed");
+      tab.manager.toolbar.style.display = "none";
+      panes.appendChild(tab.manager.toolbar);
+      button.addEventListener("click", () => {
+        const shouldClose = activeManager === tab.manager;
+        if (activeManager) activeManager.setTool("pan");
+        activeManager = shouldClose ? null : tab.manager;
+        tabs.forEach(item => { item.manager.toolbar.style.display = item.manager === activeManager ? "flex" : "none"; });
+        Array.from(buttons.children).forEach(item => {
+          const isActive = item === button && !shouldClose;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-expanded", String(isActive));
+        });
+      });
+      buttons.appendChild(button);
+    });
+
+    document.body.appendChild(shell);
+    return {
+      toolbar: shell,
+      setVisible(isVisible) { shell.style.display = isVisible ? "block" : "none"; },
+      setTool(tool) {
+        if (tool === "pan") tabs.forEach(tab => tab.manager.setTool("pan"));
+        else activeManager.setTool(tool);
+      },
+      updateSize() { tabs.forEach(tab => tab.manager.updateSize()); }
+    };
+  }
+
   window.setupSharedMapDrawing = setupSharedMapDrawing;
+  window.setupMapDrawingTabs = setupMapDrawingTabs;
 })();

@@ -1834,6 +1834,17 @@
         left: '25px'
       }
     });
+    setupSharedMapDrawing({
+      db,
+      mapImage,
+      documentId: 'fogOfWar',
+      layerType: 'fog',
+      fogAppearance: 'player',
+      editable: false,
+      showToolbar: false,
+      mapTransformLayer: document.getElementById('mapTransformLayer'),
+      tokenLayer: document.getElementById('mapTokenLayer')
+    });
     let drawingToolbarHidden = false;
     document.getElementById('toggleDrawingToolbar')?.addEventListener('click', event => {
       drawingToolbarHidden = !drawingToolbarHidden;

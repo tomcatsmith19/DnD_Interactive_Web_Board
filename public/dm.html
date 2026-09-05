@@ -6007,7 +6007,7 @@
         initializeStaticMapOptions();
 
         const mapRef = db.collection("shared").doc("map");
-        drawingToolbarManager = setupSharedMapDrawing({
+        const sharedDrawingManager = setupSharedMapDrawing({
             db,
             mapImage,
             compact: true,
@@ -6019,6 +6019,22 @@
                 left: '25px'
             }
         });
+        const fogToolbarManager = setupSharedMapDrawing({
+            db,
+            mapImage,
+            documentId: 'fogOfWar',
+            layerType: 'fog',
+            fogAppearance: 'dm',
+            compact: true,
+            startCollapsed: true,
+            mapTransformLayer: document.getElementById('mapTransformLayer'),
+            tokenLayer: document.getElementById('mapTokenLayer'),
+            toolbarPosition: {
+                top: '130px',
+                left: '25px'
+            }
+        });
+        drawingToolbarManager = setupMapDrawingTabs(sharedDrawingManager, fogToolbarManager);
         syncDrawingToolbarVisibility();
 
         customMonstersRef.onSnapshot(snapshot => {
