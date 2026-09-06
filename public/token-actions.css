@@ -1,0 +1,39 @@
+.map-action-panel { top:10px; width:610px; max-width:calc(100vw - 40px); max-height:calc(100dvh - 20px); overflow-y:auto; overscroll-behavior:contain; box-sizing:border-box; }
+.map-action-panel .map-health-actions { display:grid; grid-template-columns:1fr 80px 1fr; gap:8px; }
+.map-action-panel .map-action-close { width:34px; height:34px; padding:0; font-size:26px; line-height:32px; }
+.map-action-panel .map-health-actions input { text-align:center; }
+.map-action-panel .map-remove { background:#b82e35; color:#fff; }
+.map-action-panel .map-damage { background:#351416; color:#ff777f; border:1px solid #ff777f; }
+.map-action-panel .map-heal { background:#132d1b; color:#72df91; border:1px solid #72df91; }
+.map-action-panel h4 { margin:16px 0 8px; color:#f4d76d; }
+.map-conditions-grid { display:flex; flex-direction:column; gap:10px; }
+.condition-folder { border:1px solid #765133; border-radius:6px; background:#21170f; }
+.condition-folder-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:12px 9px; }
+.map-condition { display:flex; align-items:center; gap:6px; min-width:0; font-size:13px; }
+.map-action-panel .map-condition .condition-toggle { appearance:none; -webkit-appearance:none; position:relative; width:32px; height:18px; padding:0; margin:0; flex:none; border:1px solid #8a8177; border-radius:999px; background:#51473e; cursor:pointer; }
+.map-action-panel .condition-toggle::after { content:''; position:absolute; top:2px; left:2px; width:12px; height:12px; border-radius:50%; background:white; transition:transform .15s ease; }
+.map-action-panel .condition-toggle:checked { background:#4fc3ff; border-color:#8adaff; }
+.map-action-panel .condition-toggle:checked::after { transform:translateX(14px); }
+.map-action-panel .condition-toggle:indeterminate { background:#9b7326; border-color:#f4d76d; }
+.map-action-panel .condition-toggle:indeterminate::after { transform:translateX(7px); }
+.map-action-panel .condition-toggle:disabled { opacity:.5; cursor:default; }
+@media (prefers-reduced-motion:reduce) { .map-action-panel .condition-toggle::after { transition:none; } }
+.map-condition label { cursor:help; min-width:0; overflow-wrap:anywhere; }
+.map-condition .condition-icon { width:22px; height:22px; object-fit:contain; flex:none; }
+.condition-tooltip { display:none; position:absolute; left:10px; right:10px; bottom:8px; padding:12px; background:#101923; color:#fff; border:1px solid #4fc3ff; border-radius:6px; box-shadow:0 4px 18px #000; font-size:13px; line-height:1.5; z-index:2; pointer-events:none; }
+.map-condition label:hover .condition-tooltip, .map-condition label:focus .condition-tooltip, .map-condition input:focus-visible ~ label .condition-tooltip { display:block; }
+.map-exhaustion { grid-column:1 / -1; }
+.map-action-panel .map-exhaustion input[type="number"] { width:64px; margin:0; padding:5px; }
+.map-action-panel button:hover { filter:brightness(1.15); }
+.map-action-panel :focus-visible { outline:2px solid #4fc3ff; outline-offset:2px; }
+
+.condition-category { padding:10px; color:#f4d76d; font-size:14px; font-weight:bold; cursor:pointer; user-select:none; }
+.condition-folder[open] > .condition-category { border-bottom:1px solid #765133; }
+.condition-category:hover { background:#342416; }
+.condition-category::marker { color:#f4d76d; }
+.token-condition-ring { position:absolute; inset:0; pointer-events:none; overflow:visible; }
+.token-condition-badge { position:absolute; transform:translate(-50%,-50%); display:flex; align-items:center; justify-content:center; border:1px solid #f4d76d; border-radius:50%; background:#191919; color:white; font: bold 9px sans-serif; pointer-events:auto; z-index:12; }
+.token-condition-badge img { width:100%; height:100%; object-fit:contain; border-radius:50%; }
+.token-condition-badge small { position:absolute; bottom:-3px; right:-3px; border-radius:50%; background:#111; color:white; padding:1px 3px; font: bold 9px sans-serif; }
+
+.condition-icon-fallback { display:inline-flex; align-items:center; justify-content:center; border:1px solid #f4d76d; border-radius:50%; background:#191919; color:white; font: bold 9px sans-serif; box-sizing:border-box; }

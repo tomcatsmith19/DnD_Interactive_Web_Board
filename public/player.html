@@ -263,6 +263,7 @@
       margin-bottom: 10px;
     }
   </style>
+<link rel="stylesheet" href="token-actions.css">
 </head>
 
 <body>
@@ -282,10 +283,14 @@
       <button class="map-action-close" type="button" onclick="clearMapTokenSelection()" aria-label="Close">×</button>
       <h3>Token Actions</h3>
       <div id="mapActionTargets">No tokens selected</div>
-      <select id="mapActionType" onchange="updateMapActionFields()"><option value="damage">Damage</option><option value="heal">Heal</option><option value="apply">Apply Condition</option><option value="remove">Remove Condition</option><option value="removeCreature">Remove Creature</option></select>
-      <div id="mapActionAmountGroup"><input id="mapActionAmount" type="number" min="0" value="0" placeholder="Amount"></div>
-      <div id="mapActionConditionGroup" style="display:none;"><select id="mapActionCondition"><option>Blinded</option><option>Charmed</option><option>Deafened</option><option>Frightened</option><option>Grappled</option><option>Incapacitated</option><option>Invisible</option><option>Paralyzed</option><option>Petrified</option><option>Poisoned</option><option>Prone</option><option>Restrained</option><option>Stunned</option><option>Unconscious</option><option>Exhaustion</option><option>Hexed</option><option>Blessed</option><option>Baned</option><option>mark1</option><option>mark2</option><option>mark3</option></select></div>
-      <button type="button" onclick="applyMapTokenAction()">Apply to Selected</button>
+      <div class="map-health-actions">
+        <button type="button" class="map-damage" onclick="applyMapTokenAction('damage')">Damage</button>
+        <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
+        <button type="button" class="map-heal" onclick="applyMapTokenAction('heal')">Heal</button>
+      </div>
+      <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')">Remove Creature</button>
+      <h4 id="mapConditionsHeading">Conditions</h4>
+      <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-labelledby="mapConditionsHeading"></div>
     </div>
 
     <!-- Token Size Controls -->
@@ -571,6 +576,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
   <script src="map-drawing.js"></script>
   <script src="token-placement.js"></script>
+    <script src="token-actions.js"></script>
 
   <script>
     const firebaseConfig = {
@@ -809,7 +815,7 @@
       }catch(error){console.error('Failed to create custom player:',error);status.textContent='Could not upload the custom player.';}
       finally{button.disabled=false;}
     }
-    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp,rawAc=Array.isArray(data.ac)?data.ac[0]:data.ac,ac=typeof rawAc==='object'?rawAc?.ac:rawAc;member={id:generateID(),name:data.name,hp:Number(hp)||1,maxHp:Number(hp)||1,ac:Math.max(1,parseInt(ac)||10),init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;partyTokenPlacement.enqueue(member);closePartyPicker();}
+    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp,rawAc=Array.isArray(data.ac)?data.ac[0]:data.ac,ac=typeof rawAc==='object'?rawAc?.ac:rawAc;member={id:generateID(),name:data.name,size:data.size||'M',hp:Number(hp)||1,maxHp:Number(hp)||1,ac:Math.max(1,parseInt(ac)||10),init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;partyTokenPlacement.enqueue(member);closePartyPicker();}
     document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
     const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
     fetch('data/api_data/monster_catalog.json').then(response=>response.json()).then(data=>{basePartyCatalog=[...playerCharacterNames.map(name=>({name,kind:'Player'})),...data.map(monster=>({name:monster.name,kind:'Monster'}))];rebuildPartyCatalog();});
@@ -838,14 +844,15 @@
       if (!token) return;
       token.classList.toggle('is-defeated', Boolean(monster.isplayer && monster.hp <= 0));
       const defeatedX = token.querySelector('.defeated-token-x');
-      if (defeatedX) defeatedX.style.fontSize = `${currentTokenSize * .82}px`;
+      if (defeatedX) defeatedX.style.fontSize = `${TokenActions.tokenSize(monster, currentTokenSize) * .82}px`;
     }
 
     function refreshMapTokenSelection() {
       document.querySelectorAll('.monster-token').forEach(token => token.classList.toggle('is-selected', selectedMapTokenIds.has(token.id.replace('token-',''))));
       const selected = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
       document.getElementById('mapActionTargets').textContent = selected.length === 1 ? selected[0].name : `${selected.length} tokens selected`;
-      if (!selected.length) document.getElementById('mapActionPanel').classList.remove('is-open');
+      TokenActions.refresh(selected);
+            if (!selected.length) document.getElementById('mapActionPanel').classList.remove('is-open');
       renderGroupMoveHandle(selected);
     }
 
@@ -890,13 +897,6 @@
     }
 
     function clearMapTokenSelection() { selectedMapTokenIds.clear(); refreshMapTokenSelection(); }
-    function updateMapActionFields() {
-      const action=document.getElementById('mapActionType').value;
-      const usesAmount = ['damage','heal'].includes(action);
-      document.getElementById('mapActionAmountGroup').style.display = usesAmount ? 'block' : 'none';
-      document.getElementById('mapActionConditionGroup').style.display = ['apply','remove'].includes(action) ? 'block' : 'none';
-    }
-
     function removeCreatureById(monsterId,sync=true){const index=monsters.findIndex(monster=>monster.id===monsterId);if(index>=0)monsters.splice(index,1);selectedMapTokenIds.delete(monsterId);document.getElementById(`token-${monsterId}`)?.remove();updatePlayerTokenInitiativeLabels();renderPartyTracker();refreshMapTokenSelection();if(sync)removeMonstersFromFirebase([monsterId]);}
 
     const deathEffectRef = db.collection('shared').doc('deathEffect');
@@ -946,21 +946,20 @@
       document.getElementById(`token-${monsterId}`)?.remove();
     }
 
-    function applyMapTokenAction() {
-      const action = document.getElementById('mapActionType').value;
-      const amount = Math.max(0, Number(document.getElementById('mapActionAmount').value) || 0);
-      const condition = document.getElementById('mapActionCondition').value;
+    function applyMapTokenAction(action, condition = "", level = 0) {
+      const amount = Math.max(0, Math.trunc(Number(document.getElementById('mapActionAmount').value) || 0));
       const targets = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
       targets.forEach(monster => {
         const previousHp = monster.hp;
+                monster.conditions = TokenActions.normalizeConditions(monster.conditions);
+                if (action === 'exhaustion') monster.conditions = TokenActions.withExhaustion(monster.conditions, level);
         if (action === 'heal') { monster.hp = Math.min(monster.maxHp, monster.hp + amount); flashToken(monster.id,'heal'); }
         else if (action === 'damage') { monster.hp = monster.isplayer ? monster.hp-amount : Math.max(0,monster.hp-amount); flashToken(monster.id,'damage'); if (previousHp > 0 && monster.hp <= 0) { showTokenDeathEffect(monster.id); removeDefeatedMonster(monster.id); } }
         else if (action === 'apply' && !monster.conditions.some(item => item.toLowerCase() === condition.toLowerCase())) monster.conditions.push(condition);
         else if (action === 'remove') monster.conditions = monster.conditions.filter(item => item.toLowerCase() !== condition.toLowerCase());
         else if (action === 'removeCreature') removeCreatureById(monster.id,false);
         updateTokenHealthBar(monster); updateTokenDefeatedState(monster);
-        const conditionLabel = document.querySelector(`#token-${CSS.escape(monster.id)} .condition-label`);
-        if (conditionLabel) conditionLabel.textContent = monster.conditions.join(', ');
+        TokenActions.renderTokenConditions(monster, document.getElementById(`token-${monster.id}`), currentTokenSize);
         if (monster.id === currentPlayerId) document.getElementById('currentHP').value = monster.hp;
       });
       refreshMapTokenSelection();
@@ -972,23 +971,19 @@
     function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`)) {
       if (!element || !mapImage?.clientWidth || !mapImage?.clientHeight) return;
 
-      element.style.left = `${monster.xRatio * mapImage.clientWidth - currentTokenSize / 2}px`;
-      element.style.top = `${monster.yRatio * mapImage.clientHeight - currentTokenSize / 2}px`;
-      element.style.width = `${currentTokenSize}px`;
-      element.style.height = `${currentTokenSize}px`;
+      element.style.left = `${monster.xRatio * mapImage.clientWidth - TokenActions.tokenSize(monster, currentTokenSize) / 2}px`;
+      element.style.top = `${monster.yRatio * mapImage.clientHeight - TokenActions.tokenSize(monster, currentTokenSize) / 2}px`;
+      element.style.width = `${TokenActions.tokenSize(monster, currentTokenSize)}px`;
+      element.style.height = `${TokenActions.tokenSize(monster, currentTokenSize)}px`;
 
       const label = element.querySelector('.token-label');
       if (label) {
         label.style.fontSize = `${currentTokenSize / 5}px`;
       }
-
-      const conditionLabel = element.querySelector('.condition-label');
-      if (conditionLabel) {
-        conditionLabel.style.fontSize = `${currentTokenSize / 5}px`;
-      }
+      TokenActions.renderTokenConditions(monster, element, currentTokenSize);
       element.classList.toggle('is-defeated', Boolean(monster.isplayer && monster.hp <= 0));
       const defeatedX = element.querySelector('.defeated-token-x');
-      if (defeatedX) defeatedX.style.fontSize = `${currentTokenSize * 0.82}px`;
+      if (defeatedX) defeatedX.style.fontSize = `${TokenActions.tokenSize(monster, currentTokenSize) * 0.82}px`;
       updateTokenHealthBar(monster);
     }
 
@@ -1012,6 +1007,7 @@
 
 
     function addMonsterToken(monster) {
+      TokenActions.resolveSize(monster, () => { const current = monsters.find(item => item.id === monster.id); if (current) positionTokenElement(current); });
       const container = document.createElement('div');
       container.id = `token-${monster.id}`;
       container.className = 'monster-token';
@@ -1051,20 +1047,6 @@
       label.style.pointerEvents = 'none';
       label.textContent = '?';
 
-      const conditionLabel = document.createElement('div');
-      conditionLabel.className = 'condition-label';
-      conditionLabel.style.position = 'absolute';
-      conditionLabel.style.bottom = '-30px';
-      conditionLabel.style.left = '50%';
-      conditionLabel.style.transform = 'translateX(-50%)';
-      conditionLabel.style.fontSize = `${currentTokenSize / 5}px`;
-      conditionLabel.style.backgroundColor = 'rgba(0,0,0,0.7)';
-      conditionLabel.style.color = 'white';
-      conditionLabel.style.padding = '2px 4px';
-      conditionLabel.style.borderRadius = '4px';
-      conditionLabel.style.pointerEvents = 'none';
-      conditionLabel.textContent = (monster.conditions || []).join(', ');
-
       const healthBar = document.createElement('div');
       healthBar.className = 'token-health-bar';
       const healthFill = document.createElement('div');
@@ -1082,7 +1064,7 @@
       container.appendChild(label);
       container.appendChild(healthBar);
       container.appendChild(defeatedX);
-      container.appendChild(conditionLabel);
+      TokenActions.renderTokenConditions(monster, container, currentTokenSize);
       container.addEventListener('click', event => {
         event.stopPropagation();
         if (container.dataset.suppressClick === 'true') return;
@@ -1122,8 +1104,8 @@
           const id = el.id.replace('token-', '');
           const monster = monsters.find(m => m.id === id);
           if (monster) {
-            const leftPx = parseInt(el.style.left) + currentTokenSize / 2;
-            const topPx = parseInt(el.style.top) + currentTokenSize / 2;
+            const leftPx = parseInt(el.style.left) + TokenActions.tokenSize(monster, currentTokenSize) / 2;
+            const topPx = parseInt(el.style.top) + TokenActions.tokenSize(monster, currentTokenSize) / 2;
             monster.xRatio = leftPx / mapImage.clientWidth;
             monster.yRatio = topPx / mapImage.clientHeight;
           }
@@ -1159,8 +1141,8 @@
           const id = el.id.replace('token-', '');
           const monster = monsters.find(m => m.id === id);
           if (monster) {
-            const leftPx = parseInt(el.style.left) + currentTokenSize / 2;
-            const topPx = parseInt(el.style.top) + currentTokenSize / 2;
+            const leftPx = parseInt(el.style.left) + TokenActions.tokenSize(monster, currentTokenSize) / 2;
+            const topPx = parseInt(el.style.top) + TokenActions.tokenSize(monster, currentTokenSize) / 2;
             monster.xRatio = leftPx / mapImage.clientWidth;
             monster.yRatio = topPx / mapImage.clientHeight;
           }
@@ -1600,7 +1582,7 @@
 
     // ZOOM
     mapTab.addEventListener('wheel', (e) => {
-      if (e.target.closest('.party-panel')) return;
+      if (e.target.closest('.party-panel, .map-action-panel')) return;
       e.preventDefault();
       const delta = e.deltaY > 0 ? -0.1 : 0.1;
       zoomMapAtPoint(scale + delta, e.clientX, e.clientY);
