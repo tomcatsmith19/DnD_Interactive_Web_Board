@@ -55,6 +55,15 @@
     .player-left-rail button.is-active .dice-icon { background:#1d1009; }
     .player-left-panel-content { display:none; height:100%; min-height:0; overflow:auto; flex-direction:column; }
     .player-left-panel-content.is-active { display:flex; }
+    #playerBooksContent select,#playerReferenceContent select,#playerReferenceContent input { width:100%; box-sizing:border-box; margin-bottom:8px; padding:9px; background:#1d1009; color:#f4d76d; border:1px solid #765133; border-radius:5px; }
+    #playerBooksContent iframe { flex:1; min-height:0; width:100%; border:0; background:#1d1009; }
+    .player-reference-search { display:flex; flex-direction:column; flex:0 1 38%; min-height:140px; }
+    #playerReferenceContent #itemList { flex:1; min-height:0; overflow:auto; padding:6px; background:#1d1009; border-radius:5px; }
+    #playerReferenceContent .item { padding:7px; cursor:pointer; border-radius:4px; }
+    #playerReferenceContent .item:hover,#playerReferenceContent .item:focus-visible { background:#3d2718; }
+    #playerReferenceContent .item.selected { color:#1d1009; background:#f4d76d; }
+    #playerReferenceContent h3 { margin:12px 0 6px; color:#f4d76d; font-size:.9rem; }
+    #playerReferenceContent #description { flex:1; min-height:0; overflow:auto; margin:0; padding:12px; color:#eee; background:#1d1009; border-radius:5px; white-space:pre-wrap; overflow-wrap:anywhere; font-size:.85rem; line-height:1.5; }
     .party-panel-content { max-height:none; }
     .party-panel h2 { margin:0 0 8px; color:#f4d76d; font-family:'MedievalSharp',cursive; }
     .party-table { width:100%; border-collapse:collapse; font-size:.85rem; }
@@ -263,7 +272,7 @@
       margin-bottom: 10px;
     }
   </style>
-<link rel="stylesheet" href="token-actions.css">
+<link rel="stylesheet" href="token-actions.css?v=3">
 </head>
 
 <body>
@@ -279,18 +288,19 @@
       </div>
     </div>
 
-    <div id="mapActionPanel" class="map-action-panel" role="dialog" aria-label="Token actions">
+    <div id="mapActionPanel" class="map-action-panel" role="dialog" aria-labelledby="mapActionsHeading">
       <button class="map-action-close" type="button" onclick="clearMapTokenSelection()" aria-label="Close">×</button>
-      <h3>Token Actions</h3>
-      <div id="mapActionTargets">No tokens selected</div>
+      <div class="map-action-header">
+        <h3 id="mapActionsHeading">Actions</h3>
+        <div id="mapActionTargets">No tokens selected</div>
+        <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')" aria-label="Remove selected creatures" title="Remove selected creatures">×</button>
+      </div>
       <div class="map-health-actions">
         <button type="button" class="map-damage" onclick="applyMapTokenAction('damage')">Damage</button>
         <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
         <button type="button" class="map-heal" onclick="applyMapTokenAction('heal')">Heal</button>
       </div>
-      <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')">Remove Creature</button>
-      <h4 id="mapConditionsHeading">Conditions</h4>
-      <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-labelledby="mapConditionsHeading"></div>
+      <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
     </div>
 
     <!-- Token Size Controls -->
@@ -318,10 +328,33 @@
     <nav class="player-left-rail" aria-label="Player side panels">
       <button id="partyCollapseButton" type="button" onclick="togglePlayerLeftPanel('party')" aria-label="Party panel" title="Party"><svg viewBox="0 0 28 42" aria-hidden="true"><circle cx="14" cy="9" r="5"/><path d="M6 36c0-9 2-17 8-17s8 8 8 17M9 23l-5 9M19 23l5 9M10 36h8"/></svg></button>
       <button id="playerDiceButton" type="button" onclick="togglePlayerLeftPanel('dice')" aria-label="Dice roller" title="Dice Roller"><span class="dice-icon" aria-hidden="true"></span></button>
+      <button id="playerBooksButton" type="button" onclick="togglePlayerLeftPanel('books')" aria-label="Books" title="Books"><svg viewBox="0 0 38 38" aria-hidden="true"><path d="M19 9c-4-4-10-4-15-2v24c6-2 11-1 15 3zM19 9c4-4 10-4 15-2v24c-6-2-11-1-15 3z"/><path d="M8 12c3-1 6 0 8 2M8 18c3-1 6 0 8 2M30 12c-3-1-6 0-8 2M30 18c-3-1-6 0-8 2"/><path d="M19 5v29"/></svg></button>
+      <button id="playerReferenceButton" type="button" onclick="togglePlayerLeftPanel('reference')" aria-label="Reference" title="Reference"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 13c-2 3-5 8-5 16 0 6 5 8 13 8s13-2 13-8c0-8-3-13-5-16"/><path d="M12 13c4 2 12 2 16 0l-3-7-5 4-5-4z"/><path d="M11 17c6 2 12 2 18 0"/><path d="M16 24c2-2 6-2 8 0M15 29c3-2 7-2 10 0"/></svg></button>
     </nav>
     <div id="playerPartyContent" class="party-panel-content player-left-panel-content is-active"><h2>Party</h2>
       <table class="party-table"><thead><tr><th>Name</th><th>Init</th><th>HP</th><th>Max HP</th><th>AC</th></tr></thead><tbody id="partyTableBody"></tbody></table>
       <button type="button" style="width:100%;margin-top:8px;" onclick="openPartyPicker()">Add to Party</button>
+    </div>
+    <div id="playerBooksContent" class="player-left-panel-content">
+      <h2>Books</h2>
+      <select id="bookSelect" aria-label="Choose a book">
+        <option value="">-- Select a Book --</option>
+        <option value="player_handbook.pdf">Player Handbook</option>
+        <option value="dungeon_masters_guide.pdf">Dungeon Masters Guide</option>
+        <option value="Candlekeep Mysteries.pdf">Candlekeep Mysteries</option>
+        <option value="foraging.pdf">Foraging</option>
+      </select>
+      <iframe id="bookViewer" title="Selected book" src="about:blank"></iframe>
+    </div>
+    <div id="playerReferenceContent" class="player-left-panel-content">
+      <h2>Reference</h2>
+      <div class="player-reference-search">
+        <select id="typeSelect" aria-label="Reference category"></select>
+        <input id="searchInput" type="search" placeholder="Search..." aria-label="Search reference">
+        <div id="itemList" aria-label="Reference entries"></div>
+      </div>
+      <h3 id="playerReferenceDescriptionHeading">Description</h3>
+      <pre id="description" tabindex="0" aria-labelledby="playerReferenceDescriptionHeading" aria-live="polite"></pre>
     </div>
     <div id="playerDiceContent" class="dice-roller player-left-panel-content"><h2>Dice Roller</h2>
       <div class="dice-roller-form">
@@ -576,7 +609,8 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
   <script src="map-drawing.js"></script>
   <script src="token-placement.js"></script>
-    <script src="token-actions.js"></script>
+    <script src="token-actions.js?v=2"></script>
+    <script src="reference.js?v=2"></script>
 
   <script>
     const firebaseConfig = {
@@ -698,8 +732,8 @@
     let activePlayerLeftPanel = 'party';
     function togglePlayerLeftPanel(mode){
       const panel=document.getElementById('partyPanel');
-      const contentIds={party:'playerPartyContent',dice:'playerDiceContent'};
-      const buttonIds={party:'partyCollapseButton',dice:'playerDiceButton'};
+      const contentIds={party:'playerPartyContent',dice:'playerDiceContent',books:'playerBooksContent',reference:'playerReferenceContent'};
+      const buttonIds={party:'partyCollapseButton',dice:'playerDiceButton',books:'playerBooksButton',reference:'playerReferenceButton'};
       const isSameOpenPanel=!panel.classList.contains('is-collapsed')&&activePlayerLeftPanel===mode;
       document.querySelectorAll('.player-left-panel-content').forEach(content=>content.classList.remove('is-active'));
       document.querySelectorAll('.player-left-rail button').forEach(button=>button.classList.remove('is-active'));
@@ -710,6 +744,9 @@
       panel.classList.remove('is-collapsed');
     }
     function togglePartyPanel(){togglePlayerLeftPanel('party');}
+    document.getElementById('bookSelect').addEventListener('change', event => {
+      document.getElementById('bookViewer').src = event.target.value ? `data/books/${event.target.value}` : 'about:blank';
+    });
     function changeDiceCount(prefix,sides,change){const input=document.getElementById(`${prefix}DiceCount${sides}`);input.value=Math.min(100,Math.max(0,(Number(input.value)||0)+change));}
     function clearSelectedDice(prefix){[20,100,12,10,8,6,4].forEach(sides=>{const input=document.getElementById(`${prefix}DiceCount${sides}`);if(input)input.value=0;});const result=document.getElementById(`${prefix}DiceResult`);if(result)result.textContent='Choose your dice and roll.';}
     function rollUtilityDice(prefix){
@@ -727,7 +764,7 @@
     function toggleSessionControls(panelId){document.getElementById(panelId)?.classList.toggle('is-collapsed');}
     function toggleAudioDock(){document.getElementById('audioDock').classList.toggle('is-collapsed');}
     document.getElementById('partyPanel')?.addEventListener('wheel', event => {
-      if(event.target.closest('textarea')){event.stopPropagation();return;}
+      if(event.target.closest('textarea, #playerReferenceContent, #playerBooksContent')){event.stopPropagation();return;}
       document.querySelector('.player-left-panel-content.is-active').scrollTop += event.deltaY;
       event.preventDefault();
       event.stopPropagation();

@@ -1,7 +1,6 @@
 const typeSelect = document.getElementById('typeSelect');
 const searchInput = document.getElementById('searchInput');
 const itemList = document.getElementById('itemList');
-const searchBtn = document.getElementById('searchBtn');
 const description = document.getElementById('description');
 
 let dndData = {};
@@ -11,7 +10,10 @@ const CATEGORIES = ['equipment', 'monsters', 'spells', 'magic-items'];
 
 // Load all JSON files
 Promise.all(CATEGORIES.map(cat =>
-    fetch(`data/api_data/${cat}.json`).then(res => res.json()).then(data => ({ [cat]: data }))
+    fetch(`data/api_data/${cat}.json`).then(res => {
+        if (!res.ok) throw new Error('Could not load reference entries. Please reload to try again.');
+        return res.json();
+    }).then(data => ({ [cat]: data }))
 )).then(results => {
     dndData = Object.assign({}, ...results);
     CATEGORIES.forEach(cat => {
@@ -21,7 +23,7 @@ Promise.all(CATEGORIES.map(cat =>
         typeSelect.appendChild(opt);
     });
     updateItemList();
-});
+}).catch(error => { description.textContent = error.message; });
 
 // Update item list on type change
 typeSelect.addEventListener('change', updateItemList);
@@ -36,10 +38,10 @@ searchInput.addEventListener('input', () => {
 // Populate list and nameToIndex
 function updateItemList() {
     const category = typeSelect.value;
-    const items = dndData[category];
+    const items = dndData[category] || [];
     nameToIndex = {};
     items.forEach(item => nameToIndex[item.name] = item.index);
-    renderItemList(Object.keys(nameToIndex));
+    renderItemList(Object.keys(nameToIndex).filter(name => name.toLowerCase().includes(searchInput.value.toLowerCase())));
 }
 
 // Render item list
@@ -49,7 +51,12 @@ function renderItemList(names) {
         const div = document.createElement('div');
         div.textContent = name;
         div.className = 'item';
+        div.tabIndex = 0;
+        div.setAttribute('role', 'button');
         div.onclick = () => searchItem(name);
+        div.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); searchItem(name); }
+        });
         itemList.appendChild(div);
     });
 }
@@ -57,18 +64,22 @@ function renderItemList(names) {
 
 function searchItem(name) {
     const category = typeSelect.value;
-    const index = nameToIndex[name];
-
-    fetch(`https://www.dnd5eapi.co/api/${category}/${index}`)
-        .then(res => res.json())
-        .then(data => {
-            const formatted = formatReadable(category, data);
-            description.textContent = formatted;
-        });
+    const item = dndData[category]?.find(entry => entry.name === name);
+    if (!item) return;
+    description.textContent = 'Loading…';
 
     Array.from(itemList.children).forEach(c => c.classList.remove('selected'));
     const selected = Array.from(itemList.children).find(c => c.textContent === name);
     if (selected) selected.classList.add('selected');
+
+    // Use the versioned API URL supplied by the local reference catalog.
+    return fetch(`https://www.dnd5eapi.co${item.url}`)
+        .then(res => {
+            if (!res.ok) throw new Error('Could not load this entry. Select it again to retry.');
+            return res.json();
+        })
+        .then(data => { if (selected?.classList.contains('selected') && typeSelect.value === category) description.textContent = formatReadable(category, data); })
+        .catch(error => { if (selected?.classList.contains('selected') && typeSelect.value === category) description.textContent = error.message; });
 }
 
 function getSpellStr(spell) {

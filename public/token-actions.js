@@ -183,11 +183,12 @@ const TokenActions = (() => {
       document.getElementById('mapActionPanel')?.addEventListener('wheel', event => event.stopPropagation(), { passive: true });
       let previousCategory = '', categoryGrid;
       const categories = ['General', 'Spells', 'Class Specific'];
+      const categoryLabels = { General: 'General Conditions', Spells: 'Spell conditions', 'Class Specific': 'Class Specific Conditions' };
       Object.entries(effects).sort(([a], [b]) => categories.indexOf(category(a)) - categories.indexOf(category(b)) || (a === 'Exhaustion' ? 1 : b === 'Exhaustion' ? -1 : displayName(a).localeCompare(displayName(b)))).forEach(([name, effect], index) => {
         if (previousCategory !== category(name)) {
           previousCategory = category(name);
-          const folder = document.createElement('details'); folder.className = 'condition-folder'; folder.open = true;
-          const heading = document.createElement('summary'); heading.className = 'condition-category'; heading.textContent = previousCategory;
+          const folder = document.createElement('details'); folder.className = 'condition-folder'; folder.open = false;
+          const heading = document.createElement('summary'); heading.className = 'condition-category'; heading.textContent = categoryLabels[previousCategory];
           categoryGrid = document.createElement('div'); categoryGrid.className = 'condition-folder-grid';
           folder.append(heading, categoryGrid); grid.append(folder);
         }

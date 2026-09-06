@@ -1,12 +1,15 @@
 .map-action-panel { top:10px; width:610px; max-width:calc(100vw - 40px); max-height:calc(100dvh - 20px); overflow-y:auto; overscroll-behavior:contain; box-sizing:border-box; }
 .map-action-panel .map-health-actions { display:grid; grid-template-columns:1fr 80px 1fr; gap:8px; }
+.map-action-header { display:flex; align-items:center; gap:10px; padding-right:36px; margin-bottom:10px; }
+.map-action-panel .map-action-header h3 { flex:none; margin:0; font-family:'MedievalSharp',Georgia,serif; font-size:1.35rem; }
+.map-action-header #mapActionTargets { min-width:0; overflow-wrap:anywhere; color:white; }
+.map-action-panel .map-action-header .map-remove { flex:none; width:30px; height:30px; margin:0; padding:0; font-size:24px; line-height:28px; background:#b82e35; color:white; }
 .map-action-panel .map-action-close { width:34px; height:34px; padding:0; font-size:26px; line-height:32px; }
 .map-action-panel .map-health-actions input { text-align:center; }
 .map-action-panel .map-remove { background:#b82e35; color:#fff; }
 .map-action-panel .map-damage { background:#351416; color:#ff777f; border:1px solid #ff777f; }
 .map-action-panel .map-heal { background:#132d1b; color:#72df91; border:1px solid #72df91; }
-.map-action-panel h4 { margin:16px 0 8px; color:#f4d76d; }
-.map-conditions-grid { display:flex; flex-direction:column; gap:10px; }
+.map-conditions-grid { display:flex; flex-direction:column; gap:10px; margin-top:16px; }
 .condition-folder { border:1px solid #765133; border-radius:6px; background:#21170f; }
 .condition-folder-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:12px 9px; }
 .map-condition { display:flex; align-items:center; gap:6px; min-width:0; font-size:13px; }

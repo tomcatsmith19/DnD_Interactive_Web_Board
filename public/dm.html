@@ -675,7 +675,7 @@
             padding: 5px;
         }
     </style>
-<link rel="stylesheet" href="token-actions.css">
+<link rel="stylesheet" href="token-actions.css?v=3">
 </head>
 
 <div class="main-layout">
@@ -690,6 +690,8 @@
                     <option value="">-- Select a Book --</option>
                     <option value="player_handbook.pdf">Player Handbook</option>
                     <option value="dungeon_masters_guide.pdf">Dungeon Masters Guide</option>
+                    <option value="Candlekeep Mysteries.pdf">Candlekeep Mysteries</option>
+                    <option value="foraging.pdf">Foraging</option>
                     <!-- Add more books here -->
                 </select>
 
@@ -1192,18 +1194,19 @@
             </div>
         </div>
 
-        <div id="mapActionPanel" class="map-action-panel" role="dialog" aria-label="Token actions">
+        <div id="mapActionPanel" class="map-action-panel" role="dialog" aria-labelledby="mapActionsHeading">
             <button class="map-action-close" type="button" onclick="clearMapTokenSelection()" aria-label="Close">×</button>
-            <h3>Token Actions</h3>
-            <div id="mapActionTargets">No tokens selected</div>
+            <div class="map-action-header">
+                <h3 id="mapActionsHeading">Actions</h3>
+                <div id="mapActionTargets">No tokens selected</div>
+                <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')" aria-label="Remove selected creatures" title="Remove selected creatures">×</button>
+            </div>
       <div class="map-health-actions">
         <button type="button" class="map-damage" onclick="applyMapTokenAction('damage')">Damage</button>
         <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
         <button type="button" class="map-heal" onclick="applyMapTokenAction('heal')">Heal</button>
       </div>
-      <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')">Remove Creature</button>
-      <h4 id="mapConditionsHeading">Conditions</h4>
-      <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-labelledby="mapConditionsHeading"></div>
+      <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
         </div>
 
         <div id="monsterStatModal" class="monster-stat-modal" role="dialog" aria-modal="true" aria-label="Monster stat block" onclick="if(event.target===this) closeMonsterStatblock()">
@@ -1703,8 +1706,8 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
     <script src="map-drawing.js"></script>
     <script src="token-placement.js"></script>
-    <script src="token-actions.js"></script>
-    <script src="reference.js"></script>
+    <script src="token-actions.js?v=2"></script>
+    <script src="reference.js?v=2"></script>
     <script src="cpu-action-advisor.js?v=1"></script>
     <script>
 

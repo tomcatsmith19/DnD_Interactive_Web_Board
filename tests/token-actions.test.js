@@ -21,7 +21,7 @@ function fixture() {
 test('categories, alphabetical entries, icon order and legacy Mark selections',()=>{
   const {actions,grid,calls}=fixture();
   actions.refresh([{conditions:['Mark','mark1','Exhaustion 2']},{conditions:["Hunter's Mark"]}]);
-  assert.deepEqual(grid.children.map(folder=>folder.children[0].textContent),['General','Spells','Class Specific']);
+  assert.deepEqual(grid.children.map(folder=>folder.children[0].textContent),['General Conditions','Spell conditions','Class Specific Conditions']);
   let names=[],category;
   const check=()=>{assert.deepEqual(names,names.slice().sort((a,b)=>a.localeCompare(b)));names=[];};
   for(const row of grid.children.flatMap(folder=>[folder.children[0],...folder.children[1].children])) {
@@ -30,7 +30,7 @@ test('categories, alphabetical entries, icon order and legacy Mark selections',(
     assert.equal(box.type,'checkbox'); assert.ok(icon.className.includes('condition-icon')); assert.equal(label.tag,'label');
     assert.notEqual(box.dataset.condition,'Mark');
     if(box.dataset.condition!=='Exhaustion') names.push(label.textContent);
-    if(/^mark[123]$/.test(box.dataset.condition)) assert.equal(category,'General');
+    if(/^mark[123]$/.test(box.dataset.condition)) assert.equal(category,'General Conditions');
     if(box.dataset.condition==="Hunter's Mark") { assert.equal(box.checked,true); box.checked=false;box.listeners.change();assert.equal(calls.at(-1)[0],'remove'); }
   }
   check();
@@ -65,10 +65,11 @@ test('legacy sizes resolve once per creature definition',async()=>{
 test('folders retain expansion state and toggles preserve mixed selections',()=>{
   const {actions,grid,elements,calls,panel}=fixture();
   actions.refresh([{conditions:['Shield']},{conditions:[]}]);
-  const spells=grid.children[1]; assert.equal(spells.tag,'details'); assert.equal(spells.open,true);
-  spells.open=false;
+  assert.ok(grid.children.every(folder=>folder.open===false));
+  const spells=grid.children[1]; assert.equal(spells.tag,'details');
+  spells.open=true;
   actions.refresh([{conditions:['Shield']},{conditions:[]}]);
-  assert.equal(spells.open,false);
+  assert.equal(spells.open,true);
   const toggle=elements.find(el=>el.dataset.condition==='Shield');
   assert.equal(toggle.className,'condition-toggle'); assert.equal(toggle.indeterminate,true);
   toggle.checked=true;toggle.listeners.change();assert.deepEqual(calls.at(-1),['apply','Shield',1]);
