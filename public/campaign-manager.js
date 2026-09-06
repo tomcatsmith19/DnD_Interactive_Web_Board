@@ -122,15 +122,8 @@ function stageCampaignRegistry(batch, registry) {
 }
 
 async function readSharedCampaignState() {
-    const refs = [monstersRef, mapRef, db.collection('shared').doc('drawings'), db.collection('shared').doc('fogOfWar')];
-    const snapshots = await Promise.all(refs.map(ref => ref.get()));
-    return {
-        monsters: snapshots[0].exists ? snapshots[0].data() : { monsters: [] },
-        map: { filepath: currentSharedMapPath, mapScale: sharedMapScale, ...sharedCampaignMapData(snapshots[1].data()) },
-        drawings: snapshots[2].exists ? snapshots[2].data() : { drawings: [] },
-        fogOfWar: snapshots[3].exists ? snapshots[3].data() : { drawings: [] },
-        loot: { cr: encounterLootCR, xp: encounterLootXP, trackedCreatureIds: Array.from(lootTrackedCreatureIds) }
-    };
+    await boardSync.ready;
+    return { ...await boardSync.exportState(), loot: { cr: encounterLootCR, xp: encounterLootXP, trackedCreatureIds: Array.from(lootTrackedCreatureIds) } };
 }
 
 async function readCampaignState(campaignId, mapId) {
@@ -140,26 +133,9 @@ async function readCampaignState(campaignId, mapId) {
     return Object.fromEntries(campaignStateKeys.map((key, index) => [key, snapshots[index].data() || {}]));
 }
 
-async function applyCampaignState(state, registry) {
-    const batch = db.batch();
-    const revision = Math.max(Date.now(), lastSyncedAt + 1);
-    batch.set(monstersRef, { ...(state.monsters || {}), monsters: state.monsters?.monsters || [], revision, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
-    batch.set(mapRef, { ...sharedCampaignMapData(state.map), filepath: state.map?.filepath || `${STATIC_MAP_PREFIX}blank.jpg`, mapScale: Number(state.map?.mapScale) || 1, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
-    ['drawings', 'fogOfWar'].forEach(key => batch.set(db.collection('shared').doc(key), { ...(state[key] || {}), drawings: state[key]?.drawings || [], updatedAt: Date.now() }));
-    stageCampaignRegistry(batch, registry);
-    const pendingAdditions = new Map(pendingMonsterAdditions);
-    const previousLootSuppression = suppressLootTrackingUntil;
-    // Firestore emits local snapshots before commit resolves. Clear outgoing
-    // additions first so they cannot be merged into the newly loaded board.
-    pendingMonsterAdditions.clear();
+async function applyCampaignState(state, registry, prepared, lease) {
     suppressLootTrackingUntil = Date.now() + 3000;
-    try {
-        await batch.commit();
-    } catch (error) {
-        pendingAdditions.forEach((monster, id) => pendingMonsterAdditions.set(id, monster));
-        suppressLootTrackingUntil = previousLootSuppression;
-        throw error;
-    }
+    await boardSync.publish(prepared, lease, transaction => stageCampaignRegistry(transaction, registry));
     encounterLootCR = Math.max(0, Number(state.loot?.cr) || 0);
     encounterLootXP = Math.max(0, Number(state.loot?.xp) || 0);
     lootTrackedCreatureIds.clear();
@@ -175,16 +151,24 @@ async function switchCampaignMap(campaignId, mapId) {
         if (!(await campaignMapRef(campaignId, mapId).get()).exists) throw new Error('That map no longer exists.');
         const state = await readCampaignState(campaignId, mapId);
         if (!state.map?.filepath) throw new Error('This map has no saved board state.');
-        if (campaignRegistry.activeId && campaignRegistry.activeMapId) {
-            const batch = db.batch();
-            stageCampaignMapState(batch, campaignRegistry.activeId, campaignRegistry.activeMapId, await readSharedCampaignState());
-            await batch.commit();
+        // Stage the next board before pausing edits. Publishing its pointer is atomic.
+        const prepared = await boardSync.prepare(state);
+        const lease = await boardSync.lock();
+        try {
+            const currentRegistry = (await campaignRegistryRef.get({ source: 'server' })).data() || campaignRegistry;
+            if (currentRegistry.activeId && currentRegistry.activeMapId) {
+                const batch = db.batch();
+                stageCampaignMapState(batch, currentRegistry.activeId, currentRegistry.activeMapId, await readSharedCampaignState());
+                await batch.commit();
+            }
+            const registry = { ...currentRegistry, activeId: campaignId, activeMapId: mapId };
+            await applyCampaignState(state, registry, prepared, lease);
+            campaignRegistry = registry;
+            expandedCampaigns.add(campaignId);
+            setCampaignStatus(`Loaded ${target.name} and shared it with all players.`);
+        } finally {
+            await boardSync.unlock(lease);
         }
-        const registry = { ...campaignRegistry, activeId: campaignId, activeMapId: mapId };
-        await applyCampaignState(state, registry);
-        campaignRegistry = registry;
-        expandedCampaigns.add(campaignId);
-        setCampaignStatus(`Loaded ${target.name} and shared it with all players.`);
     });
 }
 
@@ -332,6 +316,7 @@ function savedMapName(state) {
 }
 
 async function initializeCampaignManager() {
+    await boardSync.ready;
     const sharedMap = await mapRef.get();
     if (sharedMap.exists && Object.hasOwn(sharedMap.data(), 'tokenSize')) {
         const cleanup = db.batch();

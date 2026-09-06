@@ -1704,9 +1704,11 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-    <script src="map-drawing.js"></script>
-    <script src="token-placement.js"></script>
+    <script src="map-drawing.js?v=2"></script>
+    <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=2"></script>
+    <script src="board-sync.js?v=1"></script>
+    <script src="board-ui.js?v=1"></script>
     <script src="reference.js?v=2"></script>
     <script src="cpu-action-advisor.js?v=1"></script>
     <script>
@@ -1724,6 +1726,7 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
         const db = firebase.firestore();
+        const boardSync = SharedBoardSync.create({ db, firebase, onError: reportBoardSyncError });
         const storage = firebase.storage();
 
         // Receive the same music and sound-effect events as every player.
@@ -6068,6 +6071,7 @@
 
         const mapRef = db.collection("shared").doc("map");
         const sharedDrawingManager = setupSharedMapDrawing({
+            boardSync,
             db,
             mapImage,
             compact: true,
@@ -6080,6 +6084,7 @@
             }
         });
         const fogToolbarManager = setupSharedMapDrawing({
+            boardSync,
             db,
             mapImage,
             documentId: 'fogOfWar',
@@ -6389,10 +6394,7 @@
                 init:Math.floor(Math.random()*20)+1, conditions:[], xRatio:.5, yRatio:.5,
                 isplayer:false, isNpc:true, tokenUrl:npc.tokenUrl || getNpcRaceToken(npc.race)
             };
-            monsters.push(member);
-            addMonsterToken(member);
-            updateMonsterTable();
-            syncMonstersToFirebase();
+            addMonstersToFirebase([member]);
         }
 
 
@@ -6518,10 +6520,10 @@
         function setSharedMapScale(nextScale) {
             sharedMapScale = Number(Math.min(Math.max(0.2, nextScale), 3).toFixed(2));
             applySharedMapScale();
-            mapRef.set({
+            runBoardWrite(boardSync.patchMap({
                 mapScale: sharedMapScale,
                 scaleUpdatedAt: Date.now()
-            }, { merge: true }).catch(error => console.error('Failed to sync map scale:', error));
+            }));
         }
 
         document.getElementById('increaseMapScale')?.addEventListener('click', () => {
@@ -6765,6 +6767,7 @@
         }
 
         function renderGroupMoveHandle(selected) {
+            if (document.getElementById('groupMoveHandle')?.dataset.dragging === 'true') return;
             document.getElementById('groupMoveHandle')?.remove();
             if (selected.length < 2 || !mapWidth || !mapHeight) return;
             const handle = document.createElement('button');
@@ -6784,15 +6787,18 @@
                 event.preventDefault();
                 event.stopPropagation();
                 dragState = {
+                    generation: boardSync.generation,
                     pointerId: event.pointerId,
                     clientX: event.clientX,
                     clientY: event.clientY,
                     positions: selected.map(monster => ({ monster, xRatio: monster.xRatio, yRatio: monster.yRatio }))
                 };
+                handle.dataset.dragging = 'true';
+                selected.forEach(token => { const el = document.getElementById(`token-${token.id}`); if (el) el.dataset.dragging = 'true'; });
                 handle.setPointerCapture?.(event.pointerId);
             });
             handle.addEventListener('pointermove', event => {
-                if (!dragState || event.pointerId !== dragState.pointerId) return;
+                if (!dragState || event.pointerId !== dragState.pointerId || dragState.generation !== boardSync.generation) return;
                 const rawDx = (event.clientX - dragState.clientX) / scale / mapWidth;
                 const rawDy = (event.clientY - dragState.clientY) / scale / mapHeight;
                 const dxRatio = Math.min(Math.min(...dragState.positions.map(start => 1 - start.xRatio)), Math.max(Math.max(...dragState.positions.map(start => -start.xRatio)), rawDx));
@@ -6800,7 +6806,7 @@
                 dragState.positions.forEach(start => {
                     start.monster.xRatio = start.xRatio + dxRatio;
                     start.monster.yRatio = start.yRatio + dyRatio;
-                    positionTokenElement(start.monster);
+                    positionTokenElement(start.monster, undefined, true);
                 });
                 const centerX = dragState.positions.reduce((sum, start) => sum + start.monster.xRatio * mapWidth, 0) / dragState.positions.length;
                 const centerY = dragState.positions.reduce((sum, start) => sum + start.monster.yRatio * mapHeight, 0) / dragState.positions.length;
@@ -6808,11 +6814,24 @@
                 handle.style.top = `${centerY - 17}px`;
             });
             handle.addEventListener('pointerup', event => {
-                if (!dragState || event.pointerId !== dragState.pointerId) return;
+                if (!dragState || event.pointerId !== dragState.pointerId || dragState.generation !== boardSync.generation) return;
                 const movedIds = dragState.positions.map(start => start.monster.id);
                 dragState = null;
+                handle.dataset.dragging = 'false';
+                movedIds.forEach(id => { const el = document.getElementById(`token-${id}`); if (el) el.dataset.dragging = 'false'; });
                 syncMonsterPositionsToFirebase(movedIds);
             });
+            const cancelDrag = () => {
+                if (!dragState) return;
+                dragState.positions.forEach(({ monster }) => {
+                    const el = document.getElementById(`token-${monster.id}`);
+                    if (el) el.dataset.dragging = 'false';
+                });
+                dragState = null; handle.dataset.dragging = 'false';
+                boardSync.reconcile().catch(reportBoardSyncError);
+            };
+            handle.addEventListener('pointercancel', cancelDrag);
+            handle.addEventListener('lostpointercapture', cancelDrag);
             handle.addEventListener('click', event => event.stopPropagation());
         }
 
@@ -6841,6 +6860,7 @@
         }
 
         function removeCreatureById(monsterId, sync = true) {
+            if (sync) return removeMonstersFromFirebase([monsterId]);
             const index = monsters.findIndex(monster => monster.id === monsterId);
             const monster = index >= 0 ? monsters[index] : null;
             recordCreatureForLoot(monster);
@@ -6852,44 +6872,6 @@
                 updateMonsterTable();
             }
             return Boolean(monster);
-        }
-
-        async function applyMapTokenAction(action, condition = "", level = 0) {
-            const amount = Math.max(0, Math.trunc(Number(document.getElementById('mapActionAmount').value) || 0));
-            const targets = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
-            if (!targets.length) return;
-            const removedIds = [];
-            const changedFields = new Map();
-            targets.forEach(monster => {
-                const previousHp = monster.hp;
-                monster.conditions = TokenActions.normalizeConditions(monster.conditions);
-                if (action === 'exhaustion') monster.conditions = TokenActions.withExhaustion(monster.conditions, level);
-                if (action === 'heal') {
-                    monster.hp = Math.min(monster.maxHp, monster.hp + amount);
-                    flashToken(monster.id, 'heal');
-                } else if (action === 'damage') {
-                    monster.hp = monster.isplayer ? monster.hp - amount : Math.max(0, monster.hp - amount);
-                    flashToken(monster.id, 'damage');
-                    if (previousHp > 0 && monster.hp <= 0) {
-                        showTokenDeathEffect(monster.id);
-                        if (removeDefeatedMonster(monster.id, false)) removedIds.push(monster.id);
-                    }
-                } else if (action === 'apply' && !monster.conditions.some(item => item.toLowerCase() === condition.toLowerCase())) {
-                    monster.conditions.push(condition);
-                } else if (action === 'remove') {
-                    monster.conditions = monster.conditions.filter(item => item.toLowerCase() !== condition.toLowerCase());
-                } else if (action === 'removeCreature') {
-                    if (removeCreatureById(monster.id, false)) removedIds.push(monster.id);
-                }
-                if (!removedIds.includes(monster.id)) {
-                    if (action === 'damage' || action === 'heal') changedFields.set(monster.id, { hp:monster.hp, maxHp:monster.maxHp });
-                    else if (action === 'apply' || action === 'remove' || action === 'exhaustion') changedFields.set(monster.id, { conditions:[...monster.conditions] });
-                }
-                updateTokenHealthBar(monster);
-                updateTokenDefeatedState(monster);
-            });
-            await syncMonsterChangesToFirebase(changedFields, removedIds);
-            updateMonsterTable();
         }
 
         const mapTransformLayer = document.getElementById('mapTransformLayer');
@@ -6904,23 +6886,11 @@
 
         const pendingMonsterAdditions = new Map();
         const monsterPlacement = setupMapTokenPlacement({
+            getGeneration: () => boardSync.generation,
             mapImage,
             mapSurface: mapTransformLayer,
             getTokenSrc: getMonsterTokenSrc,
-            onPlace: async monster => {
-                pendingMonsterAdditions.set(monster.id, { ...monster });
-                monsters.push(monster);
-                addMonsterToken(monster);
-                updateMonsterTable();
-                const added = await addMonstersToFirebase([monster]);
-                if (!added) {
-                    pendingMonsterAdditions.delete(monster.id);
-                    const index = monsters.findIndex(item => item.id === monster.id);
-                    if (index >= 0) monsters.splice(index, 1);
-                    document.getElementById(`token-${monster.id}`)?.remove();
-                    updateMonsterTable();
-                }
-            }
+            onPlace: monster => addMonstersToFirebase([monster])
         });
 
         function isPointInsideLasso(point, polygon) {
@@ -6967,7 +6937,8 @@
             if (selectedMapTokenIds.size) openMapActionPanel();
         });
 
-        function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`)) {
+        function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`), force = false) {
+            if (!force && element?.dataset.dragging === 'true') return;
             if (!element || mapWidth <= 0 || mapHeight <= 0) return;
 
             element.style.left = `${monster.xRatio * mapWidth - TokenActions.tokenSize(monster, currentTokenSize) / 2}px`;
@@ -7267,7 +7238,7 @@
         function saveCpuAdvisorSetting(field,value) {
             const monster=monsters.find(item=>item.id===currentStatblockMonsterId); if(!monster||monster.isplayer||monster.isNpc)return;
             monster.cpuAdvisor=CpuActionAdvisor.normalizeSettings(monster.cpuAdvisor); monster.cpuAdvisor[field]=value; monster.cpuAdvisor[`${field}Overridden`]=true;
-            invalidateCpuRecommendation(); syncMonstersToFirebase();
+            invalidateCpuRecommendation(); syncMonsterFieldsToFirebase(monster.id, { [`cpuAdvisor.${field}`]: value, [`cpuAdvisor.${field}Overridden`]: true });
         }
         function rerollCpuPersonality() {
             const monster=monsters.find(item=>item.id===currentStatblockMonsterId); if(!monster)return;
@@ -7276,7 +7247,7 @@
             for(let attempts=0;attempts<8&&intelligence===previousIntelligence;attempts++)intelligence=CpuActionAdvisor.weightedChoice({dumb:1,average:1,intelligent:1});
             monster.cpuAdvisor=CpuActionAdvisor.normalizeSettings({...monster.cpuAdvisor,personality,intelligence,personalityOverridden:false,intelligenceOverridden:false});
             const personalitySelect=document.getElementById('cpuPersonality'),intelligenceSelect=document.getElementById('cpuIntelligence');if(personalitySelect)personalitySelect.value=monster.cpuAdvisor.personality;if(intelligenceSelect)intelligenceSelect.value=monster.cpuAdvisor.intelligence;
-            invalidateCpuRecommendation('Personality and intelligence rerolled. Generate a new recommendation.');syncMonstersToFirebase();
+            invalidateCpuRecommendation('Personality and intelligence rerolled. Generate a new recommendation.');syncMonsterFieldsToFirebase(monster.id, { cpuAdvisor: monster.cpuAdvisor });
         }
         function renderCpuRecommendation(result) {
             const output=document.getElementById('cpuAdvisorOutput'); if(!output)return;
@@ -7297,7 +7268,7 @@
             document.getElementById('cpuIntelligence')?.addEventListener('change',event=>saveCpuAdvisorSetting('intelligence',event.target.value));
             const rerollButton=document.getElementById('cpuReroll');if(rerollButton){rerollButton.textContent='Reroll Personality & Intelligence';rerollButton.addEventListener('click',rerollCpuPersonality);}
             document.getElementById('cpuRecommend')?.addEventListener('click',recommendCpuAction);
-            if(wasMissing)syncMonstersToFirebase();
+            if(wasMissing)syncMonsterFieldsToFirebase(monster.id, { cpuAdvisor: monster.cpuAdvisor });
         }
 
         async function openMonsterStatblock(monsterIdOrName) {
@@ -7504,55 +7475,18 @@
         // Execute Action Button
         const executeBtn = document.getElementById('executeBtn');
 
-        executeBtn?.addEventListener('click', async () => {
-            const action = document.getElementById('actionSelect').value;
-            const index = parseInt(document.getElementById('targetIndex').value);
-            const condition = document.getElementById('conditionSelect').value;
-            const amount = parseInt(document.getElementById('amountTurns').value);
-
-            if (index < 0 || index >= monsters.length) {
-                alert("Invalid target index.");
-                return;
-            }
-
-            const monster = monsters[index];
-            const previousHp = monster.hp;
-            let removedMonsterId = null;
-
-            if (action === 'heal') {
-                monster.hp = Math.min(monster.maxHp || monster.hp + amount, monster.hp + amount);
-                flashToken(monster.id, 'heal');
-                await sleep(1000);
-
-            } else if (action === 'damage') {
-                monster.hp = monster.isplayer ? monster.hp - amount : Math.max(0, monster.hp - amount);
-                flashToken(monster.id, 'damage');
-                if (previousHp > 0 && monster.hp <= 0) {
-                    showTokenDeathEffect(monster.id);
-                    if (removeDefeatedMonster(monster.id, false)) removedMonsterId = monster.id;
-                }
-                await sleep(1000);
-
-            } else if (action === 'apply') {
-                if (condition !== "-- None --" && !monster.conditions.includes(condition)) {
-                    monster.conditions.push(condition);
-                }
-            } else if (action === 'remove') {
-                if (condition !== "-- None --") {
-                    monster.conditions = monster.conditions.filter(c => c.toLowerCase() !== condition.toLowerCase());
-                }
-            }
-
-            if (removedMonsterId) await removeMonstersFromFirebase([removedMonsterId]);
-            await syncMonstersToFirebase();
-            updateMonsterTable();
-
+        executeBtn?.addEventListener('click', () => {
+            const token = monsters[parseInt(document.getElementById('targetIndex').value)];
+            if (!token) { alert('Invalid target index.'); return; }
+            runBoardWrite(boardSync.action([token.id], document.getElementById('actionSelect').value,
+                Number(document.getElementById('amountTurns').value) || 0,
+                document.getElementById('conditionSelect').value, 0, token._boardGeneration));
         });
 
         // Update Monster Table
         function updateMonsterTable() {
 
-            monsters.sort((a, b) => b.init - a.init);
+            monsters.sort((a, b) => (Number(b.init) || 0) - (Number(a.init) || 0) || a.id.localeCompare(b.id));
             monsterTableBody.innerHTML = '';
 
             monsters.filter(monster => monster.hp <= 0).forEach(monster => {
@@ -7613,30 +7547,11 @@
                 const initInput = row.children[1].querySelector('input');
                 const hpInput = row.children[3].querySelector('input');
 
-                initInput.addEventListener('input', () => {
-                    m.init = parseInt(initInput.value) || 0;
-                    syncMonstersToFirebase();
-                    updateMonsterTable();
-
+                initInput.addEventListener('change', () => {
+                    syncMonsterFieldsToFirebase(m.id, { init: parseInt(initInput.value) || 0 }, m._boardGeneration);
                 });
-
-                hpInput.addEventListener('input', async () => {
-                    const previousHp = m.hp;
-                    let removedMonsterId = null;
-                    const enteredHp = parseInt(hpInput.value) || 0;
-                    m.hp = m.isplayer ? enteredHp : Math.max(0, enteredHp);
-                    m.maxHp = Math.max(m.maxHp || 1, m.hp);
-                    updateTokenHealthBar(m);
-                    if (m.hp > previousHp) flashToken(m.id, 'heal');
-                    else if (m.hp < previousHp) flashToken(m.id, 'damage');
-                    if (previousHp > 0 && m.hp <= 0) {
-                        showTokenDeathEffect(m.id);
-                        if (removeDefeatedMonster(m.id, false)) removedMonsterId = m.id;
-                    }
-                    if (removedMonsterId) await removeMonstersFromFirebase([removedMonsterId]);
-                    await syncMonstersToFirebase();
-                    updateMonsterTable();
-
+                hpInput.addEventListener('change', () => {
+                    syncMonsterFieldsToFirebase(m.id, { hp: parseInt(hpInput.value) || 0 }, m._boardGeneration);
                 });
 
                 monsterTableBody.appendChild(row);
@@ -7715,6 +7630,7 @@
 
         function makeDraggable(el) {
             let isDragging = false;
+            let dragGeneration = '';
             let dragOriginLeft = 0, dragOriginTop = 0;
             let dragStartX = 0, dragStartY = 0;
             let didMove = false;
@@ -7722,6 +7638,8 @@
             el.addEventListener('mousedown', (e) => {
                 e.preventDefault();
                 isDragging = true;
+                dragGeneration = boardSync.generation;
+                el.dataset.dragging = 'true';
                 didMove = false;
                 dragStartX = e.clientX;
                 dragStartY = e.clientY;
@@ -7731,7 +7649,7 @@
             });
 
             document.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
+                if (!isDragging || dragGeneration !== boardSync.generation || !el.isConnected) return;
                 if (Math.hypot(e.clientX - dragStartX, e.clientY - dragStartY) > 3) didMove = true;
                 el.style.left = `${dragOriginLeft + (e.clientX - dragStartX) / scale}px`;
                 el.style.top = `${dragOriginTop + (e.clientY - dragStartY) / scale}px`;
@@ -7740,6 +7658,8 @@
             document.addEventListener('mouseup', () => {
                 if (isDragging) {
                     el.style.cursor = 'grab';
+                    el.dataset.dragging = 'false';
+                    if (dragGeneration !== boardSync.generation || !el.isConnected) { isDragging = false; return; }
                     isDragging = false;
 
                     const id = el.id.replace('token-', '');
@@ -7759,10 +7679,16 @@
             });
 
 
+            el.addEventListener('touchcancel', () => {
+                isDragging = false; el.dataset.dragging = 'false';
+                boardSync.reconcile().catch(reportBoardSyncError);
+            });
             // TOUCH support for dragging
             el.addEventListener('touchstart', (e) => {
                 e.preventDefault();
                 isDragging = true;
+                dragGeneration = boardSync.generation;
+                el.dataset.dragging = 'true';
                 didMove = false;
                 const touch = e.touches[0];
                 dragStartX = touch.clientX;
@@ -7773,7 +7699,7 @@
             }, { passive: false });
 
             el.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
+                if (!isDragging || dragGeneration !== boardSync.generation || !el.isConnected) return;
                 const touch = e.touches[0];
                 if (Math.hypot(touch.clientX - dragStartX, touch.clientY - dragStartY) > 3) didMove = true;
                 el.style.left = `${dragOriginLeft + (touch.clientX - dragStartX) / scale}px`;
@@ -7783,6 +7709,8 @@
             el.addEventListener('touchend', () => {
                 if (isDragging) {
                     el.style.cursor = 'grab';
+                    el.dataset.dragging = 'false';
+                    if (dragGeneration !== boardSync.generation || !el.isConnected) { isDragging = false; return; }
                     isDragging = false;
 
                     const id = el.id.replace('token-', '');
@@ -8174,56 +8102,17 @@
         }
 
 
-        function sendEncounter() {
-            const names = [...document.querySelectorAll('#encounterMonsterList li')]
-                .map(li => li.textContent.split(' (')[0]);
-
-            let promises = [];
-
-            names.forEach(name => {
-                const fetchPromise = loadMonsterDefinitionByName(name)
-                    .then(definition => {
-                        const monster = buildMonsterInstance(definition);
-
-                        // Store in global monsters array
-                        monsters.push(monster);
-
-                        // Create DOM row
-                        const newRow = document.createElement('tr');
-                        newRow.dataset.monsterId = monster.id;
-                        newRow.innerHTML = `
-                            <td style="padding: 8px; border: 1px solid #765133; text-align: center;">?</td>
-                            <td style="padding: 8px; border: 1px solid #765133; text-align: center;">
-                                <input type="number" value="${monster.init}" style="width: 60px; padding: 5px; background-color: #2b190f; color: #fff; border: 1px solid #765133; border-radius: 4px; text-align: center;">
-                            </td>
-                            <td style="padding: 8px; border: 1px solid #765133;">${name}</td>
-                            <td style="padding: 8px; border: 1px solid #765133; text-align: center;">
-                                <input type="number" value="${monster.hp}" style="width: 60px; padding: 5px; background-color: #2b190f; color: #fff; border: 1px solid #765133; border-radius: 4px; text-align: center;">
-                            </td>
-                            <td style="padding: 8px; border: 1px solid #765133;"> </td>
-                        `;
-
-                        monsterTableBody.appendChild(newRow);
-                        addMonsterToken(monster);
-
-                        newRow.addEventListener('click', () => loadMonster(name));
-                    })
-                    .catch(err => {
-                        console.error("Error loading monster for table:", err);
-                        alert(`Could not load monster: ${name}`);
-                    });
-
-                promises.push(fetchPromise);
-            });
-
-            Promise.all(promises).then(() => {
-                syncMonstersToFirebase();
-                updateMonsterTable();
-
-            });
+        async function sendEncounter() {
+            const generation = boardSync.generation;
+            const names = [...document.querySelectorAll('#encounterMonsterList li')].map(li => li.textContent.split(' (')[0]);
+            try {
+                const additions = await Promise.all(names.map(async name => ({ ...buildMonsterInstance(await loadMonsterDefinitionByName(name)), _boardGeneration: generation })));
+                await addMonstersToFirebase(additions);
+            } catch (error) { reportBoardSyncError(error); }
         }
 
-        //------------------------- Loot Table Tab----------------------------------------------------------
+
+        // Loot state shared with campaign saves and creature removal tracking.
         let LOOT_DATA = null;
         const CR_XP_VALUES = new Map([[0,10],[0.125,25],[0.25,50],[0.5,100],[1,200],[2,450],[3,700],[4,1100],[5,1800],[6,2300],[7,2900],[8,3900],[9,5000],[10,5900],[11,7200],[12,8400],[13,10000],[14,11500],[15,13000],[16,15000],[17,18000],[18,20000],[19,22000],[20,25000],[21,33000],[22,41000],[23,50000],[24,62000],[25,75000],[26,90000],[27,105000],[28,120000],[29,135000],[30,155000]]);
         const lootTrackedCreatureIds = new Set();
@@ -9142,236 +9031,14 @@
 
 
         // FIREBASE SYNCHRONIZATON-----------------------------------------------------------------------------------------
-        let lastSyncedAt = 0;
-        let lastNpcSyncedAt = 0;
-
-        function nextMonsterRevision(data) {
-            const revision = Number(data?.revision);
-            return Number.isFinite(revision) ? revision + 1 : 1;
-        }
-
-        function syncMonsterChangesToFirebase(changes, removedIds = []) {
-            const changeMap = changes instanceof Map ? changes : new Map();
-            const removed = new Set(removedIds);
-            if (!changeMap.size && !removed.size) return Promise.resolve();
-            return db.runTransaction(async transaction => {
-                const snapshot = await transaction.get(monstersRef);
-                const serverData = snapshot.data() || {};
-                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-                const mergedMonsters = serverMonsters
-                    .filter(monster => !removed.has(monster.id))
-                    .map(monster => changeMap.has(monster.id) ? { ...monster, ...changeMap.get(monster.id) } : monster);
-                const revision = nextMonsterRevision(serverData);
-                transaction.set(monstersRef, {
-                    monsters: mergedMonsters,
-                    revision,
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                }, { merge:true });
-                lastSyncedAt = revision;
-            }).catch(error => console.error('Error syncing selected creature changes:', error));
-        }
-
-        function syncMonsterPositionsToFirebase(monsterIds) {
-            const movedMonsters = new Map(monsters
-                .filter(monster => monsterIds.includes(monster.id))
-                .map(monster => [monster.id, { ...monster }]));
-            if (!movedMonsters.size) return Promise.resolve();
-
-            return db.runTransaction(async transaction => {
-                const snapshot = await transaction.get(monstersRef);
-                const serverData = snapshot.data() || {};
-                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-                const mergedMonsters = serverMonsters.map(monster => {
-                    const movedMonster = movedMonsters.get(monster.id);
-                    return movedMonster ? { ...monster, xRatio: movedMonster.xRatio, yRatio: movedMonster.yRatio } : monster;
-                });
-                const serverIds = new Set(serverMonsters.map(monster => monster.id));
-                movedMonsters.forEach(monster => { if (!serverIds.has(monster.id)) mergedMonsters.push(monster); });
-                const revision = nextMonsterRevision(serverData);
-                transaction.set(monstersRef, {
-                    monsters: mergedMonsters,
-                    revision,
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                }, { merge: true });
-                lastSyncedAt = revision;
-            }).catch(error => console.error('Error syncing token position:', error));
-        }
-
-        function removeMonstersFromFirebase(monsterIds) {
-            const ids = new Set(monsterIds);
-            if (!ids.size) return Promise.resolve();
-            return db.runTransaction(async transaction => {
-                const snapshot = await transaction.get(monstersRef);
-                const serverData = snapshot.data() || {};
-                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-                const revision = nextMonsterRevision(serverData);
-                transaction.set(monstersRef, {
-                    monsters: serverMonsters.filter(monster => !ids.has(monster.id)),
-                    revision,
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                }, { merge: true });
-                lastSyncedAt = revision;
-            }).catch(error => console.error('Error removing shared creatures:', error));
-        }
-
-        function addMonstersToFirebase(newMonsters) {
-            const additions = newMonsters.map(monster => ({ ...monster }));
-            if (!additions.length) return Promise.resolve();
-            return db.runTransaction(async transaction => {
-                const snapshot = await transaction.get(monstersRef);
-                const serverData = snapshot.data() || {};
-                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-                const serverIds = new Set(serverMonsters.map(monster => monster.id));
-                const mergedMonsters = [...serverMonsters, ...additions.filter(monster => !serverIds.has(monster.id))];
-                const revision = nextMonsterRevision(serverData);
-                transaction.set(monstersRef, {
-                    monsters: mergedMonsters,
-                    revision,
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                }, { merge: true });
-                lastSyncedAt = revision;
-            }).then(() => true).catch(error => {
-                console.error('Error adding shared creatures:', error);
-                return false;
-            });
-        }
-
-        function syncMonstersToFirebase() {
-            const monstersRef = db.collection("shared").doc("monsters");
-            const localMonsters = monsters.map(monster => ({ ...monster }));
-            if (document.getElementById('cpuAdvisorOutput')) invalidateCpuRecommendation('Battlefield state changed. Generate a fresh recommendation.');
-
-            return db.runTransaction(async transaction => {
-                const doc = await transaction.get(monstersRef);
-                const serverData = doc.data() || {};
-                const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-                const localById = new Map(localMonsters.map(monster => [monster.id, monster]));
-                const mergedMonsters = serverMonsters.map(monster => localById.get(monster.id) || monster);
-                const serverIds = new Set(serverMonsters.map(monster => monster.id));
-                localMonsters.forEach(monster => { if (!serverIds.has(monster.id)) mergedMonsters.push(monster); });
-                const revision = nextMonsterRevision(serverData);
-                transaction.set(monstersRef, {
-                    monsters: mergedMonsters,
-                    revision,
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                }, { merge: true });
-                lastSyncedAt = revision;
-            }).then(() => {
-                console.log("Monsters synced.");
-            }).catch(err => {
-                console.error("Error syncing monsters:", err);
-            });
-        }
-
-        function forceReloadMonsters() {
-            const monstersRef = db.collection("shared").doc("monsters");
-
-            monstersRef.get().then(doc => {
-                if (!doc.exists) {
-                    console.warn("No monster data found in Firebase.");
-                    return;
-                }
-
-                const data = doc.data();
-                if (!Array.isArray(data.monsters)) return;
-
-                lastSyncedAt = Number(data.revision) || 0;
-
-                monsters.length = 0;
-                document.getElementById('mapTokenLayer').innerHTML = '';
-
-                data.monsters.forEach(m => {
-                    const normalized = normalizeMonsterState(m);
-                    if (normalized.hp <= 0 && !normalized.isplayer) return;
-                    monsters.push(normalized);
-                    addMonsterToken(normalized);
-                });
-
-                scheduleMapLayoutRefresh();
-                updateMonsterTable();
-                console.log("Monsters force-reloaded from Firebase.");
-            }).catch(err => {
-                console.error("Failed to reload monsters from Firebase:", err);
-            });
-        }
-
-
-        // Load monsters from Firebase on page load
-        const monstersRef = db.collection("shared").doc("monsters");
+        // Subscribe to individual token records in the active Firebase board.
         const npcRef = db.collection("shared").doc("npcs");
+        let lastNpcSyncedAt = 0;
         let suppressLootTrackingUntil = 0;
 
-        monstersRef.onSnapshot(doc => {
-            if (!doc.exists) {
-                console.log("No monsters found in Firebase.");
-                return;
-            }
+        initializeBoardUI('dm');
 
-            const data = doc.data();
-            if (!Array.isArray(data.monsters)) return;
-
-            const incomingRevision = Number(data.revision) || 0;
-            if (incomingRevision < lastSyncedAt) return;
-            lastSyncedAt = incomingRevision;
-
-            const incomingIds = new Set(data.monsters.map(monster => monster.id));
-            incomingIds.forEach(id => pendingMonsterAdditions.delete(id));
-            const incomingMonsters = [...data.monsters];
-            pendingMonsterAdditions.forEach((monster, id) => {
-                if (!incomingIds.has(id)) incomingMonsters.push(monster);
-            });
-
-            if (Date.now() >= suppressLootTrackingUntil) {
-                const effectiveIds = new Set(incomingMonsters.map(monster => monster.id));
-                monsters.filter(monster => !monster.isplayer && !effectiveIds.has(monster.id)).forEach(recordCreatureForLoot);
-            }
-
-            // Store previous HP for comparison
-            const previousHP = {};
-            monsters.forEach(m => previousHP[m.id] = m.hp);
-
-            // Animate deaths while the previous token still exists. Non-player
-            // defeated tokens are filtered out when the layer is rebuilt.
-            incomingMonsters.forEach(incoming => {
-                const oldHP = previousHP[incoming.id];
-                if (typeof oldHP === 'number' && oldHP > 0 && Number(incoming.hp) <= 0) {
-                    showTokenDeathEffect(incoming.id, false);
-                }
-            });
-
-            // Clear local array *in-place*
-            monsters.length = 0;
-
-            // Clear existing tokens
-            console.log(`before deleting tokens: mapImage size: ${mapWidth} x ${mapHeight}`);
-            document.getElementById('mapTokenLayer').innerHTML = '';
-
-            // Rebuild state and tokens
-            incomingMonsters.forEach(m => {
-                    const normalized = normalizeMonsterState(m);
-                    if (normalized.hp <= 0 && !normalized.isplayer) return;
-                    monsters.push(normalized);
-                    addMonsterToken(normalized);
-
-                    // Compare HP for animation
-                    const oldHP = previousHP[normalized.id];
-                    if (typeof oldHP === 'number') {
-                        if (normalized.hp > oldHP) flashToken(normalized.id, 'heal');
-                        else if (normalized.hp < oldHP) {
-                            flashToken(normalized.id, 'damage');
-                            if (oldHP > 0 && normalized.hp === 0) showTokenDeathEffect(normalized.id, false);
-                        }
-                    }
-
-            });
-
-            scheduleMapLayoutRefresh();
-            updateMonsterTable();
-        });
-
-        mapRef.onSnapshot(doc => {
-            if (!doc.exists) return;
-            const sharedMap = doc.data() || {};
+        boardSync.subscribeMap(sharedMap => {
             const sharedScale = Number(sharedMap.mapScale);
             if (Number.isFinite(sharedScale)) {
                 sharedMapScale = Math.min(Math.max(0.2, sharedScale), 3);
@@ -9379,7 +9046,7 @@
             }
             if (sharedMap.filepath) {
                 currentSharedMapPath = sharedMap.filepath;
-                mapImage.src = currentSharedMapPath;
+                if (mapImage.getAttribute('src') !== currentSharedMapPath) mapImage.src = currentSharedMapPath;
                 if (!document.getElementById('addCampaignMapModal').open && Array.from(mapSelect.options).some(option => option.value === currentSharedMapPath)) {
                     mapSelect.value = currentSharedMapPath;
                 }
@@ -9524,7 +9191,7 @@
         switchSpellLevel('spell0');
         switchTab('attacksTab');
     </script>
-    <script src="campaign-manager.js?v=3"></script>
+    <script src="campaign-manager.js?v=4"></script>
     <script type="module" src="dice-roller-3d.js?v=19"></script>
 </div>
 </body>

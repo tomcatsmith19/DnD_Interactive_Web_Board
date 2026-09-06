@@ -607,9 +607,11 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-  <script src="map-drawing.js"></script>
-  <script src="token-placement.js"></script>
+  <script src="map-drawing.js?v=2"></script>
+  <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=2"></script>
+    <script src="board-sync.js?v=1"></script>
+    <script src="board-ui.js?v=1"></script>
     <script src="reference.js?v=2"></script>
 
   <script>
@@ -626,6 +628,7 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
+        const boardSync = SharedBoardSync.create({ db, firebase, onError: reportBoardSyncError });
     const storage = firebase.storage();
     const playerSessionControls = document.getElementById('playerSessionControls');
     const playerMenuButton = document.getElementById('menuBtn');
@@ -709,7 +712,7 @@
     const customPlayersRef = db.collection('customPlayers');
 
     function updatePlayerTokenInitiativeLabels() {
-      const ordered = [...monsters].sort((a,b)=>(Number(b.init)||0)-(Number(a.init)||0));
+      const ordered = [...monsters].sort((a,b)=>(Number(b.init)||0)-(Number(a.init)||0)||a.id.localeCompare(b.id));
       ordered.filter(monster=>monster.hp>0||monster.isplayer).forEach((monster,index)=>{
         const label=document.querySelector(`#token-${CSS.escape(monster.id)} .token-label`);
         if(label)label.textContent=index;
@@ -724,7 +727,21 @@
       const body=document.getElementById('partyTableBody'); if(!body)return; body.replaceChildren();
       monsters.filter(monster=>monster.partyManaged).forEach(monster=>{
         const row=body.insertRow(),nameCell=row.insertCell(),removeButton=document.createElement('button'),focusButton=document.createElement('button');removeButton.type='button';removeButton.textContent='×';removeButton.title='Remove from party';removeButton.style.cssText='margin-right:5px;padding:1px 5px;background:#c62828;color:white;';removeButton.addEventListener('click',()=>removeCreatureById(monster.id));focusButton.type='button';focusButton.textContent=monster.name;focusButton.title=`Center map on ${monster.name}`;focusButton.style.cssText='padding:0;border:0;background:none;color:#f4d76d;font:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(244,215,109,.45);';focusButton.addEventListener('click',()=>focusMapToken(monster.id));nameCell.append(removeButton,focusButton);
-        ['init','hp','maxHp','ac'].forEach(field=>{const cell=row.insertCell(),input=document.createElement('input');input.type='number';input.value=field==='ac'?(Number(monster.ac)||10):(monster[field]??0);if(field==='ac'){input.min='1';input.max='40';input.title='Armor Class used by the DM CPU Action Advisor';input.setAttribute('aria-label',`${monster.name} Armor Class`);}input.addEventListener('change',()=>{monster[field]=Number(input.value)||(field==='ac'?10:0);if(field==='maxHp')monster.maxHp=Math.max(1,monster.maxHp);if(field==='ac')monster.ac=Math.max(1,Math.min(40,monster.ac));if(field==='hp'&&!monster.isplayer)monster.hp=Math.max(0,monster.hp);updateTokenHealthBar(monster);updateTokenDefeatedState(monster);updatePlayerTokenInitiativeLabels();syncMonsterFieldsToFirebase(monster.id,{init:monster.init,hp:monster.hp,maxHp:monster.maxHp,ac:monster.ac});});cell.appendChild(input);});
+        ['init', 'hp', 'maxHp', 'ac'].forEach(field => {
+          const cell = row.insertCell(), input = document.createElement('input');
+          input.type = 'number'; input.value = field === 'ac' ? (Number(monster.ac) || 10) : (monster[field] ?? 0);
+          if (field === 'ac') {
+            input.min = '1'; input.max = '40'; input.title = 'Armor Class used by the DM CPU Action Advisor';
+            input.setAttribute('aria-label', `${monster.name} Armor Class`);
+          }
+          input.addEventListener('change', () => {
+            let value = Number(input.value) || (field === 'ac' ? 10 : 0);
+            if (field === 'maxHp') value = Math.max(1, value);
+            if (field === 'ac') value = Math.max(1, Math.min(40, value));
+            syncMonsterFieldsToFirebase(monster.id, { [field]: value }, monster._boardGeneration);
+          });
+          cell.appendChild(input);
+        });
       });
     }
 
@@ -894,6 +911,7 @@
     }
 
     function renderGroupMoveHandle(selected) {
+      if (document.getElementById('groupMoveHandle')?.dataset.dragging === 'true') return;
       document.getElementById('groupMoveHandle')?.remove();
       if (selected.length < 2 || !mapImage.clientWidth || !mapImage.clientHeight) return;
       const mapWidth = mapImage.clientWidth;
@@ -908,21 +926,34 @@
       let dragState = null;
       handle.addEventListener('pointerdown', event => {
         event.preventDefault(); event.stopPropagation();
-        dragState = { pointerId:event.pointerId, clientX:event.clientX, clientY:event.clientY, positions:selected.map(monster=>({monster,xRatio:monster.xRatio,yRatio:monster.yRatio})) };
+        dragState = { generation: boardSync.generation, pointerId:event.pointerId, clientX:event.clientX, clientY:event.clientY, positions:selected.map(monster=>({monster,xRatio:monster.xRatio,yRatio:monster.yRatio})) };
+        handle.dataset.dragging = 'true';
+        selected.forEach(token => { const el = document.getElementById(`token-${token.id}`); if (el) el.dataset.dragging = 'true'; });
         handle.setPointerCapture?.(event.pointerId);
       });
       handle.addEventListener('pointermove', event => {
-        if (!dragState || event.pointerId !== dragState.pointerId) return;
+        if (!dragState || event.pointerId !== dragState.pointerId || dragState.generation !== boardSync.generation) return;
         const rawDx=(event.clientX-dragState.clientX)/scale/mapWidth;
         const rawDy=(event.clientY-dragState.clientY)/scale/mapHeight;
         const dxRatio=Math.min(Math.min(...dragState.positions.map(start=>1-start.xRatio)),Math.max(Math.max(...dragState.positions.map(start=>-start.xRatio)),rawDx));
         const dyRatio=Math.min(Math.min(...dragState.positions.map(start=>1-start.yRatio)),Math.max(Math.max(...dragState.positions.map(start=>-start.yRatio)),rawDy));
-        dragState.positions.forEach(start=>{start.monster.xRatio=start.xRatio+dxRatio;start.monster.yRatio=start.yRatio+dyRatio;positionTokenElement(start.monster);});
+        dragState.positions.forEach(start=>{start.monster.xRatio=start.xRatio+dxRatio;start.monster.yRatio=start.yRatio+dyRatio;positionTokenElement(start.monster, undefined, true);});
         const centerX=dragState.positions.reduce((sum,start)=>sum+start.monster.xRatio*mapWidth,0)/dragState.positions.length;
         const centerY=dragState.positions.reduce((sum,start)=>sum+start.monster.yRatio*mapHeight,0)/dragState.positions.length;
         handle.style.left=`${centerX-17}px`; handle.style.top=`${centerY-17}px`;
       });
-      handle.addEventListener('pointerup', event => { if (!dragState || event.pointerId !== dragState.pointerId) return; const movedIds=dragState.positions.map(start=>start.monster.id); dragState=null; syncMonsterPositionsToFirebase(movedIds); });
+      handle.addEventListener('pointerup', event => { if (!dragState || event.pointerId !== dragState.pointerId || dragState.generation !== boardSync.generation) return; const movedIds=dragState.positions.map(start=>start.monster.id); dragState=null; handle.dataset.dragging='false'; movedIds.forEach(id=>{const el=document.getElementById(`token-${id}`);if(el)el.dataset.dragging='false';}); syncMonsterPositionsToFirebase(movedIds); });
+      const cancelDrag = () => {
+        if (!dragState) return;
+        dragState.positions.forEach(({ monster }) => {
+          const el = document.getElementById(`token-${monster.id}`);
+          if (el) el.dataset.dragging = 'false';
+        });
+        dragState = null; handle.dataset.dragging = 'false';
+        boardSync.reconcile().catch(reportBoardSyncError);
+      };
+      handle.addEventListener('pointercancel', cancelDrag);
+      handle.addEventListener('lostpointercapture', cancelDrag);
       handle.addEventListener('click', event => event.stopPropagation());
     }
 
@@ -934,7 +965,7 @@
     }
 
     function clearMapTokenSelection() { selectedMapTokenIds.clear(); refreshMapTokenSelection(); }
-    function removeCreatureById(monsterId,sync=true){const index=monsters.findIndex(monster=>monster.id===monsterId);if(index>=0)monsters.splice(index,1);selectedMapTokenIds.delete(monsterId);document.getElementById(`token-${monsterId}`)?.remove();updatePlayerTokenInitiativeLabels();renderPartyTracker();refreshMapTokenSelection();if(sync)removeMonstersFromFirebase([monsterId]);}
+    function removeCreatureById(monsterId) { return removeMonstersFromFirebase([monsterId]); }
 
     const deathEffectRef = db.collection('shared').doc('deathEffect');
     const deathEffectClientId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
@@ -983,29 +1014,8 @@
       document.getElementById(`token-${monsterId}`)?.remove();
     }
 
-    function applyMapTokenAction(action, condition = "", level = 0) {
-      const amount = Math.max(0, Math.trunc(Number(document.getElementById('mapActionAmount').value) || 0));
-      const targets = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
-      targets.forEach(monster => {
-        const previousHp = monster.hp;
-                monster.conditions = TokenActions.normalizeConditions(monster.conditions);
-                if (action === 'exhaustion') monster.conditions = TokenActions.withExhaustion(monster.conditions, level);
-        if (action === 'heal') { monster.hp = Math.min(monster.maxHp, monster.hp + amount); flashToken(monster.id,'heal'); }
-        else if (action === 'damage') { monster.hp = monster.isplayer ? monster.hp-amount : Math.max(0,monster.hp-amount); flashToken(monster.id,'damage'); if (previousHp > 0 && monster.hp <= 0) { showTokenDeathEffect(monster.id); removeDefeatedMonster(monster.id); } }
-        else if (action === 'apply' && !monster.conditions.some(item => item.toLowerCase() === condition.toLowerCase())) monster.conditions.push(condition);
-        else if (action === 'remove') monster.conditions = monster.conditions.filter(item => item.toLowerCase() !== condition.toLowerCase());
-        else if (action === 'removeCreature') removeCreatureById(monster.id,false);
-        updateTokenHealthBar(monster); updateTokenDefeatedState(monster);
-        TokenActions.renderTokenConditions(monster, document.getElementById(`token-${monster.id}`), currentTokenSize);
-        if (monster.id === currentPlayerId) document.getElementById('currentHP').value = monster.hp;
-      });
-      refreshMapTokenSelection();
-      const removedIds = targets.filter(target => !monsters.some(monster => monster.id === target.id)).map(target => target.id);
-      syncMonstersToFirebase().then(() => removeMonstersFromFirebase(removedIds));
-      renderPartyTracker();
-    }
-
-    function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`)) {
+    function positionTokenElement(monster, element = document.getElementById(`token-${monster.id}`), force = false) {
+      if (!force && element?.dataset.dragging === 'true') return;
       if (!element || !mapImage?.clientWidth || !mapImage?.clientHeight) return;
 
       element.style.left = `${monster.xRatio * mapImage.clientWidth - TokenActions.tokenSize(monster, currentTokenSize) / 2}px`;
@@ -1114,12 +1124,15 @@
 
     function makeDraggable(el) {
       let isDragging = false;
+            let dragGeneration = '';
       let dragOriginLeft = 0, dragOriginTop = 0;
       let dragStartX = 0, dragStartY = 0, didMove = false;
 
       el.addEventListener('mousedown', (e) => {
         e.preventDefault();
         isDragging = true;
+        dragGeneration = boardSync.generation;
+        el.dataset.dragging = 'true';
         didMove = false; dragStartX = e.clientX; dragStartY = e.clientY;
         dragOriginLeft = el.offsetLeft;
         dragOriginTop = el.offsetTop;
@@ -1127,7 +1140,7 @@
       });
 
       document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
+        if (!isDragging || dragGeneration !== boardSync.generation || !el.isConnected) return;
         if (Math.hypot(e.clientX-dragStartX,e.clientY-dragStartY)>3) didMove=true;
         el.style.left = `${dragOriginLeft + (e.clientX - dragStartX) / scale}px`;
         el.style.top = `${dragOriginTop + (e.clientY - dragStartY) / scale}px`;
@@ -1136,6 +1149,8 @@
       document.addEventListener('mouseup', () => {
         if (isDragging) {
           el.style.cursor = 'grab';
+          el.dataset.dragging = 'false';
+          if (dragGeneration !== boardSync.generation || !el.isConnected) { isDragging = false; return; }
           isDragging = false;
 
           const id = el.id.replace('token-', '');
@@ -1151,10 +1166,16 @@
         }
       });
 
+      el.addEventListener('touchcancel', () => {
+        isDragging = false; el.dataset.dragging = 'false';
+        boardSync.reconcile().catch(reportBoardSyncError);
+      });
       // TOUCH support for dragging
       el.addEventListener('touchstart', (e) => {
         e.preventDefault();
         isDragging = true;
+        dragGeneration = boardSync.generation;
+        el.dataset.dragging = 'true';
         const touch = e.touches[0];
         dragStartX = touch.clientX;
         dragStartY = touch.clientY;
@@ -1164,7 +1185,7 @@
       }, { passive: false });
 
       el.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
+        if (!isDragging || dragGeneration !== boardSync.generation || !el.isConnected) return;
         const touch = e.touches[0];
         el.style.left = `${dragOriginLeft + (touch.clientX - dragStartX) / scale}px`;
         el.style.top = `${dragOriginTop + (touch.clientY - dragStartY) / scale}px`;
@@ -1173,6 +1194,8 @@
       el.addEventListener('touchend', () => {
         if (isDragging) {
           el.style.cursor = 'grab';
+          el.dataset.dragging = 'false';
+          if (dragGeneration !== boardSync.generation || !el.isConnected) { isDragging = false; return; }
           isDragging = false;
 
           const id = el.id.replace('token-', '');
@@ -1251,246 +1274,36 @@
         isplayer: true
       };
 
-      monsters.push(token);
-      addMonsterToken(token);
       showCurrentPlayerStats(token);
       addMonstersToFirebase([token]);
     });
 
     // Update HP and initiative on input change
-    document.getElementById('currentHP').addEventListener('input', () => {
+    document.getElementById('currentHP').addEventListener('change', () => {
       const m = monsters.find(m => m.id === currentPlayerId);
       if (m) {
-        const previousHp = m.hp;
-        m.hp = parseInt(document.getElementById('currentHP').value) || 0;
-        m.maxHp = Math.max(m.maxHp || 1, m.hp);
-        if (m.hp > previousHp) flashToken(m.id,'heal');
-        else if (m.hp < previousHp) flashToken(m.id,'damage');
-        if (previousHp > 0 && m.hp <= 0) showTokenDeathEffect(m.id);
-        updateTokenHealthBar(m); updateTokenDefeatedState(m);
-        syncMonstersToFirebase();
+        syncMonsterFieldsToFirebase(m.id, { hp: parseInt(document.getElementById('currentHP').value) || 0 }, m._boardGeneration);
       }
     });
 
-    document.getElementById('initiativeInput').addEventListener('input', () => {
+    document.getElementById('initiativeInput').addEventListener('change', () => {
       const m = monsters.find(m => m.id === currentPlayerId);
       if (m) {
-        m.init = parseInt(document.getElementById('initiativeInput').value);
-        syncMonstersToFirebase();
+        syncMonsterFieldsToFirebase(m.id, { init: parseInt(document.getElementById('initiativeInput').value) || 0 }, m._boardGeneration);
       }
     });
 
 
 
-    // FIREBASE SYNCHRONIZATON
-    function nextMonsterRevision(data) {
-      const revision = Number(data?.revision);
-      return Number.isFinite(revision) ? revision + 1 : 1;
-    }
-
-    function syncMonsterPositionsToFirebase(monsterIds) {
-      const movedMonsters = new Map(monsters
-        .filter(monster => monsterIds.includes(monster.id))
-        .map(monster => [monster.id, { ...monster }]));
-      if (!movedMonsters.size) return Promise.resolve();
-
-      return db.runTransaction(async transaction => {
-        const snapshot = await transaction.get(monstersRef);
-        const serverData = snapshot.data() || {};
-        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-        const mergedMonsters = serverMonsters.map(monster => {
-          const movedMonster = movedMonsters.get(monster.id);
-          return movedMonster ? { ...monster, xRatio: movedMonster.xRatio, yRatio: movedMonster.yRatio } : monster;
-        });
-        const serverIds = new Set(serverMonsters.map(monster => monster.id));
-        movedMonsters.forEach(monster => { if (!serverIds.has(monster.id)) mergedMonsters.push(monster); });
-        const revision = nextMonsterRevision(serverData);
-        transaction.set(monstersRef, {
-          monsters: mergedMonsters,
-          revision,
-          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-        lastSyncedAt = revision;
-      }).catch(error => console.error('Error syncing token position:', error));
-    }
-
-    function syncMonsterFieldsToFirebase(monsterId, fields) {
-      const safeFields = Object.fromEntries(Object.entries(fields).filter(([, value]) => value !== undefined));
-      return db.runTransaction(async transaction => {
-        const snapshot = await transaction.get(monstersRef);
-        const serverData = snapshot.data() || {};
-        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-        const localMonster = monsters.find(monster => monster.id === monsterId);
-        let found = false;
-        const mergedMonsters = serverMonsters.map(monster => {
-          if (monster.id !== monsterId) return monster;
-          found = true;
-          return { ...monster, ...safeFields };
-        });
-        if (!found && localMonster) mergedMonsters.push({ ...localMonster, ...safeFields });
-        const revision = nextMonsterRevision(serverData);
-        transaction.set(monstersRef, {
-          monsters: mergedMonsters,
-          revision,
-          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-        lastSyncedAt = revision;
-      }).catch(error => console.error('Error syncing creature stats:', error));
-    }
-
-    function removeMonstersFromFirebase(monsterIds) {
-      const ids = new Set(monsterIds);
-      if (!ids.size) return Promise.resolve();
-      return db.runTransaction(async transaction => {
-        const snapshot = await transaction.get(monstersRef);
-        const serverData = snapshot.data() || {};
-        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-        const revision = nextMonsterRevision(serverData);
-        transaction.set(monstersRef, {
-          monsters: serverMonsters.filter(monster => !ids.has(monster.id)),
-          revision,
-          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-        lastSyncedAt = revision;
-      }).catch(error => console.error('Error removing shared creatures:', error));
-    }
-
-    function addMonstersToFirebase(newMonsters) {
-      const additions = newMonsters.map(monster => ({ ...monster }));
-      if (!additions.length) return Promise.resolve();
-      return db.runTransaction(async transaction => {
-        const snapshot = await transaction.get(monstersRef);
-        const serverData = snapshot.data() || {};
-        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-        const serverIds = new Set(serverMonsters.map(monster => monster.id));
-        const mergedMonsters = [...serverMonsters, ...additions.filter(monster => !serverIds.has(monster.id))];
-        const revision = nextMonsterRevision(serverData);
-        transaction.set(monstersRef, {
-          monsters: mergedMonsters,
-          revision,
-          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-        lastSyncedAt = revision;
-      }).catch(error => console.error('Error adding shared creatures:', error));
-    }
-
-    function syncMonstersToFirebase() {
-      const monstersRef = db.collection("shared").doc("monsters");
-      const localMonsters = monsters.map(monster => ({ ...monster }));
-
-      return db.runTransaction(async transaction => {
-        const doc = await transaction.get(monstersRef);
-        const serverData = doc.data() || {};
-        const serverMonsters = Array.isArray(serverData.monsters) ? serverData.monsters : [];
-        const localById = new Map(localMonsters.map(monster => [monster.id, monster]));
-        const mergedMonsters = serverMonsters.map(monster => localById.get(monster.id) || monster);
-        const serverIds = new Set(serverMonsters.map(monster => monster.id));
-        localMonsters.forEach(monster => { if (!serverIds.has(monster.id)) mergedMonsters.push(monster); });
-        const revision = nextMonsterRevision(serverData);
-        transaction.set(monstersRef, {
-          monsters: mergedMonsters,
-          revision,
-          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-        lastSyncedAt = revision;
-      }).then(() => {
-        console.log("Monsters synced.");
-      }).catch(err => {
-        console.error("Error syncing monsters:", err);
-      });
-    }
-
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    function forceReloadMonsters() {
-      const monstersRef = db.collection("shared").doc("monsters");
-
-      monstersRef.get().then(doc => {
-        if (!doc.exists) {
-          console.warn("No monster data found in Firebase.");
-          return;
-        }
-
-        const data = doc.data();
-        if (!Array.isArray(data.monsters)) return;
-
-        lastSyncedAt = Number(data.revision) || 0;
-
-        monsters.length = 0;
-        document.getElementById('mapTokenLayer').innerHTML = '';
-
-        data.monsters.forEach(m => {
-          const normalized=normalizeMonsterState(m);
-          if(normalized.hp<=0&&!normalized.isplayer)return;
-          monsters.push(normalized);
-          addMonsterToken(normalized);
-        });
-
-        scheduleMapLayoutRefresh();
-        updatePlayerTokenInitiativeLabels();
-        renderPartyTracker();
-        //updateMonsterTable();
-        console.log("Monsters force-reloaded from Firebase.");
-      }).catch(err => {
-        console.error("Failed to reload monsters from Firebase:", err);
-      });
-    }
-
-
-    // Execute Action Button
     const executeBtn = document.getElementById('executeBtn');
 
-    executeBtn?.addEventListener('click', async () => {
-      const action = document.getElementById('actionSelect').value;
-      const index = parseInt(document.getElementById('targetIndex').value);
-      const condition = document.getElementById('conditionSelect').value;
-      const amount = parseInt(document.getElementById('amountTurns').value);
-
-      if (index < 0 || index >= monsters.length) {
-        alert("Invalid target index.");
-        return;
-      }
-
-
-      const monster = monsters[index];
-      const previousHP = monster.hp;
-
-
-      if (action === 'heal') {
-        monster.hp = Math.min(monster.maxHp || monster.hp + amount, monster.hp + amount);
-
-        flashToken(monster.id, 'heal');
-        await sleep(1000);
-
-      } else if (action === 'damage') {
-        monster.hp = monster.isplayer ? monster.hp - amount : Math.max(0, monster.hp - amount);
-
-        flashToken(monster.id, 'damage');
-        if (previousHP > 0 && monster.hp <= 0) {
-          showTokenDeathEffect(monster.id);
-          removeDefeatedMonster(monster.id);
-        }
-        await sleep(1000);
-
-      } else if (action === 'apply') {
-        if (condition !== "-- None --" && !monster.conditions.includes(condition)) {
-          monster.conditions.push(condition);
-        }
-      } else if (action === 'remove') {
-        if (condition !== "-- None --") {
-          monster.conditions = monster.conditions.filter(c => c.toLowerCase() !== condition.toLowerCase());
-        }
-      }
-
-
-      syncMonstersToFirebase();
-
-
-
-
-    });
+    executeBtn?.addEventListener('click', () => {
+            const token = monsters[parseInt(document.getElementById('targetIndex').value)];
+            if (!token) { alert('Invalid target index.'); return; }
+            runBoardWrite(boardSync.action([token.id], document.getElementById('actionSelect').value,
+                Number(document.getElementById('amountTurns').value) || 0,
+                document.getElementById('conditionSelect').value, 0, token._boardGeneration));
+        });
 
     let isPanning = false;
     let panStartX = 0, panStartY = 0;
@@ -1546,18 +1359,13 @@
     }
 
     const partyTokenPlacement = setupMapTokenPlacement({
+      getGeneration: () => boardSync.generation,
       mapImage,
       mapSurface: playerMapTransformLayer,
       getTokenSrc: monster => monster.isplayer
         ? (monster.tokenUrl || `data/player_tokens/${encodeURIComponent(monster.name)}.png`)
         : (monster.tokenUrl || `data/monster_tokens/${encodeURIComponent(monster.name)}.webp`),
-      onPlace: async monster => {
-        monsters.push(monster);
-        addMonsterToken(monster);
-        updatePlayerTokenInitiativeLabels();
-        renderPartyTracker();
-        await addMonstersToFirebase([monster]);
-      }
+      onPlace: monster => addMonstersToFirebase([monster])
     });
 
     function isPointInsideLasso(point,polygon){let inside=false;for(let i=0,j=polygon.length-1;i<polygon.length;j=i++){const a=polygon[i],b=polygon[j];if(((a.y>point.y)!==(b.y>point.y))&&point.x<(b.x-a.x)*(point.y-a.y)/((b.y-a.y)||.00001)+a.x)inside=!inside;}return inside;}
@@ -1799,78 +1607,11 @@
 
     // FIREBASE ACTION HANDLER
 
-    // Load monsters from Firebase on page load
-    const monstersRef = db.collection("shared").doc("monsters");
+    // Subscribe to individual token records in the active Firebase board.
+    initializeBoardUI('player');
 
-    let lastSyncedAt = 0;
-
-    monstersRef.onSnapshot(doc => {
-      if (!doc.exists) {
-        console.log("No monsters found in Firebase.");
-        return;
-      }
-
-      const data = doc.data();
-      if (!Array.isArray(data.monsters)) return;
-
-      const incomingRevision = Number(data.revision) || 0;
-      if (incomingRevision < lastSyncedAt) return;
-      lastSyncedAt = incomingRevision;
-
-      // Store previous HP for comparison
-      const previousHP = {};
-      monsters.forEach(m => previousHP[m.id] = m.hp);
-
-      // Animate deaths before rebuilding the layer; defeated monster tokens are
-      // omitted below, so their old DOM position is only available right now.
-      data.monsters.forEach(incoming => {
-        const oldHP = previousHP[incoming.id];
-        if (typeof oldHP === 'number' && oldHP > 0 && Number(incoming.hp) <= 0) {
-          showTokenDeathEffect(incoming.id, false);
-        }
-      });
-
-      // Clear local array *in-place*
-      monsters.length = 0;
-
-      // Clear existing tokens
-      document.getElementById('mapTokenLayer').innerHTML = '';
-
-      // Rebuild state and tokens
-      data.monsters.forEach(m => {
-        const normalized=normalizeMonsterState(m);
-        if(normalized.hp<=0&&!normalized.isplayer)return;
-        monsters.push(normalized);
-        addMonsterToken(normalized);
-
-        // Compare HP for animation
-        const oldHP = previousHP[normalized.id];
-        if (typeof oldHP === 'number') {
-          if (normalized.hp > oldHP) flashToken(normalized.id, 'heal');
-          else if (normalized.hp < oldHP) flashToken(normalized.id, 'damage');
-        }
-
-      });
-
-      scheduleMapLayoutRefresh();
-      // Update token labels with index
-      monsters.forEach((m, i) => {
-        const token = document.getElementById(`token-${m.id}`);
-        if (token) {
-          const label = token.querySelector('.token-label');
-          if (label) label.textContent = i;
-        }
-      });
-      updatePlayerTokenInitiativeLabels();
-      refreshMapTokenSelection();
-      renderPartyTracker();
-      const savedPlayer = monsters.find(monster => monster.id === currentPlayerId);
-      if (savedPlayer) showCurrentPlayerStats(savedPlayer);
-
-    });
-
-    const mapRef = db.collection("shared").doc("map");
     const drawingToolbarManager = setupSharedMapDrawing({
+      boardSync,
       db,
       mapImage,
       compact: true,
@@ -1883,6 +1624,7 @@
       }
     });
     setupSharedMapDrawing({
+      boardSync,
       db,
       mapImage,
       documentId: 'fogOfWar',
@@ -1923,16 +1665,14 @@
 
     scheduleMapLayoutRefresh();
 
-    mapRef.onSnapshot(doc => {
-      if (!doc.exists) return;
-      const sharedMap = doc.data() || {};
+    boardSync.subscribeMap(sharedMap => {
       const sharedScale = Number(sharedMap.mapScale);
       if (Number.isFinite(sharedScale)) {
         sharedMapScale = Math.min(Math.max(0.2, sharedScale), 3);
         applySharedMapScale();
       }
       if (sharedMap.filepath) {
-        mapImage.src = sharedMap.filepath;
+        if (mapImage.getAttribute('src') !== sharedMap.filepath) mapImage.src = sharedMap.filepath;
         scheduleMapLayoutRefresh();
       }
     });

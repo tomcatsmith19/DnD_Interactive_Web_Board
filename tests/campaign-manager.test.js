@@ -2,6 +2,8 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 const fs = require('node:fs');
 const vm = require('node:vm');
+const { createFirestore } = require('./helpers/fake-firestore');
+const { create: createBoardSync, mapData } = require('../public/board-sync');
 
 const copy = value => value === undefined ? undefined : JSON.parse(JSON.stringify(value));
 const keys = ['monsters', 'map', 'drawings', 'fogOfWar', 'loot'];
@@ -14,42 +16,10 @@ const board = (filepath, hp = 18) => ({
 });
 
 async function fixture(seed = {}) {
-    const documents = new Map(Object.entries(copy(seed)));
-    const listeners = new Map();
-    const batches = [];
-    let nextId = 0, failPath = '';
-    const snapshot = path => ({ exists: documents.has(path), data: () => copy(documents.get(path)) });
-    const ref = path => ({
-        path, id: path.split('/').pop(),
-        collection: name => collection(`${path}/${name}`),
-        get: async () => snapshot(path),
-        onSnapshot: callback => { listeners.set(path, callback); callback(snapshot(path)); }
-    });
-    const collection = path => ({ doc: id => ref(`${path}/${id || `id-${++nextId}`}`) });
-    const db = {
-        collection,
-        batch() {
-            const writes = [];
-            return {
-                set: (target, data, options) => writes.push({ path: target.path, data: copy(data), merge: options?.merge }),
-                delete: target => writes.push({ path: target.path, remove: true }),
-                async commit() {
-                    if (failPath && writes.some(write => write.path === failPath)) throw new Error('Simulated write failure');
-                    assert.ok(writes.length <= 500, 'Firestore batch limit respected');
-                    writes.forEach(write => {
-                        if (write.remove) documents.delete(write.path);
-                        else {
-                            const data = write.merge ? { ...documents.get(write.path), ...write.data } : write.data;
-                            Object.keys(data).forEach(key => { if (data[key]?.__deleteField) delete data[key]; });
-                            documents.set(write.path, data);
-                        }
-                    });
-                    batches.push(writes);
-                    writes.forEach(write => listeners.get(write.path)?.(snapshot(write.path)));
-                }
-            };
-        }
-    };
+    const store = createFirestore(seed);
+    const { db, documents, batches } = store;
+    const boardSync = createBoardSync({ ...store, intervalMs: 0 });
+    await boardSync.ready;
     const elements = new Map();
     class Element {
         constructor() { this.children = []; this.listeners = {}; this.value = ''; this.textContent = ''; this.classList = { contains: () => false }; }
@@ -74,23 +44,26 @@ async function fixture(seed = {}) {
     select.value = 'maps/forest.jpg';
     Object.defineProperty(select, 'selectedOptions', { get: () => select.options.filter(option => option.value === select.value) });
     const context = vm.createContext({
-        db, document, console: { error() {} },
-        firebase: { firestore: { FieldValue: { serverTimestamp: () => 123, delete: () => ({ __deleteField: true }) } } },
-        monstersRef: ref('shared/monsters'), mapRef: ref('shared/map'),
+        db, boardSync, document, console: { error() {} },
+        firebase: store.firebase, mapRef: db.collection('shared').doc('map'),
         currentSharedMapPath: 'maps/forest.jpg', sharedMapScale: 1, currentTokenSize: 100,
         mapSelect: select, STATIC_MAP_PREFIX: 'maps/', lastSyncedAt: Date.now() + 100,
-        encounterLootCR: 2, encounterLootXP: 450, lootTrackedCreatureIds: new Set(['goblin']),
         pendingMonsterAdditions: new Map(), suppressLootTrackingUntil: 0,
         updateLootEncounterFields() {}, refreshCustomMapOptions() {}, closeDistributedCreator() {},
         prompt: () => 'New Campaign', confirm: () => true
     });
+    // Execute the actual DM declarations; mocks must not hide missing globals.
+    const dm = fs.readFileSync('public/dm.html', 'utf8');
+    vm.runInContext(dm.slice(dm.indexOf('// Loot state shared'), dm.indexOf('function getCreatureCR(')), context);
+    vm.runInContext("encounterLootCR = 2; encounterLootXP = 450; lootTrackedCreatureIds.add('goblin');", context);
     vm.runInContext(fs.readFileSync('public/campaign-manager.js', 'utf8'), context);
     await vm.runInContext('campaignManagerInitialization', context);
     return {
-        context, documents, elements, batches, select,
+        context, documents, elements, batches, select, boardSync,
+        token: id => documents.get(`boardStates/${boardSync.generation}/tokens/${id}`),
         run: code => vm.runInContext(code, context),
         registry: () => copy(vm.runInContext('campaignRegistry', context)),
-        fail: path => { failPath = path; }
+        fail: store.fail
     };
 }
 
@@ -112,7 +85,7 @@ test('migrates old campaigns without losing the live board or inactive saves; re
     assert.deepEqual(app.documents.get('campaigns/a/state/monsters'), seed['campaigns/a/state/monsters']);
     const expectedMap = copy(seed['shared/map']);
     delete expectedMap.tokenSize;
-    assert.deepEqual(app.documents.get('shared/map'), expectedMap);
+    assert.deepEqual(mapData(app.documents.get('shared/map')), expectedMap);
     assert.equal(app.documents.get('campaigns/a/maps/initial-map/state/map').tokenSize, undefined);
     assert.equal(app.documents.get('campaigns/b/maps/initial-map/state/map').tokenSize, undefined);
     const reload = await fixture(Object.fromEntries(app.documents));
@@ -123,23 +96,24 @@ test('migrates old campaigns without losing the live board or inactive saves; re
 test('switching saves outgoing edits and publishes every incoming state component together', async () => {
     const app = await fixture(seedLegacy());
     await app.run("switchCampaignMap('b', 'initial-map')");
-    assert.equal(app.documents.get('shared/monsters').monsters[0].hp, 30);
+    assert.equal(app.token('hero').hp, 30);
     assert.equal(app.documents.get('shared/map').tokenSize, undefined);
     assert.equal(app.documents.get('shared/map').mapScale, 1.7);
-    assert.deepEqual(app.documents.get('shared/drawings').drawings, board('').drawings.drawings);
-    assert.deepEqual(app.documents.get('shared/fogOfWar').drawings, board('').fogOfWar.drawings);
+    const incoming = await app.boardSync.exportState();
+    assert.deepEqual(incoming.drawings.drawings.map(({ _order, ...drawing }) => drawing), board('').drawings.drawings);
+    assert.deepEqual(incoming.fogOfWar.drawings.map(({ _order, ...drawing }) => drawing), board('').fogOfWar.drawings);
     const published = app.batches.at(-1).map(write => write.path);
-    for (const path of ['shared/monsters', 'shared/map', 'shared/drawings', 'shared/fogOfWar', 'shared/campaignRegistry']) assert.ok(published.includes(path));
-    app.documents.get('shared/monsters').monsters[0].hp = 25;
+    assert.deepEqual(published, ['shared/map', 'shared/campaignRegistry']);
+    await app.boardSync.patch('hero', { hp: 25 });
     app.documents.get('shared/map').tokenSize = 160;
     await app.run("switchCampaignMap('a', 'initial-map')");
-    assert.equal(app.documents.get('shared/monsters').monsters[0].hp, 9);
+    assert.equal(app.token('hero').hp, 9);
     await app.run("switchCampaignMap('b', 'initial-map')");
-    assert.equal(app.documents.get('shared/monsters').monsters[0].hp, 25);
+    assert.equal(app.token('hero').hp, 25);
     assert.equal(app.documents.get('shared/map').tokenSize, undefined);
     assert.equal(app.documents.get('campaigns/b/maps/initial-map/state/map').tokenSize, undefined);
     assert.equal(app.context.currentTokenSize, 100);
-    assert.equal(app.context.encounterLootXP, 450);
+    assert.equal(app.run('encounterLootXP'), 450);
 });
 
 test('folder toggling and adding maps never changes the shared board; duplicate images have independent states', async () => {
@@ -156,11 +130,11 @@ test('folder toggling and adding maps never changes the shared board; duplicate 
     const added = app.registry().campaigns[0].maps[1];
     assert.equal(added.name, 'Forest Ambush');
     await app.run(`switchCampaignMap('a', '${added.id}')`);
-    assert.deepEqual(app.documents.get('shared/monsters').monsters, []);
+    assert.deepEqual((await app.boardSync.exportState()).monsters.monsters, []);
     assert.equal(app.documents.get('shared/map').tokenSize, undefined);
-    assert.deepEqual(app.documents.get('shared/fogOfWar').drawings, []);
+    assert.deepEqual((await app.boardSync.exportState()).fogOfWar.drawings, []);
     await app.run("switchCampaignMap('a', 'initial-map')");
-    assert.equal(app.documents.get('shared/monsters').monsters[0].hp, 9);
+    assert.equal(app.token('hero').hp, 9);
 });
 
 test('failed saves and failed publication leave the active map and live board intact', async () => {
@@ -178,7 +152,6 @@ test('failed saves and failed publication leave the active map and live board in
     assert.deepEqual(app.documents.get('shared/map'), before);
     app.fail('');
     assert.equal(await app.run("switchCampaignMap('b', 'initial-map')"), true);
-    assert.equal(app.context.pendingMonsterAdditions.size, 0);
 });
 
 test('removing the active map keeps players on the current board and deletes only that saved map', async () => {
@@ -192,7 +165,7 @@ test('removing the active map keeps players on the current board and deletes onl
     assert.ok(app.documents.has('campaigns/b/maps/initial-map'));
     await app.run("switchCampaignMap('b', 'initial-map')");
     assert.equal(app.registry().activeId, 'b');
-    assert.equal(app.documents.get('shared/monsters').monsters[0].hp, 30);
+    assert.equal(app.token('hero').hp, 30);
 });
 
 test('create, rename, delete, and reload empty folders', async () => {
@@ -242,10 +215,10 @@ test('DM and player scripts preserve local token size while applying shared maps
             .filter(match => !/\bsrc=|type="module"/.test(match[1])).map(match => match[2]);
         new vm.Script(inlineScripts.join('\n'), { filename: file });
         if (file.endsWith('dm.html')) new vm.Script(inlineScripts.join('\n') + '\n' + fs.readFileSync('public/campaign-manager.js', 'utf8'));
-        const callback = html.match(/mapRef\.onSnapshot\(doc => \{([\s\S]*?)\n\s*\}\);/)[1];
+        const callback = html.match(/boardSync\.subscribeMap\(sharedMap => \{([\s\S]*?)\n\s*\}\);/)[1];
         const context = {
-            doc: { exists: true, data: () => ({ filepath: 'maps/cave.jpg', tokenSize: 170, mapScale: 2 }) },
-            currentTokenSize: 100, sharedMapScale: 1, mapImage: {}, currentSharedMapPath: '',
+            sharedMap: { filepath: 'maps/cave.jpg', tokenSize: 170, mapScale: 2 },
+            currentTokenSize: 100, sharedMapScale: 1, mapImage: { getAttribute() { return this.src; } }, currentSharedMapPath: '',
             mapSelect: { options: [] }, document: { getElementById: () => ({ open: false }) },
             applySharedMapScale() {}, scheduleMapLayoutRefresh() {}
         };

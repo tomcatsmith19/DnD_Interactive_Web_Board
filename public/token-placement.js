@@ -64,7 +64,7 @@
     }
 
     function enqueue(tokens) {
-      (Array.isArray(tokens) ? tokens : [tokens]).filter(Boolean).forEach(token => queue.push(token));
+      (Array.isArray(tokens) ? tokens : [tokens]).filter(Boolean).forEach(token => queue.push({ ...token, _boardGeneration: options.getGeneration?.() }));
       renderPreview();
     }
 

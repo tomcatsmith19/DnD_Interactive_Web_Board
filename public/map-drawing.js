@@ -189,7 +189,8 @@
       throw new Error("setupSharedMapDrawing requires db, mapImage, mapTransformLayer, and tokenLayer.");
     }
 
-    const drawingsRef = db.collection("shared").doc(options.documentId || "drawings");
+    const boardSync = options.boardSync;
+    const syncLayer = options.documentId || "drawings";
     const drawings = [];
     const activeButtons = new Map();
     const isFogLayer = options.layerType === "fog";
@@ -303,11 +304,9 @@
         return;
       }
 
-      drawingsRef.set({
-        drawings: [],
-        updatedAt: Date.now()
-      }, { merge: true }).catch(error => {
-        console.error("Failed to erase drawings:", error);
+      boardSync.removeDrawings(syncLayer, drawings.map(drawing => drawing.id)).catch(error => {
+        console.error('Failed to clear map layer:', error);
+        if (typeof reportBoardSyncError === 'function') reportBoardSyncError(error);
       });
     });
     toolbar.appendChild(clearButton);
@@ -603,6 +602,7 @@
 
       return {
         id: generateDrawingId(),
+        _boardGeneration: boardSync.generation,
         type,
         color: currentColor,
         strokeRatio: roundRatio(4 / Math.max(1, minDimension)),
@@ -677,46 +677,16 @@
     }
 
     function addDrawingToFirebase(drawing) {
-      const nextDrawing = sanitizeDrawing(drawing);
-
-      return db.runTransaction(transaction => {
-        return transaction.get(drawingsRef).then(doc => {
-          const data = doc.exists ? doc.data() : {};
-          const nextDrawings = Array.isArray(data.drawings) ? [...data.drawings] : [];
-
-          if (!nextDrawings.some(item => item.id === nextDrawing.id)) {
-            nextDrawings.push(nextDrawing);
-          }
-
-          transaction.set(drawingsRef, {
-            drawings: nextDrawings,
-            updatedAt: Date.now()
-          }, { merge: true });
-        });
-      }).catch(error => {
-        console.error("Failed to add drawing:", error);
+      return boardSync.addDrawing(syncLayer, sanitizeDrawing(drawing), drawing._boardGeneration).catch(error => {
+        console.error('Failed to add drawing:', error);
+        if (typeof reportBoardSyncError === 'function') reportBoardSyncError(error);
       });
     }
 
     function removeDrawingFromFirebase(drawingId) {
-      if (!drawingId) {
-        return;
-      }
-
-      return db.runTransaction(transaction => {
-        return transaction.get(drawingsRef).then(doc => {
-          const data = doc.exists ? doc.data() : {};
-          const nextDrawings = Array.isArray(data.drawings)
-            ? data.drawings.filter(item => item.id !== drawingId)
-            : [];
-
-          transaction.set(drawingsRef, {
-            drawings: nextDrawings,
-            updatedAt: Date.now()
-          }, { merge: true });
-        });
-      }).catch(error => {
-        console.error("Failed to erase drawing:", error);
+      return boardSync.removeDrawings(syncLayer, [drawingId]).catch(error => {
+        console.error('Failed to remove drawing:', error);
+        if (typeof reportBoardSyncError === 'function') reportBoardSyncError(error);
       });
     }
 
@@ -847,6 +817,7 @@
       } else if (currentTool === "pen" || currentTool === "lasso-fill" || currentTool === "lasso-erase") {
         currentDraft = {
           id: generateDrawingId(),
+          _boardGeneration: boardSync.generation,
           type: currentTool,
           color: currentColor,
           strokeRatio: roundRatio(4 / Math.max(1, Math.min(getMapSize().width, getMapSize().height))),
@@ -948,15 +919,11 @@
       }
     });
 
-    drawingsRef.onSnapshot(doc => {
-      const data = doc.exists ? doc.data() : {};
-      const nextDrawings = Array.isArray(data.drawings) ? data.drawings : [];
-
+    boardSync.subscribe(syncLayer, (nextDrawings, { reset }) => {
+      if (reset) { currentDraft = null; activePointerId = null; renderPreview(); }
       drawings.length = 0;
       nextDrawings.forEach(drawing => drawings.push(drawing));
       renderDrawings();
-    }, error => {
-      console.error("Failed to subscribe to drawings:", error);
     });
 
     mapImage.addEventListener("load", updateSvgSize);
