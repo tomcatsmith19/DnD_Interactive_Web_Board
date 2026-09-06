@@ -254,16 +254,8 @@
         .dice-roll-options { display:flex; flex-direction:column; gap:7px; }
         .dice-roller .dice-roll-option { display:flex; flex-direction:row; align-items:center; gap:7px; color:white; font-weight:normal; }
         .dice-roller .dice-roll-option input { width:auto; margin:0; accent-color:#f4d76d; }
-        .dm-map-toolbar { position:fixed; top:8px; left:10px; z-index:1000; isolation:isolate; display:grid; grid-template-columns:auto minmax(160px,auto) auto; grid-template-rows:auto auto; align-items:center; gap:5px 10px; padding:8px 12px; color:white; background:transparent; font-family:'MedievalSharp',cursive; }
-        .dm-map-toolbar::before,.dm-map-toolbar::after { content:''; position:absolute; z-index:-1; background:rgba(0,0,0,.7); }
-        .dm-map-toolbar::before { inset:0 0 auto 192px; height:58px; border-radius:0 8px 8px 0; }
-        .dm-map-toolbar::after { inset:0 auto 0 0; width:192px; border-radius:8px 0 8px 8px; }
-        .dm-map-toolbar-curve { position:absolute; z-index:-1; top:58px; left:192px; width:10px; height:10px; background:radial-gradient(circle at 100% 100%,transparent 0 9.5px,rgba(0,0,0,.7) 10px); }
+        .dm-map-toolbar { position:fixed; top:8px; left:10px; z-index:1000; display:grid; gap:5px; padding:8px 12px; color:white; background:rgba(0,0,0,.7); border-radius:8px; font-family:'MedievalSharp',cursive; }
         .dm-map-toolbar-row { display:grid; grid-template-columns:88px 34px 34px; align-items:center; gap:6px; }
-        .dm-map-toolbar .map-scale-controls { grid-column:1; grid-row:1; }
-        .dm-map-toolbar .token-scale-controls { grid-column:1; grid-row:2; }
-        .dm-map-toolbar #mapSelect { grid-column:2; grid-row:1; width:100%; }
-        .dm-map-toolbar .map-library-button { grid-column:3; grid-row:1; }
         .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
         .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
         .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
@@ -281,10 +273,65 @@
         .campaign-manager-controls { display:flex; gap:7px; flex-wrap:wrap; }
         .campaign-manager-controls button,.campaign-list button { padding:7px 9px; color:#f4d76d; background:#3d2718; border:1px solid #765133; border-radius:5px; cursor:pointer; }
         .campaign-manager-controls button:hover,.campaign-list button:hover { border-color:#f4d76d; }
-        .campaign-list { display:flex; flex-direction:column; gap:6px; overflow:auto; }
-        .campaign-list-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:5px; align-items:center; }
-        .campaign-list-row .campaign-select { overflow:hidden; text-align:left; text-overflow:ellipsis; white-space:nowrap; }
-        .campaign-list-row.is-active .campaign-select { color:#1d1009; background:#f4d76d; border-color:#f4d76d; font-weight:bold; }
+        .campaign-header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+        #dmCampaignContent .campaign-header h2 { margin:0; }
+        .campaign-header .campaign-manager-controls { margin-left:auto; }
+        #addCampaignButton { color:white; background:#276c3d; border-color:#69aa78; }
+        #addCampaignButton:hover { background:#32864c; border-color:#96d6a5; }
+        .campaign-list { display:flex; flex-direction:column; gap:18px; overflow:auto; }
+        .campaign-list .campaign-icon-button { width:32px; height:32px; padding:0; font-size:23px; line-height:1; background:transparent; border-color:transparent; }
+        .campaign-list .campaign-delete-button { color:#ff8585; background:#4b1c1c; border-color:#b94b4b; }
+        .campaign-list .campaign-delete-button:hover { color:white; background:#9c3030; border-color:#ff8585; }
+        .campaign-list .campaign-add-map-button { align-self:flex-start; margin-top:5px; color:white; background:#1e5fa3; border-color:#639bd2; }
+        .campaign-list .campaign-add-map-button:hover { background:#2878c6; border-color:#91c4f5; }
+        .campaign-list-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:5px; align-items:center; padding:5px 7px; background:#3d2718; border:1px solid #765133; border-radius:6px; }
+        .campaign-list-row .campaign-select { overflow:hidden; text-align:left; text-overflow:ellipsis; white-space:nowrap; font-weight:bold; background:transparent; border-color:transparent; }
+        .campaign-list-row .campaign-select:hover,.campaign-list .campaign-map-select:hover { background:rgba(244,215,109,.08); border-color:transparent; }
+        .campaign-map-row.is-active .campaign-map-select { color:#1d1009; background:#f4d76d; border-color:#f4d76d; font-weight:bold; }
+        .campaign-list button:disabled,.campaign-manager-controls button:disabled { opacity:.5; cursor:wait; }
+        .campaign-list button:focus-visible { outline:2px solid #f4d76d; outline-offset:2px; }
+        .campaign-maps { display:flex; flex-direction:column; gap:6px; margin:8px 0 0 22px; }
+        .campaign-maps[hidden] { display:none; }
+        .campaign-map-row { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:5px; }
+        .campaign-list .campaign-map-select { text-align:left; overflow-wrap:anywhere; background:transparent; border-color:transparent; }
+        .campaign-empty { margin:4px 0; color:#c9b98b; font-size:.85rem; }
+        #addCampaignMapModal { width:min(900px,calc(100vw - 32px)); max-height:90vh; overflow:auto; box-sizing:border-box; padding:0; color:white; background:#1f120b; border:1px solid #f4d76d; border-radius:10px; box-shadow:0 10px 35px #000; }
+        #addCampaignMapModal::backdrop { background:rgba(0,0,0,.8); }
+        .add-campaign-map-content { position:relative; padding:24px; }
+        .add-campaign-map-content h2 { margin:0 30px 28px 0; color:#f4d76d; font-family:'MedievalSharp',cursive; }
+        .add-campaign-map-content p { color:#c9b98b; font-size:.9rem; }
+        .add-campaign-map-content label { display:block; margin:16px 0 8px; color:#f4d76d; }
+        .campaign-map-picker { display:grid; grid-template-columns:minmax(160px,1fr) minmax(250px,1.4fr) auto; align-items:center; gap:12px; }
+        .campaign-map-picker .map-name-field { margin-top:0; }
+        .campaign-map-picker #mapSelect { flex:1; min-width:0; width:100%; }
+        .add-campaign-map-content button { padding:9px 12px; color:#f4d76d; background:#3d2718; border:1px solid #765133; border-radius:5px; cursor:pointer; }
+        .add-campaign-map-content button:disabled { opacity:.5; cursor:wait; }
+        #campaignMapName { width:100%; box-sizing:border-box; padding:10px; color:white; background:#1d1009; border:1px solid #765133; border-radius:5px; }
+        #customMapCreatorContent { margin-top:24px; padding-top:20px; border-top:1px solid #765133; }
+        #customMapCreatorContent h3 { margin:0 0 8px; color:#f4d76d; }
+        #customMapCreatorContent > summary { color:#f4d76d; font-size:1.1rem; font-weight:bold; cursor:pointer; }
+        #customMapCreatorContent[open] > summary { margin-bottom:16px; }
+        .map-name-field { display:flex; align-items:center; gap:12px; margin-top:16px; }
+        .add-campaign-map-content .map-name-field label { margin:0; white-space:nowrap; }
+        .map-name-field input { flex:1; min-width:0; }
+        .custom-map-editor { display:grid; grid-template-columns:minmax(0,54fr) minmax(0,46fr); gap:24px; align-items:start; }
+        .custom-map-form { min-width:0; }
+        .custom-map-form .map-name-field { width:100%; margin-top:0; gap:8px; }
+        #customMapName { width:100%; box-sizing:border-box; padding:10px; color:white; background:#1d1009; border:1px solid #765133; border-radius:5px; }
+        #customMapUpload { width:100%; box-sizing:border-box; margin-top:10px; }
+        #saveCustomMapBtn { display:block; margin-top:12px; color:white; background:#1e5fa3; border-color:#639bd2; }
+        .custom-map-preview { width:100%; min-height:180px; margin-top:16px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:rgba(0,0,0,.2); border-radius:6px; }
+        #mapPreview { display:none; max-width:100%; max-height:220px; object-fit:contain; }
+        #mapPreviewPlaceholder { padding:12px; color:#999; }
+        #mapSaveStatus { min-height:20px; margin-top:10px; color:#f4d76d; font-size:.85rem; }
+        .custom-map-library-section { min-width:0; }
+        #customMapLibrary { max-height:320px; padding-right:12px; box-sizing:border-box; overflow:auto; scrollbar-gutter:stable; }
+        #customMapLibrary > div > span { min-width:0; overflow-wrap:anywhere; }
+        @media (max-width:700px) { .custom-map-editor { grid-template-columns:minmax(0,1fr); } .custom-map-form .map-name-field,.custom-map-preview { width:90%; } .custom-map-form .map-name-field { flex-wrap:wrap; } .custom-map-form .map-name-field input { flex-basis:120px; } }
+        #addCampaignMapStatus:empty { display:none; }
+        @media (max-width:700px) { .campaign-map-picker { grid-template-columns:minmax(0,1fr); } .campaign-map-picker #confirmAddMapButton { justify-self:end; } }
+        #confirmAddMapButton { color:white; background:#276c3d; border-color:#69aa78; }
+        #confirmAddMapButton:hover { background:#32864c; border-color:#96d6a5; }
         .campaign-status { min-height:20px; color:#c9b98b; font-size:.82rem; }
         .dm-audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; padding:8px; color:white; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:9px; }
         .dm-audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
@@ -1167,60 +1214,17 @@
 
         <!-- Map and Token Scale Controls -->
         <div id="tokenSizeControls" class="dm-map-toolbar">
-            <span class="dm-map-toolbar-curve" aria-hidden="true"></span>
             <div class="dm-map-toolbar-row map-scale-controls"><span class="token-size-label">Map Scale</span><button id="decreaseMapScale" class="fantasy-token-button" title="Decrease map scale">−</button><button id="increaseMapScale" class="fantasy-token-button" title="Increase map scale">+</button></div>
             <div class="dm-map-toolbar-row token-scale-controls"><span class="token-size-label">Token Size</span><button id="decreaseTokenSize" class="fantasy-token-button" title="Decrease token size">−</button><button id="increaseTokenSize" class="fantasy-token-button" title="Increase token size">+</button></div>
-            <select id="mapSelect"
-                style="padding: 10px; background-color: #3d2718; color: white; border: 1px solid #765133; border-radius: 5px; font-size: 1rem;">
-
-                <optgroup label="Generic">
-                    <option value="blank.jpg">Blank</option>
-                    <option value="rocky desert.webp">Rocky Desert</option>
-                    <option value="forest.jpg">Forest</option>
-                    <option value="underdark.webp">Underdark</option>
-                </optgroup>
-
-                <optgroup label="Silverton">
-                    <option value="silverton.png">Silverton</option>
-                    <option value="silver mine.jpg">Silver Mine</option>
-                    <option value="voidspire.jpg">VoidSpire</option>
-                </optgroup>
-
-                <optgroup label="Fractured Realms Trading Co.">
-                    <option value="fractured goods.webp">Fractured Goods</option>
-                    <option value="fractured steel.webp">Fractured Steel</option>
-                    <option value="fractured stein.jpg">Fractured Stein</option>
-                    <option value="fractured arcana.jpg">Fractured Arcana</option>
-                </optgroup>
-
-                <optgroup label="Backwater">
-                    <option value="backwater.png">Backwater</option>
-                    <option value="swamp.jpg">Swamp</option>
-                    <option value="swamp hut.jpg">Swamp Hut</option>
-                    <option value="Esotaric Cult of Dagon Hideout.webp">Dagon Cult Hideout</option>
-                </optgroup>
-
-                <optgroup label="Chillford">
-                    <option value="chillford.png">Chillford</option>
-                </optgroup>
-
-
-                <optgroup label="Desert Hamlet">
-                    <option value="Desert Hamlet.jpg">Desert Hamlet</option>
-                </optgroup>
-
-                <!-- Add more maps here -->
-            </select>
-            <button id="openCustomMapsBtn" class="map-library-button" type="button" onclick="openDistributedCreator('customMapCreatorModal')" aria-label="Custom maps" title="Custom maps"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 7l8-3 10 3 8-3v21l-8 3-10-3-8 3zM11 4v21M21 7v21"/><path d="M6 11l3-1M14 9l4 1M23 11l3-1M5 22l4-2M14 19l4 2M24 20l3 1"/></svg></button>
         </div>
 
         <aside id="dmInitiativePanel" class="dm-map-ui dm-initiative-panel dm-left-dock is-collapsed" hidden>
             <nav class="dm-left-rail" aria-label="Map side panels">
+                <button id="dmCampaignButton" type="button" onclick="toggleDmLeftPanel('campaign')" aria-label="Campaigns" title="Campaigns"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 16l10-4 12 4 12-4v21l-12 4-12-4-10 4zM13 12v21M25 28v9"/><path d="M25 24V3l11 4-11 4"/><path d="M7 26l3-2 7 4 4-3" stroke-dasharray="2 3"/></svg></button>
                 <button id="dmInitiativeCollapse" type="button" onclick="toggleDmLeftPanel('initiative')" aria-label="Initiative" title="Initiative">⚔</button>
                 <button id="dmDiceButton" type="button" onclick="toggleDmLeftPanel('dice')" aria-label="Dice roller" title="Dice Roller"><span class="dice-icon" aria-hidden="true"></span></button>
                 <button id="dmBooksButton" type="button" onclick="toggleDmLeftPanel('books')" aria-label="Books" title="Books"><svg viewBox="0 0 38 38" aria-hidden="true"><path d="M19 9c-4-4-10-4-15-2v24c6-2 11-1 15 3zM19 9c4-4 10-4 15-2v24c-6-2-11-1-15 3z"/><path d="M8 12c3-1 6 0 8 2M8 18c3-1 6 0 8 2M30 12c-3-1-6 0-8 2M30 18c-3-1-6 0-8 2"/><path d="M19 5v29"/></svg></button>
                 <button id="dmReferenceButton" type="button" onclick="toggleDmLeftPanel('reference')" aria-label="Reference" title="Reference"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 13c-2 3-5 8-5 16 0 6 5 8 13 8s13-2 13-8c0-8-3-13-5-16"/><path d="M12 13c4 2 12 2 16 0l-3-7-5 4-5-4z"/><path d="M11 17c6 2 12 2 18 0"/><path d="M16 24c2-2 6-2 8 0M15 29c3-2 7-2 10 0"/></svg></button>
-                <button id="dmCampaignButton" type="button" onclick="toggleDmLeftPanel('campaign')" aria-label="Campaigns" title="Campaigns">⚑</button>
             </nav>
             <div id="dmInitiativeContent" class="dm-initiative-content dm-left-panel-content">
                 <h2>Initiative</h2>
@@ -1232,7 +1236,16 @@
             </div>
             <div id="dmBooksContent" class="dm-left-panel-content"><h2>Books</h2><div id="dmBooksHost" style="display:flex;flex:1;min-height:0;flex-direction:column;"></div></div>
             <div id="dmReferenceContent" class="dm-left-panel-content"><h2>Reference</h2><div id="dmReferenceHost"></div></div>
-            <div id="dmCampaignContent" class="dm-left-panel-content"><h2>Campaigns</h2><div class="campaign-manager"><div class="campaign-manager-controls"><button type="button" onclick="createCampaign()">+ Add Campaign</button></div><div id="campaignList" class="campaign-list"></div><div id="campaignStatus" class="campaign-status" aria-live="polite"></div></div></div>
+            <div id="dmCampaignContent" class="dm-left-panel-content">
+                <div class="campaign-header">
+                    <h2>Campaigns</h2>
+                    <div class="campaign-manager-controls"><button id="addCampaignButton" type="button" onclick="createCampaign()" disabled>+ Add Campaign</button></div>
+                </div>
+                <div class="campaign-manager">
+                    <div id="campaignList" class="campaign-list"></div>
+                    <div id="campaignStatus" class="campaign-status" aria-live="polite"></div>
+                </div>
+            </div>
             <div id="dmDiceContent" class="dice-roller dm-left-panel-content"><h2>Dice Roller</h2>
                 <div class="dice-roller-form">
                     <details class="dice-customize"><summary>Customize Dice</summary><div class="dice-customize-menu" data-dice-customizer="dm"><label>Colorset<select id="dmDiceColorset" class="dice-colorset"></select></label><label>Texture<select id="dmDiceTexture" class="dice-texture"></select></label><label>Material<select id="dmDiceMaterial" class="dice-material"></select></label><label>Surface<select id="dmDiceSurface" class="dice-surface"></select></label><div class="dice-parameter-preview"><div id="dmDicePreviewStage" class="dice-preview-stage"></div><div class="dice-preview-details" aria-live="polite"></div><button class="dice-sound-preview-button" type="button">Preview Roll Sound</button></div></div></details>
@@ -1565,58 +1578,92 @@
                     </div>
                 </div>
             </div>
-            <div id="customMapCreatorContent"
-                style="background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 15px;">
-                <h2 style="margin: 0; color: #f4d76d;">Custom Maps</h2>
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start;">
-                    <div style="display: flex; flex-direction: column; gap: 12px; min-width: 280px; flex: 1;">
+            <details id="customMapCreatorContent">
+                <summary>Custom maps</summary>
+                <div class="custom-map-editor">
+                    <div class="custom-map-form">
                         <input id="customMapId" type="hidden">
                         <input id="existingMapImageUrl" type="hidden">
                         <input id="existingMapImagePath" type="hidden">
-                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <div class="map-name-field">
                             <label for="customMapName">Map Name</label>
                             <input id="customMapName" type="text" placeholder="e.g. Sunken Shrine">
                         </div>
-                        <div style="display: flex; flex-direction: column; gap: 6px;">
-                            <label for="customMapUpload">Map Image</label>
-                            <input id="customMapUpload" type="file" accept="image/*" style="color: white;">
+                        <div class="custom-map-preview">
+                            <img id="mapPreview" alt="Custom map preview">
+                            <span id="mapPreviewPlaceholder">Map preview</span>
                         </div>
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                            <button id="saveCustomMapBtn"
-                                style="background-color: #1E90FF; color: white; border: none; border-radius: 5px; padding: 10px 12px; font-weight: bold; flex: 1; min-width: 160px;">Save
-                                Custom Map</button>
-                            <button id="clearCustomMapBtn"
-                                style="background-color: #563722; color: #f4d76d; border: 1px solid #f4d76d; border-radius: 5px; padding: 10px 12px; font-weight: bold; flex: 1; min-width: 160px;">Clear
-                                Map Form</button>
-                        </div>
-                        <div id="mapSaveStatus" style="min-height: 24px; color: #f4d76d; font-weight: bold;"></div>
+                        <input id="customMapUpload" type="file" accept="image/*" aria-label="Choose a custom map image" style="color: white;">
+                        <button id="saveCustomMapBtn" type="button">Save &amp; Select Map</button>
+                        <div id="mapSaveStatus" role="status"></div>
                     </div>
-
-                    <div
-                        style="width: min(360px, 100%); min-height: 220px; border: 1px solid #765133; border-radius: 12px; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                        <img id="mapPreview" alt="Map preview"
-                            style="max-width: 100%; max-height: 100%; object-fit: contain; display: none;">
-                        <span id="mapPreviewPlaceholder"
-                            style="color: #999; font-size: 0.95rem; text-align: center; padding: 12px;">Map
-                            preview</span>
-                    </div>
-
-                    <div style="min-width: 260px; flex: 1; display: flex; flex-direction: column; gap: 8px;">
-                        <strong style="color: #f4d76d;">Custom Map Library</strong>
-                        <div id="customMapLibrary"
-                            style="max-height: 220px; overflow-y: auto; background: #2b190f; border: 1px solid #765133; border-radius: 8px; padding: 10px;">
-                        </div>
+                    <div class="custom-map-library-section">
+                        <h3>Custom Map Library</h3>
+                        <div id="customMapLibrary"></div>
                     </div>
                 </div>
-            </div>
+            </details>
         </div>
     </div>
 
+    <dialog id="addCampaignMapModal" aria-labelledby="addCampaignMapTitle">
+        <div class="add-campaign-map-content">
+            <button class="distributed-creator-close" type="button" onclick="closeAddCampaignMap()" aria-label="Close Add Map">×</button>
+            <h2 id="addCampaignMapTitle">Add Map</h2>
+            <div class="campaign-map-picker">
+            <select id="mapSelect" aria-label="Map image"
+                style="padding: 10px; background-color: #3d2718; color: white; border: 1px solid #765133; border-radius: 5px; font-size: 1rem;">
+
+                <optgroup label="Generic">
+                    <option value="blank.jpg">Blank</option>
+                    <option value="rocky desert.webp">Rocky Desert</option>
+                    <option value="forest.jpg">Forest</option>
+                    <option value="underdark.webp">Underdark</option>
+                </optgroup>
+
+                <optgroup label="Silverton">
+                    <option value="silverton.png">Silverton</option>
+                    <option value="silver mine.jpg">Silver Mine</option>
+                    <option value="voidspire.jpg">VoidSpire</option>
+                </optgroup>
+
+                <optgroup label="Fractured Realms Trading Co.">
+                    <option value="fractured goods.webp">Fractured Goods</option>
+                    <option value="fractured steel.webp">Fractured Steel</option>
+                    <option value="fractured stein.jpg">Fractured Stein</option>
+                    <option value="fractured arcana.jpg">Fractured Arcana</option>
+                </optgroup>
+
+                <optgroup label="Backwater">
+                    <option value="backwater.png">Backwater</option>
+                    <option value="swamp.jpg">Swamp</option>
+                    <option value="swamp hut.jpg">Swamp Hut</option>
+                    <option value="Esotaric Cult of Dagon Hideout.webp">Dagon Cult Hideout</option>
+                </optgroup>
+
+                <optgroup label="Chillford">
+                    <option value="chillford.png">Chillford</option>
+                </optgroup>
+
+
+                <optgroup label="Desert Hamlet">
+                    <option value="Desert Hamlet.jpg">Desert Hamlet</option>
+                </optgroup>
+
+                <!-- Add more maps here -->
+            </select>
+                <div class="map-name-field">
+                    <label for="campaignMapName">Map Nickname</label>
+                    <input id="campaignMapName" type="text" maxlength="120" placeholder="Use the map image name">
+                </div>
+                <button id="confirmAddMapButton" type="button" onclick="addCampaignMap()">Add Map</button>
+            </div>
+            <p id="addCampaignMapStatus" role="status"></p>
+            <div id="customMapCreatorHost"></div>
+        </div>
+    </dialog>
     <div id="customMonsterCreatorModal" class="distributed-creator-modal" role="dialog" aria-modal="true" aria-label="Custom monster creator">
         <div class="distributed-creator-dialog"><button class="distributed-creator-close" type="button" onclick="closeDistributedCreator('customMonsterCreatorModal')" aria-label="Close">×</button><div id="customMonsterCreatorHost"></div></div>
-    </div>
-    <div id="customMapCreatorModal" class="distributed-creator-modal" role="dialog" aria-modal="true" aria-label="Custom map library">
-        <div class="distributed-creator-dialog"><button class="distributed-creator-close" type="button" onclick="closeDistributedCreator('customMapCreatorModal')" aria-label="Close">×</button><div id="customMapCreatorHost"></div></div>
     </div>
 
     <!-- Monster Creator Modal ######################################################################################-->
@@ -5519,7 +5566,7 @@
             initializeStaticMapOptions();
 
             const selectedValue = mapSelectElement.value;
-            const preservedValue = currentSharedMapPath || selectedValue;
+            const preservedValue = document.getElementById('addCampaignMapModal').open ? selectedValue : currentSharedMapPath || selectedValue;
             const existingGroup = mapSelectElement.querySelector('optgroup[data-custom-maps="true"]');
             if (existingGroup) {
                 existingGroup.remove();
@@ -5579,18 +5626,6 @@
                     actions.style.display = "flex";
                     actions.style.gap = "6px";
 
-                    const useButton = document.createElement("button");
-                    useButton.type = "button";
-                    useButton.textContent = "Use";
-                    useButton.style.width = "70px";
-                    useButton.style.marginTop = "0";
-                    useButton.addEventListener("click", () => {
-                        const mapSelectElement = document.getElementById("mapSelect");
-                        if (!mapSelectElement) return;
-                        mapSelectElement.value = mapDefinition.imageUrl;
-                        mapSelectElement.dispatchEvent(new Event("change"));
-                    });
-
                     const editButton = document.createElement("button");
                     editButton.type = "button";
                     editButton.textContent = "Edit";
@@ -5614,7 +5649,6 @@
                         });
                     });
 
-                    actions.appendChild(useButton);
                     actions.appendChild(editButton);
                     actions.appendChild(deleteButton);
 
@@ -6026,8 +6060,8 @@
         // Map dropdown behavior (updates map image in Map tab)
         const mapSelect = document.getElementById('mapSelect');
         const mapImage = document.getElementById('mapImage');  // NEW: reference the map image
-        let currentSharedMapPath = mapSelect.value;
         initializeStaticMapOptions();
+        let currentSharedMapPath = mapSelect.value;
 
         const mapRef = db.collection("shared").doc("map");
         const sharedDrawingManager = setupSharedMapDrawing({
@@ -6111,20 +6145,7 @@
             renderCustomMapLibrary();
         });
 
-        mapSelect?.addEventListener('change', () => {
-            const selectedMap = mapSelect.value;
-            if (selectedMap) {
-                currentSharedMapPath = selectedMap;
-                mapImage.src = selectedMap;
-
-                mapRef.set({
-                    filepath: selectedMap,
-                    updatedAt: Date.now()
-                }, { merge: true });
-            } else {
-                mapImage.src = '';
-            }
-        });
+        // The map picker only selects an image for Add Map; saved map rows share boards.
 
         // Logout and Menu button behavior
         const logoutBtn = document.getElementById('logoutBtn');
@@ -7784,7 +7805,6 @@
 
         function updateAllTokenSizes() {
             refreshMapLayout();
-            syncMonstersToFirebase();
         }
 
         document.getElementById('increaseTokenSize').addEventListener('click', () => {
@@ -8743,7 +8763,6 @@
         }
 
         document.getElementById('clearMonsterBtn').onclick = resetMonsterCreatorForm;
-        document.getElementById('clearCustomMapBtn').onclick = resetCustomMapForm;
 
         function switchSpellLevel(id) {
             // Hide all spell level boxes
@@ -8944,10 +8963,9 @@
             renderCustomMapLibrary();
 
             mapSelect.value = imageUrl;
-            mapSelect.dispatchEvent(new Event('change'));
 
             resetCustomMapForm();
-            setStatusMessage('mapSaveStatus', `Saved ${name} to the custom map library. You can upload another map now.`);
+            setStatusMessage('mapSaveStatus', `Saved and selected ${name}. Click Add Map to add it to this campaign.`);
         }
 
         async function deleteCustomMonster(monsterId) {
@@ -8981,7 +8999,7 @@
             document.getElementById('customMapUpload').value = '';
             setImagePreview('mapPreview', 'mapPreviewPlaceholder', mapDefinition.imageUrl);
             setStatusMessage('mapSaveStatus', `Editing ${mapDefinition.name}. Save to apply changes.`);
-            openDistributedCreator('customMapCreatorModal');
+            document.getElementById('customMapName').focus();
         }
 
         async function deleteCustomMap(mapId) {
@@ -9004,7 +9022,7 @@
 
             if (currentSharedMapPath === mapDefinition.imageUrl) {
                 mapSelect.value = `${STATIC_MAP_PREFIX}blank.jpg`;
-                mapSelect.dispatchEvent(new Event('change'));
+                // Removing a library entry does not replace the live campaign board.
             }
 
             setStatusMessage('mapSaveStatus', `Deleted ${mapDefinition.name}.`);
@@ -9017,11 +9035,22 @@
             });
         });
 
-        saveCustomMapBtn.addEventListener('click', () => {
-            saveCustomMap().catch(err => {
+        saveCustomMapBtn.addEventListener('click', async () => {
+            if (customMapSaveInProgress || campaignSwitchInProgress) return;
+            customMapSaveInProgress = true;
+            const formControls = [saveCustomMapBtn, customMapNameInput, customMapUpload];
+            formControls.forEach(control => { control.disabled = true; });
+            renderCampaignList();
+            try {
+                await saveCustomMap();
+            } catch (err) {
                 console.error('Failed to save custom map:', err);
                 setStatusMessage('mapSaveStatus', 'Failed to save custom map.', true);
-            });
+            } finally {
+                customMapSaveInProgress = false;
+                formControls.forEach(control => { control.disabled = false; });
+                renderCampaignList();
+            }
         });
 
         function populateMonsterCreatorFields(data, options = {}) {
@@ -9267,175 +9296,7 @@
         // Load monsters from Firebase on page load
         const monstersRef = db.collection("shared").doc("monsters");
         const npcRef = db.collection("shared").doc("npcs");
-        const campaignRegistryRef = db.collection("shared").doc("campaignRegistry");
-        const campaignsRef = db.collection("campaigns");
-        let campaignRegistry = { activeId: '', campaigns: [] };
-        let campaignSwitchInProgress = false;
         let suppressLootTrackingUntil = 0;
-
-        function setCampaignStatus(message) {
-            const status = document.getElementById('campaignStatus');
-            if (status) status.textContent = message || '';
-        }
-
-        function renderCampaignList() {
-            const host = document.getElementById('campaignList');
-            if (!host) return;
-            host.replaceChildren();
-            campaignRegistry.campaigns.forEach(campaign => {
-                const row = document.createElement('div');
-                row.className = `campaign-list-row${campaign.id === campaignRegistry.activeId ? ' is-active' : ''}`;
-                const select = document.createElement('button');
-                select.type = 'button';
-                select.className = 'campaign-select';
-                select.textContent = campaign.name;
-                select.title = campaign.id === campaignRegistry.activeId ? `${campaign.name} is active` : `Switch to ${campaign.name}`;
-                select.addEventListener('click', () => switchCampaign(campaign.id));
-                const rename = document.createElement('button');
-                rename.type = 'button'; rename.textContent = '✎'; rename.title = `Rename ${campaign.name}`;
-                rename.addEventListener('click', () => renameCampaign(campaign.id));
-                const remove = document.createElement('button');
-                remove.type = 'button'; remove.textContent = '×'; remove.title = `Delete ${campaign.name}`;
-                remove.addEventListener('click', () => deleteCampaign(campaign.id));
-                row.append(select, rename, remove);
-                host.appendChild(row);
-            });
-        }
-
-        async function readSharedCampaignState() {
-            const refs = [monstersRef, mapRef, db.collection('shared').doc('drawings'), db.collection('shared').doc('fogOfWar')];
-            const snapshots = await Promise.all(refs.map(ref => ref.get()));
-            return {
-                monsters: snapshots[0].exists ? snapshots[0].data() : { monsters: [] },
-                map: snapshots[1].exists ? snapshots[1].data() : { filepath: mapSelect.value, mapScale: sharedMapScale },
-                drawings: snapshots[2].exists ? snapshots[2].data() : { drawings: [] },
-                fogOfWar: snapshots[3].exists ? snapshots[3].data() : { drawings: [] },
-                loot: { cr: encounterLootCR, xp: encounterLootXP, trackedCreatureIds: Array.from(lootTrackedCreatureIds) }
-            };
-        }
-
-        async function saveCampaignState(campaignId) {
-            if (!campaignId) return;
-            const state = await readSharedCampaignState();
-            await writeCampaignState(campaignId, state);
-        }
-
-        async function writeCampaignState(campaignId, state) {
-            const stateRef = campaignsRef.doc(campaignId).collection('state');
-            const batch = db.batch();
-            ['monsters','map','drawings','fogOfWar','loot'].forEach(key => batch.set(stateRef.doc(key), state?.[key] || {}));
-            batch.set(campaignsRef.doc(campaignId), { savedAt:firebase.firestore.FieldValue.serverTimestamp() }, { merge:true });
-            await batch.commit();
-        }
-
-        async function readCampaignState(campaignId) {
-            const stateRef = campaignsRef.doc(campaignId).collection('state');
-            const keys = ['monsters','map','drawings','fogOfWar','loot'];
-            const snapshots = await Promise.all(keys.map(key => stateRef.doc(key).get()));
-            return Object.fromEntries(keys.map((key,index) => [key, snapshots[index].exists ? snapshots[index].data() : {}]));
-        }
-
-        async function applyCampaignState(state) {
-            suppressLootTrackingUntil = Date.now() + 3000;
-            pendingMonsterAdditions.clear();
-            const revision = Date.now();
-            const batch = db.batch();
-            batch.set(monstersRef, { ...(state?.monsters || {}), monsters: Array.isArray(state?.monsters?.monsters) ? state.monsters.monsters : [], revision, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
-            batch.set(mapRef, { ...(state?.map || {}), filepath: state?.map?.filepath || mapSelect.value, mapScale: Number(state?.map?.mapScale) || 1, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
-            batch.set(db.collection('shared').doc('drawings'), { drawings: Array.isArray(state?.drawings?.drawings) ? state.drawings.drawings : [], updatedAt: Date.now() });
-            batch.set(db.collection('shared').doc('fogOfWar'), { drawings: Array.isArray(state?.fogOfWar?.drawings) ? state.fogOfWar.drawings : [], updatedAt: Date.now() });
-            await batch.commit();
-            encounterLootCR = Math.max(0, Number(state?.loot?.cr) || 0);
-            encounterLootXP = Math.max(0, Number(state?.loot?.xp) || 0);
-            lootTrackedCreatureIds.clear();
-            (state?.loot?.trackedCreatureIds || []).forEach(id => lootTrackedCreatureIds.add(id));
-            updateLootEncounterFields();
-        }
-
-        async function switchCampaign(campaignId) {
-            if (!campaignId || campaignId === campaignRegistry.activeId || campaignSwitchInProgress) return;
-            campaignSwitchInProgress = true;
-            setCampaignStatus('Saving and switching campaign…');
-            try {
-                await saveCampaignState(campaignRegistry.activeId);
-                const target = await campaignsRef.doc(campaignId).get();
-                if (!target.exists) throw new Error('That campaign no longer exists.');
-                await applyCampaignState(await readCampaignState(campaignId));
-                await campaignRegistryRef.set({ activeId: campaignId, updatedAt: firebase.firestore.FieldValue.serverTimestamp() }, { merge: true });
-                campaignRegistry.activeId = campaignId;
-                renderCampaignList();
-                setCampaignStatus(`Loaded ${campaignRegistry.campaigns.find(item => item.id === campaignId)?.name || 'campaign'}.`);
-            } catch (error) {
-                console.error('Failed to switch campaign:', error);
-                setCampaignStatus(error.message || 'Campaign switch failed.');
-            } finally {
-                campaignSwitchInProgress = false;
-            }
-        }
-
-        async function createCampaign() {
-            const name = prompt('Campaign name:')?.trim();
-            if (!name) return;
-            const id = `campaign-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-            const campaign = { id, name };
-            const blankState = { monsters:{ monsters:[] }, map:{ filepath:mapSelect.value, mapScale:sharedMapScale }, drawings:{ drawings:[] }, fogOfWar:{ drawings:[] }, loot:{ cr:0, xp:0, trackedCreatureIds:[] } };
-            try {
-                await campaignsRef.doc(id).set({ name, createdAt:firebase.firestore.FieldValue.serverTimestamp() });
-                await writeCampaignState(id, blankState);
-                campaignRegistry.campaigns.push(campaign);
-                await campaignRegistryRef.set({ campaigns:campaignRegistry.campaigns, updatedAt:firebase.firestore.FieldValue.serverTimestamp() }, { merge:true });
-                renderCampaignList();
-                await switchCampaign(id);
-            } catch (error) {
-                console.error('Failed to create campaign:', error);
-                setCampaignStatus('Could not create the campaign.');
-            }
-        }
-
-        async function renameCampaign(campaignId) {
-            const campaign = campaignRegistry.campaigns.find(item => item.id === campaignId);
-            if (!campaign) return;
-            const name = prompt('Rename campaign:', campaign.name)?.trim();
-            if (!name || name === campaign.name) return;
-            campaign.name = name;
-            await Promise.all([campaignsRef.doc(campaignId).set({ name }, { merge:true }), campaignRegistryRef.set({ campaigns:campaignRegistry.campaigns, updatedAt:firebase.firestore.FieldValue.serverTimestamp() }, { merge:true })]);
-            renderCampaignList();
-        }
-
-        async function deleteCampaignData(campaignId) {
-            const batch = db.batch();
-            ['monsters','map','drawings','fogOfWar','loot'].forEach(key => batch.delete(campaignsRef.doc(campaignId).collection('state').doc(key)));
-            batch.delete(campaignsRef.doc(campaignId));
-            await batch.commit();
-        }
-
-        async function deleteCampaign(campaignId) {
-            if (campaignRegistry.campaigns.length <= 1) { setCampaignStatus('At least one campaign must remain.'); return; }
-            const campaign = campaignRegistry.campaigns.find(item => item.id === campaignId);
-            if (!campaign || !confirm(`Delete campaign “${campaign.name}”?`)) return;
-            if (campaignId === campaignRegistry.activeId) {
-                const replacement = campaignRegistry.campaigns.find(item => item.id !== campaignId);
-                await switchCampaign(replacement.id);
-            }
-            campaignRegistry.campaigns = campaignRegistry.campaigns.filter(item => item.id !== campaignId);
-            await Promise.all([deleteCampaignData(campaignId), campaignRegistryRef.set({ campaigns:campaignRegistry.campaigns, activeId:campaignRegistry.activeId, updatedAt:firebase.firestore.FieldValue.serverTimestamp() })]);
-            renderCampaignList();
-            setCampaignStatus(`Deleted ${campaign.name}.`);
-        }
-
-        async function initializeCampaignManager() {
-            const registrySnapshot = await campaignRegistryRef.get();
-            if (registrySnapshot.exists && Array.isArray(registrySnapshot.data().campaigns) && registrySnapshot.data().campaigns.length) {
-                campaignRegistry = { activeId:registrySnapshot.data().activeId || registrySnapshot.data().campaigns[0].id, campaigns:registrySnapshot.data().campaigns };
-            } else {
-                const id = `campaign-${Date.now()}`;
-                campaignRegistry = { activeId:id, campaigns:[{ id, name:'Main Campaign' }] };
-                const state = await readSharedCampaignState();
-                await campaignsRef.doc(id).set({ name:'Main Campaign', createdAt:firebase.firestore.FieldValue.serverTimestamp() });
-                await Promise.all([writeCampaignState(id, state), campaignRegistryRef.set({ ...campaignRegistry, updatedAt:firebase.firestore.FieldValue.serverTimestamp() })]);
-            }
-            renderCampaignList();
-        }
 
         monstersRef.onSnapshot(doc => {
             if (!doc.exists) {
@@ -9516,7 +9377,7 @@
             if (sharedMap.filepath) {
                 currentSharedMapPath = sharedMap.filepath;
                 mapImage.src = currentSharedMapPath;
-                if (Array.from(mapSelect.options).some(option => option.value === currentSharedMapPath)) {
+                if (!document.getElementById('addCampaignMapModal').open && Array.from(mapSelect.options).some(option => option.value === currentSharedMapPath)) {
                     mapSelect.value = currentSharedMapPath;
                 }
                 scheduleMapLayoutRefresh();
@@ -9659,12 +9520,8 @@
 
         switchSpellLevel('spell0');
         switchTab('attacksTab');
-        initializeCampaignManager().catch(error => {
-            console.error('Failed to initialize campaigns:', error);
-            setCampaignStatus('Could not load campaigns.');
-        });
-
     </script>
+    <script src="campaign-manager.js?v=3"></script>
     <script type="module" src="dice-roller-3d.js?v=19"></script>
 </div>
 </body>
