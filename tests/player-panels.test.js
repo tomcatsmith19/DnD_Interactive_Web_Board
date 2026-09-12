@@ -103,3 +103,20 @@ test('reference globals coexist with the DM and player scripts', () => {
         new vm.Script(fs.readFileSync('public/reference.js', 'utf8') + '\n' + inline, { filename: path });
     }
 });
+
+test('custom players persist max HP, AC, and token size', () => {
+    for (const id of ['customPlayerMaxHp', 'customPlayerAc', 'customPlayerSize']) assert.match(playerHtml, new RegExp(`id="${id}"`));
+    assert.match(playerHtml, /<fieldset class="custom-player-stat-section">\s*<legend>Combat &amp; Token<\/legend>/);
+    assert.match(playerHtml, /\.custom-player-stat-grid input,[^{]+\{[^}]*display:block !important;[^}]*visibility:visible !important;/);
+    assert.match(playerHtml, /definition=\{id:playerId,name,maxHp,ac,size,tokenUrl/);
+    assert.match(playerHtml, /member=\{id:generateID\(\),name:choice\.name,size,hp:maxHp,maxHp,ac/);
+    assert.match(playerHtml, /\['T','S','M','L','H','G'\]\.includes\(choice\.size\)\?choice\.size:'M'/);
+});
+
+test('custom player library occupies a responsive second column', () => {
+    assert.match(playerHtml, /class="custom-player-workspace"/);
+    assert.match(playerHtml, /<section class="custom-player-editor"/);
+    assert.match(playerHtml, /<aside class="custom-player-library-panel"/);
+    assert.match(playerHtml, /\.custom-player-workspace \{[^}]*grid-template-columns:minmax\(320px,1\.15fr\) minmax\(280px,\.85fr\)/);
+    assert.match(playerHtml, /@media\(max-width:760px\)\{\.custom-player-workspace\{grid-template-columns:1fr\}/);
+});

@@ -150,12 +150,23 @@
     .party-modal-card { width:min(620px,90vw); max-height:80vh; overflow:auto; padding:18px; background:#2b190f; color:white; border-radius:10px; }
     .party-choice-list { max-height:55vh; overflow:auto; margin:10px 0; }
     .party-choice { display:flex; justify-content:space-between; width:100%; margin:3px 0; color:white; background:#3d2718 !important; }
-    .custom-player-card { width:min(440px,90vw); display:flex; flex-direction:column; gap:10px; }
-    .custom-player-card input[type="text"] { padding:9px; color:white; background:#342014; border:1px solid #8a6643; border-radius:5px; }
+    .custom-player-card { width:min(900px,94vw); display:flex; flex-direction:column; gap:10px; }
+    .custom-player-workspace { display:grid; grid-template-columns:minmax(320px,1.15fr) minmax(280px,.85fr); gap:18px; align-items:start; }
+    .custom-player-editor,.custom-player-library-panel { display:flex; flex-direction:column; gap:10px; min-width:0; }
+    .custom-player-library-panel { align-self:stretch; padding-left:18px; border-left:1px solid #765133; }
+    .custom-player-library-panel h3 { margin:0; color:#f4d76d; }
+    .custom-player-card input[type="text"],.custom-player-card input[type="number"],.custom-player-card select { padding:9px; color:white; background:#342014; border:1px solid #8a6643; border-radius:5px; box-sizing:border-box; }
+    .custom-player-stat-section { display:block !important; margin:2px 0; padding:12px; border:1px solid #d4af37; border-radius:7px; background:rgba(0,0,0,.2); }
+    .custom-player-stat-section legend { padding:0 6px; color:#f4d76d; font-weight:bold; }
+    .custom-player-stat-grid { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; visibility:visible !important; }
+    .custom-player-stat-grid label { display:flex; flex-direction:column; gap:5px; min-width:0; color:#f4d76d; font-size:.88rem; }
+    .custom-player-stat-grid input,.custom-player-stat-grid select { display:block !important; width:100%; min-height:38px; visibility:visible !important; opacity:1 !important; }
+    @media(max-width:520px){.custom-player-stat-grid{grid-template-columns:1fr;}}
     .custom-player-preview { width:150px; height:150px; align-self:center; object-fit:cover; border:2px solid #f4d76d; border-radius:50%; background:#1d1009; }
-    .custom-player-library { max-height:190px; overflow:auto; padding:6px; background:#21130c; border:1px solid #765133; border-radius:6px; }
+    .custom-player-library { min-height:260px; max-height:calc(80vh - 120px); overflow:auto; padding:6px; background:#21130c; border:1px solid #765133; border-radius:6px; }
     .custom-player-library-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto auto; gap:5px; align-items:center; padding:6px 0; border-bottom:1px solid #563722; }
     .custom-player-library-row button { min-width:56px; padding:6px !important; }
+    @media(max-width:760px){.custom-player-workspace{grid-template-columns:1fr}.custom-player-library-panel{padding-top:14px;padding-left:0;border-top:1px solid #765133;border-left:0}.custom-player-library{min-height:150px;max-height:220px;}}
     .fantasy-token-button { width:34px; height:34px; padding:0 !important; color:#f4d76d; background:linear-gradient(#4b2915,#1d1009); border:2px ridge #d4af37; border-radius:50% 50% 44% 44%; box-shadow:0 0 0 1px #5b3517,0 2px 5px #000; font-family:Georgia,'Times New Roman',serif; font-size:23px !important; font-weight:bold; line-height:28px; cursor:pointer; text-shadow:0 1px #000; }
     .fantasy-token-button:hover { color:#1d1009; background:#f4d76d; }
     .token-size-label { color:#f4d76d; font-family:'MedievalSharp',Georgia,serif; white-space:nowrap; }
@@ -378,7 +389,37 @@
   </aside>
 
   <div id="partyPicker" class="party-modal"><div class="party-modal-card"><h2>Add to Party</h2><input id="partySearch" type="search" placeholder="Search monsters or player characters" style="width:100%;padding:9px;"><div id="partyChoiceList" class="party-choice-list"></div><div style="display:flex;gap:8px;"><button type="button" style="flex:1;" onclick="openCustomPlayerModal()">Custom Player</button><button type="button" style="flex:1;" onclick="closePartyPicker()">Close</button></div></div></div>
-  <div id="customPlayerModal" class="party-modal"><div class="party-modal-card custom-player-card"><h2>Custom Players</h2><input id="customPlayerId" type="hidden"><input id="customPlayerTokenUrl" type="hidden"><input id="customPlayerTokenPath" type="hidden"><label>Name</label><input id="customPlayerName" type="text" placeholder="Player name"><label>Token Image</label><input id="customPlayerTokenUpload" type="file" accept="image/*"><img id="customPlayerTokenPreview" class="custom-player-preview" src="data/player_tokens/Telperil.png" alt="Custom player token preview"><div style="display:flex;gap:8px;"><button id="saveCustomPlayerBtn" type="button" style="flex:1;" onclick="createCustomPlayer()">Save &amp; Add to Party</button><button type="button" style="flex:1;background:#563722;color:#f4d76d;" onclick="resetCustomPlayerForm()">New Player</button><button type="button" style="flex:1;background:#a83232;color:white;" onclick="closeCustomPlayerModal()">Close</button></div><div id="customPlayerStatus" style="min-height:20px;color:#f4d76d;"></div><strong style="color:#f4d76d;">Custom Player Library</strong><div id="customPlayerLibrary" class="custom-player-library"></div></div></div>
+  <div id="customPlayerModal" class="party-modal">
+    <div class="party-modal-card custom-player-card">
+      <h2>Custom Players</h2>
+      <div class="custom-player-workspace">
+        <section class="custom-player-editor" aria-label="Create or edit a custom player">
+          <input id="customPlayerId" type="hidden">
+          <input id="customPlayerTokenUrl" type="hidden">
+          <input id="customPlayerTokenPath" type="hidden">
+          <label for="customPlayerName">Name</label>
+          <input id="customPlayerName" type="text" placeholder="Player name">
+          <fieldset class="custom-player-stat-section">
+            <legend>Combat &amp; Token</legend>
+            <div class="custom-player-stat-grid">
+              <label for="customPlayerMaxHp">Max HP<input id="customPlayerMaxHp" type="number" min="1" step="1" value="10"></label>
+              <label for="customPlayerAc">Armor Class<input id="customPlayerAc" type="number" min="1" max="40" step="1" value="10"></label>
+              <label for="customPlayerSize">Token Size<select id="customPlayerSize"><option value="T">Tiny</option><option value="S">Small</option><option value="M" selected>Medium</option><option value="L">Large</option><option value="H">Huge</option><option value="G">Gargantuan</option></select></label>
+            </div>
+          </fieldset>
+          <label for="customPlayerTokenUpload">Token Image</label>
+          <input id="customPlayerTokenUpload" type="file" accept="image/*">
+          <img id="customPlayerTokenPreview" class="custom-player-preview" src="data/player_tokens/Telperil.png" alt="Custom player token preview">
+          <div style="display:flex;gap:8px;"><button id="saveCustomPlayerBtn" type="button" style="flex:1;" onclick="createCustomPlayer()">Save &amp; Add to Party</button><button type="button" style="flex:1;background:#563722;color:#f4d76d;" onclick="resetCustomPlayerForm()">New Player</button><button type="button" style="flex:1;background:#a83232;color:white;" onclick="closeCustomPlayerModal()">Close</button></div>
+          <div id="customPlayerStatus" style="min-height:20px;color:#f4d76d;"></div>
+        </section>
+        <aside class="custom-player-library-panel" aria-labelledby="customPlayerLibraryHeading">
+          <h3 id="customPlayerLibraryHeading">Custom Player Library</h3>
+          <div id="customPlayerLibrary" class="custom-player-library"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
 
   <section id="audioDock" class="audio-dock is-collapsed">
     <button id="audioCollapseButton" class="audio-collapse-tab" type="button" onclick="toggleAudioDock()" aria-label="Sound panel" title="Sound panel">♫</button>
@@ -609,7 +650,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-  <script src="map-drawing.js?v=18"></script>
+  <script src="map-drawing.js?v=19"></script>
   <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=2"></script>
     <script src="board-sync.js?v=4"></script>
@@ -802,6 +843,9 @@
       document.getElementById('customPlayerTokenUpload').value='';
       document.getElementById('customPlayerTokenUrl').value='';
       document.getElementById('customPlayerTokenPath').value='';
+      document.getElementById('customPlayerMaxHp').value='10';
+      document.getElementById('customPlayerAc').value='10';
+      document.getElementById('customPlayerSize').value='M';
       document.getElementById('customPlayerTokenPreview').src='data/player_tokens/Telperil.png';
       document.getElementById('customPlayerStatus').textContent='';
     }
@@ -820,6 +864,9 @@
       document.getElementById('customPlayerName').value=player.name;
       document.getElementById('customPlayerTokenUrl').value=player.tokenUrl||'';
       document.getElementById('customPlayerTokenPath').value=player.tokenPath||'';
+      document.getElementById('customPlayerMaxHp').value=Math.max(1,Math.trunc(Number(player.maxHp)||10));
+      document.getElementById('customPlayerAc').value=Math.max(1,Math.min(40,Math.trunc(Number(player.ac)||10)));
+      document.getElementById('customPlayerSize').value=['T','S','M','L','H','G'].includes(player.size)?player.size:'M';
       document.getElementById('customPlayerTokenUpload').value='';
       document.getElementById('customPlayerTokenPreview').src=player.tokenUrl||'data/player_tokens/Telperil.png';
       document.getElementById('customPlayerStatus').textContent=`Editing ${player.name}.`;
@@ -850,6 +897,10 @@
       const existingId=document.getElementById('customPlayerId').value;
       const existingUrl=document.getElementById('customPlayerTokenUrl').value;
       const existingPath=document.getElementById('customPlayerTokenPath').value;
+      const maxHp=Math.max(1,Math.trunc(Number(document.getElementById('customPlayerMaxHp').value)||10));
+      const ac=Math.max(1,Math.min(40,Math.trunc(Number(document.getElementById('customPlayerAc').value)||10)));
+      const requestedSize=document.getElementById('customPlayerSize').value;
+      const size=['T','S','M','L','H','G'].includes(requestedSize)?requestedSize:'M';
       const status=document.getElementById('customPlayerStatus');
       if(!name||(!file&&!existingUrl)){status.textContent='Enter a name and choose a token image.';return;}
       const button=document.getElementById('saveCustomPlayerBtn');
@@ -864,14 +915,14 @@
           const tokenRef=storage.ref().child(tokenPath);await tokenRef.put(file);tokenUrl=await tokenRef.getDownloadURL();
           if(existingPath&&existingPath!==tokenPath)storage.ref().child(existingPath).delete().catch(()=>{});
         }
-        const definition={id:playerId,name,tokenUrl,tokenPath,ownerUid:sessionAccountId,updatedAt:Date.now()};
+        const definition={id:playerId,name,maxHp,ac,size,tokenUrl,tokenPath,ownerUid:sessionAccountId,updatedAt:Date.now()};
         await customPlayersRef.doc(playerId).set(definition,{merge:true});
         customPlayerDefinitions.set(playerId,definition);rebuildPartyCatalog();renderCustomPlayerLibrary();
         await addPartyMember({...definition,kind:'Custom Player'});closeCustomPlayerModal();
       }catch(error){console.error('Failed to create custom player:',error);status.textContent='Could not upload the custom player.';}
       finally{button.disabled=false;}
     }
-    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player')member={id:generateID(),name:choice.name,hp:10,maxHp:10,ac:10,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp,rawAc=Array.isArray(data.ac)?data.ac[0]:data.ac,ac=typeof rawAc==='object'?rawAc?.ac:rawAc;member={id:generateID(),name:data.name,size:data.size||'M',hp:Number(hp)||1,maxHp:Number(hp)||1,ac:Math.max(1,parseInt(ac)||10),init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;partyTokenPlacement.enqueue(member);closePartyPicker();}
+    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player'){const maxHp=Math.max(1,Math.trunc(Number(choice.maxHp)||10)),ac=Math.max(1,Math.min(40,Math.trunc(Number(choice.ac)||10))),size=['T','S','M','L','H','G'].includes(choice.size)?choice.size:'M';member={id:generateID(),name:choice.name,size,hp:maxHp,maxHp,ac,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};}else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp,rawAc=Array.isArray(data.ac)?data.ac[0]:data.ac,ac=typeof rawAc==='object'?rawAc?.ac:rawAc;member={id:generateID(),name:data.name,size:data.size||'M',hp:Number(hp)||1,maxHp:Number(hp)||1,ac:Math.max(1,parseInt(ac)||10),init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;partyTokenPlacement.enqueue(member);closePartyPicker();}
     document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
     const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
     fetch('data/api_data/monster_catalog.json').then(response=>response.json()).then(data=>{basePartyCatalog=[...playerCharacterNames.map(name=>({name,kind:'Player'})),...data.map(monster=>({name:monster.name,kind:'Monster'}))];rebuildPartyCatalog();});

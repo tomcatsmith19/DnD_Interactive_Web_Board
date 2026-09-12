@@ -12,6 +12,17 @@
   },
   "hosting": {
     "public": "public",
+    "headers": [
+      {
+        "source": "player.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, must-revalidate"
+          }
+        ]
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",

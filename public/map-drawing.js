@@ -390,7 +390,9 @@
     });
     previewLayer.style.pointerEvents = "none";
     previewLayer.style.touchAction = "none";
-    previewLayer.style.zIndex = isFogLayer ? "21" : (isMeasurementLayer ? "5" : "4");
+    // The active authoring surface must be above tokens so a shape can start at a token's center.
+    // It remains pointer-transparent in Pan / Select mode, leaving normal token dragging unchanged.
+    previewLayer.style.zIndex = isFogLayer ? "21" : (isMeasurementLayer ? "10" : "9");
 
     if (isFogLayer) mapTransformLayer.appendChild(drawingLayer);
     else mapTransformLayer.insertBefore(drawingLayer, tokenLayer);

@@ -80,3 +80,9 @@ test('lasso-erased fog is both visually and interactively open', () => {
   assert.equal(fogDrawingsCoverPoint(fog, { x: .2, y: .2 }, 1000, 1000), true);
   assert.equal(fogDrawingsCoverPoint(fog, { x: .5, y: .5 }, 1000, 1000), false);
 });
+
+test('active drawing and measurement surfaces capture starts above tokens', () => {
+  assert.match(source, /previewLayer\.style\.zIndex = isFogLayer \? "21" : \(isMeasurementLayer \? "10" : "9"\)/);
+  assert.match(source, /if \(tool === "pan"\) \{\s*previewLayer\.style\.pointerEvents = "none"/);
+  assert.match(source, /else \{\s*previewLayer\.style\.pointerEvents = "auto"/);
+});
