@@ -91,3 +91,58 @@ test('failed token writes display an error and do not upload stale local state',
     assert.equal(f.writes.length, before);
     assert.equal((await f.boardSync.exportState()).monsters.monsters[0].hp, 30);
 });
+
+test('token drags stream intermediate positions and clear the shared measurement on release', async () => {
+    const f = await fixture('player');
+    vm.runInContext("dragSession = beginMonsterDrag(['a']); monsters[0].xRatio = .6; updateMonsterDrag(dragSession)", f.context);
+    await new Promise(resolve => setTimeout(resolve, 70));
+    vm.runInContext("monsters[0].xRatio = .7; updateMonsterDrag(dragSession)", f.context);
+    await new Promise(resolve => setTimeout(resolve, 70));
+    vm.runInContext('endMonsterDrag(dragSession)', f.context);
+    await new Promise(resolve => setTimeout(resolve, 70));
+
+    const tokenWrites = f.writes.filter(write => write.path === `boardStates/${f.boardSync.generation}/tokens/a` && write.kind === 'update');
+    assert.ok(tokenWrites.some(write => write.data.dragActive === true && write.data.xRatio < .7));
+    assert.ok(tokenWrites.some(write => write.data.dragActive === true && write.data.xRatio === .7));
+    const saved = (await f.boardSync.exportState()).monsters.monsters.find(token => token.id === 'a');
+    assert.equal(saved.xRatio, .7);
+    assert.equal(saved.dragStartXRatio, .5);
+    assert.equal(saved.dragPixelsPerFiveFeet, 100);
+    assert.equal(saved.dragActive, false);
+});
+
+test('drag distance uses a medium token as five feet and rounds to integer feet', async () => {
+    const f = await fixture('dm');
+    assert.equal(vm.runInContext("tokenDragDistanceFeet({xRatio:.6,yRatio:.5,dragStartXRatio:.5,dragStartYRatio:.5,dragPixelsPerFiveFeet:100},1000,1000)", f.context), 5);
+    assert.equal(vm.runInContext("tokenDragDistanceFeet({xRatio:.55,yRatio:.55,dragStartXRatio:.5,dragStartYRatio:.5,dragPixelsPerFiveFeet:100},1000,1000)", f.context), 4);
+});
+
+test('tokens remain above interactive drawing and measurement overlays', () => {
+    for (const role of ['dm', 'player']) {
+        const html = fs.readFileSync(`public/${role}.html`, 'utf8');
+        assert.match(html, /id="mapTokenLayer"[\s\S]{0,200}z-index:\s*6/);
+    }
+});
+
+test('board token gestures disable native selection, image dragging, and non-primary movement', () => {
+    const boardUI = fs.readFileSync('public/board-ui.js', 'utf8');
+    const tokenCSS = fs.readFileSync('public/token-actions.css', 'utf8');
+    assert.match(boardUI, /addEventListener\('selectstart',[\s\S]*?event\.preventDefault\(\)/);
+    assert.match(boardUI, /addEventListener\('dragstart', event => event\.preventDefault\(\)\)/);
+    assert.match(tokenCSS, /\.monster-token\s*\{[^}]*user-select:none/);
+    for (const role of ['dm', 'player']) {
+        const html = fs.readFileSync(`public/${role}.html`, 'utf8');
+        assert.match(html, /el\.addEventListener\('mousedown',[\s\S]{0,100}if \(e\.button !== 0\) return;/);
+    }
+});
+
+test('token hit testing uses the visible circle rather than an overlapping square container', () => {
+    const tokenCSS = fs.readFileSync('public/token-actions.css', 'utf8');
+    assert.match(tokenCSS, /\.monster-token\s*\{[^}]*pointer-events:none/);
+    assert.match(tokenCSS, /\.monster-token > img\s*\{[^}]*pointer-events:auto[^}]*clip-path:circle\(50%\)/);
+    for (const role of ['dm', 'player']) {
+        const html = fs.readFileSync(`public/${role}.html`, 'utf8');
+        assert.match(html, /container\.style\.pointerEvents = 'none'/);
+        assert.match(html, /img\.style\.pointerEvents = 'auto'/);
+    }
+});

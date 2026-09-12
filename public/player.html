@@ -272,7 +272,7 @@
       margin-bottom: 10px;
     }
   </style>
-<link rel="stylesheet" href="token-actions.css?v=3">
+  <link rel="stylesheet" href="token-actions.css?v=7">
 </head>
 
 <body>
@@ -282,8 +282,9 @@
     <div id="mapContainer" style="position: relative; display: inline-block;">
       <div id="mapTransformLayer" style="transform-origin: top left; position: relative;">
         <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image" style="width: 100%; height: auto; display: block;">
+        <svg id="tokenDistanceLayer" class="token-distance-layer" aria-hidden="true"></svg>
         <div id="mapTokenLayer"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 6; pointer-events: none;"></div>
         <svg id="tokenLasso" class="token-lasso" style="display:none;"><polyline id="tokenLassoPath" points=""></polyline></svg>
       </div>
     </div>
@@ -321,6 +322,7 @@
       <span class="token-size-label">Token Size</span>
       <button id="decreaseTokenSize" class="fantasy-token-button" title="Decrease token size">−</button>
       <button id="increaseTokenSize" class="fantasy-token-button" title="Increase token size">+</button>
+      <button id="refreshBoardState" class="fantasy-token-button board-refresh-button" type="button" title="Reload the current board from Firebase" aria-label="Reload the current board from Firebase"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6a9 9 0 1 0 1 10M20 2v5h-5"/></svg></button>
     </div>
   </div>
 
@@ -607,11 +609,11 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-  <script src="map-drawing.js?v=2"></script>
+  <script src="map-drawing.js?v=18"></script>
   <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=2"></script>
-    <script src="board-sync.js?v=1"></script>
-    <script src="board-ui.js?v=1"></script>
+    <script src="board-sync.js?v=4"></script>
+  <script src="board-ui.js?v=4"></script>
     <script src="reference.js?v=2"></script>
 
   <script>
@@ -926,7 +928,7 @@
       let dragState = null;
       handle.addEventListener('pointerdown', event => {
         event.preventDefault(); event.stopPropagation();
-        dragState = { generation: boardSync.generation, pointerId:event.pointerId, clientX:event.clientX, clientY:event.clientY, positions:selected.map(monster=>({monster,xRatio:monster.xRatio,yRatio:monster.yRatio})) };
+        dragState = { generation: boardSync.generation, pointerId:event.pointerId, clientX:event.clientX, clientY:event.clientY, positions:selected.map(monster=>({monster,xRatio:monster.xRatio,yRatio:monster.yRatio})), sync:beginMonsterDrag(selected.map(monster=>monster.id)), drawingTranslation:drawingToolbarManager?.beginSelectionTranslation?.()||null };
         handle.dataset.dragging = 'true';
         selected.forEach(token => { const el = document.getElementById(`token-${token.id}`); if (el) el.dataset.dragging = 'true'; });
         handle.setPointerCapture?.(event.pointerId);
@@ -935,21 +937,28 @@
         if (!dragState || event.pointerId !== dragState.pointerId || dragState.generation !== boardSync.generation) return;
         const rawDx=(event.clientX-dragState.clientX)/scale/mapWidth;
         const rawDy=(event.clientY-dragState.clientY)/scale/mapHeight;
-        const dxRatio=Math.min(Math.min(...dragState.positions.map(start=>1-start.xRatio)),Math.max(Math.max(...dragState.positions.map(start=>-start.xRatio)),rawDx));
-        const dyRatio=Math.min(Math.min(...dragState.positions.map(start=>1-start.yRatio)),Math.max(Math.max(...dragState.positions.map(start=>-start.yRatio)),rawDy));
+        const selectionPoints=[...dragState.positions.map(start=>({x:start.xRatio,y:start.yRatio})),...(dragState.drawingTranslation?.points||[])];
+        const dxRatio=Math.min(Math.min(...selectionPoints.map(point=>1-point.x)),Math.max(Math.max(...selectionPoints.map(point=>-point.x)),rawDx));
+        const dyRatio=Math.min(Math.min(...selectionPoints.map(point=>1-point.y)),Math.max(Math.max(...selectionPoints.map(point=>-point.y)),rawDy));
         dragState.positions.forEach(start=>{start.monster.xRatio=start.xRatio+dxRatio;start.monster.yRatio=start.yRatio+dyRatio;positionTokenElement(start.monster, undefined, true);});
+        updateMonsterDrag(dragState.sync);
+        drawingToolbarManager?.moveSelectionTranslation?.(dragState.drawingTranslation,dxRatio,dyRatio);
         const centerX=dragState.positions.reduce((sum,start)=>sum+start.monster.xRatio*mapWidth,0)/dragState.positions.length;
         const centerY=dragState.positions.reduce((sum,start)=>sum+start.monster.yRatio*mapHeight,0)/dragState.positions.length;
         handle.style.left=`${centerX-17}px`; handle.style.top=`${centerY-17}px`;
       });
-      handle.addEventListener('pointerup', event => { if (!dragState || event.pointerId !== dragState.pointerId || dragState.generation !== boardSync.generation) return; const movedIds=dragState.positions.map(start=>start.monster.id); dragState=null; handle.dataset.dragging='false'; movedIds.forEach(id=>{const el=document.getElementById(`token-${id}`);if(el)el.dataset.dragging='false';}); syncMonsterPositionsToFirebase(movedIds); });
+      handle.addEventListener('pointerup', event => { if (!dragState || event.pointerId !== dragState.pointerId || dragState.generation !== boardSync.generation) return; const movedIds=dragState.positions.map(start=>start.monster.id),sync=dragState.sync,drawingTranslation=dragState.drawingTranslation; dragState=null; handle.dataset.dragging='false'; movedIds.forEach(id=>{const el=document.getElementById(`token-${id}`);if(el)el.dataset.dragging='false';}); endMonsterDrag(sync); drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,true); });
       const cancelDrag = () => {
         if (!dragState) return;
+        const sync=dragState.sync;
+        const drawingTranslation=dragState.drawingTranslation;
         dragState.positions.forEach(({ monster }) => {
           const el = document.getElementById(`token-${monster.id}`);
           if (el) el.dataset.dragging = 'false';
         });
         dragState = null; handle.dataset.dragging = 'false';
+        endMonsterDrag(sync);
+        drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,true);
         boardSync.reconcile().catch(reportBoardSyncError);
       };
       handle.addEventListener('pointercancel', cancelDrag);
@@ -964,7 +973,7 @@
       if (selectedMapTokenIds.size) document.getElementById('mapActionPanel').classList.add('is-open');
     }
 
-    function clearMapTokenSelection() { selectedMapTokenIds.clear(); refreshMapTokenSelection(); }
+    function clearMapTokenSelection() { selectedMapTokenIds.clear(); refreshMapTokenSelection(); drawingToolbarManager?.clearSelection?.(); }
     function removeCreatureById(monsterId) { return removeMonstersFromFirebase([monsterId]); }
 
     const deathEffectRef = db.collection('shared').doc('deathEffect');
@@ -1061,7 +1070,7 @@
       container.style.position = 'absolute';
       container.style.borderRadius = '50%';
       container.style.border = '2px solid gold';
-      container.style.pointerEvents = 'auto';
+      container.style.pointerEvents = 'none';
       container.style.cursor = 'grab';
       container.style.position = 'absolute';
       container.style.display = 'flex';
@@ -1078,6 +1087,8 @@
       img.style.width = '100%';
       img.style.height = '100%';
       img.style.borderRadius = '50%';
+      img.style.clipPath = 'circle(50%)';
+      img.style.pointerEvents = 'auto';
       img.draggable = false;
 
       const label = document.createElement('div');
@@ -1127,8 +1138,11 @@
             let dragGeneration = '';
       let dragOriginLeft = 0, dragOriginTop = 0;
       let dragStartX = 0, dragStartY = 0, didMove = false;
+      let dragSync = null;
+      let drawingTranslation = null;
 
       el.addEventListener('mousedown', (e) => {
+        if (e.button !== 0) return;
         e.preventDefault();
         isDragging = true;
         dragGeneration = boardSync.generation;
@@ -1137,6 +1151,8 @@
         dragOriginLeft = el.offsetLeft;
         dragOriginTop = el.offsetTop;
         el.style.cursor = 'grabbing';
+        dragSync = beginMonsterDrag([el.id.replace('token-', '')]);
+        drawingTranslation = selectedMapTokenIds.has(el.id.replace('token-', '')) ? drawingToolbarManager?.beginSelectionTranslation?.() || null : null;
       });
 
       document.addEventListener('mousemove', (e) => {
@@ -1144,6 +1160,13 @@
         if (Math.hypot(e.clientX-dragStartX,e.clientY-dragStartY)>3) didMove=true;
         el.style.left = `${dragOriginLeft + (e.clientX - dragStartX) / scale}px`;
         el.style.top = `${dragOriginTop + (e.clientY - dragStartY) / scale}px`;
+        const monster = monsters.find(m => m.id === el.id.replace('token-', ''));
+        if (monster) {
+          monster.xRatio = (parseFloat(el.style.left) + TokenActions.tokenSize(monster, currentTokenSize) / 2) / mapImage.clientWidth;
+          monster.yRatio = (parseFloat(el.style.top) + TokenActions.tokenSize(monster, currentTokenSize) / 2) / mapImage.clientHeight;
+          updateMonsterDrag(dragSync);
+        }
+        drawingToolbarManager?.moveSelectionTranslation?.(drawingTranslation, (e.clientX-dragStartX)/scale/mapImage.clientWidth, (e.clientY-dragStartY)/scale/mapImage.clientHeight);
       });
 
       document.addEventListener('mouseup', () => {
@@ -1161,13 +1184,16 @@
             monster.xRatio = leftPx / mapImage.clientWidth;
             monster.yRatio = topPx / mapImage.clientHeight;
           }
-          syncMonsterPositionsToFirebase([id]);
+          endMonsterDrag(dragSync); dragSync = null;
+          drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,didMove); drawingTranslation=null;
           if (didMove) { el.dataset.suppressClick='true'; setTimeout(()=>{el.dataset.suppressClick='false';},0); }
         }
       });
 
       el.addEventListener('touchcancel', () => {
         isDragging = false; el.dataset.dragging = 'false';
+        endMonsterDrag(dragSync); dragSync = null;
+        drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,didMove); drawingTranslation=null;
         boardSync.reconcile().catch(reportBoardSyncError);
       });
       // TOUCH support for dragging
@@ -1176,12 +1202,15 @@
         isDragging = true;
         dragGeneration = boardSync.generation;
         el.dataset.dragging = 'true';
+        didMove = false;
         const touch = e.touches[0];
         dragStartX = touch.clientX;
         dragStartY = touch.clientY;
         dragOriginLeft = el.offsetLeft;
         dragOriginTop = el.offsetTop;
         el.style.cursor = 'grabbing';
+        dragSync = beginMonsterDrag([el.id.replace('token-', '')]);
+        drawingTranslation = selectedMapTokenIds.has(el.id.replace('token-', '')) ? drawingToolbarManager?.beginSelectionTranslation?.() || null : null;
       }, { passive: false });
 
       el.addEventListener('touchmove', (e) => {
@@ -1189,6 +1218,13 @@
         const touch = e.touches[0];
         el.style.left = `${dragOriginLeft + (touch.clientX - dragStartX) / scale}px`;
         el.style.top = `${dragOriginTop + (touch.clientY - dragStartY) / scale}px`;
+        const monster = monsters.find(m => m.id === el.id.replace('token-', ''));
+        if (monster) {
+          monster.xRatio = (parseFloat(el.style.left) + TokenActions.tokenSize(monster, currentTokenSize) / 2) / mapImage.clientWidth;
+          monster.yRatio = (parseFloat(el.style.top) + TokenActions.tokenSize(monster, currentTokenSize) / 2) / mapImage.clientHeight;
+          updateMonsterDrag(dragSync);
+        }
+        drawingToolbarManager?.moveSelectionTranslation?.(drawingTranslation, (touch.clientX-dragStartX)/scale/mapImage.clientWidth, (touch.clientY-dragStartY)/scale/mapImage.clientHeight);
       }, { passive: false });
 
       el.addEventListener('touchend', () => {
@@ -1206,7 +1242,8 @@
             monster.xRatio = leftPx / mapImage.clientWidth;
             monster.yRatio = topPx / mapImage.clientHeight;
           }
-          syncMonsterPositionsToFirebase([id]);
+          endMonsterDrag(dragSync); dragSync = null;
+          drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,didMove); drawingTranslation=null;
         }
       });
 
@@ -1230,6 +1267,26 @@
     document.getElementById('decreaseTokenSize').addEventListener('click', () => {
       currentTokenSize = Math.max(11, currentTokenSize - 10);
       updateAllTokenSizes();
+    });
+
+    document.getElementById('refreshBoardState').addEventListener('click', async event => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      button.classList.add('is-refreshing');
+      try {
+        await discardLocalBoardChanges();
+        await drawingToolbarManager?.discardLocalState?.();
+        selectedMapTokenIds.clear();
+        refreshMapTokenSelection();
+        await boardSync.reconcile({ force: true });
+        const status = document.getElementById('boardSyncStatus');
+        if (status) status.hidden = true;
+      } catch (error) {
+        reportBoardSyncError(error);
+      } finally {
+        button.disabled = false;
+        button.classList.remove('is-refreshing');
+      }
     });
 
 
@@ -1388,6 +1445,7 @@
     document.addEventListener('mouseup', event => {
       if (!lassoPoints.length) return;
       if(lassoPoints.length>=3)monsters.forEach(monster=>{if(isPointInsideLasso({x:monster.xRatio*mapImage.clientWidth,y:monster.yRatio*mapImage.clientHeight},lassoPoints))selectedMapTokenIds.add(monster.id);});
+      if(lassoPoints.length>=3)drawingToolbarManager?.selectWithinLasso?.(lassoPoints,true);
       lassoPoints=[]; tokenLassoPath.setAttribute('points',''); tokenLasso.style.display='none'; refreshMapTokenSelection();
       if(selectedMapTokenIds.size)document.getElementById('mapActionPanel').classList.add('is-open');
     });
@@ -1610,10 +1668,42 @@
     // Subscribe to individual token records in the active Firebase board.
     initializeBoardUI('player');
 
-    const drawingToolbarManager = setupSharedMapDrawing({
+    const tokenSelectionBridge = {
+      begin() {
+        const positions = monsters.filter(monster => selectedMapTokenIds.has(monster.id))
+          .map(monster => ({ monster, xRatio: monster.xRatio, yRatio: monster.yRatio }));
+        if (!positions.length) return null;
+        positions.forEach(({ monster }) => { const element = document.getElementById(`token-${monster.id}`); if (element) element.dataset.dragging = 'true'; });
+        return { positions, sync: beginMonsterDrag(positions.map(({ monster }) => monster.id)) };
+      },
+      points(session) { return session?.positions.map(position => ({ x: position.xRatio, y: position.yRatio })) || []; },
+      move(session, dx, dy) {
+        if (!session) return;
+        session.positions.forEach(position => {
+          position.monster.xRatio = position.xRatio + dx;
+          position.monster.yRatio = position.yRatio + dy;
+          positionTokenElement(position.monster, undefined, true);
+        });
+        updateMonsterDrag(session.sync);
+        const handle = document.getElementById('groupMoveHandle');
+        if (handle) {
+          const width = mapImage.clientWidth, height = mapImage.clientHeight;
+          const centerX = session.positions.reduce((sum, position) => sum + position.monster.xRatio * width, 0) / session.positions.length;
+          const centerY = session.positions.reduce((sum, position) => sum + position.monster.yRatio * height, 0) / session.positions.length;
+          handle.style.left = `${centerX - 17}px`; handle.style.top = `${centerY - 17}px`;
+        }
+      },
+      end(session) {
+        if (!session) return;
+        session.positions.forEach(({ monster }) => { const element = document.getElementById(`token-${monster.id}`); if (element) element.dataset.dragging = 'false'; });
+        endMonsterDrag(session.sync);
+      }
+    };
+    const sharedDrawingManager = setupSharedMapDrawing({
       boardSync,
       db,
       mapImage,
+      tokenSelectionBridge,
       compact: true,
       startCollapsed: true,
       mapTransformLayer: document.getElementById('mapTransformLayer'),
@@ -1623,18 +1713,31 @@
         left: '25px'
       }
     });
-    setupSharedMapDrawing({
+    const measurementToolbarManager = setupSharedMapDrawing({
+      boardSync,
+      db,
+      mapImage,
+      layerType: 'measurement',
+      compact: true,
+      getMediumTokenSize: () => currentTokenSize,
+      tokenSelectionBridge,
+      mapTransformLayer: document.getElementById('mapTransformLayer'),
+      tokenLayer: document.getElementById('mapTokenLayer')
+    });
+    const playerFogManager = setupSharedMapDrawing({
       boardSync,
       db,
       mapImage,
       documentId: 'fogOfWar',
       layerType: 'fog',
       fogAppearance: 'player',
+      blockTokenInteraction: true,
       editable: false,
       showToolbar: false,
       mapTransformLayer: document.getElementById('mapTransformLayer'),
       tokenLayer: document.getElementById('mapTokenLayer')
     });
+    const drawingToolbarManager = setupMapDrawingTabs(sharedDrawingManager, null, measurementToolbarManager);
     let drawingToolbarHidden = false;
     document.getElementById('toggleDrawingToolbar')?.addEventListener('click', event => {
       drawingToolbarHidden = !drawingToolbarHidden;

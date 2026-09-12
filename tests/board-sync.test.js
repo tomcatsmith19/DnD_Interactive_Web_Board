@@ -69,6 +69,17 @@ test('drawing and fog operations write individual records and preserve concurren
     assert.deepEqual(state.fogOfWar.drawings.map(item => item.id), ['fog1']);
 });
 
+test('drawing patches move individual shared objects without replacing their shape data', async () => {
+    const f = await fixture();
+    await f.first.patchDrawings('drawings', new Map([['stroke1', { start: { x: .2, y: .3 }, end: { x: .4, y: .5 }, color: '#3366ff', rotation: 45 }]]));
+    const drawing = (await f.first.exportState()).drawings.drawings.find(item => item.id === 'stroke1');
+    assert.deepEqual(drawing.start, { x: .2, y: .3 });
+    assert.deepEqual(drawing.end, { x: .4, y: .5 });
+    assert.deepEqual(drawing.points, [1, 2]);
+    assert.equal(drawing.color, '#3366ff');
+    assert.equal(drawing.rotation, 45);
+});
+
 test('map switches freeze outgoing edits and reject late actions from the previous map', async () => {
     const f = await fixture(), old = f.first.generation;
     const next = await f.first.prepare({ map: { filepath: 'cave.jpg', mapScale: 2 }, monsters: { monsters: [token('a')] } });
@@ -103,6 +114,21 @@ test('periodic full reconciliation recovers missed updates without uploading loc
     await f.second.reconcile();
     assert.equal(seen.find(item => item.id === 'a').init, 99);
     assert.equal(f.writes.length, count);
+    f.dropEvents(false);
+});
+
+test('a forced reconciliation reruns after an older refresh already in progress', async () => {
+    const f = await fixture(); let seen;
+    f.second.subscribe('tokens', tokens => { seen = tokens; });
+    f.dropEvents(true);
+    await f.first.patch('a', { init: 40 });
+    const delayed = f.delayNextRead(`boardStates/${f.second.generation}/tokens`);
+    const olderRefresh = f.second.reconcile(); await delayed.ready;
+    await f.first.patch('a', { init: 50 });
+    const forcedRefresh = f.second.reconcile({ force: true });
+    delayed.release();
+    await Promise.all([olderRefresh, forcedRefresh]);
+    assert.equal(seen.find(item => item.id === 'a').init, 50);
     f.dropEvents(false);
 });
 

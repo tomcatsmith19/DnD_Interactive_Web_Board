@@ -49,7 +49,8 @@
     const collection = (layer, id = generation) => boards.doc(id).collection(layer);
     function emit(layer, reset = false) {
       const values = [...caches[layer].values()].map(value => ({ ...clone(value), _boardGeneration: generation }));
-      if (layer !== 'tokens') values.sort((a, b) => (a._order || 0) - (b._order || 0) || a.id.localeCompare(b.id));
+      if (layer === 'tokens') values.sort((a, b) => String(a.id).localeCompare(String(b.id)));
+      else values.sort((a, b) => (a._order || 0) - (b._order || 0) || a.id.localeCompare(b.id));
       subscribers[layer].forEach(callback => callback(values, { generation, reset }));
     }
     function activate(id) {
@@ -139,9 +140,13 @@
         });
       }
     }
-    async function reconcile() {
+    async function reconcile(options = {}) {
+      const force = options === true || Boolean(options.force);
       await start();
-      if (refreshInProgress) return refreshInProgress;
+      if (refreshInProgress) {
+        await refreshInProgress;
+        if (!force) return;
+      }
       refreshInProgress = (async () => {
         const beforeMap = mapVersion;
         const latest = await pointer.get({ source: 'server' });
@@ -220,6 +225,7 @@
         return mutate('tokens', ids, token => token ? actionPatch(token, action, amount, condition, level) : undefined, expected);
       },
       addDrawing(layer, drawing, expected = generation) { return mutate(layer, [drawing.id], existing => existing ? undefined : { ...drawing, _order: Date.now() }, expected); },
+      patchDrawings(layer, changes, expected = generation) { return mutate(layer, [...changes.keys()], (drawing, id) => drawing ? changes.get(id) : undefined, expected); },
       removeDrawings(layer, ids, expected = generation) { return mutate(layer, ids, () => null, expected); },
       async patchMap(fields, expected = generation) {
         await start();
