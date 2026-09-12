@@ -117,6 +117,19 @@ test('drag distance uses a medium token as five feet and rounds to integer feet'
     assert.equal(vm.runInContext("tokenDragDistanceFeet({xRatio:.55,yRatio:.55,dragStartXRatio:.5,dragStartYRatio:.5,dragPixelsPerFiveFeet:100},1000,1000)", f.context), 4);
 });
 
+test('a translated token group renders one centroid movement indicator', async () => {
+    const f = await fixture('player');
+    vm.runInContext("groupDrag = beginMonsterDrag(['a','b']); monsters[0].xRatio = .6; monsters[1].xRatio = .6; updateMonsterDrag(groupDrag)", f.context);
+    const indicators = vm.runInContext('tokenMovementIndicators(monsters, 1000, 1000, Date.now())', f.context);
+    assert.equal(indicators.length, 1);
+    assert.ok(indicators[0].groupId);
+    assert.equal(indicators[0].startX, 500);
+    assert.equal(indicators[0].endX, 600);
+    assert.equal(Math.round(Math.hypot(indicators[0].endX-indicators[0].startX,indicators[0].endY-indicators[0].startY)/indicators[0].pixelsPerFiveFeet*5), 5);
+    vm.runInContext('endMonsterDrag(groupDrag)', f.context);
+    await new Promise(resolve => setTimeout(resolve, 70));
+});
+
 test('tokens remain above interactive drawing and measurement overlays', () => {
     for (const role of ['dm', 'player']) {
         const html = fs.readFileSync(`public/${role}.html`, 'utf8');

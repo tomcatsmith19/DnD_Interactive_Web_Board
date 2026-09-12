@@ -73,6 +73,7 @@ function syncMonsterPositionsToFirebase(ids) {
 
 function dragPatch(session, active) {
     const changes = new Map();
+    const dragUpdatedAt = Date.now();
     session.ids.forEach(id => {
         const token = monsters.find(item => item.id === id);
         const origin = session.origins.get(id);
@@ -81,16 +82,27 @@ function dragPatch(session, active) {
         token.dragStartXRatio = origin.xRatio;
         token.dragStartYRatio = origin.yRatio;
         token.dragPixelsPerFiveFeet = session.mediumDiameter;
-        token.dragUpdatedAt = Date.now();
-        changes.set(id, {
+        token.dragUpdatedAt = dragUpdatedAt;
+        token.dragGroupId = session.groupId;
+        token.dragGroupSize = session.ids.length;
+        token.dragGroupStartXRatio = session.startCentroid?.x;
+        token.dragGroupStartYRatio = session.startCentroid?.y;
+        const fields = {
             xRatio: token.xRatio,
             yRatio: token.yRatio,
             dragActive: active,
             dragStartXRatio: origin.xRatio,
             dragStartYRatio: origin.yRatio,
             dragPixelsPerFiveFeet: session.mediumDiameter,
-            dragUpdatedAt: token.dragUpdatedAt
+            dragUpdatedAt,
+            dragGroupId: session.groupId || null
+        };
+        if (session.groupId) Object.assign(fields, {
+            dragGroupSize: session.ids.length,
+            dragGroupStartXRatio: session.startCentroid.x,
+            dragGroupStartYRatio: session.startCentroid.y
         });
+        changes.set(id, fields);
     });
     return changes;
 }
@@ -133,10 +145,17 @@ function queueTokenDragPatch(session, active, final = false) {
 
 function beginMonsterDrag(ids) {
     const targets = monsters.filter(token => ids.includes(token.id));
+    const origins = new Map(targets.map(token => [token.id, { xRatio: token.xRatio, yRatio: token.yRatio }]));
+    const startCentroid = targets.length ? {
+        x: targets.reduce((sum, token) => sum + Number(token.xRatio), 0) / targets.length,
+        y: targets.reduce((sum, token) => sum + Number(token.yRatio), 0) / targets.length
+    } : null;
     const session = {
         ids: targets.map(token => token.id),
         generation: boardSync.generation,
-        origins: new Map(targets.map(token => [token.id, { xRatio: token.xRatio, yRatio: token.yRatio }])),
+        origins,
+        groupId: targets.length > 1 ? `token-group-${Date.now()}-${Math.random().toString(36).slice(2, 9)}` : null,
+        startCentroid,
         mediumDiameter: Math.max(1, Number(currentTokenSize) || 1),
         pending: null, timer: null, inFlight: false, lastSentAt: 0
     };
@@ -154,20 +173,50 @@ function tokenDragDistanceFeet(token, width, height) {
     return Math.round(Math.hypot(dx, dy) / Math.max(1, Number(token.dragPixelsPerFiveFeet) || 1) * 5);
 }
 
-function renderTokenDistances() {
-    const layer = document.getElementById('tokenDistanceLayer');
-    if (!layer || !mapImage?.clientWidth || !mapImage?.clientHeight) return;
-    const width = mapImage.clientWidth, height = mapImage.clientHeight, now = Date.now();
-    const visible = monsters.filter(token => token.dragActive
+function tokenMovementIndicators(tokens, width, height, now = Date.now()) {
+    const visible = tokens.filter(token => token.dragActive
         && Number.isFinite(Number(token.dragStartXRatio))
         && Number.isFinite(Number(token.dragStartYRatio))
         && now - Number(token.dragUpdatedAt || 0) < TOKEN_DRAG_STALE_MS);
+    const indicators = [], groups = new Map();
+    visible.forEach(token => {
+        if (token.dragGroupId && Number(token.dragGroupSize) > 1) {
+            if (!groups.has(token.dragGroupId)) groups.set(token.dragGroupId, []);
+            groups.get(token.dragGroupId).push(token);
+            return;
+        }
+        indicators.push({
+            startX: Number(token.dragStartXRatio) * width,
+            startY: Number(token.dragStartYRatio) * height,
+            endX: Number(token.xRatio) * width,
+            endY: Number(token.yRatio) * height,
+            pixelsPerFiveFeet: Math.max(1, Number(token.dragPixelsPerFiveFeet) || 1)
+        });
+    });
+    groups.forEach(group => {
+        const first = group[0];
+        indicators.push({
+            groupId: first.dragGroupId,
+            startX: Number(first.dragGroupStartXRatio) * width,
+            startY: Number(first.dragGroupStartYRatio) * height,
+            endX: group.reduce((sum, token) => sum + Number(token.xRatio) * width, 0) / group.length,
+            endY: group.reduce((sum, token) => sum + Number(token.yRatio) * height, 0) / group.length,
+            pixelsPerFiveFeet: Math.max(1, Number(first.dragPixelsPerFiveFeet) || 1)
+        });
+    });
+    return indicators;
+}
+
+function renderTokenDistances() {
+    const layer = document.getElementById('tokenDistanceLayer');
+    if (!layer || !mapImage?.clientWidth || !mapImage?.clientHeight) return;
+    const width = mapImage.clientWidth, height = mapImage.clientHeight;
+    const indicators = tokenMovementIndicators(monsters, width, height);
     layer.setAttribute('viewBox', `0 0 ${width} ${height}`);
     layer.replaceChildren();
-    visible.forEach(token => {
-        const startX = Number(token.dragStartXRatio) * width, startY = Number(token.dragStartYRatio) * height;
-        const endX = Number(token.xRatio) * width, endY = Number(token.yRatio) * height;
-        const feet = tokenDragDistanceFeet(token, width, height);
+    indicators.forEach(indicator => {
+        const { startX, startY, endX, endY } = indicator;
+        const feet = Math.round(Math.hypot(endX - startX, endY - startY) / indicator.pixelsPerFiveFeet * 5);
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         line.setAttribute('x1', startX); line.setAttribute('y1', startY); line.setAttribute('x2', endX); line.setAttribute('y2', endY);
         line.setAttribute('class', 'token-distance-line');
@@ -179,7 +228,7 @@ function renderTokenDistances() {
         layer.append(line, start, label);
     });
     clearTimeout(tokenDistanceExpiryTimer);
-    if (visible.length) tokenDistanceExpiryTimer = setTimeout(renderTokenDistances, TOKEN_DRAG_STALE_MS + 50);
+    if (indicators.length) tokenDistanceExpiryTimer = setTimeout(renderTokenDistances, TOKEN_DRAG_STALE_MS + 50);
 }
 function removeMonstersFromFirebase(ids) { return runBoardWrite(boardSync.remove(ids)); }
 function addMonstersToFirebase(tokens) { return runBoardWrite(boardSync.add(tokens, tokens[0]?._boardGeneration || boardSync.generation)); }
@@ -235,7 +284,9 @@ function initializeBoardUI(role) {
                 const position = element?.dataset.dragging === 'true' || localTokenDragSessions.has(token.id) ? {
                     xRatio: token.xRatio, yRatio: token.yRatio, dragActive: token.dragActive,
                     dragStartXRatio: token.dragStartXRatio, dragStartYRatio: token.dragStartYRatio,
-                    dragPixelsPerFiveFeet: token.dragPixelsPerFiveFeet, dragUpdatedAt: token.dragUpdatedAt
+                    dragPixelsPerFiveFeet: token.dragPixelsPerFiveFeet, dragUpdatedAt: token.dragUpdatedAt,
+                    dragGroupId: token.dragGroupId, dragGroupSize: token.dragGroupSize,
+                    dragGroupStartXRatio: token.dragGroupStartXRatio, dragGroupStartYRatio: token.dragGroupStartYRatio
                 } : {};
                 Object.keys(token).forEach(key => { if (!(key in normalized)) delete token[key]; });
                 Object.assign(token, normalized, position);
