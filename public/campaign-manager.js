@@ -2,7 +2,7 @@
 // remain the live board so existing player subscriptions receive every switch.
 const campaignRegistryRef = db.collection('shared').doc('campaignRegistry');
 const campaignsRef = db.collection('campaigns');
-const campaignStateKeys = ['monsters', 'map', 'drawings', 'fogOfWar', 'loot'];
+const campaignStateKeys = ['monsters', 'map', 'drawings', 'fogOfWar', 'stickers', 'loot'];
 let campaignRegistry = { activeId: '', activeMapId: '', campaigns: [] };
 let campaignSwitchInProgress = false;
 let customMapSaveInProgress = false;
@@ -240,7 +240,7 @@ async function addCampaignMap() {
         const batch = db.batch();
         stageCampaignMapState(batch, campaign.id, ref.id, {
             monsters: { monsters: [] }, map: { filepath, mapScale: 1 },
-            drawings: { drawings: [] }, fogOfWar: { drawings: [] },
+            drawings: { drawings: [] }, fogOfWar: { drawings: [] }, stickers: { stickers: [] },
             loot: { cr: 0, xp: 0, trackedCreatureIds: [] }
         });
         batch.set(ref, { name }, { merge: true });

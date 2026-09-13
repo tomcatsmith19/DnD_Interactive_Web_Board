@@ -80,6 +80,22 @@ test('drawing patches move individual shared objects without replacing their sha
     assert.equal(drawing.rotation, 45);
 });
 
+test('stickers synchronize as individual board records and survive map export', async () => {
+    const f = await fixture();
+    const sticker = {
+        id: 'sticker-tree', name: 'Oak Tree', storagePath: 'sticker-library/v1/Woodlands/Oak_Tree_1x2.webp',
+        x: .25, y: .4, widthRatio: .08, heightRatio: .16, rotation: 0
+    };
+    await f.first.addSticker(sticker);
+    await f.second.patchStickers(new Map([[sticker.id, { x: .6, rotation: 15 }]]));
+    const saved = (await f.first.exportState()).stickers.stickers[0];
+    assert.equal(saved.storagePath, sticker.storagePath);
+    assert.equal(saved.x, .6);
+    assert.equal(saved.rotation, 15);
+    await f.first.removeStickers([sticker.id]);
+    assert.deepEqual((await f.second.exportState()).stickers.stickers, []);
+});
+
 test('map switches freeze outgoing edits and reject late actions from the previous map', async () => {
     const f = await fixture(), old = f.first.generation;
     const next = await f.first.prepare({ map: { filepath: 'cave.jpg', mapScale: 2 }, monsters: { monsters: [token('a')] } });

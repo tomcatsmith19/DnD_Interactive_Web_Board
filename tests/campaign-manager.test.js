@@ -6,12 +6,13 @@ const { createFirestore } = require('./helpers/fake-firestore');
 const { create: createBoardSync, mapData } = require('../public/board-sync');
 
 const copy = value => value === undefined ? undefined : JSON.parse(JSON.stringify(value));
-const keys = ['monsters', 'map', 'drawings', 'fogOfWar', 'loot'];
+const keys = ['monsters', 'map', 'drawings', 'fogOfWar', 'stickers', 'loot'];
 const board = (filepath, hp = 18) => ({
     monsters: { monsters: [{ id: 'hero', name: 'Hero', hp, init: 17, isplayer: true, xRatio: .2, yRatio: .7, conditions: ['Hidden'] }] },
     map: { filepath, mapScale: 1.7, tokenSize: 130 },
     drawings: { drawings: [{ id: 'line', points: [.1, .2] }] },
     fogOfWar: { drawings: [{ id: 'fog', points: [.4, .5] }] },
+    stickers: { stickers: [{ id: 'tree', name: 'Tree', storagePath: 'sticker-library/v1/tree.webp', x: .5, y: .5, widthRatio: .1, heightRatio: .1 }] },
     loot: { cr: 2, xp: 450, trackedCreatureIds: ['goblin'] }
 });
 

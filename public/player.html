@@ -650,10 +650,11 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-  <script src="map-drawing.js?v=19"></script>
+  <script src="map-drawing.js?v=20"></script>
   <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=2"></script>
-    <script src="board-sync.js?v=4"></script>
+    <script src="board-sync.js?v=5"></script>
+    <script src="map-stickers.js?v=8"></script>
   <script src="board-ui.js?v=5"></script>
     <script src="reference.js?v=2"></script>
 
@@ -1788,7 +1789,17 @@
       mapTransformLayer: document.getElementById('mapTransformLayer'),
       tokenLayer: document.getElementById('mapTokenLayer')
     });
-    const drawingToolbarManager = setupMapDrawingTabs(sharedDrawingManager, null, measurementToolbarManager);
+    const stickerManager = setupMapStickers({
+      boardSync,
+      storage,
+      auth,
+      mapImage,
+      mapTransformLayer: document.getElementById('mapTransformLayer'),
+      tokenLayer: document.getElementById('mapTokenLayer'),
+      getGridSize: () => currentTokenSize,
+      rootPath: 'sticker-library/v1'
+    });
+    const drawingToolbarManager = setupMapDrawingTabs(sharedDrawingManager, null, measurementToolbarManager, stickerManager);
     let drawingToolbarHidden = false;
     document.getElementById('toggleDrawingToolbar')?.addEventListener('click', event => {
       drawingToolbarHidden = !drawingToolbarHidden;

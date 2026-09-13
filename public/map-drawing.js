@@ -1760,7 +1760,7 @@
     };
   }
 
-  function setupMapDrawingTabs(drawingManager, fogManager, measurementManager) {
+  function setupMapDrawingTabs(drawingManager, fogManager, measurementManager, stickerManager) {
     const shell = document.createElement("div");
     shell.className = "map-tool-tabs";
     const buttons = document.createElement("div");
@@ -1769,6 +1769,12 @@
     shell.append(panes, buttons);
 
     const tabs = [
+      stickerManager && {
+        label: "Stickers",
+        title: "Browse and place map stickers",
+        icon: '<svg viewBox="0 0 48 24" aria-hidden="true"><path d="M10 3h20l8 8v10H10Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M30 3v8h8M19 17l3-7 3 7-6-4h6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+        manager: stickerManager
+      },
       measurementManager && {
         label: "Measurement",
         title: "Area and distance measurement tools",
@@ -1803,8 +1809,12 @@
       panes.appendChild(tab.manager.toolbar);
       button.addEventListener("click", () => {
         const shouldClose = activeManager === tab.manager;
-        if (activeManager) activeManager.setTool("pan");
+        if (activeManager) {
+          activeManager.setTool?.("pan");
+          activeManager.setActive?.(false);
+        }
         activeManager = shouldClose ? null : tab.manager;
+        activeManager?.setActive?.(true);
         tabs.forEach(item => { item.manager.toolbar.style.display = item.manager === activeManager ? "flex" : "none"; });
         Array.from(buttons.children).forEach(item => {
           const isActive = item === button && !shouldClose;
@@ -1818,12 +1828,24 @@
     document.body.appendChild(shell);
     return {
       toolbar: shell,
-      setVisible(isVisible) { shell.style.display = isVisible ? "block" : "none"; },
-      setTool(tool) {
-        if (tool === "pan") tabs.forEach(tab => tab.manager.setTool("pan"));
-        else activeManager.setTool(tool);
+      setVisible(isVisible) {
+        shell.style.display = isVisible ? "block" : "none";
+        if (!isVisible && activeManager) {
+          activeManager.setTool?.("pan");
+          activeManager.setActive?.(false);
+          activeManager = null;
+          tabs.forEach(tab => { tab.manager.toolbar.style.display = "none"; });
+          Array.from(buttons.children).forEach(button => {
+            button.classList.remove("is-active");
+            button.setAttribute("aria-expanded", "false");
+          });
+        }
       },
-      updateSize() { tabs.forEach(tab => tab.manager.updateSize()); },
+      setTool(tool) {
+        if (tool === "pan") tabs.forEach(tab => tab.manager.setTool?.("pan"));
+        else activeManager?.setTool?.(tool);
+      },
+      updateSize() { tabs.forEach(tab => tab.manager.updateSize?.()); },
       clearSelection() { tabs.forEach(tab => tab.manager.clearSelection?.()); },
       discardLocalState() { return Promise.all(tabs.map(tab => tab.manager.discardLocalState?.())); },
       selectWithinLasso(polygon, additive = true) {

@@ -39,7 +39,7 @@
   function create({ db, firebase, intervalMs = 30000, onError = error => console.error('Board synchronization:', error), autoStart = true }) {
     const pointer = db.collection('shared').doc('map');
     const boards = db.collection('boardStates');
-    const layers = ['tokens', 'drawings', 'fogOfWar'];
+    const layers = ['tokens', 'drawings', 'fogOfWar', 'stickers'];
     const subscribers = Object.fromEntries(layers.map(layer => [layer, new Set()]));
     const caches = Object.fromEntries(layers.map(layer => [layer, new Map()]));
     const versions = Object.fromEntries(layers.map(layer => [layer, 0]));
@@ -80,7 +80,12 @@
     async function prepare(state) {
       const board = boards.doc();
       const writes = [];
-      const records = { tokens: state.monsters?.monsters || [], drawings: state.drawings?.drawings || [], fogOfWar: state.fogOfWar?.drawings || [] };
+      const records = {
+        tokens: state.monsters?.monsters || [],
+        drawings: state.drawings?.drawings || [],
+        fogOfWar: state.fogOfWar?.drawings || [],
+        stickers: state.stickers?.stickers || []
+      };
       layers.forEach(layer => records[layer].forEach((record, index) => {
         const id = record.id || `${layer}-${index}`;
         writes.push([collection(layer, board.id).doc(id), { ...clean(record), id, ...(layer === 'tokens' ? {} : { _order: index }) }]);
@@ -96,8 +101,14 @@
     async function initialize() {
       let snapshot = await pointer.get({ source: 'server' });
       if (!snapshot.data()?.generation) {
-        const legacy = await Promise.all(['monsters', 'drawings', 'fogOfWar'].map(key => db.collection('shared').doc(key).get({ source: 'server' })));
-        const state = { map: snapshot.data() || {}, monsters: legacy[0].data() || {}, drawings: legacy[1].data() || {}, fogOfWar: legacy[2].data() || {} };
+        const legacy = await Promise.all(['monsters', 'drawings', 'fogOfWar', 'stickers'].map(key => db.collection('shared').doc(key).get({ source: 'server' })));
+        const state = {
+          map: snapshot.data() || {},
+          monsters: legacy[0].data() || {},
+          drawings: legacy[1].data() || {},
+          fogOfWar: legacy[2].data() || {},
+          stickers: legacy[3].data() || {}
+        };
         const prepared = await prepare(state);
         await db.runTransaction(async transaction => {
           const current = await transaction.get(pointer);
@@ -175,7 +186,13 @@
         const items = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
         return index ? items.sort((a, b) => (a._order || 0) - (b._order || 0) || a.id.localeCompare(b.id)) : items;
       });
-      return { map: mapData(map.data()), monsters: { monsters: records[0] }, drawings: { drawings: records[1] }, fogOfWar: { drawings: records[2] } };
+      return {
+        map: mapData(map.data()),
+        monsters: { monsters: records[0] },
+        drawings: { drawings: records[1] },
+        fogOfWar: { drawings: records[2] },
+        stickers: { stickers: records[3] }
+      };
     }
     async function lock() {
       await start();
@@ -227,6 +244,9 @@
       addDrawing(layer, drawing, expected = generation) { return mutate(layer, [drawing.id], existing => existing ? undefined : { ...drawing, _order: Date.now() }, expected); },
       patchDrawings(layer, changes, expected = generation) { return mutate(layer, [...changes.keys()], (drawing, id) => drawing ? changes.get(id) : undefined, expected); },
       removeDrawings(layer, ids, expected = generation) { return mutate(layer, ids, () => null, expected); },
+      addSticker(sticker, expected = generation) { return mutate('stickers', [sticker.id], existing => existing ? undefined : { ...sticker, _order: Date.now() }, expected); },
+      patchStickers(changes, expected = generation) { return mutate('stickers', [...changes.keys()], (sticker, id) => sticker ? changes.get(id) : undefined, expected); },
+      removeStickers(ids, expected = generation) { return mutate('stickers', ids, () => null, expected); },
       async patchMap(fields, expected = generation) {
         await start();
         return db.runTransaction(async transaction => {
