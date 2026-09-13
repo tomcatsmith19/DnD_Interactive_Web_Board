@@ -658,11 +658,11 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-  <script src="map-drawing.js?v=20"></script>
+  <script src="map-drawing.js?v=23"></script>
   <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=5"></script>
     <script src="board-sync.js?v=5"></script>
-    <script src="map-stickers.js?v=8"></script>
+    <script src="map-stickers.js?v=22"></script>
   <script src="board-ui.js?v=5"></script>
     <script src="reference.js?v=2"></script>
 
@@ -1858,6 +1858,8 @@
       mapTransformLayer: document.getElementById('mapTransformLayer'),
       tokenLayer: document.getElementById('mapTokenLayer'),
       getGridSize: () => currentTokenSize,
+      getSoundVolume: () => sfxVolume,
+      canRunTeleports: true,
       rootPath: 'sticker-library/v1'
     });
     const drawingToolbarManager = setupMapDrawingTabs(sharedDrawingManager, null, measurementToolbarManager, stickerManager);
@@ -1869,8 +1871,24 @@
     });
     document.addEventListener('keydown', event => {
       if (event.key !== 'Escape') return;
-      drawingToolbarManager.setTool('pan');
       clearMapTokenSelection();
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      const target=event.target,tag=String(target?.tagName||'').toLowerCase();
+      if(target?.isContentEditable||tag==='input'||tag==='textarea'||tag==='select')return;
+      let closedPanel=false;
+      const leftPanel=document.getElementById('partyPanel');
+      if(leftPanel&&!leftPanel.classList.contains('is-collapsed')){
+        leftPanel.classList.add('is-collapsed');
+        document.querySelectorAll('.player-left-rail button').forEach(button=>button.classList.remove('is-active'));
+        closedPanel=true;
+      }
+      const actionDock=document.getElementById('mapContextDock');
+      if(actionDock&&!actionDock.classList.contains('is-collapsed')){setMapContextDockCollapsed(true);closedPanel=true;}
+      ['audioDock','playerSessionControls'].forEach(id=>{const panel=document.getElementById(id);if(panel&&!panel.classList.contains('is-collapsed')){panel.classList.add('is-collapsed');closedPanel=true;}});
+      if(closedPanel){event.preventDefault();event.stopImmediatePropagation();}
     });
 
     mapImage.addEventListener('load', () => {

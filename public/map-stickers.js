@@ -86,6 +86,16 @@
     return separator > 0 ? normalized.slice(0, separator) : fallback;
   }
 
+  function hasStickerInteraction(sticker) {
+    const interaction = sticker?.interaction;
+    return Boolean(interaction && (interaction.animation || interaction.sound || interaction.loot || interaction.teleport));
+  }
+
+  function pointInCircularRange(point, center, radiusPixels, width, height) {
+    if (!point || !center || !width || !height || radiusPixels <= 0) return false;
+    return Math.hypot((Number(point.x) - Number(center.x)) * width, (Number(point.y) - Number(center.y)) * height) <= radiusPixels;
+  }
+
   function ensureStyles() {
     if (document.getElementById("map-sticker-styles")) return;
     const style = document.createElement("style");
@@ -96,8 +106,12 @@
       .map-sticker-placement-layer{z-index:8;pointer-events:none;background:transparent;}
       .map-sticker-rig-layer{z-index:36;pointer-events:none;overflow:visible;}
       .map-sticker-placement-layer.is-placing{pointer-events:auto;cursor:copy;}
+      .sticker-placement-cursor-preview{position:absolute;z-index:1;display:none;box-sizing:border-box;transform:translate(-50%,-50%);opacity:.68;filter:drop-shadow(0 0 4px #f4d76d);pointer-events:none;}
+      .sticker-placement-cursor-preview img,.sticker-placement-cursor-preview video{display:block;width:100%;height:100%;object-fit:fill;pointer-events:none;}
       .map-sticker{position:absolute;display:block;padding:0;border:0;background:transparent;transform-origin:center;pointer-events:none;user-select:none;-webkit-user-select:none;touch-action:none;}
       .map-sticker-layer.is-editing .map-sticker{pointer-events:auto;cursor:grab;}
+      .map-sticker-layer:not(.is-editing) .map-sticker.is-interactive{pointer-events:auto;cursor:pointer;}
+      .map-sticker.show-interaction-marker::after{content:'';position:absolute;right:-5px;top:-5px;width:10px;height:10px;border:1px solid #1d1009;border-radius:50%;background:#f4d76d;box-shadow:0 1px 4px #000;}
       .map-sticker-layer.is-editing .map-sticker:active{cursor:grabbing;}
       .map-sticker.is-selected{filter:drop-shadow(0 0 5px #10252c);}
       .map-sticker img,.map-sticker video{display:block;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none;-webkit-user-drag:none;}
@@ -114,11 +128,16 @@
       .sticker-rig-rotate{left:50%;top:-58px;width:24px;height:24px;border-radius:50%;transform:translateX(-50%);cursor:grab;}
       .sticker-rig-rotate::before{content:'\\21BB';display:block;font:700 18px/18px Arial,sans-serif;text-align:center;}
       .sticker-rig-rotate:active{cursor:grabbing;}
+      .sticker-rig-origin{width:20px;height:20px;border-radius:50%;transform:translate(-50%,-50%);cursor:crosshair;background:#f4d76d;border-color:#1d1009;box-shadow:0 0 0 2px #f4d76d,0 1px 5px #000;}
+      .sticker-rig-origin::before,.sticker-rig-origin::after{content:'';position:absolute;background:#1d1009;pointer-events:none;}
+      .sticker-rig-origin::before{left:8px;top:2px;width:2px;height:12px;}
+      .sticker-rig-origin::after{left:3px;top:7px;width:12px;height:2px;}
       .sticker-library-toolbar{width:clamp(620px,50vw,980px);max-height:min(280px,calc(100vh - 62px));padding:8px 10px;gap:5px;overflow:hidden;box-sizing:border-box;}
       .sticker-search-row{display:flex;align-items:center;gap:7px;width:100%;}
       .sticker-library-toolbar .sticker-search{flex:0 1 37.5%;min-width:120px;width:37.5%;height:34px;padding:6px 9px;box-sizing:border-box;border:1px solid #8a6643;border-radius:6px;background:#140d08;color:#fff4d6;font:14px Arial,sans-serif;outline:none;}
       .sticker-library-toolbar .sticker-search:focus{border-color:#f4d76d;box-shadow:0 0 0 2px rgba(244,215,109,.18);}
-      .sticker-library-toolbar .sticker-mode-button{flex:0 0 auto;width:auto;height:34px;padding:3px 10px;white-space:nowrap;font:13px Arial,sans-serif;}
+      .sticker-library-toolbar .sticker-interaction-button{flex:0 0 auto;width:auto;height:34px;padding:3px 10px;color:#f4d76d;background:#1d1009;border:1px solid #f4d76d;border-radius:5px;white-space:nowrap;font:13px Arial,sans-serif;cursor:pointer;}
+      .sticker-library-toolbar .sticker-interaction-button:disabled{opacity:.45;cursor:default;}
       .sticker-breadcrumbs{display:flex;flex:1 1 auto;align-items:center;gap:1px;min-width:0;min-height:18px;padding:0 2px;overflow-x:auto;scrollbar-width:thin;font:12px/1.2 Arial,sans-serif;}
       .sticker-library-toolbar .sticker-breadcrumbs button{flex:0 0 auto;width:auto;height:auto;min-height:0;padding:1px 2px;border:0;border-radius:2px;background:none;color:#d8c7ac;text-decoration:underline;text-underline-offset:2px;font:inherit;white-space:nowrap;box-shadow:none;}
       .sticker-library-toolbar .sticker-breadcrumbs button:hover:not(:disabled),.sticker-library-toolbar .sticker-breadcrumbs button:focus-visible{border:0;background:none;color:#fff4d6;outline:1px solid #8a6643;}
@@ -137,6 +156,32 @@
       .sticker-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
       .sticker-library-toolbar .sticker-load-more{display:flex;flex:0 0 81px;width:81px;height:75px;padding:5px;align-items:center;justify-content:center;font:12px Arial,sans-serif;white-space:normal;}
       .sticker-library-empty{flex:1 0 100%;margin:30px 8px;color:#d8c7ac;text-align:center;font:14px/1.4 Arial,sans-serif;}
+      .sticker-portal-layer{position:absolute;inset:0;z-index:5;width:100%;height:100%;overflow:visible;pointer-events:none;}
+      .sticker-portal-link{fill:none;stroke:#f4d76d;stroke-width:3;stroke-dasharray:10 7;vector-effect:non-scaling-stroke;filter:drop-shadow(0 1px 2px #000);}
+      .sticker-portal-zone{fill:rgba(244,215,109,.12);stroke:#f4d76d;stroke-width:2;stroke-dasharray:6 5;vector-effect:non-scaling-stroke;}
+      .sticker-portal-destination{fill:#1d1009;stroke:#f4d76d;stroke-width:4;vector-effect:non-scaling-stroke;filter:drop-shadow(0 1px 3px #000);}
+      .sticker-portal-layer.is-editing .sticker-portal-link{pointer-events:stroke;cursor:move;}
+      .sticker-portal-layer.is-editing .sticker-portal-destination{pointer-events:all;cursor:move;}
+      .sticker-interaction-editor{position:fixed;z-index:3900;right:24px;top:82px;width:min(440px,calc(100vw - 32px));max-height:calc(100vh - 110px);overflow:auto;padding:14px;box-sizing:border-box;color:#fff4d6;background:#1d1009;border:1px solid #f4d76d;border-radius:9px;box-shadow:0 10px 34px #000;font:13px/1.35 Arial,sans-serif;}
+      .sticker-interaction-editor[hidden]{display:none;}
+      .sticker-interaction-editor h3{margin:0 0 10px;color:#f4d76d;font:20px 'MedievalSharp',Georgia,serif;}
+      .sticker-interaction-editor .interaction-editor-status{min-height:18px;margin:0 0 6px;color:#ffb0a8;}
+      .sticker-interaction-editor details{margin:8px 0;border:1px solid #765133;border-radius:6px;background:#24150d;}
+      .sticker-interaction-editor summary{padding:9px;color:#f4d76d;font-weight:bold;cursor:pointer;user-select:none;}
+      .sticker-interaction-editor details>label,.sticker-interaction-editor details>button,.sticker-interaction-editor details>span{margin-left:9px;margin-right:9px;}
+      .sticker-interaction-editor label{display:grid;grid-template-columns:145px minmax(0,1fr);align-items:center;gap:8px;margin:6px 0;}
+      .sticker-interaction-editor label.sticker-enable{display:flex;grid-template-columns:none;font-weight:bold;}
+      .sticker-interaction-editor input,.sticker-interaction-editor select{min-width:0;padding:6px;color:white;background:#2b190f;border:1px solid #8a6643;border-radius:4px;box-sizing:border-box;}
+      .sticker-interaction-editor input[type="checkbox"]{width:auto;accent-color:#f4d76d;}
+      .sticker-interaction-editor .interaction-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:10px;}
+      .sticker-interaction-editor button{padding:7px 10px;color:#f4d76d;background:#3d2718;border:1px solid #8a6643;border-radius:5px;cursor:pointer;}
+      .sticker-interaction-editor .interaction-save{color:#1d1009;background:#f4d76d;border-color:#f4d76d;font-weight:bold;}
+      .sticker-loot-popup{position:fixed;z-index:4000;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.68);}
+      .sticker-loot-popup[hidden]{display:none;}
+      .sticker-loot-card{width:min(560px,95vw);padding:16px;background:#1d1009;border:2px solid #f4d76d;border-radius:9px;box-shadow:0 10px 35px #000;}
+      .sticker-loot-card h3{margin:0 0 10px;color:#f4d76d;font-family:'MedievalSharp',Georgia,serif;}
+      .sticker-loot-card textarea{width:100%;height:280px;padding:10px;box-sizing:border-box;resize:vertical;color:white;background:#2b190f;border:1px solid #8a6643;border-radius:5px;}
+      .sticker-loot-card button{float:right;margin-top:9px;padding:8px 14px;color:#1d1009;background:#f4d76d;border:0;border-radius:5px;font-weight:bold;cursor:pointer;}
       @media(max-width:760px){.sticker-library-toolbar{width:calc(100vw - 12px);min-width:0;}.sticker-library-toolbar .sticker-card,.sticker-library-toolbar .sticker-load-more{flex-basis:71px;width:71px}.map-tool-tab-buttons button{min-width:70px;}}
     `;
     document.head.appendChild(style);
@@ -154,6 +199,10 @@
     const urlCache = new Map();
     const mediaDimensions = new Map();
     const localOverrides = new Map();
+    const loopingSounds = new Map();
+    const teleportLocks = new Map();
+    const canEditInteractions = Boolean(options.canEditInteractions);
+    const canRunTeleports = Boolean(options.canRunTeleports);
     let active = false;
     let selectedAsset = null;
     let selectedStickerId = "";
@@ -168,11 +217,25 @@
     const pendingSearches = new Map();
     let searchTimer = null;
     let dragSession = null;
+    let teleportDragSession = null;
+    let teleportDestinationStickerId = "";
+    let teleportPreview = null;
+    let replacementPickerStickerId = "";
+    let lootDataPromise = null;
+    let requestPanelClose = () => {};
+    let lastPlacementPointer = { x: root.innerWidth / 2, y: root.innerHeight / 2 };
+    let placementPreviewPath = "";
 
     const layer = document.createElement("div");
     layer.id = "mapStickerLayer";
     layer.className = "map-sticker-layer";
     mapTransformLayer.insertBefore(layer, tokenLayer);
+
+    const portalLayer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    portalLayer.id = "mapStickerPortalLayer";
+    portalLayer.classList.add("sticker-portal-layer");
+    portalLayer.setAttribute("aria-hidden", "true");
+    if (canEditInteractions) mapTransformLayer.insertBefore(portalLayer, tokenLayer);
 
     const placementLayer = document.createElement("div");
     placementLayer.id = "mapStickerPlacementLayer";
@@ -184,15 +247,21 @@
     rigLayer.className = "map-sticker-rig-layer";
     mapTransformLayer.appendChild(rigLayer);
 
+    const placementPreview = document.createElement("div");
+    placementPreview.className = "sticker-placement-cursor-preview";
+    placementPreview.setAttribute("aria-hidden", "true");
+    placementLayer.appendChild(placementPreview);
+
     const toolbar = document.createElement("section");
     toolbar.className = "drawing-toolbar sticker-library-toolbar";
     toolbar.setAttribute("aria-label", "Map sticker library");
 
-    const modeButton = document.createElement("button");
-    modeButton.type = "button";
-    modeButton.className = "sticker-mode-button";
-    modeButton.textContent = "Move existing";
-    modeButton.title = "Cancel placement and move stickers already on the map";
+    const interactionButton = document.createElement("button");
+    interactionButton.type = "button";
+    interactionButton.className = "sticker-interaction-button";
+    interactionButton.textContent = "Interactions…";
+    interactionButton.title = "Configure the selected sticker interaction";
+    interactionButton.disabled = true;
 
     const searchInput = document.createElement("input");
     searchInput.type = "search";
@@ -208,7 +277,8 @@
     const breadcrumbs = document.createElement("nav");
     breadcrumbs.className = "sticker-breadcrumbs";
     breadcrumbs.setAttribute("aria-label", "Sticker folders");
-    searchRow.append(searchInput, breadcrumbs, modeButton);
+    searchRow.append(searchInput, breadcrumbs);
+    if (canEditInteractions) searchRow.append(interactionButton);
 
     const grid = document.createElement("div");
     grid.className = "sticker-library-grid";
@@ -224,11 +294,241 @@
 
     toolbar.append(searchRow, grid, status);
 
+    const interactionEditor = document.createElement("section");
+    interactionEditor.className = "sticker-interaction-editor";
+    interactionEditor.hidden = true;
+    interactionEditor.setAttribute("aria-label", "Sticker interaction settings");
+    interactionEditor.innerHTML = `
+      <h3>Sticker Interactions</h3><p class="interaction-editor-status" data-editor-status></p>
+      <details open><summary>Animate</summary>
+        <label>Rotation degrees <input name="rotationDegrees" type="number" value="0" step="1"></label>
+        <input name="rotationOriginX" type="hidden" value="50">
+        <input name="rotationOriginY" type="hidden" value="50">
+        <label>Move X (grid spaces) <input name="translateX" type="number" value="0" step="0.25"></label>
+        <label>Move Y (grid spaces) <input name="translateY" type="number" value="0" step="0.25"></label>
+        <label>Scale change (%) <input name="scalePercent" type="number" value="0" min="-90" max="900" step="5"></label>
+        <label>Replacement path <input name="replacementPath" type="text" placeholder="sticker-library/v1/..."></label>
+        <button type="button" data-action="pick-replacement">Choose replacement from library</button>
+        <label>Duration (ms) <input name="durationMs" type="number" value="0" min="0" max="10000" step="50"></label>
+      </details>
+      <details><summary>Sound</summary>
+        <label>Sound path <input name="soundSrc" type="text" list="stickerInteractionSounds" placeholder="data/sounds/..."></label>
+        <label class="sticker-enable"><input name="soundLoop" type="checkbox"> Loop until clicked again</label>
+      </details>
+      <details><summary>Loot</summary>
+        <label>Treasure type <select name="lootType"><option value="none">No treasure</option><option value="individual">Individual Treasure</option><option value="hoard">Treasure Hoard</option></select></label>
+        <label>Challenge rating <input name="lootCR" type="number" min="0" max="30" step="0.125" value="0"></label>
+        <label>Encounter XP <input name="lootXP" type="number" min="0" step="25" value="0"></label>
+      </details>
+      <details><summary>Teleport</summary>
+        <label>Trigger radius (grids) <input name="teleportRadius" type="number" min="0" max="20" step="0.25" value="0"></label>
+        <label class="sticker-enable"><input name="teleportBidirectional" type="checkbox"> Bidirectional travel</label>
+        <input name="teleportToX" type="hidden"><input name="teleportToY" type="hidden">
+        <button type="button" data-action="set-teleport">Set destination on map</button>
+        <span data-teleport-status>No destination set.</span>
+      </details>
+      <div class="interaction-actions"><button type="button" data-action="clear">Clear all</button><button type="button" data-action="cancel">Cancel</button><button class="interaction-save" type="button" data-action="save">Save</button></div>`;
+    const soundList = document.createElement("datalist");
+    soundList.id = "stickerInteractionSounds";
+    ["angry","bruh","dumb","evillaugh","scream","nooo","suprise","oh_my","awww","laugh","yeet","running","bite","punch","splat","bonk","hammer","sword","tentacle","gunshot","Explosion","failed_spell","spell attack","died","item","sad","senses","slipandfall","sucess","spell_whispers"].forEach(name => {
+      const option = document.createElement("option");
+      option.value = `data/sounds/${name}.mp3`;
+      soundList.appendChild(option);
+    });
+    interactionEditor.appendChild(soundList);
+    if (canEditInteractions) document.body.appendChild(interactionEditor);
+
+    const lootPopup = document.createElement("div");
+    lootPopup.className = "sticker-loot-popup";
+    lootPopup.hidden = true;
+    lootPopup.innerHTML = `<div class="sticker-loot-card"><h3>Loot</h3><textarea readonly aria-label="Rolled loot"></textarea><button type="button">Close</button></div>`;
+    lootPopup.querySelector("button").addEventListener("click", () => { lootPopup.hidden = true; });
+    document.body.appendChild(lootPopup);
+
     function reportError(error) {
       console.error("Map stickers:", error);
       status.textContent = error?.message || "The sticker library could not be loaded.";
       if (typeof root.reportBoardSyncError === "function") root.reportBoardSyncError(error);
     }
+
+    const editorField = name => interactionEditor.querySelector(`[name="${name}"]`);
+    ["rotationOriginX", "rotationOriginY"].forEach(name => editorField(name)?.addEventListener("input", () => {
+      const handle = rigLayer.querySelector(".sticker-rig-origin");
+      if (!handle) return;
+      handle.style.left = `${clamp(Number(editorField("rotationOriginX").value) || 0, 0, 100)}%`;
+      handle.style.top = `${clamp(Number(editorField("rotationOriginY").value) || 0, 0, 100)}%`;
+    }));
+    function syncTeleportPreviewFromEditor() {
+      const hasDestination = editorField("teleportToX").value !== "" && editorField("teleportToY").value !== "";
+      const sticker = stickers.find(item => item.id === selectedStickerId);
+      if (!sticker || !hasDestination || interactionEditor.hidden) {
+        teleportPreview = null;
+      } else {
+        teleportPreview = {
+          stickerId: sticker.id,
+          toX: roundRatio(editorField("teleportToX").value),
+          toY: roundRatio(editorField("teleportToY").value),
+          radius: clamp(Number(editorField("teleportRadius").value) || 0, 0, 20),
+          bidirectional: editorField("teleportBidirectional").checked
+        };
+      }
+      renderTeleportOverlays();
+    }
+    editorField("teleportRadius")?.addEventListener("input", syncTeleportPreviewFromEditor);
+    editorField("teleportBidirectional")?.addEventListener("change", syncTeleportPreviewFromEditor);
+    function setEditorStatus(message = "") {
+      const output = interactionEditor.querySelector("[data-editor-status]");
+      if (output) output.textContent = message;
+    }
+    function updateTeleportEditorStatus() {
+      const x = Number(editorField("teleportToX")?.value);
+      const y = Number(editorField("teleportToY")?.value);
+      const output = interactionEditor.querySelector("[data-teleport-status]");
+      if (output) output.textContent = Number.isFinite(x) && Number.isFinite(y) && editorField("teleportToX").value !== ""
+        ? `Destination: ${(x * 100).toFixed(1)}%, ${(y * 100).toFixed(1)}%`
+        : "No destination set.";
+    }
+
+    function openInteractionEditor() {
+      const sticker = stickers.find(item => item.id === selectedStickerId);
+      if (!sticker || !canEditInteractions) return;
+      const interaction = sticker.interaction || {};
+      const animation = interaction.animation || {};
+      const sound = interaction.sound || {};
+      const loot = interaction.loot || {};
+      const teleport = interaction.teleport || {};
+      const effects = animation.effects || { [animation.kind || "rotate"]: true };
+      editorField("rotationDegrees").value = interaction.animation && effects.rotate ? animation.rotationDegrees ?? 0 : 0;
+      editorField("rotationOriginX").value = (animation.rotationOriginX ?? .5) * 100;
+      editorField("rotationOriginY").value = (animation.rotationOriginY ?? .5) * 100;
+      editorField("translateX").value = interaction.animation && effects.translate ? animation.translateX ?? 0 : 0;
+      editorField("translateY").value = interaction.animation && effects.translate ? animation.translateY ?? 0 : 0;
+      editorField("scalePercent").value = interaction.animation && effects.scale
+        ? animation.scalePercent ?? ((Number(animation.scaleFactor) || 1) - 1) * 100
+        : 0;
+      editorField("replacementPath").value = interaction.animation && effects.replace ? animation.replacementPath || "" : "";
+      editorField("durationMs").value = interaction.animation ? animation.durationMs ?? 0 : 0;
+      editorField("soundSrc").value = sound.src || "";
+      editorField("soundLoop").checked = Boolean(sound.loop);
+      editorField("lootType").value = interaction.loot ? loot.type || "individual" : "none";
+      editorField("lootCR").value = loot.cr ?? 0;
+      editorField("lootXP").value = loot.xp ?? 0;
+      editorField("teleportRadius").value = interaction.teleport ? teleport.radius ?? 0 : 0;
+      editorField("teleportBidirectional").checked = Boolean(teleport.bidirectional);
+      editorField("teleportToX").value = Number.isFinite(Number(teleport.toX)) ? teleport.toX : "";
+      editorField("teleportToY").value = Number.isFinite(Number(teleport.toY)) ? teleport.toY : "";
+      updateTeleportEditorStatus();
+      setEditorStatus();
+      interactionEditor.hidden = false;
+      syncTeleportPreviewFromEditor();
+      renderStickerSelection();
+    }
+
+    function closeInteractionEditor() {
+      teleportDestinationStickerId = "";
+      replacementPickerStickerId = "";
+      interactionEditor.hidden = true;
+      teleportPreview = null;
+      updatePlacementMode();
+      renderTeleportOverlays();
+      renderStickerSelection();
+    }
+
+    async function saveInteractionEditor() {
+      const sticker = stickers.find(item => item.id === selectedStickerId);
+      if (!sticker) return;
+      const interaction = {};
+      const rotationDegrees = Number(editorField("rotationDegrees").value) || 0;
+      const translateX = Number(editorField("translateX").value) || 0;
+      const translateY = Number(editorField("translateY").value) || 0;
+      const scalePercent = clamp(Number(editorField("scalePercent").value) || 0, -90, 900);
+      const replacementPath = editorField("replacementPath").value.trim();
+      const effects = {
+        rotate: rotationDegrees !== 0,
+        translate: translateX !== 0 || translateY !== 0,
+        scale: scalePercent !== 0,
+        replace: Boolean(replacementPath)
+      };
+      if (Object.values(effects).some(Boolean)) {
+        interaction.animation = {
+          effects,
+          rotationDegrees,
+          rotationOriginX: clamp(Number(editorField("rotationOriginX").value) || 0, 0, 100) / 100,
+          rotationOriginY: clamp(Number(editorField("rotationOriginY").value) || 0, 0, 100) / 100,
+          translateX,
+          translateY,
+          scalePercent,
+          replacementPath,
+          originalPath: sticker.interaction?.animation?.originalPath || sticker.storagePath,
+          durationMs: clamp(Number(editorField("durationMs").value) || 0, 0, 10000),
+          active: Boolean(sticker.interaction?.animation?.active),
+          restoreState: sticker.interaction?.animation?.restoreState || null
+        };
+      }
+      if (editorField("soundSrc").value.trim()) {
+        interaction.sound = { src: editorField("soundSrc").value.trim(), loop: editorField("soundLoop").checked };
+      }
+      if (editorField("lootType").value !== "none") {
+        interaction.loot = {
+          type: editorField("lootType").value === "hoard" ? "hoard" : "individual",
+          cr: clamp(Number(editorField("lootCR").value) || 0, 0, 30),
+          xp: Math.max(0, Number(editorField("lootXP").value) || 0)
+        };
+      }
+      const teleportRadius = clamp(Number(editorField("teleportRadius").value) || 0, 0, 20);
+      if (teleportRadius > 0) {
+        const hasDestination = editorField("teleportToX").value !== "" && editorField("teleportToY").value !== "";
+        const toX = Number(editorField("teleportToX").value);
+        const toY = Number(editorField("teleportToY").value);
+        if (!hasDestination || !Number.isFinite(toX) || !Number.isFinite(toY)) {
+          setEditorStatus("Set a teleport destination before saving.");
+          return;
+        }
+        interaction.teleport = {
+          toX: roundRatio(toX), toY: roundRatio(toY),
+          radius: teleportRadius,
+          bidirectional: editorField("teleportBidirectional").checked
+        };
+      }
+      const saved = Object.keys(interaction).length ? interaction : null;
+      try {
+        await boardSync.patchStickers(new Map([[sticker.id, { interaction: saved }]]), boardSync.generation);
+        sticker.interaction = saved;
+        closeInteractionEditor();
+        renderStickers();
+        status.textContent = saved ? "Sticker interactions saved." : "Sticker interactions cleared.";
+      } catch (error) { setEditorStatus(error?.message || "Could not save interactions."); reportError(error); }
+    }
+
+    interactionButton.addEventListener("click", openInteractionEditor);
+    interactionEditor.querySelector("[data-action='cancel']")?.addEventListener("click", closeInteractionEditor);
+    interactionEditor.querySelector("[data-action='save']")?.addEventListener("click", saveInteractionEditor);
+    interactionEditor.querySelector("[data-action='clear']")?.addEventListener("click", async () => {
+      const sticker = stickers.find(item => item.id === selectedStickerId);
+      if (!sticker) return;
+      try {
+        await boardSync.patchStickers(new Map([[sticker.id, { interaction: null }]]), boardSync.generation);
+        sticker.interaction = null;
+        closeInteractionEditor();
+        renderStickers();
+        status.textContent = "Sticker interactions cleared.";
+      } catch (error) { reportError(error); }
+    });
+    interactionEditor.querySelector("[data-action='set-teleport']")?.addEventListener("click", () => {
+      if (!selectedStickerId) return;
+      teleportDestinationStickerId = selectedStickerId;
+      updatePlacementMode();
+      renderStickerSelection();
+      status.textContent = "Click the map to set the other teleport endpoint.";
+      interactionEditor.querySelector("[data-teleport-status]").textContent = "Click a destination on the map…";
+    });
+    interactionEditor.querySelector("[data-action='pick-replacement']")?.addEventListener("click", () => {
+      if (!selectedStickerId) return;
+      replacementPickerStickerId = selectedStickerId;
+      updatePlacementMode();
+      renderStickerSelection();
+      status.textContent = "Choose the alternate sticker from the library.";
+    });
 
     function displayPath(path) {
       return String(path || "").split("/").map(cleanLabel).join(" / ");
@@ -269,6 +569,53 @@
       };
       media.addEventListener(media.tagName === "VIDEO" ? "loadedmetadata" : "load", rememberDimensions, { once: true });
       return media;
+    }
+
+    function positionPlacementPreview() {
+      if (!active || !selectedAsset || replacementPickerStickerId) {
+        placementPreview.style.display = "none";
+        return;
+      }
+      const bounds = mapImage.getBoundingClientRect();
+      if (!bounds.width || !bounds.height || lastPlacementPointer.x < bounds.left || lastPlacementPointer.x > bounds.right || lastPlacementPointer.y < bounds.top || lastPlacementPointer.y > bounds.bottom) {
+        placementPreview.style.display = "none";
+        return;
+      }
+      const gridSize = clamp(Number(options.getGridSize?.()) || 100, 12, 1000);
+      const dimensions = mediaDimensions.get(selectedAsset.path);
+      let widthPixels = gridSize * selectedAsset.units.width;
+      let heightPixels = gridSize * selectedAsset.units.height;
+      if (!selectedAsset.units.explicit && dimensions?.width && dimensions?.height) heightPixels = widthPixels * dimensions.height / dimensions.width;
+      const widthRatio = clamp(widthPixels / Math.max(1, mapImage.clientWidth), .004, 1);
+      const heightRatio = clamp(heightPixels / Math.max(1, mapImage.clientHeight), .004, 1);
+      const pointerX = (lastPlacementPointer.x - bounds.left) / bounds.width;
+      const pointerY = (lastPlacementPointer.y - bounds.top) / bounds.height;
+      placementPreview.style.left = `${clamp(pointerX, widthRatio / 2, 1 - widthRatio / 2) * 100}%`;
+      placementPreview.style.top = `${clamp(pointerY, heightRatio / 2, 1 - heightRatio / 2) * 100}%`;
+      placementPreview.style.width = `${widthRatio * 100}%`;
+      placementPreview.style.height = `${heightRatio * 100}%`;
+      placementPreview.style.display = "block";
+    }
+
+    function renderPlacementPreview() {
+      if (!active || !selectedAsset || replacementPickerStickerId) {
+        placementPreview.style.display = "none";
+        return;
+      }
+      if (placementPreviewPath !== selectedAsset.path) {
+        placementPreviewPath = selectedAsset.path;
+        const media = mediaElement(selectedAsset.path, true);
+        if (media.tagName === "VIDEO") media.autoplay = true;
+        media.addEventListener(media.tagName === "VIDEO" ? "loadedmetadata" : "load", positionPlacementPreview, { once: true });
+        placementPreview.replaceChildren(media);
+        const requestedPath = selectedAsset.path;
+        resolveUrl(selectedAsset.ref).then(url => {
+          if (placementPreviewPath !== requestedPath) return;
+          media.src = url;
+          if (media.tagName === "VIDEO") media.play().catch(() => {});
+        }).catch(reportError);
+      }
+      positionPlacementPreview();
     }
 
     function renderBreadcrumbs() {
@@ -482,6 +829,16 @@
     }
 
     function selectAsset(item) {
+      if (replacementPickerStickerId) {
+        selectedStickerId = replacementPickerStickerId;
+        replacementPickerStickerId = "";
+        editorField("replacementPath").value = item.fullPath;
+        interactionEditor.hidden = false;
+        updatePlacementMode();
+        renderStickerSelection();
+        status.textContent = `${cleanLabel(item.name)} selected as the replacement.`;
+        return;
+      }
       selectedAsset = { ref: item, path: item.fullPath, name: cleanLabel(item.name), units: gridUnits(item.name) };
       const assetFolder = containingStickerFolder(item.fullPath, rootPath);
       if (assetFolder === rootPath || assetFolder.startsWith(`${rootPath}/`)) {
@@ -495,6 +852,13 @@
     }
 
     function cancelPlacement() {
+      if (replacementPickerStickerId) {
+        replacementPickerStickerId = "";
+        interactionEditor.hidden = false;
+        updatePlacementMode();
+        renderStickerSelection();
+        return;
+      }
       selectedAsset = null;
       updatePlacementMode();
       renderStickerSelection();
@@ -505,8 +869,14 @@
 
     function updatePlacementMode() {
       placementLayer.classList.toggle("is-placing", Boolean(active && selectedAsset));
-      modeButton.textContent = selectedAsset ? "Stop placing" : "Move existing";
+      renderPlacementPreview();
     }
+
+    document.addEventListener("pointermove", event => {
+      lastPlacementPointer = { x: event.clientX, y: event.clientY };
+      positionPlacementPreview();
+    });
+    root.addEventListener?.("resize", positionPlacementPreview);
 
     function stickerStyle(element, sticker) {
       element.style.left = `${roundRatio(sticker.x) * 100}%`;
@@ -514,6 +884,284 @@
       element.style.width = `${clamp(Number(sticker.widthRatio) || 0.05, 0.002, 1) * 100}%`;
       element.style.height = `${clamp(Number(sticker.heightRatio) || 0.05, 0.002, 1) * 100}%`;
       element.style.transform = `translate(-50%, -50%) rotate(${Number(sticker.rotation) || 0}deg)`;
+      const duration = clamp(Number(sticker.interaction?.animation?.durationMs) || 0, 0, 10000);
+      element.style.transition = duration ? `left ${duration}ms ease,top ${duration}ms ease,width ${duration}ms ease,height ${duration}ms ease,transform ${duration}ms ease` : "";
+    }
+
+    function renderTeleportOverlays() {
+      if (!canEditInteractions) return;
+      portalLayer.replaceChildren();
+      const width = mapImage.clientWidth;
+      const height = mapImage.clientHeight;
+      if (!width || !height) return;
+      portalLayer.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+      defs.innerHTML = `<marker id="stickerPortalArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0 8 4 0 8z" fill="#f4d76d"/></marker>`;
+      portalLayer.appendChild(defs);
+      stickers.filter(sticker => sticker.interaction?.teleport || teleportPreview?.stickerId === sticker.id).forEach(sticker => {
+        const teleport = teleportPreview?.stickerId === sticker.id ? teleportPreview : sticker.interaction.teleport;
+        const radius = clamp(Number(teleport.radius) || 1, .25, 20) * clamp(Number(options.getGridSize?.()) || 100, 12, 1000);
+        const x1 = roundRatio(sticker.x) * width, y1 = roundRatio(sticker.y) * height;
+        const x2 = roundRatio(teleport.toX) * width, y2 = roundRatio(teleport.toY) * height;
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("class", "sticker-portal-link");
+        line.dataset.stickerId = sticker.id;
+        line.dataset.portalPart = "link";
+        line.setAttribute("x1", x1); line.setAttribute("y1", y1); line.setAttribute("x2", x2); line.setAttribute("y2", y2);
+        line.setAttribute("marker-end", "url(#stickerPortalArrow)");
+        if (teleport.bidirectional) line.setAttribute("marker-start", "url(#stickerPortalArrow)");
+        line.addEventListener("pointerdown", event => beginTeleportDestinationDrag(event, sticker, line));
+        portalLayer.appendChild(line);
+        [[x1, y1, "source"], [x2, y2, "destination"]].forEach(([cx, cy, part]) => {
+          const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+          circle.setAttribute("class", "sticker-portal-zone");
+          circle.dataset.stickerId = sticker.id;
+          circle.dataset.portalPart = `${part}-zone`;
+          circle.setAttribute("cx", cx); circle.setAttribute("cy", cy); circle.setAttribute("r", radius);
+          portalLayer.appendChild(circle);
+        });
+        const handle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        handle.setAttribute("class", "sticker-portal-destination");
+        handle.dataset.stickerId = sticker.id;
+        handle.dataset.portalPart = "destination-handle";
+        handle.setAttribute("cx", x2); handle.setAttribute("cy", y2); handle.setAttribute("r", 10);
+        handle.addEventListener("pointerdown", event => beginTeleportDestinationDrag(event, sticker, handle));
+        portalLayer.appendChild(handle);
+      });
+    }
+
+    function beginTeleportDestinationDrag(event, sticker, pointerTarget) {
+      const teleport = teleportPreview?.stickerId === sticker.id ? teleportPreview : sticker.interaction?.teleport;
+      if (!active || !canEditInteractions || event.button !== 0 || !teleport) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      teleportDragSession = {
+        id: sticker.id,
+        generation: boardSync.generation,
+        pointerId: event.pointerId,
+        pointerTarget,
+        preview: teleport === teleportPreview,
+        startToX: teleport.toX,
+        startToY: teleport.toY,
+        moved: false
+      };
+      pointerTarget.setPointerCapture?.(event.pointerId);
+      status.textContent = "Moving teleport destination…";
+    }
+
+    function moveTeleportDestination(event) {
+      if (!teleportDragSession || event.pointerId !== teleportDragSession.pointerId) return;
+      const sticker = stickers.find(item => item.id === teleportDragSession.id);
+      const bounds = mapImage.getBoundingClientRect();
+      const teleport = teleportDragSession.preview ? teleportPreview : sticker?.interaction?.teleport;
+      if (!sticker || !teleport || !bounds.width || !bounds.height) return;
+      event.preventDefault();
+      const toX = roundRatio((event.clientX - bounds.left) / bounds.width);
+      const toY = roundRatio((event.clientY - bounds.top) / bounds.height);
+      teleportDragSession.moved ||= toX !== teleportDragSession.startToX || toY !== teleportDragSession.startToY;
+      if (teleportDragSession.preview) {
+        teleportPreview = { ...teleportPreview, toX, toY };
+        editorField("teleportToX").value = toX;
+        editorField("teleportToY").value = toY;
+        updateTeleportEditorStatus();
+      } else {
+        sticker.interaction = { ...sticker.interaction, teleport: { ...sticker.interaction.teleport, toX, toY } };
+        localOverrides.set(sticker.id, { ...sticker });
+      }
+      const line = portalLayer.querySelector(`[data-sticker-id="${sticker.id}"][data-portal-part="link"]`);
+      const zone = portalLayer.querySelector(`[data-sticker-id="${sticker.id}"][data-portal-part="destination-zone"]`);
+      const handle = portalLayer.querySelector(`[data-sticker-id="${sticker.id}"][data-portal-part="destination-handle"]`);
+      const x = toX * mapImage.clientWidth;
+      const y = toY * mapImage.clientHeight;
+      line?.setAttribute("x2", x); line?.setAttribute("y2", y);
+      zone?.setAttribute("cx", x); zone?.setAttribute("cy", y);
+      handle?.setAttribute("cx", x); handle?.setAttribute("cy", y);
+    }
+
+    async function endTeleportDestinationDrag(event) {
+      if (!teleportDragSession || event.pointerId !== teleportDragSession.pointerId) return;
+      const session = teleportDragSession;
+      teleportDragSession = null;
+      session.pointerTarget.releasePointerCapture?.(event.pointerId);
+      const sticker = stickers.find(item => item.id === session.id);
+      if (session.preview) {
+        status.textContent = "Teleport destination updated. Save the interaction to apply it.";
+        return;
+      }
+      if (!session.moved || !sticker?.interaction?.teleport || session.generation !== boardSync.generation) {
+        localOverrides.delete(session.id);
+        return;
+      }
+      try {
+        await boardSync.patchStickers(new Map([[sticker.id, { interaction: sticker.interaction }]]), session.generation);
+        localOverrides.delete(sticker.id);
+        status.textContent = "Teleport destination updated.";
+      } catch (error) {
+        sticker.interaction = { ...sticker.interaction, teleport: { ...sticker.interaction.teleport, toX: session.startToX, toY: session.startToY } };
+        localOverrides.delete(sticker.id);
+        renderTeleportOverlays();
+        reportError(error);
+        boardSync.reconcile().catch(() => {});
+      }
+    }
+
+    portalLayer.addEventListener("pointermove", moveTeleportDestination);
+    portalLayer.addEventListener("pointerup", endTeleportDestinationDrag);
+    portalLayer.addEventListener("pointercancel", endTeleportDestinationDrag);
+
+    function rollLootExpression(expression) {
+      const match = String(expression || "").match(/^(\d+)d(\d+)(?:\*(\d+))?$/);
+      if (!match) return expression;
+      let total = 0;
+      for (let index = 0; index < Number(match[1]); index++) total += Math.floor(Math.random() * Number(match[2])) + 1;
+      return total * (Number(match[3]) || 1);
+    }
+
+    function cleanLootItem(value) {
+      return String(value || "").replace(/{@item (.*?)}/g, "$1");
+    }
+
+    function rollLootList(tables, type, amount, magic = false) {
+      const table = tables.find(item => item.type === type);
+      if (!table) return ["Unknown item"];
+      const results = [];
+      for (let index = 0; index < Number(rollLootExpression(amount)); index++) {
+        if (!magic) results.push(cleanLootItem(table.table[Math.floor(Math.random() * table.table.length)]));
+        else {
+          const roll = Math.floor(Math.random() * 100) + 1;
+          const entry = table.table.find(item => roll >= item.min && roll <= item.max);
+          const choice = entry?.item || entry?.choose?.fromGeneric?.[Math.floor(Math.random() * (entry?.choose?.fromGeneric?.length || 1))];
+          results.push(cleanLootItem(choice || "Unknown item"));
+        }
+      }
+      return results;
+    }
+
+    async function rollStickerLoot(settings) {
+      lootDataPromise ||= fetch("data/api_data/loot.json").then(response => {
+        if (!response.ok) throw new Error("Loot data could not be loaded.");
+        return response.json();
+      });
+      const data = await lootDataPromise;
+      const cr = clamp(Number(settings.cr) || 0, 0, 30);
+      if (settings.type !== "hoard") {
+        const table = data.individual.find(item => cr >= item.crMin && cr <= item.crMax);
+        if (!table) return `No individual loot table found for CR ${cr}.`;
+        const roll = Math.floor(Math.random() * 100) + 1;
+        const entry = table.table.find(item => roll >= item.min && roll <= item.max);
+        const coins = Object.entries(entry?.coins || {}).map(([coin, expression]) => `${coin}: ${rollLootExpression(expression)}`);
+        return `Individual Treasure (CR ${cr})\nd100 Roll: ${roll}\n${coins.join("\n") || "No coins."}`;
+      }
+      const table = data.hoard.find(item => cr >= item.crMin && cr <= item.crMax);
+      if (!table) return `No hoard table found for CR ${cr}.`;
+      let result = `Treasure Hoard (CR ${cr})\n\nCoins:\n${Object.entries(table.coins || {}).map(([coin, expression]) => `${coin}: ${rollLootExpression(expression)}`).join("\n")}`;
+      const roll = Math.floor(Math.random() * 100) + 1;
+      const entry = table.table.find(item => roll >= item.min && roll <= item.max) || {};
+      result += `\n\nHoard d100 Roll: ${roll}`;
+      if (entry.gems) result += `\n\nGems (${entry.gems.type} gp):\n- ${rollLootList(data.gems, entry.gems.type, entry.gems.amount).join("\n- ")}`;
+      if (entry.artObjects) result += `\n\nArt Objects (${entry.artObjects.type} gp):\n- ${rollLootList(data.artObjects, entry.artObjects.type, entry.artObjects.amount).join("\n- ")}`;
+      if (entry.magicItems) {
+        result += "\n\nMagic Items:";
+        entry.magicItems.forEach(item => { result += `\nTable ${item.type}:\n- ${rollLootList(data.magicItems, item.type, item.amount, true).join("\n- ")}`; });
+      }
+      return result;
+    }
+
+    async function playStickerSound(stickerId, sound) {
+      const existing = loopingSounds.get(stickerId);
+      if (existing) {
+        existing.pause(); existing.removeAttribute("src"); loopingSounds.delete(stickerId);
+        if (sound.loop) return;
+      }
+      let src = sound.src;
+      if (!/^(?:https?:|data:|blob:|\/)/i.test(src) && !src.startsWith("data/")) src = await resolveUrl(src);
+      const audio = new Audio(src);
+      audio.loop = Boolean(sound.loop);
+      audio.volume = clamp(Number(options.getSoundVolume?.()) || 1, 0, 1);
+      if (sound.loop) loopingSounds.set(stickerId, audio);
+      audio.addEventListener("ended", () => loopingSounds.delete(stickerId), { once: true });
+      await audio.play();
+    }
+
+    async function animateSticker(sticker, element, animation) {
+      const activeState = Boolean(animation.active);
+      const effects = animation.effects || { [animation.kind || "rotate"]: true };
+      let fields = {};
+      let restoreState = animation.restoreState || null;
+      if (activeState && restoreState) {
+        fields = {
+          x: restoreState.x,
+          y: restoreState.y,
+          widthRatio: restoreState.widthRatio,
+          heightRatio: restoreState.heightRatio,
+          rotation: restoreState.rotation,
+          storagePath: restoreState.storagePath
+        };
+        restoreState = null;
+      } else {
+        const direction = activeState ? -1 : 1;
+        if (!activeState) {
+          restoreState = {
+            x: sticker.x,
+            y: sticker.y,
+            widthRatio: sticker.widthRatio,
+            heightRatio: sticker.heightRatio,
+            rotation: sticker.rotation,
+            storagePath: sticker.storagePath
+          };
+        }
+        if (effects.rotate) {
+          const currentAngle = (Number(sticker.rotation) || 0) * Math.PI / 180;
+          const rotationDelta = direction * (Number(animation.rotationDegrees) || 0);
+          const nextAngle = currentAngle + rotationDelta * Math.PI / 180;
+          const originX = clamp(Number(animation.rotationOriginX ?? .5), 0, 1);
+          const originY = clamp(Number(animation.rotationOriginY ?? .5), 0, 1);
+          const offsetX = (originX - .5) * (Number(sticker.widthRatio) || .05) * mapImage.clientWidth;
+          const offsetY = (originY - .5) * (Number(sticker.heightRatio) || .05) * mapImage.clientHeight;
+          const rotateOffset = angle => ({
+            x: offsetX * Math.cos(angle) - offsetY * Math.sin(angle),
+            y: offsetX * Math.sin(angle) + offsetY * Math.cos(angle)
+          });
+          const before = rotateOffset(currentAngle);
+          const after = rotateOffset(nextAngle);
+          fields.x = roundRatio((Number(sticker.x) || 0) + (before.x - after.x) / Math.max(1, mapImage.clientWidth));
+          fields.y = roundRatio((Number(sticker.y) || 0) + (before.y - after.y) / Math.max(1, mapImage.clientHeight));
+          fields.rotation = Number(((Number(sticker.rotation) || 0) + rotationDelta).toFixed(2));
+        }
+        if (effects.translate) {
+          fields.x = roundRatio((fields.x ?? (Number(sticker.x) || 0)) + direction * (Number(animation.translateX) || 0) * (Number(options.getGridSize?.()) || 100) / Math.max(1, mapImage.clientWidth));
+          fields.y = roundRatio((fields.y ?? (Number(sticker.y) || 0)) + direction * (Number(animation.translateY) || 0) * (Number(options.getGridSize?.()) || 100) / Math.max(1, mapImage.clientHeight));
+        }
+        if (effects.scale) {
+          const factor = animation.scalePercent != null
+            ? clamp(1 + Number(animation.scalePercent) / 100, .1, 10)
+            : clamp(Number(animation.scaleFactor) || 1, .1, 10);
+          fields.widthRatio = clamp((Number(sticker.widthRatio) || .05) * (activeState ? 1 / factor : factor), .002, 1);
+          fields.heightRatio = clamp((Number(sticker.heightRatio) || .05) * (activeState ? 1 / factor : factor), .002, 1);
+        }
+        if (effects.replace && animation.replacementPath) fields.storagePath = activeState ? animation.originalPath : animation.replacementPath;
+      }
+      const interaction = { ...sticker.interaction, animation: { ...animation, effects, active: !activeState, restoreState } };
+      Object.assign(sticker, fields, { interaction });
+      stickerStyle(element, sticker);
+      if (fields.storagePath) {
+        const media = mediaElement(fields.storagePath);
+        element.replaceChildren(media);
+        media.src = await resolveUrl(fields.storagePath);
+      }
+      await boardSync.patchStickers(new Map([[sticker.id, { ...fields, interaction }]]), boardSync.generation);
+      renderTeleportOverlays();
+    }
+
+    function runStickerInteraction(sticker, element) {
+      const interaction = sticker.interaction;
+      if (!interaction) return;
+      if (interaction.animation) animateSticker(sticker, element, interaction.animation).catch(reportError);
+      if (interaction.sound) playStickerSound(sticker.id, interaction.sound).catch(reportError);
+      if (interaction.loot) rollStickerLoot(interaction.loot).then(result => {
+        lootPopup.querySelector("textarea").value = result;
+        lootPopup.hidden = false;
+      }).catch(reportError);
     }
 
     function renderStickerSelection() {
@@ -522,6 +1170,7 @@
       });
       rigLayer.replaceChildren();
       const selected = active && !selectedAsset && stickers.find(sticker => sticker.id === selectedStickerId);
+      interactionButton.disabled = !selected;
       if (!selected) return;
 
       const rig = document.createElement("div");
@@ -546,6 +1195,17 @@
       addHandle("sticker-rig-rotate", "Rotate sticker", "rotate");
       ["nw", "ne", "se", "sw"].forEach(corner => addHandle("sticker-rig-scale", "Scale sticker", "scale", corner));
       addHandle("sticker-rig-move", "Move sticker", "move");
+      if (!interactionEditor.hidden) {
+        const origin = document.createElement("button");
+        origin.type = "button";
+        origin.className = "sticker-rig-handle sticker-rig-origin";
+        origin.setAttribute("aria-label", "Move animation rotation point");
+        origin.title = "Drag to set the animation rotation point";
+        origin.style.left = `${clamp(Number(editorField("rotationOriginX").value) || 0, 0, 100)}%`;
+        origin.style.top = `${clamp(Number(editorField("rotationOriginY").value) || 0, 0, 100)}%`;
+        origin.addEventListener("pointerdown", event => beginStickerTransform(event, selected, origin, "animation-origin"));
+        rig.appendChild(origin);
+      }
       rigLayer.appendChild(rig);
     }
 
@@ -554,8 +1214,10 @@
       stickers.forEach(sticker => {
         const element = document.createElement("div");
         element.className = "map-sticker";
+        element.classList.toggle("is-interactive", hasStickerInteraction(sticker));
+        element.classList.toggle("show-interaction-marker", canEditInteractions && hasStickerInteraction(sticker));
         element.dataset.stickerId = sticker.id;
-        element.title = cleanLabel(sticker.name || "Map sticker");
+        element.title = `${cleanLabel(sticker.name || "Map sticker")}${hasStickerInteraction(sticker) ? " — interactive" : ""}`;
         stickerStyle(element, sticker);
         const media = mediaElement(sticker.storagePath);
         element.appendChild(media);
@@ -566,9 +1228,16 @@
           console.warn(`Could not load sticker ${sticker.storagePath}:`, error);
         });
         element.addEventListener("pointerdown", event => beginStickerDrag(event, sticker, element));
+        element.addEventListener("click", event => {
+          if (active || dragSession || !hasStickerInteraction(sticker)) return;
+          event.preventDefault();
+          event.stopPropagation();
+          runStickerInteraction(sticker, element);
+        });
         layer.appendChild(element);
       });
       renderStickerSelection();
+      renderTeleportOverlays();
     }
 
     function beginStickerDrag(event, sticker, element) {
@@ -578,10 +1247,14 @@
     function beginStickerTransform(event, sticker, pointerTarget, mode) {
       if (!active || selectedAsset || event.button !== 0) return;
       event.preventDefault();
-      event.stopPropagation();
+      event.stopImmediatePropagation();
       const selectionChanged = selectedStickerId !== sticker.id;
+      const editorWasOpen = !interactionEditor.hidden;
       selectedStickerId = sticker.id;
-      if (selectionChanged) renderStickerSelection();
+      if (selectionChanged) {
+        renderStickerSelection();
+        if (editorWasOpen) openInteractionEditor();
+      }
       const bounds = layer.getBoundingClientRect();
       if (!bounds.width || !bounds.height) return;
       const centerClientX = bounds.left + (Number(sticker.x) || 0) * bounds.width;
@@ -607,7 +1280,7 @@
         pointerTarget
       };
       pointerTarget.setPointerCapture?.(event.pointerId);
-      status.textContent = mode === "move" ? "Moving sticker…" : mode === "scale" ? "Scaling sticker…" : "Rotating sticker…";
+      status.textContent = mode === "move" ? "Moving sticker…" : mode === "scale" ? "Scaling sticker…" : mode === "animation-origin" ? "Moving animation rotation point…" : "Rotating sticker…";
     }
 
     function moveStickerDrag(event) {
@@ -617,7 +1290,20 @@
       if (!sticker || !dragSession.bounds.width || !dragSession.bounds.height) return;
       const pointerTravel = Math.hypot(event.clientX - dragSession.startClientX, event.clientY - dragSession.startClientY);
       dragSession.moved ||= pointerTravel > 2;
-      if (dragSession.mode === "move") {
+      if (dragSession.mode === "animation-origin") {
+        const angle = -(dragSession.startRotation * Math.PI / 180);
+        const screenX = event.clientX - dragSession.centerClientX;
+        const screenY = event.clientY - dragSession.centerClientY;
+        const localX = screenX * Math.cos(angle) - screenY * Math.sin(angle);
+        const localY = screenX * Math.sin(angle) + screenY * Math.cos(angle);
+        const originX = clamp(.5 + localX / Math.max(1, dragSession.startWidth * dragSession.bounds.width), 0, 1);
+        const originY = clamp(.5 + localY / Math.max(1, dragSession.startHeight * dragSession.bounds.height), 0, 1);
+        editorField("rotationOriginX").value = (originX * 100).toFixed(1).replace(/\.0$/, "");
+        editorField("rotationOriginY").value = (originY * 100).toFixed(1).replace(/\.0$/, "");
+        const handle = rigLayer.querySelector(".sticker-rig-origin");
+        if (handle) { handle.style.left = `${originX * 100}%`; handle.style.top = `${originY * 100}%`; }
+        return;
+      } else if (dragSession.mode === "move") {
         const dx = (event.clientX - dragSession.startClientX) / dragSession.bounds.width;
         const dy = (event.clientY - dragSession.startClientY) / dragSession.bounds.height;
         const halfWidth = (Number(sticker.widthRatio) || 0.05) / 2;
@@ -659,6 +1345,10 @@
       }
       const sticker = stickers.find(item => item.id === session.id);
       if (!sticker) return;
+      if (session.mode === "animation-origin") {
+        status.textContent = "Rotation point set. Save the interaction to apply it.";
+        return;
+      }
       const fields = session.mode === "move"
         ? { x: sticker.x, y: sticker.y }
         : session.mode === "scale"
@@ -717,7 +1407,28 @@
       }
     }
 
+    function captureTeleportDestination(event) {
+      if (!teleportDestinationStickerId || event.button !== 0) return false;
+      const sticker = stickers.find(item => item.id === teleportDestinationStickerId);
+      if (!sticker) { teleportDestinationStickerId = ""; return false; }
+      const bounds = mapImage.getBoundingClientRect();
+      if (!bounds.width || !bounds.height) return false;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      editorField("teleportToX").value = roundRatio((event.clientX - bounds.left) / bounds.width);
+      editorField("teleportToY").value = roundRatio((event.clientY - bounds.top) / bounds.height);
+      teleportDestinationStickerId = "";
+      updateTeleportEditorStatus();
+      interactionEditor.hidden = false;
+      updatePlacementMode();
+      syncTeleportPreviewFromEditor();
+      renderStickerSelection();
+      status.textContent = "Teleport destination set. Save the interaction to apply it.";
+      return true;
+    }
+
     // Capture before map pan/drawing handlers so placement always owns this pointer gesture.
+    mapTransformLayer.addEventListener("pointerdown", event => captureTeleportDestination(event), true);
     mapTransformLayer.addEventListener("pointerdown", placeStickerAtPointer, true);
     mapTransformLayer.addEventListener("pointerdown", event => {
       if (!active || selectedAsset || !selectedStickerId) return;
@@ -736,6 +1447,7 @@
       if (!id) return;
       const removed = stickers.find(item => item.id === id);
       selectedStickerId = "";
+      closeInteractionEditor();
       const index = stickers.findIndex(item => item.id === id);
       if (index >= 0) stickers.splice(index, 1);
       renderStickers();
@@ -749,7 +1461,6 @@
       }
     }
 
-    modeButton.addEventListener("click", cancelPlacement);
     loadMoreButton.addEventListener("click", () => loadFolder(currentPath, true));
     searchInput.addEventListener("input", () => {
       clearTimeout(searchTimer);
@@ -760,8 +1471,35 @@
       }, 220);
     });
     document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && teleportDestinationStickerId) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        teleportDestinationStickerId = "";
+        interactionEditor.hidden = false;
+        updateTeleportEditorStatus();
+        renderStickerSelection();
+        status.textContent = "Teleport destination selection canceled.";
+        return;
+      }
+      if (event.key === "Escape" && replacementPickerStickerId) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        replacementPickerStickerId = "";
+        updatePlacementMode();
+        renderStickerSelection();
+        status.textContent = "Replacement selection canceled.";
+        return;
+      }
       if (event.key === "Escape" && selectedAsset) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
         cancelPlacement();
+        return;
+      }
+      if (event.key === "Escape" && active) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        requestPanelClose();
         return;
       }
       const tag = String(event.target?.tagName || "").toLowerCase();
@@ -776,13 +1514,58 @@
         selectedStickerId = "";
         selectedAsset = null;
         localOverrides.clear();
+        loopingSounds.forEach(audio => { audio.pause(); audio.removeAttribute("src"); });
+        loopingSounds.clear();
+        teleportLocks.clear();
+        teleportDragSession = null;
+        closeInteractionEditor();
         updatePlacementMode();
       }
       stickers.length = 0;
       nextStickers.forEach(sticker => stickers.push(localOverrides.get(sticker.id) || sticker));
+      loopingSounds.forEach((audio, id) => {
+        if (stickers.some(sticker => sticker.id === id)) return;
+        audio.pause();
+        audio.removeAttribute("src");
+        loopingSounds.delete(id);
+      });
       if (selectedStickerId && !stickers.some(sticker => sticker.id === selectedStickerId)) selectedStickerId = "";
+      if (!selectedStickerId) closeInteractionEditor();
       renderStickers();
     });
+
+    if (canRunTeleports) boardSync.subscribe("tokens", nextTokens => {
+      const width = mapImage.clientWidth;
+      const height = mapImage.clientHeight;
+      if (!width || !height) return;
+      const teleported = new Set();
+      stickers.filter(sticker => sticker.interaction?.teleport).forEach(sticker => {
+        const teleport = sticker.interaction.teleport;
+        const radiusPixels = clamp(Number(teleport.radius) || 1, .25, 20) * clamp(Number(options.getGridSize?.()) || 100, 12, 1000);
+        const source = { x: sticker.x, y: sticker.y };
+        const destination = { x: teleport.toX, y: teleport.toY };
+        nextTokens.forEach(token => {
+          if (teleported.has(token.id) || token.dragActive) return;
+          const key = `${sticker.id}:${token.id}`;
+          const point = { x: token.xRatio, y: token.yRatio };
+          const atSource = pointInCircularRange(point, source, radiusPixels, width, height);
+          const atDestination = pointInCircularRange(point, destination, radiusPixels, width, height);
+          if (teleportLocks.has(key)) {
+            if (!atSource && !atDestination) teleportLocks.delete(key);
+            return;
+          }
+          const target = atSource ? destination : teleport.bidirectional && atDestination ? source : null;
+          if (!target) return;
+          teleportLocks.set(key, true);
+          teleported.add(token.id);
+          boardSync.patch(token.id, { xRatio: roundRatio(target.x), yRatio: roundRatio(target.y) }, boardSync.generation)
+            .catch(error => { teleportLocks.delete(key); reportError(error); });
+        });
+      });
+    });
+
+    mapImage.addEventListener("load", renderTeleportOverlays);
+    if (typeof ResizeObserver === "function") new ResizeObserver(renderTeleportOverlays).observe(mapImage);
 
     grid.replaceChildren();
     renderEmpty("Connecting to the sticker library…");
@@ -807,9 +1590,11 @@
       setActive(isActive) {
         active = Boolean(isActive);
         layer.classList.toggle("is-editing", active);
+        portalLayer.classList.toggle("is-editing", active);
         if (!active) {
           selectedAsset = null;
           selectedStickerId = "";
+          closeInteractionEditor();
         }
         updatePlacementMode();
         renderStickerSelection();
@@ -819,13 +1604,19 @@
       },
       clearSelection() {
         selectedStickerId = "";
+        closeInteractionEditor();
         renderStickerSelection();
+      },
+      setPanelCloseHandler(handler) {
+        requestPanelClose = typeof handler === "function" ? handler : () => {};
       },
       discardLocalState() {
         dragSession = null;
+        teleportDragSession = null;
         localOverrides.clear();
         selectedStickerId = "";
         selectedAsset = null;
+        closeInteractionEditor();
         updatePlacementMode();
         renderStickerSelection();
         return Promise.resolve();
@@ -835,5 +1626,5 @@
   }
 
   if (typeof window !== "undefined") window.setupMapStickers = setupMapStickers;
-  if (typeof module !== "undefined") module.exports = { cleanLabel, normalizeSearch, fuzzyScore, gridUnits, containingStickerFolder };
+  if (typeof module !== "undefined") module.exports = { cleanLabel, normalizeSearch, fuzzyScore, gridUnits, containingStickerFolder, hasStickerInteraction, pointInCircularRange };
 })(typeof window === "undefined" ? globalThis : window);

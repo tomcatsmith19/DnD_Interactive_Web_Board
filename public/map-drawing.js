@@ -1747,6 +1747,7 @@
 
     return {
       setTool,
+      getTool: () => currentTool,
       setVisible,
       toolbar,
       clearSelection,
@@ -1822,7 +1823,26 @@
           item.setAttribute("aria-expanded", String(isActive));
         });
       });
+      tab.manager.setPanelCloseHandler?.(() => {
+        if (activeManager === tab.manager) button.click();
+      });
       buttons.appendChild(button);
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key !== "Escape" || shouldIgnoreMapDeleteTarget(event.target)) return;
+      const activeTool = activeManager?.getTool?.();
+      if (!activeTool) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if (activeTool !== "pan") {
+        activeManager.setTool?.("pan");
+        return;
+      }
+      const activeIndex = tabs.findIndex(tab => tab.manager === activeManager);
+      const activeButton = buttons.children[activeIndex];
+      if (!activeButton) return;
+      activeButton.click();
     });
 
     document.body.appendChild(shell);

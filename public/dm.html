@@ -1733,11 +1733,11 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-    <script src="map-drawing.js?v=20"></script>
+    <script src="map-drawing.js?v=23"></script>
     <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=5"></script>
     <script src="board-sync.js?v=5"></script>
-    <script src="map-stickers.js?v=8"></script>
+    <script src="map-stickers.js?v=22"></script>
     <script src="board-ui.js?v=5"></script>
     <script src="reference.js?v=2"></script>
     <script src="cpu-action-advisor.js?v=1"></script>
@@ -6122,7 +6122,6 @@
 
         document.addEventListener('keydown', event => {
             if (event.key !== 'Escape') return;
-            drawingToolbarManager?.setTool('pan');
             clearMapTokenSelection();
         });
 
@@ -6268,10 +6267,51 @@
             mapTransformLayer: document.getElementById('mapTransformLayer'),
             tokenLayer: document.getElementById('mapTokenLayer'),
             getGridSize: () => currentTokenSize,
+            getSoundVolume: () => sharedSfxVolume,
+            getLootParameters: () => ({
+                type: document.getElementById('lootType')?.value || 'individual',
+                cr: Number(document.getElementById('lootCR')?.value) || 0,
+                xp: Number(document.getElementById('lootXP')?.value) || 0
+            }),
+            canEditInteractions: true,
+            canRunTeleports: true,
             rootPath: 'sticker-library/v1'
         });
         drawingToolbarManager = setupMapDrawingTabs(sharedDrawingManager, fogToolbarManager, measurementToolbarManager, stickerManager);
         syncDrawingToolbarVisibility();
+
+        document.addEventListener('keydown', event => {
+            if (event.key !== 'Escape') return;
+            const target = event.target;
+            const tag = String(target?.tagName || '').toLowerCase();
+            if (target?.isContentEditable || tag === 'input' || tag === 'textarea' || tag === 'select') return;
+            let closedPanel = false;
+            const leftPanel = document.getElementById('dmInitiativePanel');
+            if (leftPanel && !leftPanel.classList.contains('is-collapsed')) {
+                leftPanel.classList.add('is-collapsed');
+                document.querySelectorAll('.dm-left-rail button').forEach(button => button.classList.remove('is-active'));
+                activeDmLeftPanel = null;
+                closedPanel = true;
+            }
+            const generatorPanel = document.getElementById('generatorPanel');
+            if (generatorPanel && !generatorPanel.classList.contains('is-collapsed')) {
+                generatorPanel.classList.add('is-collapsed');
+                document.querySelectorAll('.generator-main-tab').forEach(button => button.classList.remove('is-active'));
+                activeGeneratorMode = null;
+                closedPanel = true;
+            }
+            ['dmAudioDock', 'dmSessionControls'].forEach(id => {
+                const panel = document.getElementById(id);
+                if (panel && !panel.classList.contains('is-collapsed')) {
+                    panel.classList.add('is-collapsed');
+                    closedPanel = true;
+                }
+            });
+            if (closedPanel) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+            }
+        });
 
         customMonstersRef.onSnapshot(snapshot => {
             customMonsterDefinitions.clear();
