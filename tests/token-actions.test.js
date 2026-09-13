@@ -62,6 +62,14 @@ test('legacy sizes resolve once per creature definition',async()=>{
   assert.equal(loads,1);assert.equal(actions.tokenSize({name:'Giant'},100),300);
 });
 
+test('condition search tolerates partial names and small typos',()=>{
+  const {actions}=fixture();
+  assert.equal(actions.fuzzyConditionMatch('paralized','Paralyzed'),true);
+  assert.equal(actions.fuzzyConditionMatch('hun mark',"Hunter's Mark"),true);
+  assert.equal(actions.fuzzyConditionMatch('poison','Poisoned'),true);
+  assert.equal(actions.fuzzyConditionMatch('invisible','Blessed'),false);
+});
+
 test('folders retain expansion state and toggles preserve mixed selections',()=>{
   const {actions,grid,elements,calls,panel}=fixture();
   actions.refresh([{conditions:['Shield']},{conditions:[]}]);

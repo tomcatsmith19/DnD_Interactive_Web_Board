@@ -256,7 +256,7 @@
         .dice-roller .dice-roll-option input { width:auto; margin:0; accent-color:#f4d76d; }
         .dm-map-toolbar { position:fixed; top:8px; left:10px; z-index:1000; display:grid; gap:5px; padding:8px 12px; color:white; background:rgba(0,0,0,.7); border-radius:8px; font-family:'MedievalSharp',cursive; }
         .dm-map-toolbar-row { display:grid; grid-template-columns:88px 34px 34px; align-items:center; gap:6px; }
-        .dm-map-toolbar-row.token-scale-controls { grid-template-columns:88px 34px 34px 34px; }
+        .dm-map-toolbar-row.token-scale-controls { order:-1; grid-template-columns:88px 34px 34px 34px; }
         .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
         .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
         .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
@@ -356,11 +356,14 @@
         .dm-audio-collapse { position:absolute; top:-24px; left:50%; transform:translateX(-50%); width:110px; height:24px; padding:0; background:#1d1009; color:#f4d76d; border:1px solid #f4d76d; border-bottom:0; border-radius:7px 7px 0 0; cursor:pointer; font-size:24px; line-height:20px; }
         .generator-panel { position:fixed; top:70px; right:18px; bottom:42px; z-index:1130; width:min(570px,calc(100vw - 42px)); padding:12px; box-sizing:border-box; overflow:visible; color:white; background:rgba(29,16,9,.96); border:1px solid #8a6643; border-radius:9px; transition:transform .25s ease; }
         .generator-panel.is-collapsed { transform:translateX(calc(100% + 18px)); }
-        .generator-rail { position:absolute; top:calc(50vh - 70px); left:-48px; transform:translateY(-50%); display:flex; flex-direction:column; width:48px; gap:5px; }
+        .generator-rail { position:absolute; top:calc(50vh - 353px); left:-48px; display:flex; flex-direction:column; width:48px; gap:5px; }
         .generator-rail button { width:48px; height:78px; padding:0; background:#1d1009; border:1px solid currentColor; border-right:0; border-radius:7px 0 0 7px; cursor:pointer; }
         .generator-rail button svg { width:34px; height:46px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; vertical-align:middle; }
         .generator-rail .wild { color:#55d66b; background:#102d17; }.generator-rail .town { color:#55a8ff; background:#10263d; }.generator-rail .dungeon { color:#ff5959; background:#391313; }
         .generator-rail .wild.is-active { background:#55d66b; color:#1d1009; }.generator-rail .town.is-active { background:#55a8ff; color:#1d1009; }.generator-rail .dungeon.is-active { background:#ff5959; color:#1d1009; }
+        .generator-rail .actions { margin-bottom:78px; color:#f4d76d; background:#2b210d; font-size:1.7rem; }
+        .generator-rail .actions svg { fill:currentColor; stroke:none; }
+        .generator-rail .actions.is-active { color:#1d1009; background:#f4d76d; }
         .fantasy-token-button { width:34px; height:34px; padding:0 !important; color:#f4d76d; background:linear-gradient(#4b2915,#1d1009); border:2px ridge #d4af37; border-radius:50% 50% 44% 44%; box-shadow:0 0 0 1px #5b3517,0 2px 5px #000; font-family:Georgia,'Times New Roman',serif; font-size:23px !important; font-weight:bold; line-height:28px; cursor:pointer; text-shadow:0 1px #000; }
         .fantasy-token-button:hover { color:#1d1009; background:#f4d76d; }
         .token-size-label { color:#f4d76d; font-family:'MedievalSharp',Georgia,serif; white-space:nowrap; }
@@ -381,6 +384,17 @@
         .generator-mode { display:none; }
         .generator-subcontent { display:none !important; }
         .generator-mode.is-active { display:block; }
+        .generator-panel:has(#generatorActions.is-active) .generator-shared-controls,.generator-panel:has(#generatorActions.is-active) .generator-shared-separator { display:none; }
+        .generator-panel:has(#generatorActions.is-active) .generator-scroll { overflow:hidden; }
+        .generator-actions-mode { height:100%; min-height:0; padding:12px; box-sizing:border-box; overflow:hidden; color:white; background:transparent; border:0; border-radius:0; }
+        .generator-actions-mode.is-active { display:flex; flex-direction:column; }
+        .generator-actions-mode .map-action-panel { display:block; position:relative; inset:auto; width:100%; max-width:none; max-height:none; padding:0; flex:none; background:transparent; border:0; border-radius:0; box-shadow:none; }
+        .generator-actions-mode .monster-stat-modal { position:relative; inset:auto; width:100%; height:auto; min-height:0; margin-top:12px; flex:1 1 0; pointer-events:auto; }
+        .generator-actions-mode .monster-stat-modal.is-open { display:block; }
+        .generator-actions-mode .classic-statblock { position:relative; inset:auto; width:100%; height:100%; min-width:0; min-height:0; max-width:none; max-height:none; overflow:auto; resize:none; scrollbar-width:thin; scrollbar-color:#b58a3a #e8d7a1; box-shadow:0 7px 20px rgba(0,0,0,.55); }
+        .generator-actions-mode .classic-statblock::-webkit-scrollbar { width:12px; }
+        .generator-actions-mode .classic-statblock::-webkit-scrollbar-track { background:#e8d7a1; }
+        .generator-actions-mode .classic-statblock::-webkit-scrollbar-thumb { background:#b58a3a; border:2px solid #e8d7a1; border-radius:999px; }
         .generator-subcontent.is-active { display:flex !important; }
         .generator-panel .wilderness-layout { display:flex; flex-direction:column; min-width:0; padding:0; gap:10px; }
         .generator-panel .wilderness-panel { padding:12px; }
@@ -529,11 +543,9 @@
         .map-action-panel h3 { margin: 0 0 4px; color: #f4d76d; }
         .map-action-panel select, .map-action-panel input, .map-action-panel button { width: 100%; box-sizing: border-box; margin-top: 8px; padding: 9px; background: #3d2718; color: white; border: 1px solid #8a6643; border-radius: 5px; }
         .map-action-panel button { background: #32CD32; color: #1d1009; border: 0; font-weight: bold; cursor: pointer; }
-        .map-action-panel .map-action-close { position: absolute; top: 4px; right: 7px; width: auto; margin: 0; padding: 3px 7px; background: transparent; color: #bbb; }
         .monster-stat-modal { display:none; position:fixed; inset:0; z-index:3600; pointer-events:none; }
         .monster-stat-modal.is-open { display:block; }
         .classic-statblock { position:fixed; right:20px; bottom:20px; width:min(480px,calc(100vw - 40px)); height:min(520px,calc(100vh - 90px)); min-width:340px; min-height:220px; max-width:calc(100vw - 20px); max-height:calc(100vh - 60px); margin:0; padding:25px 24px 20px; box-sizing:border-box; overflow:auto; resize:both; pointer-events:auto; color:#651c12; background:#efe0ad; border:3px solid #7b2719; border-top-width:8px; border-bottom-width:8px; box-shadow:0 10px 35px #000; font-family:Georgia,'Times New Roman',serif; }
-        .statblock-drag-handle { position:absolute; top:0; left:38px; right:38px; height:18px; cursor:move; touch-action:none; background:rgba(111,29,20,.12); }
         .classic-statblock h1 { margin:0; color:#6f1d14; font-size:2rem; font-variant:small-caps; }
         .classic-statblock .stat-subtitle { margin:2px 0 9px; color:#3b2419; font-style:italic; }
         .classic-statblock h2 { margin:12px 0 4px; padding-bottom:2px; color:#6f1d14; border-bottom:2px solid #9b3825; font-size:1.25rem; font-variant:small-caps; }
@@ -676,7 +688,7 @@
             padding: 5px;
         }
     </style>
-<link rel="stylesheet" href="token-actions.css?v=7">
+<link rel="stylesheet" href="token-actions.css?v=15">
 </head>
 
 <div class="main-layout">
@@ -1196,25 +1208,6 @@
             </div>
         </div>
 
-        <div id="mapActionPanel" class="map-action-panel" role="dialog" aria-labelledby="mapActionsHeading">
-            <button class="map-action-close" type="button" onclick="clearMapTokenSelection()" aria-label="Close">×</button>
-            <div class="map-action-header">
-                <h3 id="mapActionsHeading">Actions</h3>
-                <div id="mapActionTargets">No tokens selected</div>
-                <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')" aria-label="Remove selected creatures" title="Remove selected creatures">×</button>
-            </div>
-      <div class="map-health-actions">
-        <button type="button" class="map-damage" onclick="applyMapTokenAction('damage')">Damage</button>
-        <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
-        <button type="button" class="map-heal" onclick="applyMapTokenAction('heal')">Heal</button>
-      </div>
-      <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
-        </div>
-
-        <div id="monsterStatModal" class="monster-stat-modal" role="dialog" aria-modal="true" aria-label="Monster stat block" onclick="if(event.target===this) closeMonsterStatblock()">
-            <aside id="cpuAdvisorPanel" class="cpu-advisor-panel is-hidden" aria-label="CPU Action Advisor"></aside>
-            <article id="monsterStatblock" class="classic-statblock"></article>
-        </div>
         <div id="spellHoverCard" class="spell-hover-card" role="tooltip"></div>
 
         <!-- Map and Token Scale Controls -->
@@ -1285,6 +1278,7 @@
 
         <aside id="generatorPanel" class="dm-map-ui generator-panel is-collapsed" hidden>
             <nav class="generator-rail" aria-label="Generator sections">
+                <button class="generator-main-tab actions" type="button" onclick="toggleGeneratorModePanel('actions',this)" aria-label="Creature actions" title="Actions"><svg viewBox="0 0 40 46" aria-hidden="true"><path d="M23 2 8 25h11l-2 19 15-27H21z"/></svg></button>
                 <button class="generator-main-tab wild is-active" type="button" onclick="toggleGeneratorModePanel('wild',this)" aria-label="Wilderness generators" title="Wild"><svg viewBox="0 0 40 50" aria-hidden="true"><path d="M20 46V25M15 46h10"/><path d="M20 5c-7 0-11 6-9 11-6 2-7 10-2 14 4 3 8 1 11-2 3 3 8 5 12 2 5-4 4-12-2-14 2-5-3-11-10-11z"/><path d="M20 28l-7-7M20 34l8-8"/></svg></button>
                 <button class="generator-main-tab town" type="button" onclick="toggleGeneratorModePanel('town',this)" aria-label="Town generators" title="Town"><svg viewBox="0 0 40 50" aria-hidden="true"><path d="M7 46h26M10 46V15h20v31M8 15h24M11 15V7l5 4 4-5 4 5 5-4v8"/><path d="M16 46V34h8v12M15 22h3v5h-3zM23 22h3v5h-3z"/></svg></button>
                 <button class="generator-main-tab dungeon" type="button" onclick="toggleGeneratorModePanel('dungeon',this)" aria-label="Dungeon generators" title="Dungeon"><svg viewBox="0 0 40 50" aria-hidden="true"><path d="M6 5h28v40H6zM13 5v40M20 5v40M27 5v40"/><path d="M15 25c1-5 9-5 10 0M16 30l3-2M24 30l-3-2M17 35c2 2 4 2 6 0"/></svg></button>
@@ -1308,6 +1302,26 @@
                     <section id="generatorDungeon" class="generator-mode">
                         <div class="generator-subtabs"><button class="generator-banner is-active" type="button" onclick="showGeneratorSubcontent('dungeon','encounterContent',this)">Encounter Builder</button><button class="generator-banner" type="button" onclick="showGeneratorSubcontent('dungeon','trapContent',this)">Traps</button><button class="generator-banner" type="button" onclick="showGeneratorSubcontent('dungeon','lootContent',this)">Loot</button></div>
                         <div id="generatorDungeonHost"></div>
+                    </section>
+                    <section id="generatorActions" class="generator-mode generator-actions-mode" aria-label="Selected creature actions">
+                        <div id="mapActionPanel" class="map-action-panel" role="region" aria-label="Creature actions">
+                            <div class="map-action-header">
+                                <button id="mapActionAutoPopup" class="action-auto-popup" type="button" aria-pressed="false" aria-label="Auto pop-up off" title="Auto pop-up off" onclick="TokenActions.toggleAutoPopup(this)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5H5.5A2.5 2.5 0 0 0 3 7.5v11A2.5 2.5 0 0 0 5.5 21h11a2.5 2.5 0 0 0 2.5-2.5V14"/><path d="M13 3h8v8M21 3 12 12"/><g class="auto-popup-gear"><circle cx="10" cy="15" r="2.35"/><path d="M10 11.6v1.05M10 17.35v1.05M6.6 15h1.05M12.35 15h1.05M7.6 12.6l.75.75M11.65 16.65l.75.75M12.4 12.6l-.75.75M8.35 16.65l-.75.75"/><circle cx="10" cy="15" r=".65"/></g></svg></button>
+                                <div id="mapActionTargets">No tokens selected</div>
+                                <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')" aria-label="Remove selected creatures" title="Remove selected creatures">Remove</button>
+                            </div>
+                            <div class="map-health-actions">
+                                <button type="button" class="map-damage" onclick="applyMapTokenAction('damage')">Damage</button>
+                                <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
+                                <button type="button" class="map-heal" onclick="applyMapTokenAction('heal')">Heal</button>
+                            </div>
+                            <input id="mapConditionSearch" class="map-condition-search" type="search" placeholder="Search conditions…" aria-label="Search conditions">
+                            <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
+                        </div>
+                        <div id="monsterStatModal" class="monster-stat-modal" role="region" aria-label="Monster stat block">
+                            <aside id="cpuAdvisorPanel" class="cpu-advisor-panel is-hidden" aria-label="CPU Action Advisor"></aside>
+                            <article id="monsterStatblock" class="classic-statblock"></article>
+                        </div>
                     </section>
                 </div>
             </div>
@@ -1708,7 +1722,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
     <script src="map-drawing.js?v=20"></script>
     <script src="token-placement.js?v=2"></script>
-    <script src="token-actions.js?v=2"></script>
+    <script src="token-actions.js?v=5"></script>
     <script src="board-sync.js?v=5"></script>
     <script src="map-stickers.js?v=8"></script>
     <script src="board-ui.js?v=5"></script>
@@ -5815,6 +5829,13 @@
             document.getElementById(`generator${mode[0].toUpperCase()}${mode.slice(1)}`)?.classList.add('is-active');
         }
 
+        function showGeneratorModePanel(mode) {
+            const panel = document.getElementById('generatorPanel');
+            activeGeneratorMode = mode;
+            showGeneratorMode(mode, document.querySelector(`.generator-main-tab.${mode}`));
+            panel.classList.remove('is-collapsed');
+        }
+
         let activeGeneratorMode = 'wild';
         function toggleGeneratorModePanel(mode, button) {
             const panel = document.getElementById('generatorPanel');
@@ -6569,8 +6590,14 @@
         }
 
         function applySharedMapScale() {
-            if (!mapImage.naturalWidth) return;
-            document.getElementById('mapTransformLayer').style.width = `${mapImage.naturalWidth * sharedMapScale}px`;
+            if (!mapImage.naturalWidth || !mapImage.naturalHeight) return;
+            const scaledWidth = mapImage.naturalWidth * sharedMapScale;
+            const scaledHeight = mapImage.naturalHeight * sharedMapScale;
+            const mapTransformLayer = document.getElementById('mapTransformLayer');
+            mapTransformLayer.style.width = `${scaledWidth}px`;
+            mapTransformLayer.style.height = `${scaledHeight}px`;
+            mapImage.style.width = `${scaledWidth}px`;
+            mapImage.style.height = `${scaledHeight}px`;
             scheduleMapLayoutRefresh();
         }
 
@@ -6907,6 +6934,7 @@
         function openMapActionPanel() {
             const panel = document.getElementById('mapActionPanel');
             panel.classList.add('is-open');
+            if (TokenActions.autoPopupEnabled()) showGeneratorModePanel('actions');
         }
 
         function selectMapToken(monsterId, additive, clientX, clientY) {
@@ -7216,7 +7244,6 @@
 
         let monsterStatblockRequestId = 0;
         let monsterStatblockPinned = false;
-        let statblockDragState = null;
         let currentStatblockMonsterId = null;
         const cpuStatblockByMonsterId = new Map();
         document.getElementById('monsterStatblock').addEventListener('wheel', event => {
@@ -7231,35 +7258,11 @@
             event.preventDefault();
             event.stopPropagation();
         }, { passive:false });
-        document.getElementById('monsterStatblock').addEventListener('pointerdown', event => {
-            if (!event.target.classList.contains('statblock-drag-handle')) return;
-            const block = document.getElementById('monsterStatblock');
-            const rect = block.getBoundingClientRect();
-            statblockDragState = { pointerId:event.pointerId, offsetX:event.clientX-rect.left, offsetY:event.clientY-rect.top };
-            block.style.left = `${rect.left}px`;
-            block.style.top = `${rect.top}px`;
-            block.style.right = 'auto';
-            block.style.bottom = 'auto';
-            event.target.setPointerCapture?.(event.pointerId);
-            event.preventDefault();
-        });
-        document.addEventListener('pointermove', event => {
-            if (!statblockDragState || event.pointerId !== statblockDragState.pointerId) return;
-            const block = document.getElementById('monsterStatblock');
-            const maxLeft = Math.max(0, window.innerWidth - block.offsetWidth);
-            const maxTop = Math.max(50, window.innerHeight - block.offsetHeight);
-            block.style.left = `${Math.max(0, Math.min(maxLeft, event.clientX-statblockDragState.offsetX))}px`;
-            block.style.top = `${Math.max(50, Math.min(maxTop, event.clientY-statblockDragState.offsetY))}px`;
-            positionCpuAdvisorPanel();
-        });
-        document.addEventListener('pointerup', event => {
-            if (statblockDragState?.pointerId === event.pointerId) statblockDragState = null;
-        });
         if(typeof ResizeObserver==='function')new ResizeObserver(positionCpuAdvisorPanel).observe(document.getElementById('monsterStatblock'));
         window.addEventListener('resize',positionCpuAdvisorPanel);
 
         function baseStatblockWindowControls() {
-            return `<div class="statblock-drag-handle" title="Drag stat block"></div><button class="classic-statblock-pin${monsterStatblockPinned ? ' is-pinned' : ''}" type="button" onclick="toggleMonsterStatblockPin()" aria-pressed="${monsterStatblockPinned}" title="${monsterStatblockPinned ? 'Unpin stat block' : 'Pin stat block'}">📌</button><button class="classic-statblock-close" type="button" onclick="closeMonsterStatblock(true)" aria-label="Close">×</button>`;
+            return `<button class="classic-statblock-pin${monsterStatblockPinned ? ' is-pinned' : ''}" type="button" onclick="toggleMonsterStatblockPin()" aria-pressed="${monsterStatblockPinned}" title="${monsterStatblockPinned ? 'Unpin stat block' : 'Pin stat block'}">📌</button><button class="classic-statblock-close" type="button" onclick="closeMonsterStatblock(true)" aria-label="Close">×</button>`;
         }
 
         function statblockWindowControls() {
@@ -7352,16 +7355,7 @@
             const block = document.getElementById('monsterStatblock');
             const advisorPanel = document.getElementById('cpuAdvisorPanel');
             advisorPanel.classList.add('is-hidden');advisorPanel.replaceChildren();
-            block.style.left = 'auto';
-            block.style.top = 'auto';
-            block.style.right = '20px';
-            block.style.bottom = '20px';
             modal.classList.add('is-open');
-            const initialRect = block.getBoundingClientRect();
-            block.style.left = `${initialRect.left}px`;
-            block.style.top = `${initialRect.top}px`;
-            block.style.right = 'auto';
-            block.style.bottom = 'auto';
             block.innerHTML = `${statblockWindowControls()}<p>Loading ${escapeStatHtml(name)}…</p>`;
             try {
                 const definition = await loadMonsterDefinitionByName(name);

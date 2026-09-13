@@ -36,7 +36,6 @@
     .map-action-panel h3 { margin:0 0 4px; color:#f4d76d; }
     .map-action-panel select, .map-action-panel input, .map-action-panel button { width:100%; box-sizing:border-box; margin-top:8px; padding:9px; background:#3d2718; color:white; border:1px solid #8a6643; border-radius:5px; }
     .map-action-panel button { background:#32CD32; color:#1d1009; border:0; font-weight:bold; cursor:pointer; }
-    .map-action-panel .map-action-close { position:absolute; top:4px; right:7px; width:auto; margin:0; padding:3px 7px; background:transparent; color:#bbb; }
     .token-lasso { position:absolute; inset:0; z-index:30; width:100%; height:100%; pointer-events:none; overflow:visible; }
     .token-lasso polyline { fill:rgba(79,195,255,.16); stroke:#4fc3ff; stroke-width:3; stroke-dasharray:9 6; stroke-linejoin:round; }
     .group-move-handle { position:absolute; z-index:35; width:34px; height:34px; padding:0; display:flex; align-items:center; justify-content:center; color:#1d1009; background:#4fc3ff; border:2px solid white; border-radius:50%; box-shadow:0 2px 9px #000,0 0 0 2px rgba(79,195,255,.45); font-size:23px; line-height:1; cursor:move; pointer-events:auto; touch-action:none; user-select:none; }
@@ -117,7 +116,7 @@
     .dice-roller .dice-roll-option { display:flex; flex-direction:row; align-items:center; gap:7px; color:white; font-weight:normal; }
     .dice-roller .dice-roll-option input { width:auto; margin:0; accent-color:#f4d76d; }
     .party-panel button,.party-modal button { padding:8px; background:#f4d76d; border:0; border-radius:5px; font-weight:bold; cursor:pointer; }
-    .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
+    .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:2400; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
     .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
     .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
     .session-controls-panel .session-menu-button { background:#1976d2 !important; }
@@ -283,7 +282,7 @@
       margin-bottom: 10px;
     }
   </style>
-  <link rel="stylesheet" href="token-actions.css?v=7">
+  <link rel="stylesheet" href="token-actions.css?v=15">
 </head>
 
 <body>
@@ -298,21 +297,6 @@
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 6; pointer-events: none;"></div>
         <svg id="tokenLasso" class="token-lasso" style="display:none;"><polyline id="tokenLassoPath" points=""></polyline></svg>
       </div>
-    </div>
-
-    <div id="mapActionPanel" class="map-action-panel" role="dialog" aria-labelledby="mapActionsHeading">
-      <button class="map-action-close" type="button" onclick="clearMapTokenSelection()" aria-label="Close">×</button>
-      <div class="map-action-header">
-        <h3 id="mapActionsHeading">Actions</h3>
-        <div id="mapActionTargets">No tokens selected</div>
-        <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')" aria-label="Remove selected creatures" title="Remove selected creatures">×</button>
-      </div>
-      <div class="map-health-actions">
-        <button type="button" class="map-damage" onclick="applyMapTokenAction('damage')">Damage</button>
-        <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
-        <button type="button" class="map-heal" onclick="applyMapTokenAction('heal')">Heal</button>
-      </div>
-      <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
     </div>
 
     <!-- Token Size Controls -->
@@ -336,6 +320,24 @@
       <button id="refreshBoardState" class="fantasy-token-button board-refresh-button" type="button" title="Reload the current board from Firebase" aria-label="Reload the current board from Firebase"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6a9 9 0 1 0 1 10M20 2v5h-5"/></svg></button>
     </div>
   </div>
+
+  <button id="mapContextToggle" class="player-action-toggle" type="button" onclick="toggleMapContextDock()" aria-expanded="false" aria-controls="mapActionPanel" aria-label="Show action panel" title="Actions"><svg viewBox="0 0 40 46" aria-hidden="true"><path d="M23 2 8 25h11l-2 19 15-27H21z"/></svg></button>
+  <aside id="mapContextDock" class="map-context-dock player-map-context-dock is-collapsed" aria-label="Selected creature actions">
+    <div id="mapActionPanel" class="map-action-panel" role="region" aria-label="Creature actions">
+      <div class="map-action-header">
+        <button id="mapActionAutoPopup" class="action-auto-popup" type="button" aria-pressed="false" aria-label="Auto pop-up off" title="Auto pop-up off" onclick="TokenActions.toggleAutoPopup(this)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5H5.5A2.5 2.5 0 0 0 3 7.5v11A2.5 2.5 0 0 0 5.5 21h11a2.5 2.5 0 0 0 2.5-2.5V14"/><path d="M13 3h8v8M21 3 12 12"/><g class="auto-popup-gear"><circle cx="10" cy="15" r="2.35"/><path d="M10 11.6v1.05M10 17.35v1.05M6.6 15h1.05M12.35 15h1.05M7.6 12.6l.75.75M11.65 16.65l.75.75M12.4 12.6l-.75.75M8.35 16.65l-.75.75"/><circle cx="10" cy="15" r=".65"/></g></svg></button>
+        <div id="mapActionTargets">No tokens selected</div>
+        <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')" aria-label="Remove selected creatures" title="Remove selected creatures">Remove</button>
+      </div>
+      <div class="map-health-actions">
+        <button type="button" class="map-damage" onclick="applyMapTokenAction('damage')">Damage</button>
+        <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
+        <button type="button" class="map-heal" onclick="applyMapTokenAction('heal')">Heal</button>
+      </div>
+      <input id="mapConditionSearch" class="map-condition-search" type="search" placeholder="Search conditions…" aria-label="Search conditions">
+      <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
+    </div>
+  </aside>
 
   <aside id="partyPanel" class="party-panel is-collapsed">
     <nav class="player-left-rail" aria-label="Player side panels">
@@ -652,7 +654,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
   <script src="map-drawing.js?v=20"></script>
   <script src="token-placement.js?v=2"></script>
-    <script src="token-actions.js?v=2"></script>
+    <script src="token-actions.js?v=5"></script>
     <script src="board-sync.js?v=5"></script>
     <script src="map-stickers.js?v=8"></script>
   <script src="board-ui.js?v=5"></script>
@@ -960,7 +962,10 @@
       const selected = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
       document.getElementById('mapActionTargets').textContent = selected.length === 1 ? selected[0].name : `${selected.length} tokens selected`;
       TokenActions.refresh(selected);
-            if (!selected.length) document.getElementById('mapActionPanel').classList.remove('is-open');
+      if (!selected.length) {
+        document.getElementById('mapActionPanel').classList.remove('is-open');
+        setMapContextDockCollapsed(true);
+      }
       renderGroupMoveHandle(selected);
     }
 
@@ -1022,7 +1027,22 @@
       if (!additive) selectedMapTokenIds.clear();
       if (additive && selectedMapTokenIds.has(monsterId)) selectedMapTokenIds.delete(monsterId); else selectedMapTokenIds.add(monsterId);
       refreshMapTokenSelection();
-      if (selectedMapTokenIds.size) document.getElementById('mapActionPanel').classList.add('is-open');
+      if (selectedMapTokenIds.size) {
+        document.getElementById('mapActionPanel').classList.add('is-open');
+        if(TokenActions.autoPopupEnabled())setMapContextDockCollapsed(false);
+      }
+    }
+
+    function setMapContextDockCollapsed(collapsed) {
+      const dock=document.getElementById('mapContextDock'),toggle=document.getElementById('mapContextToggle');
+      dock?.classList.toggle('is-collapsed',collapsed);
+      toggle?.setAttribute('aria-expanded',String(!collapsed));
+      toggle?.setAttribute('aria-label',collapsed?'Show action panel':'Hide action panel');
+    }
+
+    function toggleMapContextDock() {
+      const dock=document.getElementById('mapContextDock');
+      if(dock)setMapContextDockCollapsed(!dock.classList.contains('is-collapsed'));
     }
 
     function clearMapTokenSelection() { selectedMapTokenIds.clear(); refreshMapTokenSelection(); drawingToolbarManager?.clearSelection?.(); }
@@ -1451,8 +1471,14 @@
     }
 
     function applySharedMapScale() {
-      if (!mapImage.naturalWidth) return;
-      document.getElementById('mapTransformLayer').style.width = `${mapImage.naturalWidth * sharedMapScale}px`;
+      if (!mapImage.naturalWidth || !mapImage.naturalHeight) return;
+      const scaledWidth = mapImage.naturalWidth * sharedMapScale;
+      const scaledHeight = mapImage.naturalHeight * sharedMapScale;
+      const mapTransformLayer = document.getElementById('mapTransformLayer');
+      mapTransformLayer.style.width = `${scaledWidth}px`;
+      mapTransformLayer.style.height = `${scaledHeight}px`;
+      mapImage.style.width = `${scaledWidth}px`;
+      mapImage.style.height = `${scaledHeight}px`;
       scheduleMapLayoutRefresh();
     }
 

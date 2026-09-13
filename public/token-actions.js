@@ -119,6 +119,51 @@ const TokenActions = (() => {
   const classNames = new Set(["Ancestral Protectors", "Hexblade's Curse", "Raging", "Shell Defense", "Shifted", "Slayer's Prey"]);
   const category = name => spellNames.has(name) ? 'Spells' : classNames.has(name) ? 'Class Specific' : 'General';
   const displayName = name => /^mark[123]$/i.test(name) ? `Mark ${name.slice(-1)}` : name;
+  const searchText = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  function editDistance(a, b) {
+    const row = Array.from({length:b.length + 1}, (_, index) => index);
+    for (let i = 1; i <= a.length; i++) {
+      let diagonal = row[0]; row[0] = i;
+      for (let j = 1; j <= b.length; j++) {
+        const above = row[j];
+        row[j] = Math.min(row[j] + 1, row[j - 1] + 1, diagonal + (a[i - 1] === b[j - 1] ? 0 : 1));
+        diagonal = above;
+      }
+    }
+    return row[b.length];
+  }
+  function fuzzyConditionMatch(query, value) {
+    const needle = searchText(query), haystack = searchText(value);
+    if (!needle || haystack.includes(needle)) return true;
+    let index = 0;
+    for (const character of haystack) if (character === needle[index]) index += 1;
+    if (index === needle.length) return true;
+    const tolerance = Math.max(1, Math.floor(needle.length / 4));
+    return haystack.split(' ').some(word => editDistance(needle, word) <= tolerance);
+  }
+  function filterConditions(grid, query) {
+    const searching = Boolean(searchText(query));
+    grid.dataset.filtering = String(searching);
+    Array.from(grid.children).forEach(folder => {
+      if (searching && folder.dataset.conditionSearching !== 'true') {
+        folder.dataset.conditionWasOpen = String(folder.open);
+        folder.dataset.conditionSearching = 'true';
+      }
+      let matches = 0;
+      folder.querySelectorAll('.map-condition').forEach(row => {
+        const match = fuzzyConditionMatch(query, row.dataset.searchName);
+        row.hidden = !match;
+        if (match) matches += 1;
+      });
+      folder.hidden = searching && matches === 0;
+      if (searching && matches) folder.open = true;
+      if (!searching && folder.dataset.conditionSearching === 'true') {
+        folder.open = folder.dataset.conditionWasOpen === 'true';
+        delete folder.dataset.conditionSearching;
+        delete folder.dataset.conditionWasOpen;
+      }
+    });
+  }
   function canonical(name) {
     if (name.toLowerCase() === 'mark') return "Hunter's Mark";
     return Object.keys(effects).find(key => key.toLowerCase() === name.toLowerCase()) || name;
@@ -192,7 +237,7 @@ const TokenActions = (() => {
           categoryGrid = document.createElement('div'); categoryGrid.className = 'condition-folder-grid';
           folder.append(heading, categoryGrid); grid.append(folder);
         }
-        const row = document.createElement('div'); row.className = 'map-condition';
+        const row = document.createElement('div'); row.className = 'map-condition'; row.dataset.searchName = displayName(name);
         const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.className = 'condition-toggle'; checkbox.id = `map-condition-${index}`; checkbox.dataset.condition = name;
         const label = document.createElement('label'); label.htmlFor = checkbox.id; label.textContent = displayName(name); label.tabIndex = 0;
         const tooltip = document.createElement('span'); tooltip.className = 'condition-tooltip'; tooltip.id = `condition-effect-${index}`; tooltip.role = 'tooltip'; tooltip.textContent = effect;
@@ -228,7 +273,10 @@ const TokenActions = (() => {
         const exhaustionRow = rows.find(row => row.children[0].dataset.condition === 'Exhaustion');
         if (exhaustionRow) exhaustionRow.style.gridRow = String(columnHeight + 1);
       }
+      const search = document.getElementById('mapConditionSearch');
+      search?.addEventListener('input', () => filterConditions(grid, search.value));
     }
+    filterConditions(grid, document.getElementById('mapConditionSearch')?.value || '');
     grid.querySelectorAll('input[type="checkbox"]').forEach(input => {
       const count = selected.filter(monster => input.dataset.condition === 'Exhaustion' ? exhaustion(monster.conditions) > 0 : normalizeConditions(monster.conditions).some(item => item.toLowerCase() === input.dataset.condition.toLowerCase())).length;
       input.checked = selected.length > 0 && count === selected.length;
@@ -241,6 +289,18 @@ const TokenActions = (() => {
     counter.value = levels.every(level => level === levels[0]) ? levels[0] || 0 : '';
     counter.placeholder = 'Mixed'; counter.disabled = !selected.length;
   }
-  return { refresh, exhaustion, withExhaustion, normalizeConditions, tokenSize, sizeMultiplier, resolveSize, renderTokenConditions };
+  function autoPopupEnabled(control) {
+    const button = control || (typeof document !== 'undefined' ? document.getElementById('mapActionAutoPopup') : null);
+    return button?.getAttribute('aria-pressed') === 'true';
+  }
+  function toggleAutoPopup(button) {
+    if (!button) return false;
+    const enabled = !autoPopupEnabled(button);
+    button.setAttribute('aria-pressed', String(enabled));
+    button.setAttribute('aria-label', `Auto pop-up ${enabled ? 'on' : 'off'}`);
+    button.title = `Auto pop-up ${enabled ? 'on' : 'off'}`;
+    return enabled;
+  }
+  return { refresh, exhaustion, withExhaustion, normalizeConditions, tokenSize, sizeMultiplier, resolveSize, renderTokenConditions, fuzzyConditionMatch, autoPopupEnabled, toggleAutoPopup };
 })();
 if (typeof module !== 'undefined') module.exports = TokenActions;
