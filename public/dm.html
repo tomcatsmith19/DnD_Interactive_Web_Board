@@ -318,16 +318,21 @@
         .custom-map-editor { display:grid; grid-template-columns:minmax(0,54fr) minmax(0,46fr); gap:24px; align-items:start; }
         .custom-map-form { min-width:0; }
         .custom-map-form .map-name-field { width:100%; margin-top:0; gap:8px; }
-        #customMapName { width:100%; box-sizing:border-box; padding:10px; color:white; background:#1d1009; border:1px solid #765133; border-radius:5px; }
+        #customMapName,#customMapFolder { width:100%; box-sizing:border-box; padding:10px; color:white; background:#1d1009; border:1px solid #765133; border-radius:5px; }
         #customMapUpload { width:100%; box-sizing:border-box; margin-top:10px; }
         #saveCustomMapBtn { display:block; margin-top:12px; color:white; background:#1e5fa3; border-color:#639bd2; }
         .custom-map-preview { width:100%; min-height:180px; margin-top:16px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:rgba(0,0,0,.2); border-radius:6px; }
-        #mapPreview { display:none; max-width:100%; max-height:220px; object-fit:contain; }
+        #mapPreview,#mapVideoPreview { display:none; max-width:100%; max-height:220px; object-fit:contain; }
         #mapPreviewPlaceholder { padding:12px; color:#999; }
         #mapSaveStatus { min-height:20px; margin-top:10px; color:#f4d76d; font-size:.85rem; }
         .custom-map-library-section { min-width:0; }
         #customMapLibrary { max-height:320px; padding-right:12px; box-sizing:border-box; overflow:auto; scrollbar-gutter:stable; }
-        #customMapLibrary > div > span { min-width:0; overflow-wrap:anywhere; }
+        .custom-map-folder-group { margin-bottom:12px; }
+        .custom-map-folder-heading { margin:0; padding:7px 8px; color:#f4d76d; background:#21170f; border-bottom:1px solid #765133; font-family:'MedievalSharp',cursive; }
+        #customMapLibrary .custom-map-row > span { min-width:0; overflow-wrap:anywhere; }
+        .map-media { position:relative; width:100%; }
+        .map-media > img,.map-media > video { width:100%; height:100%; display:block; }
+        .map-media > [hidden] { display:none; }
         @media (max-width:700px) { .custom-map-editor { grid-template-columns:minmax(0,1fr); } .custom-map-form .map-name-field,.custom-map-preview { width:90%; } .custom-map-form .map-name-field { flex-wrap:wrap; } .custom-map-form .map-name-field input { flex-basis:120px; } }
         #addCampaignMapStatus:empty { display:none; }
         @media (max-width:700px) { .campaign-map-picker { grid-template-columns:minmax(0,1fr); } .campaign-map-picker #confirmAddMapButton { justify-self:end; } }
@@ -1198,8 +1203,10 @@
     <div class="tab-content active" id="mapTab" style="overflow: auto; flex: 1;">
         <div id="mapContainer" style="position: relative; display: inline-block;">
             <div id="mapTransformLayer" style="transform-origin: top left; position: relative;">
-                <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image"
-                    style="width: 100%; height: auto; display: block;">
+                <div id="mapImage" class="map-media" data-src="data/maps/blank.jpg">
+                    <img id="mapStaticImage" src="data/maps/blank.jpg" alt="Map Image" draggable="false">
+                    <video id="mapVideo" aria-label="Animated map" autoplay loop muted playsinline hidden></video>
+                </div>
                 <svg id="tokenDistanceLayer" class="token-distance-layer" aria-hidden="true"></svg>
                 <div id="mapTokenLayer"
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 6; pointer-events: none;">
@@ -1608,11 +1615,17 @@
                             <label for="customMapName">Map Name</label>
                             <input id="customMapName" type="text" placeholder="e.g. Sunken Shrine">
                         </div>
+                        <div class="map-name-field">
+                            <label for="customMapFolder">Folder</label>
+                            <input id="customMapFolder" type="text" list="customMapFolderOptions" placeholder="e.g. Dungeons">
+                            <datalist id="customMapFolderOptions"></datalist>
+                        </div>
                         <div class="custom-map-preview">
                             <img id="mapPreview" alt="Custom map preview">
+                            <video id="mapVideoPreview" aria-label="Animated custom map preview" autoplay loop muted playsinline></video>
                             <span id="mapPreviewPlaceholder">Map preview</span>
                         </div>
-                        <input id="customMapUpload" type="file" accept="image/*" aria-label="Choose a custom map image" style="color: white;">
+                        <input id="customMapUpload" type="file" accept="image/*,video/webm,.webm" aria-label="Choose a custom map image or WebM video" style="color: white;">
                         <button id="saveCustomMapBtn" type="button">Save &amp; Select Map</button>
                         <div id="mapSaveStatus" role="status"></div>
                     </div>
@@ -5388,6 +5401,27 @@
             }
         }
 
+        function setMapMediaPreview(src, mediaType = '') {
+            const image = document.getElementById('mapPreview');
+            const video = document.getElementById('mapVideoPreview');
+            const placeholder = document.getElementById('mapPreviewPlaceholder');
+            if (!image || !video || !placeholder) return;
+            const useVideo = Boolean(src) && (mediaType === 'video/webm' || isWebmMapSource(src));
+            image.style.display = src && !useVideo ? 'block' : 'none';
+            video.style.display = src && useVideo ? 'block' : 'none';
+            placeholder.style.display = src ? 'none' : 'block';
+            if (useVideo) {
+                image.removeAttribute('src');
+                video.src = src;
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+                video.removeAttribute('src');
+                if (src) image.src = src;
+                else image.removeAttribute('src');
+            }
+        }
+
         function readFileAsDataUrl(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -5400,6 +5434,11 @@
         function getFileExtension(fileName = "") {
             const parts = fileName.split(".");
             return parts.length > 1 ? parts.pop().toLowerCase() : "png";
+        }
+
+        function isSupportedCustomMapFile(file) {
+            if (!file) return false;
+            return file.type.startsWith('image/') || file.type === 'video/webm' || getFileExtension(file.name) === 'webm';
         }
 
         function parseCrValue(cr) {
@@ -5590,26 +5629,37 @@
 
             const selectedValue = mapSelectElement.value;
             const preservedValue = document.getElementById('addCampaignMapModal').open ? selectedValue : currentSharedMapPath || selectedValue;
-            const existingGroup = mapSelectElement.querySelector('optgroup[data-custom-maps="true"]');
-            if (existingGroup) {
-                existingGroup.remove();
-            }
+            mapSelectElement.querySelectorAll('optgroup[data-custom-maps="true"]').forEach(group => group.remove());
 
             if (customMapDefinitions.size > 0) {
-                const customGroup = document.createElement("optgroup");
-                customGroup.label = "Custom";
-                customGroup.dataset.customMaps = "true";
-
-                Array.from(customMapDefinitions.values())
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .forEach(mapDefinition => {
-                        const option = document.createElement("option");
-                        option.value = mapDefinition.imageUrl;
-                        option.textContent = mapDefinition.name;
-                        customGroup.appendChild(option);
+                const folders = new Map();
+                Array.from(customMapDefinitions.values()).forEach(mapDefinition => {
+                    const folder = mapDefinition.folder || "Unfiled";
+                    if (!folders.has(folder)) folders.set(folder, []);
+                    folders.get(folder).push(mapDefinition);
+                });
+                Array.from(folders.entries())
+                    .sort(([a], [b]) => a.localeCompare(b))
+                    .forEach(([folder, maps]) => {
+                        const customGroup = document.createElement("optgroup");
+                        customGroup.label = `Custom — ${folder}`;
+                        customGroup.dataset.customMaps = "true";
+                        maps.sort((a, b) => a.name.localeCompare(b.name)).forEach(mapDefinition => {
+                            const option = document.createElement("option");
+                            option.value = mapDefinition.imageUrl;
+                            option.textContent = mapDefinition.name;
+                            option.dataset.customMapId = mapDefinition.id;
+                            customGroup.appendChild(option);
+                        });
+                        mapSelectElement.appendChild(customGroup);
                     });
+            }
 
-                mapSelectElement.appendChild(customGroup);
+            const folderOptions = document.getElementById('customMapFolderOptions');
+            if (folderOptions) {
+                const names = [...new Set(Array.from(customMapDefinitions.values()).map(map => map.folder).filter(Boolean))]
+                    .sort((a, b) => a.localeCompare(b));
+                folderOptions.replaceChildren(...names.map(folder => new Option(folder, folder)));
             }
 
             if (preservedValue && Array.from(mapSelectElement.options).some(option => option.value === preservedValue)) {
@@ -5631,10 +5681,23 @@
 
             library.style.color = "white";
 
-            Array.from(customMapDefinitions.values())
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .forEach(mapDefinition => {
+            const folders = new Map();
+            Array.from(customMapDefinitions.values()).forEach(mapDefinition => {
+                const folder = mapDefinition.folder || 'Unfiled';
+                if (!folders.has(folder)) folders.set(folder, []);
+                folders.get(folder).push(mapDefinition);
+            });
+
+            Array.from(folders.entries()).sort(([a], [b]) => a.localeCompare(b)).forEach(([folder, maps]) => {
+                const group = document.createElement('section');
+                group.className = 'custom-map-folder-group';
+                const heading = document.createElement('h4');
+                heading.className = 'custom-map-folder-heading';
+                heading.textContent = folder;
+                group.appendChild(heading);
+                maps.sort((a, b) => a.name.localeCompare(b.name)).forEach(mapDefinition => {
                     const row = document.createElement("div");
+                    row.className = 'custom-map-row';
                     row.style.display = "flex";
                     row.style.justifyContent = "space-between";
                     row.style.alignItems = "center";
@@ -5677,8 +5740,10 @@
 
                     row.appendChild(label);
                     row.appendChild(actions);
-                    library.appendChild(row);
+                    group.appendChild(row);
                 });
+                library.appendChild(group);
+            });
         }
 
         function renderCustomMonsterLibrary() {
@@ -6090,7 +6155,35 @@
 
         // Map dropdown behavior (updates map image in Map tab)
         const mapSelect = document.getElementById('mapSelect');
-        const mapImage = document.getElementById('mapImage');  // NEW: reference the map image
+        const mapImage = document.getElementById('mapImage');
+        const mapStaticImage = document.getElementById('mapStaticImage');
+        const mapVideo = document.getElementById('mapVideo');
+        function isWebmMapSource(source = '') {
+            try { return decodeURIComponent(String(source).split(/[?#]/)[0]).toLowerCase().endsWith('.webm'); }
+            catch { return String(source).toLowerCase().includes('.webm'); }
+        }
+        function getMapNaturalSize() {
+            return mapVideo.hidden
+                ? { width: mapStaticImage.naturalWidth, height: mapStaticImage.naturalHeight }
+                : { width: mapVideo.videoWidth, height: mapVideo.videoHeight };
+        }
+        function setMapMediaSource(source) {
+            if (!source || mapImage.dataset.src === source) return;
+            mapImage.dataset.src = source;
+            const useVideo = isWebmMapSource(source);
+            mapStaticImage.hidden = useVideo;
+            mapVideo.hidden = !useVideo;
+            if (useVideo) {
+                mapVideo.src = source;
+                mapVideo.load();
+                mapVideo.play().catch(() => {});
+            } else {
+                mapVideo.pause();
+                mapStaticImage.src = source;
+            }
+        }
+        mapStaticImage.addEventListener('load', () => mapImage.dispatchEvent(new Event('load')));
+        mapVideo.addEventListener('loadedmetadata', () => mapImage.dispatchEvent(new Event('load')));
         initializeStaticMapOptions();
         let currentSharedMapPath = mapSelect.value;
 
@@ -6223,7 +6316,9 @@
                     id: doc.id,
                     name: data.name,
                     imageUrl: data.imageUrl,
-                    imagePath: data.imagePath || ""
+                    imagePath: data.imagePath || "",
+                    folder: (data.folder || "").trim(),
+                    mediaType: data.mediaType || (isWebmMapSource(data.imageUrl) ? 'video/webm' : 'image')
                 });
             });
 
@@ -6590,9 +6685,10 @@
         }
 
         function applySharedMapScale() {
-            if (!mapImage.naturalWidth || !mapImage.naturalHeight) return;
-            const scaledWidth = mapImage.naturalWidth * sharedMapScale;
-            const scaledHeight = mapImage.naturalHeight * sharedMapScale;
+            const naturalSize = getMapNaturalSize();
+            if (!naturalSize.width || !naturalSize.height) return;
+            const scaledWidth = naturalSize.width * sharedMapScale;
+            const scaledHeight = naturalSize.height * sharedMapScale;
             const mapTransformLayer = document.getElementById('mapTransformLayer');
             mapTransformLayer.style.width = `${scaledWidth}px`;
             mapTransformLayer.style.height = `${scaledHeight}px`;
@@ -6622,7 +6718,7 @@
         mapTab.addEventListener('mousedown', (e) => {
             if (e.button !== 0) return;
             // Only start pan if clicking background (not tokens)
-            const isMapBackground = e.target === mapTab || e.target === mapContainer || e.target.id === 'mapImage';
+            const isMapBackground = e.target === mapTab || e.target === mapContainer || Boolean(e.target.closest?.('#mapImage'));
             if (!isMapBackground) return;
 
             isPanning = true;
@@ -6677,7 +6773,7 @@
         mapTab.addEventListener('touchstart', (e) => {
             if (e.touches.length === 1) {
                 const target = e.target;
-                const isMapBackground = target === mapTab || target === mapContainer || target.id === 'mapImage';
+                const isMapBackground = target === mapTab || target === mapContainer || Boolean(target.closest?.('#mapImage'));
                 if (!isMapBackground) return;
 
                 isTouchPanning = true;
@@ -8763,8 +8859,9 @@
             document.getElementById('existingMapImageUrl').value = '';
             document.getElementById('existingMapImagePath').value = '';
             document.getElementById('customMapName').value = '';
+            document.getElementById('customMapFolder').value = '';
             document.getElementById('customMapUpload').value = '';
-            setImagePreview('mapPreview', 'mapPreviewPlaceholder', '');
+            setMapMediaPreview('');
             setStatusMessage('mapSaveStatus', '');
         }
 
@@ -8789,6 +8886,7 @@
         const monsterTokenUpload = document.getElementById('monsterTokenUpload');
         const saveCustomMonsterBtn = document.getElementById('saveCustomMonsterBtn');
         const customMapNameInput = document.getElementById('customMapName');
+        const customMapFolderInput = document.getElementById('customMapFolder');
         const customMapUpload = document.getElementById('customMapUpload');
         const saveCustomMapBtn = document.getElementById('saveCustomMapBtn');
         const creatorMonsterModal = document.getElementById('monsterCreatorModal');
@@ -8811,12 +8909,19 @@
         customMapUpload.addEventListener('change', async () => {
             const file = customMapUpload.files?.[0];
             if (!file) {
-                setImagePreview('mapPreview', 'mapPreviewPlaceholder', '');
+                setMapMediaPreview('');
+                return;
+            }
+
+            if (!isSupportedCustomMapFile(file)) {
+                customMapUpload.value = '';
+                setMapMediaPreview('');
+                setStatusMessage('mapSaveStatus', 'Choose an image or WebM map file.', true);
                 return;
             }
 
             const preview = await readFileAsDataUrl(file);
-            setImagePreview('mapPreview', 'mapPreviewPlaceholder', preview);
+            setMapMediaPreview(preview, file.type || (getFileExtension(file.name) === 'webm' ? 'video/webm' : 'image'));
         });
 
         document.getElementById('startFromMonsterBtn').addEventListener('click', () => {
@@ -8923,6 +9028,7 @@
 
         async function saveCustomMap() {
             const name = customMapNameInput.value.trim();
+            const folder = customMapFolderInput.value.trim();
             const mapFile = customMapUpload.files?.[0];
             const existingMapId = document.getElementById('customMapId').value || customMapsRef.doc().id;
             const existingImageUrl = document.getElementById('existingMapImageUrl').value || '';
@@ -8934,7 +9040,12 @@
             }
 
             if (!mapFile && !existingImageUrl) {
-                setStatusMessage('mapSaveStatus', 'Choose a map image before saving.', true);
+                setStatusMessage('mapSaveStatus', 'Choose a map image or WebM video before saving.', true);
+                return;
+            }
+
+            if (mapFile && !isSupportedCustomMapFile(mapFile)) {
+                setStatusMessage('mapSaveStatus', 'Only image and WebM map files are supported.', true);
                 return;
             }
 
@@ -8942,12 +9053,14 @@
 
             let imagePath = existingImagePath;
             let imageUrl = existingImageUrl;
+            let mediaType = customMapDefinitions.get(existingMapId)?.mediaType || (isWebmMapSource(existingImageUrl) ? 'video/webm' : 'image');
 
             if (mapFile) {
                 const extension = getFileExtension(mapFile.name);
                 imagePath = `custom-maps/images/${existingMapId}-${Date.now()}.${extension}`;
                 const uploadSnapshot = await storage.ref().child(imagePath).put(mapFile);
                 imageUrl = await uploadSnapshot.ref.getDownloadURL();
+                mediaType = extension === 'webm' || mapFile.type === 'video/webm' ? 'video/webm' : 'image';
                 if (existingImagePath && existingImagePath !== imagePath) {
                     storage.ref().child(existingImagePath).delete().catch(() => { });
                 }
@@ -8957,13 +9070,17 @@
                 name,
                 imageUrl,
                 imagePath,
+                folder,
+                mediaType,
                 updatedAt: Date.now()
             }, { merge: true });
             customMapDefinitions.set(existingMapId, {
                 id: existingMapId,
                 name,
                 imageUrl,
-                imagePath
+                imagePath,
+                folder,
+                mediaType
             });
             refreshCustomMapOptions();
             renderCustomMapLibrary();
@@ -9002,8 +9119,9 @@
             document.getElementById('existingMapImageUrl').value = mapDefinition.imageUrl;
             document.getElementById('existingMapImagePath').value = mapDefinition.imagePath || '';
             document.getElementById('customMapName').value = mapDefinition.name;
+            document.getElementById('customMapFolder').value = mapDefinition.folder || '';
             document.getElementById('customMapUpload').value = '';
-            setImagePreview('mapPreview', 'mapPreviewPlaceholder', mapDefinition.imageUrl);
+            setMapMediaPreview(mapDefinition.imageUrl, mapDefinition.mediaType);
             setStatusMessage('mapSaveStatus', `Editing ${mapDefinition.name}. Save to apply changes.`);
             document.getElementById('customMapName').focus();
         }
@@ -9044,7 +9162,7 @@
         saveCustomMapBtn.addEventListener('click', async () => {
             if (customMapSaveInProgress || campaignSwitchInProgress) return;
             customMapSaveInProgress = true;
-            const formControls = [saveCustomMapBtn, customMapNameInput, customMapUpload];
+            const formControls = [saveCustomMapBtn, customMapNameInput, customMapFolderInput, customMapUpload];
             formControls.forEach(control => { control.disabled = true; });
             renderCampaignList();
             try {
@@ -9160,7 +9278,7 @@
             }
             if (sharedMap.filepath) {
                 currentSharedMapPath = sharedMap.filepath;
-                if (mapImage.getAttribute('src') !== currentSharedMapPath) mapImage.src = currentSharedMapPath;
+                setMapMediaSource(currentSharedMapPath);
                 if (!document.getElementById('addCampaignMapModal').open && Array.from(mapSelect.options).some(option => option.value === currentSharedMapPath)) {
                     mapSelect.value = currentSharedMapPath;
                 }

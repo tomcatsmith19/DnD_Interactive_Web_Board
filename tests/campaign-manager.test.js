@@ -221,6 +221,7 @@ test('DM and player scripts preserve local token size while applying shared maps
             sharedMap: { filepath: 'maps/cave.jpg', tokenSize: 170, mapScale: 2 },
             currentTokenSize: 100, sharedMapScale: 1, mapImage: { getAttribute() { return this.src; } }, currentSharedMapPath: '',
             mapSelect: { options: [] }, document: { getElementById: () => ({ open: false }) },
+            setMapMediaSource(source) { context.mapImage.src = source; },
             applySharedMapScale() {}, scheduleMapLayoutRefresh() {}
         };
         vm.runInNewContext(`(function () {${callback}})()`, context);
@@ -232,4 +233,16 @@ test('DM and player scripts preserve local token size while applying shared maps
         vm.runInNewContext(`(function () {${resizeBody}})()`, { refreshMapLayout: () => refreshes++ });
         assert.equal(refreshes, 1);
     }
+});
+
+test('custom maps support WebM media and foldered dropdown groups', () => {
+    const dm = fs.readFileSync('public/dm.html', 'utf8');
+    const player = fs.readFileSync('public/player.html', 'utf8');
+    assert.match(dm, /accept="image\/\*,video\/webm,\.webm"/);
+    assert.match(dm, /id="customMapFolder"/);
+    assert.match(dm, /Custom — \$\{folder\}/);
+    assert.match(dm, /id="mapVideo"[^>]*autoplay loop muted playsinline/);
+    assert.match(player, /id="mapVideo"[^>]*autoplay loop muted playsinline/);
+    assert.match(dm, /setMapMediaSource\(currentSharedMapPath\)/);
+    assert.match(player, /setMapMediaSource\(sharedMap\.filepath\)/);
 });

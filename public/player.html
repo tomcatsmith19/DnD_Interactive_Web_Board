@@ -169,6 +169,9 @@
     .fantasy-token-button { width:34px; height:34px; padding:0 !important; color:#f4d76d; background:linear-gradient(#4b2915,#1d1009); border:2px ridge #d4af37; border-radius:50% 50% 44% 44%; box-shadow:0 0 0 1px #5b3517,0 2px 5px #000; font-family:Georgia,'Times New Roman',serif; font-size:23px !important; font-weight:bold; line-height:28px; cursor:pointer; text-shadow:0 1px #000; }
     .fantasy-token-button:hover { color:#1d1009; background:#f4d76d; }
     .token-size-label { color:#f4d76d; font-family:'MedievalSharp',Georgia,serif; white-space:nowrap; }
+    .map-media { position:relative; width:100%; }
+    .map-media > img,.map-media > video { width:100%; height:100%; display:block; }
+    .map-media > [hidden] { display:none; }
     @keyframes token-death-float { 0%{transform:translate(-50%,0) scale(.65);opacity:0} 18%{transform:translate(-50%,-12px) scale(1.1);opacity:1} 100%{transform:translate(-50%,-130px) scale(.85);opacity:0} }
 
     #menu {
@@ -291,7 +294,10 @@
   <div id="scrollWrapper" style="position: fixed; inset: 0; overflow: auto; z-index: 0;">
     <div id="mapContainer" style="position: relative; display: inline-block;">
       <div id="mapTransformLayer" style="transform-origin: top left; position: relative;">
-        <img id="mapImage" src="data/maps/blank.jpg" alt="Map Image" style="width: 100%; height: auto; display: block;">
+        <div id="mapImage" class="map-media" data-src="data/maps/blank.jpg">
+          <img id="mapStaticImage" src="data/maps/blank.jpg" alt="Map Image" draggable="false">
+          <video id="mapVideo" aria-label="Animated map" autoplay loop muted playsinline hidden></video>
+        </div>
         <svg id="tokenDistanceLayer" class="token-distance-layer" aria-hidden="true"></svg>
         <div id="mapTokenLayer"
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 6; pointer-events: none;"></div>
@@ -751,6 +757,34 @@
     const monsters = []; // Each: { id, name, hp, init, conditions, x, y, isplayer }
     const tokenLayer = document.getElementById('mapTokenLayer');
     const mapImage = document.getElementById('mapImage');
+    const mapStaticImage = document.getElementById('mapStaticImage');
+    const mapVideo = document.getElementById('mapVideo');
+    function isWebmMapSource(source = '') {
+      try { return decodeURIComponent(String(source).split(/[?#]/)[0]).toLowerCase().endsWith('.webm'); }
+      catch { return String(source).toLowerCase().includes('.webm'); }
+    }
+    function getMapNaturalSize() {
+      return mapVideo.hidden
+        ? { width: mapStaticImage.naturalWidth, height: mapStaticImage.naturalHeight }
+        : { width: mapVideo.videoWidth, height: mapVideo.videoHeight };
+    }
+    function setMapMediaSource(source) {
+      if (!source || mapImage.dataset.src === source) return;
+      mapImage.dataset.src = source;
+      const useVideo = isWebmMapSource(source);
+      mapStaticImage.hidden = useVideo;
+      mapVideo.hidden = !useVideo;
+      if (useVideo) {
+        mapVideo.src = source;
+        mapVideo.load();
+        mapVideo.play().catch(() => {});
+      } else {
+        mapVideo.pause();
+        mapStaticImage.src = source;
+      }
+    }
+    mapStaticImage.addEventListener('load', () => mapImage.dispatchEvent(new Event('load')));
+    mapVideo.addEventListener('loadedmetadata', () => mapImage.dispatchEvent(new Event('load')));
     const selectedMapTokenIds = new Set();
     let partyCatalog = [];
     let basePartyCatalog = [];
@@ -1471,9 +1505,10 @@
     }
 
     function applySharedMapScale() {
-      if (!mapImage.naturalWidth || !mapImage.naturalHeight) return;
-      const scaledWidth = mapImage.naturalWidth * sharedMapScale;
-      const scaledHeight = mapImage.naturalHeight * sharedMapScale;
+      const naturalSize = getMapNaturalSize();
+      if (!naturalSize.width || !naturalSize.height) return;
+      const scaledWidth = naturalSize.width * sharedMapScale;
+      const scaledHeight = naturalSize.height * sharedMapScale;
       const mapTransformLayer = document.getElementById('mapTransformLayer');
       mapTransformLayer.style.width = `${scaledWidth}px`;
       mapTransformLayer.style.height = `${scaledHeight}px`;
@@ -1532,7 +1567,7 @@
     mapTab.addEventListener('mousedown', (e) => {
       if (e.button !== 0) return;
       // Only start pan if clicking background (not tokens)
-      const isMapBackground = e.target === mapTab || e.target === mapContainer || e.target.id === 'mapImage';
+      const isMapBackground = e.target === mapTab || e.target === mapContainer || Boolean(e.target.closest?.('#mapImage'));
       if (!isMapBackground) return;
 
       isPanning = true;
@@ -1577,7 +1612,7 @@
     mapTab.addEventListener('touchstart', (e) => {
       if (e.touches.length === 1) {
         const target = e.target;
-        const isMapBackground = target === mapTab || target === mapContainer || target.id === 'mapImage';
+        const isMapBackground = target === mapTab || target === mapContainer || Boolean(target.closest?.('#mapImage'));
         if (!isMapBackground) return;
 
         isTouchPanning = true;
@@ -1863,7 +1898,7 @@
         applySharedMapScale();
       }
       if (sharedMap.filepath) {
-        if (mapImage.getAttribute('src') !== sharedMap.filepath) mapImage.src = sharedMap.filepath;
+        setMapMediaSource(sharedMap.filepath);
         scheduleMapLayoutRefresh();
       }
     });
