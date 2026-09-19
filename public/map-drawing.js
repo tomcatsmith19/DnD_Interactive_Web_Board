@@ -1048,6 +1048,19 @@
       const definitions = isFogLayer ? createFogDefinitions() : (drawings.some(drawing => drawing.type === "lasso-erase") ? createSvgElement("defs") : null);
       if (definitions) drawingLayer.appendChild(definitions);
 
+      // Drawings between the same eraser operations can share one SVG mask.
+      // This avoids reproducing every later eraser polygon for every shape.
+      const laterErasersByIndex = new Array(drawings.length);
+      let laterErasers = [];
+      for (let index = drawings.length - 1; index >= 0; index -= 1) {
+        laterErasersByIndex[index] = laterErasers;
+        const candidate = drawings[index];
+        if (candidate.type === "lasso-erase" && (candidate.points || []).length >= 3) {
+          laterErasers = [candidate, ...laterErasers];
+        }
+      }
+      const eraserMasks = new Map();
+
       drawings.forEach((drawing, drawingIndex) => {
         if (drawing.type === "lasso-erase") return;
         const shape = createShapeElement(drawing, false);
@@ -1055,17 +1068,21 @@
           return;
         }
 
-        const laterErasers = drawings.slice(drawingIndex + 1)
-          .filter(item => item.type === "lasso-erase" && (item.points || []).length >= 3);
+        const laterErasers = laterErasersByIndex[drawingIndex];
         if (laterErasers.length && definitions) {
-          const maskId = `${layerKey}-erase-mask-${drawingIndex}`;
-          const mask = createSvgElement("mask", { id: maskId, maskUnits: "userSpaceOnUse", x: "0", y: "0", width: String(width), height: String(height) });
-          mask.appendChild(createSvgElement("rect", { x: "0", y: "0", width: String(width), height: String(height), fill: "white" }));
-          laterErasers.forEach(eraser => mask.appendChild(createSvgElement("polygon", {
-            points: eraser.points.map(point => `${roundPixels(point.x * width)},${roundPixels(point.y * height)}`).join(" "),
-            fill: "black"
-          })));
-          definitions.appendChild(mask);
+          const maskKey = laterErasers[0].id || String(drawings.indexOf(laterErasers[0]));
+          let maskId = eraserMasks.get(maskKey);
+          if (!maskId) {
+            maskId = `${layerKey}-erase-mask-${eraserMasks.size}`;
+            const mask = createSvgElement("mask", { id: maskId, maskUnits: "userSpaceOnUse", x: "0", y: "0", width: String(width), height: String(height) });
+            mask.appendChild(createSvgElement("rect", { x: "0", y: "0", width: String(width), height: String(height), fill: "white" }));
+            laterErasers.forEach(eraser => mask.appendChild(createSvgElement("polygon", {
+              points: eraser.points.map(point => `${roundPixels(point.x * width)},${roundPixels(point.y * height)}`).join(" "),
+              fill: "black"
+            })));
+            definitions.appendChild(mask);
+            eraserMasks.set(maskKey, maskId);
+          }
           shape.setAttribute("mask", `url(#${maskId})`);
         }
 

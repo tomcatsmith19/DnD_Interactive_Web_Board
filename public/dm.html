@@ -179,7 +179,14 @@
 
         #mapTab {
             overflow: auto !important;
-            /* force scrollbars when needed */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        #mapTab::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            display: none;
         }
 
         #mapContainer {
@@ -765,7 +772,7 @@
                 <div id="foragingOutput" class="foraging-output"><p style="padding: 10px;">Loading the foraging tables…</p></div>
                 <details>
                     <summary style="cursor:pointer; color:#f4d76d; margin-bottom:10px;">Open original PDF tables</summary>
-                    <iframe class="foraging-frame" src="data/books/foraging.pdf#page=2&view=FitH" title="Materia Medica foraging tables"></iframe>
+                    <iframe class="foraging-frame" src="about:blank" data-src="data/books/foraging.pdf#page=2&view=FitH" loading="lazy" title="Materia Medica foraging tables"></iframe>
                 </details>
             </section>
         </div>
@@ -1667,7 +1674,8 @@
                 </optgroup>
 
                 <optgroup label="Backwater">
-                    <option value="backwater.png">Backwater</option>
+                    <option value="backwater-board.jpg">Backwater</option>
+                    <option value="backwater.png" hidden>Backwater (legacy full resolution)</option>
                     <option value="swamp.jpg">Swamp</option>
                     <option value="swamp hut.jpg">Swamp Hut</option>
                     <option value="Esotaric Cult of Dagon Hideout.webp">Dagon Cult Hideout</option>
@@ -1733,12 +1741,12 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-    <script src="map-drawing.js?v=23"></script>
+    <script src="map-drawing.js?v=24"></script>
     <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=5"></script>
-    <script src="board-sync.js?v=6"></script>
-    <script src="map-stickers.js?v=25"></script>
-    <script src="shared-timer.js?v=4"></script>
+    <script src="board-sync.js?v=7"></script>
+    <script src="map-stickers.js?v=26"></script>
+    <script src="shared-timer.js?v=5"></script>
     <script src="board-ui.js?v=5"></script>
     <script src="reference.js?v=2"></script>
     <script src="cpu-action-advisor.js?v=1"></script>
@@ -6250,6 +6258,11 @@
                 left: '25px'
             }
         });
+        document.querySelectorAll('details .foraging-frame[data-src]').forEach(frame => {
+            frame.closest('details')?.addEventListener('toggle', event => {
+                if (event.currentTarget.open && frame.src === 'about:blank') frame.src = frame.dataset.src;
+            });
+        });
         const measurementToolbarManager = setupSharedMapDrawing({
             boardSync,
             db,
@@ -9484,7 +9497,7 @@
         switchTab('attacksTab');
     </script>
     <script src="campaign-manager.js?v=4"></script>
-    <script type="module" src="dice-roller-3d.js?v=19"></script>
+    <script type="module" src="dice-roller-3d.js?v=20"></script>
 </div>
 </body>
 

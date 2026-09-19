@@ -128,8 +128,8 @@ test('both boards load the sticker browser and place its tab before measurement'
   const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
   for (const role of ['dm', 'player']) {
     const html = fs.readFileSync(`public/${role}.html`, 'utf8');
-    assert.ok(html.includes('map-stickers.js?v=25'));
-    assert.ok(html.includes('map-drawing.js?v=23'));
+    assert.ok(html.includes('map-stickers.js?v=26'));
+    assert.ok(html.includes('map-drawing.js?v=24'));
     assert.match(html, /setupMapDrawingTabs\([^\n]+measurementToolbarManager, stickerManager\)/);
   }
   assert.ok(drawing.indexOf('label: "Stickers"') < drawing.indexOf('label: "Measurement"'));
@@ -156,7 +156,7 @@ test('the generated catalog matches the uploaded sticker tree and search runs of
   assert.equal(catalog.fileCount, 148047);
   assert.equal(catalog.files.length, catalog.fileCount);
   assert.ok(catalog.files.some(path => path.endsWith('Coffin_Black_A_Cloth_Purple_1x2.webp')));
-  assert.match(browser, /new root\.Worker\("sticker-search-worker\.js\?v=2"\)/);
+  assert.match(browser, /new root\.Worker\("sticker-search-worker\.js\?v=3"\)/);
 });
 
 test('sticker placement captures the pointer before map panning', () => {

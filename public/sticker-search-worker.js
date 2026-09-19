@@ -93,7 +93,8 @@ async function loadCatalog() {
       })
       .then(catalog => {
         if (!Array.isArray(catalog.files)) throw new Error('Sticker catalog has an invalid format.');
-        const files = catalog.files.map(path => ({ type: 'file', path, search: clean(path) }));
+        const files = catalog.files;
+        const fileSearch = files.map(clean);
         const folderPaths = new Set();
         catalog.files.forEach(path => {
           let separator = path.lastIndexOf('/');
@@ -102,8 +103,9 @@ async function loadCatalog() {
             separator = path.lastIndexOf('/', separator - 1);
           }
         });
-        const folders = [...folderPaths].map(path => ({ type: 'folder', path, search: clean(path) }));
-        return { files, folders };
+        const folders = [...folderPaths];
+        const folderSearch = folders.map(clean);
+        return { files, fileSearch, folders, folderSearch };
       });
   }
   return catalogPromise;
@@ -121,9 +123,9 @@ self.addEventListener('message', async event => {
     const normalizedQuery = clean(query);
     const best = [];
     for (let index = 0; index < catalog.folders.length; index += 1) {
-      const item = catalog.folders[index];
-      const itemScore = score(normalizedQuery, item.search);
-      if (Number.isFinite(itemScore)) keepBest(best, { type: item.type, path: item.path, score: itemScore + 250 }, 80);
+      const path = catalog.folders[index];
+      const itemScore = score(normalizedQuery, catalog.folderSearch[index]);
+      if (Number.isFinite(itemScore)) keepBest(best, { type: 'folder', path, score: itemScore + 250 }, 80);
       if (index && index % 3000 === 0) {
         await new Promise(resolve => setTimeout(resolve, 0));
         if (requestId !== latestRequestId) {
@@ -133,9 +135,9 @@ self.addEventListener('message', async event => {
       }
     }
     for (let index = 0; index < catalog.files.length; index += 1) {
-      const item = catalog.files[index];
-      const itemScore = score(normalizedQuery, item.search);
-      if (Number.isFinite(itemScore)) keepBest(best, { type: item.type, path: item.path, score: itemScore }, 80);
+      const path = catalog.files[index];
+      const itemScore = score(normalizedQuery, catalog.fileSearch[index]);
+      if (Number.isFinite(itemScore)) keepBest(best, { type: 'file', path, score: itemScore }, 80);
       if (index && index % 3000 === 0) {
         await new Promise(resolve => setTimeout(resolve, 0));
         if (requestId !== latestRequestId) {

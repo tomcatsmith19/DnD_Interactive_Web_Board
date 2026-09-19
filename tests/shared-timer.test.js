@@ -19,8 +19,8 @@ test('DM controls the shared timer while player pages are display-only', () => {
   const source = fs.readFileSync('public/shared-timer.js', 'utf8');
   const dm = fs.readFileSync('public/dm.html', 'utf8');
   const player = fs.readFileSync('public/player.html', 'utf8');
-  assert.match(dm, /shared-timer\.js\?v=4/);
-  assert.match(player, /shared-timer\.js\?v=4/);
+  assert.match(dm, /shared-timer\.js\?v=5/);
+  assert.match(player, /shared-timer\.js\?v=5/);
   assert.match(dm, /setupSharedCountdownTimer\(\{ db, firebase, isDm: true \}\)/);
   assert.match(player, /setupSharedCountdownTimer\(\{ db, firebase, isDm: false \}\)/);
   assert.match(source, /db\.collection\("shared"\)\.doc\(TIMER_DOCUMENT\)/);

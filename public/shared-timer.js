@@ -144,7 +144,7 @@
       lastRenderedSeconds = -1;
       render();
     }, error => console.error("Failed to synchronize countdown timer:", error));
-    const interval = root.setInterval(render, 250);
+    const interval = root.setInterval(render, 1000);
     render();
     return { element: widget, render, dispose() { root.clearInterval(interval); root.removeEventListener?.("resize", positionBesideMapTools); unsubscribe?.(); widget.remove(); } };
   }

@@ -5,6 +5,15 @@ const vm = require('node:vm');
 const { createFirestore } = require('./helpers/fake-firestore');
 const { create } = require('../public/board-sync');
 
+test('map scrollbars are hidden without disabling the scrollable pan surfaces', () => {
+    const dm = fs.readFileSync('public/dm.html', 'utf8');
+    const player = fs.readFileSync('public/player.html', 'utf8');
+    assert.match(dm, /#mapTab\s*\{[^}]*overflow:\s*auto[^}]*scrollbar-width:\s*none/s);
+    assert.match(player, /#scrollWrapper\s*\{[^}]*scrollbar-width:none/s);
+    assert.match(dm, /mapTab\.addEventListener\('mousedown'/);
+    assert.match(player, /mapTab\.addEventListener\('mousedown'/);
+});
+
 async function fixture(role = 'player') {
     const token = id => ({ id, name: id, hp: 30, maxHp: 30, init: 10, xRatio: .5, yRatio: .5, isplayer: true });
     const store = createFirestore({ 'shared/monsters': { monsters: [token('a'), token('b')] } });

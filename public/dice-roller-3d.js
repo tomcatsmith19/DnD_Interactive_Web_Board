@@ -1,5 +1,3 @@
-import DiceBox from './vendor/dice-box-threejs/dice-box-threejs.es.js?v=3';
-
 const SHARED_START_DELAY = 1800;
 const style = document.createElement('style');
 style.textContent = `
@@ -48,6 +46,8 @@ const previewColors = { campaignGold:'#f4d76d', coin_default:'#d8a900', coin_sil
 
 let diceBox;
 let diceReady;
+let DiceBoxClass;
+let diceModulePromise;
 let popupTimer;
 let clearTimer;
 let activeRoll = Promise.resolve();
@@ -60,7 +60,15 @@ const previewStates = new Map();
 const previewSoundBuffers = new Map();
 let previewAudioContext;
 
-function initializeDiceBox(surface = 'green-felt') {
+async function loadDiceBox() {
+  if (!DiceBoxClass) {
+    diceModulePromise ||= import('./vendor/dice-box-threejs/dice-box-threejs.es.js?v=3');
+    DiceBoxClass = (await diceModulePromise).default;
+  }
+  return DiceBoxClass;
+}
+
+async function initializeDiceBox(surface = 'green-felt') {
   if (diceReady && appliedSurface === surface) return diceReady;
   if (diceBox && appliedSurface !== surface) {
     diceBox.clearDice?.();
@@ -68,6 +76,7 @@ function initializeDiceBox(surface = 'green-felt') {
     diceBox = null;
     diceReady = null;
   }
+  const DiceBox = await loadDiceBox();
   appliedSurface = surface;
   diceBox = new DiceBox('#sharedDiceStage', {
     assetPath:'/assets/dice-box-threejs/', sounds:true, volume:100, shadows:true,
@@ -217,6 +226,7 @@ if (sharedRollRef) {
     const payload = snapshot.data() || {};
     if (!payload.id || seenRollIds.has(payload.id) || Number(payload.createdAt) < listenerStartedAt - 1000) return;
     seenRollIds.add(payload.id);
+    if (seenRollIds.size > 250) seenRollIds.delete(seenRollIds.values().next().value);
     if (!canReceiveSharedRoll()) return;
     scheduleSharedRoll(payload, payload.senderClientId !== diceClientId);
   }, error => console.error('Could not receive shared dice rolls:', error));

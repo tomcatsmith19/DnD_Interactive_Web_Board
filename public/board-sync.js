@@ -36,22 +36,32 @@
     return patch;
   }
 
-  function create({ db, firebase, intervalMs = 30000, onError = error => console.error('Board synchronization:', error), autoStart = true }) {
+  function create({ db, firebase, intervalMs = 120000, onError = error => console.error('Board synchronization:', error), autoStart = true }) {
     const pointer = db.collection('shared').doc('map');
     const boards = db.collection('boardStates');
     const layers = ['tokens', 'drawings', 'fogOfWar', 'stickers'];
     const subscribers = Object.fromEntries(layers.map(layer => [layer, new Set()]));
     const caches = Object.fromEntries(layers.map(layer => [layer, new Map()]));
     const versions = Object.fromEntries(layers.map(layer => [layer, 0]));
+    const fingerprints = Object.fromEntries(layers.map(layer => [layer, '']));
     let generation = '', currentMap, mapVersion = 0, unlisten = [], stopPointer, timer, ready, refreshInProgress = null, disposed = false;
     const mapSubscribers = new Set();
     const stamp = () => firebase.firestore.FieldValue.serverTimestamp();
     const collection = (layer, id = generation) => boards.doc(id).collection(layer);
-    function emit(layer, reset = false) {
+    function fingerprint(layer) {
+      return JSON.stringify([...caches[layer].entries()]
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([id, value]) => [id, clean(value)]));
+    }
+    function emit(layer, reset = false, force = false) {
+      const nextFingerprint = fingerprint(layer);
+      if (!force && !reset && fingerprints[layer] === nextFingerprint) return false;
+      fingerprints[layer] = nextFingerprint;
       const values = [...caches[layer].values()].map(value => ({ ...clone(value), _boardGeneration: generation }));
       if (layer === 'tokens') values.sort((a, b) => String(a.id).localeCompare(String(b.id)));
       else values.sort((a, b) => (a._order || 0) - (b._order || 0) || a.id.localeCompare(b.id));
       subscribers[layer].forEach(callback => callback(values, { generation, reset }));
+      return true;
     }
     function activate(id) {
       if (!id || id === generation || disposed) return;
@@ -59,6 +69,7 @@
       generation = id;
       layers.forEach(layer => {
         caches[layer].clear(); versions[layer]++;
+        fingerprints[layer] = '';
         emit(layer, true);
         unlisten.push(collection(layer, id).onSnapshot(snapshot => {
           if (id !== generation || disposed) return;
@@ -66,8 +77,10 @@
             if (change.type === 'removed') caches[layer].delete(change.doc.id);
             else caches[layer].set(change.doc.id, { ...change.doc.data(), id: change.doc.id });
           });
-          versions[layer]++;
-          emit(layer);
+          if (snapshot.docChanges().length) {
+            versions[layer]++;
+            emit(layer);
+          }
         }, onError));
       });
     }
@@ -119,7 +132,7 @@
       }
       receiveMap(snapshot.data());
       stopPointer = pointer.onSnapshot(doc => receiveMap(doc.data()), onError);
-      if (intervalMs > 0) timer = setInterval(() => { if (!root.document?.hidden) reconcile().catch(onError); }, intervalMs);
+      if (intervalMs > 0) timer = setInterval(() => { if (!root.document?.hidden) reconcile({ quiet: true }).catch(onError); }, intervalMs);
       return generation;
     }
     function start() {
@@ -153,6 +166,7 @@
     }
     async function reconcile(options = {}) {
       const force = options === true || Boolean(options.force);
+      const quiet = options !== true && Boolean(options.quiet);
       await start();
       if (refreshInProgress) {
         await refreshInProgress;
@@ -169,10 +183,15 @@
         layers.forEach((layer, index) => {
           // A newer live event always wins over a periodic request already in flight.
           if (before[layer] !== versions[layer] || snapshots[index].metadata?.hasPendingWrites) return;
-          caches[layer].clear();
-          snapshots[index].forEach(doc => caches[layer].set(doc.id, { ...doc.data(), id: doc.id }));
-          versions[layer]++;
-          emit(layer);
+          const refreshed = new Map();
+          snapshots[index].forEach(doc => refreshed.set(doc.id, { ...doc.data(), id: doc.id }));
+          const previous = caches[layer];
+          caches[layer] = refreshed;
+          if (emit(layer)) versions[layer]++;
+          else {
+            caches[layer] = previous;
+            if (!quiet) emit(layer, false, true);
+          }
         });
       })().finally(() => { refreshInProgress = null; });
       return refreshInProgress;
@@ -228,7 +247,7 @@
       },
       subscribe(layer, callback) {
         subscribers[layer].add(callback);
-        if (generation) emit(layer);
+        if (generation) emit(layer, false, true);
         return () => subscribers[layer].delete(callback);
       },
       patch(id, fields, expected = generation) { return mutate('tokens', [id], token => tokenPatch(token, fields), expected); },

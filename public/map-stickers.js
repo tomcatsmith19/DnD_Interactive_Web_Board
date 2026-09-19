@@ -296,6 +296,7 @@
     let favorites = [];
     const urlCache = new Map();
     const mediaDimensions = new Map();
+    const stickerElements = new Map();
     const localOverrides = new Map();
     const loopingSounds = new Map();
     const teleportLocks = new Map();
@@ -310,6 +311,7 @@
     let currentItems = [];
     let nextPageToken = null;
     let searchWorker = null;
+    let searchWorkerIdleTimer = null;
     let searchRequestId = 0;
     let fallbackCatalogPromise = null;
     const pendingSearches = new Map();
@@ -323,6 +325,32 @@
     let requestPanelClose = () => {};
     let lastPlacementPointer = { x: root.innerWidth / 2, y: root.innerHeight / 2 };
     let placementPreviewPath = "";
+    const MAX_MEDIA_CACHE_ENTRIES = 500;
+
+    const videoVisibilityObserver = typeof root.IntersectionObserver === "function"
+      ? new root.IntersectionObserver(entries => entries.forEach(entry => {
+          const video = entry.target;
+          if (entry.isIntersecting && !document.hidden) video.play().catch(() => {});
+          else video.pause();
+        }), { rootMargin: "150px" })
+      : null;
+
+    function trimCache(cache, limit = MAX_MEDIA_CACHE_ENTRIES) {
+      while (cache.size > limit) cache.delete(cache.keys().next().value);
+    }
+
+    function syncStickerVideoVisibility() {
+      stickerElements.forEach(element => {
+        const video = element.querySelector("video");
+        if (!video) return;
+        if (document.hidden) video.pause();
+        else if (videoVisibilityObserver) {
+          videoVisibilityObserver.unobserve(video);
+          videoVisibilityObserver.observe(video);
+        } else video.play().catch(() => {});
+      });
+    }
+    document.addEventListener("visibilitychange", syncStickerVideoVisibility);
 
     const layer = document.createElement("div");
     layer.id = "mapStickerLayer";
@@ -799,12 +827,17 @@
 
     function resolveUrl(itemOrPath) {
       const path = typeof itemOrPath === "string" ? itemOrPath : itemOrPath.fullPath;
-      if (!urlCache.has(path)) {
+      if (urlCache.has(path)) {
+        const cached = urlCache.get(path);
+        urlCache.delete(path);
+        urlCache.set(path, cached);
+      } else {
         const ref = typeof itemOrPath === "string" ? storage.ref().child(path) : itemOrPath;
         urlCache.set(path, ref.getDownloadURL().catch(error => {
           urlCache.delete(path);
           throw error;
         }));
+        trimCache(urlCache);
       }
       return urlCache.get(path);
     }
@@ -817,8 +850,8 @@
         media.muted = true;
         media.loop = true;
         media.playsInline = true;
-        media.preload = preview ? "metadata" : "auto";
-        if (!preview) media.autoplay = true;
+        media.preload = "metadata";
+        if (!preview && !videoVisibilityObserver) media.autoplay = true;
       } else {
         media.alt = "";
         media.loading = "lazy";
@@ -828,9 +861,14 @@
       const rememberDimensions = () => {
         const width = media.videoWidth || media.naturalWidth;
         const height = media.videoHeight || media.naturalHeight;
-        if (width && height) mediaDimensions.set(path, { width, height });
+        if (width && height) {
+          if (mediaDimensions.has(path)) mediaDimensions.delete(path);
+          mediaDimensions.set(path, { width, height });
+          trimCache(mediaDimensions);
+        }
       };
       media.addEventListener(media.tagName === "VIDEO" ? "loadedmetadata" : "load", rememberDimensions, { once: true });
+      if (!preview && media.tagName === "VIDEO") videoVisibilityObserver?.observe(media);
       return media;
     }
 
@@ -1069,16 +1107,31 @@
       loadFolder(path);
     }
 
+    function stopSearchWorker() {
+      clearTimeout(searchWorkerIdleTimer);
+      searchWorkerIdleTimer = null;
+      if (pendingSearches.size) return;
+      searchWorker?.terminate();
+      searchWorker = null;
+    }
+
+    function scheduleSearchWorkerCleanup() {
+      clearTimeout(searchWorkerIdleTimer);
+      searchWorkerIdleTimer = setTimeout(stopSearchWorker, 45000);
+    }
+
     function searchWithWorker(query) {
       if (!root.Worker) return searchWithoutWorker(query);
+      clearTimeout(searchWorkerIdleTimer);
       if (!searchWorker) {
-        searchWorker = new root.Worker("sticker-search-worker.js?v=2");
+        searchWorker = new root.Worker("sticker-search-worker.js?v=3");
         searchWorker.addEventListener("message", event => {
           const request = pendingSearches.get(event.data?.requestId);
           if (!request) return;
           pendingSearches.delete(event.data.requestId);
           if (event.data.error) request.reject(new Error(event.data.error));
           else request.resolve(event.data);
+          if (!pendingSearches.size) scheduleSearchWorkerCleanup();
         });
         searchWorker.addEventListener("error", event => {
           const error = new Error(event.message || "The sticker search worker failed.");
@@ -1086,6 +1139,7 @@
           pendingSearches.clear();
           searchWorker?.terminate();
           searchWorker = null;
+          clearTimeout(searchWorkerIdleTimer);
         });
       }
       const requestId = ++searchRequestId;
@@ -1580,34 +1634,55 @@
     }
 
     function renderStickers() {
-      layer.replaceChildren();
-      stickers.forEach(sticker => {
-        const hasUpstreamTrigger = hasUpstreamStickerTrigger(stickers, sticker.id);
+      const liveIds = new Set(stickers.map(sticker => sticker.id));
+      const upstreamIds = new Set(stickers.flatMap(sticker => sticker.interaction?.linkedStickerIds || []));
+      stickerElements.forEach((element, id) => {
+        if (liveIds.has(id)) return;
+        const video = element.querySelector("video");
+        if (video) { videoVisibilityObserver?.unobserve(video); video.pause(); video.removeAttribute("src"); }
+        element.remove();
+        stickerElements.delete(id);
+      });
+      stickers.forEach((sticker, desiredIndex) => {
+        const hasUpstreamTrigger = upstreamIds.has(sticker.id);
         const directlyTriggerable = hasStickerInteraction(sticker) && !hasUpstreamTrigger;
-        const element = document.createElement("div");
-        element.className = "map-sticker";
+        let element = stickerElements.get(sticker.id);
+        if (!element) {
+          element = document.createElement("div");
+          element.className = "map-sticker";
+          element.dataset.stickerId = sticker.id;
+          element.addEventListener("pointerdown", event => beginStickerDrag(event, element._sticker, element));
+          element.addEventListener("click", event => {
+            const directlyTriggerable = element.dataset.directlyTriggerable === "true";
+            if (active || dragSession || !directlyTriggerable) return;
+            event.preventDefault();
+            event.stopPropagation();
+            runStickerInteractionTree(element._sticker).catch(reportError);
+          });
+          stickerElements.set(sticker.id, element);
+        }
+        element._sticker = sticker;
         element.classList.toggle("is-interactive", directlyTriggerable);
         element.classList.toggle("show-interaction-marker", canEditInteractions && hasStickerInteraction(sticker));
         element.classList.toggle("has-upstream-trigger", hasUpstreamTrigger);
-        element.dataset.stickerId = sticker.id;
+        element.dataset.directlyTriggerable = String(directlyTriggerable);
         element.title = `${cleanLabel(sticker.name || "Map sticker")}${hasUpstreamTrigger ? " — triggered by another sticker" : hasStickerInteraction(sticker) ? " — interactive" : ""}`;
         stickerStyle(element, sticker);
-        const media = mediaElement(sticker.storagePath);
-        element.appendChild(media);
-        resolveUrl(sticker.storagePath).then(url => {
-          if (element.isConnected) media.src = url;
-        }).catch(error => {
-          element.dataset.loadError = "true";
-          console.warn(`Could not load sticker ${sticker.storagePath}:`, error);
-        });
-        element.addEventListener("pointerdown", event => beginStickerDrag(event, sticker, element));
-        element.addEventListener("click", event => {
-          if (active || dragSession || !directlyTriggerable) return;
-          event.preventDefault();
-          event.stopPropagation();
-          runStickerInteractionTree(sticker).catch(reportError);
-        });
-        layer.appendChild(element);
+        if (element.dataset.storagePath !== sticker.storagePath) {
+          const previousVideo = element.querySelector("video");
+          if (previousVideo) { videoVisibilityObserver?.unobserve(previousVideo); previousVideo.pause(); }
+          const media = mediaElement(sticker.storagePath);
+          element.replaceChildren(media);
+          element.dataset.storagePath = sticker.storagePath;
+          delete element.dataset.loadError;
+          resolveUrl(sticker.storagePath).then(url => {
+            if (element.isConnected && element.dataset.storagePath === sticker.storagePath) media.src = url;
+          }).catch(error => {
+            element.dataset.loadError = "true";
+            console.warn(`Could not load sticker ${sticker.storagePath}:`, error);
+          });
+        }
+        if (layer.children[desiredIndex] !== element) layer.insertBefore(element, layer.children[desiredIndex] || null);
       });
       renderStickerSelection();
       renderTeleportOverlays();
