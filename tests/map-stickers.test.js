@@ -2,7 +2,10 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 const fs = require('node:fs');
 const vm = require('node:vm');
-const { cleanLabel, fuzzyScore, gridUnits, containingStickerFolder, hasStickerInteraction, pointInCircularRange } = require('../public/map-stickers');
+const {
+  cleanLabel, fuzzyScore, gridUnits, containingStickerFolder, hasStickerInteraction, pointInCircularRange,
+  collectLinkedStickerTree, createStickerFavorite, instantiateStickerFavorite, hasUpstreamStickerTrigger
+} = require('../public/map-stickers');
 
 test('sticker labels turn storage filenames into readable names', () => {
   assert.equal(cleanLabel('!Core_Settlements'), 'Core Settlements');
@@ -26,8 +29,45 @@ test('grid dimensions are read from sticker filename suffixes', () => {
 test('interactive sticker detection and circular teleport ranges are deterministic', () => {
   assert.equal(hasStickerInteraction({ interaction: { sound: { src: 'bell.mp3' } } }), true);
   assert.equal(hasStickerInteraction({ interaction: null }), false);
+  assert.equal(hasStickerInteraction({ interaction: { linkedStickerIds: ['gate'] } }), true);
   assert.equal(pointInCircularRange({ x: .55, y: .5 }, { x: .5, y: .5 }, 51, 1000, 500), true);
   assert.equal(pointInCircularRange({ x: .6, y: .5 }, { x: .5, y: .5 }, 51, 1000, 500), false);
+});
+
+test('stickers with upstream links cannot act as direct interaction triggers', () => {
+  const stickers = [
+    { id: 'lever', interaction: { linkedStickerIds: ['gate'] } },
+    { id: 'gate', interaction: { animation: { rotationDegrees: 90 } } },
+    { id: 'chest', interaction: { loot: { type: 'hoard' } } }
+  ];
+  assert.equal(hasUpstreamStickerTrigger(stickers, 'lever'), false);
+  assert.equal(hasUpstreamStickerTrigger(stickers, 'gate'), true);
+  assert.equal(hasUpstreamStickerTrigger(stickers, 'chest'), false);
+  const browser = fs.readFileSync('public/map-stickers.js', 'utf8');
+  assert.match(browser, /const directlyTriggerable = hasStickerInteraction\(sticker\) && !hasUpstreamTrigger/);
+  assert.match(browser, /if \(active \|\| dragSession \|\| !directlyTriggerable\) return/);
+});
+
+test('favorite stickers preserve and remap the full linked interaction tree', () => {
+  const stickers = [
+    { id: 'lever', name: 'Lever', storagePath: 'lever.webp', x: .2, y: .3, widthRatio: .05, heightRatio: .1, interaction: { sound: { src: 'click.mp3' }, linkedStickerIds: ['gate'] } },
+    { id: 'gate', name: 'Gate', storagePath: 'gate.webp', x: .5, y: .3, widthRatio: .2, heightRatio: .3, interaction: { animation: { rotationDegrees: 90 }, teleport: { toX: .55, toY: .35, radius: 1 }, linkedStickerIds: ['torch'] } },
+    { id: 'torch', name: 'Torch', storagePath: 'torch.webp', x: .6, y: .4, widthRatio: .03, heightRatio: .08, interaction: { sound: { src: 'fire.mp3' }, linkedStickerIds: ['lever'] } },
+    { id: 'unlinked', name: 'Rock', storagePath: 'rock.webp', x: .9, y: .9 }
+  ];
+  assert.deepEqual(collectLinkedStickerTree(stickers, 'lever').map(item => item.id), ['lever', 'gate', 'torch']);
+  const favorite = createStickerFavorite(stickers, 'lever', 'favorite-test');
+  const ids = ['new-lever', 'new-gate', 'new-torch'];
+  const placed = instantiateStickerFavorite(favorite, .4, .5, () => ids.shift());
+  assert.equal(placed.length, 3);
+  assert.deepEqual(placed.map(item => [item.id, item.x, item.y]), [
+    ['new-lever', .4, .5], ['new-gate', .7, .5], ['new-torch', .8, .6]
+  ]);
+  assert.deepEqual(placed[0].interaction.linkedStickerIds, ['new-gate']);
+  assert.deepEqual(placed[1].interaction.linkedStickerIds, ['new-torch']);
+  assert.deepEqual([placed[1].interaction.teleport.toX, placed[1].interaction.teleport.toY], [.75, .55]);
+  assert.deepEqual(placed[2].interaction.linkedStickerIds, ['new-lever']);
+  assert.equal(placed[0].interaction.sound.src, 'click.mp3');
 });
 
 test('DM configures all sticker interaction types while players receive interactive runtime support', () => {
@@ -61,14 +101,34 @@ test('DM configures all sticker interaction types while players receive interact
   assert.match(dm, /canRunTeleports: true/);
   assert.match(player, /canRunTeleports: true/);
   assert.match(player, /getSoundVolume: \(\) => sfxVolume/);
+  assert.match(dm, /publishSoundEffect: \(src, settings\) => playDmSoundEffect\(src, settings\)/);
+  assert.match(player, /publishSoundEffect: \(src, settings\) => publishSharedSfx\(src, settings\)/);
+  for (const page of [dm, player]) {
+    assert.match(page, /sfxChannelId: channelId/);
+    assert.match(page, /sfxLoop: loop/);
+    assert.match(page, /sfxAction: action/);
+    assert.match(page, /sharedLoopingSfx/);
+  }
+  assert.match(browser, /options\.publishSoundEffect\(src, \{ loop: Boolean\(sound\.loop\), channelId: `sticker:\$\{stickerId\}` \}\)/);
   assert.doesNotMatch(player, /sharedSfxVolume/);
+});
+
+test('favorites use a naming dialog with edit and delete controls', () => {
+  const browser = fs.readFileSync('public/map-stickers.js', 'utf8');
+  assert.match(browser, /class="sticker-favorite-dialog-card"/);
+  assert.match(browser, /name="favoriteName"/);
+  assert.match(browser, /function openFavoriteDialog/);
+  assert.match(browser, /function saveFavoriteDialog/);
+  assert.match(browser, /function deleteFavorite/);
+  assert.match(browser, /sticker-favorite-edit/);
+  assert.match(browser, /sticker-favorite-delete/);
 });
 
 test('both boards load the sticker browser and place its tab before measurement', () => {
   const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
   for (const role of ['dm', 'player']) {
     const html = fs.readFileSync(`public/${role}.html`, 'utf8');
-    assert.ok(html.includes('map-stickers.js?v=22'));
+    assert.ok(html.includes('map-stickers.js?v=25'));
     assert.ok(html.includes('map-drawing.js?v=23'));
     assert.match(html, /setupMapDrawingTabs\([^\n]+measurementToolbarManager, stickerManager\)/);
   }

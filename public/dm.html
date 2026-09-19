@@ -1736,8 +1736,9 @@
     <script src="map-drawing.js?v=23"></script>
     <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=5"></script>
-    <script src="board-sync.js?v=5"></script>
-    <script src="map-stickers.js?v=22"></script>
+    <script src="board-sync.js?v=6"></script>
+    <script src="map-stickers.js?v=25"></script>
+    <script src="shared-timer.js?v=4"></script>
     <script src="board-ui.js?v=5"></script>
     <script src="reference.js?v=2"></script>
     <script src="cpu-action-advisor.js?v=1"></script>
@@ -1756,6 +1757,7 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
         const db = firebase.firestore();
+        const sharedCountdownTimer = setupSharedCountdownTimer({ db, firebase, isDm: true });
         const boardSync = SharedBoardSync.create({ db, firebase, onError: reportBoardSyncError });
         const storage = firebase.storage();
 
@@ -1770,6 +1772,7 @@
         let pendingSharedMusicPath = '';
         let lastSharedSfxEventId = null;
         let sharedAudioSnapshotSeen = false;
+        const sharedLoopingSfx = new Map();
 
         function makeSharedAudioEventId() {
             return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
@@ -1783,11 +1786,17 @@
             }, { merge: true }).catch(error => console.error('Failed to sync background music:', error));
         }
 
-        function playDmSoundEffect(src) {
-            sharedAudioRef.set({
+        function playDmSoundEffect(src, options = {}) {
+            const channelId = String(options.channelId || '');
+            const loop = Boolean(options.loop && channelId);
+            const action = loop && sharedLoopingSfx.has(channelId) ? 'stop' : 'play';
+            return sharedAudioRef.set({
                 sfxPath: src,
                 sfxEventId: makeSharedAudioEventId(),
                 sfxSentAt: Date.now(),
+                sfxLoop: loop,
+                sfxChannelId: channelId,
+                sfxAction: action,
                 sfxChangedAt: firebase.firestore.FieldValue.serverTimestamp()
             }, { merge: true }).catch(error => console.error('Failed to sync sound effect:', error));
         }
@@ -1824,10 +1833,20 @@
             if (playRequest) playRequest.then(() => { pendingSharedMusicPath = ''; }).catch(() => { pendingSharedMusicPath = nextPath; });
         }
 
-        function applySharedSfx(src) {
-            if (!src) return;
+        function applySharedSfx(src, audioState = {}) {
+            const channelId = String(audioState.sfxChannelId || '');
+            const existing = channelId ? sharedLoopingSfx.get(channelId) : null;
+            if (existing) {
+                existing.pause();
+                existing.removeAttribute('src');
+                sharedLoopingSfx.delete(channelId);
+            }
+            if (!src || audioState.sfxAction === 'stop') return;
             const sfx = new Audio(src);
             sfx.volume = sharedSfxVolume;
+            sfx.loop = Boolean(audioState.sfxLoop && channelId);
+            if (sfx.loop) sharedLoopingSfx.set(channelId, sfx);
+            sfx.addEventListener('ended', () => { if (channelId) sharedLoopingSfx.delete(channelId); }, { once: true });
             const playRequest = sfx.play();
             if (playRequest) playRequest.catch(error => console.warn('Sound effect playback was blocked:', error));
         }
@@ -1840,7 +1859,7 @@
             const eventId = audioState.sfxEventId || null;
             if (eventId && eventId !== lastSharedSfxEventId) {
                 const isRecent = Date.now() - Number(audioState.sfxSentAt || 0) < 5000;
-                if (sharedAudioSnapshotSeen || isRecent) applySharedSfx(audioState.sfxPath);
+                if (sharedAudioSnapshotSeen || isRecent) applySharedSfx(audioState.sfxPath, audioState);
                 lastSharedSfxEventId = eventId;
             }
             sharedAudioSnapshotSeen = true;
@@ -6268,6 +6287,7 @@
             tokenLayer: document.getElementById('mapTokenLayer'),
             getGridSize: () => currentTokenSize,
             getSoundVolume: () => sharedSfxVolume,
+            publishSoundEffect: (src, settings) => playDmSoundEffect(src, settings),
             getLootParameters: () => ({
                 type: document.getElementById('lootType')?.value || 'individual',
                 cr: Number(document.getElementById('lootCR')?.value) || 0,

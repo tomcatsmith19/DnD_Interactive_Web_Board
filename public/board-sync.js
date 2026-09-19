@@ -245,6 +245,10 @@
       patchDrawings(layer, changes, expected = generation) { return mutate(layer, [...changes.keys()], (drawing, id) => drawing ? changes.get(id) : undefined, expected); },
       removeDrawings(layer, ids, expected = generation) { return mutate(layer, ids, () => null, expected); },
       addSticker(sticker, expected = generation) { return mutate('stickers', [sticker.id], existing => existing ? undefined : { ...sticker, _order: Date.now() }, expected); },
+      addStickers(stickers, expected = generation) {
+        const byId = new Map(stickers.map((sticker, index) => [sticker.id, { ...sticker, _order: Date.now() + index }]));
+        return mutate('stickers', [...byId.keys()], (existing, id) => existing ? undefined : byId.get(id), expected);
+      },
       patchStickers(changes, expected = generation) { return mutate('stickers', [...changes.keys()], (sticker, id) => sticker ? changes.get(id) : undefined, expected); },
       removeStickers(ids, expected = generation) { return mutate('stickers', ids, () => null, expected); },
       async patchMap(fields, expected = generation) {

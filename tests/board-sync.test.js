@@ -96,6 +96,17 @@ test('stickers synchronize as individual board records and survive map export', 
     assert.deepEqual((await f.second.exportState()).stickers.stickers, []);
 });
 
+test('linked favorite sticker trees are added in one synchronized mutation', async () => {
+    const f = await fixture();
+    await f.first.addStickers([
+        { id: 'lever', name: 'Lever', storagePath: 'lever.webp', interaction: { linkedStickerIds: ['gate'] } },
+        { id: 'gate', name: 'Gate', storagePath: 'gate.webp', interaction: { animation: { rotationDegrees: 90 } } }
+    ]);
+    const saved = (await f.second.exportState()).stickers.stickers;
+    assert.deepEqual(new Set(saved.map(sticker => sticker.id)), new Set(['lever', 'gate']));
+    assert.deepEqual(saved.find(sticker => sticker.id === 'lever').interaction.linkedStickerIds, ['gate']);
+});
+
 test('map switches freeze outgoing edits and reject late actions from the previous map', async () => {
     const f = await fixture(), old = f.first.generation;
     const next = await f.first.prepare({ map: { filepath: 'cave.jpg', mapScale: 2 }, monsters: { monsters: [token('a')] } });

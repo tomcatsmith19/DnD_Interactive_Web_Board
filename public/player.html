@@ -661,8 +661,9 @@
   <script src="map-drawing.js?v=23"></script>
   <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=5"></script>
-    <script src="board-sync.js?v=5"></script>
-    <script src="map-stickers.js?v=22"></script>
+    <script src="board-sync.js?v=6"></script>
+    <script src="map-stickers.js?v=25"></script>
+    <script src="shared-timer.js?v=4"></script>
   <script src="board-ui.js?v=5"></script>
     <script src="reference.js?v=2"></script>
 
@@ -680,6 +681,7 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
+    const sharedCountdownTimer = setupSharedCountdownTimer({ db, firebase, isDm: false });
         const boardSync = SharedBoardSync.create({ db, firebase, onError: reportBoardSyncError });
     const storage = firebase.storage();
     const playerSessionControls = document.getElementById('playerSessionControls');
@@ -1691,6 +1693,7 @@
     let pendingMusicPath = '';
     let lastSharedSfxEventId = null;
     let sharedAudioSnapshotSeen = false;
+    const sharedLoopingSfx = new Map();
 
     function makeAudioEventId() {
       return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
@@ -1704,11 +1707,17 @@
       }, { merge: true }).catch(error => console.error('Failed to sync background music:', error));
     }
 
-    function publishSharedSfx(src) {
+    function publishSharedSfx(src, options = {}) {
+      const channelId = String(options.channelId || '');
+      const loop = Boolean(options.loop && channelId);
+      const action = loop && sharedLoopingSfx.has(channelId) ? 'stop' : 'play';
       return sharedAudioRef.set({
         sfxPath: src,
         sfxEventId: makeAudioEventId(),
         sfxSentAt: Date.now(),
+        sfxLoop: loop,
+        sfxChannelId: channelId,
+        sfxAction: action,
         sfxChangedAt: firebase.firestore.FieldValue.serverTimestamp()
       }, { merge: true }).catch(error => console.error('Failed to sync sound effect:', error));
     }
@@ -1734,10 +1743,20 @@
       if (playRequest) playRequest.then(() => { pendingMusicPath = ''; }).catch(() => { pendingMusicPath = nextPath; });
     }
 
-    function applySharedSfx(src) {
-      if (!src) return;
+    function applySharedSfx(src, audioState = {}) {
+      const channelId = String(audioState.sfxChannelId || '');
+      const existing = channelId ? sharedLoopingSfx.get(channelId) : null;
+      if (existing) {
+        existing.pause();
+        existing.removeAttribute('src');
+        sharedLoopingSfx.delete(channelId);
+      }
+      if (!src || audioState.sfxAction === 'stop') return;
       const sfx = new Audio(src);
       sfx.volume = sfxVolume;
+      sfx.loop = Boolean(audioState.sfxLoop && channelId);
+      if (sfx.loop) sharedLoopingSfx.set(channelId, sfx);
+      sfx.addEventListener('ended', () => { if (channelId) sharedLoopingSfx.delete(channelId); }, { once: true });
       const playRequest = sfx.play();
       if (playRequest) playRequest.catch(error => console.warn('Sound effect playback was blocked:', error));
     }
@@ -1764,7 +1783,7 @@
         // Do not replay an old stored effect when a page first opens. A newly
         // sent effect is still accepted if it arrives with the first snapshot.
         const isRecent = Date.now() - Number(audioState.sfxSentAt || 0) < 5000;
-        if (sharedAudioSnapshotSeen || isRecent) applySharedSfx(audioState.sfxPath);
+        if (sharedAudioSnapshotSeen || isRecent) applySharedSfx(audioState.sfxPath, audioState);
         lastSharedSfxEventId = eventId;
       }
       sharedAudioSnapshotSeen = true;
@@ -1859,6 +1878,7 @@
       tokenLayer: document.getElementById('mapTokenLayer'),
       getGridSize: () => currentTokenSize,
       getSoundVolume: () => sfxVolume,
+      publishSoundEffect: (src, settings) => publishSharedSfx(src, settings),
       canRunTeleports: true,
       rootPath: 'sticker-library/v1'
     });

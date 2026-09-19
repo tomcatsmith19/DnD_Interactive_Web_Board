@@ -1,5 +1,7 @@
 (function (root) {
   const DEFAULT_ROOT = "sticker-library/v1";
+  const FAVORITES_PATH = "__sticker_favorites__";
+  const FAVORITES_STORAGE_KEY = "dndStickerFavoritesV1";
   const MEDIA_PATTERN = /\.(?:webp|png|jpe?g|gif|webm)$/i;
   const VIDEO_PATTERN = /\.webm$/i;
 
@@ -88,7 +90,80 @@
 
   function hasStickerInteraction(sticker) {
     const interaction = sticker?.interaction;
-    return Boolean(interaction && (interaction.animation || interaction.sound || interaction.loot || interaction.teleport));
+    return Boolean(interaction && (interaction.animation || interaction.sound || interaction.loot || interaction.teleport || interaction.linkedStickerIds?.length));
+  }
+
+  function hasUpstreamStickerTrigger(stickers, stickerId) {
+    return (stickers || []).some(sticker =>
+      sticker.id !== stickerId && sticker.interaction?.linkedStickerIds?.includes(stickerId)
+    );
+  }
+
+  function cloneStickerValue(value) {
+    return value == null ? value : JSON.parse(JSON.stringify(value));
+  }
+
+  function collectLinkedStickerTree(stickers, rootId) {
+    const byId = new Map((stickers || []).map(sticker => [sticker.id, sticker]));
+    const result = [];
+    const visited = new Set();
+    const visit = id => {
+      if (visited.has(id)) return;
+      visited.add(id);
+      const sticker = byId.get(id);
+      if (!sticker) return;
+      result.push(sticker);
+      (sticker.interaction?.linkedStickerIds || []).forEach(visit);
+    };
+    visit(rootId);
+    return result;
+  }
+
+  function createStickerFavorite(stickers, rootId, favoriteId = `favorite_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`) {
+    const tree = collectLinkedStickerTree(stickers, rootId);
+    const rootSticker = tree[0];
+    if (!rootSticker) return null;
+    return {
+      version: 1,
+      id: favoriteId,
+      name: cleanLabel(rootSticker.name || "Favorite sticker"),
+      rootId,
+      createdAt: Date.now(),
+      stickers: tree.map(sticker => ({
+        ...cloneStickerValue(sticker),
+        offsetX: Number(sticker.x || 0) - Number(rootSticker.x || 0),
+        offsetY: Number(sticker.y || 0) - Number(rootSticker.y || 0)
+      }))
+    };
+  }
+
+  function instantiateStickerFavorite(favorite, x, y, idFactory = makeId) {
+    const source = Array.isArray(favorite?.stickers) ? favorite.stickers : [];
+    const rootSticker = source.find(sticker => sticker.id === favorite.rootId) || source[0] || {};
+    const deltaX = Number(x) - Number(rootSticker.x || 0);
+    const deltaY = Number(y) - Number(rootSticker.y || 0);
+    const idMap = new Map(source.map(sticker => [sticker.id, idFactory()]));
+    return source.map(sticker => {
+      const copy = cloneStickerValue(sticker);
+      delete copy.offsetX;
+      delete copy.offsetY;
+      delete copy._order;
+      copy.id = idMap.get(sticker.id);
+      copy.x = roundRatio(Number(x) + Number(sticker.offsetX || 0));
+      copy.y = roundRatio(Number(y) + Number(sticker.offsetY || 0));
+      if (copy.interaction?.linkedStickerIds) {
+        copy.interaction.linkedStickerIds = copy.interaction.linkedStickerIds.map(id => idMap.get(id)).filter(Boolean);
+      }
+      if (copy.interaction?.teleport) {
+        copy.interaction.teleport.toX = roundRatio(Number(copy.interaction.teleport.toX) + deltaX);
+        copy.interaction.teleport.toY = roundRatio(Number(copy.interaction.teleport.toY) + deltaY);
+      }
+      if (copy.interaction?.animation?.restoreState) {
+        copy.interaction.animation.restoreState.x = roundRatio(Number(copy.interaction.animation.restoreState.x) + deltaX);
+        copy.interaction.animation.restoreState.y = roundRatio(Number(copy.interaction.animation.restoreState.y) + deltaY);
+      }
+      return copy;
+    });
   }
 
   function pointInCircularRange(point, center, radiusPixels, width, height) {
@@ -138,6 +213,8 @@
       .sticker-library-toolbar .sticker-search:focus{border-color:#f4d76d;box-shadow:0 0 0 2px rgba(244,215,109,.18);}
       .sticker-library-toolbar .sticker-interaction-button{flex:0 0 auto;width:auto;height:34px;padding:3px 10px;color:#f4d76d;background:#1d1009;border:1px solid #f4d76d;border-radius:5px;white-space:nowrap;font:13px Arial,sans-serif;cursor:pointer;}
       .sticker-library-toolbar .sticker-interaction-button:disabled{opacity:.45;cursor:default;}
+      .sticker-library-toolbar .sticker-favorite-button{flex:0 0 34px;width:34px;height:34px;padding:0;color:#f4d76d;background:#1d1009;border:1px solid #f4d76d;border-radius:5px;font:22px/30px Arial,sans-serif;cursor:pointer;}
+      .sticker-library-toolbar .sticker-favorite-button:disabled{opacity:.45;cursor:default;}
       .sticker-breadcrumbs{display:flex;flex:1 1 auto;align-items:center;gap:1px;min-width:0;min-height:18px;padding:0 2px;overflow-x:auto;scrollbar-width:thin;font:12px/1.2 Arial,sans-serif;}
       .sticker-library-toolbar .sticker-breadcrumbs button{flex:0 0 auto;width:auto;height:auto;min-height:0;padding:1px 2px;border:0;border-radius:2px;background:none;color:#d8c7ac;text-decoration:underline;text-underline-offset:2px;font:inherit;white-space:nowrap;box-shadow:none;}
       .sticker-library-toolbar .sticker-breadcrumbs button:hover:not(:disabled),.sticker-library-toolbar .sticker-breadcrumbs button:focus-visible{border:0;background:none;color:#fff4d6;outline:1px solid #8a6643;}
@@ -153,6 +230,13 @@
       .sticker-library-toolbar .sticker-folder-card:hover,.sticker-library-toolbar .sticker-folder-card:focus-visible{background:linear-gradient(#77502d,#4a2d19);}
       .sticker-library-toolbar .sticker-folder-card:hover::before,.sticker-library-toolbar .sticker-folder-card:focus-visible::before{background:#77502d;border-color:#f4d76d;}
       .sticker-folder-card .sticker-card-label{display:-webkit-box;overflow:hidden;white-space:normal;overflow-wrap:anywhere;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-height:1.2;text-overflow:ellipsis;}
+      .sticker-library-toolbar .sticker-favorites-folder::after{content:'\\2605';position:absolute;right:7px;top:4px;color:#f4d76d;font-size:17px;text-shadow:0 1px 2px #000;}
+      .sticker-favorite-item{position:relative;display:block;flex:0 0 81px;width:81px;height:75px;}
+      .sticker-library-toolbar .sticker-favorite-item>.sticker-favorite-card{width:100%;height:75px;}
+      .sticker-library-toolbar .sticker-favorite-card::after{content:'\\2605';position:absolute;right:4px;top:2px;color:#f4d76d;font-size:15px;text-shadow:0 1px 2px #000;pointer-events:none;}
+      .sticker-library-toolbar .sticker-favorite-manage{position:absolute;z-index:2;bottom:3px;width:23px;height:22px;padding:0;border:1px solid #b4893f;border-radius:4px;background:#1d1009;color:#f4d76d;font:15px/18px Arial,sans-serif;box-shadow:0 1px 3px #000;cursor:pointer;}
+      .sticker-library-toolbar .sticker-favorite-edit{left:3px;}
+      .sticker-library-toolbar .sticker-favorite-delete{right:3px;color:#ffb0a8;}
       .sticker-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
       .sticker-library-toolbar .sticker-load-more{display:flex;flex:0 0 81px;width:81px;height:75px;padding:5px;align-items:center;justify-content:center;font:12px Arial,sans-serif;white-space:normal;}
       .sticker-library-empty{flex:1 0 100%;margin:30px 8px;color:#d8c7ac;text-align:center;font:14px/1.4 Arial,sans-serif;}
@@ -173,16 +257,29 @@
       .sticker-interaction-editor label.sticker-enable{display:flex;grid-template-columns:none;font-weight:bold;}
       .sticker-interaction-editor input,.sticker-interaction-editor select{min-width:0;padding:6px;color:white;background:#2b190f;border:1px solid #8a6643;border-radius:4px;box-sizing:border-box;}
       .sticker-interaction-editor input[type="checkbox"]{width:auto;accent-color:#f4d76d;}
+      .sticker-link-list{max-height:180px;margin:0 9px 9px;padding:3px 7px;overflow:auto;border:1px solid #5e402b;border-radius:4px;background:#170d08;}
+      .sticker-interaction-editor .sticker-link-list label{display:flex;grid-template-columns:none;align-items:center;margin:3px 0;padding:3px 2px;}
+      .sticker-link-empty{display:block;padding:7px;color:#bba98e;}
       .sticker-interaction-editor .interaction-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:10px;}
       .sticker-interaction-editor button{padding:7px 10px;color:#f4d76d;background:#3d2718;border:1px solid #8a6643;border-radius:5px;cursor:pointer;}
       .sticker-interaction-editor .interaction-save{color:#1d1009;background:#f4d76d;border-color:#f4d76d;font-weight:bold;}
+      .sticker-favorite-dialog{position:fixed;z-index:4100;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.68);}
+      .sticker-favorite-dialog[hidden]{display:none;}
+      .sticker-favorite-dialog-card{width:min(420px,95vw);padding:16px;box-sizing:border-box;color:#fff4d6;background:#1d1009;border:2px solid #f4d76d;border-radius:9px;box-shadow:0 10px 35px #000;font:13px/1.4 Arial,sans-serif;}
+      .sticker-favorite-dialog-card h3{margin:0 0 10px;color:#f4d76d;font:20px 'MedievalSharp',Georgia,serif;}
+      .sticker-favorite-dialog-card label{display:grid;gap:5px;}
+      .sticker-favorite-dialog-card input{width:100%;padding:8px;box-sizing:border-box;color:white;background:#2b190f;border:1px solid #8a6643;border-radius:5px;}
+      .sticker-favorite-dialog-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:14px;}
+      .sticker-favorite-dialog-actions button{padding:7px 11px;color:#f4d76d;background:#3d2718;border:1px solid #8a6643;border-radius:5px;cursor:pointer;}
+      .sticker-favorite-dialog-actions .favorite-dialog-delete{margin-right:auto;color:#ffb0a8;}
+      .sticker-favorite-dialog-actions .favorite-dialog-save{color:#1d1009;background:#f4d76d;border-color:#f4d76d;font-weight:bold;}
       .sticker-loot-popup{position:fixed;z-index:4000;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.68);}
       .sticker-loot-popup[hidden]{display:none;}
       .sticker-loot-card{width:min(560px,95vw);padding:16px;background:#1d1009;border:2px solid #f4d76d;border-radius:9px;box-shadow:0 10px 35px #000;}
       .sticker-loot-card h3{margin:0 0 10px;color:#f4d76d;font-family:'MedievalSharp',Georgia,serif;}
       .sticker-loot-card textarea{width:100%;height:280px;padding:10px;box-sizing:border-box;resize:vertical;color:white;background:#2b190f;border:1px solid #8a6643;border-radius:5px;}
       .sticker-loot-card button{float:right;margin-top:9px;padding:8px 14px;color:#1d1009;background:#f4d76d;border:0;border-radius:5px;font-weight:bold;cursor:pointer;}
-      @media(max-width:760px){.sticker-library-toolbar{width:calc(100vw - 12px);min-width:0;}.sticker-library-toolbar .sticker-card,.sticker-library-toolbar .sticker-load-more{flex-basis:71px;width:71px}.map-tool-tab-buttons button{min-width:70px;}}
+      @media(max-width:760px){.sticker-library-toolbar{width:calc(100vw - 12px);min-width:0;}.sticker-library-toolbar .sticker-card,.sticker-library-toolbar .sticker-load-more,.sticker-favorite-item{flex-basis:71px;width:71px}.map-tool-tab-buttons button{min-width:70px;}}
     `;
     document.head.appendChild(style);
   }
@@ -196,6 +293,7 @@
 
     const rootPath = String(options.rootPath || DEFAULT_ROOT).replace(/^\/+|\/+$/g, "");
     const stickers = [];
+    let favorites = [];
     const urlCache = new Map();
     const mediaDimensions = new Map();
     const localOverrides = new Map();
@@ -263,6 +361,14 @@
     interactionButton.title = "Configure the selected sticker interaction";
     interactionButton.disabled = true;
 
+    const favoriteButton = document.createElement("button");
+    favoriteButton.type = "button";
+    favoriteButton.className = "sticker-favorite-button";
+    favoriteButton.textContent = "\u2606";
+    favoriteButton.title = "Save the selected sticker and its linked interaction tree to Favorites";
+    favoriteButton.setAttribute("aria-label", favoriteButton.title);
+    favoriteButton.disabled = true;
+
     const searchInput = document.createElement("input");
     searchInput.type = "search";
     searchInput.className = "sticker-search";
@@ -278,6 +384,7 @@
     breadcrumbs.className = "sticker-breadcrumbs";
     breadcrumbs.setAttribute("aria-label", "Sticker folders");
     searchRow.append(searchInput, breadcrumbs);
+    searchRow.append(favoriteButton);
     if (canEditInteractions) searchRow.append(interactionButton);
 
     const grid = document.createElement("div");
@@ -327,6 +434,10 @@
         <button type="button" data-action="set-teleport">Set destination on map</button>
         <span data-teleport-status>No destination set.</span>
       </details>
+      <details><summary>Linked stickers</summary>
+        <span>Trigger these stickers when this sticker is clicked. Linked triggers continue through the full interaction tree.</span>
+        <div class="sticker-link-list" data-linked-stickers></div>
+      </details>
       <div class="interaction-actions"><button type="button" data-action="clear">Clear all</button><button type="button" data-action="cancel">Cancel</button><button class="interaction-save" type="button" data-action="save">Save</button></div>`;
     const soundList = document.createElement("datalist");
     soundList.id = "stickerInteractionSounds";
@@ -337,6 +448,22 @@
     });
     interactionEditor.appendChild(soundList);
     if (canEditInteractions) document.body.appendChild(interactionEditor);
+
+    const favoriteDialog = document.createElement("div");
+    favoriteDialog.className = "sticker-favorite-dialog";
+    favoriteDialog.hidden = true;
+    favoriteDialog.innerHTML = `<form class="sticker-favorite-dialog-card">
+      <h3 data-favorite-dialog-title>Save Favorite</h3>
+      <label>Favorite name <input name="favoriteName" type="text" maxlength="80" required></label>
+      <p data-favorite-dialog-summary></p>
+      <div class="sticker-favorite-dialog-actions">
+        <button class="favorite-dialog-delete" type="button" data-action="delete">Delete</button>
+        <button type="button" data-action="cancel">Cancel</button>
+        <button class="favorite-dialog-save" type="submit">Save</button>
+      </div>
+    </form>`;
+    document.body.appendChild(favoriteDialog);
+    let favoriteDialogContext = null;
 
     const lootPopup = document.createElement("div");
     lootPopup.className = "sticker-loot-popup";
@@ -349,6 +476,133 @@
       console.error("Map stickers:", error);
       status.textContent = error?.message || "The sticker library could not be loaded.";
       if (typeof root.reportBoardSyncError === "function") root.reportBoardSyncError(error);
+    }
+
+    function loadFavorites() {
+      try {
+        const saved = JSON.parse(root.localStorage?.getItem(FAVORITES_STORAGE_KEY) || "[]");
+        favorites = Array.isArray(saved) ? saved.filter(item => item?.version === 1 && Array.isArray(item.stickers) && item.stickers.length) : [];
+      } catch (error) {
+        favorites = [];
+        console.warn("Map stickers: favorites could not be read.", error);
+      }
+    }
+
+    function persistFavorites() {
+      try {
+        root.localStorage?.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
+      } catch (error) {
+        throw new Error("Favorites could not be saved in this browser.", { cause: error });
+      }
+    }
+
+    function closeFavoriteDialog() {
+      favoriteDialog.hidden = true;
+      favoriteDialogContext = null;
+    }
+
+    function openFavoriteDialog({ favorite = null, sourceId = "" } = {}) {
+      const source = stickers.find(sticker => sticker.id === sourceId);
+      const treeSize = source ? collectLinkedStickerTree(stickers, source.id).length : favorite?.stickers?.length || 1;
+      favoriteDialogContext = { favoriteId: favorite?.id || "", sourceId: source?.id || "" };
+      favoriteDialog.querySelector("[data-favorite-dialog-title]").textContent = favorite ? "Edit Favorite" : "Save Favorite";
+      favoriteDialog.querySelector('[name="favoriteName"]').value = favorite?.name || cleanLabel(source?.name || "Favorite sticker");
+      favoriteDialog.querySelector("[data-favorite-dialog-summary]").textContent = source
+        ? `This will save ${treeSize} sticker${treeSize === 1 ? "" : "s"} from the linked interaction tree.`
+        : `${treeSize} saved sticker${treeSize === 1 ? "" : "s"}.`;
+      favoriteDialog.querySelector("[data-action='delete']").hidden = !favorite;
+      favoriteDialog.hidden = false;
+      const input = favoriteDialog.querySelector('[name="favoriteName"]');
+      input.focus();
+      input.select();
+    }
+
+    function deleteFavorite(favoriteId) {
+      const favorite = favorites.find(item => item.id === favoriteId);
+      if (!favorite) return;
+      if (typeof root.confirm === "function" && !root.confirm(`Delete favorite "${favorite.name}"?`)) return;
+      const previous = favorites;
+      try {
+        favorites = favorites.filter(item => item.id !== favoriteId);
+        persistFavorites();
+        closeFavoriteDialog();
+        if (currentPath === FAVORITES_PATH) renderFavorites();
+        renderStickerSelection();
+        status.textContent = `${favorite.name} deleted from Favorites.`;
+      } catch (error) {
+        favorites = previous;
+        reportError(error);
+      }
+    }
+
+    function saveFavoriteDialog() {
+      if (!favoriteDialogContext) return;
+      const name = favoriteDialog.querySelector('[name="favoriteName"]').value.trim();
+      if (!name) return;
+      const { favoriteId, sourceId } = favoriteDialogContext;
+      const existing = favorites.find(item => item.id === favoriteId);
+      const previous = favorites;
+      let saved;
+      if (sourceId) saved = createStickerFavorite(stickers, sourceId, existing?.id);
+      else if (existing) saved = cloneStickerValue(existing);
+      if (!saved) return;
+      saved.name = name;
+      if (existing) saved.createdAt = existing.createdAt;
+      try {
+        favorites = existing
+          ? favorites.map(item => item.id === existing.id ? saved : item)
+          : [saved, ...favorites];
+        persistFavorites();
+        closeFavoriteDialog();
+        if (currentPath === FAVORITES_PATH) renderFavorites();
+        renderStickerSelection();
+        status.textContent = `${saved.name} saved with ${saved.stickers.length} sticker${saved.stickers.length === 1 ? "" : "s"}.`;
+      } catch (error) {
+        favorites = previous;
+        reportError(error);
+      }
+    }
+
+    favoriteDialog.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      saveFavoriteDialog();
+    });
+    favoriteDialog.querySelector("[data-action='cancel']").addEventListener("click", closeFavoriteDialog);
+    favoriteDialog.querySelector("[data-action='delete']").addEventListener("click", () => deleteFavorite(favoriteDialogContext?.favoriteId));
+    favoriteDialog.addEventListener("pointerdown", event => {
+      if (event.target === favoriteDialog) closeFavoriteDialog();
+    });
+    favoriteDialog.addEventListener("keydown", event => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      event.stopPropagation();
+      closeFavoriteDialog();
+    });
+
+    function renderLinkedStickerChoices(selectedId, linkedIds = []) {
+      const container = interactionEditor.querySelector("[data-linked-stickers]");
+      if (!container) return;
+      container.replaceChildren();
+      const choices = stickers.filter(sticker => sticker.id !== selectedId);
+      if (!choices.length) {
+        const empty = document.createElement("span");
+        empty.className = "sticker-link-empty";
+        empty.textContent = "Place another sticker on the board to link it.";
+        container.appendChild(empty);
+        return;
+      }
+      const selected = new Set(linkedIds);
+      choices.forEach(sticker => {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        input.name = "linkedStickerIds";
+        input.value = sticker.id;
+        input.checked = selected.has(sticker.id);
+        const location = `${(Number(sticker.x || 0) * 100).toFixed(0)}%, ${(Number(sticker.y || 0) * 100).toFixed(0)}%`;
+        label.append(input, document.createTextNode(`${cleanLabel(sticker.name || "Sticker")} (${location})`));
+        container.appendChild(label);
+      });
     }
 
     const editorField = name => interactionEditor.querySelector(`[name="${name}"]`);
@@ -417,6 +671,7 @@
       editorField("teleportBidirectional").checked = Boolean(teleport.bidirectional);
       editorField("teleportToX").value = Number.isFinite(Number(teleport.toX)) ? teleport.toX : "";
       editorField("teleportToY").value = Number.isFinite(Number(teleport.toY)) ? teleport.toY : "";
+      renderLinkedStickerChoices(sticker.id, interaction.linkedStickerIds || []);
       updateTeleportEditorStatus();
       setEditorStatus();
       interactionEditor.hidden = false;
@@ -490,6 +745,10 @@
           bidirectional: editorField("teleportBidirectional").checked
         };
       }
+      const linkedStickerIds = [...interactionEditor.querySelectorAll('input[name="linkedStickerIds"]:checked')]
+        .map(input => input.value)
+        .filter(id => id !== sticker.id && stickers.some(item => item.id === id));
+      if (linkedStickerIds.length) interaction.linkedStickerIds = linkedStickerIds;
       const saved = Object.keys(interaction).length ? interaction : null;
       try {
         await boardSync.patchStickers(new Map([[sticker.id, { interaction: saved }]]), boardSync.generation);
@@ -500,6 +759,10 @@
       } catch (error) { setEditorStatus(error?.message || "Could not save interactions."); reportError(error); }
     }
 
+    favoriteButton.addEventListener("click", () => {
+      const existing = favorites.find(item => item.rootId === selectedStickerId);
+      openFavoriteDialog({ favorite: existing, sourceId: selectedStickerId });
+    });
     interactionButton.addEventListener("click", openInteractionEditor);
     interactionEditor.querySelector("[data-action='cancel']")?.addEventListener("click", closeInteractionEditor);
     interactionEditor.querySelector("[data-action='save']")?.addEventListener("click", saveInteractionEditor);
@@ -583,11 +846,18 @@
       }
       const gridSize = clamp(Number(options.getGridSize?.()) || 100, 12, 1000);
       const dimensions = mediaDimensions.get(selectedAsset.path);
-      let widthPixels = gridSize * selectedAsset.units.width;
-      let heightPixels = gridSize * selectedAsset.units.height;
-      if (!selectedAsset.units.explicit && dimensions?.width && dimensions?.height) heightPixels = widthPixels * dimensions.height / dimensions.width;
-      const widthRatio = clamp(widthPixels / Math.max(1, mapImage.clientWidth), .004, 1);
-      const heightRatio = clamp(heightPixels / Math.max(1, mapImage.clientHeight), .004, 1);
+      let widthRatio;
+      let heightRatio;
+      if (selectedAsset.favoriteRoot) {
+        widthRatio = clamp(Number(selectedAsset.favoriteRoot.widthRatio) || .05, .004, 1);
+        heightRatio = clamp(Number(selectedAsset.favoriteRoot.heightRatio) || .05, .004, 1);
+      } else {
+        let widthPixels = gridSize * selectedAsset.units.width;
+        let heightPixels = gridSize * selectedAsset.units.height;
+        if (!selectedAsset.units.explicit && dimensions?.width && dimensions?.height) heightPixels = widthPixels * dimensions.height / dimensions.width;
+        widthRatio = clamp(widthPixels / Math.max(1, mapImage.clientWidth), .004, 1);
+        heightRatio = clamp(heightPixels / Math.max(1, mapImage.clientHeight), .004, 1);
+      }
       const pointerX = (lastPlacementPointer.x - bounds.left) / bounds.width;
       const pointerY = (lastPlacementPointer.y - bounds.top) / bounds.height;
       placementPreview.style.left = `${clamp(pointerX, widthRatio / 2, 1 - widthRatio / 2) * 100}%`;
@@ -620,8 +890,9 @@
 
     function renderBreadcrumbs() {
       breadcrumbs.replaceChildren();
-      const relative = currentPath === rootPath ? [] : currentPath.slice(rootPath.length + 1).split("/");
+      const relative = currentPath === rootPath || currentPath === FAVORITES_PATH ? [] : currentPath.slice(rootPath.length + 1).split("/");
       const segments = [{ label: "Stickers", path: rootPath }];
+      if (currentPath === FAVORITES_PATH) segments.push({ label: "Favorites", path: FAVORITES_PATH });
       relative.forEach((part, index) => segments.push({
         label: cleanLabel(part),
         path: `${rootPath}/${relative.slice(0, index + 1).join("/")}`
@@ -658,6 +929,13 @@
       return button;
     }
 
+    function favoritesFolderCard() {
+      const button = folderCard({ name: "Favorites", fullPath: FAVORITES_PATH });
+      button.classList.add("sticker-favorites-folder");
+      button.title = `Open Favorites (${favorites.length})`;
+      return button;
+    }
+
     function assetCard(item) {
       const button = document.createElement("button");
       button.type = "button";
@@ -675,6 +953,54 @@
       return button;
     }
 
+    function favoriteCard(favorite) {
+      const rootSticker = favorite.stickers.find(sticker => sticker.id === favorite.rootId) || favorite.stickers[0];
+      const item = storage.ref().child(rootSticker.storagePath);
+      const button = assetCard(item);
+      button.classList.add("sticker-favorite-card");
+      button.removeAttribute("role");
+      button.title = `${favorite.name}\n${favorite.stickers.length} linked sticker${favorite.stickers.length === 1 ? "" : "s"}`;
+      button.setAttribute("aria-label", `Place favorite ${favorite.name}`);
+      button.addEventListener("click", event => {
+        event.stopImmediatePropagation();
+        selectFavorite(favorite);
+      }, true);
+      const wrapper = document.createElement("div");
+      wrapper.className = "sticker-favorite-item";
+      wrapper.setAttribute("role", "listitem");
+      const edit = document.createElement("button");
+      edit.type = "button";
+      edit.className = "sticker-favorite-manage sticker-favorite-edit";
+      edit.textContent = "\u270E";
+      edit.title = `Edit ${favorite.name}`;
+      edit.setAttribute("aria-label", edit.title);
+      edit.addEventListener("click", () => openFavoriteDialog({
+        favorite,
+        sourceId: stickers.some(sticker => sticker.id === favorite.rootId) ? favorite.rootId : ""
+      }));
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "sticker-favorite-manage sticker-favorite-delete";
+      remove.textContent = "\u00D7";
+      remove.title = `Delete ${favorite.name}`;
+      remove.setAttribute("aria-label", remove.title);
+      remove.addEventListener("click", () => deleteFavorite(favorite.id));
+      wrapper.append(button, edit, remove);
+      return wrapper;
+    }
+
+    function renderFavorites() {
+      currentPath = FAVORITES_PATH;
+      currentFolders = [];
+      currentItems = [];
+      nextPageToken = null;
+      renderBreadcrumbs();
+      grid.replaceChildren();
+      favorites.forEach(favorite => grid.appendChild(favoriteCard(favorite)));
+      if (!favorites.length) renderEmpty("Select a sticker on the board and click the star to save it here.");
+      status.textContent = `${favorites.length} favorite${favorites.length === 1 ? "" : "s"}`;
+    }
+
     function renderEmpty(message) {
       const empty = document.createElement("p");
       empty.className = "sticker-library-empty";
@@ -684,9 +1010,10 @@
 
     function renderFolder() {
       grid.replaceChildren();
+      if (currentPath === rootPath) grid.appendChild(favoritesFolderCard());
       currentFolders.forEach(folder => grid.appendChild(folderCard(folder)));
       currentItems.forEach(item => grid.appendChild(assetCard(item)));
-      if (!currentFolders.length && !currentItems.length) renderEmpty("This folder has no supported sticker files.");
+      if (!currentFolders.length && !currentItems.length && currentPath !== rootPath) renderEmpty("This folder has no supported sticker files.");
       if (nextPageToken) grid.appendChild(loadMoreButton);
       const parts = [];
       if (currentFolders.length) parts.push(`${currentFolders.length} folder${currentFolders.length === 1 ? "" : "s"}`);
@@ -695,6 +1022,11 @@
     }
 
     async function loadFolder(path, append = false) {
+      if (path === FAVORITES_PATH) {
+        ++navigationVersion;
+        renderFavorites();
+        return;
+      }
       const version = append ? navigationVersion : ++navigationVersion;
       if (!append) {
         currentPath = path;
@@ -849,6 +1181,22 @@
       renderStickerSelection();
       updatePlacementMode();
       status.textContent = "Click anywhere on the map to place it. Click again to stamp another, or press Esc to stop.";
+    }
+
+    function selectFavorite(favorite) {
+      const rootSticker = favorite.stickers.find(sticker => sticker.id === favorite.rootId) || favorite.stickers[0];
+      selectedAsset = {
+        favorite,
+        favoriteRoot: rootSticker,
+        path: rootSticker.storagePath,
+        ref: rootSticker.storagePath,
+        name: favorite.name,
+        units: gridUnits(rootSticker.name)
+      };
+      selectedStickerId = "";
+      renderStickerSelection();
+      updatePlacementMode();
+      status.textContent = `Click the map to place all ${favorite.stickers.length} sticker${favorite.stickers.length === 1 ? "" : "s"} in this favorite.`;
     }
 
     function cancelPlacement() {
@@ -1068,13 +1416,17 @@
     }
 
     async function playStickerSound(stickerId, sound) {
+      let src = sound.src;
+      if (!/^(?:https?:|data:|blob:|\/)/i.test(src) && !src.startsWith("data/")) src = await resolveUrl(src);
+      if (typeof options.publishSoundEffect === "function") {
+        await options.publishSoundEffect(src, { loop: Boolean(sound.loop), channelId: `sticker:${stickerId}` });
+        return;
+      }
       const existing = loopingSounds.get(stickerId);
       if (existing) {
         existing.pause(); existing.removeAttribute("src"); loopingSounds.delete(stickerId);
         if (sound.loop) return;
       }
-      let src = sound.src;
-      if (!/^(?:https?:|data:|blob:|\/)/i.test(src) && !src.startsWith("data/")) src = await resolveUrl(src);
       const audio = new Audio(src);
       audio.loop = Boolean(sound.loop);
       audio.volume = clamp(Number(options.getSoundVolume?.()) || 1, 0, 1);
@@ -1153,15 +1505,31 @@
       renderTeleportOverlays();
     }
 
-    function runStickerInteraction(sticker, element) {
+    async function runStickerInteraction(sticker, element) {
       const interaction = sticker.interaction;
       if (!interaction) return;
       if (interaction.animation) animateSticker(sticker, element, interaction.animation).catch(reportError);
-      if (interaction.sound) playStickerSound(sticker.id, interaction.sound).catch(reportError);
+      if (interaction.sound) {
+        try { await playStickerSound(sticker.id, interaction.sound); }
+        catch (error) { reportError(error); }
+      }
       if (interaction.loot) rollStickerLoot(interaction.loot).then(result => {
         lootPopup.querySelector("textarea").value = result;
         lootPopup.hidden = false;
       }).catch(reportError);
+    }
+
+    async function runStickerInteractionTree(rootSticker) {
+      const visited = new Set();
+      const visit = async sticker => {
+        if (!sticker || visited.has(sticker.id)) return;
+        visited.add(sticker.id);
+        const linkedIds = [...(sticker.interaction?.linkedStickerIds || [])];
+        const element = [...layer.querySelectorAll(".map-sticker")].find(item => item.dataset.stickerId === sticker.id);
+        await runStickerInteraction(sticker, element);
+        for (const id of linkedIds) await visit(stickers.find(item => item.id === id));
+      };
+      await visit(rootSticker);
     }
 
     function renderStickerSelection() {
@@ -1171,6 +1539,8 @@
       rigLayer.replaceChildren();
       const selected = active && !selectedAsset && stickers.find(sticker => sticker.id === selectedStickerId);
       interactionButton.disabled = !selected;
+      favoriteButton.disabled = !selected;
+      favoriteButton.textContent = selected && favorites.some(favorite => favorite.rootId === selected.id) ? "\u2605" : "\u2606";
       if (!selected) return;
 
       const rig = document.createElement("div");
@@ -1212,12 +1582,15 @@
     function renderStickers() {
       layer.replaceChildren();
       stickers.forEach(sticker => {
+        const hasUpstreamTrigger = hasUpstreamStickerTrigger(stickers, sticker.id);
+        const directlyTriggerable = hasStickerInteraction(sticker) && !hasUpstreamTrigger;
         const element = document.createElement("div");
         element.className = "map-sticker";
-        element.classList.toggle("is-interactive", hasStickerInteraction(sticker));
+        element.classList.toggle("is-interactive", directlyTriggerable);
         element.classList.toggle("show-interaction-marker", canEditInteractions && hasStickerInteraction(sticker));
+        element.classList.toggle("has-upstream-trigger", hasUpstreamTrigger);
         element.dataset.stickerId = sticker.id;
-        element.title = `${cleanLabel(sticker.name || "Map sticker")}${hasStickerInteraction(sticker) ? " — interactive" : ""}`;
+        element.title = `${cleanLabel(sticker.name || "Map sticker")}${hasUpstreamTrigger ? " — triggered by another sticker" : hasStickerInteraction(sticker) ? " — interactive" : ""}`;
         stickerStyle(element, sticker);
         const media = mediaElement(sticker.storagePath);
         element.appendChild(media);
@@ -1229,10 +1602,10 @@
         });
         element.addEventListener("pointerdown", event => beginStickerDrag(event, sticker, element));
         element.addEventListener("click", event => {
-          if (active || dragSession || !hasStickerInteraction(sticker)) return;
+          if (active || dragSession || !directlyTriggerable) return;
           event.preventDefault();
           event.stopPropagation();
-          runStickerInteraction(sticker, element);
+          runStickerInteractionTree(sticker).catch(reportError);
         });
         layer.appendChild(element);
       });
@@ -1379,6 +1752,25 @@
       const asset = selectedAsset;
       const bounds = mapImage.getBoundingClientRect();
       if (!bounds.width || !bounds.height) return;
+      if (asset.favorite) {
+        const rootSticker = asset.favoriteRoot;
+        const rootWidth = clamp(Number(rootSticker.widthRatio) || .05, .004, 1);
+        const rootHeight = clamp(Number(rootSticker.heightRatio) || .05, .004, 1);
+        const x = roundRatio(clamp((event.clientX - bounds.left) / bounds.width, rootWidth / 2, 1 - rootWidth / 2));
+        const y = roundRatio(clamp((event.clientY - bounds.top) / bounds.height, rootHeight / 2, 1 - rootHeight / 2));
+        const placed = instantiateStickerFavorite(asset.favorite, x, y);
+        status.textContent = `Placing ${asset.name}\u2026`;
+        try {
+          if (typeof boardSync.addStickers === "function") await boardSync.addStickers(placed, boardSync.generation);
+          else for (const sticker of placed) await boardSync.addSticker(sticker, boardSync.generation);
+          status.textContent = `${asset.name} placed (${placed.length} sticker${placed.length === 1 ? "" : "s"}).`;
+        } catch (error) {
+          const ids = placed.map(sticker => sticker.id);
+          boardSync.removeStickers(ids, boardSync.generation).catch(() => {});
+          reportError(error);
+        }
+        return;
+      }
       const gridSize = clamp(Number(options.getGridSize?.()) || 100, 12, 1000);
       const dimensions = mediaDimensions.get(asset.path);
       let widthPixels = gridSize * asset.units.width;
@@ -1519,6 +1911,7 @@
         teleportLocks.clear();
         teleportDragSession = null;
         closeInteractionEditor();
+        closeFavoriteDialog();
         updatePlacementMode();
       }
       stickers.length = 0;
@@ -1567,6 +1960,7 @@
     mapImage.addEventListener("load", renderTeleportOverlays);
     if (typeof ResizeObserver === "function") new ResizeObserver(renderTeleportOverlays).observe(mapImage);
 
+    loadFavorites();
     grid.replaceChildren();
     renderEmpty("Connecting to the sticker library…");
     status.textContent = "Waiting for sign-in…";
@@ -1595,6 +1989,7 @@
           selectedAsset = null;
           selectedStickerId = "";
           closeInteractionEditor();
+          closeFavoriteDialog();
         }
         updatePlacementMode();
         renderStickerSelection();
@@ -1617,6 +2012,7 @@
         selectedStickerId = "";
         selectedAsset = null;
         closeInteractionEditor();
+        closeFavoriteDialog();
         updatePlacementMode();
         renderStickerSelection();
         return Promise.resolve();
@@ -1626,5 +2022,8 @@
   }
 
   if (typeof window !== "undefined") window.setupMapStickers = setupMapStickers;
-  if (typeof module !== "undefined") module.exports = { cleanLabel, normalizeSearch, fuzzyScore, gridUnits, containingStickerFolder, hasStickerInteraction, pointInCircularRange };
+  if (typeof module !== "undefined") module.exports = {
+    cleanLabel, normalizeSearch, fuzzyScore, gridUnits, containingStickerFolder, hasStickerInteraction, pointInCircularRange,
+    collectLinkedStickerTree, createStickerFavorite, instantiateStickerFavorite, hasUpstreamStickerTrigger
+  };
 })(typeof window === "undefined" ? globalThis : window);
