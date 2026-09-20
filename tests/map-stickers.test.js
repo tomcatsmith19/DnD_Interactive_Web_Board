@@ -128,7 +128,7 @@ test('both boards load the sticker browser and place its tab before measurement'
   const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
   for (const role of ['dm', 'player']) {
     const html = fs.readFileSync(`public/${role}.html`, 'utf8');
-    assert.ok(html.includes('map-stickers.js?v=26'));
+    assert.ok(html.includes('map-stickers.js?v=30'));
     assert.ok(html.includes('map-drawing.js?v=24'));
     assert.match(html, /setupMapDrawingTabs\([^\n]+measurementToolbarManager, stickerManager\)/);
   }
@@ -180,9 +180,13 @@ test('selected stickers use an on-map transform rig instead of toolbar transform
 
 test('sticker browser is a wide, single-row scrolling tray', () => {
   const browser = fs.readFileSync('public/map-stickers.js', 'utf8');
+  const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
   assert.match(browser, /width:clamp\(620px,50vw,980px\)/);
   assert.match(browser, /\.sticker-library-grid\{display:flex;/);
   assert.match(browser, /overflow-x:auto;overflow-y:hidden/);
+  assert.match(drawing, /shell\.classList\.toggle\("has-expanded-sticker", activeManager === stickerManager\)/);
+  assert.match(browser, /\.map-tool-tabs\.has-expanded-sticker\{left:max\(454px,calc\(50% - 490px\)\);right:max\(12px,calc\(50% - 490px\)\);/);
+  assert.match(browser, /@media\(max-width:760px\)\{\.map-tool-tabs\.has-expanded-sticker\{left:6px;right:6px;top:88px;/);
 });
 
 test('sticker tray uses a compact search row, text breadcrumbs, and no visible status footer', () => {

@@ -211,7 +211,8 @@ function renderTokenDistances() {
     const layer = document.getElementById('tokenDistanceLayer');
     if (!layer || !mapImage?.clientWidth || !mapImage?.clientHeight) return;
     const width = mapImage.clientWidth, height = mapImage.clientHeight;
-    const indicators = tokenMovementIndicators(monsters, width, height);
+    const tokens = boardPageRole === 'player' ? monsters.filter(token => token.hiddenFromPlayers !== true) : monsters;
+    const indicators = tokenMovementIndicators(tokens, width, height);
     layer.setAttribute('viewBox', `0 0 ${width} ${height}`);
     layer.replaceChildren();
     indicators.forEach(indicator => {
@@ -237,7 +238,16 @@ function applyMapTokenAction(action, condition = '', level = 0) {
     const targets = monsters.filter(token => selectedMapTokenIds.has(token.id));
     if (!targets.length) return Promise.resolve(false);
     const amount = Math.max(0, Math.trunc(Number(document.getElementById('mapActionAmount').value) || 0));
-    return runBoardWrite(boardSync.action(targets.map(token => token.id), action, amount, condition, level, targets[0]._boardGeneration));
+    const defeatedByPlayer = boardPageRole === 'player' && action === 'damage'
+        ? targets.filter(token => !token.isplayer && Number(token.hp) > 0 && amount >= Number(token.hp)).map(token => ({ ...token }))
+        : [];
+    return runBoardWrite(boardSync.action(targets.map(token => token.id), action, amount, condition, level, targets[0]._boardGeneration)).then(async succeeded => {
+        if (succeeded && defeatedByPlayer.length && typeof broadcastDefeatedCreatures === 'function') {
+            try { await broadcastDefeatedCreatures(defeatedByPlayer); }
+            catch (error) { reportBoardSyncError(error); }
+        }
+        return succeeded;
+    });
 }
 function refreshBoardTrackers(force = false) {
     const editing = !force && document.activeElement?.closest('#monsterTableBody, #partyTableBody');
@@ -250,6 +260,14 @@ function refreshBoardTrackers(force = false) {
         if (player && (force || !document.activeElement?.closest('#currentHP, #initiativeInput'))) showCurrentPlayerStats(player);
     }
     refreshMapTokenSelection();
+}
+function updateTokenPlayerVisibility(token, element = document.getElementById(`token-${token.id}`)) {
+    if (!element) return;
+    const hidden = boardPageRole === 'player' && token.hiddenFromPlayers === true;
+    element.style.display = hidden ? 'none' : 'flex';
+    element.classList.toggle('is-hidden-from-players', boardPageRole === 'dm' && token.hiddenFromPlayers === true);
+    element.setAttribute?.('aria-hidden', String(hidden));
+    if (hidden) selectedMapTokenIds.delete(token.id);
 }
 function initializeBoardUI(role) {
     boardPageRole = role;
@@ -268,7 +286,7 @@ function initializeBoardUI(role) {
         for (let index = monsters.length - 1; index >= 0; index--) {
             const token = monsters[index];
             if (switched || !ids.has(token.id)) {
-                if (!switched && !reset && role === 'dm' && Date.now() >= suppressLootTrackingUntil) recordCreatureForLoot(token);
+                if (!switched && !reset && role === 'dm') recordCreatureForLoot(token, { skipAutoDrop:true });
                 document.getElementById(`token-${token.id}`)?.remove();
                 selectedMapTokenIds.delete(token.id);
                 monsters.splice(index, 1);
@@ -297,6 +315,7 @@ function initializeBoardUI(role) {
                 updateTokenHealthBar(token); updateTokenDefeatedState(token);
                 TokenActions.renderTokenConditions(token, element, currentTokenSize);
             }
+            updateTokenPlayerVisibility(token);
             if (!switched && typeof previousHp === 'number' && previousHp !== token.hp) {
                 flashToken(token.id, token.hp > previousHp ? 'heal' : 'damage');
                 if (previousHp > 0 && token.hp <= 0) showTokenDeathEffect(token.id, false);

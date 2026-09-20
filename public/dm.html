@@ -135,7 +135,7 @@
             resize: vertical;
         }
 
-        .npc-generator { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 16px; overflow-y: auto; background: #21130c; border: 1px solid #765133; border-radius: 8px; }
+        .npc-generator { flex:1; display:flex; flex-direction:column; gap:12px; min-width:0; padding:0; overflow:visible; background:transparent; border:0; border-radius:0; }
         .npc-generator h2 { margin: 0; color: #f4d76d; font-family: 'MedievalSharp', cursive; }
         .npc-generator select, .npc-generator button { width: 100%; box-sizing: border-box; padding: 10px; background: #342014; color: white; border: 1px solid #8a6643; border-radius: 5px; }
         .npc-generator button { background: #f4d76d; color: #1d1009; border: 0; font-weight: bold; cursor: pointer; }
@@ -197,12 +197,28 @@
         .dm-map-ui[hidden] { display:none !important; }
         .dm-initiative-panel { position:fixed; top:140px; left:18px; z-index:1120; width:430px; max-height:58vh; overflow:visible; padding:12px; color:white; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:9px; transition:transform .25s ease; box-sizing:border-box; }
         .dm-initiative-panel.is-collapsed { transform:translateX(calc(-100% - 18px)); }
-        .dm-initiative-content { max-height:calc(62vh - 24px); overflow:auto; }
+        .dm-initiative-content { height:100%; min-height:0; max-height:none; overflow:hidden; }
         .dm-initiative-panel h2 { margin:0 0 8px; color:#f4d76d; font-family:'MedievalSharp',cursive; }
+        .dm-initiative-subtabs { display:flex; flex:none; margin-bottom:8px; border-bottom:2px solid #f4d76d; }
+        .dm-initiative-subtab { flex:1; padding:7px 8px; color:#c9b98b; background:#21130c; border:1px solid #765133; border-bottom:0; border-radius:6px 6px 0 0; cursor:pointer; font-weight:bold; }
+        .dm-initiative-subtab.is-active { color:#1d1009; background:#f4d76d; border-color:#f4d76d; }
+        .dm-initiative-tab-panel { display:none; flex:1; min-height:0; flex-direction:column; }
+        .dm-initiative-tab-panel.is-active { display:flex; }
+        .dm-initiative-statblock-host { display:flex; flex:1; min-height:0; }
+        .dm-initiative-statblock-empty { margin:auto; padding:20px; color:#c9b98b; text-align:center; }
         .dm-initiative-collapse { position:absolute; top:50%; right:-29px; transform:translateY(-50%); width:29px; height:105px; padding:0; border-radius:0 7px 7px 0; background:#1d1009; color:#f4d76d; border:1px solid #f4d76d; cursor:pointer; font-size:20px; }
+        .dm-initiative-table-scroll { flex:1; min-height:0; overflow:auto; scrollbar-width:thin; scrollbar-color:#8a6643 #21130c; }
+        .dm-initiative-table-scroll::-webkit-scrollbar { width:10px; height:10px; }
+        .dm-initiative-table-scroll::-webkit-scrollbar-track { background:#21130c; border-radius:8px; }
+        .dm-initiative-table-scroll::-webkit-scrollbar-thumb { background:#8a6643; border:2px solid #21130c; border-radius:8px; }
+        .dm-initiative-table-scroll::-webkit-scrollbar-thumb:hover { background:#f4d76d; }
         .dm-initiative-table { width:100%; border-collapse:collapse; background:#3d2718; color:white; font-size:.82rem; }
         .dm-initiative-table th,.dm-initiative-table td { padding:6px; border:1px solid #765133; }
-        .dm-add-monster { width:100%; margin-top:8px; padding:9px; background:#f4d76d; border:0; color:#1d1009; font-weight:bold; border-radius:5px; cursor:pointer; }
+        .dm-initiative-table thead th { position:sticky; top:-2px; z-index:2; background:#3d2718; box-shadow:0 -2px 0 #3d2718; }
+        .dm-initiative-number { box-sizing:content-box; padding:5px; background:#2b190f; color:#fff; border:1px solid #765133; border-radius:4px; text-align:center; appearance:textfield; -moz-appearance:textfield; }
+        .dm-initiative-number::-webkit-inner-spin-button,.dm-initiative-number::-webkit-outer-spin-button { margin:0; appearance:none; -webkit-appearance:none; }
+        .dm-initiative-number--init { width:2.5ch; }
+        .dm-initiative-number--hp { width:3.5ch; }
         .dm-left-dock { position:fixed; top:120px; bottom:24px; left:0; z-index:1120; width:440px; max-height:none; padding:12px; box-sizing:border-box; overflow:visible; color:white; background:rgba(29,16,9,.96); border:1px solid #8a6643; border-left:0; border-radius:0 9px 9px 0; transition:transform .25s ease; }
         .dm-left-dock.is-collapsed { transform:translateX(-100%); }
         .dm-left-rail { position:absolute; top:calc(50vh - 120px); right:-48px; transform:translateY(-50%); display:flex; flex-direction:column; width:48px; gap:5px; }
@@ -243,8 +259,15 @@
         .dice-counter button:last-of-type { grid-column:3; }
         .dice-counter input { grid-column:2; grid-row:2; z-index:2; align-self:center; justify-self:center; width:30px !important; height:20px; margin:0; padding:1px 2px !important; color:white; background:#3d2718; border:1px solid #765133; border-radius:4px; font-size:.78rem !important; line-height:18px; text-align:center; appearance:textfield; -moz-appearance:textfield; }
         .dice-counter input::-webkit-inner-spin-button,.dice-counter input::-webkit-outer-spin-button { margin:0; -webkit-appearance:none; }
-        .dice-roll-button { width:100%; padding:11px; color:#1d1009; background:#f4d76d; border:0; border-radius:5px; font-size:1rem; font-weight:bold; cursor:pointer; }
-        .dice-clear-button { width:100%; padding:9px; color:#f4d76d; background:#3d2718; border:1px solid #f4d76d; border-radius:5px; font-size:.95rem; font-weight:bold; cursor:pointer; }
+        .dice-roll-button { width:100%; padding:11px; color:#72df91; background:#132d1b; border:1px solid #72df91; border-radius:5px; font-size:1rem; font-weight:bold; cursor:pointer; }
+        .dice-roll-button:hover { filter:brightness(1.14); }
+        .dice-roll-button:focus-visible { outline:2px solid #72df91; outline-offset:2px; }
+        .dice-roller-header { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+        .dice-roller-header h2 { margin:0; }
+        .dice-clear-button { flex:0 0 auto; display:grid; place-items:center; width:34px; height:34px; padding:6px; color:#ff777f; background:#351416; border:1px solid #ff777f; border-radius:5px; cursor:pointer; }
+        .dice-clear-button:hover { filter:brightness(1.14); }
+        .dice-clear-button:focus-visible { outline:2px solid #ff777f; outline-offset:2px; }
+        .dice-clear-button svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
         .dice-replay-button { width:100%; padding:9px; color:#f4d76d; background:#2b190f; border:1px solid #f4d76d; border-radius:5px; font-size:.95rem; font-weight:bold; cursor:pointer; }
         .dice-replay-button:disabled { opacity:.45; cursor:not-allowed; }
         .dice-post-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
@@ -346,7 +369,7 @@
         #confirmAddMapButton { color:white; background:#276c3d; border-color:#69aa78; }
         #confirmAddMapButton:hover { background:#32864c; border-color:#96d6a5; }
         .campaign-status { min-height:20px; color:#c9b98b; font-size:.82rem; }
-        .dm-audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; padding:8px; color:white; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:9px; }
+        .dm-audio-dock { position:fixed; left:12px; right:12px; bottom:28px; z-index:1150; display:flex; align-items:flex-start; padding:8px; color:white; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:9px; }
         .dm-audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
         .dm-audio-dock.is-collapsed .dm-audio-content { display:none; }
         .dm-audio-content { display:grid; grid-template-columns:minmax(105px,.4fr) repeat(3,minmax(0,1fr)); gap:8px 12px; align-items:start; flex:1; }
@@ -388,26 +411,31 @@
         .generator-shared-controls label { display:flex; flex-direction:column; gap:4px; color:#e7c96a; font-size:.74rem; font-weight:bold; }
         .generator-shared-controls input,.generator-shared-controls select { min-width:0; padding:7px; background:#2b190f; color:white; border:1px solid #8a6643; border-radius:4px; }
         .generator-shared-separator { width:100%; margin:0 0 10px; border:0; border-top:1px solid rgba(255,215,0,.55); }
-        .generator-subtabs { display:flex; align-items:flex-end; gap:2px; margin:0 0 -1px; padding:0 8px; position:relative; z-index:2; }
-        .generator-banner { flex:1; padding:9px 7px; color:#bdbdbd; background:#21130c; border:1px solid #8a6643; border-bottom-color:#8a6643; border-radius:7px 7px 0 0; font-weight:bold; cursor:pointer; }
+        #generatorWild { --generator-accent:#55d66b; }
+        #generatorTown { --generator-accent:#55a8ff; }
+        #generatorDungeon { --generator-accent:#ff5959; }
+        .generator-subtabs { display:flex; flex:none; align-items:flex-end; width:100%; box-sizing:border-box; gap:2px; margin:0; padding:0; position:relative; z-index:2; border-bottom:3px solid var(--generator-accent); }
+        .generator-banner { position:relative; flex:1; padding:9px 7px; color:#bdbdbd; background:#21130c; border:1px solid #8a6643; border-bottom:0; border-radius:7px 7px 0 0; font-weight:bold; cursor:pointer; }
         .generator-banner:hover { color:#f4d76d; background:#242424; }
-        .generator-banner.is-active { color:#f4d76d; background:#3a2416; border-bottom-color:#3a2416; transform:translateY(1px); }
-        .generator-scroll { flex:1; min-height:0; overflow:auto; padding-right:3px; }
+        .generator-banner.is-active { z-index:1; color:var(--generator-accent); background:#1d1009; border:2px solid var(--generator-accent); border-bottom:0; }
+        .generator-banner.is-active::after { content:''; position:absolute; left:-2px; right:-2px; bottom:-3px; height:3px; background:#1d1009; border-left:2px solid var(--generator-accent); border-right:2px solid var(--generator-accent); }
+        .generator-scroll { display:flex; flex:1; min-width:0; min-height:0; overflow:hidden; padding:0; }
         .generator-mode { display:none; }
         .generator-subcontent { display:none !important; }
-        .generator-mode.is-active { display:block; }
+        .generator-mode.is-active { display:flex; flex:1; flex-direction:column; width:100%; min-width:0; min-height:0; }
+        #generatorWildHost,#generatorTownHost,#generatorDungeonHost { display:flex; flex:1; width:100%; min-width:0; min-height:0; }
         .generator-panel:has(#generatorActions.is-active) .generator-shared-controls,.generator-panel:has(#generatorActions.is-active) .generator-shared-separator { display:none; }
         .generator-panel:has(#generatorActions.is-active) .generator-scroll { overflow:hidden; }
         .generator-actions-mode { height:100%; min-height:0; padding:12px; box-sizing:border-box; overflow:hidden; color:white; background:transparent; border:0; border-radius:0; }
         .generator-actions-mode.is-active { display:flex; flex-direction:column; }
         .generator-actions-mode .map-action-panel { display:block; position:relative; inset:auto; width:100%; max-width:none; max-height:none; padding:0; flex:none; background:transparent; border:0; border-radius:0; box-shadow:none; }
-        .generator-actions-mode .monster-stat-modal { position:relative; inset:auto; width:100%; height:auto; min-height:0; margin-top:12px; flex:1 1 0; pointer-events:auto; }
-        .generator-actions-mode .monster-stat-modal.is-open { display:block; }
-        .generator-actions-mode .classic-statblock { position:relative; inset:auto; width:100%; height:100%; min-width:0; min-height:0; max-width:none; max-height:none; overflow:auto; resize:none; scrollbar-width:thin; scrollbar-color:#b58a3a #e8d7a1; box-shadow:0 7px 20px rgba(0,0,0,.55); }
-        .generator-actions-mode .classic-statblock::-webkit-scrollbar { width:12px; }
-        .generator-actions-mode .classic-statblock::-webkit-scrollbar-track { background:#e8d7a1; }
-        .generator-actions-mode .classic-statblock::-webkit-scrollbar-thumb { background:#b58a3a; border:2px solid #e8d7a1; border-radius:999px; }
-        .generator-subcontent.is-active { display:flex !important; }
+        .dm-initiative-statblock-host .monster-stat-modal { position:relative; inset:auto; width:100%; height:100%; min-height:0; pointer-events:auto; }
+        .dm-initiative-statblock-host .monster-stat-modal.is-open { display:block; }
+        .dm-initiative-statblock-host .classic-statblock { position:relative; inset:auto; width:100%; height:100%; min-width:0; min-height:0; max-width:none; max-height:none; overflow:auto; resize:none; scrollbar-width:thin; scrollbar-color:#b58a3a #e8d7a1; box-shadow:0 7px 20px rgba(0,0,0,.55); }
+        .dm-initiative-statblock-host .classic-statblock::-webkit-scrollbar { width:12px; }
+        .dm-initiative-statblock-host .classic-statblock::-webkit-scrollbar-track { background:#e8d7a1; }
+        .dm-initiative-statblock-host .classic-statblock::-webkit-scrollbar-thumb { background:#b58a3a; border:2px solid #e8d7a1; border-radius:999px; }
+        .generator-subcontent.is-active { display:flex !important; flex:1; width:100%; min-width:0; min-height:0; overflow:auto; }
         .generator-panel .wilderness-layout { display:flex; flex-direction:column; min-width:0; padding:0; gap:10px; }
         .generator-panel .wilderness-panel { padding:12px; }
         .generator-panel .wilderness-controls { display:block; }
@@ -416,38 +444,108 @@
         .generator-panel .travel-result { min-height:0; }
         .generator-panel .foraging-frame { min-height:420px; height:55vh; }
         .generator-panel #partyLevels,.generator-panel #encounterEnvironment,.generator-panel label[for="partyLevels"],.generator-panel label[for="encounterEnvironment"] { display:none !important; }
-        .generator-panel #npcSubTab { flex-direction:column; overflow:visible !important; }
-        .generator-panel #npcSubTab > div { flex:auto !important; overflow:visible !important; }
+        .generator-panel #npcSubTab { flex-direction:column; }
+        .generator-panel #npcSubTab > div { flex:none; }
         .generator-panel #encounterContent { flex-direction:column; }
         .generator-panel #trapContent,.generator-panel #lootContent,.generator-panel #carousingSubTab,.generator-panel #magicShopSubTab { min-height:0; }
-        .generator-panel .generator-subcontent { box-sizing:border-box; width:100%; padding:12px !important; background:#3a2416 !important; border:1px solid #8a6643; border-radius:0 0 10px 10px; }
-        .generator-panel #wildTravelPanel.is-active,.generator-panel #wildForagingPanel.is-active { display:block !important; }
+        .generator-panel .generator-subcontent { box-sizing:border-box; width:100%; padding:12px 0 0 !important; background:transparent !important; border:0; border-radius:0; box-shadow:none; }
+        .generator-panel #wildTravelPanel.is-active,.generator-panel #wildForagingPanel.is-active { display:flex !important; flex:1; flex-direction:column; }
         .generator-panel #wildTravelPanel > * + *,.generator-panel #wildForagingPanel > * + * { margin-top:10px; }
-        .generator-panel #wildForagingPanel.is-active { display:flex !important; flex-direction:column; min-height:calc(100vh - 325px); }
-        .generator-panel #wildForagingPanel .foraging-output { flex:1; height:calc(100vh - 405px); min-height:300px; max-height:none; margin-bottom:0; }
+        .generator-panel #wildForagingPanel .foraging-output { flex:1; height:auto; min-height:0; max-height:none; margin-bottom:0; }
         .generator-panel #wildForagingPanel details { display:none; }
-        .generator-panel #wildTravelPanel .wilderness-controls { display:grid; grid-template-columns:minmax(120px,.7fr) minmax(190px,1.3fr); align-items:end; gap:8px; }
+        .generator-panel #wildTravelPanel .wilderness-controls { display:grid; grid-template-columns:auto auto; align-items:center; justify-content:center; gap:8px; }
         .generator-panel #wildTravelPanel .wilderness-controls label { margin:0; }
-        .generator-panel #wildTravelPanel .wilderness-roll { grid-column:auto; height:39px; padding:8px; }
-        .generator-panel .encounter-generate-row { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
-        .generator-panel .encounter-generate-row button { min-width:0; padding:10px !important; font-size:.86rem !important; }
+        .generator-panel #wildTravelPanel .wilderness-roll { grid-column:auto; width:62px; height:39px; padding:5px; }
+        .generator-panel .encounter-builder-controls { flex:none !important; }
+        .encounter-primary-row { display:grid; grid-template-columns:minmax(110px,1fr) auto auto; align-items:center; gap:8px; }
+        .encounter-primary-row select { min-width:0; padding:10px; color:white; background:#2b190f; border:1px solid #765133; border-radius:5px; font-size:1rem; }
+        .encounter-generate-button { display:flex; align-items:center; justify-content:center; gap:2px; width:72px; height:41px; padding:5px; border-radius:5px; cursor:pointer; }
+        .encounter-generate-button img { display:block; width:27px; height:24px; object-fit:contain; }
+        .encounter-generate-button svg { width:20px; height:23px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+        .encounter-generate-button--standard { color:#2b090b; background:#ff5959; border:1px solid #ff8a90; }
+        .encounter-generate-button--environment { width:90px; color:#102d17; background:#55d66b; border:1px solid #72df91; }
+        .encounter-generate-button:hover,.encounter-send-button:hover { filter:brightness(1.12); }
+        .encounter-generate-button:focus-visible { outline:2px solid currentColor; outline-offset:2px; }
+        .encounter-results { flex:1; display:flex; flex-direction:column; min-height:0; gap:10px; }
+        .encounter-summary-row { display:flex; align-items:center; gap:10px; }
+        .encounter-send-button { flex:none; display:grid; place-items:center; min-width:54px; padding:8px 10px; color:#f4d76d; background:#4b2915; border:1px solid #f4d76d; border-radius:5px; font-size:1.3rem; line-height:1; font-weight:bold; cursor:pointer; }
+        .encounter-send-button:focus-visible { outline:2px solid #f4d76d; outline-offset:2px; }
+        .encounter-add-monster { flex:none; display:flex; align-items:center; justify-content:center; gap:3px; width:62px; height:38px; margin-left:auto; padding:5px 8px; color:#ff777f; background:#351416; border:1px solid #ff777f; border-radius:5px; cursor:pointer; }
+        .encounter-add-monster:hover { filter:brightness(1.18); }
+        .encounter-add-monster:focus-visible { outline:2px solid #ff777f; outline-offset:2px; }
+        .encounter-add-monster .encounter-add-symbol { font-size:1.35rem; font-weight:bold; line-height:1; }
+        .encounter-add-monster svg { width:25px; height:25px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .generated-monster-list { margin:8px 0 0; padding-left:22px; }
+        #encounterMonsterList > li { display:flex; align-items:center; gap:7px; min-height:28px; }
+        .encounter-monster-remove { flex:none; display:grid; place-items:center; width:23px; height:23px; padding:0; color:#ff777f; background:#351416; border:1px solid #ff777f; border-radius:4px; font-size:1rem; font-weight:bold; line-height:1; cursor:pointer; }
+        .encounter-monster-remove:hover { filter:brightness(1.18); }
+        .encounter-monster-remove:focus-visible { outline:2px solid #ff777f; outline-offset:1px; }
+        .encounter-monster-link { padding:0; color:#f4d76d; background:transparent; border:0; font:inherit; font-weight:bold; text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+        .encounter-monster-link:hover { color:#fff0ad; }
+        .encounter-monster-link:focus-visible { outline:2px solid #f4d76d; outline-offset:2px; border-radius:2px; }
+        .generated-monster-token-preview { display:none; position:fixed; z-index:3900; width:94px; height:94px; padding:5px; box-sizing:border-box; pointer-events:none; background:#21130c; border:2px solid #f4d76d; border-radius:50%; box-shadow:0 6px 20px rgba(0,0,0,.75); }
+        .generated-monster-token-preview.is-open { display:block; }
+        .generated-monster-token-preview img { display:block; width:100%; height:100%; object-fit:cover; border-radius:50%; }
         .generator-panel .trap-controls button { grid-column:1/-1; width:100%; white-space:nowrap; }
         .generator-panel .trap-controls { grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; }
         .generator-panel .trap-controls select { min-width:0; padding:7px 3px; font-size:.72rem; }
-        .npc-manager-row { display:grid; grid-template-columns:minmax(0,1fr) repeat(3,auto); gap:6px; }
+        .loot-generator { display:flex; flex:1; min-height:0; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:16px; overflow:visible; }
+        .loot-controls { display:flex; align-items:center; justify-content:flex-start; gap:8px; width:100%; flex-wrap:wrap; }
+        .loot-controls select,.loot-controls input { box-sizing:border-box; padding:8px; color:#fff; background:#2b190f; border:1px solid #765133; border-radius:5px; }
+        .loot-controls label { color:#f4d76d; font-weight:bold; }
+        .loot-controls #lootCR { width:68px; }
+        .loot-controls #lootXP { width:100px; }
+        .loot-xp-reference { position:relative; display:inline-flex; align-items:center; }
+        .loot-xp-reference > label { cursor:help; }
+        .loot-xp-table-popup { display:none; position:fixed; z-index:5000; width:220px; max-height:min(440px,calc(100vh - 24px)); overflow:auto; padding:9px; color:#fff; background:#21130c; border:1px solid #f4d76d; border-radius:7px; box-shadow:0 7px 22px #000; }
+        .loot-xp-table-popup.is-open { display:block; }
+        .loot-xp-table-popup table { width:100%; border-collapse:collapse; font-size:.78rem; }
+        .loot-xp-table-popup caption { margin-bottom:6px; color:#f4d76d; font-weight:bold; }
+        .loot-xp-table-popup th,.loot-xp-table-popup td { padding:4px 7px; border-bottom:1px solid #563722; text-align:right; }
+        .loot-xp-table-popup th:first-child,.loot-xp-table-popup td:first-child { text-align:center; }
+        .loot-generate-button { display:flex; align-items:center; justify-content:center; gap:4px; width:76px; height:42px; margin-left:auto; padding:5px; color:#2b090b; background:#ff5959; border:1px solid #ff8a90; border-radius:5px; cursor:pointer; }
+        .loot-generate-button:hover { filter:brightness(1.12); }
+        .loot-generate-button:focus-visible { outline:2px solid #ff8a90; outline-offset:2px; }
+        .loot-generate-button img { width:28px; height:25px; object-fit:contain; }
+        .loot-generate-button svg { width:22px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .loot-sticker-controls { display:flex; align-items:center; justify-content:flex-end; gap:10px; width:100%; }
+        .loot-auto-drop { display:flex; align-items:center; gap:6px; color:#f4d76d; font-weight:bold; }
+        .loot-auto-drop input { accent-color:#f4d76d; }
+        .loot-place-button { padding:8px 12px; color:#f4d76d; background:#4b2915; border:1px solid #f4d76d; border-radius:5px; font-weight:bold; cursor:pointer; }
+        .loot-place-button:disabled { opacity:.45; cursor:not-allowed; }
+        .loot-place-button:not(:disabled):hover { filter:brightness(1.15); }
+        .loot-generator #lootResult { flex:1; min-height:180px; width:100%; height:auto !important; box-sizing:border-box; }
+        .npc-manager-row { display:flex; align-items:center; justify-content:center; gap:6px; }
         .npc-manager-row select,.npc-manager-row button { min-width:0; padding:8px; border-radius:5px; }
-        .npc-manager-row select { background:#1d1009; color:#f4d76d; border:1px solid #f4d76d; }
+        .npc-manager-row select { flex:0 1 50%; width:50%; background:#1d1009; color:#f4d76d; border:1px solid #f4d76d; }
         .npc-manager-row button { border:0; cursor:pointer; font-weight:bold; }
-        .npc-editor-card { padding:12px; background:#160c07; border-left:4px solid #55a8ff; border-radius:6px; }
+        .npc-icon-button { display:grid; place-items:center; width:36px; height:36px; padding:6px !important; }
+        .npc-icon-button svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+        .npc-add-table-button { display:flex !important; align-items:center; justify-content:center; gap:2px; width:52px; color:#f4d76d; background:#4b2915; border:1px solid #f4d76d !important; font-size:1rem; }
+        .npc-add-table-button svg { width:17px; height:17px; }
+        .npc-save-button { color:#72df91; background:#132d1b; border:1px solid #72df91 !important; }
+        .npc-delete-button { color:#ff777f; background:#351416; border:1px solid #ff777f !important; }
+        .npc-icon-button:hover,.npc-generate-button:hover,.npc-token-upload-button:hover { filter:brightness(1.14); }
+        .npc-icon-button:focus-visible,.npc-generate-button:focus-visible,.npc-token-upload-button:focus-visible { outline:2px solid currentColor; outline-offset:2px; }
+        .npc-editor-card { padding:0; background:transparent; border:0; border-radius:0; }
         .npc-identity-grid { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-bottom:8px; }
-        .npc-identity-grid label,.npc-editor-card > label { display:flex; flex-direction:column; gap:4px; color:#e7c96a; font-size:.78rem; }
+        .npc-identity-grid label { display:flex; flex-direction:row; align-items:center; gap:7px; color:#e7c96a; font-size:.78rem; }
+        .npc-identity-grid label span { flex:0 0 68px; }
+        .npc-identity-grid label input { flex:1; min-width:0; }
+        .npc-editor-card > label { display:flex; flex-direction:column; gap:4px; color:#e7c96a; font-size:.78rem; }
         .npc-editor-card input,.npc-editor-card textarea { box-sizing:border-box; width:100%; padding:7px; background:#2b190f; color:white; border:1px solid #8a6643; border-radius:4px; }
         .npc-identity-layout { display:grid; grid-template-columns:145px minmax(0,1fr); gap:10px; align-items:start; }
         .npc-token-editor { display:flex; flex-direction:column; gap:7px; align-items:center; }
+        .npc-token-preview-wrap { position:relative; width:134px; height:134px; }
         .npc-token-preview { width:130px; height:130px; object-fit:cover; border:2px solid #f4d76d; border-radius:50%; background:#2b190f; }
         .npc-token-editor input[type="file"] { width:100%; font-size:.7rem; color:white; }
-        .npc-token-upload-button { width:100%; box-sizing:border-box; padding:8px; text-align:center; color:#1d1009; background:#f4d76d; border-radius:5px; cursor:pointer; font-weight:bold; }
+        .npc-token-upload-button { position:absolute; left:5px; bottom:5px; display:grid; place-items:center; width:31px; height:31px; box-sizing:border-box; color:#1d1009; background:#f4d76d; border:1px solid #1d1009; border-radius:50%; cursor:pointer; }
+        .npc-token-upload-button svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
         .npc-token-upload-button input { display:none; }
+        .npc-generation-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)) auto; align-items:end; gap:6px; }
+        .npc-generator .npc-generate-button { display:flex; align-items:center; justify-content:center; gap:2px; width:62px; height:39px; padding:5px; color:#06172a; background:#55a8ff; border:1px solid #8bc5ff; border-radius:5px; cursor:pointer; }
+        .npc-generate-button img { display:block; width:30px; height:25px; object-fit:contain; }
+        .npc-generate-button svg { width:19px; height:21px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
         .distributed-creator-modal { display:none; position:fixed; inset:0; z-index:3200; padding:32px; box-sizing:border-box; align-items:center; justify-content:center; background:rgba(0,0,0,.82); }
         .distributed-creator-modal.is-open { display:flex; }
         #monsterCreatorModal { z-index:3600 !important; }
@@ -457,6 +555,28 @@
         .map-library-button { width:40px; height:40px; padding:5px; background:#1d1009; color:#f4d76d; border:1px solid #f4d76d; border-radius:6px; cursor:pointer; }
         .map-library-button svg { width:28px; height:28px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
         .dm-create-monster { width:100%; margin-top:6px; padding:9px; background:#4b2915; color:#f4d76d; border:1px solid #f4d76d; border-radius:5px; cursor:pointer; font-weight:bold; }
+        .monster-picker-modal { display:none; position:fixed; inset:0; z-index:3000; align-items:center; justify-content:center; box-sizing:border-box; padding:20px; background:rgba(0,0,0,.8); }
+        .monster-picker-dialog { position:relative; display:flex; flex-direction:column; gap:16px; width:min(620px,calc(100vw - 40px)); max-height:calc(100vh - 40px); box-sizing:border-box; padding:24px; color:white; background:#2b190f; border:1px solid #765133; border-radius:10px; box-shadow:0 10px 35px #000; }
+        .monster-picker-dialog h2 { margin:0; padding:0 40px; color:#f4d76d; font-family:'MedievalSharp',cursive; text-align:center; }
+        .monster-picker-filters { display:grid; grid-template-columns:minmax(160px,1fr) repeat(2,minmax(90px,.45fr)) minmax(130px,.65fr); gap:8px; }
+        .monster-picker-filters input,.monster-picker-filters select { min-width:0; box-sizing:border-box; padding:10px; color:white; background:#3d2718; border:1px solid #765133; border-radius:5px; }
+        .monster-picker-list { flex:1; min-height:180px; max-height:42vh; overflow-y:auto; padding:8px; background:#3d2718; border:1px solid #765133; border-radius:5px; scrollbar-width:thin; scrollbar-color:#8a6643 #21130c; }
+        .monster-picker-option { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:7px 8px; border-bottom:1px solid #765133; cursor:pointer; }
+        .monster-picker-option:last-child { border-bottom:0; }
+        .monster-picker-option:hover { background:#4a3020; }
+        .monster-picker-option.is-selected { background:#765133; }
+        .monster-picker-name { padding:0; color:#f4d76d; background:transparent; border:0; font:inherit; font-weight:bold; text-align:left; text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+        .monster-picker-meta { flex:none; color:#d5c8a4; font-size:.82rem; }
+        .monster-picker-empty { margin:0; padding:18px; color:#d5c8a4; text-align:center; }
+        .monster-picker-count-row { display:flex; align-items:center; justify-content:center; gap:8px; }
+        .monster-picker-count-row label { color:#f4d76d; font-size:1.2rem; font-weight:bold; }
+        .monster-picker-count-row input { box-sizing:content-box; width:3ch; padding:9px; color:white; background:#3d2718; border:1px solid #765133; border-radius:5px; text-align:center; appearance:textfield; -moz-appearance:textfield; }
+        .monster-picker-count-row input::-webkit-inner-spin-button,.monster-picker-count-row input::-webkit-outer-spin-button { margin:0; appearance:none; -webkit-appearance:none; }
+        .monster-picker-confirm { padding:9px 22px; color:white; background:#32cd32; border:0; border-radius:5px; font-size:1rem; font-weight:bold; cursor:pointer; }
+        .monster-picker-close { position:absolute; top:10px; right:10px; display:grid; place-items:center; width:34px; height:34px; padding:0; color:#ff777f; background:#351416; border:1px solid #ff777f; border-radius:50%; font-size:1.25rem; font-weight:bold; line-height:1; cursor:pointer; }
+        .monster-picker-close:hover { filter:brightness(1.18); }
+        .monster-picker-close:focus-visible { outline:2px solid #ff777f; outline-offset:2px; }
+        @media(max-width:620px){.monster-picker-filters{grid-template-columns:1fr 1fr}.monster-picker-filters input{grid-column:1/-1}}
         .npc-editable-stats { display:grid; grid-template-columns:repeat(6,1fr); gap:5px; margin:8px 0; }
         .npc-editable-stats label { color:#f4d76d; font-size:.7rem; text-align:center; }
         .monster-multiselect { position:relative; width:154px; }
@@ -503,7 +623,18 @@
         @media(max-width:760px){.monster-builder-card{grid-template-columns:1fr 1fr}.monster-builder-card .builder-wide{grid-column:1/-1}.monster-builder-remove{grid-column:2;justify-self:end}}
         .npc-editable-stats input { margin-top:3px; text-align:center; padding:5px 2px; }
         .npc-generator-flavor { margin:8px 0; color:#ccc; font-size:.86rem; }
-        .npc-generation-controls { margin-top:10px; padding:10px; background:rgba(255,255,255,.05); border-radius:8px; }
+        .npc-generation-controls { margin-top:10px; padding:10px; background:#10263d; border:1px solid #55a8ff; border-radius:8px; }
+        .carousing-controls { display:grid; grid-template-columns:minmax(170px,230px) auto auto; align-items:center; justify-content:center; gap:8px; }
+        .carousing-level-control { display:flex; align-self:stretch; align-items:center; gap:7px; color:#f4d76d; font-weight:bold; white-space:nowrap; }
+        .carousing-level-control input { width:54px !important; }
+        .carousing-generate-button { display:flex; align-items:center; justify-content:center; gap:2px; width:62px; height:39px; padding:5px; color:#06172a; background:#55a8ff; border:1px solid #8bc5ff; border-radius:5px; cursor:pointer; }
+        .carousing-generate-button img { display:block; width:30px; height:25px; object-fit:contain; }
+        .carousing-generate-button svg { width:21px; height:23px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+        .carousing-generate-button:hover { filter:brightness(1.12); }
+        .carousing-generate-button:focus-visible { outline:2px solid #55a8ff; outline-offset:2px; }
+        .magic-shop-button { align-self:center; display:inline-flex; align-items:center; justify-content:center; margin:auto; padding:11px 18px; color:#06172a; background:#55a8ff; border:1px solid #8bc5ff; border-radius:6px; font-weight:bold; text-decoration:none; }
+        .magic-shop-button:hover { filter:brightness(1.12); }
+        .magic-shop-button:focus-visible { outline:2px solid #55a8ff; outline-offset:2px; }
 
         .wilderness-layout { display: grid; grid-template-columns: minmax(340px, .85fr) minmax(480px, 1.4fr); gap: 16px; padding: 16px; width: 100%; box-sizing: border-box; }
         .wilderness-panel { background: #1d1d1d; border: 1px solid #765133; border-radius: 10px; padding: 18px; box-sizing: border-box; }
@@ -512,14 +643,24 @@
         .wilderness-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .wilderness-controls label { display: flex; flex-direction: column; gap: 6px; font-weight: bold; }
         .wilderness-controls select, .wilderness-controls input { padding: 10px; background: #342014; color: white; border: 1px solid #8a6643; border-radius: 5px; font-size: 1rem; }
-        .wilderness-roll { grid-column: 1 / -1; padding: 12px; border: 0; border-radius: 5px; background: #f4d76d; color: #1d1009; font-size: 1.05rem; font-weight: bold; cursor: pointer; }
-        .travel-result { margin-top: 16px; padding: 16px; min-height: 190px; background: #1d1009; border-left: 4px solid #f4d76d; border-radius: 5px; }
-        .travel-result h3 { margin-top: 0; color: #f4d76d; }
+        .wilderness-controls .travel-survival-control { flex-direction:row; align-items:center; justify-content:flex-start; gap:8px; }
+        .travel-survival-control span { line-height:1.05; white-space:nowrap; }
+        .wilderness-controls #travelSurvivalCheck { box-sizing:content-box; width:2.5ch; text-align:center; appearance:textfield; -moz-appearance:textfield; }
+        #travelSurvivalCheck::-webkit-inner-spin-button,#travelSurvivalCheck::-webkit-outer-spin-button { margin:0; appearance:none; -webkit-appearance:none; }
+        .wilderness-roll { grid-column: 1 / -1; padding: 12px; border: 1px solid #72df91; border-radius: 5px; background: #55d66b; color: #102d17; font-size: 1.05rem; font-weight: bold; cursor: pointer; }
+        .wilderness-roll-icon { display:flex; align-items:center; justify-content:center; gap:1px; }
+        .wilderness-roll-icon img { display:block; width:30px; height:26px; object-fit:contain; }
+        .wilderness-roll-icon svg { display:block; width:19px; height:25px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+        .travel-result { margin-top: 16px; padding: 16px; min-height: 190px; background: #1d1009; border: 1px solid #765133; border-radius: 5px; }
+        .travel-result h3 { margin-top: 0; color: #55d66b; font-family:'MedievalSharp',Georgia,serif; }
         .travel-result dt { margin-top: 10px; color: #e7c96a; font-weight: bold; }
         .travel-result dd { margin: 3px 0 0; line-height: 1.4; }
         .foraging-frame { width: 100%; height: calc(100vh - 180px); min-height: 540px; background: white; border-radius: 6px; }
         .travel-encounter { margin-top: 12px; padding: 12px; background: #251b1b; border: 1px solid #8d4a4a; border-radius: 6px; }
-        .travel-encounter button { margin-top: 8px; padding: 9px 12px; border: 0; border-radius: 5px; background: #32CD32; color: #1d1009; font-weight: bold; cursor: pointer; }
+        .travel-encounter.has-send-action { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; gap:10px; }
+        .travel-encounter .travel-encounter-send { align-self:start; display:grid; place-items:center; min-width:54px; margin:0; padding:8px 10px; border:1px solid #f4d76d; border-radius:5px; background:#4b2915; color:#f4d76d; font-size:1.3rem; line-height:1; font-weight:bold; cursor:pointer; }
+        .travel-encounter .travel-encounter-send:hover { filter:brightness(1.14); }
+        .travel-encounter .travel-encounter-send:focus-visible { outline:2px solid #f4d76d; outline-offset:2px; }
         .foraging-tools { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 12px 0; }
         .foraging-tools select, .foraging-tools input { min-width: 0; padding: 8px; background: #342014; color: white; border: 1px solid #8a6643; border-radius: 5px; }
         .foraging-tools button { padding: 8px; border: 0; border-radius: 5px; background: #3a8f4d; color: white; font-weight: bold; cursor: pointer; }
@@ -558,8 +699,11 @@
         .monster-stat-modal { display:none; position:fixed; inset:0; z-index:3600; pointer-events:none; }
         .monster-stat-modal.is-open { display:block; }
         .classic-statblock { position:fixed; right:20px; bottom:20px; width:min(480px,calc(100vw - 40px)); height:min(520px,calc(100vh - 90px)); min-width:340px; min-height:220px; max-width:calc(100vw - 20px); max-height:calc(100vh - 60px); margin:0; padding:25px 24px 20px; box-sizing:border-box; overflow:auto; resize:both; pointer-events:auto; color:#651c12; background:#efe0ad; border:3px solid #7b2719; border-top-width:8px; border-bottom-width:8px; box-shadow:0 10px 35px #000; font-family:Georgia,'Times New Roman',serif; }
+        .monster-stat-modal.is-floating .classic-statblock { right:auto; bottom:auto; }
         .classic-statblock h1 { margin:0; color:#6f1d14; font-size:2rem; font-variant:small-caps; }
         .classic-statblock .stat-subtitle { margin:2px 0 9px; color:#3b2419; font-style:italic; }
+        .classic-statblock-header { display:grid; grid-template-columns:minmax(0,1fr) 88px; align-items:start; gap:12px; padding-top:4px; }
+        .classic-statblock-token { width:84px; height:84px; box-sizing:border-box; object-fit:cover; border:3px solid #8b2e1f; border-radius:50%; background:#d8c58d; box-shadow:0 2px 6px rgba(36,23,15,.35); }
         .classic-statblock h2 { margin:12px 0 4px; padding-bottom:2px; color:#6f1d14; border-bottom:2px solid #9b3825; font-size:1.25rem; font-variant:small-caps; }
         .classic-statblock p { margin:4px 0; line-height:1.35; }
         .classic-statblock hr { height:4px; margin:8px 0; border:0; background:#8b2e1f; clip-path:polygon(0 0,100% 30%,100% 70%,0 100%); }
@@ -568,11 +712,13 @@
         .classic-statblock .stat-entry { margin:7px 0; color:#24170f; }
         .classic-statblock .stat-entry strong { color:#6f1d14; font-style:italic; }
         .classic-statblock-close { position:absolute; top:6px; right:8px; padding:2px 8px; color:#6f1d14; background:transparent; border:0; font-size:1.6rem; cursor:pointer; }
+        .classic-statblock-drag-handle { position:absolute; top:2px; left:50%; z-index:3; min-width:92px; padding:3px 12px; transform:translateX(-50%); color:#6f1d14; background:rgba(111,29,20,.1); border:1px solid rgba(111,29,20,.45); border-radius:0 0 6px 6px; font:700 .72rem Arial,sans-serif; letter-spacing:.06em; text-align:center; text-transform:uppercase; cursor:move; touch-action:none; user-select:none; }
+        .classic-statblock-drag-handle:hover { background:rgba(111,29,20,.2); }
         .classic-statblock-pin { position:absolute; top:2px; left:5px; z-index:2; width:30px; height:25px; padding:0; color:#6f1d14; background:transparent; border:0; border-radius:4px; font-size:1.05rem; cursor:pointer; }
         .classic-statblock-pin.is-pinned { color:#fff3c4; background:#6f1d14; box-shadow:0 0 0 1px #efe0ad inset; }
         .cpu-advisor-panel { position:fixed; z-index:3599; width:340px; max-width:calc(100vw - 20px); overflow:auto; pointer-events:auto; transition:opacity .18s ease,transform .18s ease; }
         .cpu-advisor-panel.is-hidden { visibility:hidden; opacity:0; transform:translateX(18px); pointer-events:none; }
-        .cpu-advisor { min-height:100%; padding:12px; box-sizing:border-box; color:#fff; background:rgba(17,17,17,.98); border:2px solid #f4d76d; border-radius:8px 0 0 8px; box-shadow:-8px 8px 24px #000; font-family:Arial,sans-serif; }
+        .cpu-advisor { min-height:100%; padding:12px; box-sizing:border-box; color:#fff; background:rgba(17,17,17,.98); border:2px solid #f4d76d; border-radius:0 8px 8px 0; box-shadow:8px 8px 24px #000; font-family:Arial,sans-serif; }
         .cpu-advisor h2 { margin:0 0 4px; color:#f4d76d; border-color:#f4d76d; font-family:'MedievalSharp',cursive; }
         .cpu-advisor-note { margin:0 0 10px!important; color:#ddd; font-size:.82rem; }
         .cpu-advisor-controls { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
@@ -700,7 +846,7 @@
             padding: 5px;
         }
     </style>
-<link rel="stylesheet" href="token-actions.css?v=15">
+<link rel="stylesheet" href="token-actions.css?v=16">
 </head>
 
 <div class="main-layout">
@@ -744,7 +890,7 @@
         <div class="wilderness-layout">
             <section class="wilderness-panel">
                 <div class="wilderness-controls">
-                    <label>Survival check
+                    <label class="travel-survival-control"><span>Survival Check</span>
                         <input id="travelSurvivalCheck" type="number" min="1" max="40" value="12">
                     </label>
                     <label>Environment
@@ -757,7 +903,7 @@
                     <label>Party levels
                         <input id="travelPartyLevels" type="text" value="3,3,3,3" aria-label="Party levels, comma separated">
                     </label>
-                    <button class="wilderness-roll" type="button" onclick="generateWildernessTravel()">Generate Travel Scene</button>
+                    <button class="wilderness-roll" type="button" onclick="generateWildernessTravel()" aria-label="Generate Travel Scene" title="Generate Travel Scene"><span class="wilderness-roll-icon" aria-hidden="true"><img src="data/images/gears_icon.png" alt=""><svg viewBox="0 0 20 26"><path d="M10 2 3 12h4l-5 8h6v4h4v-4h6l-5-8h4z"/></svg></span></button>
                 </div>
                 <div id="travelResult" class="travel-result" aria-live="polite">
                     <h3>The road awaits</h3>
@@ -890,9 +1036,7 @@
 
             <!-- Magic Shop Sub-Tab -->
             <div id="magicShopSubTab" class="sub-tab-content" style="display: none; flex-direction: column;">
-                <div class="town-label">Magic Shop</div>
-                <a href="https://donjon.bin.sh/5e/magic/shop.html" target="_blank"
-                    style="color: #f4d76d; text-decoration: underline;">Open Magic Shop</a>
+                <a class="magic-shop-button" href="https://donjon.bin.sh/5e/magic/shop.html" target="_blank" rel="noopener noreferrer">Open Donjon Magic Shop</a>
             </div>
 
             <!-- Carousing Events Sub-Tab -->
@@ -900,23 +1044,16 @@
 
 
                 <!-- Dropdowns -->
-                <div style="display: flex; gap: 10px;">
+                <div class="carousing-controls">
                     <select id="carousingLifestyle" class="npc-input">
                         <option value="general">General (DMG)</option>
                         <option value="lower">Lower Class (Xanathar's)</option>
                         <option value="middle">Middle Class (Xanathar's)</option>
                         <option value="aristocratic">Upper Class (Xanathar's)</option>
                     </select>
-                    <label for="carousingLevel" style="color: #f4d76d; font-weight: bold;">Player Level:</label>
-                    <input id="carousingLevel" type="number" min="1" max="20" value="1" class="npc-input"
-                        style="width: 80px;" />
+                    <label class="carousing-level-control"><span>Player Level</span><input id="carousingLevel" type="number" min="1" max="20" value="1" class="npc-input"></label>
+                    <button class="carousing-generate-button" type="button" onclick="generateCarousingEvent()" aria-label="Generate Carousing Event" title="Generate Carousing Event"><img src="data/images/gears_icon.png" alt=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 2h5l-2 3h-3M4 12l8-6 8 6M5 12v9h14v-9M4 12c1.3 2 2.7 2 4 0 1.3 2 2.7 2 4 0 1.3 2 2.7 2 4 0 1.3 2 2.7 2 4 0M10 21v-6h4v6M8 12l4-6 4 6"/></svg></button>
                 </div>
-
-                <!-- Button -->
-                <button onclick="generateCarousingEvent()" class="monster-tab-btn"
-                    style="background-color: #f4d76d; color: black;">
-                    Generate Carousing Event
-                </button>
 
                 <!-- Output Textarea -->
                 <textarea id="carousingResult" class="npc-textarea" style="height: 300px;" readonly></textarea>
@@ -1107,28 +1244,22 @@
                 <!-- loot tab---------------------------------------------------------------------------------------->
                 <div id="lootContent" class="dungeon-tab-content"
                     style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px;">
-                    <div
-                        style="display: flex; flex-direction: column; flex: 1; padding: 20px; align-items: center; justify-content: center; gap: 20px; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                    <div class="loot-generator">
 
                         <!-- Dropdown + CR Input -->
-                        <div style="display: flex; gap: 10px; align-items: center; flex-wrap:wrap;">
+                        <div class="loot-controls">
                             <select id="lootType" class="npc-input">
                                 <option value="individual">Individual Treasure</option>
                                 <option value="hoard">Treasure Hoard</option>
                             </select>
 
-                            <label for="lootCR" style="color: #f4d76d; font-weight: bold;">Challenge Rating:</label>
-                            <input id="lootCR" type="number" min="0" max="30" step="0.125" value="0" class="npc-input"
-                                style="width: 80px;" />
-                            <label for="lootXP" style="color: #f4d76d; font-weight: bold;">Encounter XP:</label>
-                            <input id="lootXP" type="number" min="0" step="25" value="0" class="npc-input" style="width:110px;" />
+                            <label for="lootCR">CR</label>
+                            <input id="lootCR" type="number" min="0" max="30" step="0.125" value="0" class="npc-input" />
+                            <span class="loot-xp-reference"><label for="lootXP" tabindex="0" aria-describedby="lootXpTablePopup">XP</label><span id="lootXpTablePopup" class="loot-xp-table-popup" role="tooltip"><table><caption>Player Level Advancement</caption><thead><tr><th>Level</th><th>Total XP</th></tr></thead><tbody><tr><td>1</td><td>0</td></tr><tr><td>2</td><td>300</td></tr><tr><td>3</td><td>900</td></tr><tr><td>4</td><td>2,700</td></tr><tr><td>5</td><td>6,500</td></tr><tr><td>6</td><td>14,000</td></tr><tr><td>7</td><td>23,000</td></tr><tr><td>8</td><td>34,000</td></tr><tr><td>9</td><td>48,000</td></tr><tr><td>10</td><td>64,000</td></tr><tr><td>11</td><td>85,000</td></tr><tr><td>12</td><td>100,000</td></tr><tr><td>13</td><td>120,000</td></tr><tr><td>14</td><td>140,000</td></tr><tr><td>15</td><td>165,000</td></tr><tr><td>16</td><td>195,000</td></tr><tr><td>17</td><td>225,000</td></tr><tr><td>18</td><td>265,000</td></tr><tr><td>19</td><td>305,000</td></tr><tr><td>20</td><td>355,000</td></tr></tbody></table></span></span>
+                            <input id="lootXP" type="number" min="0" step="25" value="0" class="npc-input" />
+                            <button onclick="generateLoot()" class="loot-generate-button" type="button" aria-label="Generate Loot" title="Generate Loot"><img src="data/images/gears_icon.png" alt=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8l-2 4c4 2 6 5 6 9 0 3-3 4-8 4s-8-1-8-4c0-4 2-7 6-9zM8 8h8M9 4 7 2M15 4l2-2"/><path d="M9 14c1-2 5-2 6 0M10 17h4"/></svg></button>
                         </div>
-
-                        <!-- Generate Button -->
-                        <button onclick="generateLoot()" class="monster-tab-btn"
-                            style="background-color: #f4d76d; color: black; font-weight: bold;">
-                            Generate Loot
-                        </button>
+                        <div class="loot-sticker-controls"><label class="loot-auto-drop"><input id="lootAutoDrop" type="checkbox"> Auto drop</label><button id="placeLootStickerBtn" class="loot-place-button" type="button" onclick="placeGeneratedLootSticker()" disabled>Place Loot Sticker</button></div>
 
                         <!-- Output Box -->
                         <textarea id="lootResult" class="npc-textarea" style="width: 100%; height: 300px;"
@@ -1143,23 +1274,21 @@
                     style="flex: 1; background-color: rgba(255,255,255,0.05); border-radius: 10px; padding: 20px; gap: 20px;">
 
                     <!-- Left Column: Controls -->
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                    <div class="encounter-builder-controls" style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
                         <label for="partyLevels"><strong>Party Levels (comma-separated):</strong></label>
                         <input id="partyLevels" type="text" value="3,3,3,3"
                             style="padding: 10px; font-size: 1rem; background-color: #2b190f; color: white; border: 1px solid #765133; border-radius: 5px;">
 
-                        <label for="encounterDifficulty"><strong>Difficulty:</strong></label>
-                        <select id="encounterDifficulty"
-                            style="padding: 10px; font-size: 1rem; background-color: #2b190f; color: white; border: 1px solid #765133; border-radius: 5px;">
-                            <option value="easy">Easy</option>
-                            <option value="medium" selected>Medium</option>
-                            <option value="hard">Hard</option>
-                            <option value="deadly">Deadly</option>
-                        </select>
-
-                        <button onclick="generateEncounter()"
-                            style="padding: 12px; font-size: 1.1rem; background-color: #f4d76d; color: black; border: none; border-radius: 5px; cursor: pointer;">Generate
-                            Encounter</button>
+                        <div class="encounter-primary-row">
+                            <select id="encounterDifficulty" aria-label="Encounter difficulty">
+                                <option value="easy">Easy</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="hard">Hard</option>
+                                <option value="deadly">Deadly</option>
+                            </select>
+                            <button class="encounter-generate-button encounter-generate-button--standard" type="button" onclick="generateEncounter()" aria-label="Generate Encounter" title="Generate Encounter"><img src="data/images/gears_icon.png" alt=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16v18H4zM8 3v18M12 3v18M16 3v18M9 12c.5-3 5.5-3 6 0M10 16l2-2 2 2"/></svg></button>
+                            <button class="encounter-generate-button encounter-generate-button--environment" type="button" onclick="generateEnvironmentEncounter()" aria-label="Generate Environment Encounter" title="Generate Environment Encounter"><img src="data/images/gears_icon.png" alt=""><svg viewBox="0 0 20 24" aria-hidden="true"><path d="M10 2 3 11h4l-5 7h6v4h4v-4h6l-5-7h4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16v18H4zM8 3v18M12 3v18M16 3v18"/></svg></button>
+                        </div>
 
                         <!-- Environment Dropdown -->
                         <label for="encounterEnvironment"><strong>Environment:</strong></label>
@@ -1179,21 +1308,11 @@
                             <option value="Urban">Urban</option>
                         </select>
 
-                        <!-- Generate by Environment Button -->
-                        <button onclick="generateEnvironmentEncounter()"
-                            style="padding: 12px; font-size: 1.1rem; background-color: #1E90FF; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                            Generate Environment Encounter
-                        </button>
-
-
-                        <button onclick="sendEncounter()"
-                            style="padding: 12px; font-size: 1.1rem; background-color: #32CD32; color: white; border: none; border-radius: 5px; cursor: pointer;">Send
-                            to Table</button>
                     </div>
 
                     <!-- Right Column: Monster List -->
-                    <div style="flex: 2; display: flex; flex-direction: column; gap: 10px;">
-                        <label id="encounterMonsterHeading"><strong>Monsters (0 of 0 XP):</strong></label>
+                    <div class="encounter-results" style="flex: 2; display: flex; flex-direction: column; gap: 10px;">
+                        <div class="encounter-summary-row"><button class="encounter-send-button" type="button" onclick="sendEncounter()" aria-label="Send Encounter to Table" title="Send Encounter to Table"><span aria-hidden="true">&larr; &#9876;</span></button><label id="encounterMonsterHeading"><strong>Monsters (0 of 0 XP):</strong></label><button id="addMonsterBtn" class="encounter-add-monster" type="button" aria-label="Add Monster to Encounter" title="Add Monster to Encounter"><span class="encounter-add-symbol" aria-hidden="true">+</span><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 9 3 3l8 3M21 9l4-6-8 3M7 10c0-5 14-5 14 0v6c0 5-3 9-7 9s-7-4-7-9zM10 14h.01M18 14h.01M11 19c2 1 4 1 6 0M14 16v2"/></svg></button></div>
                         <ul id="encounterMonsterList"
                             style="flex: 1; list-style: none; padding: 10px; background-color: #2b190f; color: white; border-radius: 5px; overflow-y: auto; border: 1px solid #765133;">
                         </ul>
@@ -1240,11 +1359,27 @@
             </nav>
             <div id="dmInitiativeContent" class="dm-initiative-content dm-left-panel-content">
                 <h2>Initiative</h2>
-                <table class="dm-initiative-table">
-                    <thead><tr><th>#</th><th>INIT</th><th>NAME</th><th>HP</th><th>Conditions</th></tr></thead>
-                    <tbody id="monsterTableBody"></tbody>
-                </table>
-                <button id="addMonsterBtn" class="dm-add-monster" type="button">Add Monster</button>
+                <div class="dm-initiative-subtabs" role="tablist" aria-label="Initiative tracker views">
+                    <button id="initiativeTableTabButton" class="dm-initiative-subtab is-active" type="button" role="tab" aria-selected="true" aria-controls="initiativeTableTab" onclick="showInitiativeSubtab('table')">Table</button>
+                    <button id="initiativeStatblockTabButton" class="dm-initiative-subtab" type="button" role="tab" aria-selected="false" aria-controls="initiativeStatblockTab" onclick="showInitiativeSubtab('statblock')">Stat Block</button>
+                </div>
+                <section id="initiativeTableTab" class="dm-initiative-tab-panel is-active" role="tabpanel" aria-labelledby="initiativeTableTabButton">
+                    <div class="dm-initiative-table-scroll">
+                        <table class="dm-initiative-table">
+                            <thead><tr><th>#</th><th>INIT</th><th>NAME</th><th>HP</th><th>Conditions</th></tr></thead>
+                            <tbody id="monsterTableBody"></tbody>
+                        </table>
+                    </div>
+                </section>
+                <section id="initiativeStatblockTab" class="dm-initiative-tab-panel" role="tabpanel" aria-labelledby="initiativeStatblockTabButton">
+                    <div id="initiativeStatblockHost" class="dm-initiative-statblock-host">
+                        <p id="initiativeStatblockEmpty" class="dm-initiative-statblock-empty">Click a monster name in the initiative table to view its stat block.</p>
+                        <div id="monsterStatModal" class="monster-stat-modal" role="region" aria-label="Monster stat block">
+                            <aside id="cpuAdvisorPanel" class="cpu-advisor-panel is-hidden" aria-label="CPU Action Advisor"></aside>
+                            <article id="monsterStatblock" class="classic-statblock"></article>
+                        </div>
+                    </div>
+                </section>
             </div>
             <div id="dmBooksContent" class="dm-left-panel-content"><h2>Books</h2><div id="dmBooksHost" style="display:flex;flex:1;min-height:0;flex-direction:column;"></div></div>
             <div id="dmReferenceContent" class="dm-left-panel-content"><h2>Reference</h2><div id="dmReferenceHost"></div></div>
@@ -1258,7 +1393,7 @@
                     <div id="campaignStatus" class="campaign-status" aria-live="polite"></div>
                 </div>
             </div>
-            <div id="dmDiceContent" class="dice-roller dm-left-panel-content"><h2>Dice Roller</h2>
+            <div id="dmDiceContent" class="dice-roller dm-left-panel-content"><div class="dice-roller-header"><h2>Dice Roller</h2><button class="dice-clear-button" type="button" onclick="clearSelectedDice('dm')" aria-label="Clear Selected Dice" title="Clear Selected Dice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6M10 10v7M14 10v7"/></svg></button></div>
                 <div class="dice-roller-form">
                     <details class="dice-customize"><summary>Customize Dice</summary><div class="dice-customize-menu" data-dice-customizer="dm"><label>Colorset<select id="dmDiceColorset" class="dice-colorset"></select></label><label>Texture<select id="dmDiceTexture" class="dice-texture"></select></label><label>Material<select id="dmDiceMaterial" class="dice-material"></select></label><label>Surface<select id="dmDiceSurface" class="dice-surface"></select></label><div class="dice-parameter-preview"><div id="dmDicePreviewStage" class="dice-preview-stage"></div><div class="dice-preview-details" aria-live="polite"></div><button class="dice-sound-preview-button" type="button">Preview Roll Sound</button></div></div></details>
                     <div class="dice-counter d20"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d20-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',20,-1)">−</button><input id="dmDiceCount20" type="number" min="0" max="100" value="1" aria-label="Number of d20 dice"><button type="button" onclick="changeDiceCount('dm',20,1)">+</button></div>
@@ -1270,7 +1405,6 @@
                     <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d6-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',6,-1)">−</button><input id="dmDiceCount6" type="number" min="0" max="100" value="0" aria-label="Number of d6 dice"><button type="button" onclick="changeDiceCount('dm',6,1)">+</button></div>
                     <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d4-black.png')"></span></div><button type="button" onclick="changeDiceCount('dm',4,-1)">−</button><input id="dmDiceCount4" type="number" min="0" max="100" value="0" aria-label="Number of d4 dice"><button type="button" onclick="changeDiceCount('dm',4,1)">+</button></div>
                 </div>
-                <button class="dice-clear-button" type="button" onclick="clearSelectedDice('dm')">Clear Selected Dice</button>
                 <div class="dice-roll-controls"><div class="dice-roll-options"><label class="dice-roll-option"><input id="dmShareDiceRoll" type="checkbox"> Share</label><label class="dice-roll-option"><input id="dmRandomDiceColor" type="checkbox"> Random Color</label></div><button class="dice-roll-button" type="button" onclick="rollUtilityDice('dm')">Roll Dice</button></div>
                 <div class="dice-output-grid"><div id="dmDiceResult" class="dice-result" aria-live="polite">Choose your dice and roll.</div><div id="dmDiceAppearanceResult" class="dice-appearance-result" aria-live="polite"><strong>Appearance</strong><br>Uses your selected customization.</div></div>
                 <div class="dice-post-actions"><button id="dmReplayDiceRoll" class="dice-replay-button" type="button" onclick="window.diceRoller3d?.replayAndShare('dm')" disabled>Replay &amp; Share Roll</button><button id="dmApplyDiceAppearance" class="dice-apply-button" type="button" onclick="window.diceRoller3d?.applyAppearance('dm')" disabled>Apply Appearance</button></div>
@@ -1321,7 +1455,10 @@
                         <div id="mapActionPanel" class="map-action-panel" role="region" aria-label="Creature actions">
                             <div class="map-action-header">
                                 <button id="mapActionAutoPopup" class="action-auto-popup" type="button" aria-pressed="false" aria-label="Auto pop-up off" title="Auto pop-up off" onclick="TokenActions.toggleAutoPopup(this)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5H5.5A2.5 2.5 0 0 0 3 7.5v11A2.5 2.5 0 0 0 5.5 21h11a2.5 2.5 0 0 0 2.5-2.5V14"/><path d="M13 3h8v8M21 3 12 12"/><g class="auto-popup-gear"><circle cx="10" cy="15" r="2.35"/><path d="M10 11.6v1.05M10 17.35v1.05M6.6 15h1.05M12.35 15h1.05M7.6 12.6l.75.75M11.65 16.65l.75.75M12.4 12.6l-.75.75M8.35 16.65l-.75.75"/><circle cx="10" cy="15" r=".65"/></g></svg></button>
-                                <div id="mapActionTargets">No tokens selected</div>
+                                <div class="map-action-target-group">
+                                    <button id="mapTokenPlayerVisibility" class="token-player-visibility" type="button" aria-pressed="false" aria-label="Hide selected tokens from players" title="Hide selected tokens from players" onclick="toggleSelectedTokensPlayerVisibility()" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.8"/><path class="visibility-slash" d="m4 4 16 16"/></svg></button>
+                                    <div id="mapActionTargets">No tokens selected</div>
+                                </div>
                                 <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')" aria-label="Remove selected creatures" title="Remove selected creatures">Remove</button>
                             </div>
                             <div class="map-health-actions">
@@ -1331,10 +1468,6 @@
                             </div>
                             <input id="mapConditionSearch" class="map-condition-search" type="search" placeholder="Search conditions…" aria-label="Search conditions">
                             <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
-                        </div>
-                        <div id="monsterStatModal" class="monster-stat-modal" role="region" aria-label="Monster stat block">
-                            <aside id="cpuAdvisorPanel" class="cpu-advisor-panel is-hidden" aria-label="CPU Action Advisor"></aside>
-                            <article id="monsterStatblock" class="classic-statblock"></article>
                         </div>
                     </section>
                 </div>
@@ -1349,39 +1482,30 @@
 
 
     <!-- Monster Selection Modal ######################################################################################-->
-    <div id="monsterModal"
-        style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 3000;">
-        <div
-            style="background: #2b190f; padding: 30px; border-radius: 10px; width: 400px; display: flex; flex-direction: column; gap: 20px;">
+    <div id="monsterModal" class="monster-picker-modal" role="dialog" aria-modal="true" aria-labelledby="monsterPickerHeading">
+        <div class="monster-picker-dialog">
 
-            <h2 style="text-align: center; color: #f4d76d;">Add Monsters</h2>
+            <h2 id="monsterPickerHeading">Add Monsters</h2>
+            <button id="closeMonsterModal" class="monster-picker-close" type="button" aria-label="Cancel and close monster picker" title="Cancel"><span aria-hidden="true">×</span></button>
 
-            <!-- Search Bar -->
-            <input id="monsterSearch" type="text" placeholder="Search monsters..."
-                style="padding: 10px; background: #3d2718; color: white; border: 1px solid #765133; border-radius: 5px;">
+            <div class="monster-picker-filters">
+                <input id="monsterSearch" type="search" placeholder="Search monsters..." aria-label="Search monsters by name">
+                <select id="monsterCrFilter" aria-label="Filter monsters by challenge rating"><option value="">Any CR</option></select>
+                <select id="monsterTypeFilter" aria-label="Filter monsters by type"><option value="">Any Type</option></select>
+                <select id="monsterEnvironmentFilter" aria-label="Filter monsters by environment"><option value="">Any Environment</option></select>
+            </div>
 
-            <!-- List of Monster Names -->
-            <div id="monsterList"
-                style="max-height: 200px; overflow-y: auto; background: #3d2718; padding: 10px; border-radius: 5px; border: 1px solid #765133;">
+            <div id="monsterList" class="monster-picker-list" role="listbox" aria-label="Monsters">
                 <!-- Filled dynamically -->
             </div>
 
-            <!-- Number of Monsters -->
-            <div style="display: flex; flex-direction: column; gap: 5px;">
-                <label for="monsterCount" style="font-weight: bold;">Number of Monsters to Add:</label>
-                <input id="monsterCount" type="number" min="1" value="1"
-                    style="padding: 10px; background: #3d2718; color: white; border: 1px solid #765133; border-radius: 5px;">
+            <div class="monster-picker-count-row">
+                <label for="monsterCount">#</label>
+                <input id="monsterCount" type="number" inputmode="numeric" min="1" value="1" aria-label="Number of monsters to add">
+                <button id="confirmMonsterBtn" class="monster-picker-confirm" type="button">Enter</button>
             </div>
 
-            <!-- Enter Button -->
-            <button id="confirmMonsterBtn"
-                style="padding: 10px; background: #32CD32; color: white; border: none; border-radius: 5px; font-size: 1.2rem; cursor: pointer;">Enter</button>
-
             <button id="createCustomMonsterBtn" class="dm-create-monster" type="button" onclick="openCustomMonsterFromPicker()">Create Custom Monster</button>
-
-            <!-- Close Modal Button -->
-            <button id="closeMonsterModal"
-                style="padding: 8px; background: #FF4C4C; color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">Cancel</button>
 
         </div>
     </div>
@@ -1745,9 +1869,9 @@
     <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=5"></script>
     <script src="board-sync.js?v=7"></script>
-    <script src="map-stickers.js?v=26"></script>
+    <script src="map-stickers.js?v=30"></script>
     <script src="shared-timer.js?v=5"></script>
-    <script src="board-ui.js?v=5"></script>
+    <script src="board-ui.js?v=8"></script>
     <script src="reference.js?v=2"></script>
     <script src="cpu-action-advisor.js?v=1"></script>
     <script>
@@ -5394,6 +5518,21 @@
         const customMapsRef = db.collection("customMaps");
         const STATIC_MAP_PREFIX = "data/maps/";
         const DEFAULT_MONSTER_TOKEN = "data/monster_tokens/Acolyte.webp";
+        const monsterFilterMetadata = new Map();
+        const monsterFilterMetadataPromise = fetch('data/api_data/monster_filter_catalog.json')
+            .then(response => response.ok ? response.json() : Promise.reject(new Error(`Monster catalog fetch failed: ${response.status}`)))
+            .then(catalog => {
+                catalog.forEach(monster => monsterFilterMetadata.set(monster.name.toLowerCase(), {
+                    cr: parseCrValue(monster.cr),
+                    environment: Array.isArray(monster.environment) ? monster.environment : [],
+                    type: String(monster.type || '').toLowerCase()
+                }));
+                return catalog;
+            })
+            .catch(error => {
+                console.warn('Monster filter metadata unavailable:', error);
+                return [];
+            });
 
         function slugifyValue(value) {
             return (value || "item")
@@ -5503,13 +5642,16 @@
             const merged = new Map();
 
             allMonsters.forEach(monster => {
-                merged.set(monster.name.toLowerCase(), { ...monster, source: "static" });
+                const metadata = monsterFilterMetadata.get(monster.name.toLowerCase());
+                merged.set(monster.name.toLowerCase(), { ...monster, environment:metadata?.environment || [], type:metadata?.type || '', source: "static" });
             });
 
             customMonsterDefinitions.forEach(monster => {
                 merged.set(monster.name.toLowerCase(), {
                     name: monster.name,
                     cr: monster.cr,
+                    environment: monster.monsterData?.environment || [],
+                    type: typeof monster.monsterData?.type === 'string' ? monster.monsterData.type : monster.monsterData?.type?.type || '',
                     source: "custom"
                 });
             });
@@ -5548,24 +5690,68 @@
             return Array.from(customMonsterDefinitions.values()).find(definition => definition.id === monsterId) || null;
         }
 
-        function renderMonsterOptionList(container, filter = "") {
-            container.innerHTML = "";
+        function renderMonsterOptionList(container, filter = "", options = {}) {
+            container.replaceChildren();
+            delete container.dataset.selected;
+            const normalizedFilter = filter.trim().toLowerCase();
+            const selectedCr = options.cr === '' || options.cr == null ? null : Number(options.cr);
+            const selectedType = String(options.type || '').toLowerCase();
+            const selectedEnvironment = String(options.environment || '').toLowerCase();
+            const matches = getMonsterCatalog().filter(monster => {
+                const cr = parseCrValue(monster.cr);
+                const environments = (monster.environment || []).map(value => String(value).toLowerCase());
+                return monster.name.toLowerCase().includes(normalizedFilter)
+                    && (selectedCr == null || cr === selectedCr)
+                    && (!selectedType || String(monster.type || '').toLowerCase() === selectedType)
+                    && (!selectedEnvironment || environments.includes(selectedEnvironment));
+            });
 
-            getMonsterCatalog()
-                .filter(monster => monster.name.toLowerCase().includes(filter.toLowerCase()))
-                .forEach(monster => {
-                    const div = document.createElement("div");
-                    div.textContent = `${monster.name} (CR ${monster.cr})${monster.source === "custom" ? " [Custom]" : ""}`;
-                    div.style.padding = "5px";
-                    div.style.cursor = "pointer";
-                    div.style.borderBottom = "1px solid #765133";
-                    div.addEventListener("click", () => {
-                        container.querySelectorAll("div").forEach(node => node.style.background = "");
-                        div.style.background = "#765133";
-                        container.dataset.selected = monster.name;
+            if (!matches.length) {
+                const empty = document.createElement('p');
+                empty.className = 'monster-picker-empty';
+                empty.textContent = 'No monsters match these filters.';
+                container.appendChild(empty);
+                return;
+            }
+
+            matches.forEach(monster => {
+                const row = document.createElement('div');
+                row.className = options.statblockPreview ? 'monster-picker-option' : '';
+                row.setAttribute('role', 'option');
+                const selectMonster = () => {
+                    container.querySelectorAll('[role="option"]').forEach(node => {
+                        node.classList.remove('is-selected');
+                        node.setAttribute('aria-selected', 'false');
+                        node.style.background = '';
                     });
-                    container.appendChild(div);
-                });
+                    row.classList.add('is-selected');
+                    row.setAttribute('aria-selected', 'true');
+                    if (!options.statblockPreview) row.style.background = '#765133';
+                    container.dataset.selected = monster.name;
+                };
+                row.addEventListener('click', selectMonster);
+
+                if (options.statblockPreview) {
+                    const nameButton = document.createElement('button');
+                    nameButton.type = 'button';
+                    nameButton.className = 'monster-picker-name';
+                    nameButton.textContent = monster.name;
+                    nameButton.setAttribute('aria-label', `Select ${monster.name} and open stat block`);
+                    nameButton.addEventListener('pointerenter', () => showGeneratedMonsterTokenPreview(nameButton, monster.name));
+                    nameButton.addEventListener('pointerleave', () => hideGeneratedMonsterTokenPreview(nameButton));
+                    nameButton.addEventListener('focus', () => showGeneratedMonsterTokenPreview(nameButton, monster.name));
+                    nameButton.addEventListener('blur', () => hideGeneratedMonsterTokenPreview(nameButton));
+                    nameButton.addEventListener('click', () => openGeneratedMonsterStatblock(monster.name));
+                    const meta = document.createElement('span');
+                    meta.className = 'monster-picker-meta';
+                    meta.textContent = `CR ${monster.cr}${monster.source === 'custom' ? ' · Custom' : ''}`;
+                    row.append(nameButton, meta);
+                } else {
+                    row.textContent = `${monster.name} (CR ${monster.cr})${monster.source === "custom" ? " [Custom]" : ""}`;
+                    row.style.cssText = 'padding:5px;cursor:pointer;border-bottom:1px solid #765133;';
+                }
+                container.appendChild(row);
+            });
         }
 
         async function loadMonsterDefinitionByName(name) {
@@ -5869,6 +6055,19 @@
 
         function toggleDmInitiativePanel() { toggleDmLeftPanel('initiative'); }
 
+        function showInitiativeSubtab(tab) {
+            const isStatblock = tab === 'statblock';
+            document.getElementById('initiativeTableTab')?.classList.toggle('is-active', !isStatblock);
+            document.getElementById('initiativeStatblockTab')?.classList.toggle('is-active', isStatblock);
+            const tableButton = document.getElementById('initiativeTableTabButton');
+            const statblockButton = document.getElementById('initiativeStatblockTabButton');
+            tableButton?.classList.toggle('is-active', !isStatblock);
+            statblockButton?.classList.toggle('is-active', isStatblock);
+            tableButton?.setAttribute('aria-selected', String(!isStatblock));
+            statblockButton?.setAttribute('aria-selected', String(isStatblock));
+            if (!isStatblock) toggleCpuAdvisorPanel(false);
+        }
+
         function changeDiceCount(prefix, sides, change) {
             const input = document.getElementById(`${prefix}DiceCount${sides}`);
             input.value = Math.min(100, Math.max(0, (Number(input.value) || 0) + change));
@@ -5879,6 +6078,8 @@
                 const input = document.getElementById(`${prefix}DiceCount${sides}`);
                 if (input) input.value = 0;
             });
+            const modifier = document.getElementById(`${prefix}DiceModifier`);
+            if (modifier) modifier.value = 0;
             const result = document.getElementById(`${prefix}DiceResult`);
             if (result) result.textContent = 'Choose your dice and roll.';
         }
@@ -5899,7 +6100,7 @@
             result.textContent = 'Rolling…';
             const randomAppearance = document.getElementById(`${prefix}RandomDiceColor`)?.checked ? window.diceRoller3d?.getRandomCustomization() : null;
             const appearance = randomAppearance || window.diceRoller3d?.getCustomizationDetails(prefix);
-            const request = { id:`${Date.now()}-${Math.random().toString(36).slice(2)}`, createdAt:Date.now(), roller:'Dungeon Master', sourcePrefix:prefix, dice:pool, modifier, themeConfig:appearance?.themeConfig || window.diceRoller3d?.getCustomization(prefix), appearanceSummary:appearance?.summary || '', appearanceSelection:appearance?.selection || null, appearanceMode:randomAppearance ? 'Random' : 'Custom' };
+            const request = { id:`${Date.now()}-${Math.random().toString(36).slice(2)}`, createdAt:Date.now(), roller:'Dungeon Master', sourcePrefix:prefix, dice:pool, modifier, themeConfig:appearance?.themeConfig || window.diceRoller3d?.getCustomization(prefix), appearanceSummary:appearance?.summary || '', appearanceSelection:appearance?.selection || null };
             if (window.diceRoller3d) window.diceRoller3d.roll(request, document.getElementById(`${prefix}ShareDiceRoll`)?.checked);
             else result.textContent = '3D dice are still loading. Please try again.';
         }
@@ -5957,10 +6158,10 @@
             if (!container) return;
             container.innerHTML = `
                 <div class="npc-manager-row">
+                    <button class="npc-icon-button npc-add-table-button" type="button" onclick="addNpcToTable()" aria-label="Add to Table" title="Add to Table"><span aria-hidden="true">&larr;</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M5 21c.7-5 3-7 7-7s6.3 2 7 7"/></svg></button>
                     <select id="npcDropdown" onchange="loadNpcToForm()" aria-label="Saved NPC"></select>
-                    <button type="button" onclick="saveNPC()" style="background:#228B22;color:white;border-radius:5px;">Save NPC</button>
-                    <button type="button" onclick="deleteNPC()" style="background:#900;color:white;border-radius:5px;">Delete NPC</button>
-                    <button type="button" onclick="addNpcToTable()" style="background:#4b2915;color:#f4d76d;border:1px solid #f4d76d;border-radius:5px;">Add to Table</button>
+                    <button class="npc-icon-button npc-save-button" type="button" onclick="saveNPC()" aria-label="Save NPC" title="Save NPC"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h13l3 3v15H4zM8 3v6h8V3M8 21v-8h8v8"/></svg></button>
+                    <button class="npc-icon-button npc-delete-button" type="button" onclick="deleteNPC()" aria-label="Delete NPC" title="Delete NPC"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
                 </div>
                 <div class="npc-generator">
                     <div id="npcGeneratorResult" class="npc-editor-card" aria-live="polite">
@@ -5968,13 +6169,12 @@
                         <div class="npc-identity-layout">
                             <div class="npc-token-editor">
                                 <input id="npcTokenUrl" type="hidden"><input id="npcTokenPath" type="hidden">
-                                <img id="npcTokenPreview" class="npc-token-preview" src="data/npc_tokens/human.webp" alt="NPC token preview">
-                                <label class="npc-token-upload-button">Upload Token<input id="npcTokenUpload" type="file" accept="image/*" onchange="previewNpcToken()"></label>
+                                <div class="npc-token-preview-wrap"><img id="npcTokenPreview" class="npc-token-preview" src="data/npc_tokens/human.webp" alt="NPC token preview"><label class="npc-token-upload-button" aria-label="Upload Token" title="Upload Token"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 14v6h14v-6"/></svg><input id="npcTokenUpload" type="file" accept="image/*" onchange="previewNpcToken()"></label></div>
                             </div>
                             <div class="npc-identity-grid" style="grid-template-columns:1fr;">
-                                <label>Name<input id="npcName" type="text"></label>
-                                <label>Race<input id="npcRace" type="text"></label>
-                                <label>Occupation<input id="npcOccupation" type="text"></label>
+                                <label><span>Name</span><input id="npcName" type="text"></label>
+                                <label><span>Race</span><input id="npcRace" type="text"></label>
+                                <label><span>Occupation</span><input id="npcOccupation" type="text"></label>
                             </div>
                         </div>
                         <div class="npc-editable-stats">
@@ -5983,12 +6183,12 @@
                         <label>Notes &amp; Abilities<textarea id="npcNotes" rows="10"></textarea></label>
                     </div>
                     <div class="npc-generation-controls">
-                        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
-                            <label>Race<select id="npcGeneratorRace"><option value="all">Any Race</option></select></label>
-                            <label>Alignment<select id="npcGeneratorAlignment"><option value="all">Any Alignment</option></select></label>
-                            <label>Occupation<select id="npcGeneratorOccupation"><option value="all">Any Occupation</option><option>Artisan</option><option>Farmer</option><option>Guard</option><option>Healer</option><option>Innkeeper</option><option>Laborer</option><option>Merchant</option><option>Noble</option><option>Priest</option><option>Sailor</option><option>Scholar</option><option>Soldier</option><option>Thief</option><option>Wanderer</option></select></label>
+                        <div class="npc-generation-row">
+                            <select id="npcGeneratorRace" aria-label="Race"><option value="all">Any Race</option></select>
+                            <select id="npcGeneratorAlignment" aria-label="Alignment"><option value="all">Any Alignment</option></select>
+                            <select id="npcGeneratorOccupation" aria-label="Occupation"><option value="all">Any Occupation</option><option>Artisan</option><option>Farmer</option><option>Guard</option><option>Healer</option><option>Innkeeper</option><option>Laborer</option><option>Merchant</option><option>Noble</option><option>Priest</option><option>Sailor</option><option>Scholar</option><option>Soldier</option><option>Thief</option><option>Wanderer</option></select>
+                            <button class="npc-generate-button" type="button" onclick="generateNPC()" aria-label="Generate New NPC" title="Generate New NPC"><img src="data/images/gears_icon.png" alt=""><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M5 21c.7-5 3-7 7-7s6.3 2 7 7"/></svg></button>
                         </div>
-                        <button type="button" onclick="generateNPC()" style="margin-top:7px;">Generate New NPC</button>
                     </div>
                 </div>`;
         }
@@ -6007,6 +6207,73 @@
                 if (control) control.value = value;
             });
             if (updateForaging && typeof renderForagingTable === 'function') renderForagingTable();
+        }
+
+        let generatorPreferencesSaveTimer = null;
+        let generatorPreferencesEditedCampaignId = '';
+
+        function activeGeneratorCampaignId() {
+            return typeof campaignRegistry !== 'undefined' ? campaignRegistry.activeId || '' : '';
+        }
+
+        function campaignGeneratorSettingsRef(campaignId = activeGeneratorCampaignId()) {
+            return campaignId ? db.collection('campaigns').doc(campaignId).collection('settings').doc('generators') : null;
+        }
+
+        function generatorSelectHasValue(select, value) {
+            return Boolean(select && [...select.options].some(option => option.value === value));
+        }
+
+        async function loadCampaignGeneratorSettings(campaignId = activeGeneratorCampaignId()) {
+            const settingsRef = campaignGeneratorSettingsRef(campaignId);
+            if (!settingsRef) return;
+            try {
+                const snapshot = await settingsRef.get();
+                const saved = snapshot.data() || {};
+                const partyInput = document.getElementById('generatorPartyLevels');
+                const seasonSelect = document.getElementById('generatorSeason');
+                const environmentSelect = document.getElementById('generatorEnvironment');
+                const lootAutoDropInput = document.getElementById('lootAutoDrop');
+                if (generatorPreferencesEditedCampaignId !== campaignId) {
+                    partyInput.value = typeof saved.partyLevels === 'string' && saved.partyLevels.trim() ? saved.partyLevels.trim() : '3,3,3,3';
+                    seasonSelect.value = generatorSelectHasValue(seasonSelect, saved.season) ? saved.season : 'Summer';
+                    environmentSelect.value = generatorSelectHasValue(environmentSelect, saved.environment) ? saved.environment : 'Forest';
+                    if (lootAutoDropInput) lootAutoDropInput.checked = saved.lootAutoDrop === true;
+                    syncGeneratorSharedInputs(true);
+                    if (typeof refreshEncounterXpHeading === 'function') refreshEncounterXpHeading();
+                }
+                if (snapshot.exists && lootAccumulatorEditedCampaignId !== campaignId) {
+                    encounterLootCR = Math.max(0, Number(saved.lootCr) || 0);
+                    encounterLootXP = Math.max(0, Number(saved.lootXp) || 0);
+                    updateLootEncounterFields();
+                }
+                if (!snapshot.exists) {
+                    await settingsRef.set({
+                        partyLevels:partyInput.value || '3,3,3,3', season:seasonSelect.value || 'Summer', environment:environmentSelect.value || 'Forest',
+                        lootCr:Math.max(0, encounterLootCR), lootXp:Math.max(0, Math.round(encounterLootXP)), lootAutoDrop:Boolean(lootAutoDropInput?.checked),
+                        updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+                    }, { merge:true });
+                }
+            } catch (error) {
+                console.warn('Could not load campaign generator settings:', error);
+            }
+        }
+
+        function saveGeneratorPreferences(delay = 0) {
+            const campaignId = activeGeneratorCampaignId();
+            const settingsRef = campaignGeneratorSettingsRef(campaignId);
+            if (!settingsRef) return;
+            generatorPreferencesEditedCampaignId = campaignId;
+            clearTimeout(generatorPreferencesSaveTimer);
+            generatorPreferencesSaveTimer = setTimeout(() => {
+                settingsRef.set({
+                    partyLevels:document.getElementById('generatorPartyLevels')?.value.trim() || '3,3,3,3',
+                    season:document.getElementById('generatorSeason')?.value || 'Summer',
+                    environment:document.getElementById('generatorEnvironment')?.value || 'Forest',
+                    lootAutoDrop:Boolean(document.getElementById('lootAutoDrop')?.checked),
+                    updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+                }, { merge:true }).catch(error => console.warn('Could not save generator preferences:', error));
+            }, delay);
         }
 
         function initializeGeneratorPanel() {
@@ -6038,30 +6305,28 @@
                 dungeonHost.appendChild(content);
             });
 
-            const encounterButton = document.querySelector('#encounterContent button[onclick="generateEncounter()"]');
-            const environmentButton = document.querySelector('#encounterContent button[onclick="generateEnvironmentEncounter()"]');
-            if (encounterButton && environmentButton) {
-                const row = document.createElement('div');
-                row.className = 'encounter-generate-row';
-                encounterButton.parentElement.insertBefore(row, encounterButton);
-                row.append(encounterButton, environmentButton);
-            }
             syncGeneratorSharedInputs(false);
             document.getElementById('generatorPartyLevels')?.addEventListener('input', () => {
                 syncGeneratorSharedInputs(false);
-                if (typeof updateEncounterXpHeading === 'function') updateEncounterXpHeading(0);
+                if (typeof refreshEncounterXpHeading === 'function') refreshEncounterXpHeading();
+                saveGeneratorPreferences(400);
             });
-            document.getElementById('generatorSeason')?.addEventListener('change', () => syncGeneratorSharedInputs(true));
-            document.getElementById('generatorEnvironment')?.addEventListener('change', () => syncGeneratorSharedInputs(true));
+            document.getElementById('generatorSeason')?.addEventListener('change', () => { syncGeneratorSharedInputs(true); saveGeneratorPreferences(); });
+            document.getElementById('generatorEnvironment')?.addEventListener('change', () => { syncGeneratorSharedInputs(true); saveGeneratorPreferences(); });
+            document.getElementById('lootAutoDrop')?.addEventListener('change', () => saveGeneratorPreferences());
+            initializeLootXpReference();
             document.querySelectorAll('.generator-panel, .dm-initiative-panel').forEach(panel => {
                 panel.addEventListener('wheel', event => {
                     if (event.target.closest('textarea')) {
                         event.stopPropagation();
                         return;
                     }
-                    const scroller = panel.querySelector('.generator-scroll, .dm-left-panel-content.is-active');
-                    if (scroller) scroller.scrollTop += event.deltaY;
-                    event.preventDefault();
+                    const hoveredInitiativeTable = event.target.closest('.dm-initiative-table-scroll');
+                    const scroller = hoveredInitiativeTable || panel.querySelector('.generator-subcontent.is-active, .generator-scroll, .dm-left-panel-content.is-active:not(.dm-initiative-content)');
+                    if (scroller) {
+                        scroller.scrollTop += event.deltaY;
+                        event.preventDefault();
+                    }
                     event.stopPropagation();
                 }, { passive: false });
             });
@@ -6703,9 +6968,8 @@
             const lifestyle = document.getElementById("carousingLifestyle").value;
             const level = parseInt(document.getElementById("carousingLevel").value);
             const table = carousingTables[lifestyle] || carousingTables.general;
-            const { baseRoll, level: lvl, totalRoll, result } = rollFromTable(table, level);
-            document.getElementById("carousingResult").value =
-                `Base Roll: ${baseRoll}\nLevel Bonus: +${lvl}\nFinal Roll: ${totalRoll}\n${result}`;
+            const { result } = rollFromTable(table, level);
+            document.getElementById("carousingResult").value = result;
         }
 
 
@@ -6954,10 +7218,43 @@
             const event = snapshot.data() || {};
             if (!event.eventId || event.eventId === lastDeathEffectEventId) return;
             const isRecent = Date.now() - Number(event.sentAt || 0) < 5000;
-            if (deathEffectSnapshotSeen || isRecent) showTokenDeathEffect(event.monsterId, false);
+            const shouldHandleEvent = deathEffectSnapshotSeen || isRecent;
+            if (shouldHandleEvent) {
+                showTokenDeathEffect(event.monsterId, false);
+            }
             lastDeathEffectEventId = event.eventId;
             deathEffectSnapshotSeen = true;
         }, error => console.error('Failed to receive death effect:', error));
+
+        const lootDropRequestsRef = db.collection('shared').doc('lootDropRequests').collection('events');
+        const processingLootDropRequests = new Set();
+        async function processLootDropRequest(requestDoc) {
+            if (!requestDoc?.exists || processingLootDropRequests.has(requestDoc.id)) return;
+            processingLootDropRequests.add(requestDoc.id);
+            try {
+                const request = requestDoc.data() || {};
+                const monster = request.monster;
+                if (!monster || monster.isplayer) {
+                    await requestDoc.ref.delete();
+                    return;
+                }
+                const campaignId = String(request.campaignId || activeGeneratorCampaignId());
+                const settingsSnapshot = campaignId ? await db.collection('campaigns').doc(campaignId).collection('settings').doc('generators').get() : null;
+                const autoDropEnabled = typeof request.autoDropEnabled === 'boolean' ? request.autoDropEnabled : settingsSnapshot?.data()?.lootAutoDrop === true;
+                recordCreatureForLoot(monster, { skipAutoDrop:true });
+                if (autoDropEnabled && request.lootPlaced !== true) await dropAutomaticLootSticker(monster, `loot-${requestDoc.id}`);
+                await requestDoc.ref.delete();
+            } catch (error) {
+                reportBoardSyncError(error);
+            } finally {
+                processingLootDropRequests.delete(requestDoc.id);
+            }
+        }
+        lootDropRequestsRef.onSnapshot(snapshot => {
+            snapshot.docChanges().forEach(change => {
+                if (change.type === 'added' || change.type === 'modified') processLootDropRequest(change.doc);
+            });
+        }, error => console.error('Failed to receive auto-loot requests:', error));
 
         function removeDefeatedMonster(monsterId, sync = true) {
             const index = monsters.findIndex(monster => monster.id === monsterId);
@@ -7014,9 +7311,28 @@
             const selected = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
             const targetLabel = document.getElementById('mapActionTargets');
             targetLabel.textContent = selected.length === 1 ? selected[0].name : `${selected.length} tokens selected`;
+            refreshSelectedTokenVisibilityButton(selected);
             TokenActions.refresh(selected);
             if (!selected.length) document.getElementById('mapActionPanel').classList.remove('is-open');
             renderGroupMoveHandle(selected);
+        }
+
+        function refreshSelectedTokenVisibilityButton(selected) {
+            const button = document.getElementById('mapTokenPlayerVisibility');
+            if (!button) return;
+            const allHidden = selected.length > 0 && selected.every(monster => monster.hiddenFromPlayers === true);
+            button.disabled = selected.length === 0;
+            button.setAttribute('aria-pressed', String(allHidden));
+            button.setAttribute('aria-label', allHidden ? 'Show selected tokens to players' : 'Hide selected tokens from players');
+            button.title = button.getAttribute('aria-label');
+        }
+
+        function toggleSelectedTokensPlayerVisibility() {
+            const selected = monsters.filter(monster => selectedMapTokenIds.has(monster.id));
+            if (!selected.length) return Promise.resolve(false);
+            const hiddenFromPlayers = !selected.every(monster => monster.hiddenFromPlayers === true);
+            const changes = new Map(selected.map(monster => [monster.id, { hiddenFromPlayers }]));
+            return runBoardWrite(boardSync.patchMany(changes, selected[0]._boardGeneration));
         }
 
         function renderGroupMoveHandle(selected) {
@@ -7112,18 +7428,12 @@
             else selectedMapTokenIds.add(monsterId);
             refreshMapTokenSelection();
             if (selectedMapTokenIds.size) openMapActionPanel();
-            const selectedMonster = selectedMapTokenIds.size === 1
-                ? monsters.find(monster => selectedMapTokenIds.has(monster.id))
-                : null;
-            if (selectedMonster && !selectedMonster.isplayer) openMonsterStatblock(selectedMonster.id);
-            else closeMonsterStatblock();
         }
 
         function clearMapTokenSelection() {
             selectedMapTokenIds.clear();
             refreshMapTokenSelection();
             drawingToolbarManager?.clearSelection?.();
-            closeMonsterStatblock();
         }
 
         function removeCreatureById(monsterId, sync = true) {
@@ -7275,15 +7585,21 @@
         // initiative tracker functionality
         const addMonsterBtn = document.getElementById('addMonsterBtn');
         const monsterTableBody = document.getElementById('monsterTableBody');
+        let currentEncounterMonsters = [];
 
-        addMonsterBtn?.addEventListener('click', () => {
+        addMonsterBtn?.addEventListener('click', async () => {
             monsterModal.style.display = 'flex';
+            await monsterFilterMetadataPromise;
+            populateMonsterPickerFilters();
             refreshMonsterList();
         });
 
         // Elements
         const monsterModal = document.getElementById('monsterModal');
         const monsterSearch = document.getElementById('monsterSearch');
+        const monsterCrFilter = document.getElementById('monsterCrFilter');
+        const monsterTypeFilter = document.getElementById('monsterTypeFilter');
+        const monsterEnvironmentFilter = document.getElementById('monsterEnvironmentFilter');
         const monsterList = document.getElementById('monsterList');
         const monsterCount = document.getElementById('monsterCount');
         const confirmMonsterBtn = document.getElementById('confirmMonsterBtn');
@@ -7293,17 +7609,46 @@
         // Close Modal
         closeMonsterModal.addEventListener('click', () => {
             monsterModal.style.display = 'none';
+            hideGeneratedMonsterTokenPreview();
         });
 
+        function formatMonsterCr(cr) {
+            return ({ 0.125:'1/8', 0.25:'1/4', 0.5:'1/2' })[cr] || String(cr);
+        }
+
+        function populateMonsterPickerFilters() {
+            const catalog = getMonsterCatalog();
+            const currentCr = monsterCrFilter.value;
+            const currentType = monsterTypeFilter.value;
+            const currentEnvironment = monsterEnvironmentFilter.value;
+            const challengeRatings = [...new Set(catalog.map(monster => parseCrValue(monster.cr)).filter(Number.isFinite))].sort((a, b) => a - b);
+            const types = [...new Set(catalog.map(monster => String(monster.type || '').toLowerCase()).filter(Boolean))].sort();
+            const environments = [...new Set(catalog.flatMap(monster => monster.environment || []).map(value => String(value).toLowerCase()))].sort();
+            monsterCrFilter.replaceChildren(new Option('Any CR', ''), ...challengeRatings.map(cr => new Option(`CR ${formatMonsterCr(cr)}`, String(cr))));
+            monsterTypeFilter.replaceChildren(new Option('Any Type', ''), ...types.map(type => new Option(type.replace(/\b\w/g, letter => letter.toUpperCase()), type)));
+            monsterEnvironmentFilter.replaceChildren(new Option('Any Environment', ''), ...environments.map(environment => new Option(environment.replace(/\b\w/g, letter => letter.toUpperCase()), environment)));
+            if ([...monsterCrFilter.options].some(option => option.value === currentCr)) monsterCrFilter.value = currentCr;
+            if ([...monsterTypeFilter.options].some(option => option.value === currentType)) monsterTypeFilter.value = currentType;
+            if ([...monsterEnvironmentFilter.options].some(option => option.value === currentEnvironment)) monsterEnvironmentFilter.value = currentEnvironment;
+        }
+
         // Refresh Monster List
-        function refreshMonsterList(filter = "") {
-            renderMonsterOptionList(monsterList, filter);
+        function refreshMonsterList(filter = monsterSearch.value) {
+            renderMonsterOptionList(monsterList, filter, {
+                cr:monsterCrFilter.value,
+                type:monsterTypeFilter.value,
+                environment:monsterEnvironmentFilter.value,
+                statblockPreview:true
+            });
         }
 
 
         monsterSearch.addEventListener('input', (e) => {
             refreshMonsterList(e.target.value);
         });
+        monsterCrFilter.addEventListener('change', () => refreshMonsterList());
+        monsterTypeFilter.addEventListener('change', () => refreshMonsterList());
+        monsterEnvironmentFilter.addEventListener('change', () => refreshMonsterList());
 
         confirmMonsterBtn.addEventListener('click', async () => {
             const selectedMonster = monsterList.dataset.selected;
@@ -7317,8 +7662,9 @@
             confirmMonsterBtn.disabled = true;
             try {
                 const definition = await loadMonsterDefinitionByName(selectedMonster);
-                const additions = Array.from({ length: number }, () => buildMonsterInstance(definition));
-                monsterPlacement.enqueue(additions);
+                const cr = parseCrValue(definition.cr ?? definition.monsterData?.cr);
+                const additions = Array.from({ length: number }, () => ({ name:definition.name, cr }));
+                setCurrentEncounterMonsters([...currentEncounterMonsters, ...additions]);
                 monsterModal.style.display = 'none';
             } catch (err) {
                 console.error("Error loading monster:", err);
@@ -7413,6 +7759,7 @@
 
         let monsterStatblockRequestId = 0;
         let monsterStatblockPinned = false;
+        let monsterStatblockFloating = false;
         let currentStatblockMonsterId = null;
         const cpuStatblockByMonsterId = new Map();
         document.getElementById('monsterStatblock').addEventListener('wheel', event => {
@@ -7430,8 +7777,57 @@
         if(typeof ResizeObserver==='function')new ResizeObserver(positionCpuAdvisorPanel).observe(document.getElementById('monsterStatblock'));
         window.addEventListener('resize',positionCpuAdvisorPanel);
 
+        function setMonsterStatblockPresentation(floating) {
+            const modal = document.getElementById('monsterStatModal');
+            const block = document.getElementById('monsterStatblock');
+            const initiativeHost = document.getElementById('initiativeStatblockHost');
+            const emptyState = document.getElementById('initiativeStatblockEmpty');
+            monsterStatblockFloating = floating;
+            modal.classList.toggle('is-floating', floating);
+            if (floating) {
+                if (emptyState) emptyState.hidden = false;
+                document.body.appendChild(modal);
+                if (!block.style.left || !block.style.top) {
+                    block.style.left = `${Math.max(16, window.innerWidth - 520)}px`;
+                    block.style.top = '70px';
+                }
+            } else {
+                initiativeHost.appendChild(modal);
+                if (emptyState) emptyState.hidden = true;
+                block.style.left = '';
+                block.style.top = '';
+            }
+        }
+
+        let floatingStatblockDrag = null;
+        document.getElementById('monsterStatblock').addEventListener('pointerdown', event => {
+            if (!monsterStatblockFloating || event.button !== 0 || !event.target.closest('.classic-statblock-drag-handle')) return;
+            const block = event.currentTarget;
+            const rect = block.getBoundingClientRect();
+            floatingStatblockDrag = { pointerId:event.pointerId, offsetX:event.clientX - rect.left, offsetY:event.clientY - rect.top };
+            block.setPointerCapture?.(event.pointerId);
+            event.preventDefault();
+        });
+        document.getElementById('monsterStatblock').addEventListener('pointermove', event => {
+            if (!floatingStatblockDrag || floatingStatblockDrag.pointerId !== event.pointerId) return;
+            const block = event.currentTarget;
+            const maxLeft = Math.max(0, window.innerWidth - block.offsetWidth);
+            const maxTop = Math.max(0, window.innerHeight - block.offsetHeight);
+            block.style.left = `${Math.min(maxLeft, Math.max(0, event.clientX - floatingStatblockDrag.offsetX))}px`;
+            block.style.top = `${Math.min(maxTop, Math.max(0, event.clientY - floatingStatblockDrag.offsetY))}px`;
+            positionCpuAdvisorPanel();
+        });
+        function endFloatingStatblockDrag(event) {
+            if (!floatingStatblockDrag || floatingStatblockDrag.pointerId !== event.pointerId) return;
+            event.currentTarget.releasePointerCapture?.(event.pointerId);
+            floatingStatblockDrag = null;
+        }
+        document.getElementById('monsterStatblock').addEventListener('pointerup', endFloatingStatblockDrag);
+        document.getElementById('monsterStatblock').addEventListener('pointercancel', endFloatingStatblockDrag);
+
         function baseStatblockWindowControls() {
-            return `<button class="classic-statblock-pin${monsterStatblockPinned ? ' is-pinned' : ''}" type="button" onclick="toggleMonsterStatblockPin()" aria-pressed="${monsterStatblockPinned}" title="${monsterStatblockPinned ? 'Unpin stat block' : 'Pin stat block'}">📌</button><button class="classic-statblock-close" type="button" onclick="closeMonsterStatblock(true)" aria-label="Close">×</button>`;
+            const dragHandle = monsterStatblockFloating ? '<div class="classic-statblock-drag-handle" role="button" aria-label="Drag stat block">Drag</div>' : '';
+            return `${dragHandle}<button class="classic-statblock-pin${monsterStatblockPinned ? ' is-pinned' : ''}" type="button" onclick="toggleMonsterStatblockPin()" aria-pressed="${monsterStatblockPinned}" title="${monsterStatblockPinned ? 'Unpin stat block' : 'Pin stat block'}">📌</button><button class="classic-statblock-close" type="button" onclick="closeMonsterStatblock(true)" aria-label="Close" title="Close stat block">×</button>`;
         }
 
         function statblockWindowControls() {
@@ -7442,7 +7838,7 @@
 
         function positionCpuAdvisorPanel() {
             const panel=document.getElementById('cpuAdvisorPanel'),block=document.getElementById('monsterStatblock');if(!panel||!block)return;
-            const rect=block.getBoundingClientRect(),width=Math.min(340,Math.max(260,rect.left-10));panel.style.width=`${width}px`;panel.style.left=`${Math.max(0,rect.left-width)}px`;panel.style.top=`${rect.top}px`;panel.style.height=`${rect.height}px`;
+            const rect=block.getBoundingClientRect(),gap=8,availableWidth=window.innerWidth-rect.right-gap-10,width=Math.min(340,Math.max(260,availableWidth));panel.style.width=`${width}px`;panel.style.left=`${Math.min(window.innerWidth-width-10,rect.right+gap)}px`;panel.style.top=`${rect.top}px`;panel.style.height=`${rect.height}px`;
         }
         function toggleCpuAdvisorPanel(force) {
             const panel=document.getElementById('cpuAdvisorPanel');if(!panel||!panel.innerHTML)return;
@@ -7467,6 +7863,7 @@
             const advisorPanel=document.getElementById('cpuAdvisorPanel');advisorPanel.classList.add('is-hidden');advisorPanel.replaceChildren();
             document.getElementById('monsterStatModal').classList.remove('is-open');
             document.getElementById('spellHoverCard').classList.remove('is-open');
+            if (!monsterStatblockFloating) document.getElementById('initiativeStatblockEmpty').hidden = false;
         }
 
         function cpuAdvisorSection(monster) {
@@ -7514,8 +7911,9 @@
             if(wasMissing)syncMonsterFieldsToFirebase(monster.id, { cpuAdvisor: monster.cpuAdvisor });
         }
 
-        async function openMonsterStatblock(monsterIdOrName) {
+        async function openMonsterStatblock(monsterIdOrName, options = {}) {
             if (monsterStatblockPinned) return;
+            setMonsterStatblockPresentation(options.floating === true);
             const instance=monsters.find(monster=>monster.id===monsterIdOrName)||monsters.find(monster=>monster.name===monsterIdOrName&&!monster.isplayer);
             const name=instance?.name||monsterIdOrName;
             currentStatblockMonsterId=instance?.id||null;
@@ -7545,8 +7943,9 @@
                 const conditionImmunities = (data.conditionImmune || []).map(value => typeof value === 'string' ? value : value.name || value.conditionImmune).filter(Boolean).join(', ');
                 block.innerHTML = `
                     ${statblockWindowControls()}
-                    <h1>${escapeStatHtml(data.name)}</h1>
-                    <p class="stat-subtitle">${escapeStatHtml(sizeNames[data.size?.[0]] || data.size?.[0] || '')} ${escapeStatHtml(type)}${tags.length ? ` (${escapeStatHtml(tags.join(', '))})` : ''}, ${escapeStatHtml(alignment)}</p>
+                    <div class="classic-statblock-header"><div><h1>${escapeStatHtml(data.name)}</h1>
+                    <p class="stat-subtitle">${escapeStatHtml(sizeNames[data.size?.[0]] || data.size?.[0] || '')} ${escapeStatHtml(type)}${tags.length ? ` (${escapeStatHtml(tags.join(', '))})` : ''}, ${escapeStatHtml(alignment)}</p></div>
+                    <img class="classic-statblock-token" src="${escapeStatHtml(definition.tokenUrl || DEFAULT_MONSTER_TOKEN)}" alt="${escapeStatHtml(data.name)} token"></div>
                     <hr><p><strong>Armor Class</strong> ${escapeStatHtml(ac || '—')}</p><p><strong>Hit Points</strong> ${escapeStatHtml(hpAverage ?? '—')}${hpFormula ? ` (${escapeStatHtml(hpFormula)})` : ''}</p><p><strong>Speed</strong> ${escapeStatHtml(speed || '—')}</p><hr>
                     <div class="stat-abilities">${['str','dex','con','int','wis','cha'].map(ability => `<div><strong>${ability.toUpperCase()}</strong>${escapeStatHtml(data[ability] ?? '—')}</div>`).join('')}</div><hr>
                     ${saves ? `<p><strong>Saving Throws</strong> ${escapeStatHtml(saves)}</p>` : ''}${skills ? `<p><strong>Skills</strong> ${escapeStatHtml(skills)}</p>` : ''}
@@ -7554,6 +7953,8 @@
                     <p><strong>Senses</strong> ${escapeStatHtml(senses || '—')}</p><p><strong>Languages</strong> ${escapeStatHtml((data.languages || []).join(', ') || '—')}</p><p><strong>Challenge</strong> ${escapeStatHtml(data.cr ?? '—')} (Proficiency Bonus +${escapeStatHtml(data.prof_bonus ?? '—')})</p>
                     ${formatSpellcasting(data.spellcasting)}${formatStatSection('Traits', data.traits)}${formatStatSection('Actions', data.actions)}${formatStatSection('Bonus Actions', data.bonus)}${formatStatSection('Reactions', data.reactions)}${formatStatSection('Legendary Actions', data.legendary)}
                 `;
+                const statblockToken = block.querySelector('.classic-statblock-token');
+                statblockToken?.addEventListener('error', () => { statblockToken.src = DEFAULT_MONSTER_TOKEN; }, { once:true });
                 advisorPanel.innerHTML=cpuAdvisorSection(instance);
                 bindCpuAdvisor(instance,data);
                 positionCpuAdvisorPanel();
@@ -7735,11 +8136,11 @@
                 row.innerHTML = `
                     <td style="padding: 8px; border: 1px solid #765133; text-align: center;">${index}</td>
                     <td style="padding: 8px; border: 1px solid #765133; text-align: center;">
-                        <input type="number" value="${m.init}" style="width: 60px; padding: 5px; background-color: #2b190f; color: #fff; border: 1px solid #765133; border-radius: 4px; text-align: center;">
+                        <input class="dm-initiative-number dm-initiative-number--init" type="number" value="${m.init}" aria-label="Initiative">
                     </td>
                     <td style="padding: 8px; border: 1px solid #765133;">${m.name}</td>
                     <td style="padding: 8px; border: 1px solid #765133; text-align: center;">
-                        <input type="number" value="${m.hp}" style="width: 60px; padding: 5px; background-color: #2b190f; color: #fff; border: 1px solid #765133; border-radius: 4px; text-align: center;">
+                        <input class="dm-initiative-number dm-initiative-number--hp" type="number" value="${m.hp}" aria-label="Hit points">
                     </td>
                     <td style="padding: 8px; border: 1px solid #765133;">${m.conditions.join(", ")}</td>
                 `;
@@ -7757,17 +8158,17 @@
                 const focusButton = document.createElement('button');
                 focusButton.type = 'button';
                 focusButton.textContent = m.name;
-                focusButton.title = `Center map on ${m.name}`;
+                focusButton.title = m.isplayer ? `Center map on ${m.name}` : `Center map on ${m.name} and view stat block`;
                 focusButton.style.cssText = 'padding:0;border:0;background:none;color:#f4d76d;font:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(244,215,109,.45);';
                 focusButton.addEventListener('click', event => {
                     event.stopPropagation();
                     focusMapToken(m.id);
+                    if (!m.isplayer) {
+                        showInitiativeSubtab('statblock');
+                        openMonsterStatblock(m.id);
+                    }
                 });
                 nameCell.replaceChildren(removeButton, focusButton);
-
-                if (!m.isplayer) {
-                    row.addEventListener('click', () => openMonsterStatblock(m.id));
-                }
 
                 const token = document.getElementById(`token-${m.id}`);
                 if (token) {
@@ -8198,7 +8599,14 @@
             const heading = document.getElementById('encounterMonsterHeading');
             if (heading) heading.innerHTML = `<strong>Monsters (${Math.round(totalAdjustedXP)} of ${Math.round(targetXP)} XP):</strong>`;
         }
-        document.getElementById('encounterDifficulty')?.addEventListener('change', () => updateEncounterXpHeading(0));
+        function calculateAdjustedEncounterXp(monsterList = currentEncounterMonsters) {
+            const totalXP = monsterList.reduce((sum, monster) => sum + crToXp(parseCrValue(monster.cr)), 0);
+            return totalXP * (multipliers[Math.min(monsterList.length, 20)] || (monsterList.length ? 4 : 0));
+        }
+        function refreshEncounterXpHeading() {
+            updateEncounterXpHeading(calculateAdjustedEncounterXp());
+        }
+        document.getElementById('encounterDifficulty')?.addEventListener('change', refreshEncounterXpHeading);
         setTimeout(() => updateEncounterXpHeading(0), 0);
 
         function crToXp(cr) {
@@ -8211,6 +8619,92 @@
                 }
             }
             return 100; // fallback
+        }
+
+        function openGeneratedMonsterStatblock(monsterName) {
+            hideGeneratedMonsterTokenPreview();
+            monsterStatblockPinned = false;
+            openMonsterStatblock(monsterName, { floating:true });
+        }
+
+        let generatedMonsterTokenPreviewTarget = null;
+        let generatedMonsterTokenPreviewRequestId = 0;
+
+        function hideGeneratedMonsterTokenPreview(button) {
+            if (button && generatedMonsterTokenPreviewTarget !== button) return;
+            generatedMonsterTokenPreviewTarget = null;
+            generatedMonsterTokenPreviewRequestId += 1;
+            document.getElementById('generatedMonsterTokenPreview')?.classList.remove('is-open');
+        }
+
+        async function showGeneratedMonsterTokenPreview(button, monsterName) {
+            const requestId = ++generatedMonsterTokenPreviewRequestId;
+            generatedMonsterTokenPreviewTarget = button;
+            try {
+                const definition = await loadMonsterDefinitionByName(monsterName);
+                if (requestId !== generatedMonsterTokenPreviewRequestId || generatedMonsterTokenPreviewTarget !== button) return;
+                let preview = document.getElementById('generatedMonsterTokenPreview');
+                if (!preview) {
+                    preview = document.createElement('div');
+                    preview.id = 'generatedMonsterTokenPreview';
+                    preview.className = 'generated-monster-token-preview';
+                    preview.setAttribute('aria-hidden', 'true');
+                    preview.innerHTML = '<img alt="">';
+                    document.body.appendChild(preview);
+                }
+                const image = preview.querySelector('img');
+                image.src = definition.tokenUrl || DEFAULT_MONSTER_TOKEN;
+                image.onerror = () => { image.onerror = null; image.src = DEFAULT_MONSTER_TOKEN; };
+                const rect = button.getBoundingClientRect();
+                const previewSize = 104;
+                preview.style.left = `${Math.min(window.innerWidth - previewSize - 8, Math.max(8, rect.right + 10))}px`;
+                preview.style.top = `${Math.min(window.innerHeight - previewSize - 8, Math.max(8, rect.top - 35))}px`;
+                preview.classList.add('is-open');
+            } catch (error) {
+                hideGeneratedMonsterTokenPreview(button);
+            }
+        }
+
+        function renderEncounterMonsterList(monsterList, list = document.getElementById('encounterMonsterList')) {
+            if (!list) return;
+            list.replaceChildren();
+            monsterList.forEach((monster, index) => {
+                const item = document.createElement('li');
+                if (list.id === 'encounterMonsterList') {
+                    const removeButton = document.createElement('button');
+                    removeButton.type = 'button';
+                    removeButton.className = 'encounter-monster-remove';
+                    removeButton.textContent = '×';
+                    removeButton.setAttribute('aria-label', `Remove ${monster.name} from encounter`);
+                    removeButton.title = `Remove ${monster.name}`;
+                    removeButton.addEventListener('click', () => removeEncounterMonster(index));
+                    item.appendChild(removeButton);
+                }
+                const nameButton = document.createElement('button');
+                nameButton.type = 'button';
+                nameButton.className = 'encounter-monster-link';
+                nameButton.textContent = monster.name;
+                nameButton.setAttribute('aria-label', `View ${monster.name} stat block`);
+                nameButton.addEventListener('pointerenter', () => showGeneratedMonsterTokenPreview(nameButton, monster.name));
+                nameButton.addEventListener('pointerleave', () => hideGeneratedMonsterTokenPreview(nameButton));
+                nameButton.addEventListener('focus', () => showGeneratedMonsterTokenPreview(nameButton, monster.name));
+                nameButton.addEventListener('blur', () => hideGeneratedMonsterTokenPreview(nameButton));
+                nameButton.addEventListener('click', () => openGeneratedMonsterStatblock(monster.name));
+                item.append(nameButton, document.createTextNode(` (CR ${monster.cr})`));
+                list.appendChild(item);
+            });
+        }
+
+        function setCurrentEncounterMonsters(monsterList) {
+            currentEncounterMonsters = monsterList.map(monster => ({ ...monster, cr:parseCrValue(monster.cr) }));
+            renderEncounterMonsterList(currentEncounterMonsters);
+            refreshEncounterXpHeading();
+        }
+
+        function removeEncounterMonster(index) {
+            if (index < 0 || index >= currentEncounterMonsters.length) return;
+            const remaining = currentEncounterMonsters.filter((monster, monsterIndex) => monsterIndex !== index);
+            setCurrentEncounterMonsters(remaining);
         }
 
         function generateEncounter() {
@@ -8255,17 +8749,7 @@
             }
 
             // Display the group
-            const list = document.getElementById('encounterMonsterList');
-            list.innerHTML = '';
-            bestGroup.forEach(m => {
-                const li = document.createElement('li');
-                li.textContent = `${m.name} (CR ${m.cr})`;
-                list.appendChild(li);
-            });
-
-            const totalXP = bestGroup.reduce((sum, m) => sum + m.xp, 0);
-            const multiplier = multipliers[Math.min(bestGroup.length, 20)] || 4;
-            updateEncounterXpHeading(totalXP * multiplier);
+            setCurrentEncounterMonsters(bestGroup);
         }
 
         let ENV_ENCOUNTER_DATA = null;
@@ -8369,27 +8853,14 @@
         }
 
         function displayMonsters(monsterList) {
-            const list = document.getElementById('encounterMonsterList');
-            list.innerHTML = '';
-
-            monsterList.forEach(mon => {
-                const li = document.createElement('li');
-                li.textContent = `${mon.name} (CR ${mon.cr})`;
-                list.appendChild(li);
-            });
-
-            // Optional: calculate total adjusted XP
-            const totalXP = monsterList.reduce((sum, m) => sum + crToXp(m.cr), 0);
-            const multiplier = multipliers[Math.min(monsterList.length, 20)] || 4;
-            updateEncounterXpHeading(totalXP * multiplier);
+            setCurrentEncounterMonsters(monsterList);
         }
 
 
         async function sendEncounter() {
             const generation = boardSync.generation;
-            const names = [...document.querySelectorAll('#encounterMonsterList li')].map(li => li.textContent.split(' (')[0]);
             try {
-                const additions = await Promise.all(names.map(async name => ({ ...buildMonsterInstance(await loadMonsterDefinitionByName(name)), _boardGeneration: generation })));
+                const additions = await Promise.all(currentEncounterMonsters.map(async monster => ({ ...buildMonsterInstance(await loadMonsterDefinitionByName(monster.name)), _boardGeneration: generation })));
                 await addMonstersToFirebase(additions);
             } catch (error) { reportBoardSyncError(error); }
         }
@@ -8401,6 +8872,26 @@
         const lootTrackedCreatureIds = new Set();
         let encounterLootCR = 0;
         let encounterLootXP = 0;
+        let lootAccumulatorSaveTimer = null;
+        let lootAccumulatorEditedCampaignId = '';
+        let lastGeneratedLoot = null;
+        let lootXpReferenceHideTimer = null;
+        const LOOT_STICKER_ROOT = 'sticker-library/v1/!Core_Settlements/Clutter/Treasure';
+
+        function saveLootAccumulator(delay = 150) {
+            const campaignId = activeGeneratorCampaignId();
+            const settingsRef = campaignGeneratorSettingsRef(campaignId);
+            if (!settingsRef) return;
+            lootAccumulatorEditedCampaignId = campaignId;
+            clearTimeout(lootAccumulatorSaveTimer);
+            lootAccumulatorSaveTimer = setTimeout(() => {
+                settingsRef.set({
+                    lootCr:Math.max(0, encounterLootCR),
+                    lootXp:Math.max(0, Math.round(encounterLootXP)),
+                    updatedAt:firebase.firestore.FieldValue.serverTimestamp()
+                }, { merge:true }).catch(error => console.warn('Could not save campaign loot accumulator:', error));
+            }, delay);
+        }
 
         function getCreatureCR(monster) {
             const directCR = parseCrValue(monster?.cr);
@@ -8416,121 +8907,175 @@
             if (xpInput) xpInput.value = String(Math.max(0, Math.round(encounterLootXP)));
         }
 
-        function recordCreatureForLoot(monster) {
+        function initializeLootXpReference() {
+            const reference = document.querySelector('.loot-xp-reference');
+            const label = reference?.querySelector('label');
+            const popup = document.getElementById('lootXpTablePopup');
+            if (!label || !popup || label.dataset.tooltipReady === 'true') return;
+            label.dataset.tooltipReady = 'true';
+            const hide = () => {
+                clearTimeout(lootXpReferenceHideTimer);
+                lootXpReferenceHideTimer = setTimeout(() => popup.classList.remove('is-open'), 140);
+            };
+            const show = () => {
+                clearTimeout(lootXpReferenceHideTimer);
+                if (popup.parentElement !== document.body) document.body.appendChild(popup);
+                popup.style.visibility = 'hidden';
+                popup.classList.add('is-open');
+                const rect = label.getBoundingClientRect();
+                const width = popup.offsetWidth || 240;
+                const height = popup.offsetHeight || 440;
+                const left = Math.min(window.innerWidth - width - 8, Math.max(8, rect.left + rect.width / 2 - width / 2));
+                const below = rect.bottom + 8;
+                const top = below + height <= window.innerHeight - 8 ? below : Math.max(8, rect.top - height - 8);
+                popup.style.left = `${left}px`;
+                popup.style.top = `${top}px`;
+                popup.style.visibility = 'visible';
+            };
+            label.addEventListener('pointerenter', show);
+            label.addEventListener('pointerleave', hide);
+            label.addEventListener('focus', show);
+            label.addEventListener('blur', hide);
+            label.addEventListener('click', show);
+            popup.addEventListener('pointerenter', () => clearTimeout(lootXpReferenceHideTimer));
+            popup.addEventListener('pointerleave', hide);
+        }
+
+        function lootStickerAsset(type, cr) {
+            if (type === 'hoard') {
+                const filename = cr <= 4 ? 'Treasure_Pile_Gold_A10_1x1.webp' : cr <= 10 ? 'Treasure_Pile_Gold_A27_2x2.webp' : cr <= 16 ? 'Treasure_Pile_Gold_A29_2x2.webp' : 'Treasure_Pile_Gold_A30_3x3.webp';
+                return `${LOOT_STICKER_ROOT}/Treasure_Piles/${filename}`;
+            }
+            const filename = cr <= 4 ? 'Coin_Pile_Gold_A12_1x1.webp' : cr <= 10 ? 'Coin_Pile_Gold_A40_2x2.webp' : 'Coin_Pile_Gold_A43_3x3.webp';
+            return `${LOOT_STICKER_ROOT}/Coins/Coin_Piles/${filename}`;
+        }
+
+        function lootStickerSettings(type, cr, text, position = {}) {
+            return {
+                id:position.id,
+                type, cr, xp:Number(document.getElementById('lootXP')?.value) || 0, lootText:text,
+                storagePath:lootStickerAsset(type, cr),
+                name:type === 'hoard' ? `Treasure Hoard (CR ${cr})` : `Individual Treasure (CR ${cr})`,
+                x:position.x, y:position.y
+            };
+        }
+
+        async function placeGeneratedLootSticker() {
+            if (!lastGeneratedLoot) return;
+            const button = document.getElementById('placeLootStickerBtn');
+            if (button) button.disabled = true;
+            try {
+                await stickerManager.placeLootSticker(lootStickerSettings(lastGeneratedLoot.type, lastGeneratedLoot.cr, lastGeneratedLoot.text));
+            } catch (error) {
+                reportBoardSyncError(error);
+            } finally {
+                if (button) button.disabled = false;
+            }
+        }
+
+        async function dropAutomaticLootSticker(monster, stickerId = '') {
+            await ensureLootData();
+            if (!LOOT_DATA) throw new Error('Loot data could not be loaded.');
+            const cr = getCreatureCR(monster);
+            const text = await rollIndividualLootForCr(cr);
+            await stickerManager.placeLootSticker(lootStickerSettings('individual', cr, text, { id:stickerId, x:monster.xRatio, y:monster.yRatio }));
+        }
+
+        function recordCreatureForLoot(monster, { skipAutoDrop = false } = {}) {
             if (!monster || monster.isplayer || lootTrackedCreatureIds.has(monster.id)) return;
             lootTrackedCreatureIds.add(monster.id);
             const cr = getCreatureCR(monster);
             encounterLootXP += CR_XP_VALUES.get(cr) || 0;
             encounterLootCR = Array.from(CR_XP_VALUES.entries()).reduce((equivalentCR, entry) => entry[1] <= encounterLootXP ? entry[0] : equivalentCR, 0);
             updateLootEncounterFields();
+            saveLootAccumulator();
+            if (!skipAutoDrop && document.getElementById('lootAutoDrop')?.checked) dropAutomaticLootSticker(monster).catch(reportBoardSyncError);
         }
 
-        document.getElementById('lootCR')?.addEventListener('input', event => { encounterLootCR = Math.max(0, Number(event.target.value) || 0); });
-        document.getElementById('lootXP')?.addEventListener('input', event => { encounterLootXP = Math.max(0, Number(event.target.value) || 0); });
+        document.getElementById('lootCR')?.addEventListener('input', event => { encounterLootCR = Math.max(0, Number(event.target.value) || 0); saveLootAccumulator(400); });
+        document.getElementById('lootXP')?.addEventListener('input', event => { encounterLootXP = Math.max(0, Number(event.target.value) || 0); saveLootAccumulator(400); });
 
-        fetch("data/api_data/loot.json")
+        const LOOT_DATA_PROMISE = fetch("data/api_data/loot.json")
             .then(res => res.json())
             .then(data => {
                 LOOT_DATA = data;
                 console.log("Loot data loaded");
+                return data;
             })
-            .catch(err => console.error("Failed to load loot.json:", err));
+            .catch(err => { console.error("Failed to load loot.json:", err); return null; });
 
+        async function ensureLootData() {
+            return LOOT_DATA || LOOT_DATA_PROMISE;
+        }
 
-        function generateLoot() {
+        function setLootOutput(type, cr, text) {
+            document.getElementById('lootResult').value = text;
+            lastGeneratedLoot = { type, cr, text };
+            const placeButton = document.getElementById('placeLootStickerBtn');
+            if (placeButton) placeButton.disabled = false;
+            return text;
+        }
+
+        function formatLootCoins(coins) {
+            const entries = Object.entries(coins || {}).map(([coin, amount]) => `• ${Number(amount).toLocaleString()} ${coin.toUpperCase()}`);
+            return entries.length ? entries.join('\n') : '• No coins';
+        }
+
+        async function generateLoot() {
             const type = document.getElementById("lootType").value;
-            if (type === "individual") {
-                generateIndividualLoot();
-            } else if (type === "hoard") {
-                document.getElementById("lootResult").value = "hoard selected";
-                generateHoardLoot();
-            }
+            try {
+                await ensureLootData();
+                if (type === "individual") generateIndividualLoot();
+                else if (type === "hoard") generateHoardLoot();
+            } catch (error) { document.getElementById('lootResult').value = 'Loot data could not be loaded.'; }
+        }
+
+        function rollIndividualLootForCr(cr) {
+            const tables = LOOT_DATA.individual;
+            const crTable = tables.find(t => cr >= t.crMin && cr <= t.crMax);
+            if (!crTable) return `No individual treasure table was found for CR ${cr}.`;
+
+            const roll = Math.floor(Math.random() * 100) + 1;
+            const entry = crTable.table.find(row => roll >= row.min && roll <= row.max);
+            if (!entry) return `No individual treasure entry was found for CR ${cr}.`;
+            const coins = Object.fromEntries(Object.entries(entry.coins || {}).map(([coin, expression]) => [coin, rollDice(expression)]));
+            return `Individual Treasure — CR ${cr}\n\nCoins\n${formatLootCoins(coins)}`;
         }
 
         function generateIndividualLoot() {
-            const cr = parseFloat(document.getElementById("lootCR").value);
-            if (!LOOT_DATA) {
-                document.getElementById("lootResult").value = "Loot data not loaded.";
-                return;
-            }
-
-            const tables = LOOT_DATA.individual;
-            const crTable = tables.find(t => cr >= t.crMin && cr <= t.crMax);
-            if (!crTable) {
-                document.getElementById("lootResult").value = "No loot table found for this CR.";
-                return;
-            }
-
-            const roll = Math.floor(Math.random() * 100) + 1;
-            const entry = crTable.table.find(row => roll >= row.min && roll <= row.max);
-            if (!entry) {
-                document.getElementById("lootResult").value = `d100 Roll: ${roll}\nNo matching entry.`;
-                return;
-            }
-
-            const parsedCoins = Object.entries(entry.coins).map(([coin, expr]) => {
-                const match = expr.match(/^(\d+)d(\d+)(\*(\d+))?$/);
-                if (!match) return `${coin}: ${expr}`;
-                const [, num, die, , mult] = match.map(x => parseInt(x));
-                let total = 0;
-                for (let i = 0; i < num; i++) {
-                    total += Math.floor(Math.random() * die) + 1;
-                }
-                if (mult) total *= mult;
-                return `${coin}: ${total}`;
-            });
-
-            document.getElementById("lootResult").value =
-                `d100 Roll: ${roll}\n` + parsedCoins.join("\n");
+            const cr = Number(document.getElementById('lootCR').value) || 0;
+            return setLootOutput('individual', cr, rollIndividualLootForCr(cr));
         }
 
         function generateHoardLoot() {
-            const cr = parseFloat(document.getElementById("lootCR").value);
-            if (!LOOT_DATA) {
-                document.getElementById("lootResult").value = "Loot data not loaded.";
-                return;
-            }
-
+            const cr = Number(document.getElementById("lootCR").value) || 0;
             const tables = LOOT_DATA.hoard;
             const crTable = tables.find(t => cr >= t.crMin && cr <= t.crMax);
-            if (!crTable) {
-                document.getElementById("lootResult").value = "No hoard table found for this CR.";
-                return;
-            }
-
-            let result = `--- Treasure Hoard (CR ${cr}) ---\n`;
-
-            // Parse coins
-            result += "\nCoins:\n";
-            for (const [coin, expr] of Object.entries(crTable.coins)) {
-                result += `${coin}: ${rollDice(expr)}\n`;
-            }
-
-            // Roll on the hoard table
+            if (!crTable) return setLootOutput('hoard', cr, `No treasure hoard table was found for CR ${cr}.`);
+            const sections = [`Treasure Hoard — CR ${cr}`];
+            const coins = Object.fromEntries(Object.entries(crTable.coins || {}).map(([coin, expression]) => [coin, rollDice(expression)]));
+            sections.push(`Coins\n${formatLootCoins(coins)}`);
             const roll = Math.floor(Math.random() * 100) + 1;
-            const entry = crTable.table.find(row => roll >= row.min && roll <= row.max);
-            result += `\nHoard d100 Roll: ${roll}\n`;
+            const entry = crTable.table.find(row => roll >= row.min && roll <= row.max) || {};
 
-            // Parse optional loot types
             if (entry.gems) {
                 const items = rollTable(LOOT_DATA.gems, entry.gems.type, entry.gems.amount);
-                result += `\nGems (${entry.gems.type} gp):\n- ${items.join("\n- ")}\n`;
+                sections.push(`Gems — ${Number(entry.gems.type).toLocaleString()} GP each (${items.length})\n• ${items.join("\n• ")}`);
             }
 
             if (entry.artObjects) {
                 const items = rollTable(LOOT_DATA.artObjects, entry.artObjects.type, entry.artObjects.amount);
-                result += `\nArt Objects (${entry.artObjects.type} gp):\n- ${items.join("\n- ")}\n`;
+                sections.push(`Art Objects — ${Number(entry.artObjects.type).toLocaleString()} GP each (${items.length})\n• ${items.join("\n• ")}`);
             }
 
             if (entry.magicItems) {
-                result += `\nMagic Items:\n`;
                 entry.magicItems.forEach(({ type, amount }) => {
                     const items = rollMagicItems(LOOT_DATA.magicItems, type, amount);
-                    result += `Table ${type}:\n- ${items.join("\n- ")}\n`;
+                    sections.push(`Magic Items — Table ${type} (${items.length})\n• ${items.join("\n• ")}`);
                 });
             }
 
-            document.getElementById("lootResult").value = result;
+            return setLootOutput('hoard', cr, sections.join('\n\n'));
         }
 
         function rollDice(expr) {
@@ -9436,22 +9981,25 @@
             const discovery = check >= 15 ? pickTravelEntry(table.finds) : 'The opportunity passes unnoticed while the party deals with the route.';
             const encounterChance = Math.max(10, Math.min(75, 80 - (check * 3)));
             const encounterRoll = Math.floor(Math.random() * 100) + 1;
+            let travelEncounterMonsters = [];
             let encounterMarkup = `<div class="travel-encounter"><strong>Random encounter:</strong> None (${encounterRoll} vs ${encounterChance}% chance).</div>`;
             if (encounterRoll <= encounterChance) {
                 const levels = document.getElementById('travelPartyLevels').value.split(',').map(value => parseInt(value.trim())).filter(level => level >= 1 && level <= 20);
                 const generated = rollEnvironmentEncounter(environment, levels);
                 if (generated) {
+                    travelEncounterMonsters = generated.monsters;
                     displayMonsters(generated.monsters);
                     const readableResult = generated.result
                         .replace(/\{@dice ([^}]+)}/g, '$1')
                         .replace(/\{@creature ([^}|]+)(?:\|\|[^}]*)?}/g, '$1');
-                    const sendButton = generated.monsters.length ? '<button type="button" onclick="sendEncounter()">Send Encounter to Table</button>' : '';
-                    encounterMarkup = `<div class="travel-encounter"><strong>Random encounter (d100: ${generated.roll}):</strong><br>${readableResult}<br>${sendButton}</div>`;
+                    const sendButton = generated.monsters.length ? '<button class="travel-encounter-send" type="button" onclick="sendEncounter()" aria-label="Send Encounter to Table" title="Send Encounter to Table"><span aria-hidden="true">&larr; &#9876;</span></button>' : '';
+                    encounterMarkup = `<div class="travel-encounter${sendButton ? ' has-send-action' : ''}">${sendButton}<div class="travel-encounter-details"><strong>Random encounter (d100: ${generated.roll}):</strong><br>${readableResult}<ul id="travelEncounterMonsterList" class="generated-monster-list" aria-label="Generated monsters"></ul></div></div>`;
                 } else {
                     encounterMarkup = '<div class="travel-encounter"><strong>Random encounter:</strong> An encounter was indicated, but no matching table exists for the supplied party levels.</div>';
                 }
             }
             document.getElementById('travelResult').innerHTML = `<h3>${outcome.title}</h3><dl><dt>What they see</dt><dd>${pickTravelEntry(table.sights)}</dd><dt>Travel complication</dt><dd>${pickTravelEntry(table.obstacles)}</dd><dt>What they discover</dt><dd>${discovery}</dd><dt>Travel effect (Survival ${check})</dt><dd>${outcome.effect}</dd></dl>${encounterMarkup}`;
+            renderEncounterMonsterList(travelEncounterMonsters, document.getElementById('travelEncounterMonsterList'));
         }
 
         let FORAGING_DATA = [];
@@ -9497,7 +10045,7 @@
         switchTab('attacksTab');
     </script>
     <script src="campaign-manager.js?v=4"></script>
-    <script type="module" src="dice-roller-3d.js?v=20"></script>
+    <script type="module" src="dice-roller-3d.js?v=23"></script>
 </div>
 </body>
 

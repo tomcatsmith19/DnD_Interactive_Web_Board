@@ -18,7 +18,7 @@ async function fixture(role = 'player') {
     const token = id => ({ id, name: id, hp: 30, maxHp: 30, init: 10, xRatio: .5, yRatio: .5, isplayer: true });
     const store = createFirestore({ 'shared/monsters': { monsters: [token('a'), token('b')] } });
     const boardSync = create({ ...store, intervalMs: 0 }); await boardSync.ready;
-    const elements = new Map(), events = {}, counts = { trackers: 0 };
+    const elements = new Map(), events = {}, counts = { trackers: 0, loot: 0, broadcasts: [] };
     function element(id) {
         const node = { id, dataset: {}, style: {}, classList: { toggle() {} },
             querySelector: () => ({ style: {} }), remove: () => elements.delete(id) };
@@ -31,6 +31,7 @@ async function fixture(role = 'player') {
         body: { appendChild() {} },
         addEventListener: (name, callback) => { events[name] = callback; }
     };
+    element('mapActionAmount').value = '0';
     const context = vm.createContext({
         document, boardSync, setTimeout, console: { error() {} },
         monsters: [], selectedMapTokenIds: new Set(), currentPlayerId: 'a', currentTokenSize: 100,
@@ -39,7 +40,8 @@ async function fixture(role = 'player') {
         normalizeMonsterState: data => ({ ...data }),
         TokenActions: { renderTokenConditions() {}, tokenSize: () => 100 },
         addMonsterToken: token => element(`token-${token.id}`),
-        updateTokenHealthBar() {}, updateTokenDefeatedState() {}, recordCreatureForLoot() {},
+        updateTokenHealthBar() {}, updateTokenDefeatedState() {}, recordCreatureForLoot() { counts.loot++; },
+        broadcastDefeatedCreatures(creatures) { counts.broadcasts.push(creatures); return Promise.resolve(); },
         flashToken() {}, showTokenDeathEffect() {}, refreshMapTokenSelection() {},
         updatePlayerTokenInitiativeLabels() {}, showCurrentPlayerStats() {}, scheduleMapLayoutRefresh() {},
         renderPartyTracker: () => counts.trackers++, updateMonsterTable: () => counts.trackers++
@@ -99,6 +101,45 @@ test('failed token writes display an error and do not upload stale local state',
     assert.match(f.elements.get('boardSyncStatus').textContent, /Could not sync/);
     assert.equal(f.writes.length, before);
     assert.equal((await f.boardSync.exportState()).monsters.monsters[0].hp, 30);
+});
+
+test('player boards hide DM-concealed tokens while DM boards keep them visible', async () => {
+    const player = await fixture('player');
+    await player.boardSync.patch('a', { hiddenFromPlayers: true });
+    assert.equal(player.elements.get('token-a').style.display, 'none');
+
+    const dm = await fixture('dm');
+    await dm.boardSync.patch('a', { hiddenFromPlayers: true });
+    assert.equal(dm.elements.get('token-a').style.display, 'flex');
+});
+
+test('DM records a remote monster removal even during the former startup suppression window', async () => {
+    const f = await fixture('dm');
+    await f.boardSync.patch('b', { isplayer: false, cr: 2 });
+    f.context.suppressLootTrackingUntil = Date.now() + 60000;
+    const before = f.counts.loot;
+    await f.boardSync.remove(['b']);
+    assert.equal(f.counts.loot, before + 1);
+});
+
+test('a successful lethal player action broadcasts the defeated monster to the DM', async () => {
+    const f = await fixture('player');
+    await f.boardSync.patch('b', { isplayer: false, hp: 12, cr: 2 });
+    f.context.selectedMapTokenIds.add('b');
+    f.elements.get('mapActionAmount').value = '12';
+    assert.equal(await vm.runInContext("applyMapTokenAction('damage')", f.context), true);
+    assert.equal(f.counts.broadcasts.length, 1);
+    assert.equal(f.counts.broadcasts[0][0].id, 'b');
+    assert.equal((await f.boardSync.exportState()).monsters.monsters.some(token => token.id === 'b'), false);
+});
+
+test('player-only token visibility also protects selection and movement indicators', () => {
+    const boardUI = fs.readFileSync('public/board-ui.js', 'utf8');
+    const player = fs.readFileSync('public/player.html', 'utf8');
+    assert.match(boardUI, /boardPageRole === 'player' && token\.hiddenFromPlayers === true/);
+    assert.match(boardUI, /monsters\.filter\(token => token\.hiddenFromPlayers !== true\)/);
+    assert.match(boardUI, /if \(hidden\) selectedMapTokenIds\.delete\(token\.id\)/);
+    assert.match(player, /monsters\.filter\(monster=>monster\.hiddenFromPlayers!==true\)\.forEach/);
 });
 
 test('token drags stream intermediate positions and clear the shared measurement on release', async () => {

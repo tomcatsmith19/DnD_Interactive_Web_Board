@@ -91,3 +91,14 @@ test('new spell assets exist and appear on tokens',()=>{
     const icon=badge.children[0];assert.equal(icon.tag,'img');assert.ok(fs.existsSync('public/'+decodeURIComponent(icon.src)));
   }
 });
+
+test('DM action panel includes a player-visibility eye beside the token name',()=>{
+  const dm=fs.readFileSync('public/dm.html','utf8'),player=fs.readFileSync('public/player.html','utf8'),css=fs.readFileSync('public/token-actions.css','utf8'),boardUI=fs.readFileSync('public/board-ui.js','utf8');
+  assert.match(dm,/class="map-action-target-group">[\s\S]*?id="mapTokenPlayerVisibility"[\s\S]*?id="mapActionTargets"/);
+  assert.match(dm,/function toggleSelectedTokensPlayerVisibility\(\)[\s\S]*?hiddenFromPlayers/);
+  assert.match(css,/\.token-player-visibility \{[^}]*width:34px/);
+  assert.match(boardUI,/classList\.toggle\('is-hidden-from-players', boardPageRole === 'dm' && token\.hiddenFromPlayers === true\)/);
+  assert.match(css,/\.monster-token\.is-hidden-from-players::after \{[^}]*data:image\/svg\+xml/);
+  assert.match(dm,/token-actions\.css\?v=16/);
+  assert.match(player,/token-actions\.css\?v=16/);
+});

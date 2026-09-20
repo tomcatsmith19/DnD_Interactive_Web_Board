@@ -208,6 +208,7 @@
       .sticker-rig-origin::before{left:8px;top:2px;width:2px;height:12px;}
       .sticker-rig-origin::after{left:3px;top:7px;width:12px;height:2px;}
       .sticker-library-toolbar{width:clamp(620px,50vw,980px);max-height:min(280px,calc(100vh - 62px));padding:8px 10px;gap:5px;overflow:hidden;box-sizing:border-box;}
+      @media(min-width:761px){.map-tool-tabs.has-expanded-sticker{left:max(454px,calc(50% - 490px));right:max(12px,calc(50% - 490px));transform:none;align-items:stretch}.map-tool-tabs.has-expanded-sticker .sticker-library-toolbar{width:100%;min-width:0}.map-tool-tabs.has-expanded-sticker .map-tool-tab-buttons{align-self:center}}
       .sticker-search-row{display:flex;align-items:center;gap:7px;width:100%;}
       .sticker-library-toolbar .sticker-search{flex:0 1 37.5%;min-width:120px;width:37.5%;height:34px;padding:6px 9px;box-sizing:border-box;border:1px solid #8a6643;border-radius:6px;background:#140d08;color:#fff4d6;font:14px Arial,sans-serif;outline:none;}
       .sticker-library-toolbar .sticker-search:focus{border-color:#f4d76d;box-shadow:0 0 0 2px rgba(244,215,109,.18);}
@@ -275,11 +276,12 @@
       .sticker-favorite-dialog-actions .favorite-dialog-save{color:#1d1009;background:#f4d76d;border-color:#f4d76d;font-weight:bold;}
       .sticker-loot-popup{position:fixed;z-index:4000;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.68);}
       .sticker-loot-popup[hidden]{display:none;}
-      .sticker-loot-card{width:min(560px,95vw);padding:16px;background:#1d1009;border:2px solid #f4d76d;border-radius:9px;box-shadow:0 10px 35px #000;}
+      .sticker-loot-card{position:relative;width:min(560px,95vw);padding:16px;background:#1d1009;border:2px solid #f4d76d;border-radius:9px;box-shadow:0 10px 35px #000;}
       .sticker-loot-card h3{margin:0 0 10px;color:#f4d76d;font-family:'MedievalSharp',Georgia,serif;}
       .sticker-loot-card textarea{width:100%;height:280px;padding:10px;box-sizing:border-box;resize:vertical;color:white;background:#2b190f;border:1px solid #8a6643;border-radius:5px;}
       .sticker-loot-card button{float:right;margin-top:9px;padding:8px 14px;color:#1d1009;background:#f4d76d;border:0;border-radius:5px;font-weight:bold;cursor:pointer;}
-      @media(max-width:760px){.sticker-library-toolbar{width:calc(100vw - 12px);min-width:0;}.sticker-library-toolbar .sticker-card,.sticker-library-toolbar .sticker-load-more,.sticker-favorite-item{flex-basis:71px;width:71px}.map-tool-tab-buttons button{min-width:70px;}}
+      .sticker-loot-card .sticker-loot-delete{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:32px;height:32px;margin:0;padding:0;color:#ff777f;background:#351416;border:1px solid #ff777f;border-radius:50%;font-size:19px;line-height:1;}
+      @media(max-width:760px){.map-tool-tabs.has-expanded-sticker{left:6px;right:6px;top:88px;transform:none;align-items:stretch}.map-tool-tabs.has-expanded-sticker .map-tool-tab-buttons{align-self:center}.sticker-library-toolbar{width:100%;min-width:0;}.sticker-library-toolbar .sticker-card,.sticker-library-toolbar .sticker-load-more,.sticker-favorite-item{flex-basis:71px;width:71px}.map-tool-tab-buttons button{min-width:70px;}}
     `;
     document.head.appendChild(style);
   }
@@ -322,6 +324,7 @@
     let teleportPreview = null;
     let replacementPickerStickerId = "";
     let lootDataPromise = null;
+    let lootPopupStickerId = "";
     let requestPanelClose = () => {};
     let lastPlacementPointer = { x: root.innerWidth / 2, y: root.innerHeight / 2 };
     let placementPreviewPath = "";
@@ -496,8 +499,16 @@
     const lootPopup = document.createElement("div");
     lootPopup.className = "sticker-loot-popup";
     lootPopup.hidden = true;
-    lootPopup.innerHTML = `<div class="sticker-loot-card"><h3>Loot</h3><textarea readonly aria-label="Rolled loot"></textarea><button type="button">Close</button></div>`;
-    lootPopup.querySelector("button").addEventListener("click", () => { lootPopup.hidden = true; });
+    lootPopup.innerHTML = `<div class="sticker-loot-card"><h3>Loot</h3><button class="sticker-loot-delete" data-action="delete" type="button" aria-label="Delete loot sticker" title="Delete loot sticker">×</button><textarea readonly aria-label="Rolled loot"></textarea><button data-action="close" type="button">Close</button></div>`;
+    lootPopup.querySelector("[data-action='close']").addEventListener("click", () => { lootPopup.hidden = true; lootPopupStickerId = ""; });
+    lootPopup.querySelector("[data-action='delete']").addEventListener("click", async () => {
+      if (!lootPopupStickerId) return;
+      const stickerId = lootPopupStickerId;
+      lootPopup.hidden = true;
+      lootPopupStickerId = "";
+      try { await boardSync.removeStickers([stickerId], boardSync.generation); }
+      catch (error) { reportError(error); }
+    });
     document.body.appendChild(lootPopup);
 
     function reportError(error) {
@@ -1439,12 +1450,58 @@
       return results;
     }
 
-    async function rollStickerLoot(settings) {
+    function loadLootData() {
       lootDataPromise ||= fetch("data/api_data/loot.json").then(response => {
         if (!response.ok) throw new Error("Loot data could not be loaded.");
         return response.json();
       });
-      const data = await lootDataPromise;
+      return lootDataPromise;
+    }
+
+    function parseLootCR(value) {
+      if (typeof value === "string" && value.includes("/")) {
+        const [numerator, denominator] = value.split("/").map(Number);
+        if (numerator && denominator) return numerator / denominator;
+      }
+      return clamp(Number(value) || 0, 0, 30);
+    }
+
+    async function resolveMonsterLootCR(monster) {
+      if (monster?.cr !== undefined && monster?.cr !== null && monster.cr !== "") return parseLootCR(monster.cr);
+      const response = await fetch(`data/monsters/${encodeURIComponent(String(monster?.name || ""))}.json`);
+      if (!response.ok) return 0;
+      const definition = await response.json();
+      return parseLootCR(definition.cr);
+    }
+
+    async function rollAutomaticIndividualLoot(cr) {
+      const data = await loadLootData();
+      const table = data.individual.find(item => cr >= item.crMin && cr <= item.crMax);
+      if (!table) return `No individual treasure table was found for CR ${cr}.`;
+      const roll = Math.floor(Math.random() * 100) + 1;
+      const entry = table.table.find(item => roll >= item.min && roll <= item.max);
+      const coins = Object.entries(entry?.coins || {}).map(([coin, expression]) => `â€¢ ${Number(rollLootExpression(expression)).toLocaleString()} ${coin.toUpperCase()}`);
+      return `Individual Treasure â€” CR ${cr}\n\nCoins\n${coins.join("\n") || "â€¢ No coins"}`;
+    }
+
+    async function placeAutomaticLootSticker(monster, settings = {}) {
+      const cr = await resolveMonsterLootCR(monster);
+      const filename = cr <= 4 ? "Coin_Pile_Gold_A12_1x1.webp" : cr <= 10 ? "Coin_Pile_Gold_A40_2x2.webp" : "Coin_Pile_Gold_A43_3x3.webp";
+      return placeLootSticker({
+        id:settings.id,
+        type:"individual",
+        cr,
+        lootText:await rollAutomaticIndividualLoot(cr),
+        storagePath:`sticker-library/v1/!Core_Settlements/Clutter/Treasure/Coins/Coin_Piles/${filename}`,
+        name:`Individual Treasure (CR ${cr})`,
+        x:monster?.xRatio,
+        y:monster?.yRatio
+      });
+    }
+
+    async function rollStickerLoot(settings) {
+      if (typeof settings?.result === "string" && settings.result.trim()) return settings.result;
+      const data = await loadLootData();
       const cr = clamp(Number(settings.cr) || 0, 0, 30);
       if (settings.type !== "hoard") {
         const table = data.individual.find(item => cr >= item.crMin && cr <= item.crMax);
@@ -1569,6 +1626,8 @@
       }
       if (interaction.loot) rollStickerLoot(interaction.loot).then(result => {
         lootPopup.querySelector("textarea").value = result;
+        lootPopupStickerId = sticker.id;
+        lootPopup.querySelector("[data-action='delete']").hidden = !interaction.loot.preRolled;
         lootPopup.hidden = false;
       }).catch(reportError);
     }
@@ -1874,6 +1933,40 @@
       }
     }
 
+    async function placeLootSticker(settings = {}) {
+      const storagePath = String(settings.storagePath || "");
+      const lootText = String(settings.lootText || "").trim();
+      if (!storagePath || !lootText) throw new Error("Generate loot before placing a loot sticker.");
+      const units = gridUnits(storagePath);
+      const gridSize = clamp(Number(options.getGridSize?.()) || 100, 12, 1000);
+      const widthRatio = clamp(gridSize * units.width / Math.max(1, mapImage.clientWidth), .004, 1);
+      const heightRatio = clamp(gridSize * units.height / Math.max(1, mapImage.clientHeight), .004, 1);
+      const x = clamp(Number.isFinite(Number(settings.x)) ? Number(settings.x) : .5, widthRatio / 2, 1 - widthRatio / 2);
+      const y = clamp(Number.isFinite(Number(settings.y)) ? Number(settings.y) : .5, heightRatio / 2, 1 - heightRatio / 2);
+      const sticker = {
+        id: String(settings.id || makeId()),
+        name: String(settings.name || "Loot"),
+        storagePath,
+        x: roundRatio(x),
+        y: roundRatio(y),
+        widthRatio: Number(widthRatio.toFixed(5)),
+        heightRatio: Number(heightRatio.toFixed(5)),
+        rotation: 0,
+        interaction: {
+          loot: {
+            type: settings.type === "hoard" ? "hoard" : "individual",
+            cr: clamp(Number(settings.cr) || 0, 0, 30),
+            xp: Math.max(0, Number(settings.xp) || 0),
+            result: lootText,
+            preRolled: true
+          }
+        }
+      };
+      await boardSync.addSticker(sticker, boardSync.generation);
+      status.textContent = `${sticker.name} placed. Click it to view the rolled loot.`;
+      return sticker;
+    }
+
     function captureTeleportDestination(event) {
       if (!teleportDestinationStickerId || event.button !== 0) return false;
       const sticker = stickers.find(item => item.id === teleportDestinationStickerId);
@@ -2080,6 +2173,8 @@
       setPanelCloseHandler(handler) {
         requestPanelClose = typeof handler === "function" ? handler : () => {};
       },
+      placeLootSticker,
+      placeAutomaticLootSticker,
       discardLocalState() {
         dragSession = null;
         teleportDragSession = null;

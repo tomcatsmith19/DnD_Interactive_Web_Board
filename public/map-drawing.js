@@ -1833,6 +1833,7 @@
         }
         activeManager = shouldClose ? null : tab.manager;
         activeManager?.setActive?.(true);
+        shell.classList.toggle("has-expanded-sticker", activeManager === stickerManager);
         tabs.forEach(item => { item.manager.toolbar.style.display = item.manager === activeManager ? "flex" : "none"; });
         Array.from(buttons.children).forEach(item => {
           const isActive = item === button && !shouldClose;
@@ -1871,6 +1872,7 @@
           activeManager.setTool?.("pan");
           activeManager.setActive?.(false);
           activeManager = null;
+          shell.classList.remove("has-expanded-sticker");
           tabs.forEach(tab => { tab.manager.toolbar.style.display = "none"; });
           Array.from(buttons.children).forEach(button => {
             button.classList.remove("is-active");

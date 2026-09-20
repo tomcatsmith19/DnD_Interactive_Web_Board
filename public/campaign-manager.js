@@ -164,6 +164,7 @@ async function switchCampaignMap(campaignId, mapId) {
             const registry = { ...currentRegistry, activeId: campaignId, activeMapId: mapId };
             await applyCampaignState(state, registry, prepared, lease);
             campaignRegistry = registry;
+            if (typeof loadCampaignGeneratorSettings === 'function') await loadCampaignGeneratorSettings(campaignId);
             expandedCampaigns.add(campaignId);
             setCampaignStatus(`Loaded ${target.name} and shared it with all players.`);
         } finally {
@@ -298,6 +299,7 @@ async function deleteCampaign(campaignId) {
         if (active) { registry.activeId = ''; registry.activeMapId = ''; }
         const cleanup = db.batch();
         campaignStateKeys.forEach(key => cleanup.delete(campaignsRef.doc(campaignId).collection('state').doc(key)));
+        cleanup.delete(campaignsRef.doc(campaignId).collection('settings').doc('generators'));
         cleanup.delete(campaignsRef.doc(campaignId));
         stageCampaignRegistry(cleanup, registry);
         await cleanup.commit();
@@ -352,13 +354,16 @@ async function initializeCampaignManager() {
     }
     expandedCampaigns.add(campaignRegistry.activeId || campaignRegistry.campaigns[0]?.id);
     campaignManagerReady = true;
+    if (typeof loadCampaignGeneratorSettings === 'function') await loadCampaignGeneratorSettings(campaignRegistry.activeId);
     renderCampaignList();
     setCampaignStatus('Click a map to load and share it. Changes are saved when switching maps.');
     campaignRegistryRef.onSnapshot(doc => {
         if (!doc.exists || campaignSwitchInProgress) return;
         const registry = doc.data();
         if (registry.schemaVersion !== 2) return;
+        const previousActiveId = campaignRegistry.activeId;
         campaignRegistry = registry;
+        if (registry.activeId && registry.activeId !== previousActiveId && typeof loadCampaignGeneratorSettings === 'function') loadCampaignGeneratorSettings(registry.activeId);
         renderCampaignList();
     }, error => setCampaignStatus(`Could not sync campaigns: ${error.message}`));
 }

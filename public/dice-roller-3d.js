@@ -60,6 +60,33 @@ const previewStates = new Map();
 const previewSoundBuffers = new Map();
 let previewAudioContext;
 
+function diceSoundCheckbox() {
+  return document.getElementById('dmDiceSounds') || document.getElementById('playerDiceSounds');
+}
+
+function diceSoundsEnabled() {
+  return diceSoundCheckbox()?.checked !== false;
+}
+
+function stopDiceAudioPool(pool) {
+  Object.values(pool || {}).flat().forEach(audio => {
+    if (!audio?.pause) return;
+    audio.pause();
+    try { audio.currentTime = 0; } catch {}
+  });
+}
+
+function applyDiceSoundPreference() {
+  const enabled = diceSoundsEnabled();
+  if (!diceBox) return enabled;
+  diceBox.sounds = enabled;
+  if (!enabled) {
+    stopDiceAudioPool(diceBox.sounds_table);
+    stopDiceAudioPool(diceBox.sounds_dice);
+  }
+  return enabled;
+}
+
 async function loadDiceBox() {
   if (!DiceBoxClass) {
     diceModulePromise ||= import('./vendor/dice-box-threejs/dice-box-threejs.es.js?v=3');
@@ -155,18 +182,19 @@ function updateLocalOutput(payload) {
   const appearanceOutput = document.getElementById(`${payload.sourcePrefix}DiceAppearanceResult`);
   if (appearanceOutput) {
     const summary = String(payload.appearanceSummary || 'Default appearance').split('; ').join('<br>');
-    appearanceOutput.innerHTML = `<strong>${payload.appearanceMode || 'Custom'} Appearance</strong><br>${safeMarkup(summary)}`;
+    appearanceOutput.innerHTML = safeMarkup(summary);
   }
 }
 
 async function animate(payload) {
   clearTimeout(clearTimer);
   const config = payload.themeConfig || themes[payload.theme] || themes.default;
-  const soundCheckbox = document.getElementById('dmDiceSounds') || document.getElementById('playerDiceSounds');
   const volumeSlider = document.getElementById('dmSfxVolume') || document.getElementById('sfxVolume');
-  const sounds = soundCheckbox?.checked !== false;
+  const sounds = diceSoundsEnabled();
   const volume = Math.round(Math.min(1, Math.max(0, Number(volumeSlider?.value) || 0)) * 100);
   await initializeDiceBox(config.theme_surface || 'green-felt');
+  diceBox.sounds = sounds;
+  diceBox.volume = volume;
   stage.classList.add('is-rolling');
   const appliedConfig = { ...config, sounds, volume };
   if (appliedConfig.theme_texture === 'preset') {
@@ -174,6 +202,8 @@ async function animate(payload) {
     delete appliedConfig.theme_texture;
   }
   await diceBox.updateConfig(appliedConfig);
+  diceBox.sounds = sounds;
+  diceBox.volume = volume;
   await diceBox.roll(forcedNotation(payload));
 }
 
@@ -305,6 +335,8 @@ function schedulePreviewRoll(menu) {
   state.timer = setTimeout(async () => {
     const generation = ++state.generation;
     try {
+      const DiceBox = await loadDiceBox();
+      if (generation !== state.generation) return;
       const config = getCustomization(prefix);
       const surface = config.theme_surface || 'green-felt';
       const previewStage = document.getElementById(`${prefix}DicePreviewStage`);
@@ -332,8 +364,7 @@ function schedulePreviewRoll(menu) {
 }
 
 async function playDiceSoundPreview(prefix) {
-  const soundCheckbox = document.getElementById('dmDiceSounds') || document.getElementById('playerDiceSounds');
-  if (soundCheckbox?.checked === false) return;
+  if (!diceSoundsEnabled()) return;
   const volumeSlider = document.getElementById('dmSfxVolume') || document.getElementById('sfxVolume');
   const volume = Math.min(1, Math.max(0, Number(volumeSlider?.value) || 0));
   const material = document.getElementById(`${prefix}DiceMaterial`)?.value || 'glass';
@@ -372,6 +403,8 @@ async function playDiceSoundPreview(prefix) {
     });
   } catch (error) { console.warn('Dice sound preview was blocked:', error); }
 }
+
+diceSoundCheckbox()?.addEventListener('change', applyDiceSoundPreference);
 
 document.querySelectorAll('[data-dice-customizer]').forEach(menu => {
   const prefix = menu.dataset.diceCustomizer;
@@ -417,7 +450,7 @@ window.diceRoller3d = {
       updateCustomizerPreview(menu);
       schedulePreviewRoll(menu);
     }
-    if (output) output.innerHTML = `<strong>Applied Appearance</strong><br>${safeMarkup(String(lastCompletedPayload.appearanceSummary || '').split('; ').join('<br>'))}`;
+    if (output) output.innerHTML = safeMarkup(String(lastCompletedPayload.appearanceSummary || '').split('; ').join('<br>'));
   },
   async replayAndShare(prefix) {
     const output = document.getElementById(`${prefix}DiceResult`);

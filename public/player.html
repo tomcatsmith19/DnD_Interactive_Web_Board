@@ -100,8 +100,15 @@
     .dice-counter button:last-of-type { grid-column:3; }
     .dice-counter input { grid-column:2; grid-row:2; z-index:2; align-self:center; justify-self:center; width:30px !important; height:20px; margin:0; padding:1px 2px !important; color:white; background:#3d2718; border:1px solid #765133; border-radius:4px; font-size:.78rem !important; line-height:18px; text-align:center; appearance:textfield; -moz-appearance:textfield; }
     .dice-counter input::-webkit-inner-spin-button,.dice-counter input::-webkit-outer-spin-button { margin:0; -webkit-appearance:none; }
-    .dice-roll-button { width:100%; padding:11px !important; font-size:1rem; }
-    .dice-clear-button { width:100%; padding:9px !important; color:#f4d76d !important; background:#3d2718 !important; border:1px solid #f4d76d !important; font-size:.95rem; }
+    .dice-roll-button { width:100%; padding:11px !important; color:#72df91 !important; background:#132d1b !important; border:1px solid #72df91 !important; font-size:1rem; }
+    .dice-roll-button:hover { filter:brightness(1.14); }
+    .dice-roll-button:focus-visible { outline:2px solid #72df91; outline-offset:2px; }
+    .dice-roller-header { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .dice-roller-header h2 { margin:0; }
+    .dice-clear-button { flex:0 0 auto; display:grid; place-items:center; width:34px; min-width:34px; height:34px; padding:6px !important; color:#ff777f !important; background:#351416 !important; border:1px solid #ff777f !important; border-radius:5px; cursor:pointer; }
+    .dice-clear-button:hover { filter:brightness(1.14); }
+    .dice-clear-button:focus-visible { outline:2px solid #ff777f; outline-offset:2px; }
+    .dice-clear-button svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
     .dice-replay-button { width:100%; padding:9px !important; color:#f4d76d !important; background:#2b190f !important; border:1px solid #f4d76d !important; font-size:.95rem; font-weight:bold; cursor:pointer; }
     .dice-replay-button:disabled { opacity:.45; cursor:not-allowed; }
     .dice-post-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
@@ -126,7 +133,7 @@
     .session-controls-panel .session-logout-button { background:#a83232 !important; }
     .session-controls-panel .session-controls-toggle { position:absolute; left:-43px; bottom:0; width:43px; min-width:0; height:68px; padding:3px !important; background:#1d1009 !important; color:#f4d76d !important; border:1px solid #f4d76d !important; border-right:0 !important; border-radius:8px 0 0 8px !important; }
     .session-controls-toggle svg { width:34px; height:54px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-    .audio-dock { position:fixed; left:12px; right:12px; bottom:12px; z-index:1150; display:flex; align-items:flex-start; gap:10px; padding:8px; color:white; background:rgba(15,15,15,.92); border:1px solid #8a6643; border-radius:9px; }
+    .audio-dock { position:fixed; left:12px; right:12px; bottom:28px; z-index:1150; display:flex; align-items:flex-start; gap:10px; padding:8px; color:white; background:rgba(15,15,15,.92); border:1px solid #8a6643; border-radius:9px; }
     .audio-dock.is-collapsed .audio-dock-content { display:none; }
     .audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
     .audio-dock-content { display:grid; grid-template-columns:minmax(105px,.4fr) repeat(3,minmax(0,1fr)); gap:8px 12px; align-items:start; flex:1; }
@@ -288,7 +295,7 @@
       margin-bottom: 10px;
     }
   </style>
-  <link rel="stylesheet" href="token-actions.css?v=15">
+  <link rel="stylesheet" href="token-actions.css?v=16">
 </head>
 
 <body>
@@ -380,7 +387,7 @@
       <h3 id="playerReferenceDescriptionHeading">Description</h3>
       <pre id="description" tabindex="0" aria-labelledby="playerReferenceDescriptionHeading" aria-live="polite"></pre>
     </div>
-    <div id="playerDiceContent" class="dice-roller player-left-panel-content"><h2>Dice Roller</h2>
+    <div id="playerDiceContent" class="dice-roller player-left-panel-content"><div class="dice-roller-header"><h2>Dice Roller</h2><button class="dice-clear-button" type="button" onclick="clearSelectedDice('player')" aria-label="Clear Selected Dice" title="Clear Selected Dice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6M10 10v7M14 10v7"/></svg></button></div>
       <div class="dice-roller-form">
         <details class="dice-customize"><summary>Customize Dice</summary><div class="dice-customize-menu" data-dice-customizer="player"><label>Colorset<select id="playerDiceColorset" class="dice-colorset"></select></label><label>Texture<select id="playerDiceTexture" class="dice-texture"></select></label><label>Material<select id="playerDiceMaterial" class="dice-material"></select></label><label>Surface<select id="playerDiceSurface" class="dice-surface"></select></label><div class="dice-parameter-preview"><div id="playerDicePreviewStage" class="dice-preview-stage"></div><div class="dice-preview-details" aria-live="polite"></div><button class="dice-sound-preview-button" type="button">Preview Roll Sound</button></div></div></details>
         <div class="dice-counter d20"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d20-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',20,-1)">−</button><input id="playerDiceCount20" type="number" min="0" max="100" value="1" aria-label="Number of d20 dice"><button type="button" onclick="changeDiceCount('player',20,1)">+</button></div>
@@ -392,7 +399,6 @@
         <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d6-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',6,-1)">−</button><input id="playerDiceCount6" type="number" min="0" max="100" value="0" aria-label="Number of d6 dice"><button type="button" onclick="changeDiceCount('player',6,1)">+</button></div>
         <div class="dice-counter row-three"><div class="dice-counter-label"><span class="die-picture" style="--die-image:url('data/images/d4-black.png')"></span></div><button type="button" onclick="changeDiceCount('player',4,-1)">−</button><input id="playerDiceCount4" type="number" min="0" max="100" value="0" aria-label="Number of d4 dice"><button type="button" onclick="changeDiceCount('player',4,1)">+</button></div>
       </div>
-      <button class="dice-clear-button" type="button" onclick="clearSelectedDice('player')">Clear Selected Dice</button>
       <div class="dice-roll-controls"><div class="dice-roll-options"><label class="dice-roll-option"><input id="playerShareDiceRoll" type="checkbox"> Share</label><label class="dice-roll-option"><input id="playerRandomDiceColor" type="checkbox"> Random Color</label></div><button class="dice-roll-button" type="button" onclick="rollUtilityDice('player')">Roll Dice</button></div>
       <div class="dice-output-grid"><div id="playerDiceResult" class="dice-result" aria-live="polite">Choose your dice and roll.</div><div id="playerDiceAppearanceResult" class="dice-appearance-result" aria-live="polite"><strong>Appearance</strong><br>Uses your selected customization.</div></div>
       <div class="dice-post-actions"><button id="playerReplayDiceRoll" class="dice-replay-button" type="button" onclick="window.diceRoller3d?.replayAndShare('player')" disabled>Replay &amp; Share Roll</button><button id="playerApplyDiceAppearance" class="dice-apply-button" type="button" onclick="window.diceRoller3d?.applyAppearance('player')" disabled>Apply Appearance</button></div>
@@ -665,9 +671,9 @@
   <script src="token-placement.js?v=2"></script>
     <script src="token-actions.js?v=5"></script>
     <script src="board-sync.js?v=7"></script>
-    <script src="map-stickers.js?v=26"></script>
+    <script src="map-stickers.js?v=30"></script>
     <script src="shared-timer.js?v=5"></script>
-  <script src="board-ui.js?v=5"></script>
+  <script src="board-ui.js?v=8"></script>
     <script src="reference.js?v=2"></script>
 
   <script>
@@ -798,11 +804,11 @@
 
     function updatePlayerTokenInitiativeLabels() {
       const ordered = [...monsters].sort((a,b)=>(Number(b.init)||0)-(Number(a.init)||0)||a.id.localeCompare(b.id));
-      ordered.filter(monster=>monster.hp>0||monster.isplayer).forEach((monster,index)=>{
+      ordered.filter(monster=>monster.hiddenFromPlayers!==true&&(monster.hp>0||monster.isplayer)).forEach((monster,index)=>{
         const label=document.querySelector(`#token-${CSS.escape(monster.id)} .token-label`);
         if(label)label.textContent=index;
       });
-      ordered.filter(monster=>monster.hp<=0&&!monster.isplayer).forEach(monster=>{
+      ordered.filter(monster=>monster.hiddenFromPlayers!==true&&monster.hp<=0&&!monster.isplayer).forEach(monster=>{
         const label=document.querySelector(`#token-${CSS.escape(monster.id)} .token-label`);
         if(label)label.textContent='×';
       });
@@ -850,7 +856,7 @@
       document.getElementById('bookViewer').src = event.target.value ? `data/books/${event.target.value}` : 'about:blank';
     });
     function changeDiceCount(prefix,sides,change){const input=document.getElementById(`${prefix}DiceCount${sides}`);input.value=Math.min(100,Math.max(0,(Number(input.value)||0)+change));}
-    function clearSelectedDice(prefix){[20,100,12,10,8,6,4].forEach(sides=>{const input=document.getElementById(`${prefix}DiceCount${sides}`);if(input)input.value=0;});const result=document.getElementById(`${prefix}DiceResult`);if(result)result.textContent='Choose your dice and roll.';}
+    function clearSelectedDice(prefix){[20,100,12,10,8,6,4].forEach(sides=>{const input=document.getElementById(`${prefix}DiceCount${sides}`);if(input)input.value=0;});const modifier=document.getElementById(`${prefix}DiceModifier`);if(modifier)modifier.value=0;const result=document.getElementById(`${prefix}DiceResult`);if(result)result.textContent='Choose your dice and roll.';}
     function rollUtilityDice(prefix){
       const dice=[20,100,12,10,8,6,4],modifierInput=document.getElementById(`${prefix}DiceModifier`);
       const modifier=Math.trunc(Number(modifierInput?.value)||0);
@@ -860,7 +866,7 @@
       result.textContent='Rolling…';
       const randomAppearance=document.getElementById(`${prefix}RandomDiceColor`)?.checked?window.diceRoller3d?.getRandomCustomization():null;
       const appearance=randomAppearance||window.diceRoller3d?.getCustomizationDetails(prefix);
-      const request={id:`${Date.now()}-${Math.random().toString(36).slice(2)}`,createdAt:Date.now(),roller:'Player',sourcePrefix:prefix,dice:pool,modifier,themeConfig:appearance?.themeConfig||window.diceRoller3d?.getCustomization(prefix),appearanceSummary:appearance?.summary||'',appearanceSelection:appearance?.selection||null,appearanceMode:randomAppearance?'Random':'Custom'};
+      const request={id:`${Date.now()}-${Math.random().toString(36).slice(2)}`,createdAt:Date.now(),roller:'Player',sourcePrefix:prefix,dice:pool,modifier,themeConfig:appearance?.themeConfig||window.diceRoller3d?.getCustomization(prefix),appearanceSummary:appearance?.summary||'',appearanceSelection:appearance?.selection||null};
       if(window.diceRoller3d)window.diceRoller3d.roll(request,document.getElementById(`${prefix}ShareDiceRoll`)?.checked);else result.textContent='3D dice are still loading. Please try again.';
     }
     function toggleSessionControls(panelId){document.getElementById(panelId)?.classList.toggle('is-collapsed');}
@@ -1092,6 +1098,50 @@
     const activeDeathEffects = new Set();
     let lastDeathEffectEventId = null;
     let deathEffectSnapshotSeen = false;
+    async function broadcastDefeatedCreatures(creatures) {
+      const defeatedMonsters = creatures.filter(monster => monster && !monster.isplayer).map(monster => {
+        const defeated = {
+          id:String(monster.id || ''), name:String(monster.name || ''), isplayer:false,
+          xRatio:Number(monster.xRatio) || 0.5, yRatio:Number(monster.yRatio) || 0.5
+        };
+        if (monster.cr !== undefined && monster.cr !== null) defeated.cr = monster.cr;
+        return defeated;
+      });
+      if (!defeatedMonsters.length) return;
+      let campaignId = '';
+      let autoDropEnabled = false;
+      try {
+        const registry = await db.collection('shared').doc('campaignRegistry').get();
+        campaignId = String(registry.data()?.activeId || '');
+        if (campaignId) {
+          const settings = await db.collection('campaigns').doc(campaignId).collection('settings').doc('generators').get();
+          autoDropEnabled = settings.data()?.lootAutoDrop === true;
+        }
+      } catch (error) {
+        console.warn('Could not resolve the active campaign for auto loot:', error);
+      }
+      const requests = db.collection('shared').doc('lootDropRequests').collection('events');
+      let placementError = null;
+      await Promise.all(defeatedMonsters.map(async monster => {
+        const request = requests.doc();
+        let lootPlaced = false;
+        if (autoDropEnabled) {
+          try {
+            await stickerManager.placeAutomaticLootSticker(monster, { id:`loot-${request.id}` });
+            lootPlaced = true;
+          } catch (error) {
+            placementError ||= error;
+          }
+        }
+        await request.set({ campaignId, monster, autoDropEnabled, lootPlaced, createdAt:Date.now() });
+      }));
+      await deathEffectRef.set({
+        monsterId:defeatedMonsters[0].id,
+        eventId:`${deathEffectClientId}-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+        sentAt:Date.now()
+      });
+      if (placementError) throw placementError;
+    }
     function showTokenDeathEffect(monsterId, broadcast = true) {
       if (activeDeathEffects.has(monsterId)) return;
       const token = document.getElementById(`token-${monsterId}`);
@@ -1562,7 +1612,7 @@
 
     document.addEventListener('mouseup', event => {
       if (!lassoPoints.length) return;
-      if(lassoPoints.length>=3)monsters.forEach(monster=>{if(isPointInsideLasso({x:monster.xRatio*mapImage.clientWidth,y:monster.yRatio*mapImage.clientHeight},lassoPoints))selectedMapTokenIds.add(monster.id);});
+      if(lassoPoints.length>=3)monsters.filter(monster=>monster.hiddenFromPlayers!==true).forEach(monster=>{if(isPointInsideLasso({x:monster.xRatio*mapImage.clientWidth,y:monster.yRatio*mapImage.clientHeight},lassoPoints))selectedMapTokenIds.add(monster.id);});
       if(lassoPoints.length>=3)drawingToolbarManager?.selectWithinLasso?.(lassoPoints,true);
       lassoPoints=[]; tokenLassoPath.setAttribute('points',''); tokenLasso.style.display='none'; refreshMapTokenSelection();
       if(selectedMapTokenIds.size)document.getElementById('mapActionPanel').classList.add('is-open');
@@ -1947,7 +1997,7 @@
 
 
   </script>
-  <script type="module" src="dice-roller-3d.js?v=20"></script>
+  <script type="module" src="dice-roller-3d.js?v=23"></script>
 </body>
 
 </html>
