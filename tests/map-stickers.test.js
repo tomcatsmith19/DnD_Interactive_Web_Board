@@ -129,7 +129,7 @@ test('both boards load the sticker browser and place its tab before measurement'
   const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
   for (const role of ['dm', 'player']) {
     const html = fs.readFileSync(`public/${role}.html`, 'utf8');
-    assert.ok(html.includes('map-stickers.js?v=34'));
+    assert.ok(html.includes('map-stickers.js?v=35'));
     assert.ok(html.includes('token-placement.js?v=4'));
     assert.ok(html.includes('map-drawing.js?v=24'));
     assert.match(html, /setupMapDrawingTabs\([^\n]+measurementToolbarManager, stickerManager\)/);
@@ -207,6 +207,7 @@ test('generated traps use preview placement and DM-controlled player visibility'
   assert.match(browser, /class="sticker-trap-content"/);
   assert.match(browser, /function sanitizeTrapHtml/);
   assert.match(browser, /\.sticker-trap-content table/);
+  assert.match(browser, /if \(!canEditInteractions\) \{[\s\S]*?content\.textContent = String\(trap\.name \|\| sticker\.name \|\| "Trap or Hazard"\);[\s\S]*?return;/);
 });
 
 test('selected stickers use an on-map transform rig instead of toolbar transform buttons', () => {

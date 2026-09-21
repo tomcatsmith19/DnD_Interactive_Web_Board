@@ -575,6 +575,13 @@
       trapPopupStickerId = sticker.id;
       trapPopup.querySelector("[data-trap-title]").textContent = "Trap or Hazard";
       const content = trapPopup.querySelector(".sticker-trap-content");
+      if (!canEditInteractions) {
+        content.classList.add("is-plain-text");
+        content.textContent = String(trap.name || sticker.name || "Trap or Hazard");
+        updateTrapVisibilityButton(sticker);
+        trapPopup.hidden = false;
+        return;
+      }
       const safeHtml = sanitizeTrapHtml(trap.html);
       content.classList.toggle("is-plain-text", !safeHtml);
       if (safeHtml) content.replaceChildren(safeHtml);
