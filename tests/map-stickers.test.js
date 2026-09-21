@@ -28,6 +28,7 @@ test('grid dimensions are read from sticker filename suffixes', () => {
 
 test('interactive sticker detection and circular teleport ranges are deterministic', () => {
   assert.equal(hasStickerInteraction({ interaction: { sound: { src: 'bell.mp3' } } }), true);
+  assert.equal(hasStickerInteraction({ interaction: { trap: { text: 'Hidden pit' } } }), true);
   assert.equal(hasStickerInteraction({ interaction: null }), false);
   assert.equal(hasStickerInteraction({ interaction: { linkedStickerIds: ['gate'] } }), true);
   assert.equal(pointInCircularRange({ x: .55, y: .5 }, { x: .5, y: .5 }, 51, 1000, 500), true);
@@ -128,7 +129,8 @@ test('both boards load the sticker browser and place its tab before measurement'
   const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
   for (const role of ['dm', 'player']) {
     const html = fs.readFileSync(`public/${role}.html`, 'utf8');
-    assert.ok(html.includes('map-stickers.js?v=30'));
+    assert.ok(html.includes('map-stickers.js?v=34'));
+    assert.ok(html.includes('token-placement.js?v=4'));
     assert.ok(html.includes('map-drawing.js?v=24'));
     assert.match(html, /setupMapDrawingTabs\([^\n]+measurementToolbarManager, stickerManager\)/);
   }
@@ -167,6 +169,44 @@ test('sticker placement captures the pointer before map panning', () => {
   assert.match(browser, /placementLayer\.appendChild\(placementPreview\)/);
   assert.match(browser, /clamp\(pointerX, widthRatio \/ 2, 1 - widthRatio \/ 2\)/);
   assert.match(browser, /placementPreview\.style\.width = `\$\{widthRatio \* 100\}%`/);
+});
+
+test('manual loot placement waits for a map click and renders a cursor preview', () => {
+  const browser = fs.readFileSync('public/map-stickers.js', 'utf8');
+  const dm = fs.readFileSync('public/dm.html', 'utf8');
+  assert.match(dm, /stickerManager\.queueLootSticker\(lootStickerSettings\(lastGeneratedLoot\.type, lastGeneratedLoot\.cr, lastGeneratedLoot\.text\)\)/);
+  assert.match(browser, /function queueLootSticker\(settings = \{\}\)[\s\S]*?pendingLootPlacement = \{ \.\.\.settings, storagePath, lootText \}[\s\S]*?updatePlacementMode\(\)/);
+  assert.match(browser, /if \(pendingLootPlacement\)[\s\S]*?x:\(event\.clientX - bounds\.left\) \/ bounds\.width,[\s\S]*?y:\(event\.clientY - bounds\.top\) \/ bounds\.height/);
+  assert.match(browser, /function currentPlacementAsset\(\)[\s\S]*?storage\.ref\(\)\.child\(path\)/);
+  assert.match(browser, /if \(!previewAsset\.units\.explicit && dimensions\?\.width && dimensions\?\.height\)/);
+  assert.match(browser, /\.sticker-placement-cursor-preview\{[^}]*opacity:\.68/);
+});
+
+test('generated traps use preview placement and DM-controlled player visibility', () => {
+  const browser = fs.readFileSync('public/map-stickers.js', 'utf8');
+  const dm = fs.readFileSync('public/dm.html', 'utf8');
+  assert.match(dm, /Hunting_Trap_Metal_Gray_A1_1x1\.webp/);
+  assert.match(dm, /class="trap-generate-button"/);
+  assert.match(dm, /id="placeTrapStickerBtn"[\s\S]*?placeGeneratedTrapSticker/);
+  assert.match(dm, /placeTrapStickerBtn[\s\S]*?class="trap-place-icon"/);
+  assert.match(dm, /\.trap-place-icon \{[^}]*background:#f4d76d;[^}]*trap_icon\.png/);
+  assert.match(dm, /\.trap-generate-button \{[^}]*background:#ff5959 !important;[^}]*border:1px solid #ff8a90 !important;/);
+  assert.match(dm, /trap-generate-button[\s\S]*?data\/images\/gears_icon\.png[\s\S]*?data\/images\/trap_icon\.png/);
+  assert.match(dm, /const hoveredTrapOutput = event\.target\.closest\('\.trap-result'\)/);
+  assert.match(dm, /\.trap-result::\-webkit-scrollbar-thumb/);
+  assert.match(dm, /stickerManager\.queueTrapSticker/);
+  assert.match(dm, /lastGeneratedTrap = \{ name:selected\.name, text, html:result\.innerHTML \}/);
+  assert.match(dm, /trapHtml:lastGeneratedTrap\.html/);
+  assert.match(browser, /function queueTrapSticker\(settings = \{\}\)[\s\S]*?placementType:"trap"/);
+  assert.match(browser, /settings\.placementType === "trap" \? placeTrapSticker : placeLootSticker/);
+  assert.match(browser, /interaction: \{ trap: \{ name:String\(settings\.name \|\| "Trap or Hazard"\), text:trapText, \.\.\.\(trapHtml \? \{ html:trapHtml \} : \{\}\) \} \}/);
+  assert.match(browser, /stickers\.filter\(sticker => sticker\.hiddenFromPlayers !== true\)/);
+  assert.match(browser, /class="sticker-trap-visibility"/);
+  assert.match(browser, /boardSync\.patchStickers\(new Map\(\[\[sticker\.id, \{ hiddenFromPlayers \}\]\]\)/);
+  assert.match(browser, /class="sticker-trap-delete"/);
+  assert.match(browser, /class="sticker-trap-content"/);
+  assert.match(browser, /function sanitizeTrapHtml/);
+  assert.match(browser, /\.sticker-trap-content table/);
 });
 
 test('selected stickers use an on-map transform rig instead of toolbar transform buttons', () => {

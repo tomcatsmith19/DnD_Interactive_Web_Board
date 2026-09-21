@@ -212,6 +212,10 @@
         .dm-initiative-table-scroll::-webkit-scrollbar-track { background:#21130c; border-radius:8px; }
         .dm-initiative-table-scroll::-webkit-scrollbar-thumb { background:#8a6643; border:2px solid #21130c; border-radius:8px; }
         .dm-initiative-table-scroll::-webkit-scrollbar-thumb:hover { background:#f4d76d; }
+        .dm-initiative-header { display:flex; flex:none; align-items:center; gap:8px; margin-bottom:8px; }
+        .dm-initiative-header h2 { margin:0; }
+        .encounter-add-monster.initiative-add-monster { margin-left:auto; color:#123116; background:#32cd32; border-color:#72df91; }
+        .encounter-add-monster.initiative-add-monster:hover { background:#45dc45; filter:none; }
         .dm-initiative-table { width:100%; border-collapse:collapse; background:#3d2718; color:white; font-size:.82rem; }
         .dm-initiative-table th,.dm-initiative-table td { padding:6px; border:1px solid #765133; }
         .dm-initiative-table thead th { position:sticky; top:-2px; z-index:2; background:#3d2718; box-shadow:0 -2px 0 #3d2718; }
@@ -486,9 +490,14 @@
         .generated-monster-token-preview { display:none; position:fixed; z-index:3900; width:94px; height:94px; padding:5px; box-sizing:border-box; pointer-events:none; background:#21130c; border:2px solid #f4d76d; border-radius:50%; box-shadow:0 6px 20px rgba(0,0,0,.75); }
         .generated-monster-token-preview.is-open { display:block; }
         .generated-monster-token-preview img { display:block; width:100%; height:100%; object-fit:cover; border-radius:50%; }
-        .generator-panel .trap-controls button { grid-column:1/-1; width:100%; white-space:nowrap; }
+        .generator-panel .trap-action-row { grid-column:1/-1; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:8px; }
+        .generator-panel .trap-action-row button { width:auto; white-space:nowrap; }
+        .generator-panel .trap-place-button { grid-column:1; justify-self:start; }
+        .generator-panel .trap-generate-button { grid-column:2; justify-self:center; }
         .generator-panel .trap-controls { grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; }
         .generator-panel .trap-controls select { min-width:0; padding:7px 3px; font-size:.72rem; }
+        .generator-panel #trapContent { padding-top:8px !important; overflow:hidden; }
+        .generator-panel #trapContent .trap-generator { padding:0 12px 12px; gap:10px; }
         .loot-generator { display:flex; flex:1; min-height:0; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:16px; overflow:visible; }
         .loot-controls { display:flex; align-items:center; justify-content:flex-start; gap:8px; width:100%; flex-wrap:wrap; }
         .loot-controls select,.loot-controls input { box-sizing:border-box; padding:8px; color:#fff; background:#2b190f; border:1px solid #765133; border-radius:5px; }
@@ -508,10 +517,12 @@
         .loot-generate-button:focus-visible { outline:2px solid #ff8a90; outline-offset:2px; }
         .loot-generate-button img { width:28px; height:25px; object-fit:contain; }
         .loot-generate-button svg { width:22px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-        .loot-sticker-controls { display:flex; align-items:center; justify-content:flex-end; gap:10px; width:100%; }
+        .loot-sticker-controls { display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; }
         .loot-auto-drop { display:flex; align-items:center; gap:6px; color:#f4d76d; font-weight:bold; }
         .loot-auto-drop input { accent-color:#f4d76d; }
-        .loot-place-button { padding:8px 12px; color:#f4d76d; background:#4b2915; border:1px solid #f4d76d; border-radius:5px; font-weight:bold; cursor:pointer; }
+        .loot-place-button { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-width:70px; height:40px; padding:6px 10px; color:#f4d76d; background:#4b2915; border:1px solid #f4d76d; border-radius:5px; font-weight:bold; cursor:pointer; }
+        .loot-place-button svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .loot-place-arrow { font-size:1.25rem; line-height:1; }
         .loot-place-button:disabled { opacity:.45; cursor:not-allowed; }
         .loot-place-button:not(:disabled):hover { filter:brightness(1.15); }
         .loot-generator #lootResult { flex:1; min-height:180px; width:100%; height:auto !important; box-sizing:border-box; }
@@ -672,8 +683,22 @@
         .trap-generator { display: flex; flex-direction: column; flex: 1; gap: 14px; padding: 20px; overflow: hidden; }
         .trap-controls { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: 10px; }
         .trap-controls select, .trap-controls button { padding: 10px; background: #2b190f; color: white; border: 1px solid #8a6643; border-radius: 5px; font-size: 1rem; }
-        .trap-controls button { background: #f4d76d; color: #1d1009; border: 0; font-weight: bold; cursor: pointer; }
-        .trap-result { flex: 1; min-height: 260px; padding: 18px; overflow-y: auto; background: #1f120b; border: 1px solid #765133; border-radius: 8px; }
+        .trap-controls button { border: 0; font-weight: bold; cursor: pointer; }
+        .trap-action-row { grid-column: 1/-1; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; }
+        .trap-generate-button { grid-column:2; display:inline-flex; align-items:center; justify-content:center; gap:3px; width:76px; height:43px; padding:5px !important; background:#ff5959 !important; color:#2b090b !important; border:1px solid #ff8a90 !important; }
+        .trap-generate-button:hover { background:#ff7070 !important; }
+        .trap-place-button { grid-column:1; justify-self:start; display:inline-flex; align-items:center; justify-content:center; gap:6px; min-width:70px; height:43px; background:#3a271b !important; color:#f4d76d !important; border:1px solid #a7793e !important; }
+        .trap-place-button:hover:not(:disabled) { background:#4b3423 !important; }
+        .trap-place-button:disabled { opacity:.45; cursor:not-allowed; }
+        .trap-action-row img { display:block; width:28px; height:28px; object-fit:contain; }
+        .trap-generate-button img:first-child { width:27px; height:24px; }
+        .trap-place-icon { display:block; width:28px; height:28px; background:#f4d76d; -webkit-mask:url('data/images/trap_icon.png') center/contain no-repeat; mask:url('data/images/trap_icon.png') center/contain no-repeat; }
+        .trap-place-arrow { font-size:1.25rem; line-height:1; }
+        .trap-result { flex: 1; min-height: 260px; padding: 18px; overflow-y: auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#b58a3a #2b190f; background: #1f120b; border: 1px solid #765133; border-radius: 8px; }
+        .trap-result::-webkit-scrollbar { width:11px; }
+        .trap-result::-webkit-scrollbar-track { background:#2b190f; border-radius:999px; }
+        .trap-result::-webkit-scrollbar-thumb { background:#b58a3a; border:2px solid #2b190f; border-radius:999px; }
+        .trap-result::-webkit-scrollbar-thumb:hover { background:#d4af37; }
         .trap-result h2 { margin-top: 0; color: #f4d76d; font-family: 'MedievalSharp', cursive; }
         .trap-result h3 { color: #e7c96a; margin-bottom: 5px; }
         .trap-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
@@ -1230,7 +1255,10 @@
                             <select id="trapType" aria-label="Trap type"><option value="all">Any Type</option></select>
                             <select id="trapTier" aria-label="Tier"><option value="all">Any Tier</option><option value="1">Tier 1</option><option value="2">Tier 2</option><option value="3">Tier 3</option></select>
                             <select id="trapThreat" aria-label="Threat"><option value="all">Any Threat</option><option value="setback">Setback</option><option value="moderate">Moderate</option><option value="dangerous">Dangerous</option><option value="deadly">Deadly</option></select>
-                            <button type="button" onclick="generateTrapHazard()">Generate Random Trap or Hazard</button>
+                            <div class="trap-action-row">
+                                <button id="placeTrapStickerBtn" class="trap-place-button" type="button" onclick="placeGeneratedTrapSticker()" disabled aria-label="Place trap on table" title="Place trap on table"><span class="trap-place-arrow" aria-hidden="true">←</span><span class="trap-place-icon" aria-hidden="true"></span></button>
+                                <button class="trap-generate-button" type="button" onclick="generateTrapHazard()" aria-label="Generate Random Trap or Hazard" title="Generate Random Trap or Hazard"><img src="data/images/gears_icon.png" alt=""><img src="data/images/trap_icon.png" alt=""></button>
+                            </div>
                         </div>
                         <article id="trapResult" class="trap-result" aria-live="polite">
                             <h2>The dungeon is quiet… for now</h2>
@@ -1259,7 +1287,7 @@
                             <input id="lootXP" type="number" min="0" step="25" value="0" class="npc-input" />
                             <button onclick="generateLoot()" class="loot-generate-button" type="button" aria-label="Generate Loot" title="Generate Loot"><img src="data/images/gears_icon.png" alt=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8l-2 4c4 2 6 5 6 9 0 3-3 4-8 4s-8-1-8-4c0-4 2-7 6-9zM8 8h8M9 4 7 2M15 4l2-2"/><path d="M9 14c1-2 5-2 6 0M10 17h4"/></svg></button>
                         </div>
-                        <div class="loot-sticker-controls"><label class="loot-auto-drop"><input id="lootAutoDrop" type="checkbox"> Auto drop</label><button id="placeLootStickerBtn" class="loot-place-button" type="button" onclick="placeGeneratedLootSticker()" disabled>Place Loot Sticker</button></div>
+                        <div class="loot-sticker-controls"><button id="placeLootStickerBtn" class="loot-place-button" type="button" onclick="placeGeneratedLootSticker()" disabled aria-label="Place Loot Sticker" title="Place Loot Sticker"><span class="loot-place-arrow" aria-hidden="true">←</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8l-2 4c4 2 6 5 6 9 0 3-3 4-8 4s-8-1-8-4c0-4 2-7 6-9zM8 8h8M9 4 7 2M15 4l2-2"/><path d="M9 14c1-2 5-2 6 0M10 17h4"/></svg></button><label class="loot-auto-drop"><input id="lootAutoDrop" type="checkbox"> Auto drop</label></div>
 
                         <!-- Output Box -->
                         <textarea id="lootResult" class="npc-textarea" style="width: 100%; height: 300px;"
@@ -1312,7 +1340,7 @@
 
                     <!-- Right Column: Monster List -->
                     <div class="encounter-results" style="flex: 2; display: flex; flex-direction: column; gap: 10px;">
-                        <div class="encounter-summary-row"><button class="encounter-send-button" type="button" onclick="sendEncounter()" aria-label="Send Encounter to Table" title="Send Encounter to Table"><span aria-hidden="true">&larr; &#9876;</span></button><label id="encounterMonsterHeading"><strong>Monsters (0 of 0 XP):</strong></label><button id="addMonsterBtn" class="encounter-add-monster" type="button" aria-label="Add Monster to Encounter" title="Add Monster to Encounter"><span class="encounter-add-symbol" aria-hidden="true">+</span><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 9 3 3l8 3M21 9l4-6-8 3M7 10c0-5 14-5 14 0v6c0 5-3 9-7 9s-7-4-7-9zM10 14h.01M18 14h.01M11 19c2 1 4 1 6 0M14 16v2"/></svg></button></div>
+                        <div class="encounter-summary-row"><button class="encounter-send-button" type="button" onclick="sendEncounter()" aria-label="Send Encounter to Table" title="Send Encounter to Table"><span aria-hidden="true">&larr; &#9876;</span></button><label id="encounterMonsterHeading"><strong>Monsters (0 of 0 XP, 0 HP):</strong></label><button id="addMonsterBtn" class="encounter-add-monster" type="button" aria-label="Add Monster to Encounter" title="Add Monster to Encounter"><span class="encounter-add-symbol" aria-hidden="true">+</span><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 9 3 3l8 3M21 9l4-6-8 3M7 10c0-5 14-5 14 0v6c0 5-3 9-7 9s-7-4-7-9zM10 14h.01M18 14h.01M11 19c2 1 4 1 6 0M14 16v2"/></svg></button></div>
                         <ul id="encounterMonsterList"
                             style="flex: 1; list-style: none; padding: 10px; background-color: #2b190f; color: white; border-radius: 5px; overflow-y: auto; border: 1px solid #765133;">
                         </ul>
@@ -1358,7 +1386,7 @@
                 <button id="dmReferenceButton" type="button" onclick="toggleDmLeftPanel('reference')" aria-label="Reference" title="Reference"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 13c-2 3-5 8-5 16 0 6 5 8 13 8s13-2 13-8c0-8-3-13-5-16"/><path d="M12 13c4 2 12 2 16 0l-3-7-5 4-5-4z"/><path d="M11 17c6 2 12 2 18 0"/><path d="M16 24c2-2 6-2 8 0M15 29c3-2 7-2 10 0"/></svg></button>
             </nav>
             <div id="dmInitiativeContent" class="dm-initiative-content dm-left-panel-content">
-                <h2>Initiative</h2>
+                <div class="dm-initiative-header"><h2>Initiative</h2><button id="initiativeAddMonsterBtn" class="encounter-add-monster initiative-add-monster" type="button" aria-label="Add Monster to Initiative" title="Add Monster to Initiative"><span class="encounter-add-symbol" aria-hidden="true">+</span><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 9 3 3l8 3M21 9l4-6-8 3M7 10c0-5 14-5 14 0v6c0 5-3 9-7 9s-7-4-7-9zM10 14h.01M18 14h.01M11 19c2 1 4 1 6 0M14 16v2"/></svg></button></div>
                 <div class="dm-initiative-subtabs" role="tablist" aria-label="Initiative tracker views">
                     <button id="initiativeTableTabButton" class="dm-initiative-subtab is-active" type="button" role="tab" aria-selected="true" aria-controls="initiativeTableTab" onclick="showInitiativeSubtab('table')">Table</button>
                     <button id="initiativeStatblockTabButton" class="dm-initiative-subtab" type="button" role="tab" aria-selected="false" aria-controls="initiativeStatblockTab" onclick="showInitiativeSubtab('statblock')">Stat Block</button>
@@ -1866,12 +1894,12 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
     <script src="map-drawing.js?v=24"></script>
-    <script src="token-placement.js?v=2"></script>
+    <script src="token-placement.js?v=4"></script>
     <script src="token-actions.js?v=5"></script>
     <script src="board-sync.js?v=7"></script>
-    <script src="map-stickers.js?v=30"></script>
+    <script src="map-stickers.js?v=34"></script>
     <script src="shared-timer.js?v=5"></script>
-    <script src="board-ui.js?v=8"></script>
+    <script src="board-ui.js?v=9"></script>
     <script src="reference.js?v=2"></script>
     <script src="cpu-action-advisor.js?v=1"></script>
     <script>
@@ -6322,7 +6350,8 @@
                         return;
                     }
                     const hoveredInitiativeTable = event.target.closest('.dm-initiative-table-scroll');
-                    const scroller = hoveredInitiativeTable || panel.querySelector('.generator-subcontent.is-active, .generator-scroll, .dm-left-panel-content.is-active:not(.dm-initiative-content)');
+                    const hoveredTrapOutput = event.target.closest('.trap-result');
+                    const scroller = hoveredInitiativeTable || hoveredTrapOutput || panel.querySelector('.generator-subcontent.is-active, .generator-scroll, .dm-left-panel-content.is-active:not(.dm-initiative-content)');
                     if (scroller) {
                         scroller.scrollTop += event.deltaY;
                         event.preventDefault();
@@ -7584,15 +7613,21 @@
 
         // initiative tracker functionality
         const addMonsterBtn = document.getElementById('addMonsterBtn');
+        const initiativeAddMonsterBtn = document.getElementById('initiativeAddMonsterBtn');
         const monsterTableBody = document.getElementById('monsterTableBody');
         let currentEncounterMonsters = [];
+        let monsterPickerDestination = 'encounter';
 
-        addMonsterBtn?.addEventListener('click', async () => {
+        async function openMonsterPicker(destination = 'encounter') {
+            monsterPickerDestination = destination;
             monsterModal.style.display = 'flex';
             await monsterFilterMetadataPromise;
             populateMonsterPickerFilters();
             refreshMonsterList();
-        });
+        }
+
+        addMonsterBtn?.addEventListener('click', () => openMonsterPicker('encounter'));
+        initiativeAddMonsterBtn?.addEventListener('click', () => openMonsterPicker('initiative'));
 
         // Elements
         const monsterModal = document.getElementById('monsterModal');
@@ -7663,8 +7698,15 @@
             try {
                 const definition = await loadMonsterDefinitionByName(selectedMonster);
                 const cr = parseCrValue(definition.cr ?? definition.monsterData?.cr);
-                const additions = Array.from({ length: number }, () => ({ name:definition.name, cr }));
-                setCurrentEncounterMonsters([...currentEncounterMonsters, ...additions]);
+                if (monsterPickerDestination === 'initiative') {
+                    const generation = boardSync.generation;
+                    const additions = Array.from({ length:number }, () => ({ ...buildMonsterInstance(definition), _boardGeneration:generation }));
+                    monsterPlacement.enqueue(additions);
+                } else {
+                    const hp = getMonsterDefinitionAverageHp(definition);
+                    const additions = Array.from({ length: number }, () => ({ name:definition.name, cr, hp }));
+                    setCurrentEncounterMonsters([...currentEncounterMonsters, ...additions]);
+                }
                 monsterModal.style.display = 'none';
             } catch (err) {
                 console.error("Error loading monster:", err);
@@ -8435,6 +8477,8 @@
 
         // traps and hazards generator
         let TRAPS_HAZARDS_DATA = { trap: [], hazard: [] };
+        let lastGeneratedTrap = null;
+        const TRAP_STICKER_PATH = 'sticker-library/v1/!Core_Settlements/Clutter/Adventuring_Gear/Traps/Hunting_Trap_Metal_Gray_A1_1x1.webp';
 
         const TRAP_TYPE_LABELS = {
             MECH: 'Mechanical', SMPL: 'Simple', MAG: 'Magical', CMPX: 'Complex',
@@ -8524,9 +8568,12 @@
 
         function generateTrapHazard() {
             const result = document.getElementById('trapResult');
+            const placeButton = document.getElementById('placeTrapStickerBtn');
             const pool = getTrapPool();
             result.replaceChildren();
             if (!pool.length) {
+                lastGeneratedTrap = null;
+                if (placeButton) placeButton.disabled = true;
                 const heading = document.createElement('h2'); heading.textContent = 'No matching results'; result.appendChild(heading);
                 const message = document.createElement('p'); message.textContent = 'Broaden one or more filters and try again.'; result.appendChild(message);
                 return;
@@ -8544,6 +8591,23 @@
                 const subheading = document.createElement('h3'); subheading.textContent = name; section.appendChild(subheading);
                 appendTrapContent(section, entries); result.appendChild(section);
             });
+            const text = (result.innerText || result.textContent || '').trim();
+            lastGeneratedTrap = { name:selected.name, text, html:result.innerHTML };
+            if (placeButton) placeButton.disabled = false;
+        }
+
+        function placeGeneratedTrapSticker() {
+            if (!lastGeneratedTrap) return;
+            try {
+                stickerManager.queueTrapSticker({
+                    name:lastGeneratedTrap.name,
+                    trapText:lastGeneratedTrap.text,
+                    trapHtml:lastGeneratedTrap.html,
+                    storagePath:TRAP_STICKER_PATH
+                });
+            } catch (error) {
+                reportBoardSyncError(error);
+            }
         }
 
         fetch('data/api_data/trapshazards.json')
@@ -8593,18 +8657,21 @@
             return levels.reduce((sum, lvl) => sum + (thresholds[lvl]?.[difficulty] || 0), 0);
         }
 
-        function updateEncounterXpHeading(totalAdjustedXP = 0) {
+        function calculateEncounterTotalHp(monsterList = currentEncounterMonsters) {
+            return monsterList.reduce((sum, monster) => sum + Math.max(0, Number(monster.hp) || 0), 0);
+        }
+        function updateEncounterXpHeading(totalAdjustedXP = 0, totalHp = calculateEncounterTotalHp()) {
             const levels = document.getElementById('partyLevels').value.split(',').map(value => parseInt(value.trim())).filter(Boolean);
             const targetXP = calculateThreshold(levels, document.getElementById('encounterDifficulty').value);
             const heading = document.getElementById('encounterMonsterHeading');
-            if (heading) heading.innerHTML = `<strong>Monsters (${Math.round(totalAdjustedXP)} of ${Math.round(targetXP)} XP):</strong>`;
+            if (heading) heading.innerHTML = `<strong>Monsters (${Math.round(totalAdjustedXP)} of ${Math.round(targetXP)} XP, ${Math.round(totalHp)} HP):</strong>`;
         }
         function calculateAdjustedEncounterXp(monsterList = currentEncounterMonsters) {
             const totalXP = monsterList.reduce((sum, monster) => sum + crToXp(parseCrValue(monster.cr)), 0);
             return totalXP * (multipliers[Math.min(monsterList.length, 20)] || (monsterList.length ? 4 : 0));
         }
         function refreshEncounterXpHeading() {
-            updateEncounterXpHeading(calculateAdjustedEncounterXp());
+            updateEncounterXpHeading(calculateAdjustedEncounterXp(), calculateEncounterTotalHp());
         }
         document.getElementById('encounterDifficulty')?.addEventListener('change', refreshEncounterXpHeading);
         setTimeout(() => updateEncounterXpHeading(0), 0);
@@ -8695,10 +8762,32 @@
             });
         }
 
+        let encounterHpHydrationVersion = 0;
+
+        function getMonsterDefinitionAverageHp(definition) {
+            const hp = definition?.monsterData?.hp;
+            return Math.max(0, Number(typeof hp === 'object' ? hp?.average : hp) || 0);
+        }
+
+        async function hydrateEncounterMonsterHp(version) {
+            const missingNames = [...new Set(currentEncounterMonsters.filter(monster => !(Number(monster.hp) > 0)).map(monster => monster.name))];
+            if (!missingNames.length) return;
+            const hpEntries = await Promise.all(missingNames.map(async name => {
+                try { return [name, getMonsterDefinitionAverageHp(await loadMonsterDefinitionByName(name))]; }
+                catch (error) { console.warn(`Could not load HP for ${name}:`, error); return [name, 0]; }
+            }));
+            if (version !== encounterHpHydrationVersion) return;
+            const hpByName = new Map(hpEntries);
+            currentEncounterMonsters = currentEncounterMonsters.map(monster => Number(monster.hp) > 0 ? monster : { ...monster, hp:hpByName.get(monster.name) || 0 });
+            refreshEncounterXpHeading();
+        }
+
         function setCurrentEncounterMonsters(monsterList) {
+            const hpVersion = ++encounterHpHydrationVersion;
             currentEncounterMonsters = monsterList.map(monster => ({ ...monster, cr:parseCrValue(monster.cr) }));
             renderEncounterMonsterList(currentEncounterMonsters);
             refreshEncounterXpHeading();
+            hydrateEncounterMonsterHp(hpVersion);
         }
 
         function removeEncounterMonster(index) {
@@ -8861,7 +8950,7 @@
             const generation = boardSync.generation;
             try {
                 const additions = await Promise.all(currentEncounterMonsters.map(async monster => ({ ...buildMonsterInstance(await loadMonsterDefinitionByName(monster.name)), _boardGeneration: generation })));
-                await addMonstersToFirebase(additions);
+                monsterPlacement.enqueue(additions);
             } catch (error) { reportBoardSyncError(error); }
         }
 
@@ -8965,7 +9054,7 @@
             const button = document.getElementById('placeLootStickerBtn');
             if (button) button.disabled = true;
             try {
-                await stickerManager.placeLootSticker(lootStickerSettings(lastGeneratedLoot.type, lastGeneratedLoot.cr, lastGeneratedLoot.text));
+                stickerManager.queueLootSticker(lootStickerSettings(lastGeneratedLoot.type, lastGeneratedLoot.cr, lastGeneratedLoot.text));
             } catch (error) {
                 reportBoardSyncError(error);
             } finally {

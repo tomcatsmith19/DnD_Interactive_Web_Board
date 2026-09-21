@@ -90,7 +90,7 @@
 
   function hasStickerInteraction(sticker) {
     const interaction = sticker?.interaction;
-    return Boolean(interaction && (interaction.animation || interaction.sound || interaction.loot || interaction.teleport || interaction.linkedStickerIds?.length));
+    return Boolean(interaction && (interaction.animation || interaction.sound || interaction.loot || interaction.trap || interaction.teleport || interaction.linkedStickerIds?.length));
   }
 
   function hasUpstreamStickerTrigger(stickers, stickerId) {
@@ -274,13 +274,32 @@
       .sticker-favorite-dialog-actions button{padding:7px 11px;color:#f4d76d;background:#3d2718;border:1px solid #8a6643;border-radius:5px;cursor:pointer;}
       .sticker-favorite-dialog-actions .favorite-dialog-delete{margin-right:auto;color:#ffb0a8;}
       .sticker-favorite-dialog-actions .favorite-dialog-save{color:#1d1009;background:#f4d76d;border-color:#f4d76d;font-weight:bold;}
-      .sticker-loot-popup{position:fixed;z-index:4000;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.68);}
-      .sticker-loot-popup[hidden]{display:none;}
-      .sticker-loot-card{position:relative;width:min(560px,95vw);padding:16px;background:#1d1009;border:2px solid #f4d76d;border-radius:9px;box-shadow:0 10px 35px #000;}
-      .sticker-loot-card h3{margin:0 0 10px;color:#f4d76d;font-family:'MedievalSharp',Georgia,serif;}
+      .sticker-loot-popup,.sticker-trap-popup{position:fixed;z-index:4000;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.68);}
+      .sticker-loot-popup[hidden],.sticker-trap-popup[hidden]{display:none;}
+      .sticker-loot-card,.sticker-trap-card{position:relative;width:min(560px,95vw);padding:16px;background:#1d1009;border:2px solid #f4d76d;border-radius:9px;box-shadow:0 10px 35px #000;}
+      .sticker-loot-card h3,.sticker-trap-card h3{margin:0 76px 10px 0;color:#f4d76d;font-family:'MedievalSharp',Georgia,serif;}
       .sticker-loot-card textarea{width:100%;height:280px;padding:10px;box-sizing:border-box;resize:vertical;color:white;background:#2b190f;border:1px solid #8a6643;border-radius:5px;}
-      .sticker-loot-card button{float:right;margin-top:9px;padding:8px 14px;color:#1d1009;background:#f4d76d;border:0;border-radius:5px;font-weight:bold;cursor:pointer;}
+      .sticker-trap-content{max-height:min(62vh,560px);padding:14px;box-sizing:border-box;overflow:auto;color:#f3eadc;background:#2b190f;border:1px solid #8a6643;border-radius:5px;line-height:1.48;scrollbar-color:#8a6643 #24150d;}
+      .sticker-trap-content h2{margin:0 0 8px;color:#f4d76d;font-family:'MedievalSharp',Georgia,serif;font-size:1.45rem;}
+      .sticker-trap-content h3{margin:18px 0 6px;color:#e7c96a;font-size:1.05rem;}
+      .sticker-trap-content p{margin:0 0 12px;}
+      .sticker-trap-content .trap-meta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;}
+      .sticker-trap-content .trap-meta span{padding:3px 8px;color:#ddd;background:#4a2d1c;border-radius:12px;font-size:.82rem;}
+      .sticker-trap-content ul,.sticker-trap-content ol{margin:7px 0 14px;padding-left:24px;}
+      .sticker-trap-content li{margin:4px 0;}
+      .sticker-trap-content table{width:100%;margin:12px 0 16px;border-collapse:collapse;font-size:.9rem;}
+      .sticker-trap-content th{position:sticky;top:0;padding:8px;color:#f4d76d;background:#3d2718;border:1px solid #765133;text-align:left;}
+      .sticker-trap-content td{padding:8px;border:1px solid #765133;vertical-align:top;}
+      .sticker-trap-content tr:nth-child(even) td{background:rgba(255,255,255,.035);}
+      .sticker-trap-content.is-plain-text{white-space:pre-wrap;}
+      .sticker-loot-card button,.sticker-trap-card button{float:right;margin-top:9px;padding:8px 14px;color:#1d1009;background:#f4d76d;border:0;border-radius:5px;font-weight:bold;cursor:pointer;}
       .sticker-loot-card .sticker-loot-delete{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:32px;height:32px;margin:0;padding:0;color:#ff777f;background:#351416;border:1px solid #ff777f;border-radius:50%;font-size:19px;line-height:1;}
+      .sticker-trap-card .sticker-trap-delete{position:absolute;top:8px;right:8px;display:grid;place-items:center;width:32px;height:32px;margin:0;padding:0;color:#ff777f;background:#351416;border:1px solid #ff777f;border-radius:50%;font-size:19px;line-height:1;}
+      .sticker-trap-card .sticker-trap-visibility{position:absolute;top:8px;right:48px;display:grid;place-items:center;width:32px;height:32px;margin:0;padding:5px;color:#f4d76d;background:#2b190f;border:1px solid #f4d76d;border-radius:50%;}
+      .sticker-trap-card .sticker-trap-visibility svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+      .sticker-trap-card .sticker-trap-visibility .visibility-slash{display:none;}
+      .sticker-trap-card .sticker-trap-visibility.is-hidden .visibility-slash{display:block;}
+      .map-sticker.is-hidden-from-players{opacity:.52;filter:grayscale(.35);}
       @media(max-width:760px){.map-tool-tabs.has-expanded-sticker{left:6px;right:6px;top:88px;transform:none;align-items:stretch}.map-tool-tabs.has-expanded-sticker .map-tool-tab-buttons{align-self:center}.sticker-library-toolbar{width:100%;min-width:0;}.sticker-library-toolbar .sticker-card,.sticker-library-toolbar .sticker-load-more,.sticker-favorite-item{flex-basis:71px;width:71px}.map-tool-tab-buttons button{min-width:70px;}}
     `;
     document.head.appendChild(style);
@@ -325,6 +344,8 @@
     let replacementPickerStickerId = "";
     let lootDataPromise = null;
     let lootPopupStickerId = "";
+    let trapPopupStickerId = "";
+    let pendingLootPlacement = null;
     let requestPanelClose = () => {};
     let lastPlacementPointer = { x: root.innerWidth / 2, y: root.innerHeight / 2 };
     let placementPreviewPath = "";
@@ -510,6 +531,76 @@
       catch (error) { reportError(error); }
     });
     document.body.appendChild(lootPopup);
+
+    const trapPopup = document.createElement("div");
+    trapPopup.className = "sticker-trap-popup";
+    trapPopup.hidden = true;
+    trapPopup.innerHTML = `<div class="sticker-trap-card"><h3 data-trap-title>Trap or Hazard</h3><button class="sticker-trap-visibility" data-action="visibility" type="button" aria-label="Hide trap from players" title="Hide trap from players"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="visibility-slash" d="m4 4 16 16"/></svg></button><button class="sticker-trap-delete" data-action="delete" type="button" aria-label="Delete trap sticker" title="Delete trap sticker">×</button><div class="sticker-trap-content" aria-label="Trap or hazard details"></div><button data-action="close" type="button">Close</button></div>`;
+    const trapVisibilityButton = trapPopup.querySelector("[data-action='visibility']");
+    trapVisibilityButton.hidden = !canEditInteractions;
+    trapPopup.querySelector("[data-action='delete']").hidden = !canEditInteractions;
+    trapPopup.querySelector("[data-action='close']").addEventListener("click", () => { trapPopup.hidden = true; trapPopupStickerId = ""; });
+    trapPopup.querySelector("[data-action='delete']").addEventListener("click", async () => {
+      if (!canEditInteractions || !trapPopupStickerId) return;
+      const stickerId = trapPopupStickerId;
+      trapPopup.hidden = true;
+      trapPopupStickerId = "";
+      try { await boardSync.removeStickers([stickerId], boardSync.generation); }
+      catch (error) { reportError(error); }
+    });
+    trapVisibilityButton.addEventListener("click", async () => {
+      if (!canEditInteractions || !trapPopupStickerId) return;
+      const sticker = stickers.find(item => item.id === trapPopupStickerId);
+      if (!sticker) return;
+      const hiddenFromPlayers = sticker.hiddenFromPlayers !== true;
+      try {
+        await boardSync.patchStickers(new Map([[sticker.id, { hiddenFromPlayers }]]), boardSync.generation);
+        sticker.hiddenFromPlayers = hiddenFromPlayers;
+        updateTrapVisibilityButton(sticker);
+        renderStickers();
+      } catch (error) { reportError(error); }
+    });
+    document.body.appendChild(trapPopup);
+
+    function updateTrapVisibilityButton(sticker) {
+      const hidden = sticker?.hiddenFromPlayers === true;
+      trapVisibilityButton.classList.toggle("is-hidden", hidden);
+      trapVisibilityButton.setAttribute("aria-label", hidden ? "Show trap to players" : "Hide trap from players");
+      trapVisibilityButton.title = hidden ? "Show trap to players" : "Hide trap from players";
+    }
+
+    function openTrapPopup(sticker) {
+      const trap = sticker?.interaction?.trap;
+      if (!trap) return;
+      trapPopupStickerId = sticker.id;
+      trapPopup.querySelector("[data-trap-title]").textContent = "Trap or Hazard";
+      const content = trapPopup.querySelector(".sticker-trap-content");
+      const safeHtml = sanitizeTrapHtml(trap.html);
+      content.classList.toggle("is-plain-text", !safeHtml);
+      if (safeHtml) content.replaceChildren(safeHtml);
+      else content.textContent = String(trap.text || "No trap details were saved.");
+      updateTrapVisibilityButton(sticker);
+      trapPopup.hidden = false;
+    }
+
+    function sanitizeTrapHtml(html) {
+      const source = String(html || "").trim();
+      if (!source) return null;
+      const template = document.createElement("template");
+      template.innerHTML = source;
+      const allowed = new Set(["H2", "H3", "P", "DIV", "SPAN", "SECTION", "TABLE", "THEAD", "TBODY", "TR", "TH", "TD", "UL", "OL", "LI", "STRONG", "EM", "BR"]);
+      const cleanNode = node => {
+        if (node.nodeType === 3) return document.createTextNode(node.textContent || "");
+        if (node.nodeType !== 1 || !allowed.has(node.tagName)) return null;
+        const clean = document.createElement(node.tagName.toLowerCase());
+        if (node.classList.contains("trap-meta")) clean.className = "trap-meta";
+        [...node.childNodes].forEach(child => { const safe = cleanNode(child); if (safe) clean.appendChild(safe); });
+        return clean;
+      };
+      const fragment = document.createDocumentFragment();
+      [...template.content.childNodes].forEach(node => { const safe = cleanNode(node); if (safe) fragment.appendChild(safe); });
+      return fragment.childNodes.length ? fragment : null;
+    }
 
     function reportError(error) {
       console.error("Map stickers:", error);
@@ -731,7 +822,7 @@
     async function saveInteractionEditor() {
       const sticker = stickers.find(item => item.id === selectedStickerId);
       if (!sticker) return;
-      const interaction = {};
+      const interaction = sticker.interaction?.trap ? { trap: { ...sticker.interaction.trap } } : {};
       const rotationDegrees = Number(editorField("rotationDegrees").value) || 0;
       const translateX = Number(editorField("translateX").value) || 0;
       const translateY = Number(editorField("translateY").value) || 0;
@@ -883,8 +974,17 @@
       return media;
     }
 
+    function currentPlacementAsset() {
+      if (pendingLootPlacement) {
+        const path = String(pendingLootPlacement.storagePath || "");
+        return path ? { path, ref: storage.ref().child(path), name:pendingLootPlacement.name || "Loot", units:gridUnits(path) } : null;
+      }
+      return active && selectedAsset ? selectedAsset : null;
+    }
+
     function positionPlacementPreview() {
-      if (!active || !selectedAsset || replacementPickerStickerId) {
+      const previewAsset = currentPlacementAsset();
+      if (!previewAsset || replacementPickerStickerId) {
         placementPreview.style.display = "none";
         return;
       }
@@ -894,16 +994,16 @@
         return;
       }
       const gridSize = clamp(Number(options.getGridSize?.()) || 100, 12, 1000);
-      const dimensions = mediaDimensions.get(selectedAsset.path);
+      const dimensions = mediaDimensions.get(previewAsset.path);
       let widthRatio;
       let heightRatio;
-      if (selectedAsset.favoriteRoot) {
-        widthRatio = clamp(Number(selectedAsset.favoriteRoot.widthRatio) || .05, .004, 1);
-        heightRatio = clamp(Number(selectedAsset.favoriteRoot.heightRatio) || .05, .004, 1);
+      if (previewAsset.favoriteRoot) {
+        widthRatio = clamp(Number(previewAsset.favoriteRoot.widthRatio) || .05, .004, 1);
+        heightRatio = clamp(Number(previewAsset.favoriteRoot.heightRatio) || .05, .004, 1);
       } else {
-        let widthPixels = gridSize * selectedAsset.units.width;
-        let heightPixels = gridSize * selectedAsset.units.height;
-        if (!selectedAsset.units.explicit && dimensions?.width && dimensions?.height) heightPixels = widthPixels * dimensions.height / dimensions.width;
+        let widthPixels = gridSize * previewAsset.units.width;
+        let heightPixels = gridSize * previewAsset.units.height;
+        if (!previewAsset.units.explicit && dimensions?.width && dimensions?.height) heightPixels = widthPixels * dimensions.height / dimensions.width;
         widthRatio = clamp(widthPixels / Math.max(1, mapImage.clientWidth), .004, 1);
         heightRatio = clamp(heightPixels / Math.max(1, mapImage.clientHeight), .004, 1);
       }
@@ -917,18 +1017,19 @@
     }
 
     function renderPlacementPreview() {
-      if (!active || !selectedAsset || replacementPickerStickerId) {
+      const previewAsset = currentPlacementAsset();
+      if (!previewAsset || replacementPickerStickerId) {
         placementPreview.style.display = "none";
         return;
       }
-      if (placementPreviewPath !== selectedAsset.path) {
-        placementPreviewPath = selectedAsset.path;
-        const media = mediaElement(selectedAsset.path, true);
+      if (placementPreviewPath !== previewAsset.path) {
+        placementPreviewPath = previewAsset.path;
+        const media = mediaElement(previewAsset.path, true);
         if (media.tagName === "VIDEO") media.autoplay = true;
         media.addEventListener(media.tagName === "VIDEO" ? "loadedmetadata" : "load", positionPlacementPreview, { once: true });
         placementPreview.replaceChildren(media);
-        const requestedPath = selectedAsset.path;
-        resolveUrl(selectedAsset.ref).then(url => {
+        const requestedPath = previewAsset.path;
+        resolveUrl(previewAsset.ref).then(url => {
           if (placementPreviewPath !== requestedPath) return;
           media.src = url;
           if (media.tagName === "VIDEO") media.play().catch(() => {});
@@ -1265,6 +1366,13 @@
     }
 
     function cancelPlacement() {
+      if (pendingLootPlacement) {
+        const placementName = pendingLootPlacement.placementType === "trap" ? "Trap" : "Loot sticker";
+        pendingLootPlacement = null;
+        updatePlacementMode();
+        status.textContent = `${placementName} placement canceled.`;
+        return;
+      }
       if (replacementPickerStickerId) {
         replacementPickerStickerId = "";
         interactionEditor.hidden = false;
@@ -1281,7 +1389,7 @@
     }
 
     function updatePlacementMode() {
-      placementLayer.classList.toggle("is-placing", Boolean(active && selectedAsset));
+      placementLayer.classList.toggle("is-placing", Boolean(pendingLootPlacement || (active && selectedAsset)));
       renderPlacementPreview();
     }
 
@@ -1630,6 +1738,7 @@
         lootPopup.querySelector("[data-action='delete']").hidden = !interaction.loot.preRolled;
         lootPopup.hidden = false;
       }).catch(reportError);
+      if (interaction.trap) openTrapPopup(sticker);
     }
 
     async function runStickerInteractionTree(rootSticker) {
@@ -1693,8 +1802,9 @@
     }
 
     function renderStickers() {
-      const liveIds = new Set(stickers.map(sticker => sticker.id));
-      const upstreamIds = new Set(stickers.flatMap(sticker => sticker.interaction?.linkedStickerIds || []));
+      const renderedStickers = canEditInteractions ? stickers : stickers.filter(sticker => sticker.hiddenFromPlayers !== true);
+      const liveIds = new Set(renderedStickers.map(sticker => sticker.id));
+      const upstreamIds = new Set(renderedStickers.flatMap(sticker => sticker.interaction?.linkedStickerIds || []));
       stickerElements.forEach((element, id) => {
         if (liveIds.has(id)) return;
         const video = element.querySelector("video");
@@ -1702,7 +1812,11 @@
         element.remove();
         stickerElements.delete(id);
       });
-      stickers.forEach((sticker, desiredIndex) => {
+      if (trapPopupStickerId && !liveIds.has(trapPopupStickerId)) {
+        trapPopup.hidden = true;
+        trapPopupStickerId = "";
+      }
+      renderedStickers.forEach((sticker, desiredIndex) => {
         const hasUpstreamTrigger = upstreamIds.has(sticker.id);
         const directlyTriggerable = hasStickerInteraction(sticker) && !hasUpstreamTrigger;
         let element = stickerElements.get(sticker.id);
@@ -1722,6 +1836,7 @@
         }
         element._sticker = sticker;
         element.classList.toggle("is-interactive", directlyTriggerable);
+        element.classList.toggle("is-hidden-from-players", canEditInteractions && sticker.hiddenFromPlayers === true);
         element.classList.toggle("show-interaction-marker", canEditInteractions && hasStickerInteraction(sticker));
         element.classList.toggle("has-upstream-trigger", hasUpstreamTrigger);
         element.dataset.directlyTriggerable = String(directlyTriggerable);
@@ -1880,7 +1995,28 @@
     rigLayer.addEventListener("pointercancel", endStickerDrag);
 
     async function placeStickerAtPointer(event) {
-      if (!active || !selectedAsset || event.button !== 0) return;
+      if (event.button !== 0) return;
+      if (pendingLootPlacement) {
+        const bounds = mapImage.getBoundingClientRect();
+        if (!bounds.width || !bounds.height || event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        const settings = pendingLootPlacement;
+        pendingLootPlacement = null;
+        updatePlacementMode();
+        try {
+          const placePendingSticker = settings.placementType === "trap" ? placeTrapSticker : placeLootSticker;
+          await placePendingSticker({
+            ...settings,
+            x:(event.clientX - bounds.left) / bounds.width,
+            y:(event.clientY - bounds.top) / bounds.height
+          });
+        } catch (error) {
+          reportError(error);
+        }
+        return;
+      }
+      if (!active || !selectedAsset) return;
       event.preventDefault();
       event.stopPropagation();
       const asset = selectedAsset;
@@ -1967,6 +2103,57 @@
       return sticker;
     }
 
+    function queueLootSticker(settings = {}) {
+      const storagePath = String(settings.storagePath || "");
+      const lootText = String(settings.lootText || "").trim();
+      if (!storagePath || !lootText) throw new Error("Generate loot before placing a loot sticker.");
+      selectedAsset = null;
+      pendingLootPlacement = { ...settings, storagePath, lootText };
+      updatePlacementMode();
+      status.textContent = `Click the map to place ${settings.name || "the loot sticker"}. Press Esc to cancel.`;
+      return true;
+    }
+
+    async function placeTrapSticker(settings = {}) {
+      const storagePath = String(settings.storagePath || "");
+      const trapText = String(settings.trapText || "").trim();
+      const trapHtml = String(settings.trapHtml || "").trim();
+      if (!storagePath || !trapText) throw new Error("Generate a trap or hazard before placing its sticker.");
+      const units = gridUnits(storagePath);
+      const gridSize = clamp(Number(options.getGridSize?.()) || 100, 12, 1000);
+      const widthRatio = clamp(gridSize * units.width / Math.max(1, mapImage.clientWidth), .004, 1);
+      const heightRatio = clamp(gridSize * units.height / Math.max(1, mapImage.clientHeight), .004, 1);
+      const x = clamp(Number.isFinite(Number(settings.x)) ? Number(settings.x) : .5, widthRatio / 2, 1 - widthRatio / 2);
+      const y = clamp(Number.isFinite(Number(settings.y)) ? Number(settings.y) : .5, heightRatio / 2, 1 - heightRatio / 2);
+      const sticker = {
+        id: String(settings.id || makeId()),
+        name: String(settings.name || "Trap or Hazard"),
+        storagePath,
+        x: roundRatio(x),
+        y: roundRatio(y),
+        widthRatio: Number(widthRatio.toFixed(5)),
+        heightRatio: Number(heightRatio.toFixed(5)),
+        rotation: 0,
+        hiddenFromPlayers: settings.hiddenFromPlayers === true,
+        interaction: { trap: { name:String(settings.name || "Trap or Hazard"), text:trapText, ...(trapHtml ? { html:trapHtml } : {}) } }
+      };
+      await boardSync.addSticker(sticker, boardSync.generation);
+      status.textContent = `${sticker.name} placed. Click it to view the trap details.`;
+      return sticker;
+    }
+
+    function queueTrapSticker(settings = {}) {
+      const storagePath = String(settings.storagePath || "");
+      const trapText = String(settings.trapText || "").trim();
+      const trapHtml = String(settings.trapHtml || "").trim();
+      if (!storagePath || !trapText) throw new Error("Generate a trap or hazard before placing its sticker.");
+      selectedAsset = null;
+      pendingLootPlacement = { ...settings, placementType:"trap", storagePath, trapText, trapHtml };
+      updatePlacementMode();
+      status.textContent = `Click the map to place ${settings.name || "the trap sticker"}. Press Esc to cancel.`;
+      return true;
+    }
+
     function captureTeleportDestination(event) {
       if (!teleportDestinationStickerId || event.button !== 0) return false;
       const sticker = stickers.find(item => item.id === teleportDestinationStickerId);
@@ -2031,6 +2218,12 @@
       }, 220);
     });
     document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && pendingLootPlacement) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        cancelPlacement();
+        return;
+      }
       if (event.key === "Escape" && teleportDestinationStickerId) {
         event.preventDefault();
         event.stopImmediatePropagation();
@@ -2073,6 +2266,7 @@
       if (reset) {
         selectedStickerId = "";
         selectedAsset = null;
+        pendingLootPlacement = null;
         localOverrides.clear();
         loopingSounds.forEach(audio => { audio.pause(); audio.removeAttribute("src"); });
         loopingSounds.clear();
@@ -2174,6 +2368,9 @@
         requestPanelClose = typeof handler === "function" ? handler : () => {};
       },
       placeLootSticker,
+      queueLootSticker,
+      placeTrapSticker,
+      queueTrapSticker,
       placeAutomaticLootSticker,
       discardLocalState() {
         dragSession = null;
@@ -2181,6 +2378,11 @@
         localOverrides.clear();
         selectedStickerId = "";
         selectedAsset = null;
+        pendingLootPlacement = null;
+        lootPopup.hidden = true;
+        lootPopupStickerId = "";
+        trapPopup.hidden = true;
+        trapPopupStickerId = "";
         closeInteractionEditor();
         closeFavoriteDialog();
         updatePlacementMode();

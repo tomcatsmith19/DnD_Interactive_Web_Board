@@ -18,7 +18,7 @@ async function fixture(role = 'player') {
     const token = id => ({ id, name: id, hp: 30, maxHp: 30, init: 10, xRatio: .5, yRatio: .5, isplayer: true });
     const store = createFirestore({ 'shared/monsters': { monsters: [token('a'), token('b')] } });
     const boardSync = create({ ...store, intervalMs: 0 }); await boardSync.ready;
-    const elements = new Map(), events = {}, counts = { trackers: 0, loot: 0, broadcasts: [] };
+    const elements = new Map(), events = {}, counts = { trackers: 0, loot: 0, lootOptions: [], broadcasts: [] };
     function element(id) {
         const node = { id, dataset: {}, style: {}, classList: { toggle() {} },
             querySelector: () => ({ style: {} }), remove: () => elements.delete(id) };
@@ -40,7 +40,7 @@ async function fixture(role = 'player') {
         normalizeMonsterState: data => ({ ...data }),
         TokenActions: { renderTokenConditions() {}, tokenSize: () => 100 },
         addMonsterToken: token => element(`token-${token.id}`),
-        updateTokenHealthBar() {}, updateTokenDefeatedState() {}, recordCreatureForLoot() { counts.loot++; },
+        updateTokenHealthBar() {}, updateTokenDefeatedState() {}, recordCreatureForLoot(monster, options) { counts.loot++; counts.lootOptions.push(options); },
         broadcastDefeatedCreatures(creatures) { counts.broadcasts.push(creatures); return Promise.resolve(); },
         flashToken() {}, showTokenDeathEffect() {}, refreshMapTokenSelection() {},
         updatePlayerTokenInitiativeLabels() {}, showCurrentPlayerStats() {}, scheduleMapLayoutRefresh() {},
@@ -120,6 +120,16 @@ test('DM records a remote monster removal even during the former startup suppres
     const before = f.counts.loot;
     await f.boardSync.remove(['b']);
     assert.equal(f.counts.loot, before + 1);
+    assert.equal(f.counts.lootOptions.at(-1).skipAutoDrop, true);
+});
+
+test('a lethal DM damage action keeps auto loot enabled for its synchronized removal', async () => {
+    const f = await fixture('dm');
+    await f.boardSync.patch('b', { isplayer: false, hp: 12, cr: 2 });
+    f.context.selectedMapTokenIds.add('b');
+    f.elements.get('mapActionAmount').value = '12';
+    assert.equal(await vm.runInContext("applyMapTokenAction('damage')", f.context), true);
+    assert.equal(f.counts.lootOptions.at(-1).skipAutoDrop, false);
 });
 
 test('a successful lethal player action broadcasts the defeated monster to the DM', async () => {

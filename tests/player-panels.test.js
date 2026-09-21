@@ -148,11 +148,15 @@ test('dice customizer loads the 3D constructor before rendering its d20 preview'
     assert.match(dice, /await previewBox\.roll\('1d20'\)/);
 });
 
-test('DM initiative table fills the panel without an Add Monster action', () => {
+test('DM initiative header owns a green Add Monster action', () => {
     const dmHtml = fs.readFileSync('public/dm.html', 'utf8');
     assert.match(dmHtml, /\.dm-initiative-content \{[^}]*height:100%;[^}]*max-height:none;[^}]*overflow:hidden;/);
     assert.match(dmHtml, /\.dm-initiative-table-scroll \{[^}]*flex:1;[^}]*min-height:0;[^}]*overflow:auto;/);
-    assert.doesNotMatch(dmHtml, /id="initiativeTableTab"[\s\S]*?<button id="addMonsterBtn"/);
+    assert.match(dmHtml, /class="dm-initiative-header"><h2>Initiative<\/h2><button id="initiativeAddMonsterBtn" class="encounter-add-monster initiative-add-monster"[^>]*aria-label="Add Monster to Initiative"/);
+    assert.match(dmHtml, /\.dm-initiative-header \{[^}]*display:flex;[^}]*align-items:center;/);
+    assert.match(dmHtml, /\.encounter-add-monster\.initiative-add-monster \{[^}]*margin-left:auto;[^}]*background:#32cd32;[^}]*border-color:#72df91;/);
+    assert.match(dmHtml, /initiativeAddMonsterBtn\?\.addEventListener\('click', \(\) => openMonsterPicker\('initiative'\)\)/);
+    assert.match(dmHtml, /monsterPickerDestination === 'initiative'[\s\S]*?monsterPlacement\.enqueue\(additions\)/);
 });
 
 test('DM initiative tracker has a docked stat-block subtab populated by monster name clicks', () => {
@@ -194,7 +198,7 @@ test('DM initiative and HP inputs use compact digit-based widths', () => {
 test('mouse wheel over the DM initiative table scrolls the table rather than the map', () => {
     const dmHtml = fs.readFileSync('public/dm.html', 'utf8');
     assert.match(dmHtml, /const hoveredInitiativeTable = event\.target\.closest\('\.dm-initiative-table-scroll'\)/);
-    assert.match(dmHtml, /const scroller = hoveredInitiativeTable \|\| panel\.querySelector/);
+    assert.match(dmHtml, /const scroller = hoveredInitiativeTable \|\| hoveredTrapOutput \|\| panel\.querySelector/);
     assert.match(dmHtml, /scroller\.scrollTop \+= event\.deltaY;[\s\S]*?event\.preventDefault\(\);[\s\S]*?event\.stopPropagation\(\)/);
 });
 
@@ -390,6 +394,25 @@ test('Dungeon encounter send icon precedes the monster XP heading', () => {
     assert.match(dmHtml, /\.encounter-summary-row \{[^}]*display:flex;[^}]*align-items:center;/);
     assert.match(dmHtml, /\.encounter-send-button \{[^}]*background:#4b2915;[^}]*border:1px solid #f4d76d;/);
     assert.doesNotMatch(dmHtml, /className = 'encounter-generate-row'/);
+    assert.match(dmHtml, /Monsters \(0 of 0 XP, 0 HP\):/);
+    assert.match(dmHtml, /function calculateEncounterTotalHp\(monsterList = currentEncounterMonsters\)/);
+    assert.match(dmHtml, /hydrateEncounterMonsterHp\(hpVersion\)/);
+    assert.match(dmHtml, /Monsters \(\$\{Math\.round\(totalAdjustedXP\)\} of \$\{Math\.round\(targetXP\)\} XP, \$\{Math\.round\(totalHp\)\} HP\):/);
+});
+
+test('Wilderness and Dungeon encounter sends queue one-at-a-time token placement previews', () => {
+    const dmHtml = fs.readFileSync('public/dm.html', 'utf8');
+    const placement = fs.readFileSync('public/token-placement.js', 'utf8');
+    const sendEncounter = dmHtml.slice(dmHtml.indexOf('async function sendEncounter()'), dmHtml.indexOf('// Loot state shared'));
+    assert.match(sendEncounter, /monsterPlacement\.enqueue\(additions\)/);
+    assert.doesNotMatch(sendEncounter, /addMonstersToFirebase\(additions\)/);
+    assert.match(dmHtml, /travelEncounterMonsters = generated\.monsters;[\s\S]*?displayMonsters\(generated\.monsters\)[\s\S]*?onclick="sendEncounter\(\)"/);
+    assert.match(placement, /const nextImage = document\.createElement\("img"\)/);
+    assert.match(placement, /const following = queue\[1\];[\s\S]*?nextImage\.src = getTokenSrc\(following\)/);
+    assert.match(placement, /imageWrap\.append\(image, nextImage\)/);
+    assert.match(placement, /opacity: "\.68"/);
+    assert.match(placement, /const overMap = lastPointer\.x >= bounds\.left[\s\S]*?preview\.style\.left = `\$\{lastPointer\.x - 29\}px`/);
+    assert.doesNotMatch(placement, /status\.textContent|Place \$\{next\.name\}/);
 });
 
 test('Dungeon encounter builder owns the soft-red icon Add Monster action', () => {
@@ -408,6 +431,9 @@ test('Dungeon loot uses compact labels, icon generation, and an XP advancement t
     assert.match(dmHtml, /\.loot-generate-button \{[^}]*background:#ff5959;[^}]*border:1px solid #ff8a90;/);
     assert.match(dmHtml, /class="loot-controls">[\s\S]*?id="lootXP"[\s\S]*?class="loot-generate-button"[\s\S]*?<\/div>/);
     assert.match(dmHtml, /\.loot-generate-button \{[^}]*margin-left:auto;/);
+    assert.match(dmHtml, /class="loot-sticker-controls"><button id="placeLootStickerBtn"[^>]*aria-label="Place Loot Sticker"[^>]*><span class="loot-place-arrow"[^>]*>←<\/span><svg/);
+    assert.match(dmHtml, /\.loot-sticker-controls \{[^}]*justify-content:space-between;/);
+    assert.doesNotMatch(dmHtml, />Place Loot Sticker<\/button>/);
     assert.match(dmHtml, /id="lootXpTablePopup" class="loot-xp-table-popup" role="tooltip">[\s\S]*?<caption>Player Level Advancement<\/caption>[\s\S]*?<td>20<\/td><td>355,000<\/td>/);
     assert.match(dmHtml, /\.loot-xp-table-popup \{[^}]*position:fixed;[^}]*z-index:5000;/);
     assert.match(dmHtml, /if \(popup\.parentElement !== document\.body\) document\.body\.appendChild\(popup\)/);
@@ -464,8 +490,8 @@ test('loot auto drop rolls individual treasure at the defeated monster position'
     assert.match(dmHtml, /dropAutomaticLootSticker\(monster, `loot-\$\{requestDoc\.id\}`\)/);
     assert.match(fs.readFileSync('public/map-stickers.js', 'utf8'), /async function placeLootSticker\(settings = \{\}\)[\s\S]*?id: String\(settings\.id \|\| makeId\(\)\)/);
     assert.match(fs.readFileSync('public/map-stickers.js', 'utf8'), /async function placeAutomaticLootSticker\(monster, settings = \{\}\)[\s\S]*?rollAutomaticIndividualLoot\(cr\)[\s\S]*?x:monster\?\.xRatio[\s\S]*?y:monster\?\.yRatio/);
-    assert.match(boardUi, /recordCreatureForLoot\(token, \{ skipAutoDrop:true \}\)/);
-    assert.match(boardUi, /boardPageRole === 'player' && action === 'damage'[\s\S]*?broadcastDefeatedCreatures\(defeatedByPlayer\)/);
+    assert.match(boardUi, /const locallyDefeated = localDmDefeatIds\.delete\(token\.id\);[\s\S]*?recordCreatureForLoot\(token, \{ skipAutoDrop:!locallyDefeated \}\)/);
+    assert.match(boardUi, /action === 'damage'[\s\S]*?boardPageRole === 'player'[\s\S]*?broadcastDefeatedCreatures\(defeatedByAction\)/);
 });
 
 test('generated Wilderness and Dungeon monsters open token-bearing stat blocks', () => {
@@ -523,8 +549,9 @@ test('monster picker uses a compact count row and top-right red close action', (
 
 test('encounter picker additions and red row removals recalculate adjusted XP', () => {
     const dmHtml = fs.readFileSync('public/dm.html', 'utf8');
-    assert.match(dmHtml, /const additions = Array\.from\(\{ length: number \}, \(\) => \(\{ name:definition\.name, cr \}\)\);\s*setCurrentEncounterMonsters\(\[\.\.\.currentEncounterMonsters, \.\.\.additions\]\)/);
-    assert.doesNotMatch(dmHtml, /confirmMonsterBtn\.addEventListener[\s\S]*?monsterPlacement\.enqueue\(additions\)/);
+    const pickerHandler = dmHtml.slice(dmHtml.indexOf("confirmMonsterBtn.addEventListener('click'"), dmHtml.indexOf('const spellCatalogPromise'));
+    assert.match(dmHtml, /const hp = getMonsterDefinitionAverageHp\(definition\);\s*const additions = Array\.from\(\{ length: number \}, \(\) => \(\{ name:definition\.name, cr, hp \}\)\);\s*setCurrentEncounterMonsters\(\[\.\.\.currentEncounterMonsters, \.\.\.additions\]\)/);
+    assert.match(pickerHandler, /if \(monsterPickerDestination === 'initiative'\)[\s\S]*?monsterPlacement\.enqueue\(additions\);[\s\S]*?\} else \{[\s\S]*?setCurrentEncounterMonsters/);
     assert.match(dmHtml, /removeButton\.className = 'encounter-monster-remove'[\s\S]*?removeButton\.addEventListener\('click', \(\) => removeEncounterMonster\(index\)\)/);
     assert.match(dmHtml, /function removeEncounterMonster\(index\)[\s\S]*?setCurrentEncounterMonsters\(remaining\)/);
     assert.match(dmHtml, /function setCurrentEncounterMonsters\(monsterList\)[\s\S]*?renderEncounterMonsterList\(currentEncounterMonsters\);\s*refreshEncounterXpHeading\(\)/);

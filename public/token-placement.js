@@ -7,46 +7,40 @@
 
     const queue = [];
     let lastPointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-
     const preview = document.createElement("div");
-    preview.setAttribute("aria-live", "polite");
+    preview.setAttribute("aria-hidden", "true");
     Object.assign(preview.style, {
-      position: "fixed",
-      display: "none",
-      alignItems: "center",
-      gap: "7px",
-      padding: "5px 8px 5px 5px",
-      border: "2px solid #d4af37",
-      borderRadius: "999px",
-      background: "rgba(29, 16, 9, 0.94)",
-      color: "#f4d76d",
-      fontFamily: "'MedievalSharp', cursive",
-      fontSize: "12px",
-      boxShadow: "0 5px 18px rgba(0, 0, 0, 0.55)",
-      pointerEvents: "none",
-      zIndex: "6000"
+      position: "fixed", display: "none", width: "58px", height: "58px", padding: "0", border: "0",
+      background: "transparent", pointerEvents: "none", zIndex: "6000"
     });
 
+    const imageWrap = document.createElement("span");
+    Object.assign(imageWrap.style, { position: "relative", display: "block", width: "58px", height: "58px" });
     const image = document.createElement("img");
     image.alt = "";
     Object.assign(image.style, {
-      width: "42px",
-      height: "42px",
-      objectFit: "cover",
-      borderRadius: "50%",
-      border: "1px solid #f4d76d",
-      background: "#1d1009"
+      width: "58px", height: "58px", objectFit: "cover", borderRadius: "50%", boxSizing: "border-box",
+      background: "#1d1009", opacity: ".68", filter: "drop-shadow(0 0 4px #f4d76d)"
     });
-    const status = document.createElement("span");
-    preview.append(image, status);
+    const nextImage = document.createElement("img");
+    nextImage.alt = "Next token";
+    Object.assign(nextImage.style, {
+      position: "absolute", display: "none", top: "-8px", right: "-10px", width: "28px", height: "28px",
+      objectFit: "cover", borderRadius: "50%", border: "2px solid #f4d76d", boxSizing: "border-box",
+      background: "#1d1009", boxShadow: "0 2px 7px rgba(0,0,0,.75)"
+    });
+    imageWrap.append(image, nextImage);
+    preview.append(imageWrap);
     document.body.appendChild(preview);
 
     function positionPreview() {
       if (!queue.length) return;
-      const width = preview.offsetWidth || 130;
-      const height = preview.offsetHeight || 54;
-      preview.style.left = `${Math.min(window.innerWidth - width - 6, lastPointer.x + 16)}px`;
-      preview.style.top = `${Math.max(4, Math.min(window.innerHeight - height - 6, lastPointer.y - height - 14))}px`;
+      const bounds = mapImage.getBoundingClientRect();
+      const overMap = lastPointer.x >= bounds.left && lastPointer.x <= bounds.right && lastPointer.y >= bounds.top && lastPointer.y <= bounds.bottom;
+      preview.style.display = overMap ? "block" : "none";
+      if (!overMap) return;
+      preview.style.left = `${lastPointer.x - 29}px`;
+      preview.style.top = `${lastPointer.y - 29}px`;
     }
 
     function renderPreview() {
@@ -57,8 +51,9 @@
         return;
       }
       image.src = getTokenSrc(next);
-      status.textContent = queue.length > 1 ? `Place ${next.name} · ${queue.length} queued` : `Place ${next.name}`;
-      preview.style.display = "flex";
+      const following = queue[1];
+      nextImage.style.display = following ? "block" : "none";
+      if (following) nextImage.src = getTokenSrc(following);
       mapSurface.style.cursor = "crosshair";
       positionPreview();
     }
@@ -77,15 +72,12 @@
       if (!queue.length || event.button !== 0) return;
       const bounds = mapImage.getBoundingClientRect();
       if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) return;
-
       event.preventDefault();
       event.stopImmediatePropagation();
       const token = queue.shift();
       token.xRatio = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
       token.yRatio = Math.max(0, Math.min(1, (event.clientY - bounds.top) / bounds.height));
-      Promise.resolve(onPlace(token)).catch(error => {
-        console.error("Failed to place queued token:", error);
-      });
+      Promise.resolve(onPlace(token)).catch(error => console.error("Failed to place queued token:", error));
       renderPreview();
     }, true);
 
