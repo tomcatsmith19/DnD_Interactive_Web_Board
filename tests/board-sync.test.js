@@ -51,6 +51,13 @@ test('concurrent damage/healing and condition actions compose against server val
     assert.deepEqual(new Set(f.documents.get(f.path('a')).conditions), new Set(['Shield', 'Exhaustion 3']));
 });
 
+test('one atomic group action applies a different resolved damage amount to each token', async () => {
+    const f = await fixture();
+    await f.first.actionAmounts(new Map([['a', 4], ['b', 11]]));
+    assert.equal(f.documents.get(f.path('a')).hp, 26);
+    assert.equal(f.documents.get(f.path('b')).hp, 19);
+});
+
 test('stale field edits cannot recreate deleted tokens', async () => {
     const f = await fixture();
     await f.first.remove(['a']);

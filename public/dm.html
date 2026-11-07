@@ -874,7 +874,7 @@
             padding: 5px;
         }
     </style>
-<link rel="stylesheet" href="token-actions.css?v=17">
+<link rel="stylesheet" href="token-actions.css?v=18">
 </head>
 
 <div class="main-layout">
@@ -1497,6 +1497,15 @@
                                 <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
                                 <button type="button" class="map-heal" onclick="applyMapTokenAction('heal')">Heal</button>
                             </div>
+                            <details id="mapAdvancedOptions" class="map-advanced-options">
+                                <summary>Advanced options</summary>
+                                <div class="map-advanced-options-row">
+                                    <label class="map-advanced-field">DMG Type<select id="mapDamageType"><option value="">No damage type</option><option>Acid</option><option>Bludgeoning</option><option>Cold</option><option>Fire</option><option>Force</option><option>Lightning</option><option>Necrotic</option><option>Piercing</option><option>Poison</option><option>Psychic</option><option>Radiant</option><option>Slashing</option><option>Thunder</option></select></label>
+                                    <label class="map-advanced-field">Save Type<select id="mapSaveType" title="AC applies damage directly; ability choices roll a saving throw for each target."><option value="ac">AC</option><option value="str">STR</option><option value="dex">DEX</option><option value="con">CON</option><option value="int">INT</option><option value="wis">WIS</option><option value="cha">CHA</option></select></label>
+                                    <label class="map-advanced-field">DC<input id="mapSaveDC" type="number" min="0" step="1" value="10"></label>
+                                    <label class="map-advanced-field">On success<select id="mapSaveSuccess"><option value="half">Half damage</option><option value="none">No damage</option></select></label>
+                                </div>
+                            </details>
                             <input id="mapConditionSearch" class="map-condition-search" type="search" placeholder="Search conditions…" aria-label="Search conditions">
                             <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
                         </div>
@@ -1898,11 +1907,11 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
     <script src="map-drawing.js?v=27"></script>
     <script src="token-placement.js?v=4"></script>
-    <script src="token-actions.js?v=5"></script>
-    <script src="board-sync.js?v=7"></script>
+    <script src="token-actions.js?v=6"></script>
+    <script src="board-sync.js?v=8"></script>
     <script src="map-stickers.js?v=37"></script>
     <script src="shared-timer.js?v=5"></script>
-    <script src="board-ui.js?v=11"></script>
+    <script src="board-ui.js?v=12"></script>
     <script src="reference.js?v=2"></script>
     <script src="cpu-action-advisor.js?v=1"></script>
     <script>
@@ -5835,6 +5844,7 @@
                 yRatio: 0.5,
                 isplayer: false,
                 tokenUrl: definition.tokenUrl || "",
+                actionDefenses: TokenActions.damageProfile(data),
                 cpuAdvisor: CpuActionAdvisor.createSettings(data.int)
             };
         }

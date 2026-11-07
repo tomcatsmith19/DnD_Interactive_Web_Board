@@ -295,7 +295,7 @@
       margin-bottom: 10px;
     }
   </style>
-  <link rel="stylesheet" href="token-actions.css?v=17">
+  <link rel="stylesheet" href="token-actions.css?v=18">
 </head>
 
 <body>
@@ -350,6 +350,15 @@
         <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
         <button type="button" class="map-heal" onclick="applyMapTokenAction('heal')">Heal</button>
       </div>
+      <details id="mapAdvancedOptions" class="map-advanced-options">
+        <summary>Advanced options</summary>
+        <div class="map-advanced-options-row">
+          <label class="map-advanced-field">DMG Type<select id="mapDamageType"><option value="">No damage type</option><option>Acid</option><option>Bludgeoning</option><option>Cold</option><option>Fire</option><option>Force</option><option>Lightning</option><option>Necrotic</option><option>Piercing</option><option>Poison</option><option>Psychic</option><option>Radiant</option><option>Slashing</option><option>Thunder</option></select></label>
+          <label class="map-advanced-field">Save Type<select id="mapSaveType" title="AC applies damage directly; ability choices roll a saving throw for each target."><option value="ac">AC</option><option value="str">STR</option><option value="dex">DEX</option><option value="con">CON</option><option value="int">INT</option><option value="wis">WIS</option><option value="cha">CHA</option></select></label>
+          <label class="map-advanced-field">DC<input id="mapSaveDC" type="number" min="0" step="1" value="10"></label>
+          <label class="map-advanced-field">On success<select id="mapSaveSuccess"><option value="half">Half damage</option><option value="none">No damage</option></select></label>
+        </div>
+      </details>
       <input id="mapConditionSearch" class="map-condition-search" type="search" placeholder="Search conditions…" aria-label="Search conditions">
       <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
     </div>
@@ -669,11 +678,11 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
   <script src="map-drawing.js?v=27"></script>
   <script src="token-placement.js?v=4"></script>
-    <script src="token-actions.js?v=5"></script>
-    <script src="board-sync.js?v=7"></script>
+    <script src="token-actions.js?v=6"></script>
+    <script src="board-sync.js?v=8"></script>
     <script src="map-stickers.js?v=37"></script>
     <script src="shared-timer.js?v=5"></script>
-  <script src="board-ui.js?v=11"></script>
+  <script src="board-ui.js?v=12"></script>
     <script src="reference.js?v=2"></script>
 
   <script>
@@ -970,7 +979,7 @@
       }catch(error){console.error('Failed to create custom player:',error);status.textContent='Could not upload the custom player.';}
       finally{button.disabled=false;}
     }
-    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player'){const maxHp=Math.max(1,Math.trunc(Number(choice.maxHp)||10)),ac=Math.max(1,Math.min(40,Math.trunc(Number(choice.ac)||10))),size=['T','S','M','L','H','G'].includes(choice.size)?choice.size:'M';member={id:generateID(),name:choice.name,size,hp:maxHp,maxHp,ac,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};}else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp,rawAc=Array.isArray(data.ac)?data.ac[0]:data.ac,ac=typeof rawAc==='object'?rawAc?.ac:rawAc;member={id:generateID(),name:data.name,size:data.size||'M',hp:Number(hp)||1,maxHp:Number(hp)||1,ac:Math.max(1,parseInt(ac)||10),init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`};}member.partyManaged=true;partyTokenPlacement.enqueue(member);closePartyPicker();}
+    async function addPartyMember(choice){let member;if(choice.kind==='Player'||choice.kind==='Custom Player'){const maxHp=Math.max(1,Math.trunc(Number(choice.maxHp)||10)),ac=Math.max(1,Math.min(40,Math.trunc(Number(choice.ac)||10))),size=['T','S','M','L','H','G'].includes(choice.size)?choice.size:'M';member={id:generateID(),name:choice.name,size,hp:maxHp,maxHp,ac,init:0,conditions:[],xRatio:.5,yRatio:.5,isplayer:true,tokenUrl:choice.tokenUrl||'',tokenPath:choice.tokenPath||''};}else{const response=await fetch(`data/monsters/${encodeURIComponent(choice.name)}.json`);if(!response.ok){alert(`Could not load ${choice.name}`);return;}const data=await response.json(),hp=typeof data.hp==='object'?data.hp.average:data.hp,rawAc=Array.isArray(data.ac)?data.ac[0]:data.ac,ac=typeof rawAc==='object'?rawAc?.ac:rawAc;member={id:generateID(),name:data.name,size:data.size||'M',hp:Number(hp)||1,maxHp:Number(hp)||1,ac:Math.max(1,parseInt(ac)||10),init:Math.floor(Math.random()*20)+1,conditions:[],xRatio:.5,yRatio:.5,isplayer:false,tokenUrl:`data/monster_tokens/${encodeURIComponent(data.name)}.webp`,actionDefenses:TokenActions.damageProfile(data)};}member.partyManaged=true;partyTokenPlacement.enqueue(member);closePartyPicker();}
     document.getElementById('partySearch')?.addEventListener('input',event=>renderPartyChoices(event.target.value));
     const playerCharacterNames=[...document.querySelectorAll('#playerSelect option')].map(option=>option.value).filter(Boolean);
     fetch('data/api_data/monster_catalog.json').then(response=>response.json()).then(data=>{basePartyCatalog=[...playerCharacterNames.map(name=>({name,kind:'Player'})),...data.map(monster=>({name:monster.name,kind:'Monster'}))];rebuildPartyCatalog();});

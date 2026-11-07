@@ -306,15 +306,38 @@ function renderTokenDistances() {
 function removeMonstersFromFirebase(ids) { return runBoardWrite(boardSync.remove(ids)); }
 function addMonstersToFirebase(tokens) { return runBoardWrite(boardSync.add(tokens, tokens[0]?._boardGeneration || boardSync.generation)); }
 function forceReloadMonsters() { return runBoardWrite(boardSync.reconcile()); }
-function applyMapTokenAction(action, condition = '', level = 0) {
+async function mapActionDefinition(token) {
+    if (token.actionDefenses || token.isplayer || token.isNpc) return token;
+    try {
+        if (typeof loadMonsterDefinitionByName === 'function') return (await loadMonsterDefinitionByName(token.name))?.monsterData || token;
+        const response = await fetch(`data/monsters/${encodeURIComponent(token.name)}.json`);
+        return response.ok ? await response.json() : token;
+    } catch (_) { return token; }
+}
+async function applyMapTokenAction(action, condition = '', level = 0) {
     const targets = monsters.filter(token => selectedMapTokenIds.has(token.id));
     if (!targets.length) return Promise.resolve(false);
     const amount = Math.max(0, Math.trunc(Number(document.getElementById('mapActionAmount').value) || 0));
+    const advanced = document.getElementById('mapAdvancedOptions');
+    let damageAmounts = null;
+    if (action === 'damage' && advanced?.open) {
+        const options = {
+            damageType: document.getElementById('mapDamageType')?.value || '',
+            saveType: document.getElementById('mapSaveType')?.value || 'ac',
+            dc: document.getElementById('mapSaveDC')?.value || 10,
+            onSuccess: document.getElementById('mapSaveSuccess')?.value || 'half'
+        };
+        const definitions = await Promise.all(targets.map(mapActionDefinition));
+        damageAmounts = new Map(targets.map((token, index) => [token.id, TokenActions.resolveAdvancedDamage(amount, token, options, definitions[index]).amount]));
+    }
     const defeatedByAction = action === 'damage'
-        ? targets.filter(token => !token.isplayer && Number(token.hp) > 0 && amount >= Number(token.hp)).map(token => ({ ...token }))
+        ? targets.filter(token => !token.isplayer && Number(token.hp) > 0 && (damageAmounts?.get(token.id) ?? amount) >= Number(token.hp)).map(token => ({ ...token }))
         : [];
     if (boardPageRole === 'dm') defeatedByAction.forEach(token => localDmDefeatIds.add(token.id));
-    return runBoardWrite(boardSync.action(targets.map(token => token.id), action, amount, condition, level, targets[0]._boardGeneration)).then(async succeeded => {
+    const write = damageAmounts
+        ? boardSync.actionAmounts(damageAmounts, action, targets[0]._boardGeneration)
+        : boardSync.action(targets.map(token => token.id), action, amount, condition, level, targets[0]._boardGeneration);
+    return runBoardWrite(write).then(async succeeded => {
         if (!succeeded) defeatedByAction.forEach(token => localDmDefeatIds.delete(token.id));
         else if (boardPageRole === 'dm') {
             const cleanupTimer = setTimeout(() => defeatedByAction.forEach(token => localDmDefeatIds.delete(token.id)), 10000);

@@ -46,6 +46,13 @@
 .map-action-panel .map-condition-search { width:100%; box-sizing:border-box; margin-top:10px; padding:9px 11px; color:white; background:#2b190f; border:1px solid #8a6643; border-radius:5px; }
 .map-action-panel .map-condition-search::placeholder { color:#c8bda9; }
 .map-action-panel .map-health-actions input { text-align:center; }
+.map-advanced-options { margin-top:10px; border:1px solid #765133; border-radius:6px; background:#21170f; }
+.map-advanced-options > summary { padding:10px; color:#f4d76d; font-size:14px; font-weight:bold; cursor:pointer; user-select:none; }
+.map-advanced-options[open] > summary { border-bottom:1px solid #765133; }
+.map-advanced-options-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; padding:10px; }
+.map-advanced-field { display:flex; flex-direction:column; gap:4px; min-width:0; color:#e8d7c2; font-size:11px; font-weight:bold; }
+.map-action-panel .map-advanced-field select,.map-action-panel .map-advanced-field input { min-width:0; width:100%; height:36px; margin:0; padding:6px; }
+@media (max-width:600px) { .map-advanced-options-row { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 .map-action-panel .map-remove { background:#b82e35; color:#fff; }
 .map-action-panel .map-damage { background:#351416; color:#ff777f; border:1px solid #ff777f; }
 .map-action-panel .map-heal { background:#132d1b; color:#72df91; border:1px solid #72df91; }

@@ -70,6 +70,28 @@ test('condition search tolerates partial names and small typos',()=>{
   assert.equal(actions.fuzzyConditionMatch('invisible','Blessed'),false);
 });
 
+test('advanced damage resolves individual saves before resistance and immunity',()=>{
+  const {actions}=fixture();
+  const data={dex:14,skills:{'dex save':'+5'},resist:['fire'],immune:['poison']};
+  assert.equal(actions.damageProfile(data).saves.dex,5);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:15,onSuccess:'half',damageType:'fire'},data,()=>10).amount,5);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:15,onSuccess:'none',damageType:'fire'},data,()=>10).amount,0);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,onSuccess:'half',damageType:'fire'},data,()=>10).amount,10);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,onSuccess:'half',damageType:'poison'},data,()=>10).amount,0);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,onSuccess:'half',damageType:''},data,()=>10).amount,21);
+});
+
+test('advanced action controls exist on both boards with the requested defaults',()=>{
+  for(const page of ['dm','player']) {
+    const html=fs.readFileSync(`public/${page}.html`,'utf8');
+    assert.match(html,/id="mapAdvancedOptions"[\s\S]*?<summary>Advanced options<\/summary>/);
+    assert.match(html,/id="mapDamageType"[\s\S]*?<option value="">No damage type<\/option>/);
+    assert.match(html,/id="mapSaveType"[\s\S]*?<option value="ac">AC<\/option>/);
+    assert.match(html,/id="mapSaveDC"[^>]*value="10"/);
+    assert.match(html,/id="mapSaveSuccess"[\s\S]*?Half damage[\s\S]*?No damage/);
+  }
+});
+
 test('folders retain expansion state and toggles preserve mixed selections',()=>{
   const {actions,grid,elements,calls,panel}=fixture();
   actions.refresh([{conditions:['Shield']},{conditions:[]}]);
@@ -99,6 +121,6 @@ test('DM action panel includes a player-visibility eye beside the token name',()
   assert.match(css,/\.token-player-visibility \{[^}]*width:34px/);
   assert.match(boardUI,/classList\.toggle\('is-hidden-from-players', boardPageRole === 'dm' && token\.hiddenFromPlayers === true\)/);
   assert.match(css,/\.monster-token\.is-hidden-from-players::after \{[^}]*data:image\/svg\+xml/);
-  assert.match(dm,/token-actions\.css\?v=17/);
-  assert.match(player,/token-actions\.css\?v=17/);
+  assert.match(dm,/token-actions\.css\?v=18/);
+  assert.match(player,/token-actions\.css\?v=18/);
 });

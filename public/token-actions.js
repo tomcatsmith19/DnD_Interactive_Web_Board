@@ -1,4 +1,6 @@
 const TokenActions = (() => {
+  const abilities = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+  const damageTypes = ['acid', 'bludgeoning', 'cold', 'fire', 'force', 'lightning', 'necrotic', 'piercing', 'poison', 'psychic', 'radiant', 'slashing', 'thunder'];
   // Blade Ward uses the 2024 wording; other existing summaries retain their current rules.
   const effects = {
     Blinded: 'Cannot see; sight-based checks fail. Your attacks have disadvantage; attacks against you have advantage.',
@@ -221,6 +223,50 @@ const TokenActions = (() => {
     const level = Math.min(6, Math.max(0, Math.trunc(Number(value) || 0)));
     return [...conditions.filter(item => !exhaustionPattern.test(item)), ...(level ? [`Exhaustion ${level}`] : [])];
   }
+  function signedNumber(value) {
+    const match = String(value ?? '').match(/[+-]?\d+/);
+    return match ? Number(match[0]) : null;
+  }
+  function damageWords(values = []) {
+    return values.flatMap(value => {
+      if (typeof value === 'string') return value.toLowerCase().match(/[a-z]+/g) || [];
+      if (!value || typeof value !== 'object') return [];
+      return damageWords([value.resist, value.immune, value.special, value.note, value.name].flat().filter(Boolean));
+    });
+  }
+  function damageProfile(data = {}) {
+    if (data.actionDefenses) return data.actionDefenses;
+    const scores = Object.fromEntries(abilities.map(ability => [ability, Number(data[ability]) || 10]));
+    const saves = {};
+    abilities.forEach(ability => {
+      const explicit = data.save?.[ability] ?? data.saves?.[ability] ?? data.skills?.[`${ability} save`] ?? data.savingThrows?.[ability];
+      const parsed = signedNumber(explicit);
+      saves[ability] = parsed == null ? Math.floor((scores[ability] - 10) / 2) : parsed;
+    });
+    return {
+      scores,
+      saves,
+      resist: [...new Set(damageWords(data.resist || data.damageResistances || []))].filter(type => damageTypes.includes(type)),
+      immune: [...new Set(damageWords(data.immune || data.damageImmunities || []))].filter(type => damageTypes.includes(type))
+    };
+  }
+  function resolveAdvancedDamage(amount, target, options = {}, definition = {}, roller = () => Math.floor(Math.random() * 20) + 1) {
+    const profile = damageProfile(Object.keys(definition || {}).length ? definition : target);
+    const saveType = String(options.saveType || 'ac').toLowerCase();
+    const base = Math.max(0, Math.trunc(Number(amount) || 0));
+    let applied = base, roll = null, total = null, saved = false;
+    // AC preserves the normal direct-damage workflow. Ability choices enable one independent save per target.
+    if (abilities.includes(saveType)) {
+      roll = Math.max(1, Math.min(20, Math.trunc(Number(roller()) || 1)));
+      total = roll + (Number(profile.saves?.[saveType]) || 0);
+      saved = total >= Math.max(0, Math.trunc(Number(options.dc) || 10));
+      if (saved) applied = options.onSuccess === 'none' ? 0 : Math.floor(applied / 2);
+    }
+    const damageType = String(options.damageType || '').toLowerCase();
+    if (damageType && profile.immune?.includes(damageType)) applied = 0;
+    else if (damageType && profile.resist?.includes(damageType)) applied = Math.floor(applied / 2);
+    return { amount: applied, roll, total, saved, damageType, saveType };
+  }
   function refresh(selected) {
     const grid = document.getElementById('mapConditionsGrid');
     if (!grid) return;
@@ -301,6 +347,6 @@ const TokenActions = (() => {
     button.title = `Auto pop-up ${enabled ? 'on' : 'off'}`;
     return enabled;
   }
-  return { refresh, exhaustion, withExhaustion, normalizeConditions, tokenSize, sizeMultiplier, resolveSize, renderTokenConditions, fuzzyConditionMatch, autoPopupEnabled, toggleAutoPopup };
+  return { refresh, exhaustion, withExhaustion, normalizeConditions, tokenSize, sizeMultiplier, resolveSize, renderTokenConditions, fuzzyConditionMatch, autoPopupEnabled, toggleAutoPopup, damageTypes, damageProfile, resolveAdvancedDamage };
 })();
 if (typeof module !== 'undefined') module.exports = TokenActions;

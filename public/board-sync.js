@@ -260,6 +260,10 @@
       action(ids, action, amount = 0, condition = '', level = 0, expected = generation) {
         return mutate('tokens', ids, token => token ? actionPatch(token, action, amount, condition, level) : undefined, expected);
       },
+      actionAmounts(amounts, action = 'damage', expected = generation) {
+        const changes = amounts instanceof Map ? amounts : new Map(Object.entries(amounts || {}));
+        return mutate('tokens', [...changes.keys()], (token, id) => token ? actionPatch(token, action, changes.get(id), '', 0) : undefined, expected);
+      },
       addDrawing(layer, drawing, expected = generation) { return mutate(layer, [drawing.id], existing => existing ? undefined : { ...drawing, _order: Date.now() }, expected); },
       patchDrawings(layer, changes, expected = generation) { return mutate(layer, [...changes.keys()], (drawing, id) => drawing ? changes.get(id) : undefined, expected); },
       removeDrawings(layer, ids, expected = generation) { return mutate(layer, ids, () => null, expected); },
