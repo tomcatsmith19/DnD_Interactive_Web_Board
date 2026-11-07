@@ -99,6 +99,6 @@ test('DM action panel includes a player-visibility eye beside the token name',()
   assert.match(css,/\.token-player-visibility \{[^}]*width:34px/);
   assert.match(boardUI,/classList\.toggle\('is-hidden-from-players', boardPageRole === 'dm' && token\.hiddenFromPlayers === true\)/);
   assert.match(css,/\.monster-token\.is-hidden-from-players::after \{[^}]*data:image\/svg\+xml/);
-  assert.match(dm,/token-actions\.css\?v=16/);
-  assert.match(player,/token-actions\.css\?v=16/);
+  assert.match(dm,/token-actions\.css\?v=17/);
+  assert.match(player,/token-actions\.css\?v=17/);
 });

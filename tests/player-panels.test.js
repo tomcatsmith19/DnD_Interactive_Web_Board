@@ -283,6 +283,13 @@ test('Town NPC editor and generator have no enclosing visual container', () => {
     assert.match(dmHtml, /\.npc-generator \{[^}]*padding:0;[^}]*overflow:visible;[^}]*background:transparent;[^}]*border:0;[^}]*border-radius:0;/);
 });
 
+test('Town NPC panel scrolls when long notes exceed the available height', () => {
+  const dm = fs.readFileSync('public/dm.html', 'utf8');
+  assert.match(dm, /\.generator-panel #npcSubTab \{[^}]*overflow-y:scroll !important;[^}]*scrollbar-gutter:stable/);
+  assert.match(dm, /#npcSubTab::-webkit-scrollbar-thumb/);
+  assert.doesNotMatch(dm, /\.generator-panel #npcNotes \{[^}]*overflow-y:scroll/);
+});
+
 test('Wilderness, Town, and Dungeon subtabs fill the generator panel', () => {
     const dmHtml = fs.readFileSync('public/dm.html', 'utf8');
     assert.match(dmHtml, /\.generator-scroll \{[^}]*display:flex;[^}]*flex:1;[^}]*min-height:0;[^}]*overflow:hidden;/);

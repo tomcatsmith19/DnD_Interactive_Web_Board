@@ -295,7 +295,7 @@
       margin-bottom: 10px;
     }
   </style>
-  <link rel="stylesheet" href="token-actions.css?v=16">
+  <link rel="stylesheet" href="token-actions.css?v=17">
 </head>
 
 <body>
@@ -667,13 +667,13 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-  <script src="map-drawing.js?v=24"></script>
+  <script src="map-drawing.js?v=27"></script>
   <script src="token-placement.js?v=4"></script>
     <script src="token-actions.js?v=5"></script>
     <script src="board-sync.js?v=7"></script>
-    <script src="map-stickers.js?v=35"></script>
+    <script src="map-stickers.js?v=37"></script>
     <script src="shared-timer.js?v=5"></script>
-  <script src="board-ui.js?v=9"></script>
+  <script src="board-ui.js?v=11"></script>
     <script src="reference.js?v=2"></script>
 
   <script>
@@ -806,11 +806,11 @@
       const ordered = [...monsters].sort((a,b)=>(Number(b.init)||0)-(Number(a.init)||0)||a.id.localeCompare(b.id));
       ordered.filter(monster=>monster.hiddenFromPlayers!==true&&(monster.hp>0||monster.isplayer)).forEach((monster,index)=>{
         const label=document.querySelector(`#token-${CSS.escape(monster.id)} .token-label`);
-        if(label)label.textContent=index;
+        if(label)setTokenInitiativeIndex(document.getElementById(`token-${monster.id}`),index);
       });
       ordered.filter(monster=>monster.hiddenFromPlayers!==true&&monster.hp<=0&&!monster.isplayer).forEach(monster=>{
         const label=document.querySelector(`#token-${CSS.escape(monster.id)} .token-label`);
-        if(label)label.textContent='×';
+        if(label)setTokenInitiativeIndex(document.getElementById(`token-${monster.id}`),'×');
       });
     }
 
@@ -1012,6 +1012,7 @@
         setMapContextDockCollapsed(true);
       }
       renderGroupMoveHandle(selected);
+      refreshMapObjectAttachmentLock();
     }
 
     function renderGroupMoveHandle(selected) {
@@ -1030,7 +1031,7 @@
       let dragState = null;
       handle.addEventListener('pointerdown', event => {
         event.preventDefault(); event.stopPropagation();
-        dragState = { generation: boardSync.generation, pointerId:event.pointerId, clientX:event.clientX, clientY:event.clientY, positions:selected.map(monster=>({monster,xRatio:monster.xRatio,yRatio:monster.yRatio})), sync:beginMonsterDrag(selected.map(monster=>monster.id)), drawingTranslation:drawingToolbarManager?.beginSelectionTranslation?.()||null };
+        dragState = { generation: boardSync.generation, pointerId:event.pointerId, clientX:event.clientX, clientY:event.clientY, positions:selected.map(monster=>({monster,xRatio:monster.xRatio,yRatio:monster.yRatio})), sync:beginMonsterDrag(selected.map(monster=>monster.id)), drawingTranslation:drawingToolbarManager?.beginTokenTranslation?.(selected.map(monster=>monster.id),true)||null };
         handle.dataset.dragging = 'true';
         selected.forEach(token => { const el = document.getElementById(`token-${token.id}`); if (el) el.dataset.dragging = 'true'; });
         handle.setPointerCapture?.(event.pointerId);
@@ -1044,12 +1045,12 @@
         const dyRatio=Math.min(Math.min(...selectionPoints.map(point=>1-point.y)),Math.max(Math.max(...selectionPoints.map(point=>-point.y)),rawDy));
         dragState.positions.forEach(start=>{start.monster.xRatio=start.xRatio+dxRatio;start.monster.yRatio=start.yRatio+dyRatio;positionTokenElement(start.monster, undefined, true);});
         updateMonsterDrag(dragState.sync);
-        drawingToolbarManager?.moveSelectionTranslation?.(dragState.drawingTranslation,dxRatio,dyRatio);
+        drawingToolbarManager?.moveTokenTranslation?.(dragState.drawingTranslation,dxRatio,dyRatio);
         const centerX=dragState.positions.reduce((sum,start)=>sum+start.monster.xRatio*mapWidth,0)/dragState.positions.length;
         const centerY=dragState.positions.reduce((sum,start)=>sum+start.monster.yRatio*mapHeight,0)/dragState.positions.length;
         handle.style.left=`${centerX-17}px`; handle.style.top=`${centerY-17}px`;
       });
-      handle.addEventListener('pointerup', event => { if (!dragState || event.pointerId !== dragState.pointerId || dragState.generation !== boardSync.generation) return; const movedIds=dragState.positions.map(start=>start.monster.id),sync=dragState.sync,drawingTranslation=dragState.drawingTranslation; dragState=null; handle.dataset.dragging='false'; movedIds.forEach(id=>{const el=document.getElementById(`token-${id}`);if(el)el.dataset.dragging='false';}); endMonsterDrag(sync); drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,true); });
+      handle.addEventListener('pointerup', event => { if (!dragState || event.pointerId !== dragState.pointerId || dragState.generation !== boardSync.generation) return; const movedIds=dragState.positions.map(start=>start.monster.id),sync=dragState.sync,drawingTranslation=dragState.drawingTranslation; dragState=null; handle.dataset.dragging='false'; movedIds.forEach(id=>{const el=document.getElementById(`token-${id}`);if(el)el.dataset.dragging='false';}); endMonsterDrag(sync); drawingToolbarManager?.endTokenTranslation?.(drawingTranslation,true); });
       const cancelDrag = () => {
         if (!dragState) return;
         const sync=dragState.sync;
@@ -1060,7 +1061,7 @@
         });
         dragState = null; handle.dataset.dragging = 'false';
         endMonsterDrag(sync);
-        drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,true);
+        drawingToolbarManager?.endTokenTranslation?.(drawingTranslation,true);
         boardSync.reconcile().catch(reportBoardSyncError);
       };
       handle.addEventListener('pointercancel', cancelDrag);
@@ -1264,7 +1265,20 @@
       label.style.borderRadius = '6px';
       label.style.zIndex = '10';
       label.style.pointerEvents = 'none';
-      label.textContent = '?';
+      const initiativeIndex = document.createElement('span');
+      initiativeIndex.className = 'token-initiative-index';
+      initiativeIndex.textContent = '?';
+      const attachmentLock = document.createElement('button');
+      attachmentLock.type = 'button';
+      attachmentLock.className = 'token-attachment-lock';
+      attachmentLock.hidden = true;
+      attachmentLock.addEventListener('pointerdown', event => { event.preventDefault(); event.stopPropagation(); });
+      attachmentLock.addEventListener('mousedown', event => { event.preventDefault(); event.stopPropagation(); });
+      attachmentLock.addEventListener('click', event => {
+        event.preventDefault(); event.stopPropagation();
+        toggleSelectedMapObjectAttachment(monster.id);
+      });
+      label.append(initiativeIndex, attachmentLock);
 
       const healthBar = document.createElement('div');
       healthBar.className = 'token-health-bar';
@@ -1313,7 +1327,7 @@
         dragOriginTop = el.offsetTop;
         el.style.cursor = 'grabbing';
         dragSync = beginMonsterDrag([el.id.replace('token-', '')]);
-        drawingTranslation = selectedMapTokenIds.has(el.id.replace('token-', '')) ? drawingToolbarManager?.beginSelectionTranslation?.() || null : null;
+        drawingTranslation = drawingToolbarManager?.beginTokenTranslation?.([el.id.replace('token-', '')], selectedMapTokenIds.has(el.id.replace('token-', ''))) || null;
       });
 
       document.addEventListener('mousemove', (e) => {
@@ -1327,7 +1341,7 @@
           monster.yRatio = (parseFloat(el.style.top) + TokenActions.tokenSize(monster, currentTokenSize) / 2) / mapImage.clientHeight;
           updateMonsterDrag(dragSync);
         }
-        drawingToolbarManager?.moveSelectionTranslation?.(drawingTranslation, (e.clientX-dragStartX)/scale/mapImage.clientWidth, (e.clientY-dragStartY)/scale/mapImage.clientHeight);
+        drawingToolbarManager?.moveTokenTranslation?.(drawingTranslation, (e.clientX-dragStartX)/scale/mapImage.clientWidth, (e.clientY-dragStartY)/scale/mapImage.clientHeight);
       });
 
       document.addEventListener('mouseup', () => {
@@ -1346,7 +1360,7 @@
             monster.yRatio = topPx / mapImage.clientHeight;
           }
           endMonsterDrag(dragSync); dragSync = null;
-          drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,didMove); drawingTranslation=null;
+          drawingToolbarManager?.endTokenTranslation?.(drawingTranslation,didMove); drawingTranslation=null;
           if (didMove) { el.dataset.suppressClick='true'; setTimeout(()=>{el.dataset.suppressClick='false';},0); }
         }
       });
@@ -1354,7 +1368,7 @@
       el.addEventListener('touchcancel', () => {
         isDragging = false; el.dataset.dragging = 'false';
         endMonsterDrag(dragSync); dragSync = null;
-        drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,didMove); drawingTranslation=null;
+        drawingToolbarManager?.endTokenTranslation?.(drawingTranslation,didMove); drawingTranslation=null;
         boardSync.reconcile().catch(reportBoardSyncError);
       });
       // TOUCH support for dragging
@@ -1371,7 +1385,7 @@
         dragOriginTop = el.offsetTop;
         el.style.cursor = 'grabbing';
         dragSync = beginMonsterDrag([el.id.replace('token-', '')]);
-        drawingTranslation = selectedMapTokenIds.has(el.id.replace('token-', '')) ? drawingToolbarManager?.beginSelectionTranslation?.() || null : null;
+        drawingTranslation = drawingToolbarManager?.beginTokenTranslation?.([el.id.replace('token-', '')], selectedMapTokenIds.has(el.id.replace('token-', ''))) || null;
       }, { passive: false });
 
       el.addEventListener('touchmove', (e) => {
@@ -1385,7 +1399,7 @@
           monster.yRatio = (parseFloat(el.style.top) + TokenActions.tokenSize(monster, currentTokenSize) / 2) / mapImage.clientHeight;
           updateMonsterDrag(dragSync);
         }
-        drawingToolbarManager?.moveSelectionTranslation?.(drawingTranslation, (touch.clientX-dragStartX)/scale/mapImage.clientWidth, (touch.clientY-dragStartY)/scale/mapImage.clientHeight);
+        drawingToolbarManager?.moveTokenTranslation?.(drawingTranslation, (touch.clientX-dragStartX)/scale/mapImage.clientWidth, (touch.clientY-dragStartY)/scale/mapImage.clientHeight);
       }, { passive: false });
 
       el.addEventListener('touchend', () => {
@@ -1404,7 +1418,7 @@
             monster.yRatio = topPx / mapImage.clientHeight;
           }
           endMonsterDrag(dragSync); dragSync = null;
-          drawingToolbarManager?.endSelectionTranslation?.(drawingTranslation,didMove); drawingTranslation=null;
+          drawingToolbarManager?.endTokenTranslation?.(drawingTranslation,didMove); drawingTranslation=null;
         }
       });
 
@@ -1936,6 +1950,7 @@
       rootPath: 'sticker-library/v1'
     });
     const drawingToolbarManager = setupMapDrawingTabs(sharedDrawingManager, null, measurementToolbarManager, stickerManager);
+    globalThis.mapDrawingToolbarManager = drawingToolbarManager;
     let drawingToolbarHidden = false;
     document.getElementById('toggleDrawingToolbar')?.addEventListener('click', event => {
       drawingToolbarHidden = !drawingToolbarHidden;

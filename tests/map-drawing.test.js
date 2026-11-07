@@ -55,6 +55,20 @@ test('a composite translation preserves offsets between drawings, measurements, 
   assert.ok(Math.abs((token.y - measurement.start.y) - .2) < .000001);
 });
 
+test('drawings and measurements can persistently follow an attached token', () => {
+  assert.match(source, /if \(drawing\.attachedTokenId\) sanitized\.attachedTokenId = drawing\.attachedTokenId/);
+  assert.match(source, /movingTokens\.has\(drawing\.attachedTokenId\)/);
+  assert.match(source, /attachSelectionToToken: tokenId => setCompositeAttachment\(tokenId\)/);
+  assert.match(source, /getSelectedAttachmentState\(tokenId\)/);
+  assert.doesNotMatch(source, /attachButton\.textContent = "Attach to Token"|map-object-attachment-controls/);
+  for (const page of ['dm.html', 'player.html']) {
+    const html = fs.readFileSync(`public/${page}`, 'utf8');
+    assert.match(html, /beginTokenTranslation\?\.\(\[el\.id\.replace\('token-', ''\)\]/);
+    assert.match(html, /moveTokenTranslation\?\.\(drawingTranslation/);
+    assert.match(html, /endTokenTranslation\?\.\(drawingTranslation/);
+  }
+});
+
 test('map delete shortcuts work after using the color control but preserve text editing', () => {
   assert.equal(shouldIgnoreMapDeleteTarget({ tagName: 'INPUT', type: 'color' }), false);
   assert.equal(shouldIgnoreMapDeleteTarget({ tagName: 'INPUT', type: 'number' }), true);

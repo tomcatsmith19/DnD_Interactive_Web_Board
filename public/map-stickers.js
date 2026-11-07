@@ -326,6 +326,7 @@
     let active = false;
     let selectedAsset = null;
     let selectedStickerId = "";
+    const selectedStickerIds = new Set();
     let navigationVersion = 0;
     let currentPath = rootPath;
     let currentFolders = [];
@@ -1336,6 +1337,8 @@
     function selectAsset(item) {
       if (replacementPickerStickerId) {
         selectedStickerId = replacementPickerStickerId;
+        selectedStickerIds.clear();
+        selectedStickerIds.add(selectedStickerId);
         replacementPickerStickerId = "";
         editorField("replacementPath").value = item.fullPath;
         interactionEditor.hidden = false;
@@ -1351,6 +1354,7 @@
         renderBreadcrumbs();
       }
       selectedStickerId = "";
+      selectedStickerIds.clear();
       renderStickerSelection();
       updatePlacementMode();
       status.textContent = "Click anywhere on the map to place it. Click again to stamp another, or press Esc to stop.";
@@ -1367,6 +1371,7 @@
         units: gridUnits(rootSticker.name)
       };
       selectedStickerId = "";
+      selectedStickerIds.clear();
       renderStickerSelection();
       updatePlacementMode();
       status.textContent = `Click the map to place all ${favorite.stickers.length} sticker${favorite.stickers.length === 1 ? "" : "s"} in this favorite.`;
@@ -1763,13 +1768,14 @@
 
     function renderStickerSelection() {
       layer.querySelectorAll(".map-sticker").forEach(element => {
-        element.classList.toggle("is-selected", element.dataset.stickerId === selectedStickerId && active && !selectedAsset);
+        element.classList.toggle("is-selected", selectedStickerIds.has(element.dataset.stickerId) && active && !selectedAsset);
       });
       rigLayer.replaceChildren();
       const selected = active && !selectedAsset && stickers.find(sticker => sticker.id === selectedStickerId);
       interactionButton.disabled = !selected;
       favoriteButton.disabled = !selected;
       favoriteButton.textContent = selected && favorites.some(favorite => favorite.rootId === selected.id) ? "\u2605" : "\u2606";
+      globalThis.refreshMapObjectAttachmentLock?.();
       if (!selected) return;
 
       const rig = document.createElement("div");
@@ -1877,9 +1883,21 @@
       if (!active || selectedAsset || event.button !== 0) return;
       event.preventDefault();
       event.stopImmediatePropagation();
+      if (event.ctrlKey || event.metaKey) {
+        if (selectedStickerIds.has(sticker.id)) selectedStickerIds.delete(sticker.id);
+        else selectedStickerIds.add(sticker.id);
+        selectedStickerId = selectedStickerIds.has(sticker.id) ? sticker.id : ([...selectedStickerIds].at(-1) || "");
+        renderStickerSelection();
+        globalThis.refreshMapObjectAttachmentLock?.();
+        return;
+      }
       const selectionChanged = selectedStickerId !== sticker.id;
       const editorWasOpen = !interactionEditor.hidden;
       selectedStickerId = sticker.id;
+      if (!selectedStickerIds.has(sticker.id)) {
+        selectedStickerIds.clear();
+        selectedStickerIds.add(sticker.id);
+      }
       if (selectionChanged) {
         renderStickerSelection();
         if (editorWasOpen) openInteractionEditor();
@@ -2188,6 +2206,7 @@
       if (!active || selectedAsset || !selectedStickerId) return;
       if (event.target.closest?.(".map-sticker,.map-sticker-transform-rig")) return;
       selectedStickerId = "";
+      selectedStickerIds.clear();
       renderStickerSelection();
     }, true);
     mapTransformLayer.addEventListener("mousedown", event => {
@@ -2201,6 +2220,7 @@
       if (!id) return;
       const removed = stickers.find(item => item.id === id);
       selectedStickerId = "";
+      selectedStickerIds.clear();
       closeInteractionEditor();
       const index = stickers.findIndex(item => item.id === id);
       if (index >= 0) stickers.splice(index, 1);
@@ -2272,6 +2292,7 @@
     boardSync.subscribe("stickers", (nextStickers, { reset }) => {
       if (reset) {
         selectedStickerId = "";
+        selectedStickerIds.clear();
         selectedAsset = null;
         pendingLootPlacement = null;
         localOverrides.clear();
@@ -2291,7 +2312,8 @@
         audio.removeAttribute("src");
         loopingSounds.delete(id);
       });
-      if (selectedStickerId && !stickers.some(sticker => sticker.id === selectedStickerId)) selectedStickerId = "";
+      selectedStickerIds.forEach(id => { if (!stickers.some(sticker => sticker.id === id)) selectedStickerIds.delete(id); });
+      if (selectedStickerId && !stickers.some(sticker => sticker.id === selectedStickerId)) selectedStickerId = [...selectedStickerIds].at(-1) || "";
       if (!selectedStickerId) closeInteractionEditor();
       renderStickers();
     });
@@ -2356,7 +2378,6 @@
         portalLayer.classList.toggle("is-editing", active);
         if (!active) {
           selectedAsset = null;
-          selectedStickerId = "";
           closeInteractionEditor();
           closeFavoriteDialog();
         }
@@ -2368,8 +2389,83 @@
       },
       clearSelection() {
         selectedStickerId = "";
+        selectedStickerIds.clear();
         closeInteractionEditor();
         renderStickerSelection();
+      },
+      async attachSelectionToToken(tokenId) {
+        const selected = stickers.filter(item => selectedStickerIds.has(item.id));
+        if (!selected.length) return 0;
+        try {
+          await boardSync.patchStickers(new Map(selected.map(sticker => [sticker.id, { attachedTokenId: tokenId }])), boardSync.generation);
+          selected.forEach(sticker => { sticker.attachedTokenId = tokenId; });
+          return selected.length;
+        } catch (error) {
+          reportError(error);
+          return 0;
+        }
+      },
+      async detachSelection() {
+        const selected = stickers.filter(item => selectedStickerIds.has(item.id) && item.attachedTokenId);
+        if (!selected.length) return 0;
+        try {
+          await boardSync.patchStickers(new Map(selected.map(sticker => [sticker.id, { attachedTokenId: null }])), boardSync.generation);
+          selected.forEach(sticker => { delete sticker.attachedTokenId; });
+          return selected.length;
+        } catch (error) {
+          reportError(error);
+          return 0;
+        }
+      },
+      beginTokenTranslation(tokenIds, includeSelection = false) {
+        const movingTokens = new Set(tokenIds || []);
+        return {
+          originals: new Map(stickers
+            .filter(sticker => movingTokens.has(sticker.attachedTokenId) || (includeSelection && selectedStickerIds.has(sticker.id)))
+            .map(sticker => [sticker.id, { ...sticker }]))
+        };
+      },
+      moveTokenTranslation(session, dx, dy) {
+        session?.originals.forEach((original, id) => {
+          const sticker = stickers.find(item => item.id === id);
+          if (!sticker) return;
+          const halfWidth = (Number(sticker.widthRatio) || .05) / 2;
+          const halfHeight = (Number(sticker.heightRatio) || .05) / 2;
+          sticker.x = roundRatio(clamp(Number(original.x) + dx, halfWidth, 1 - halfWidth));
+          sticker.y = roundRatio(clamp(Number(original.y) + dy, halfHeight, 1 - halfHeight));
+          localOverrides.set(id, { ...sticker });
+        });
+        renderStickers();
+      },
+      async endTokenTranslation(session, moved = true) {
+        if (!session) return;
+        if (!moved) {
+          session.originals.forEach((original, id) => {
+            const sticker = stickers.find(item => item.id === id);
+            if (sticker) Object.assign(sticker, original);
+            localOverrides.delete(id);
+          });
+          renderStickers();
+          return;
+        }
+        const changes = new Map([...session.originals.keys()].map(id => {
+          const sticker = stickers.find(item => item.id === id);
+          return [id, { x: sticker.x, y: sticker.y }];
+        }));
+        try {
+          if (changes.size) await boardSync.patchStickers(changes, boardSync.generation);
+          session.originals.forEach((_, id) => localOverrides.delete(id));
+        } catch (error) {
+          session.originals.forEach((_, id) => localOverrides.delete(id));
+          reportError(error);
+          boardSync.reconcile().catch(() => {});
+        }
+      },
+      getSelectedAttachments() {
+        return stickers.filter(sticker => selectedStickerIds.has(sticker.id)).map(sticker => ({
+          id: sticker.id,
+          attachedTokenId: sticker.attachedTokenId || null
+        }));
       },
       setPanelCloseHandler(handler) {
         requestPanelClose = typeof handler === "function" ? handler : () => {};
@@ -2384,6 +2480,7 @@
         teleportDragSession = null;
         localOverrides.clear();
         selectedStickerId = "";
+        selectedStickerIds.clear();
         selectedAsset = null;
         pendingLootPlacement = null;
         lootPopup.hidden = true;

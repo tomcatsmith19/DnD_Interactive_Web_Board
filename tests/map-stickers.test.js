@@ -129,9 +129,9 @@ test('both boards load the sticker browser and place its tab before measurement'
   const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
   for (const role of ['dm', 'player']) {
     const html = fs.readFileSync(`public/${role}.html`, 'utf8');
-    assert.ok(html.includes('map-stickers.js?v=35'));
+    assert.ok(html.includes('map-stickers.js?v=37'));
     assert.ok(html.includes('token-placement.js?v=4'));
-    assert.ok(html.includes('map-drawing.js?v=24'));
+    assert.ok(html.includes('map-drawing.js?v=27'));
     assert.match(html, /setupMapDrawingTabs\([^\n]+measurementToolbarManager, stickerManager\)/);
   }
   assert.ok(drawing.indexOf('label: "Stickers"') < drawing.indexOf('label: "Measurement"'));
@@ -260,6 +260,20 @@ test('sticker tiles are 25 percent smaller and selections reveal their containin
     containingStickerFolder('sticker-library/v1/Buildings/Castles/Tower.webp'),
     'sticker-library/v1/Buildings/Castles'
   );
+});
+
+test('selected stickers can attach to tokens and translate with them', () => {
+  const browser = fs.readFileSync('public/map-stickers.js', 'utf8');
+  const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
+  assert.match(browser, /attachedTokenId: tokenId/);
+  assert.match(browser, /movingTokens\.has\(sticker\.attachedTokenId\)/);
+  assert.match(browser, /const selectedStickerIds = new Set\(\)/);
+  assert.match(browser, /event\.ctrlKey \|\| event\.metaKey/);
+  assert.match(browser, /selectedStickerIds\.has\(sticker\.id\)/);
+  assert.match(browser, /patchStickers\(changes, boardSync\.generation\)/);
+  assert.match(drawing, /stickerManager\?\.beginTokenTranslation/);
+  assert.match(drawing, /stickerManager\?\.moveTokenTranslation/);
+  assert.match(drawing, /stickerManager\?\.endTokenTranslation/);
 });
 
 test('the search worker returns fuzzy matches from the generated catalog', async () => {

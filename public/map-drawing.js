@@ -353,6 +353,20 @@
           .filter(drawing => selectedDrawingIds.has(drawing.id))
           .map(drawing => [drawing.id, cloneDrawing(drawing)]));
       },
+      captureTokenTranslation(tokenIds, includeSelection) {
+        const movingTokens = new Set(tokenIds || []);
+        return new Map(drawings
+          .filter(drawing => movingTokens.has(drawing.attachedTokenId) || (includeSelection && selectedDrawingIds.has(drawing.id)))
+          .map(drawing => [drawing.id, cloneDrawing(drawing)]));
+      },
+      setSelectedAttachment(attachedTokenId) {
+        const selected = drawings.filter(drawing => selectedDrawingIds.has(drawing.id));
+        selected.forEach(drawing => {
+          if (attachedTokenId) drawing.attachedTokenId = attachedTokenId;
+          else delete drawing.attachedTokenId;
+        });
+        return selected;
+      },
       applyTranslation(originals, dx, dy) {
         originals.forEach((original, id) => {
           const drawing = drawings.find(item => item.id === id);
@@ -976,6 +990,7 @@
 
     function renderAllSelections() {
       selectionRegistry.forEach(bridge => bridge.render());
+      globalThis.refreshMapObjectAttachmentLock?.();
     }
 
     function beginCompositeTranslation() {
@@ -989,6 +1004,17 @@
         ? { ...rotationPivotState.customPoint }
         : null;
       return { groups, points, selectionKey, pivotOrigin };
+    }
+
+    function beginTokenTranslation(tokenIds, includeSelection = false) {
+      const groups = selectionRegistry.map(bridge => ({
+        bridge,
+        originals: bridge.captureTokenTranslation(tokenIds, includeSelection)
+      })).filter(group => group.originals.size);
+      const { width, height } = getMapSize();
+      const points = groups.flatMap(group => [...group.originals.values()].flatMap(drawing =>
+        group.bridge.getSelectionPoints(drawing).map(point => ({ x: point.x / width, y: point.y / height }))));
+      return { groups, points, selectionKey: '', pivotOrigin: null };
     }
 
     function moveCompositeTranslation(session, dx, dy) {
@@ -1008,6 +1034,21 @@
         if (moved) group.bridge.queue(true);
         else group.bridge.clearTranslationOverrides();
       });
+    }
+
+    async function setCompositeAttachment(attachedTokenId) {
+      const selected = selectionRegistry.flatMap(bridge => bridge.setSelectedAttachment(attachedTokenId));
+      if (!selected.length) return 0;
+      renderAllSelections();
+      try {
+        const changes = new Map(selected.map(drawing => [drawing.id, { attachedTokenId: attachedTokenId || null }]));
+        await boardSync.patchDrawings(syncLayer, changes, boardSync.generation);
+        return selected.length;
+      } catch (error) {
+        if (typeof reportBoardSyncError === 'function') reportBoardSyncError(error);
+        boardSync.reconcile().catch(() => {});
+        return 0;
+      }
     }
 
     function createRotationControls(entries) {
@@ -1225,6 +1266,7 @@
         strokeRatio: drawing.strokeRatio,
         rotation: Number(Number(drawing.rotation || 0).toFixed(2))
       };
+      if (drawing.attachedTokenId) sanitized.attachedTokenId = drawing.attachedTokenId;
       if (drawing.kind === "measurement") {
         sanitized.kind = "measurement";
         sanitized.distanceFeet = Math.max(1, Math.round(Number(drawing.distanceFeet) || 1));
@@ -1772,8 +1814,15 @@
       deleteSelection: deleteCompositeSelection,
       discardLocalState,
       beginSelectionTranslation: beginCompositeTranslation,
+      beginTokenTranslation,
       moveSelectionTranslation: moveCompositeTranslation,
       endSelectionTranslation: endCompositeTranslation,
+      attachSelectionToToken: tokenId => setCompositeAttachment(tokenId),
+      detachSelection: () => setCompositeAttachment(null),
+      getSelectedAttachments: () => getCompositeSelection().map(entry => ({
+        id: entry.drawing.id,
+        attachedTokenId: entry.drawing.attachedTokenId || null
+      })),
       updateSize: updateSvgSize
     };
   }
@@ -1891,8 +1940,46 @@
         return tabs.reduce((count, tab) => count + (tab.manager.selectWithinLasso?.(polygon, additive) || 0), 0);
       },
       beginSelectionTranslation() { return drawingManager.beginSelectionTranslation?.(); },
+      beginTokenTranslation(tokenIds, includeSelection = false) {
+        return {
+          drawing: drawingManager.beginTokenTranslation?.(tokenIds, includeSelection),
+          sticker: stickerManager?.beginTokenTranslation?.(tokenIds, includeSelection)
+        };
+      },
       moveSelectionTranslation(session, dx, dy) { drawingManager.moveSelectionTranslation?.(session, dx, dy); },
-      endSelectionTranslation(session, moved = true) { drawingManager.endSelectionTranslation?.(session, moved); }
+      moveTokenTranslation(session, dx, dy) {
+        drawingManager.moveSelectionTranslation?.(session?.drawing, dx, dy);
+        stickerManager?.moveTokenTranslation?.(session?.sticker, dx, dy);
+      },
+      endSelectionTranslation(session, moved = true) { drawingManager.endSelectionTranslation?.(session, moved); },
+      endTokenTranslation(session, moved = true) {
+        drawingManager.endSelectionTranslation?.(session?.drawing, moved);
+        return stickerManager?.endTokenTranslation?.(session?.sticker, moved);
+      },
+      async attachSelectionToToken(tokenId) {
+        const counts = await Promise.all([
+          drawingManager.attachSelectionToToken?.(tokenId) || 0,
+          stickerManager?.attachSelectionToToken?.(tokenId) || 0
+        ]);
+        return counts.reduce((sum, count) => sum + Number(count || 0), 0);
+      },
+      async detachSelection() {
+        const counts = await Promise.all([
+          drawingManager.detachSelection?.() || 0,
+          stickerManager?.detachSelection?.() || 0
+        ]);
+        return counts.reduce((sum, count) => sum + Number(count || 0), 0);
+      },
+      getSelectedAttachmentState(tokenId) {
+        const items = [
+          ...(drawingManager.getSelectedAttachments?.() || []),
+          ...(stickerManager?.getSelectedAttachments?.() || [])
+        ];
+        return {
+          count: items.length,
+          allAttachedToToken: items.length > 0 && items.every(item => item.attachedTokenId === tokenId)
+        };
+      }
     };
   }
 

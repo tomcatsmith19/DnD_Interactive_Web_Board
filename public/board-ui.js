@@ -72,6 +72,77 @@ function syncMonsterPositionsToFirebase(ids) {
     return runBoardWrite(boardSync.patchMany(changes, targets[0]?._boardGeneration || boardSync.generation));
 }
 
+async function attachSelectedMapObjects() {
+    const tokenIds = monsters.filter(token => selectedMapTokenIds.has(token.id)).map(token => token.id);
+    if (tokenIds.length !== 1) {
+        reportBoardSyncError(new Error('Select exactly one token, then select the drawings, measurements, or sticker to attach.'));
+        return false;
+    }
+    const count = await globalThis.mapDrawingToolbarManager?.attachSelectionToToken?.(tokenIds[0]);
+    if (!count) {
+        reportBoardSyncError(new Error('Select at least one drawing, measurement, or sticker first.'));
+        return false;
+    }
+    const status = document.getElementById('boardSyncStatus');
+    if (status) status.hidden = true;
+    return true;
+}
+
+async function detachSelectedMapObjects() {
+    const count = await globalThis.mapDrawingToolbarManager?.detachSelection?.();
+    if (!count) {
+        reportBoardSyncError(new Error('Select at least one attached drawing, measurement, or sticker first.'));
+        return false;
+    }
+    const status = document.getElementById('boardSyncStatus');
+    if (status) status.hidden = true;
+    return true;
+}
+
+function setTokenInitiativeIndex(element, value) {
+    const label = element?.querySelector?.('.token-label');
+    if (!label) return;
+    let index = label.querySelector('.token-initiative-index');
+    if (!index) {
+        index = document.createElement('span');
+        index.className = 'token-initiative-index';
+        label.prepend(index);
+    }
+    index.textContent = value;
+}
+
+function refreshMapObjectAttachmentLock() {
+    document.querySelectorAll('.token-attachment-lock').forEach(button => {
+        button.classList.remove('is-visible', 'is-locked');
+        button.hidden = true;
+    });
+    const tokenIds = monsters.filter(token => selectedMapTokenIds.has(token.id)).map(token => token.id);
+    if (tokenIds.length !== 1) return;
+    const state = globalThis.mapDrawingToolbarManager?.getSelectedAttachmentState?.(tokenIds[0]);
+    if (!state?.count) return;
+    const button = document.getElementById(`token-${tokenIds[0]}`)?.querySelector?.('.token-attachment-lock');
+    if (!button) return;
+    button.hidden = false;
+    button.classList.add('is-visible');
+    button.classList.toggle('is-locked', state.allAttachedToToken);
+    button.dataset.tokenId = tokenIds[0];
+    button.title = state.allAttachedToToken ? `Unlock ${state.count} map object${state.count === 1 ? '' : 's'}` : `Lock ${state.count} map object${state.count === 1 ? '' : 's'} to this token`;
+    button.setAttribute('aria-label', button.title);
+    button.setAttribute('aria-pressed', String(state.allAttachedToToken));
+    button.innerHTML = state.allAttachedToToken
+        ? '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>'
+        : '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M9 10V7a4 4 0 0 1 7-2.6"/></svg>';
+}
+
+async function toggleSelectedMapObjectAttachment(tokenId) {
+    const manager = globalThis.mapDrawingToolbarManager;
+    const state = manager?.getSelectedAttachmentState?.(tokenId);
+    if (!state?.count) return;
+    if (state.allAttachedToToken) await manager.detachSelection();
+    else await manager.attachSelectionToToken(tokenId);
+    refreshMapObjectAttachmentLock();
+}
+
 function dragPatch(session, active) {
     const changes = new Map();
     const dragUpdatedAt = Date.now();

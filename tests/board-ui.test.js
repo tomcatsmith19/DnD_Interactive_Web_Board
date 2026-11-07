@@ -219,3 +219,17 @@ test('token hit testing uses the visible circle rather than an overlapping squar
         assert.match(html, /img\.style\.pointerEvents = 'auto'/);
     }
 });
+
+test('a contextual lock beside the initiative index replaces global attachment buttons', () => {
+    const boardUI = fs.readFileSync('public/board-ui.js', 'utf8');
+    const tokenCSS = fs.readFileSync('public/token-actions.css', 'utf8');
+    assert.match(boardUI, /function refreshMapObjectAttachmentLock\(\)/);
+    assert.match(boardUI, /state\.allAttachedToToken[\s\S]*toggleSelectedMapObjectAttachment/);
+    assert.match(tokenCSS, /\.token-attachment-lock \{[^}]*display:none/);
+    for (const role of ['dm', 'player']) {
+        const html = fs.readFileSync(`public/${role}.html`, 'utf8');
+        assert.match(html, /attachmentLock\.className = 'token-attachment-lock'/);
+        assert.match(html, /label\.append\(initiativeIndex, attachmentLock\)/);
+        assert.doesNotMatch(html, /map-attachment-actions|Attach selected map objects|Detach selected map objects/);
+    }
+});
