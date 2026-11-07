@@ -61,6 +61,8 @@ test('drawings and measurements can persistently follow an attached token', () =
   assert.match(source, /attachSelectionToToken: tokenId => setCompositeAttachment\(tokenId\)/);
   assert.match(source, /getSelectedAttachmentState\(tokenId\)/);
   assert.doesNotMatch(source, /attachButton\.textContent = "Attach to Token"|map-object-attachment-controls/);
+  assert.match(source, /group\.bridge\.queue\(false, group\.originals\.keys\(\)\)/);
+  assert.match(source, /group\.bridge\.queue\(true, group\.originals\.keys\(\)\)/);
   for (const page of ['dm.html', 'player.html']) {
     const html = fs.readFileSync(`public/${page}`, 'utf8');
     assert.match(html, /beginTokenTranslation\?\.\(\[el\.id\.replace\('token-', ''\)\]/);

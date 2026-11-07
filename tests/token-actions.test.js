@@ -109,6 +109,7 @@ test('advanced action controls exist on both boards with the requested defaults'
     assert.match(html,/id="mapSuccessConditionAction"[\s\S]*?Remove condition/);
     assert.match(html,/id="mapActionResultsDialog"[\s\S]*?id="mapActionResultList"[^>]*aria-live="polite"/);
     assert.match(html,/id="mapShowRolledDice"[\s\S]*?id="mapShareActionDice"/);
+    assert.equal((html.match(/class="map-action-d20-icon"/g)||[]).length,page==='dm'?4:2);
     assert.doesNotMatch(html,/mapShowActionSummary|Open result summary/);
     assert.doesNotMatch(html,/>Damage on (?:failed|successful) defense</);
     assert.match(html,/class="map-results-history"[\s\S]*?<svg/);
@@ -118,10 +119,17 @@ test('advanced action controls exist on both boards with the requested defaults'
   }
 });
 
+test('advanced dice preferences reuse the Dice tab d20 asset',()=>{
+  const css=fs.readFileSync('public/token-actions.css','utf8');
+  assert.match(css,/\.map-action-d20-icon[^}]*d20-black\.png/);
+});
+
 test('advanced action dice reuse resolved d20 values in the shared 3D roller',()=>{
   const dice=fs.readFileSync('public/dice-roller-3d.js','utf8'),boardUI=fs.readFileSync('public/board-ui.js','utf8');
   assert.match(dice,/rollResolved\(request, values, share = false\)/);
-  assert.match(dice,/dice:\[\{ sides:20, count:rolls\.length, rolls \}\]/);
+  assert.match(dice,/rollResolvedDice\(request, groups, share = false\)/);
+  assert.match(dice,/rolls\.length \? \[\{sides:20,rolls\}\] : \[\]/);
+  assert.match(dice,/return \{sides,count:rolls\.length,rolls\}/);
   assert.match(boardUI,/rollAdvancedActionDice\(advancedResults\)/);
   assert.match(boardUI,/diceRoller3d\.rollResolved/);
 });
@@ -162,6 +170,6 @@ test('DM action panel includes a player-visibility eye beside the token name',()
   assert.match(css,/\.token-player-visibility \{[^}]*width:34px/);
   assert.match(boardUI,/classList\.toggle\('is-hidden-from-players', boardPageRole === 'dm' && token\.hiddenFromPlayers === true\)/);
   assert.match(css,/\.monster-token\.is-hidden-from-players::after \{[^}]*data:image\/svg\+xml/);
-  assert.match(dm,/token-actions\.css\?v=21/);
-  assert.match(player,/token-actions\.css\?v=21/);
+  assert.match(dm,/token-actions\.css\?v=22/);
+  assert.match(player,/token-actions\.css\?v=22/);
 });

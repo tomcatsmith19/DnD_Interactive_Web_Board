@@ -2370,6 +2370,39 @@
       loadFolder(rootPath);
     }).catch(reportError);
 
+    function tokenTranslationChanges(session) {
+      return new Map([...session.originals.keys()].map(id => {
+        const sticker = stickers.find(item => item.id === id);
+        return [id, { x: sticker.x, y: sticker.y }];
+      }));
+    }
+
+    function flushTokenTranslation(session, final = false) {
+      if (session.flushTimer) clearTimeout(session.flushTimer);
+      session.flushTimer = null;
+      const changes = session.pending;
+      session.pending = null;
+      if (changes?.size) {
+        session.writeChain = session.writeChain
+          .then(() => boardSync.patchStickers(changes, session.generation))
+          .catch(error => {
+            reportError(error);
+            boardSync.reconcile().catch(() => {});
+          });
+      }
+      if (!final) return session.writeChain;
+      return session.writeChain.finally(() => {
+        session.originals.forEach((_, id) => localOverrides.delete(id));
+      });
+    }
+
+    function queueTokenTranslation(session) {
+      if (!session?.originals.size) return;
+      session.pending = tokenTranslationChanges(session);
+      if (session.flushTimer) clearTimeout(session.flushTimer);
+      session.flushTimer = setTimeout(() => flushTokenTranslation(session), 50);
+    }
+
     return {
       toolbar,
       setActive(isActive) {
@@ -2420,6 +2453,10 @@
       beginTokenTranslation(tokenIds, includeSelection = false) {
         const movingTokens = new Set(tokenIds || []);
         return {
+          generation: boardSync.generation,
+          flushTimer: null,
+          pending: null,
+          writeChain: Promise.resolve(),
           originals: new Map(stickers
             .filter(sticker => movingTokens.has(sticker.attachedTokenId) || (includeSelection && selectedStickerIds.has(sticker.id)))
             .map(sticker => [sticker.id, { ...sticker }]))
@@ -2436,30 +2473,27 @@
           localOverrides.set(id, { ...sticker });
         });
         renderStickers();
+        queueTokenTranslation(session);
       },
       async endTokenTranslation(session, moved = true) {
         if (!session) return;
         if (!moved) {
+          if (session.flushTimer) clearTimeout(session.flushTimer);
+          session.flushTimer = null;
+          session.pending = new Map([...session.originals].map(([id, original]) => [id, { x: original.x, y: original.y }]));
           session.originals.forEach((original, id) => {
             const sticker = stickers.find(item => item.id === id);
             if (sticker) Object.assign(sticker, original);
-            localOverrides.delete(id);
           });
           renderStickers();
+          await flushTokenTranslation(session, true);
           return;
         }
-        const changes = new Map([...session.originals.keys()].map(id => {
+        session.pending = new Map([...session.originals.keys()].map(id => {
           const sticker = stickers.find(item => item.id === id);
           return [id, { x: sticker.x, y: sticker.y }];
         }));
-        try {
-          if (changes.size) await boardSync.patchStickers(changes, boardSync.generation);
-          session.originals.forEach((_, id) => localOverrides.delete(id));
-        } catch (error) {
-          session.originals.forEach((_, id) => localOverrides.delete(id));
-          reportError(error);
-          boardSync.reconcile().catch(() => {});
-        }
+        await flushTokenTranslation(session, true);
       },
       getSelectedAttachments() {
         return stickers.filter(sticker => selectedStickerIds.has(sticker.id)).map(sticker => ({

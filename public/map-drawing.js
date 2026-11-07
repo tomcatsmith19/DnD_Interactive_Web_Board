@@ -324,7 +324,7 @@
       getPivot: drawing => getDrawingPivot(drawing),
       clear: () => selectedDrawingIds.clear(),
       render: () => renderDrawings(),
-      queue: final => queueMovedDrawings(final),
+      queue: (final, drawingIds) => queueMovedDrawings(final, drawingIds),
       applySelectedColor(color) {
         const selected = drawings.filter(drawing => selectedDrawingIds.has(drawing.id));
         selected.forEach(drawing => { drawing.color = color; });
@@ -888,9 +888,10 @@
       return points.map(point => rotatePoint(point, pivot, drawing.rotation));
     }
 
-    function queueMovedDrawings(final = false) {
+    function queueMovedDrawings(final = false, drawingIds = null) {
+      const includedIds = drawingIds ? new Set(drawingIds) : selectedDrawingIds;
       pendingMoveChanges = new Map(drawings
-        .filter(drawing => selectedDrawingIds.has(drawing.id))
+        .filter(drawing => includedIds.has(drawing.id))
         .map(drawing => [drawing.id, sanitizeDrawing(drawing)]));
       if (moveFlushTimer) clearTimeout(moveFlushTimer);
       const flush = () => {
@@ -1025,13 +1026,13 @@
         rotationPivotState.customPoint = { x: session.pivotOrigin.x + dx * width, y: session.pivotOrigin.y + dy * height };
       }
       renderAllSelections();
-      session.groups.forEach(group => group.bridge.queue(false));
+      session.groups.forEach(group => group.bridge.queue(false, group.originals.keys()));
     }
 
     function endCompositeTranslation(session, moved = true) {
       if (!session) return;
       session.groups.forEach(group => {
-        if (moved) group.bridge.queue(true);
+        if (moved) group.bridge.queue(true, group.originals.keys());
         else group.bridge.clearTranslationOverrides();
       });
     }

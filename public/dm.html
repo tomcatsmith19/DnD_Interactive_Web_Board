@@ -212,10 +212,25 @@
         .dm-initiative-table-scroll::-webkit-scrollbar-track { background:#21130c; border-radius:8px; }
         .dm-initiative-table-scroll::-webkit-scrollbar-thumb { background:#8a6643; border:2px solid #21130c; border-radius:8px; }
         .dm-initiative-table-scroll::-webkit-scrollbar-thumb:hover { background:#f4d76d; }
-        .dm-initiative-header { display:flex; flex:none; align-items:center; gap:8px; margin-bottom:8px; }
+        .dm-initiative-header { position:relative; display:flex; flex:none; align-items:center; gap:8px; margin-bottom:8px; }
         .dm-initiative-header h2 { margin:0; }
-        .encounter-add-monster.initiative-add-monster { margin-left:auto; color:#123116; background:#32cd32; border-color:#72df91; }
+        .dm-initiative-header-actions { position:relative; display:flex; align-items:center; gap:6px; margin-left:auto; }
+        .encounter-add-monster.initiative-add-monster { color:#123116; background:#32cd32; border-color:#72df91; }
         .encounter-add-monster.initiative-add-monster:hover { background:#45dc45; filter:none; }
+        .initiative-sync-button { display:grid; place-items:center; width:34px; height:34px; padding:5px; color:#f4d76d; background:#2b190f; border:1px solid #8a6643; border-radius:5px; cursor:pointer; }
+        .initiative-sync-button svg { width:23px; height:23px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .initiative-sync-button:disabled { opacity:.4; cursor:not-allowed; }
+        .initiative-sync-popover { position:absolute; top:calc(100% + 7px); right:40px; z-index:8; width:238px; box-sizing:border-box; padding:10px; color:#fff; background:#21130c; border:1px solid #8a6643; border-radius:7px; box-shadow:0 8px 24px rgba(0,0,0,.55); }
+        .initiative-sync-popover[hidden] { display:none; }
+        .initiative-sync-title { margin:0 0 8px; color:#f4d76d; font-weight:bold; }
+        .initiative-sync-options { display:grid; grid-template-columns:1fr 1fr; gap:6px 10px; }
+        .initiative-sync-options label { display:flex; align-items:center; gap:5px; font-size:.78rem; cursor:pointer; }
+        .initiative-sync-options input[type="radio"] { width:auto; margin:0; accent-color:#f4d76d; }
+        .initiative-sync-custom { display:flex; align-items:center; gap:6px; margin-top:8px; font-size:.78rem; }
+        .initiative-sync-custom input { width:58px; box-sizing:border-box; padding:3px; color:#fff; background:#2b190f; border:1px solid #8a6643; border-radius:4px; }
+        .initiative-sync-preview { min-height:1.2em; margin:8px 0; color:#d8c9b6; font-size:.75rem; }
+        .initiative-sync-apply { width:100%; padding:6px 9px; color:#1d1009; background:#f4d76d; border:0; border-radius:4px; font-weight:bold; cursor:pointer; }
+        .initiative-sync-apply:disabled { opacity:.45; cursor:not-allowed; }
         .dm-initiative-table { width:100%; border-collapse:collapse; background:#3d2718; color:white; font-size:.82rem; }
         .dm-initiative-table th,.dm-initiative-table td { padding:6px; border:1px solid #765133; }
         .dm-initiative-table thead th { position:sticky; top:-2px; z-index:2; background:#3d2718; box-shadow:0 -2px 0 #3d2718; }
@@ -874,7 +889,8 @@
             padding: 5px;
         }
     </style>
-<link rel="stylesheet" href="token-actions.css?v=21">
+<link rel="stylesheet" href="token-actions.css?v=22">
+<link rel="stylesheet" href="group-action-planner.css?v=4">
 </head>
 
 <div class="main-layout">
@@ -1389,7 +1405,7 @@
                 <button id="dmReferenceButton" type="button" onclick="toggleDmLeftPanel('reference')" aria-label="Reference" title="Reference"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 13c-2 3-5 8-5 16 0 6 5 8 13 8s13-2 13-8c0-8-3-13-5-16"/><path d="M12 13c4 2 12 2 16 0l-3-7-5 4-5-4z"/><path d="M11 17c6 2 12 2 18 0"/><path d="M16 24c2-2 6-2 8 0M15 29c3-2 7-2 10 0"/></svg></button>
             </nav>
             <div id="dmInitiativeContent" class="dm-initiative-content dm-left-panel-content">
-                <div class="dm-initiative-header"><h2>Initiative</h2><button id="initiativeAddMonsterBtn" class="encounter-add-monster initiative-add-monster" type="button" aria-label="Add Monster to Initiative" title="Add Monster to Initiative"><span class="encounter-add-symbol" aria-hidden="true">+</span><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 9 3 3l8 3M21 9l4-6-8 3M7 10c0-5 14-5 14 0v6c0 5-3 9-7 9s-7-4-7-9zM10 14h.01M18 14h.01M11 19c2 1 4 1 6 0M14 16v2"/></svg></button></div>
+                <div class="dm-initiative-header"><h2>Initiative</h2><div class="dm-initiative-header-actions"><button id="initiativeSyncBtn" class="initiative-sync-button" type="button" aria-label="Synchronize selected initiatives" title="Synchronize selected initiatives" aria-expanded="false" aria-controls="initiativeSyncPopover" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h10M5 12h10M5 19h10M19 4v16M16.5 6.5 19 4l2.5 2.5M16.5 17.5 19 20l2.5-2.5"/></svg></button><button id="initiativeAddMonsterBtn" class="encounter-add-monster initiative-add-monster" type="button" aria-label="Add Monster to Initiative" title="Add Monster to Initiative"><span class="encounter-add-symbol" aria-hidden="true">+</span><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 9 3 3l8 3M21 9l4-6-8 3M7 10c0-5 14-5 14 0v6c0 5-3 9-7 9s-7-4-7-9zM10 14h.01M18 14h.01M11 19c2 1 4 1 6 0M14 16v2"/></svg></button><div id="initiativeSyncPopover" class="initiative-sync-popover" hidden><p class="initiative-sync-title">Synchronize initiative</p><div class="initiative-sync-options"><label><input type="radio" name="initiativeSyncMode" value="highest" checked> Last</label><label><input type="radio" name="initiativeSyncMode" value="lowest"> First</label><label><input type="radio" name="initiativeSyncMode" value="median"> Median</label><label><input type="radio" name="initiativeSyncMode" value="custom"> Custom</label></div><label class="initiative-sync-custom">Initiative <input id="initiativeSyncCustom" type="number" step="1" value="10" disabled></label><p id="initiativeSyncPreview" class="initiative-sync-preview" aria-live="polite"></p><button id="initiativeSyncApply" class="initiative-sync-apply" type="button">Apply</button></div></div></div>
                 <div class="dm-initiative-subtabs" role="tablist" aria-label="Initiative tracker views">
                     <button id="initiativeTableTabButton" class="dm-initiative-subtab is-active" type="button" role="tab" aria-selected="true" aria-controls="initiativeTableTab" onclick="showInitiativeSubtab('table')">Table</button>
                     <button id="initiativeStatblockTabButton" class="dm-initiative-subtab" type="button" role="tab" aria-selected="false" aria-controls="initiativeStatblockTab" onclick="showInitiativeSubtab('statblock')">Stat Block</button>
@@ -1492,6 +1508,11 @@
                                 </div>
                                 <button type="button" class="map-remove" onclick="applyMapTokenAction('removeCreature')" aria-label="Remove selected creatures" title="Remove selected creatures">Remove</button>
                             </div>
+                            <nav class="map-action-tabs" role="tablist" aria-label="Action modes">
+                                <button id="mapReceiverActionsTab" class="map-action-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="mapReceiverActionsPane"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/></svg><span>Defenders</span></button>
+                                <button id="mapGroupActionsTab" class="map-action-tab" type="button" role="tab" aria-selected="false" aria-controls="mapGroupActionsPane" disabled><span class="map-action-tab-icon" aria-hidden="true">⚔</span><span>Attackers</span></button>
+                            </nav>
+                            <div id="mapReceiverActionsPane" class="map-action-tab-pane is-active" role="tabpanel" aria-labelledby="mapReceiverActionsTab">
                             <div class="map-health-actions">
                                 <button type="button" class="map-damage" onclick="applyMapTokenAction('damage')">Damage</button>
                                 <input id="mapActionAmount" type="number" min="0" step="1" value="0" aria-label="Damage or healing amount">
@@ -1519,12 +1540,20 @@
                                     </div>
                                     <datalist id="mapConditionChoices"></datalist>
                                 </div>
-                                <div class="map-advanced-footer"><div class="map-advanced-preferences"><label title="Animate each target's d20 on this screen"><input id="mapShowRolledDice" type="checkbox"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M1 12s5-8 12-8 12 8 12 8-5 8-12 8S1 12 1 12Z"/><circle cx="13" cy="12" r="3"/><path d="m29 5 9 4v10l-9-4zM29 5l-5 5v9l5-4M24 10l9 4 5-5"/></svg><span>Show rolled dice</span></label><label title="Animate these dice on every active participant's screen"><input id="mapShareActionDice" type="checkbox"><svg viewBox="0 0 44 24" aria-hidden="true"><circle cx="7" cy="7" r="3"/><circle cx="19" cy="7" r="3"/><path d="M1 18c0-5 2-7 6-7s6 2 6 7M13 18c0-5 2-7 6-7 2 0 4 1 5 3"/><path d="m32 5 10 4v10l-10-4zM32 5l-5 5v9l5-4M27 10l10 4 5-5"/></svg><span>Share dice roll</span></label></div><div class="map-advanced-actions"><button id="mapViewActionResults" class="map-results-history" type="button" onclick="openAdvancedActionResults()" aria-label="View last results" title="View last results" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5v5h5M5 10a8 8 0 1 1 1 7M12 7v5l3 2"/></svg></button><button class="map-advanced-apply" type="button" onclick="applyMapTokenAction('damage')">Apply</button></div></div>
+                                <div class="map-advanced-footer"><div class="map-advanced-preferences"><label title="Animate each target's d20 on this screen"><input id="mapShowRolledDice" type="checkbox"><span class="map-action-roll-icon" aria-hidden="true"><svg viewBox="0 0 26 24"><path d="M1 12s5-8 12-8 12 8 12 8-5 8-12 8S1 12 1 12Z"/><circle cx="13" cy="12" r="3"/></svg><span class="map-action-d20-icon"></span></span><span>Show rolled dice</span></label><label title="Animate these dice on every active participant's screen"><input id="mapShareActionDice" type="checkbox"><span class="map-action-roll-icon" aria-hidden="true"><svg viewBox="0 0 26 24"><circle cx="7" cy="7" r="3"/><circle cx="19" cy="7" r="3"/><path d="M1 18c0-5 2-7 6-7s6 2 6 7M13 18c0-5 2-7 6-7 2 0 4 1 5 3"/></svg><span class="map-action-d20-icon"></span></span><span>Share dice roll</span></label></div><div class="map-advanced-actions"><button id="mapViewActionResults" class="map-results-history" type="button" onclick="openAdvancedActionResults()" aria-label="View last results" title="View last results" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5v5h5M5 10a8 8 0 1 1 1 7M12 7v5l3 2"/></svg></button><button class="map-advanced-apply" type="button" onclick="applyMapTokenAction('damage')">Apply</button></div></div>
                             </details>
                             <dialog id="mapActionResultsDialog" class="map-action-results-dialog"><div class="map-action-results-header"><h3>Action results</h3><button type="button" onclick="this.closest('dialog').close()" aria-label="Close results">×</button></div><div id="mapActionResultList" class="map-action-results" role="status" aria-live="polite"></div></dialog>
                             <div class="map-immediate-conditions-title">Immediate conditions</div>
                             <input id="mapConditionSearch" class="map-condition-search" type="search" placeholder="Search conditions…" aria-label="Search conditions">
                             <div id="mapConditionsGrid" class="map-conditions-grid" role="group" aria-label="Conditions"></div>
+                            </div>
+                            <div id="mapGroupActionsPane" class="map-action-tab-pane" role="tabpanel" aria-labelledby="mapGroupActionsTab" hidden>
+                                <div id="mapGroupActionPlanner" class="map-group-action-planner" hidden>
+                                    <p id="mapGroupActionStatus" class="group-action-status" hidden></p>
+                                    <div class="group-action-dice-options"><label title="Animate this action's attack and damage dice on this screen"><input id="mapGroupShowRolledDice" type="checkbox"><span class="map-action-roll-icon" aria-hidden="true"><svg viewBox="0 0 26 24"><path d="M1 12s5-8 12-8 12 8 12 8-5 8-12 8S1 12 1 12Z"/><circle cx="13" cy="12" r="3"/></svg><span class="map-action-d20-icon"></span></span><span>Show rolled dice</span></label><label title="Animate this action's attack and damage dice on every active participant's screen"><input id="mapGroupShareDice" type="checkbox"><span class="map-action-roll-icon" aria-hidden="true"><svg viewBox="0 0 26 24"><circle cx="7" cy="7" r="3"/><circle cx="19" cy="7" r="3"/><path d="M1 18c0-5 2-7 6-7s6 2 6 7M13 18c0-5 2-7 6-7 2 0 4 1 5 3"/></svg><span class="map-action-d20-icon"></span></span><span>Share dice roll</span></label><button id="mapRerollGroupActions" class="group-action-reroll-all" type="button" title="Choose new actions and targets, then reroll the entire table"><span aria-hidden="true">↻</span> Reroll table</button></div>
+                                    <div class="group-action-table-wrap"><table class="group-action-table"><thead><tr><th>Monster</th><th>Action</th><th>Target</th><th>Result</th><th></th></tr></thead><tbody id="mapGroupActionRows"></tbody></table></div>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -1922,11 +1951,11 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-    <script src="map-drawing.js?v=27"></script>
+    <script src="map-drawing.js?v=28"></script>
     <script src="token-placement.js?v=4"></script>
     <script src="token-actions.js?v=7"></script>
     <script src="board-sync.js?v=9"></script>
-    <script src="map-stickers.js?v=37"></script>
+    <script src="map-stickers.js?v=38"></script>
     <script src="shared-timer.js?v=5"></script>
     <script src="board-ui.js?v=14"></script>
     <script src="reference.js?v=2"></script>
@@ -7336,6 +7365,67 @@
         const tokenLayer = document.getElementById('mapTokenLayer');
         const selectedMapTokenIds = new Set();
 
+        function selectedInitiativeTokens() {
+            return monsters.filter(monster => selectedMapTokenIds.has(monster.id) && (Number(monster.hp) > 0 || monster.isplayer));
+        }
+
+        function synchronizedInitiativeValue(selected, mode) {
+            const values = selected.map(monster => Number(monster.init) || 0).sort((a, b) => a - b);
+            if (!values.length) return null;
+            if (mode === 'highest') return values[values.length - 1];
+            if (mode === 'lowest') return values[0];
+            if (mode === 'median') {
+                const middle = Math.floor(values.length / 2);
+                return Math.round(values.length % 2 ? values[middle] : (values[middle - 1] + values[middle]) / 2);
+            }
+            const custom = document.getElementById('initiativeSyncCustom');
+            return custom?.value.trim() === '' ? null : Math.round(Number(custom.value));
+        }
+
+        function refreshInitiativeSyncControl() {
+            const selected = selectedInitiativeTokens();
+            const button = document.getElementById('initiativeSyncBtn');
+            const popover = document.getElementById('initiativeSyncPopover');
+            const custom = document.getElementById('initiativeSyncCustom');
+            const preview = document.getElementById('initiativeSyncPreview');
+            const apply = document.getElementById('initiativeSyncApply');
+            const mode = document.querySelector('input[name="initiativeSyncMode"]:checked')?.value || 'highest';
+            const value = synchronizedInitiativeValue(selected, mode);
+            if (button) {
+                button.disabled = selected.length < 2;
+                button.title = selected.length < 2 ? 'Select at least two initiative tokens' : `Synchronize ${selected.length} selected initiatives`;
+            }
+            if (selected.length < 2 && popover && !popover.hidden) toggleInitiativeSyncPopover(false);
+            if (custom) custom.disabled = mode !== 'custom';
+            if (preview) preview.textContent = selected.length < 2 ? 'Select at least two initiative tokens.' : value == null || !Number.isFinite(value) ? 'Enter a custom initiative.' : `${selected.length} selected → Initiative ${value}`;
+            if (apply) apply.disabled = selected.length < 2 || value == null || !Number.isFinite(value);
+        }
+
+        function toggleInitiativeSyncPopover(force) {
+            const button = document.getElementById('initiativeSyncBtn');
+            const popover = document.getElementById('initiativeSyncPopover');
+            if (!button || !popover || (button.disabled && force !== false)) return;
+            const show = force ?? popover.hidden;
+            popover.hidden = !show;
+            button.setAttribute('aria-expanded', String(show));
+            if (show) refreshInitiativeSyncControl();
+        }
+
+        async function applySynchronizedInitiative() {
+            const selected = selectedInitiativeTokens();
+            const mode = document.querySelector('input[name="initiativeSyncMode"]:checked')?.value || 'highest';
+            const value = synchronizedInitiativeValue(selected, mode);
+            if (selected.length < 2 || value == null || !Number.isFinite(value)) return;
+            const apply = document.getElementById('initiativeSyncApply');
+            if (apply) apply.disabled = true;
+            const changes = new Map(selected.map(monster => [monster.id, { init:value }]));
+            const succeeded = await runBoardWrite(boardSync.patchMany(changes, boardSync.generation));
+            if (!succeeded) { refreshInitiativeSyncControl(); return; }
+            selected.forEach(monster => { monster.init = value; });
+            toggleInitiativeSyncPopover(false);
+            updateMonsterTable();
+        }
+
         function getHealthTier(monster) {
             const ratio = Math.max(0, Math.min(1, monster.hp / Math.max(1, monster.maxHp || monster.hp || 1)));
             if (ratio >= 0.75) return { color: '#2ecc40', label: 'Undamaged / Scratched' };
@@ -7373,9 +7463,11 @@
             targetLabel.textContent = selected.length === 1 ? selected[0].name : `${selected.length} tokens selected`;
             refreshSelectedTokenVisibilityButton(selected);
             TokenActions.refresh(selected);
+            window.GroupActionPlanner?.refreshSelection(selected);
             if (!selected.length) document.getElementById('mapActionPanel').classList.remove('is-open');
             renderGroupMoveHandle(selected);
             refreshMapObjectAttachmentLock();
+            refreshInitiativeSyncControl();
         }
 
         function refreshSelectedTokenVisibilityButton(selected) {
@@ -7553,7 +7645,19 @@
             tokenLasso.setAttribute('viewBox', `0 0 ${mapWidth} ${mapHeight}`);
             renderTokenLasso();
         }, true);
-        mapTransformLayer.addEventListener('contextmenu', event => event.preventDefault());
+        mapTransformLayer.addEventListener('contextmenu', event => {
+            event.preventDefault();
+            const token = event.target.closest?.('.monster-token');
+            if (!token) return;
+            const monsterId = token.id.replace(/^token-/, '');
+            const monster = monsters.find(item => item.id === monsterId);
+            if (!monster || monster.isplayer) return;
+            event.stopPropagation();
+            const initiativePanel = document.getElementById('dmInitiativePanel');
+            if (activeDmLeftPanel !== 'initiative' || initiativePanel?.classList.contains('is-collapsed')) toggleDmLeftPanel('initiative');
+            showInitiativeSubtab('statblock');
+            void openMonsterStatblock(monster.id);
+        });
 
         document.addEventListener('mousemove', event => {
             if (!lassoPoints.length) return;
@@ -7660,6 +7764,20 @@
 
         addMonsterBtn?.addEventListener('click', () => openMonsterPicker('encounter'));
         initiativeAddMonsterBtn?.addEventListener('click', () => openMonsterPicker('initiative'));
+        document.getElementById('initiativeSyncBtn')?.addEventListener('click', () => toggleInitiativeSyncPopover());
+        document.querySelectorAll('input[name="initiativeSyncMode"]').forEach(input => input.addEventListener('change', () => {
+            refreshInitiativeSyncControl();
+            if (input.value === 'custom' && input.checked) document.getElementById('initiativeSyncCustom')?.focus();
+        }));
+        document.getElementById('initiativeSyncCustom')?.addEventListener('input', refreshInitiativeSyncControl);
+        document.getElementById('initiativeSyncApply')?.addEventListener('click', () => void applySynchronizedInitiative());
+        document.addEventListener('pointerdown', event => {
+            const popover = document.getElementById('initiativeSyncPopover');
+            if (!popover?.hidden && !popover.contains(event.target) && !document.getElementById('initiativeSyncBtn')?.contains(event.target)) toggleInitiativeSyncPopover(false);
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && !document.getElementById('initiativeSyncPopover')?.hidden) toggleInitiativeSyncPopover(false);
+        });
 
         // Elements
         const monsterModal = document.getElementById('monsterModal');
@@ -10178,8 +10296,9 @@
         switchSpellLevel('spell0');
         switchTab('attacksTab');
     </script>
+    <script src="group-action-planner.js?v=4"></script>
     <script src="campaign-manager.js?v=4"></script>
-    <script type="module" src="dice-roller-3d.js?v=24"></script>
+    <script type="module" src="dice-roller-3d.js?v=25"></script>
 </div>
 </body>
 

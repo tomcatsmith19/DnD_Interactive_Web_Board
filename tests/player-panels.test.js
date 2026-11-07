@@ -138,8 +138,8 @@ test('dice sound checkboxes directly mute the live dice audio pools', () => {
     assert.match(dice, /diceBox\.sounds = enabled/);
     assert.match(dice, /stopDiceAudioPool\(diceBox\.sounds_table\)/);
     assert.match(dice, /stopDiceAudioPool\(diceBox\.sounds_dice\)/);
-    assert.match(dmHtml, /dice-roller-3d\.js\?v=24/);
-    assert.match(playerHtml, /dice-roller-3d\.js\?v=24/);
+    assert.match(dmHtml, /dice-roller-3d\.js\?v=25/);
+    assert.match(playerHtml, /dice-roller-3d\.js\?v=25/);
 });
 
 test('dice customizer loads the 3D constructor before rendering its d20 preview', () => {
@@ -152,11 +152,21 @@ test('DM initiative header owns a green Add Monster action', () => {
     const dmHtml = fs.readFileSync('public/dm.html', 'utf8');
     assert.match(dmHtml, /\.dm-initiative-content \{[^}]*height:100%;[^}]*max-height:none;[^}]*overflow:hidden;/);
     assert.match(dmHtml, /\.dm-initiative-table-scroll \{[^}]*flex:1;[^}]*min-height:0;[^}]*overflow:auto;/);
-    assert.match(dmHtml, /class="dm-initiative-header"><h2>Initiative<\/h2><button id="initiativeAddMonsterBtn" class="encounter-add-monster initiative-add-monster"[^>]*aria-label="Add Monster to Initiative"/);
+    assert.match(dmHtml, /class="dm-initiative-header"><h2>Initiative<\/h2><div class="dm-initiative-header-actions">[\s\S]*?id="initiativeAddMonsterBtn" class="encounter-add-monster initiative-add-monster"[^>]*aria-label="Add Monster to Initiative"/);
     assert.match(dmHtml, /\.dm-initiative-header \{[^}]*display:flex;[^}]*align-items:center;/);
-    assert.match(dmHtml, /\.encounter-add-monster\.initiative-add-monster \{[^}]*margin-left:auto;[^}]*background:#32cd32;[^}]*border-color:#72df91;/);
+    assert.match(dmHtml, /\.dm-initiative-header-actions \{[^}]*margin-left:auto;/);
+    assert.match(dmHtml, /\.encounter-add-monster\.initiative-add-monster \{[^}]*background:#32cd32;[^}]*border-color:#72df91;/);
     assert.match(dmHtml, /initiativeAddMonsterBtn\?\.addEventListener\('click', \(\) => openMonsterPicker\('initiative'\)\)/);
     assert.match(dmHtml, /monsterPickerDestination === 'initiative'[\s\S]*?monsterPlacement\.enqueue\(additions\)/);
+});
+
+test('selected initiative tokens can synchronize to highest, lowest, median, or custom', () => {
+    const dmHtml = fs.readFileSync('public/dm.html', 'utf8');
+    assert.match(dmHtml, /id="initiativeSyncBtn"[^>]*aria-controls="initiativeSyncPopover"[^>]*disabled/);
+    assert.match(dmHtml, /id="initiativeSyncPopover"[\s\S]*?value="highest" checked> Last[\s\S]*?value="lowest"> First[\s\S]*?value="median"> Median[\s\S]*?value="custom"> Custom/);
+    assert.match(dmHtml, /function synchronizedInitiativeValue\(selected, mode\)[\s\S]*?mode === 'highest'[\s\S]*?mode === 'lowest'[\s\S]*?mode === 'median'[\s\S]*?Math\.round/);
+    assert.match(dmHtml, /function applySynchronizedInitiative\(\)[\s\S]*?new Map\(selected\.map\(monster => \[monster\.id, \{ init:value \}\]\)\)[\s\S]*?boardSync\.patchMany\(changes, boardSync\.generation\)[\s\S]*?updateMonsterTable\(\)/);
+    assert.match(dmHtml, /refreshMapObjectAttachmentLock\(\);\s*refreshInitiativeSyncControl\(\);/);
 });
 
 test('DM initiative tracker has a docked stat-block subtab populated by monster name clicks', () => {
@@ -177,6 +187,11 @@ test('map token selection does not populate or clear the initiative stat block',
     assert.doesNotMatch(selectMapToken, /openMonsterStatblock|closeMonsterStatblock/);
     assert.doesNotMatch(clearMapTokenSelection, /openMonsterStatblock|closeMonsterStatblock/);
     assert.match(dmHtml, /focusMapToken\(m\.id\);\s*if \(!m\.isplayer\) \{\s*showInitiativeSubtab\('statblock'\);\s*openMonsterStatblock\(m\.id\);/);
+});
+
+test('right-clicking a DM monster token opens its docked initiative stat block', () => {
+    const dmHtml = fs.readFileSync('public/dm.html', 'utf8');
+    assert.match(dmHtml, /mapTransformLayer\.addEventListener\('contextmenu',[\s\S]*?closest\?\.\('\.monster-token'\)[\s\S]*?monster\.isplayer[\s\S]*?toggleDmLeftPanel\('initiative'\)[\s\S]*?showInitiativeSubtab\('statblock'\)[\s\S]*?openMonsterStatblock\(monster\.id\)/);
 });
 
 test('CPU Advisor opens on the right side of the initiative stat block', () => {

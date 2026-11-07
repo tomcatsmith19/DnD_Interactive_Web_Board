@@ -72,6 +72,9 @@
 .map-advanced-preferences label { display:inline-flex; align-items:center; gap:5px; color:#e8d7c2; font-size:11px; white-space:nowrap; cursor:pointer; }
 .map-action-panel .map-advanced-preferences input { width:auto; margin:0; padding:0; accent-color:#f4d76d; }
 .map-advanced-preferences svg { width:30px; height:20px; fill:none; stroke:#f4d76d; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.map-action-roll-icon { display:inline-flex; align-items:center; gap:2px; flex:0 0 auto; }
+.map-advanced-preferences .map-action-roll-icon svg { width:24px; height:20px; }
+.map-action-d20-icon { display:inline-block; width:18px; height:20px; flex:0 0 auto; background:#f4d76d; -webkit-mask:url('data/images/d20-black.png') center/contain no-repeat; mask:url('data/images/d20-black.png') center/contain no-repeat; }
 .map-advanced-actions { display:flex; align-items:center; justify-content:flex-end; gap:8px; padding:0; }
 .map-action-panel .map-advanced-actions button { width:auto; margin:0; }
 .map-action-panel .map-advanced-actions .map-results-history { display:inline-flex; align-items:center; justify-content:center; width:32px; min-width:32px; height:32px; padding:5px; color:#f4d76d; background:#2b190f; border:1px solid #8a6643; }

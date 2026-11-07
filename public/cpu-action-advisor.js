@@ -37,7 +37,7 @@
   function normalizeSettings(settings,intScore,random=Math.random){const created=createSettings(intScore,random);return{personality:PERSONALITIES[settings?.personality]?settings.personality:created.personality,intelligence:INTELLIGENCE[settings?.intelligence]?settings.intelligence:created.intelligence,personalityOverridden:Boolean(settings?.personalityOverridden),intelligenceOverridden:Boolean(settings?.intelligenceOverridden)};}
   function parseAction(entry){
     const raw=textOf(entry?.entries),name=String(entry?.name||'Action');
-    const attackBonus=number(raw.match(/\+(\d+)\s+to hit/i)?.[1]);
+    const attackBonus=number(raw.match(/([+-]\s*\d+)\s+to hit/i)?.[1]?.replace(/\s+/g,''));
     const reach=number(raw.match(/reach\s+(\d+)\s*ft/i)?.[1]);
     const rangeMatch=raw.match(/range\s+(\d+)(?:\s*\/\s*(\d+))?\s*ft/i);
     const average=number(raw.match(/(?:Hit:\s*)?(\d+)\s*\([^)]*(?:damage)?\)/i)?.[1]||raw.match(/(?:takes?|deals?)\s+(\d+)\s+[^.]*damage/i)?.[1]);

@@ -486,9 +486,19 @@ window.diceRoller3d = {
   },
   async rollResolved(request, values, share = false) {
     const rolls = (values || []).map(value => Math.max(1, Math.min(20, Math.trunc(Number(value) || 1))));
-    if (!rolls.length) return;
-    const subtotal = rolls.reduce((sum, value) => sum + value, 0);
-    const payload = { ...request, dice:[{ sides:20, count:rolls.length, rolls }], modifier:0, subtotal, total:subtotal, markup:request.markup || `<div><b>${rolls.length}d20:</b> ${rolls.join(', ')}</div>`, createdAt:Date.now() };
+    return this.rollResolvedDice(request, rolls.length ? [{sides:20,rolls}] : [], share);
+  },
+  async rollResolvedDice(request, groups, share = false) {
+    const dice=(groups||[]).map(group=>{
+      const sides=Math.max(2,Math.trunc(Number(group.sides)||0));
+      const rolls=(group.rolls||[]).map(value=>Math.max(1,Math.min(sides,Math.trunc(Number(value)||1))));
+      return {sides,count:rolls.length,rolls};
+    }).filter(group=>group.count);
+    if(!dice.length)return;
+    const subtotal=dice.reduce((sum,group)=>sum+group.rolls.reduce((groupSum,value)=>groupSum+value,0),0);
+    const modifier=Math.trunc(Number(request.modifier)||0),total=subtotal+modifier;
+    const defaultMarkup=dice.map(group=>`<div><b>${group.count}d${group.sides}:</b> ${group.rolls.join(', ')}</div>`).join('');
+    const payload={...request,dice,modifier,subtotal,total,markup:request.markup||defaultMarkup,createdAt:Date.now()};
     if (share && sharedRollRef) {
       payload.startAt = Date.now() + SHARED_START_DELAY;
       payload.senderClientId = diceClientId;

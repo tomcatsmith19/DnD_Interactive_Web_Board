@@ -129,9 +129,9 @@ test('both boards load the sticker browser and place its tab before measurement'
   const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
   for (const role of ['dm', 'player']) {
     const html = fs.readFileSync(`public/${role}.html`, 'utf8');
-    assert.ok(html.includes('map-stickers.js?v=37'));
+    assert.ok(html.includes('map-stickers.js?v=38'));
     assert.ok(html.includes('token-placement.js?v=4'));
-    assert.ok(html.includes('map-drawing.js?v=27'));
+    assert.ok(html.includes('map-drawing.js?v=28'));
     assert.match(html, /setupMapDrawingTabs\([^\n]+measurementToolbarManager, stickerManager\)/);
   }
   assert.ok(drawing.indexOf('label: "Stickers"') < drawing.indexOf('label: "Measurement"'));
@@ -267,10 +267,12 @@ test('selected stickers can attach to tokens and translate with them', () => {
   const drawing = fs.readFileSync('public/map-drawing.js', 'utf8');
   assert.match(browser, /attachedTokenId: tokenId/);
   assert.match(browser, /movingTokens\.has\(sticker\.attachedTokenId\)/);
+  assert.match(browser, /moveTokenTranslation\(session, dx, dy\)[\s\S]*?queueTokenTranslation\(session\)/);
+  assert.match(browser, /session\.writeChain = session\.writeChain[\s\S]*?boardSync\.patchStickers\(changes, session\.generation\)/);
   assert.match(browser, /const selectedStickerIds = new Set\(\)/);
   assert.match(browser, /event\.ctrlKey \|\| event\.metaKey/);
   assert.match(browser, /selectedStickerIds\.has\(sticker\.id\)/);
-  assert.match(browser, /patchStickers\(changes, boardSync\.generation\)/);
+  assert.match(browser, /patchStickers\(changes, session\.generation\)/);
   assert.match(drawing, /stickerManager\?\.beginTokenTranslation/);
   assert.match(drawing, /stickerManager\?\.moveTokenTranslation/);
   assert.match(drawing, /stickerManager\?\.endTokenTranslation/);

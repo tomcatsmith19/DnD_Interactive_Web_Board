@@ -295,7 +295,7 @@
       margin-bottom: 10px;
     }
   </style>
-  <link rel="stylesheet" href="token-actions.css?v=21">
+  <link rel="stylesheet" href="token-actions.css?v=22">
 </head>
 
 <body>
@@ -372,7 +372,7 @@
           </div>
           <datalist id="mapConditionChoices"></datalist>
         </div>
-        <div class="map-advanced-footer"><div class="map-advanced-preferences"><label title="Animate each target's d20 on this screen"><input id="mapShowRolledDice" type="checkbox"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M1 12s5-8 12-8 12 8 12 8-5 8-12 8S1 12 1 12Z"/><circle cx="13" cy="12" r="3"/><path d="m29 5 9 4v10l-9-4zM29 5l-5 5v9l5-4M24 10l9 4 5-5"/></svg><span>Show rolled dice</span></label><label title="Animate these dice on every active participant's screen"><input id="mapShareActionDice" type="checkbox"><svg viewBox="0 0 44 24" aria-hidden="true"><circle cx="7" cy="7" r="3"/><circle cx="19" cy="7" r="3"/><path d="M1 18c0-5 2-7 6-7s6 2 6 7M13 18c0-5 2-7 6-7 2 0 4 1 5 3"/><path d="m32 5 10 4v10l-10-4zM32 5l-5 5v9l5-4M27 10l10 4 5-5"/></svg><span>Share dice roll</span></label></div><div class="map-advanced-actions"><button id="mapViewActionResults" class="map-results-history" type="button" onclick="openAdvancedActionResults()" aria-label="View last results" title="View last results" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5v5h5M5 10a8 8 0 1 1 1 7M12 7v5l3 2"/></svg></button><button class="map-advanced-apply" type="button" onclick="applyMapTokenAction('damage')">Apply</button></div></div>
+        <div class="map-advanced-footer"><div class="map-advanced-preferences"><label title="Animate each target's d20 on this screen"><input id="mapShowRolledDice" type="checkbox"><span class="map-action-roll-icon" aria-hidden="true"><svg viewBox="0 0 26 24"><path d="M1 12s5-8 12-8 12 8 12 8-5 8-12 8S1 12 1 12Z"/><circle cx="13" cy="12" r="3"/></svg><span class="map-action-d20-icon"></span></span><span>Show rolled dice</span></label><label title="Animate these dice on every active participant's screen"><input id="mapShareActionDice" type="checkbox"><span class="map-action-roll-icon" aria-hidden="true"><svg viewBox="0 0 26 24"><circle cx="7" cy="7" r="3"/><circle cx="19" cy="7" r="3"/><path d="M1 18c0-5 2-7 6-7s6 2 6 7M13 18c0-5 2-7 6-7 2 0 4 1 5 3"/></svg><span class="map-action-d20-icon"></span></span><span>Share dice roll</span></label></div><div class="map-advanced-actions"><button id="mapViewActionResults" class="map-results-history" type="button" onclick="openAdvancedActionResults()" aria-label="View last results" title="View last results" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5v5h5M5 10a8 8 0 1 1 1 7M12 7v5l3 2"/></svg></button><button class="map-advanced-apply" type="button" onclick="applyMapTokenAction('damage')">Apply</button></div></div>
       </details>
       <dialog id="mapActionResultsDialog" class="map-action-results-dialog"><div class="map-action-results-header"><h3>Action results</h3><button type="button" onclick="this.closest('dialog').close()" aria-label="Close results">×</button></div><div id="mapActionResultList" class="map-action-results" role="status" aria-live="polite"></div></dialog>
       <div class="map-immediate-conditions-title">Immediate conditions</div>
@@ -693,11 +693,11 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
-  <script src="map-drawing.js?v=27"></script>
+  <script src="map-drawing.js?v=28"></script>
   <script src="token-placement.js?v=4"></script>
     <script src="token-actions.js?v=7"></script>
     <script src="board-sync.js?v=9"></script>
-    <script src="map-stickers.js?v=37"></script>
+    <script src="map-stickers.js?v=38"></script>
     <script src="shared-timer.js?v=5"></script>
   <script src="board-ui.js?v=14"></script>
     <script src="reference.js?v=2"></script>
@@ -2038,7 +2038,7 @@
 
 
   </script>
-  <script type="module" src="dice-roller-3d.js?v=24"></script>
+  <script type="module" src="dice-roller-3d.js?v=25"></script>
 </body>
 
 </html>
