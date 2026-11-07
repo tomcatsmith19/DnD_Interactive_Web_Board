@@ -74,22 +74,63 @@ test('advanced damage resolves individual saves before resistance and immunity',
   const {actions}=fixture();
   const data={dex:14,skills:{'dex save':'+5'},resist:['fire'],immune:['poison']};
   assert.equal(actions.damageProfile(data).saves.dex,5);
-  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:15,onSuccess:'half',damageType:'fire'},data,()=>10).amount,5);
-  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:15,onSuccess:'none',damageType:'fire'},data,()=>10).amount,0);
-  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,onSuccess:'half',damageType:'fire'},data,()=>10).amount,10);
-  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,onSuccess:'half',damageType:'poison'},data,()=>10).amount,0);
-  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,onSuccess:'half',damageType:''},data,()=>10).amount,21);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:15,successDamage:'half',damageType:'fire'},data,()=>10).amount,5);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:15,successDamage:'none',damageType:'fire'},data,()=>10).amount,0);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,failureDamage:'full',damageType:'fire'},data,()=>10).amount,10);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,failureDamage:'full',damageType:'poison'},data,()=>10).amount,0);
+  assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,failureDamage:'full',damageType:''},data,()=>10).amount,21);
+});
+
+test('save-linked conditions apply on failure, remove on success, and respect condition immunity',()=>{
+  const {actions}=fixture(), definition={dex:12,conditionImmune:['poisoned']};
+  const plain=value=>JSON.parse(JSON.stringify(value));
+  const failed=actions.resolveAdvancedDamage(8,{}, {saveType:'dex',dc:15,onSuccess:'half'},definition,()=>5);
+  assert.deepEqual(plain(actions.resolveSaveConditions(failed,['Prone','Poisoned'],['Restrained'])),{apply:['Prone'],remove:[],skippedImmune:['Poisoned']});
+  const saved=actions.resolveAdvancedDamage(8,{}, {saveType:'dex',dc:10,onSuccess:'half'},definition,()=>15);
+  assert.deepEqual(plain(actions.resolveSaveConditions(saved,['Prone'],['Restrained'])),{apply:[],remove:['Restrained'],skippedImmune:[]});
+  const acMiss=actions.resolveAdvancedDamage(8,{ac:15}, {saveType:'ac'},definition,()=>1);
+  assert.equal(acMiss.amount,4);
+  assert.deepEqual(plain(actions.resolveSaveConditions(acMiss,['Prone'],['Restrained'])),{apply:[],remove:['Restrained'],skippedImmune:[]});
+  const acHit=actions.resolveAdvancedDamage(8,{ac:15}, {saveType:'ac'},definition,()=>18);
+  assert.equal(acHit.amount,8);
+  assert.deepEqual(plain(actions.resolveSaveConditions(acHit,['Prone'],['Restrained'])),{apply:['Prone'],remove:[],skippedImmune:[]});
 });
 
 test('advanced action controls exist on both boards with the requested defaults',()=>{
   for(const page of ['dm','player']) {
     const html=fs.readFileSync(`public/${page}.html`,'utf8');
-    assert.match(html,/id="mapAdvancedOptions"[\s\S]*?<summary>Advanced options<\/summary>/);
+    assert.match(html,/id="mapAdvancedOptions"[\s\S]*?<summary>[\s\S]*?map-advanced-chevron[\s\S]*?<span>Advanced options<\/span>[\s\S]*?map-advanced-reset/);
     assert.match(html,/id="mapDamageType"[\s\S]*?<option value="">No damage type<\/option>/);
     assert.match(html,/id="mapSaveType"[\s\S]*?<option value="ac">AC<\/option>/);
     assert.match(html,/id="mapSaveDC"[^>]*value="10"/);
-    assert.match(html,/id="mapSaveSuccess"[\s\S]*?Half damage[\s\S]*?No damage/);
+    assert.match(html,/id="mapFailureDamage"[\s\S]*?Full damage[\s\S]*?Half damage[\s\S]*?No damage/);
+    assert.match(html,/id="mapSuccessDamage"[\s\S]*?Half damage[\s\S]*?Full damage[\s\S]*?No damage/);
+    assert.match(html,/id="mapFailureConditionAction"[\s\S]*?Apply condition/);
+    assert.match(html,/id="mapSuccessConditionAction"[\s\S]*?Remove condition/);
+    assert.match(html,/id="mapActionResultsDialog"[\s\S]*?id="mapActionResultList"[^>]*aria-live="polite"/);
+    assert.match(html,/id="mapShowRolledDice"[\s\S]*?id="mapShareActionDice"/);
+    assert.doesNotMatch(html,/mapShowActionSummary|Open result summary/);
+    assert.doesNotMatch(html,/>Damage on (?:failed|successful) defense</);
+    assert.match(html,/class="map-results-history"[\s\S]*?<svg/);
+    assert.match(html,/class="map-advanced-apply"[^>]*applyMapTokenAction\('damage'\)/);
+    assert.match(html,/applyMapTokenAction\('damage'\)">Apply<\/button>/);
+    assert.match(html,/>Immediate conditions</);
   }
+});
+
+test('advanced action dice reuse resolved d20 values in the shared 3D roller',()=>{
+  const dice=fs.readFileSync('public/dice-roller-3d.js','utf8'),boardUI=fs.readFileSync('public/board-ui.js','utf8');
+  assert.match(dice,/rollResolved\(request, values, share = false\)/);
+  assert.match(dice,/dice:\[\{ sides:20, count:rolls\.length, rolls \}\]/);
+  assert.match(boardUI,/rollAdvancedActionDice\(advancedResults\)/);
+  assert.match(boardUI,/diceRoller3d\.rollResolved/);
+});
+
+test('advanced reset clears effects and uses the requested safe success outcome',()=>{
+  const boardUI=fs.readFileSync('public/board-ui.js','utf8');
+  assert.match(boardUI,/mapDamageType:'', mapSaveType:'ac', mapSaveDC:'10', mapFailureDamage:'full', mapSuccessDamage:'none'/);
+  assert.match(boardUI,/mapFailureConditionChips'\)\?\.replaceChildren\(\)/);
+  assert.match(boardUI,/mapSuccessConditionChips'\)\?\.replaceChildren\(\)/);
 });
 
 test('folders retain expansion state and toggles preserve mixed selections',()=>{
@@ -121,6 +162,6 @@ test('DM action panel includes a player-visibility eye beside the token name',()
   assert.match(css,/\.token-player-visibility \{[^}]*width:34px/);
   assert.match(boardUI,/classList\.toggle\('is-hidden-from-players', boardPageRole === 'dm' && token\.hiddenFromPlayers === true\)/);
   assert.match(css,/\.monster-token\.is-hidden-from-players::after \{[^}]*data:image\/svg\+xml/);
-  assert.match(dm,/token-actions\.css\?v=18/);
-  assert.match(player,/token-actions\.css\?v=18/);
+  assert.match(dm,/token-actions\.css\?v=21/);
+  assert.match(player,/token-actions\.css\?v=21/);
 });

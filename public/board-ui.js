@@ -307,12 +307,16 @@ function removeMonstersFromFirebase(ids) { return runBoardWrite(boardSync.remove
 function addMonstersToFirebase(tokens) { return runBoardWrite(boardSync.add(tokens, tokens[0]?._boardGeneration || boardSync.generation)); }
 function forceReloadMonsters() { return runBoardWrite(boardSync.reconcile()); }
 async function mapActionDefinition(token) {
-    if (token.actionDefenses || token.isplayer || token.isNpc) return token;
+    if (Array.isArray(token.actionDefenses?.conditionImmune) || token.isplayer || token.isNpc) return token;
     try {
         if (typeof loadMonsterDefinitionByName === 'function') return (await loadMonsterDefinitionByName(token.name))?.monsterData || token;
         const response = await fetch(`data/monsters/${encodeURIComponent(token.name)}.json`);
         return response.ok ? await response.json() : token;
     } catch (_) { return token; }
+}
+function actionD20Roll() {
+    if (globalThis.crypto?.getRandomValues) { const value = new Uint32Array(1); globalThis.crypto.getRandomValues(value); return value[0] % 20 + 1; }
+    return Math.floor(Math.random() * 20) + 1;
 }
 async function applyMapTokenAction(action, condition = '', level = 0) {
     const targets = monsters.filter(token => selectedMapTokenIds.has(token.id));
@@ -320,22 +324,31 @@ async function applyMapTokenAction(action, condition = '', level = 0) {
     const amount = Math.max(0, Math.trunc(Number(document.getElementById('mapActionAmount').value) || 0));
     const advanced = document.getElementById('mapAdvancedOptions');
     let damageAmounts = null;
+    let advancedResults = null;
     if (action === 'damage' && advanced?.open) {
         const options = {
             damageType: document.getElementById('mapDamageType')?.value || '',
             saveType: document.getElementById('mapSaveType')?.value || 'ac',
             dc: document.getElementById('mapSaveDC')?.value || 10,
-            onSuccess: document.getElementById('mapSaveSuccess')?.value || 'half'
+            failureDamage: document.getElementById('mapFailureDamage')?.value || 'full',
+            successDamage: document.getElementById('mapSuccessDamage')?.value || 'half'
         };
         const definitions = await Promise.all(targets.map(mapActionDefinition));
-        damageAmounts = new Map(targets.map((token, index) => [token.id, TokenActions.resolveAdvancedDamage(amount, token, options, definitions[index]).amount]));
+        const rolls = targets.map(actionD20Roll);
+        const failureConditions = document.getElementById('mapFailureConditionAction')?.value === 'apply' ? TokenActions.selectedAdvancedConditions('mapFailureConditionChips') : [];
+        const successConditions = document.getElementById('mapSuccessConditionAction')?.value === 'remove' ? TokenActions.selectedAdvancedConditions('mapSuccessConditionChips') : [];
+        advancedResults = targets.map((token, index) => {
+            const result = TokenActions.resolveAdvancedDamage(amount, token, options, definitions[index], () => rolls[index]);
+            return { token, result, conditions: TokenActions.resolveSaveConditions(result, failureConditions, successConditions) };
+        });
+        damageAmounts = new Map(advancedResults.map(({ token, result }) => [token.id, result.amount]));
     }
     const defeatedByAction = action === 'damage'
         ? targets.filter(token => !token.isplayer && Number(token.hp) > 0 && (damageAmounts?.get(token.id) ?? amount) >= Number(token.hp)).map(token => ({ ...token }))
         : [];
     if (boardPageRole === 'dm') defeatedByAction.forEach(token => localDmDefeatIds.add(token.id));
-    const write = damageAmounts
-        ? boardSync.actionAmounts(damageAmounts, action, targets[0]._boardGeneration)
+    const write = advancedResults
+        ? boardSync.resolvedActions(new Map(advancedResults.map(({ token, result, conditions }) => [token.id, { amount:result.amount, apply:conditions.apply, remove:conditions.remove }])), targets[0]._boardGeneration)
         : boardSync.action(targets.map(token => token.id), action, amount, condition, level, targets[0]._boardGeneration);
     return runBoardWrite(write).then(async succeeded => {
         if (!succeeded) defeatedByAction.forEach(token => localDmDefeatIds.delete(token.id));
@@ -347,8 +360,51 @@ async function applyMapTokenAction(action, condition = '', level = 0) {
             try { await broadcastDefeatedCreatures(defeatedByAction); }
             catch (error) { reportBoardSyncError(error); }
         }
+        if (succeeded && advancedResults) {
+            renderAdvancedActionResults(advancedResults);
+            rollAdvancedActionDice(advancedResults);
+        }
         return succeeded;
     });
+}
+function renderAdvancedActionResults(results) {
+    const output = document.getElementById('mapActionResultList');
+    if (!output) return;
+    output.replaceChildren();
+    results.forEach(({ token, result, conditions }) => {
+        const row = document.createElement('div');
+        const pieces = [];
+        pieces.push(`${result.saved ? 'successful' : 'failed'} ${result.saveType.toUpperCase()} defense (${result.total} vs ${result.saveType === 'ac' ? 'AC' : 'DC'} ${result.targetDc})`);
+        pieces.push(`${result.amount} damage${result.immune ? ' (immune)' : result.resisted ? ' (resisted)' : ''}`);
+        if (conditions.apply.length) pieces.push(`${conditions.apply.join(', ')} applied`);
+        if (conditions.remove.length) pieces.push(`${conditions.remove.join(', ')} removed`);
+        if (conditions.skippedImmune.length) pieces.push(`${conditions.skippedImmune.join(', ')} skipped (condition immune)`);
+        row.textContent = `${token.name}: ${pieces.join(' · ')}`; output.append(row);
+    });
+    const viewButton = document.getElementById('mapViewActionResults');
+    if (viewButton) viewButton.disabled = false;
+}
+function openAdvancedActionResults() {
+    const dialog = document.getElementById('mapActionResultsDialog');
+    if (dialog && !dialog.open) dialog.showModal?.();
+}
+function resetAdvancedOptions(event) {
+    event?.preventDefault?.(); event?.stopPropagation?.();
+    const values = { mapDamageType:'', mapSaveType:'ac', mapSaveDC:'10', mapFailureDamage:'full', mapSuccessDamage:'none', mapFailureConditionAction:'none', mapSuccessConditionAction:'none' };
+    Object.entries(values).forEach(([id, value]) => { const control = document.getElementById(id); if (control) { control.value = value; control.dispatchEvent?.(new Event('change')); } });
+    document.getElementById('mapFailureConditionChips')?.replaceChildren();
+    document.getElementById('mapSuccessConditionChips')?.replaceChildren();
+    for (const id of ['mapShowRolledDice','mapShareActionDice']) { const control = document.getElementById(id); if (control) control.checked = false; }
+}
+function rollAdvancedActionDice(results) {
+    const show = document.getElementById('mapShowRolledDice')?.checked;
+    const share = document.getElementById('mapShareActionDice')?.checked;
+    if ((!show && !share) || !window.diceRoller3d) return;
+    const prefix = boardPageRole === 'dm' ? 'dm' : 'player';
+    const appearance = window.diceRoller3d.getCustomizationDetails?.(prefix);
+    const escapeMarkup = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+    const markup = results.map(({ token, result }) => `<div><b>${escapeMarkup(token.name)}:</b> ${result.roll} + ${result.total - result.roll} = ${result.total} vs ${result.saveType === 'ac' ? 'AC' : 'DC'} ${result.targetDc} (${result.saved ? 'success' : 'failure'})</div>`).join('');
+    window.diceRoller3d.rollResolved({ id:`${Date.now()}-${Math.random().toString(36).slice(2)}`, createdAt:Date.now(), roller:boardPageRole === 'dm' ? 'Dungeon Master' : 'Player', sourcePrefix:prefix, themeConfig:appearance?.themeConfig || window.diceRoller3d.getCustomization?.(prefix), appearanceSummary:appearance?.summary || '', markup }, results.map(({ result }) => result.roll), share);
 }
 function refreshBoardTrackers(force = false) {
     const editing = !force && document.activeElement?.closest('#monsterTableBody, #partyTableBody');

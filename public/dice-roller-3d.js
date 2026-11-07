@@ -483,5 +483,19 @@ window.diceRoller3d = {
       return;
     }
     return runAnimation(payload, false);
+  },
+  async rollResolved(request, values, share = false) {
+    const rolls = (values || []).map(value => Math.max(1, Math.min(20, Math.trunc(Number(value) || 1))));
+    if (!rolls.length) return;
+    const subtotal = rolls.reduce((sum, value) => sum + value, 0);
+    const payload = { ...request, dice:[{ sides:20, count:rolls.length, rolls }], modifier:0, subtotal, total:subtotal, markup:request.markup || `<div><b>${rolls.length}d20:</b> ${rolls.join(', ')}</div>`, createdAt:Date.now() };
+    if (share && sharedRollRef) {
+      payload.startAt = Date.now() + SHARED_START_DELAY;
+      payload.senderClientId = diceClientId;
+      try { await sharedRollRef.set(payload); }
+      catch (error) { reportFailure(payload, error); }
+      return;
+    }
+    return runAnimation(payload, false);
   }
 };

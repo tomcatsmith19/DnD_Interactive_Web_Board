@@ -25,6 +25,18 @@
     }
     return { conditions };
   }
+  function resolvedActionPatch(token, change = {}) {
+    const damage = actionPatch(token, 'damage', change.amount || 0);
+    if (damage === null) return null;
+    const conditions = [...new Set((token.conditions || []).map(name => name.toLowerCase() === 'mark' ? "Hunter's Mark" : name))];
+    (change.remove || []).forEach(name => {
+      for (let index = conditions.length - 1; index >= 0; index--) if (conditions[index].toLowerCase() === String(name).toLowerCase()) conditions.splice(index, 1);
+    });
+    (change.apply || []).forEach(name => {
+      if (name && !conditions.some(existing => existing.toLowerCase() === String(name).toLowerCase())) conditions.push(name);
+    });
+    return { ...damage, conditions };
+  }
   function tokenPatch(token, fields) {
     if (!token) return undefined;
     const patch = { ...fields };
@@ -264,6 +276,10 @@
         const changes = amounts instanceof Map ? amounts : new Map(Object.entries(amounts || {}));
         return mutate('tokens', [...changes.keys()], (token, id) => token ? actionPatch(token, action, changes.get(id), '', 0) : undefined, expected);
       },
+      resolvedActions(changes, expected = generation) {
+        const byId = changes instanceof Map ? changes : new Map(Object.entries(changes || {}));
+        return mutate('tokens', [...byId.keys()], (token, id) => token ? resolvedActionPatch(token, byId.get(id)) : undefined, expected);
+      },
       addDrawing(layer, drawing, expected = generation) { return mutate(layer, [drawing.id], existing => existing ? undefined : { ...drawing, _order: Date.now() }, expected); },
       patchDrawings(layer, changes, expected = generation) { return mutate(layer, [...changes.keys()], (drawing, id) => drawing ? changes.get(id) : undefined, expected); },
       removeDrawings(layer, ids, expected = generation) { return mutate(layer, ids, () => null, expected); },
@@ -291,7 +307,7 @@
     if (autoStart) start();
     return api;
   }
-  const api = { create, actionPatch, mapData };
+  const api = { create, actionPatch, resolvedActionPatch, mapData };
   if (typeof module !== 'undefined') module.exports = api;
   else root.SharedBoardSync = api;
 })(typeof window === 'undefined' ? globalThis : window);

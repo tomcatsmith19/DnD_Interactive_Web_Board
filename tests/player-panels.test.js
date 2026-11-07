@@ -138,8 +138,8 @@ test('dice sound checkboxes directly mute the live dice audio pools', () => {
     assert.match(dice, /diceBox\.sounds = enabled/);
     assert.match(dice, /stopDiceAudioPool\(diceBox\.sounds_table\)/);
     assert.match(dice, /stopDiceAudioPool\(diceBox\.sounds_dice\)/);
-    assert.match(dmHtml, /dice-roller-3d\.js\?v=23/);
-    assert.match(playerHtml, /dice-roller-3d\.js\?v=23/);
+    assert.match(dmHtml, /dice-roller-3d\.js\?v=24/);
+    assert.match(playerHtml, /dice-roller-3d\.js\?v=24/);
 });
 
 test('dice customizer loads the 3D constructor before rendering its d20 preview', () => {

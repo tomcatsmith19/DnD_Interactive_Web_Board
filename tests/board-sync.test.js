@@ -58,6 +58,18 @@ test('one atomic group action applies a different resolved damage amount to each
     assert.equal(f.documents.get(f.path('b')).hp, 19);
 });
 
+test('resolved group actions atomically combine individualized damage and condition outcomes', async () => {
+    const f = await fixture();
+    await f.first.patch('a', { conditions: ['Restrained'] });
+    await f.first.resolvedActions(new Map([
+        ['a', { amount: 4, apply: ['Prone'], remove: ['Restrained'] }],
+        ['b', { amount: 0, apply: [], remove: [] }]
+    ]));
+    assert.equal(f.documents.get(f.path('a')).hp, 26);
+    assert.deepEqual(f.documents.get(f.path('a')).conditions, ['Prone']);
+    assert.equal(f.documents.get(f.path('b')).hp, 30);
+});
+
 test('stale field edits cannot recreate deleted tokens', async () => {
     const f = await fixture();
     await f.first.remove(['a']);

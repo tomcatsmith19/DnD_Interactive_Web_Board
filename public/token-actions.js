@@ -168,6 +168,7 @@ const TokenActions = (() => {
   }
   function canonical(name) {
     if (name.toLowerCase() === 'mark') return "Hunter's Mark";
+    if (/^mark\s*[123]$/i.test(name)) return `mark${name.match(/[123]/)[0]}`;
     return Object.keys(effects).find(key => key.toLowerCase() === name.toLowerCase()) || name;
   }
   function normalizeConditions(conditions = []) { return [...new Set(conditions.map(canonical))]; }
@@ -228,6 +229,7 @@ const TokenActions = (() => {
     return match ? Number(match[0]) : null;
   }
   function damageWords(values = []) {
+    if (!Array.isArray(values)) values = [values];
     return values.flatMap(value => {
       if (typeof value === 'string') return value.toLowerCase().match(/[a-z]+/g) || [];
       if (!value || typeof value !== 'object') return [];
@@ -247,27 +249,79 @@ const TokenActions = (() => {
       scores,
       saves,
       resist: [...new Set(damageWords(data.resist || data.damageResistances || []))].filter(type => damageTypes.includes(type)),
-      immune: [...new Set(damageWords(data.immune || data.damageImmunities || []))].filter(type => damageTypes.includes(type))
+      immune: [...new Set(damageWords(data.immune || data.damageImmunities || []))].filter(type => damageTypes.includes(type)),
+      conditionImmune: [...new Set((Array.isArray(data.conditionImmune || data.conditionImmunities) ? (data.conditionImmune || data.conditionImmunities) : [data.conditionImmune || data.conditionImmunities].filter(Boolean)).map(value => String(typeof value === 'string' ? value : value?.name || value?.special || '').toLowerCase()).filter(Boolean))]
     };
   }
   function resolveAdvancedDamage(amount, target, options = {}, definition = {}, roller = () => Math.floor(Math.random() * 20) + 1) {
     const profile = damageProfile(Object.keys(definition || {}).length ? definition : target);
     const saveType = String(options.saveType || 'ac').toLowerCase();
     const base = Math.max(0, Math.trunc(Number(amount) || 0));
-    let applied = base, roll = null, total = null, saved = false;
-    // AC preserves the normal direct-damage workflow. Ability choices enable one independent save per target.
-    if (abilities.includes(saveType)) {
+    let applied = base, roll = null, total = null, saved = false, targetDc = Math.max(0, Math.trunc(Number(options.dc) || 10));
+    if (saveType === 'ac') {
+      roll = Math.max(1, Math.min(20, Math.trunc(Number(roller()) || 1)));
+      total = roll;
+      let rawAc = target.ac ?? definition.ac;
+      if (Array.isArray(rawAc)) rawAc = rawAc[0];
+      if (rawAc && typeof rawAc === 'object') rawAc = rawAc.ac;
+      targetDc = Math.max(1, Math.trunc(Number.parseInt(rawAc) || 10));
+      saved = total < targetDc;
+    } else if (abilities.includes(saveType)) {
       roll = Math.max(1, Math.min(20, Math.trunc(Number(roller()) || 1)));
       total = roll + (Number(profile.saves?.[saveType]) || 0);
-      saved = total >= Math.max(0, Math.trunc(Number(options.dc) || 10));
-      if (saved) applied = options.onSuccess === 'none' ? 0 : Math.floor(applied / 2);
+      saved = total >= targetDc;
     }
+    const outcome = saved ? (options.successDamage || 'half') : (options.failureDamage || 'full');
+    applied = outcome === 'none' ? 0 : outcome === 'half' ? Math.floor(base / 2) : base;
     const damageType = String(options.damageType || '').toLowerCase();
-    if (damageType && profile.immune?.includes(damageType)) applied = 0;
-    else if (damageType && profile.resist?.includes(damageType)) applied = Math.floor(applied / 2);
-    return { amount: applied, roll, total, saved, damageType, saveType };
+    const immune = Boolean(damageType && profile.immune?.includes(damageType));
+    const resisted = Boolean(!immune && damageType && profile.resist?.includes(damageType));
+    if (immune) applied = 0;
+    else if (resisted) applied = Math.floor(applied / 2);
+    return { amount: applied, roll, total, saved, damageType, saveType, targetDc, immune, resisted, profile };
+  }
+  function resolveSaveConditions(result, failureConditions = [], successConditions = []) {
+    if (result.saved) return { apply: [], remove: [...new Set(successConditions.map(canonical))], skippedImmune: [] };
+    const immune = new Set(result.profile?.conditionImmune || []), apply = [], skippedImmune = [];
+    [...new Set(failureConditions.map(canonical))].forEach(condition => {
+      if (immune.has(condition.toLowerCase())) skippedImmune.push(condition);
+      else apply.push(condition);
+    });
+    return { apply, remove: [], skippedImmune };
+  }
+  function conditionNames() {
+    return [...new Set(Object.keys(effects).filter(name => name !== 'Mark').map(displayName))].sort((a, b) => a.localeCompare(b));
+  }
+  function selectedAdvancedConditions(containerId) {
+    const container = typeof document === 'undefined' ? null : document.getElementById(containerId);
+    return container ? Array.from(container.children).map(chip => chip.dataset.condition).filter(Boolean) : [];
+  }
+  function setupAdvancedConditionPickers() {
+    if (typeof document === 'undefined') return;
+    const list = document.getElementById('mapConditionChoices');
+    if (!list || list.dataset.ready === 'true') return;
+    conditionNames().forEach(name => { const option = document.createElement('option'); option.value = name; list.append(option); });
+    list.dataset.ready = 'true';
+    const addChip = (container, name) => {
+      const matched = conditionNames().find(condition => condition.toLowerCase() === String(name).trim().toLowerCase());
+      if (!matched || Array.from(container.children).some(chip => chip.dataset.condition === matched)) return false;
+      const chip = document.createElement('span'); chip.className = 'map-condition-chip'; chip.dataset.condition = matched; chip.textContent = matched;
+      const remove = document.createElement('button'); remove.type = 'button'; remove.setAttribute('aria-label', `Remove ${matched}`); remove.textContent = '×';
+      remove.addEventListener('click', () => chip.remove()); chip.append(remove); container.append(chip); return true;
+    };
+    [['mapFailureConditionAction','mapFailureConditionPicker','mapFailureConditionSearch','mapFailureConditionChips'],['mapSuccessConditionAction','mapSuccessConditionPicker','mapSuccessConditionSearch','mapSuccessConditionChips']].forEach(ids => {
+      const [actionId,pickerId,inputId,chipsId] = ids, action = document.getElementById(actionId), picker = document.getElementById(pickerId), input = document.getElementById(inputId), chips = document.getElementById(chipsId);
+      if (!action || !picker || !input || !chips) return;
+      const update = () => { picker.hidden = action.value === 'none'; };
+      action.addEventListener('change', update); update();
+      input.addEventListener('change', () => { if (addChip(chips, input.value)) input.value = ''; });
+    });
+    const saveType = document.getElementById('mapSaveType'), dc = document.getElementById('mapSaveDC');
+    const updateDc = () => { if (dc) { dc.disabled = saveType?.value === 'ac'; dc.title = dc.disabled ? 'AC uses each target’s Armor Class instead of this DC.' : ''; } };
+    saveType?.addEventListener('change', updateDc); updateDc();
   }
   function refresh(selected) {
+    setupAdvancedConditionPickers();
     const grid = document.getElementById('mapConditionsGrid');
     if (!grid) return;
     if (!grid.children.length) {
@@ -347,6 +401,6 @@ const TokenActions = (() => {
     button.title = `Auto pop-up ${enabled ? 'on' : 'off'}`;
     return enabled;
   }
-  return { refresh, exhaustion, withExhaustion, normalizeConditions, tokenSize, sizeMultiplier, resolveSize, renderTokenConditions, fuzzyConditionMatch, autoPopupEnabled, toggleAutoPopup, damageTypes, damageProfile, resolveAdvancedDamage };
+  return { refresh, exhaustion, withExhaustion, normalizeConditions, tokenSize, sizeMultiplier, resolveSize, renderTokenConditions, fuzzyConditionMatch, autoPopupEnabled, toggleAutoPopup, damageTypes, damageProfile, resolveAdvancedDamage, resolveSaveConditions, conditionNames, selectedAdvancedConditions, setupAdvancedConditionPickers };
 })();
 if (typeof module !== 'undefined') module.exports = TokenActions;
