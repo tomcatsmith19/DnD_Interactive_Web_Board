@@ -371,8 +371,8 @@
         <summary><svg class="map-advanced-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg><span>Advanced options</span><button class="map-advanced-reset" type="button" onclick="resetAdvancedOptions(event)" aria-label="Reset advanced options" title="Reset advanced options"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"/></svg></button></summary>
         <div class="map-advanced-options-row">
           <label class="map-advanced-field">DMG Type<select id="mapDamageType"><option value="">No damage type</option><option>Acid</option><option>Bludgeoning</option><option>Cold</option><option>Fire</option><option>Force</option><option>Lightning</option><option>Necrotic</option><option>Piercing</option><option>Poison</option><option>Psychic</option><option>Radiant</option><option>Slashing</option><option>Thunder</option></select></label>
-          <label class="map-advanced-field">Save Type<select id="mapSaveType" title="AC rolls a d20 against each target's Armor Class; ability choices roll against the selected DC."><option value="ac">AC</option><option value="str">STR</option><option value="dex">DEX</option><option value="con">CON</option><option value="int">INT</option><option value="wis">WIS</option><option value="cha">CHA</option></select></label>
-          <label class="map-advanced-field">DC<input id="mapSaveDC" type="number" min="0" step="1" value="10"></label>
+          <label class="map-advanced-field">Save Type<select id="mapSaveType" title="AC rolls a d20 plus To Hit against each target's Armor Class; ability choices roll against the selected DC."><option value="ac">AC</option><option value="str">STR</option><option value="dex">DEX</option><option value="con">CON</option><option value="int">INT</option><option value="wis">WIS</option><option value="cha">CHA</option></select></label>
+          <label class="map-advanced-field"><span id="mapSaveTargetLabel">To Hit</span><input id="mapSaveDC" type="number" min="0" step="1" value="10"></label>
         </div>
         <div id="mapSaveConditionEffects" class="map-save-condition-effects">
           <div class="map-save-condition-row">
@@ -383,7 +383,7 @@
           </div>
           <div class="map-save-condition-row">
             <div class="map-save-condition-title">On successful save</div>
-            <select id="mapSuccessDamage" aria-label="Damage on a successful save"><option value="half">Half damage</option><option value="full">Full damage</option><option value="none">No damage</option></select>
+            <select id="mapSuccessDamage" aria-label="Damage on a successful save"><option value="half">Half damage</option><option value="full">Full damage</option><option value="none" selected>No damage</option></select>
             <select id="mapSuccessConditionAction" aria-label="Condition change on a successful save"><option value="none">No condition change</option><option value="remove">Remove condition</option></select>
             <div id="mapSuccessConditionPicker" class="map-save-condition-picker" hidden><input id="mapSuccessConditionSearch" type="search" list="mapConditionChoices" placeholder="Search condition…" aria-label="Condition to remove on a successful save"><div id="mapSuccessConditionChips" class="map-condition-chips"></div></div>
           </div>
@@ -712,11 +712,11 @@
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
   <script src="map-drawing.js?v=28"></script>
   <script src="token-placement.js?v=4"></script>
-    <script src="token-actions.js?v=7"></script>
+    <script src="token-actions.js?v=11"></script>
     <script src="board-sync.js?v=9"></script>
     <script src="map-stickers.js?v=38"></script>
     <script src="shared-timer.js?v=5"></script>
-  <script src="board-ui.js?v=14"></script>
+  <script src="board-ui.js?v=17"></script>
     <script src="reference.js?v=2"></script>
 
   <script>

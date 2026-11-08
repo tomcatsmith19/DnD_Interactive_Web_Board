@@ -307,7 +307,7 @@ function removeMonstersFromFirebase(ids) { return runBoardWrite(boardSync.remove
 function addMonstersToFirebase(tokens) { return runBoardWrite(boardSync.add(tokens, tokens[0]?._boardGeneration || boardSync.generation)); }
 function forceReloadMonsters() { return runBoardWrite(boardSync.reconcile()); }
 async function mapActionDefinition(token) {
-    if (Array.isArray(token.actionDefenses?.conditionImmune) || token.isplayer || token.isNpc) return token;
+    if (token.isplayer || token.isNpc || (token.ac != null && Array.isArray(token.actionDefenses?.conditionImmune))) return token;
     try {
         if (typeof loadMonsterDefinitionByName === 'function') return (await loadMonsterDefinitionByName(token.name))?.monsterData || token;
         const response = await fetch(`data/monsters/${encodeURIComponent(token.name)}.json`);
@@ -326,15 +326,19 @@ async function applyMapTokenAction(action, condition = '', level = 0) {
     let damageAmounts = null;
     let advancedResults = null;
     if (action === 'damage' && advanced?.open) {
+        const saveType = document.getElementById('mapSaveType')?.value || 'ac';
+        const saveTargetValue = document.getElementById('mapSaveDC')?.value;
+        const saveTarget = saveTargetValue === '' || saveTargetValue == null ? 10 : Number(saveTargetValue);
         const options = {
             damageType: document.getElementById('mapDamageType')?.value || '',
-            saveType: document.getElementById('mapSaveType')?.value || 'ac',
-            dc: document.getElementById('mapSaveDC')?.value || 10,
+            saveType,
+            dc: saveType === 'ac' ? undefined : saveTarget,
+            toHit: saveType === 'ac' ? saveTarget : undefined,
             failureDamage: document.getElementById('mapFailureDamage')?.value || 'full',
             successDamage: document.getElementById('mapSuccessDamage')?.value || 'half'
         };
         const definitions = await Promise.all(targets.map(mapActionDefinition));
-        const rolls = targets.map(actionD20Roll);
+        const rolls = saveType === 'ac' ? targets.map(() => null) : targets.map(actionD20Roll);
         const failureConditions = document.getElementById('mapFailureConditionAction')?.value === 'apply' ? TokenActions.selectedAdvancedConditions('mapFailureConditionChips') : [];
         const successConditions = document.getElementById('mapSuccessConditionAction')?.value === 'remove' ? TokenActions.selectedAdvancedConditions('mapSuccessConditionChips') : [];
         advancedResults = targets.map((token, index) => {
@@ -399,12 +403,13 @@ function resetAdvancedOptions(event) {
 function rollAdvancedActionDice(results) {
     const show = document.getElementById('mapShowRolledDice')?.checked;
     const share = document.getElementById('mapShareActionDice')?.checked;
-    if ((!show && !share) || !window.diceRoller3d) return;
+    const rolledResults = results.filter(({ result }) => Number.isFinite(result.roll));
+    if ((!show && !share) || !window.diceRoller3d || !rolledResults.length) return;
     const prefix = boardPageRole === 'dm' ? 'dm' : 'player';
     const appearance = window.diceRoller3d.getCustomizationDetails?.(prefix);
     const escapeMarkup = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
-    const markup = results.map(({ token, result }) => `<div><b>${escapeMarkup(token.name)}:</b> ${result.roll} + ${result.total - result.roll} = ${result.total} vs ${result.saveType === 'ac' ? 'AC' : 'DC'} ${result.targetDc} (${result.saved ? 'success' : 'failure'})</div>`).join('');
-    window.diceRoller3d.rollResolved({ id:`${Date.now()}-${Math.random().toString(36).slice(2)}`, createdAt:Date.now(), roller:boardPageRole === 'dm' ? 'Dungeon Master' : 'Player', sourcePrefix:prefix, themeConfig:appearance?.themeConfig || window.diceRoller3d.getCustomization?.(prefix), appearanceSummary:appearance?.summary || '', markup }, results.map(({ result }) => result.roll), share);
+    const markup = rolledResults.map(({ token, result }) => `<div><b>${escapeMarkup(token.name)}:</b> ${result.roll} + ${result.total - result.roll} = ${result.total} vs DC ${result.targetDc} (${result.saved ? 'success' : 'failure'})</div>`).join('');
+    window.diceRoller3d.rollResolved({ id:`${Date.now()}-${Math.random().toString(36).slice(2)}`, createdAt:Date.now(), roller:boardPageRole === 'dm' ? 'Dungeon Master' : 'Player', sourcePrefix:prefix, themeConfig:appearance?.themeConfig || window.diceRoller3d.getCustomization?.(prefix), appearanceSummary:appearance?.summary || '', markup }, rolledResults.map(({ result }) => result.roll), share);
 }
 function refreshBoardTrackers(force = false) {
     const editing = !force && document.activeElement?.closest('#monsterTableBody, #partyTableBody');

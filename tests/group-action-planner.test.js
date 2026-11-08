@@ -157,7 +157,7 @@ test('replays each attack d20 and every pre-rolled damage die',()=>{
 test('DM action panel owns a draft group planner sorted and applied one row at a time',()=>{
   const dm=fs.readFileSync('public/dm.html','utf8'),player=fs.readFileSync('public/player.html','utf8'),script=fs.readFileSync('public/group-action-planner.js','utf8');
   assert.match(dm,/id="mapGroupActionPlanner"[\s\S]*?id="mapGroupActionRows"/);
-  assert.match(dm,/group-action-planner\.js\?v=4/);
+  assert.match(dm,/group-action-planner\.js\?v=5/);
   assert.doesNotMatch(player,/mapGroupActionPlanner|group-action-planner\.js/);
   assert.match(script,/sort\(\(a,b\) => Number\(b\.init\)-Number\(a\.init\)/);
   assert.match(script,/className='group-action-apply'/);
@@ -174,6 +174,9 @@ test('DM action panel owns a draft group planner sorted and applied one row at a
   assert.doesNotMatch(dm,/<th>Init<\/th>/);
   assert.match(script,/className='group-action-monster-link'/);
   assert.match(script,/focusMapToken\(plan\.actorId\)/);
+  assert.match(script,/toggleDmLeftPanel\('initiative'\)/);
+  assert.match(script,/showInitiativeSubtab\('statblock'\)/);
+  assert.match(script,/openMonsterStatblock\(plan\.actorId\)/);
   assert.match(dm,/id="mapReceiverActionsTab"[\s\S]*?<span>Defenders<\/span><\/button>/);
   assert.match(dm,/id="mapGroupActionsTab"[\s\S]*?<span>Attackers<\/span><\/button>/);
   assert.match(dm,/id="mapReceiverActionsPane"[\s\S]*?id="mapGroupActionsPane"/);

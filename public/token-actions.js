@@ -236,6 +236,13 @@ const TokenActions = (() => {
       return damageWords([value.resist, value.immune, value.special, value.note, value.name].flat().filter(Boolean));
     });
   }
+  function armorClass(data = {}, fallback = 10) {
+    let raw = data?.ac;
+    if (Array.isArray(raw)) raw = raw[0];
+    if (raw && typeof raw === 'object') raw = raw.ac;
+    const parsed = Number.parseInt(raw);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+  }
   function damageProfile(data = {}) {
     if (data.actionDefenses) return data.actionDefenses;
     const scores = Object.fromEntries(abilities.map(ability => [ability, Number(data[ability]) || 10]));
@@ -246,6 +253,7 @@ const TokenActions = (() => {
       saves[ability] = parsed == null ? Math.floor((scores[ability] - 10) / 2) : parsed;
     });
     return {
+      ac: armorClass(data),
       scores,
       saves,
       resist: [...new Set(damageWords(data.resist || data.damageResistances || []))].filter(type => damageTypes.includes(type)),
@@ -257,14 +265,12 @@ const TokenActions = (() => {
     const profile = damageProfile(Object.keys(definition || {}).length ? definition : target);
     const saveType = String(options.saveType || 'ac').toLowerCase();
     const base = Math.max(0, Math.trunc(Number(amount) || 0));
-    let applied = base, roll = null, total = null, saved = false, targetDc = Math.max(0, Math.trunc(Number(options.dc) || 10));
+    let applied = base, roll = null, total = null, saved = false, toHit = null, targetDc = Math.max(0, Math.trunc(Number(options.dc) || 10));
     if (saveType === 'ac') {
-      roll = Math.max(1, Math.min(20, Math.trunc(Number(roller()) || 1)));
-      total = roll;
-      let rawAc = target.ac ?? definition.ac;
-      if (Array.isArray(rawAc)) rawAc = rawAc[0];
-      if (rawAc && typeof rawAc === 'object') rawAc = rawAc.ac;
-      targetDc = Math.max(1, Math.trunc(Number.parseInt(rawAc) || 10));
+      const configuredToHit = options.toHit ?? options.dc;
+      toHit = Number.isFinite(Number(configuredToHit)) ? Math.trunc(Number(configuredToHit)) : 0;
+      total = toHit;
+      targetDc = armorClass({ ac:target.ac ?? definition.ac ?? target.actionDefenses?.ac ?? profile.ac });
       saved = total < targetDc;
     } else if (abilities.includes(saveType)) {
       roll = Math.max(1, Math.min(20, Math.trunc(Number(roller()) || 1)));
@@ -278,7 +284,7 @@ const TokenActions = (() => {
     const resisted = Boolean(!immune && damageType && profile.resist?.includes(damageType));
     if (immune) applied = 0;
     else if (resisted) applied = Math.floor(applied / 2);
-    return { amount: applied, roll, total, saved, damageType, saveType, targetDc, immune, resisted, profile };
+    return { amount: applied, roll, total, saved, toHit, damageType, saveType, targetDc, immune, resisted, profile };
   }
   function resolveSaveConditions(result, failureConditions = [], successConditions = []) {
     if (result.saved) return { apply: [], remove: [...new Set(successConditions.map(canonical))], skippedImmune: [] };
@@ -296,8 +302,26 @@ const TokenActions = (() => {
     const container = typeof document === 'undefined' ? null : document.getElementById(containerId);
     return container ? Array.from(container.children).map(chip => chip.dataset.condition).filter(Boolean) : [];
   }
+  function setupAdvancedDefenseControl() {
+    if (typeof document === 'undefined') return;
+    const saveType = document.getElementById('mapSaveType'), dc = document.getElementById('mapSaveDC'), dcLabel = document.getElementById('mapSaveTargetLabel');
+    if (!saveType || !dc) return;
+    const updateDc = () => {
+      const usesAc = saveType.value === 'ac';
+      dc.disabled = false;
+      dc.min = '0';
+      dc.title = usesAc ? 'Completed attack total compared directly with each target\'s Armor Class; targets do not roll.' : 'Saving throw Difficulty Class.';
+      if (dcLabel) dcLabel.textContent = usesAc ? 'To Hit' : 'DC';
+    };
+    if (saveType.dataset.defenseControlReady !== 'true') {
+      saveType.addEventListener('change', updateDc);
+      saveType.dataset.defenseControlReady = 'true';
+    }
+    updateDc();
+  }
   function setupAdvancedConditionPickers() {
     if (typeof document === 'undefined') return;
+    setupAdvancedDefenseControl();
     const list = document.getElementById('mapConditionChoices');
     if (!list || list.dataset.ready === 'true') return;
     conditionNames().forEach(name => { const option = document.createElement('option'); option.value = name; list.append(option); });
@@ -316,9 +340,6 @@ const TokenActions = (() => {
       action.addEventListener('change', update); update();
       input.addEventListener('change', () => { if (addChip(chips, input.value)) input.value = ''; });
     });
-    const saveType = document.getElementById('mapSaveType'), dc = document.getElementById('mapSaveDC');
-    const updateDc = () => { if (dc) { dc.disabled = saveType?.value === 'ac'; dc.title = dc.disabled ? 'AC uses each target’s Armor Class instead of this DC.' : ''; } };
-    saveType?.addEventListener('change', updateDc); updateDc();
   }
   function refresh(selected) {
     setupAdvancedConditionPickers();
@@ -401,6 +422,6 @@ const TokenActions = (() => {
     button.title = `Auto pop-up ${enabled ? 'on' : 'off'}`;
     return enabled;
   }
-  return { refresh, exhaustion, withExhaustion, normalizeConditions, tokenSize, sizeMultiplier, resolveSize, renderTokenConditions, fuzzyConditionMatch, autoPopupEnabled, toggleAutoPopup, damageTypes, damageProfile, resolveAdvancedDamage, resolveSaveConditions, conditionNames, selectedAdvancedConditions, setupAdvancedConditionPickers };
+  return { refresh, exhaustion, withExhaustion, normalizeConditions, tokenSize, sizeMultiplier, resolveSize, renderTokenConditions, fuzzyConditionMatch, autoPopupEnabled, toggleAutoPopup, damageTypes, armorClass, damageProfile, resolveAdvancedDamage, resolveSaveConditions, conditionNames, selectedAdvancedConditions, setupAdvancedConditionPickers };
 })();
 if (typeof module !== 'undefined') module.exports = TokenActions;

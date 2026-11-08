@@ -81,6 +81,18 @@ test('advanced damage resolves individual saves before resistance and immunity',
   assert.equal(actions.resolveAdvancedDamage(21,{}, {saveType:'dex',dc:20,failureDamage:'full',damageType:''},data,()=>10).amount,21);
 });
 
+test('AC parsing uses bundled monster armor classes instead of falling back to 10',()=>{
+  const {actions}=fixture();
+  const pixie=JSON.parse(fs.readFileSync('public/data/monsters/Pixie.json','utf8'));
+  const jimjar=JSON.parse(fs.readFileSync('public/data/monsters/Jimjar.json','utf8'));
+  assert.equal(actions.armorClass(pixie),15);
+  assert.equal(actions.armorClass(jimjar),12);
+  assert.equal(actions.damageProfile(pixie).ac,15);
+  let rolled=false;
+  const miss=actions.resolveAdvancedDamage(6,{actionDefenses:actions.damageProfile(pixie)}, {saveType:'ac',toHit:1,successDamage:'none'}, {},()=>{rolled=true;return 20;});
+  assert.equal(miss.targetDc,15);assert.equal(miss.total,1);assert.equal(miss.saved,true);assert.equal(miss.amount,0);assert.equal(miss.roll,null);assert.equal(rolled,false);
+});
+
 test('save-linked conditions apply on failure, remove on success, and respect condition immunity',()=>{
   const {actions}=fixture(), definition={dex:12,conditionImmune:['poisoned']};
   const plain=value=>JSON.parse(JSON.stringify(value));
@@ -88,12 +100,16 @@ test('save-linked conditions apply on failure, remove on success, and respect co
   assert.deepEqual(plain(actions.resolveSaveConditions(failed,['Prone','Poisoned'],['Restrained'])),{apply:['Prone'],remove:[],skippedImmune:['Poisoned']});
   const saved=actions.resolveAdvancedDamage(8,{}, {saveType:'dex',dc:10,onSuccess:'half'},definition,()=>15);
   assert.deepEqual(plain(actions.resolveSaveConditions(saved,['Prone'],['Restrained'])),{apply:[],remove:['Restrained'],skippedImmune:[]});
-  const acMiss=actions.resolveAdvancedDamage(8,{ac:15}, {saveType:'ac'},definition,()=>1);
+  const acMiss=actions.resolveAdvancedDamage(8,{ac:15}, {saveType:'ac',toHit:1},definition);
   assert.equal(acMiss.amount,4);
   assert.deepEqual(plain(actions.resolveSaveConditions(acMiss,['Prone'],['Restrained'])),{apply:[],remove:['Restrained'],skippedImmune:[]});
-  const acHit=actions.resolveAdvancedDamage(8,{ac:15}, {saveType:'ac'},definition,()=>18);
+  const acHit=actions.resolveAdvancedDamage(8,{ac:15}, {saveType:'ac',toHit:18},definition);
   assert.equal(acHit.amount,8);
   assert.deepEqual(plain(actions.resolveSaveConditions(acHit,['Prone'],['Restrained'])),{apply:['Prone'],remove:[],skippedImmune:[]});
+  const modifiedHit=actions.resolveAdvancedDamage(8,{ac:15}, {saveType:'ac',toHit:15},definition,()=>8);
+  assert.equal(modifiedHit.total,15);
+  assert.equal(modifiedHit.toHit,15);
+  assert.equal(modifiedHit.amount,8);
 });
 
 test('advanced action controls exist on both boards with the requested defaults',()=>{
@@ -102,9 +118,11 @@ test('advanced action controls exist on both boards with the requested defaults'
     assert.match(html,/id="mapAdvancedOptions"[\s\S]*?<summary>[\s\S]*?map-advanced-chevron[\s\S]*?<span>Advanced options<\/span>[\s\S]*?map-advanced-reset/);
     assert.match(html,/id="mapDamageType"[\s\S]*?<option value="">No damage type<\/option>/);
     assert.match(html,/id="mapSaveType"[\s\S]*?<option value="ac">AC<\/option>/);
+    assert.match(html,/id="mapSaveTargetLabel">To Hit<\/span>/);
     assert.match(html,/id="mapSaveDC"[^>]*value="10"/);
     assert.match(html,/id="mapFailureDamage"[\s\S]*?Full damage[\s\S]*?Half damage[\s\S]*?No damage/);
     assert.match(html,/id="mapSuccessDamage"[\s\S]*?Half damage[\s\S]*?Full damage[\s\S]*?No damage/);
+    assert.match(html,/id="mapSuccessDamage"[\s\S]*?<option value="none" selected>No damage<\/option>/);
     assert.match(html,/id="mapFailureConditionAction"[\s\S]*?Apply condition/);
     assert.match(html,/id="mapSuccessConditionAction"[\s\S]*?Remove condition/);
     assert.match(html,/id="mapActionResultsDialog"[\s\S]*?id="mapActionResultList"[^>]*aria-live="polite"/);
@@ -117,6 +135,23 @@ test('advanced action controls exist on both boards with the requested defaults'
     assert.match(html,/applyMapTokenAction\('damage'\)">Apply<\/button>/);
     assert.match(html,/>Immediate conditions</);
   }
+  const actionsJs=fs.readFileSync('public/token-actions.js','utf8');
+  assert.match(actionsJs,/dc\.disabled = false/);
+  assert.match(actionsJs,/dcLabel\.textContent = usesAc \? 'To Hit' : 'DC'/);
+  const boardUI=fs.readFileSync('public/board-ui.js','utf8');
+  assert.match(boardUI,/toHit: saveType === 'ac' \? saveTarget : undefined/);
+});
+
+test('AC always enables To Hit even after condition controls were already initialized',()=>{
+  const {actions,Element}=fixture();
+  const list=new Element('datalist');list.id='mapConditionChoices';list.dataset.ready='true';
+  const saveType=new Element('select');saveType.id='mapSaveType';saveType.value='ac';
+  const dc=new Element('input');dc.id='mapSaveDC';dc.disabled=true;
+  const label=new Element('span');label.id='mapSaveTargetLabel';label.textContent='DC';
+  actions.setupAdvancedConditionPickers();
+  assert.equal(dc.disabled,false);assert.equal(label.textContent,'To Hit');assert.equal(dc.min,'0');
+  saveType.value='dex';saveType.listeners.change();
+  assert.equal(label.textContent,'DC');assert.equal(dc.min,'0');assert.equal(dc.disabled,false);
 });
 
 test('advanced dice preferences reuse the Dice tab d20 asset',()=>{

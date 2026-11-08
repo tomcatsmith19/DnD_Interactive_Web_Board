@@ -328,10 +328,16 @@
       const target = players.find(player => player.id === plan.targetId), selfAction=Boolean(plan.action.standardAction), attack = attackResult(plan, target), damageTotal = actionDamageTotal(plan.rolled,target);
       const row = body.insertRow(); row.dataset.actorId = plan.actorId;
       const actorCell = row.insertCell(), actorLink=document.createElement('button'), nameParts=String(plan.actor.name||'Monster').trim().split(/\s+/), firstName=nameParts.shift(); actorCell.className='group-action-monster';
-      actorLink.type='button';actorLink.className='group-action-monster-link';actorLink.title=`Zoom to ${plan.actor.name}`;actorLink.setAttribute('aria-label',`Zoom to ${plan.actor.name} on the map`);
+      actorLink.type='button';actorLink.className='group-action-monster-link';actorLink.title=`Zoom to ${plan.actor.name} and open stat block`;actorLink.setAttribute('aria-label',`Zoom to ${plan.actor.name} on the map and open its stat block`);
       const actorPrefix=document.createElement('span');actorPrefix.className='group-action-monster-prefix';actorPrefix.textContent=`${Number(plan.actor.init) || 0}-${firstName}`;actorLink.append(actorPrefix);
       if(nameParts.length)actorLink.append(document.createTextNode(` ${nameParts.join(' ')}`));
-      actorLink.addEventListener('click',()=>{if(typeof focusMapToken==='function')focusMapToken(plan.actorId);});actorCell.append(actorLink);
+      actorLink.addEventListener('click',()=>{
+        if(typeof focusMapToken==='function')focusMapToken(plan.actorId);
+        const initiativePanel=document.getElementById('dmInitiativePanel'),initiativeContent=document.getElementById('dmInitiativeContent');
+        if(typeof toggleDmLeftPanel==='function'&&(initiativePanel?.classList.contains('is-collapsed')||!initiativeContent?.classList.contains('is-active')))toggleDmLeftPanel('initiative');
+        if(typeof showInitiativeSubtab==='function')showInitiativeSubtab('statblock');
+        if(typeof openMonsterStatblock==='function')void openMonsterStatblock(plan.actorId);
+      });actorCell.append(actorLink);
       const actionCell = row.insertCell(), actionSelect = document.createElement('select'); actionSelect.setAttribute('aria-label', `Action for ${plan.actor.name}`);
       const choices = plan.actions.some(action => action.name === plan.actionName) ? plan.actions : [plan.action,...plan.actions];
       choices.forEach(action => { const option=document.createElement('option'); option.value=action.name; option.textContent=action.name; option.selected=action.name===plan.actionName; actionSelect.append(option); });
