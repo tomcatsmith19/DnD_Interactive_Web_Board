@@ -41,6 +41,16 @@
     .map-action-panel button { background:#32CD32; color:#1d1009; border:0; font-weight:bold; cursor:pointer; }
     .token-lasso { position:absolute; inset:0; z-index:30; width:100%; height:100%; pointer-events:none; overflow:visible; }
     .token-lasso polyline { fill:rgba(79,195,255,.16); stroke:#4fc3ff; stroke-width:3; stroke-dasharray:9 6; stroke-linejoin:round; }
+    .map-location-layer { position:absolute; inset:0; z-index:35; width:100%; height:100%; pointer-events:none; }
+    .map-location-marker { position:absolute; display:block; width:80px; height:80px; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 3px #000); pointer-events:auto; }
+    .map-location-marker img { display:block; width:100%; height:100%; object-fit:contain; }
+    .map-location-marker::after { content:attr(data-destination-name); position:absolute; left:50%; bottom:calc(100% + 7px); z-index:2; max-width:220px; padding:5px 8px; transform:translateX(-50%) scale(.88); opacity:0; visibility:hidden; color:#f4d76d; background:rgba(29,16,9,.96); border:1px solid #8a6643; border-radius:5px; box-shadow:0 3px 10px #000; font:12px/1.2 Arial,sans-serif; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; pointer-events:none; transition:opacity .12s ease,transform .12s ease,visibility .12s; }
+    .map-location-marker:hover::after,.map-location-marker:focus-visible::after { opacity:1; visibility:visible; transform:translateX(-50%) scale(1); }
+    .map-location-marker.map-location-generic img { filter:url(#playerMapLocationThemeFilter); }
+    .map-location-marker.map-location-town img { filter:url(#playerMapLocationTownFilter); }
+    .map-location-marker.map-location-wild img { filter:url(#playerMapLocationWildFilter); }
+    .map-location-marker.map-location-dungeon img { filter:url(#playerMapLocationDungeonFilter); }
+    .map-location-color-filters { position:absolute; width:0; height:0; overflow:hidden; pointer-events:none; }
     .group-move-handle { position:absolute; z-index:35; width:34px; height:34px; padding:0; display:flex; align-items:center; justify-content:center; color:#1d1009; background:#4fc3ff; border:2px solid white; border-radius:50%; box-shadow:0 2px 9px #000,0 0 0 2px rgba(79,195,255,.45); font-size:23px; line-height:1; cursor:move; pointer-events:auto; touch-action:none; user-select:none; }
     .combat-flash-effect { position:fixed; z-index:2900; border-radius:50%; pointer-events:none; }
     .combat-flash-effect.flash-red { animation:flash-red 1s ease-out forwards; }
@@ -133,7 +143,7 @@
     .session-controls-panel .session-logout-button { background:#a83232 !important; }
     .session-controls-panel .session-controls-toggle { position:absolute; left:-43px; bottom:0; width:43px; min-width:0; height:68px; padding:3px !important; background:#1d1009 !important; color:#f4d76d !important; border:1px solid #f4d76d !important; border-right:0 !important; border-radius:8px 0 0 8px !important; }
     .session-controls-toggle svg { width:34px; height:54px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-    .audio-dock { position:fixed; left:12px; right:12px; bottom:28px; z-index:1150; display:flex; align-items:flex-start; gap:10px; padding:8px; color:white; background:rgba(15,15,15,.92); border:1px solid #8a6643; border-radius:9px; }
+    .audio-dock { position:fixed; left:12px; right:12px; bottom:0; z-index:1150; display:flex; align-items:flex-start; gap:10px; padding:8px; color:white; background:rgba(15,15,15,.92); border:1px solid #8a6643; border-radius:9px 9px 0 0; }
     .audio-dock.is-collapsed .audio-dock-content { display:none; }
     .audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
     .audio-dock-content { display:grid; grid-template-columns:minmax(105px,.4fr) repeat(3,minmax(0,1fr)); gap:8px 12px; align-items:start; flex:1; }
@@ -312,6 +322,13 @@
         <div id="mapTokenLayer"
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 6; pointer-events: none;"></div>
         <svg id="tokenLasso" class="token-lasso" style="display:none;"><polyline id="tokenLassoPath" points=""></polyline></svg>
+        <svg class="map-location-color-filters" aria-hidden="true"><defs>
+          <filter id="playerMapLocationThemeFilter" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope=".95686"/><feFuncG type="linear" slope=".84314"/><feFuncB type="linear" slope=".42745"/><feFuncA type="identity"/></feComponentTransfer></filter>
+          <filter id="playerMapLocationTownFilter" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope=".33333"/><feFuncG type="linear" slope=".65882"/><feFuncB type="linear" slope="1"/><feFuncA type="identity"/></feComponentTransfer></filter>
+          <filter id="playerMapLocationWildFilter" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope=".33333"/><feFuncG type="linear" slope=".83922"/><feFuncB type="linear" slope=".41961"/><feFuncA type="identity"/></feComponentTransfer></filter>
+          <filter id="playerMapLocationDungeonFilter" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope="1"/><feFuncG type="linear" slope=".34902"/><feFuncB type="linear" slope=".34902"/><feFuncA type="identity"/></feComponentTransfer></filter>
+        </defs></svg>
+        <div id="playerMapLocationLayer" class="map-location-layer" aria-label="Map locations"></div>
       </div>
     </div>
 
@@ -1454,10 +1471,45 @@
       return '_' + Math.random().toString(36).substr(2, 9);
     }
 
+    const playerMapLocationIcons = { generic:'assets/generic_location.png', town:'assets/town_location.png', wild:'assets/wild_location.png', dungeon:'assets/dungeon_location.png' };
+    let playerMapLocations = [];
+    let playerCampaignMapNames = new Map();
     let currentTokenSize = 100;  // default size in pixels
+
+    function playerMapLocationName(location) {
+      return location.targetMapName || playerCampaignMapNames.get(`${location.targetCampaignId}/${location.targetMapId}`) || 'Unknown map';
+    }
+
+    function renderPlayerMapLocations() {
+      const layer = document.getElementById('playerMapLocationLayer');
+      if (!layer) return;
+      layer.replaceChildren();
+      const markerSize = Math.max(24, (Number(currentTokenSize) || 100) * .8);
+      playerMapLocations.forEach(location => {
+        const iconName = playerMapLocationIcons[location.icon] ? location.icon : 'generic';
+        const marker = document.createElement('div');
+        marker.className = `map-location-marker map-location-${iconName}`;
+        marker.style.width = `${markerSize}px`;
+        marker.style.height = `${markerSize}px`;
+        marker.style.left = `${Math.max(0, Math.min(1, Number(location.xRatio) || 0)) * 100}%`;
+        marker.style.top = `${Math.max(0, Math.min(1, Number(location.yRatio) || 0)) * 100}%`;
+        marker.setAttribute('role', 'img');
+        const destinationName = playerMapLocationName(location);
+        marker.setAttribute('aria-label', `Travel location to ${destinationName}`);
+        marker.setAttribute('data-destination-name', destinationName);
+        marker.tabIndex = 0;
+        marker.title = destinationName;
+        const image = document.createElement('img');
+        image.src = playerMapLocationIcons[iconName];
+        image.alt = '';
+        marker.appendChild(image);
+        layer.appendChild(marker);
+      });
+    }
 
     function updateAllTokenSizes() {
       refreshMapLayout();
+      if (typeof renderPlayerMapLocations === 'function') renderPlayerMapLocations();
     }
 
     document.getElementById('increaseTokenSize').addEventListener('click', () => {
@@ -2024,6 +2076,8 @@
     scheduleMapLayoutRefresh();
 
     boardSync.subscribeMap(sharedMap => {
+      playerMapLocations = Array.isArray(sharedMap.locations) ? sharedMap.locations : [];
+      if (typeof renderPlayerMapLocations === 'function') renderPlayerMapLocations();
       const sharedScale = Number(sharedMap.mapScale);
       if (Number.isFinite(sharedScale)) {
         sharedMapScale = Math.min(Math.max(0.2, sharedScale), 3);
@@ -2034,6 +2088,15 @@
         scheduleMapLayoutRefresh();
       }
     });
+
+    db.collection('shared').doc('campaignRegistry').onSnapshot(snapshot => {
+      const registry = snapshot.data() || {};
+      playerCampaignMapNames = new Map();
+      (registry.campaigns || []).forEach(campaign => (campaign.maps || []).forEach(map => {
+        playerCampaignMapNames.set(`${campaign.id}/${map.id}`, map.name);
+      }));
+      renderPlayerMapLocations();
+    }, error => console.error('Could not load campaign map names:', error));
 
 
 

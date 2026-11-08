@@ -121,10 +121,10 @@ test('custom player library occupies a responsive second column', () => {
     assert.match(playerHtml, /@media\(max-width:760px\)\{\.custom-player-workspace\{grid-template-columns:1fr\}/);
 });
 
-test('expanded audio docks remain raised above the bottom edge', () => {
+test('expanded audio docks sit flush with the bottom edge', () => {
     const dmHtml = fs.readFileSync('public/dm.html', 'utf8');
-    assert.match(playerHtml, /\.audio-dock \{[^}]*bottom:28px;/);
-    assert.match(dmHtml, /\.dm-audio-dock \{[^}]*bottom:28px;/);
+    assert.match(playerHtml, /\.audio-dock \{[^}]*bottom:0;/);
+    assert.match(dmHtml, /\.dm-audio-dock \{[^}]*bottom:0;/);
     assert.match(playerHtml, /\.audio-dock\.is-collapsed \{[^}]*bottom:0;/);
     assert.match(dmHtml, /\.dm-audio-dock\.is-collapsed \{[^}]*bottom:0;/);
 });

@@ -304,8 +304,8 @@
         .dice-roller .dice-roll-option { display:flex; flex-direction:row; align-items:center; gap:7px; color:white; font-weight:normal; }
         .dice-roller .dice-roll-option input { width:auto; margin:0; accent-color:#f4d76d; }
         .dm-map-toolbar { position:fixed; top:8px; left:10px; z-index:1000; display:grid; gap:5px; padding:8px 12px; color:white; background:rgba(0,0,0,.7); border-radius:8px; font-family:'MedievalSharp',cursive; }
-        .dm-map-toolbar-row { display:grid; grid-template-columns:88px 34px 34px; align-items:center; gap:6px; }
-        .dm-map-toolbar-row.token-scale-controls { order:-1; grid-template-columns:88px 34px 34px 34px; }
+        .dm-map-toolbar-row { display:grid; grid-template-columns:34px 88px 34px 34px; align-items:center; gap:6px; }
+        .dm-map-toolbar-row.token-scale-controls { order:-1; }
         .session-controls-panel { position:fixed; right:12px; bottom:42px; z-index:1250; display:flex; flex-direction:column; gap:6px; padding:6px; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.45); transition:transform .25s ease; }
         .session-controls-panel.is-collapsed { transform:translateX(calc(100% + 12px)); }
         .session-controls-panel button { min-width:70px; margin:0 !important; padding:7px 10px !important; color:white !important; border:0 !important; border-radius:5px !important; font-family:'MedievalSharp',cursive !important; font-size:.85rem !important; cursor:pointer; }
@@ -342,8 +342,44 @@
         .campaign-list button:focus-visible { outline:2px solid #f4d76d; outline-offset:2px; }
         .campaign-maps { display:flex; flex-direction:column; gap:6px; margin:8px 0 0 22px; }
         .campaign-maps[hidden] { display:none; }
-        .campaign-map-row { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:5px; }
+        .campaign-map-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto; align-items:center; gap:5px; }
         .campaign-list .campaign-map-select { text-align:left; overflow-wrap:anywhere; background:transparent; border-color:transparent; }
+        .campaign-list button.campaign-map-location-button { display:grid; place-items:center; width:32px; height:32px; margin:0; padding:4px; color:#f4d76d; background:#2b190f; border:1px solid #8a6643; border-radius:5px; cursor:crosshair; }
+        .campaign-map-location-button img { display:block; width:22px; height:22px; margin:0; object-fit:contain; filter:url(#mapLocationThemeFilter); }
+        .campaign-map-location-button:hover { border-color:#f4d76d; }
+        .map-location-layer,.map-location-placement-layer { position:absolute; inset:0; width:100%; height:100%; }
+        .map-location-layer { z-index:35; pointer-events:none; }
+        .map-location-marker { position:absolute; display:block; width:var(--map-location-size,80px); height:var(--map-location-size,80px); padding:0; transform:translate(-50%,-50%); background:transparent; border:0; border-radius:50%; cursor:pointer; pointer-events:auto; filter:drop-shadow(0 2px 3px #000); }
+        .map-location-marker:hover,.map-location-marker:focus-visible { transform:translate(-50%,-50%) scale(1.13); filter:drop-shadow(0 0 5px #f4d76d); outline:none; }
+        .map-location-marker img { display:block; width:100%; height:100%; object-fit:contain; pointer-events:none; }
+        .map-location-marker::after { content:attr(data-destination-name); position:absolute; left:50%; bottom:calc(100% + 7px); z-index:2; max-width:220px; padding:5px 8px; transform:translateX(-50%) scale(.88); opacity:0; visibility:hidden; color:#f4d76d; background:rgba(29,16,9,.96); border:1px solid #8a6643; border-radius:5px; box-shadow:0 3px 10px #000; font:12px/1.2 Arial,sans-serif; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; pointer-events:none; transition:opacity .12s ease,transform .12s ease,visibility .12s; }
+        .map-location-marker:hover::after,.map-location-marker:focus-visible::after { opacity:1; visibility:visible; transform:translateX(-50%) scale(1); }
+        .map-location-marker.map-location-generic img,.map-location-icon-options label:has(input[value="generic"]) img { filter:url(#mapLocationThemeFilter); }
+        .map-location-marker.map-location-town img,.map-location-icon-options label:has(input[value="town"]) img { filter:url(#mapLocationTownFilter); }
+        .map-location-marker.map-location-wild img,.map-location-icon-options label:has(input[value="wild"]) img { filter:url(#mapLocationWildFilter); }
+        .map-location-marker.map-location-dungeon img,.map-location-icon-options label:has(input[value="dungeon"]) img { filter:url(#mapLocationDungeonFilter); }
+        .map-location-placement-layer { z-index:45; display:none; cursor:crosshair; background:rgba(244,215,109,.06); pointer-events:auto; }
+        .map-location-placement-layer.is-active { display:block; }
+        .map-location-dialog { width:min(430px,calc(100vw - 30px)); padding:0; color:white; background:#21130c; border:1px solid #8a6643; border-radius:9px; box-shadow:0 12px 35px #000; }
+        .map-location-dialog::backdrop { background:rgba(0,0,0,.62); }
+        .map-location-dialog-content { position:relative; padding:22px; }
+        .map-location-dialog h2 { margin:0 35px 18px 0; color:#f4d76d; font-family:'MedievalSharp',cursive; }
+        .map-location-dialog label,.map-location-dialog legend { color:#f4d76d; font-weight:bold; }
+        #mapLocationDestination { width:100%; box-sizing:border-box; margin-top:7px; padding:9px; color:white; background:#2b190f; border:1px solid #765133; border-radius:5px; }
+        .map-location-icon-picker { margin:16px 0; padding:10px; border:1px solid #765133; border-radius:6px; }
+        .map-location-icon-options { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:8px; }
+        .map-location-icon-options label { display:grid; place-items:center; gap:4px; padding:6px; color:#ddd; background:#2b190f; border:1px solid #563722; border-radius:5px; font-size:.7rem; cursor:pointer; }
+        .map-location-icon-options label:has(input:checked) { color:#f4d76d; border-color:#f4d76d; }
+        .map-location-icon-options input { position:absolute; opacity:0; pointer-events:none; }
+        .map-location-icon-options img { width:50px; height:50px; object-fit:contain; }
+        .map-location-dialog-actions { display:flex; justify-content:flex-end; gap:8px; }
+        .map-location-dialog-actions button { padding:8px 12px; color:#f4d76d; background:#3d2718; border:1px solid #765133; border-radius:5px; cursor:pointer; }
+        .map-location-dialog-actions .map-location-remove { margin-right:auto; color:#ff777f; background:#351416; border-color:#ff777f; }
+        .map-location-dialog-actions .map-location-save { color:#1d1009; background:#f4d76d; border-color:#f4d76d; font-weight:bold; }
+        .map-location-dialog-actions button:disabled { opacity:.45; cursor:not-allowed; }
+        .map-location-color-filters { position:absolute; width:0; height:0; overflow:hidden; pointer-events:none; }
+        .map-parent-button svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; pointer-events:none; }
+        .map-parent-button:disabled { opacity:.38; cursor:not-allowed; }
         .campaign-empty { margin:4px 0; color:#c9b98b; font-size:.85rem; }
         #addCampaignMapModal { width:min(900px,calc(100vw - 32px)); max-height:90vh; overflow:auto; box-sizing:border-box; padding:0; color:white; background:#1f120b; border:1px solid #f4d76d; border-radius:10px; box-shadow:0 10px 35px #000; }
         #addCampaignMapModal::backdrop { background:rgba(0,0,0,.8); }
@@ -388,7 +424,7 @@
         #confirmAddMapButton { color:white; background:#276c3d; border-color:#69aa78; }
         #confirmAddMapButton:hover { background:#32864c; border-color:#96d6a5; }
         .campaign-status { min-height:20px; color:#c9b98b; font-size:.82rem; }
-        .dm-audio-dock { position:fixed; left:12px; right:12px; bottom:28px; z-index:1150; display:flex; align-items:flex-start; padding:8px; color:white; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:9px; }
+        .dm-audio-dock { position:fixed; left:12px; right:12px; bottom:0; z-index:1150; display:flex; align-items:flex-start; padding:8px; color:white; background:rgba(29,16,9,.94); border:1px solid #8a6643; border-radius:9px 9px 0 0; }
         .dm-audio-dock.is-collapsed { height:0; padding:0; border:0; bottom:0; }
         .dm-audio-dock.is-collapsed .dm-audio-content { display:none; }
         .dm-audio-content { display:grid; grid-template-columns:minmax(105px,.4fr) repeat(3,minmax(0,1fr)); gap:8px 12px; align-items:start; flex:1; }
@@ -1385,6 +1421,14 @@
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 6; pointer-events: none;">
                 </div>
                 <svg id="tokenLasso" class="token-lasso" style="display:none;"><polyline id="tokenLassoPath" points=""></polyline></svg>
+                <svg class="map-location-color-filters" aria-hidden="true"><defs>
+                    <filter id="mapLocationThemeFilter" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope=".95686"/><feFuncG type="linear" slope=".84314"/><feFuncB type="linear" slope=".42745"/><feFuncA type="identity"/></feComponentTransfer></filter>
+                    <filter id="mapLocationTownFilter" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope=".33333"/><feFuncG type="linear" slope=".65882"/><feFuncB type="linear" slope="1"/><feFuncA type="identity"/></feComponentTransfer></filter>
+                    <filter id="mapLocationWildFilter" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope=".33333"/><feFuncG type="linear" slope=".83922"/><feFuncB type="linear" slope=".41961"/><feFuncA type="identity"/></feComponentTransfer></filter>
+                    <filter id="mapLocationDungeonFilter" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="linear" slope="1"/><feFuncG type="linear" slope=".34902"/><feFuncB type="linear" slope=".34902"/><feFuncA type="identity"/></feComponentTransfer></filter>
+                </defs></svg>
+                <div id="mapLocationLayer" class="map-location-layer" aria-label="Map locations"></div>
+                <div id="mapLocationPlacementLayer" class="map-location-placement-layer" aria-label="Choose a map location"></div>
             </div>
         </div>
 
@@ -1392,8 +1436,8 @@
 
         <!-- Map and Token Scale Controls -->
         <div id="tokenSizeControls" class="dm-map-toolbar">
-            <div class="dm-map-toolbar-row map-scale-controls"><span class="token-size-label">Map Scale</span><button id="decreaseMapScale" class="fantasy-token-button" title="Decrease map scale">−</button><button id="increaseMapScale" class="fantasy-token-button" title="Increase map scale">+</button></div>
-            <div class="dm-map-toolbar-row token-scale-controls"><span class="token-size-label">Token Size</span><button id="decreaseTokenSize" class="fantasy-token-button" title="Decrease token size">−</button><button id="increaseTokenSize" class="fantasy-token-button" title="Increase token size">+</button><button id="refreshBoardState" class="fantasy-token-button board-refresh-button" type="button" title="Reload the current board from Firebase" aria-label="Reload the current board from Firebase"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6a9 9 0 1 0 1 10M20 2v5h-5"/></svg></button></div>
+            <div class="dm-map-toolbar-row map-scale-controls"><button id="mapParentLocationButton" class="fantasy-token-button map-parent-button" type="button" title="Return to the previous marker map" aria-label="Return to the previous marker map" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V5M6 11l6-6 6 6"/></svg></button><span class="token-size-label">Map Scale</span><button id="decreaseMapScale" class="fantasy-token-button" title="Decrease map scale">−</button><button id="increaseMapScale" class="fantasy-token-button" title="Increase map scale">+</button></div>
+            <div class="dm-map-toolbar-row token-scale-controls"><button id="refreshBoardState" class="fantasy-token-button board-refresh-button" type="button" title="Reload the current board from Firebase" aria-label="Reload the current board from Firebase"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6a9 9 0 1 0 1 10M20 2v5h-5"/></svg></button><span class="token-size-label">Token Size</span><button id="decreaseTokenSize" class="fantasy-token-button" title="Decrease token size">−</button><button id="increaseTokenSize" class="fantasy-token-button" title="Increase token size">+</button></div>
         </div>
 
         <aside id="dmInitiativePanel" class="dm-map-ui dm-initiative-panel dm-left-dock is-collapsed" hidden>
@@ -1910,6 +1954,21 @@
             </div>
             <p id="addCampaignMapStatus" role="status"></p>
             <div id="customMapCreatorHost"></div>
+        </div>
+    </dialog>
+    <dialog id="mapLocationDialog" class="map-location-dialog" aria-labelledby="mapLocationDialogTitle">
+        <div class="map-location-dialog-content">
+            <button class="distributed-creator-close" type="button" onclick="closeMapLocationDialog()" aria-label="Close map location picker">×</button>
+            <h2 id="mapLocationDialogTitle">Add map location</h2>
+            <label for="mapLocationDestination">Destination map</label>
+            <select id="mapLocationDestination"><option value="">Select a map</option></select>
+            <fieldset class="map-location-icon-picker" disabled><legend>Location icon</legend><div class="map-location-icon-options">
+                <label><input type="radio" name="mapLocationIcon" value="generic"><img src="assets/generic_location.png" alt=""><span>Generic</span></label>
+                <label><input type="radio" name="mapLocationIcon" value="town"><img src="assets/town_location.png" alt=""><span>Town</span></label>
+                <label><input type="radio" name="mapLocationIcon" value="wild"><img src="assets/wild_location.png" alt=""><span>Wild</span></label>
+                <label><input type="radio" name="mapLocationIcon" value="dungeon"><img src="assets/dungeon_location.png" alt=""><span>Dungeon</span></label>
+            </div></fieldset>
+            <div class="map-location-dialog-actions"><button id="removeMapLocationButton" class="map-location-remove" type="button" onclick="removeEditedMapLocation()" hidden>Remove Location</button><button type="button" onclick="closeMapLocationDialog()">Cancel</button><button id="saveMapLocationButton" class="map-location-save" type="button" onclick="saveMapLocation()" disabled>Add Location</button></div>
         </div>
     </dialog>
     <div id="customMonsterCreatorModal" class="distributed-creator-modal" role="dialog" aria-modal="true" aria-label="Custom monster creator">
@@ -8605,6 +8664,7 @@
 
         function updateAllTokenSizes() {
             refreshMapLayout();
+            if (typeof renderMapLocations === 'function') renderMapLocations();
         }
 
         document.getElementById('increaseTokenSize').addEventListener('click', () => {
@@ -10141,6 +10201,7 @@
         initializeBoardUI('dm');
 
         boardSync.subscribeMap(sharedMap => {
+            if (typeof applySharedMapLocations === 'function') applySharedMapLocations(sharedMap.locations);
             const sharedScale = Number(sharedMap.mapScale);
             if (Number.isFinite(sharedScale)) {
                 sharedMapScale = Math.min(Math.max(0.2, sharedScale), 3);
@@ -10297,7 +10358,7 @@
         switchTab('attacksTab');
     </script>
     <script src="group-action-planner.js?v=4"></script>
-    <script src="campaign-manager.js?v=4"></script>
+    <script src="campaign-manager.js?v=11"></script>
     <script type="module" src="dice-roller-3d.js?v=25"></script>
 </div>
 </body>

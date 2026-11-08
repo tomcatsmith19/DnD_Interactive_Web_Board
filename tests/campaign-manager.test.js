@@ -23,7 +23,7 @@ async function fixture(seed = {}) {
     await boardSync.ready;
     const elements = new Map();
     class Element {
-        constructor() { this.children = []; this.listeners = {}; this.value = ''; this.textContent = ''; this.classList = { contains: () => false }; }
+        constructor() { this.children = []; this.listeners = {}; this.value = ''; this.textContent = ''; this.style = {}; this.classList = { contains: () => false, add() {}, remove() {} }; }
         set id(value) { this._id = value; elements.set(value, this); }
         get id() { return this._id; }
         append(...children) { this.children.push(...children); }
@@ -38,8 +38,12 @@ async function fixture(seed = {}) {
     const document = {
         activeElement: null,
         createElement: () => new Element(),
-        getElementById: id => { if (!elements.has(id)) { const element = new Element(); element.id = id; } return elements.get(id); }
+        getElementById: id => { if (!elements.has(id)) { const element = new Element(); element.id = id; } return elements.get(id); },
+        querySelector: selector => selector === '.map-location-icon-picker' ? document.getElementById('mapLocationIconPicker') : selector === 'input[name="mapLocationIcon"]:checked' ? document.getElementById('mapLocationIconChoice') : null,
+        querySelectorAll: () => []
     };
+    document.getElementById('mapLocationIconChoice').value = 'town';
+    document.getElementById('mapLocationIconChoice').checked = true;
     const select = document.getElementById('mapSelect');
     select.options = [{ value: 'maps/forest.jpg', textContent: 'Forest' }, { value: 'maps/cave.jpg', textContent: 'Cave' }];
     select.value = 'maps/forest.jpg';
@@ -136,6 +140,74 @@ test('folder toggling and adding maps never changes the shared board; duplicate 
     assert.deepEqual((await app.boardSync.exportState()).fogOfWar.drawings, []);
     await app.run("switchCampaignMap('a', 'initial-map')");
     assert.equal(app.token('hero').hp, 9);
+});
+
+test('map locations persist an icon and switch through the existing confirmed campaign path', async () => {
+    const app = await fixture(seedLegacy());
+    app.run("openAddCampaignMap('a')");
+    app.select.value = 'maps/cave.jpg';
+    app.elements.get('campaignMapName').value = 'Cave Entrance';
+    await app.run('addCampaignMap()');
+    const destination = app.registry().campaigns.find(campaign => campaign.id === 'a').maps.at(-1);
+    app.elements.get('mapLocationDestination').value = destination.id;
+    app.run("mapLocationPlacement={sourceCampaignId:'a',sourceMapId:'initial-map',sourceMapName:'Forest',xRatio:.35,yRatio:.6}");
+    await app.run('saveMapLocation()');
+    const locations = app.documents.get('campaigns/a/maps/initial-map/state/map').locations;
+    assert.equal(locations.length, 1);
+    assert.deepEqual({ targetMapId:locations[0].targetMapId, icon:locations[0].icon, xRatio:locations[0].xRatio, yRatio:locations[0].yRatio }, { targetMapId:destination.id, icon:'town', xRatio:.35, yRatio:.6 });
+    assert.equal(locations[0].targetMapName, 'Cave Entrance');
+    assert.deepEqual(app.documents.get('shared/map').locations, locations);
+    let marker = app.elements.get('mapLocationLayer').children[0];
+    assert.equal(marker.className, 'map-location-marker map-location-town');
+    assert.equal(marker.style.width, '80px');
+    app.context.currentTokenSize = 150;
+    app.run('renderMapLocations()');
+    marker = app.elements.get('mapLocationLayer').children[0];
+    assert.equal(marker.style.width, '120px');
+    assert.equal(marker['data-destination-name'], 'Cave Entrance');
+    let confirmation = '';
+    app.context.confirm = message => { confirmation = message; return true; };
+    await app.run('activateMapLocation(activeMapLocations[0])');
+    assert.equal(confirmation, 'Are you sure you want to change maps to Cave Entrance?');
+    assert.equal(app.registry().activeMapId, destination.id);
+    assert.deepEqual(app.documents.get('shared/map').locations || [], []);
+    assert.equal(app.documents.get('campaigns/a/maps/initial-map/state/map').locations.length, 1);
+    assert.equal(app.elements.get('mapParentLocationButton').disabled, false);
+    assert.equal(app.elements.get('mapParentLocationButton').title, 'Return to Forest');
+    assert.equal(await app.run('returnToParentMap()'), true);
+    assert.equal(app.registry().activeMapId, 'initial-map');
+    assert.equal(app.elements.get('mapParentLocationButton').disabled, true);
+});
+
+test('older map locations gain their full destination name for player sharing', async () => {
+    const seed = seedLegacy();
+    seed['campaigns/a/maps/initial-map'] = { locations:[{ id:'old-location', xRatio:.2, yRatio:.3, targetCampaignId:'b', targetMapId:'initial-map', icon:'dungeon' }] };
+    const app = await fixture(seed);
+    const saved = app.documents.get('campaigns/a/maps/initial-map/state/map').locations;
+    assert.equal(saved[0].targetMapName, 'Cave');
+    assert.equal(app.documents.get('shared/map').locations[0].targetMapName, 'Cave');
+});
+
+test('DM can edit a marker destination icon or remove it from the map state', async () => {
+    const app = await fixture(seedLegacy());
+    app.run("openAddCampaignMap('a')");
+    app.select.value = 'maps/cave.jpg';
+    app.elements.get('campaignMapName').value = 'Cave Entrance';
+    await app.run('addCampaignMap()');
+    const destination = app.registry().campaigns[0].maps.at(-1);
+    app.elements.get('mapLocationDestination').value = destination.id;
+    app.run("mapLocationPlacement={sourceCampaignId:'a',sourceMapId:'initial-map',sourceMapName:'Forest',xRatio:.4,yRatio:.5}");
+    await app.run('saveMapLocation()');
+    const id = app.documents.get('shared/map').locations[0].id;
+    app.elements.get('mapLocationIconChoice').value = 'dungeon';
+    app.run(`mapLocationEditingId='${id}';mapLocationPlacement={sourceCampaignId:'a',sourceMapId:'initial-map',sourceMapName:'Forest',xRatio:.4,yRatio:.5}`);
+    await app.run('saveMapLocation()');
+    assert.equal(app.documents.get('shared/map').locations.length, 1);
+    assert.equal(app.documents.get('shared/map').locations[0].icon, 'dungeon');
+    app.run(`mapLocationEditingId='${id}'`);
+    await app.run('removeEditedMapLocation()');
+    assert.deepEqual(app.documents.get('shared/map').locations, []);
+    assert.deepEqual(app.documents.get('campaigns/a/maps/initial-map/state/map').locations, []);
 });
 
 test('failed saves and failed publication leave the active map and live board intact', async () => {
@@ -245,4 +317,34 @@ test('custom maps support WebM media and foldered dropdown groups', () => {
     assert.match(player, /id="mapVideo"[^>]*autoplay loop muted playsinline/);
     assert.match(dm, /setMapMediaSource\(currentSharedMapPath\)/);
     assert.match(player, /setMapMediaSource\(sharedMap\.filepath\)/);
+});
+
+test('DM campaign maps expose the four location marker assets and placement UI', () => {
+    const dm = fs.readFileSync('public/dm.html', 'utf8');
+    const player = fs.readFileSync('public/player.html', 'utf8');
+    const manager = fs.readFileSync('public/campaign-manager.js', 'utf8');
+    for (const name of ['generic','town','wild','dungeon']) {
+        assert.ok(fs.existsSync(`public/assets/${name}_location.png`));
+        assert.match(dm, new RegExp(`assets/${name}_location\\.png`));
+        assert.match(player, new RegExp(`assets/${name}_location\\.png`));
+    }
+    assert.match(dm, /id="mapLocationLayer"[\s\S]*?id="mapLocationPlacementLayer"/);
+    assert.match(dm, /id="mapLocationDialog"[\s\S]*?id="mapLocationDestination"[\s\S]*?id="saveMapLocationButton"/);
+    assert.match(dm, /id="refreshBoardState"[\s\S]*?Token Size/);
+    assert.match(dm, /id="mapParentLocationButton"[\s\S]*?Map Scale/);
+    assert.match(dm, /mapLocationThemeFilter[\s\S]*?mapLocationTownFilter[\s\S]*?mapLocationWildFilter[\s\S]*?mapLocationDungeonFilter/);
+    assert.match(manager, /campaignMapLocationButton\(campaign, map\)/);
+    assert.match(manager, /contextmenu[\s\S]*?openMapLocationEditor\(location\)/);
+    assert.match(dm, /id="removeMapLocationButton"[\s\S]*?Remove Location/);
+    assert.match(manager, /markerSize = Math\.max\(24, \(Number\(currentTokenSize\) \|\| 100\) \* \.8\)/);
+    assert.match(manager, /returnToParentMap\(\)/);
+    assert.match(manager, /collection\('state'\)\.doc\('map'\)/);
+    assert.match(manager, /confirm\(`Are you sure you want to change maps to \$\{target\.name\}\?`\)/);
+    assert.match(player, /id="playerMapLocationLayer"/);
+    assert.match(player, /playerMapLocations = Array\.isArray\(sharedMap\.locations\)/);
+    assert.match(player, /const destinationName = playerMapLocationName\(location\)/);
+    assert.match(player, /playerCampaignMapNames\.get\(`\$\{location\.targetCampaignId\}\/\$\{location\.targetMapId\}`\)/);
+    assert.doesNotMatch(player, /location\.targetMapName \|\| location\.targetMapId/);
+    assert.match(dm, /\.map-location-marker:hover::after/);
+    assert.match(player, /\.map-location-marker:hover::after/);
 });
